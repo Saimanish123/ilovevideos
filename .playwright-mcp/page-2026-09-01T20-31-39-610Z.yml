@@ -1,0 +1,931 @@
+- generic [active] [ref=f18e1]:
+  - banner:
+    - dialog [ref=f18e2]:
+      - generic [ref=f18e5]:
+        - heading "THIS WEBSITE USES COOKIES" [level=3] [ref=f18e6]
+        - generic [ref=f18e7]:
+          - generic [ref=f18e8]:
+            - text: We want you to have the best possible user experience on our website. We use cookies to analyze how visitors like you use our website, so we can make improvements. And we use cookies to make sure that the website functions normally. For more info, see our
+            - link "privacy policy" [ref=f18e9] [cursor=pointer]:
+              - /url: /legal/privacy-policy
+            - text: . You can edit your cookie settings there at any time.
+          - generic [ref=f18e10]:
+            - button "Allow all cookies" [ref=f18e11] [cursor=pointer]
+            - button "Allow necessary cookies" [ref=f18e12] [cursor=pointer]
+    - button "Open chat widget" [ref=f18e14] [cursor=pointer]
+    - text: 
+    - navigation [ref=f18e15]:
+      - generic [ref=f18e17]:
+        - generic [ref=f18e18]: We noticed you're browsing from a different part of the world. Switch to settings tailored to your location?
+        - generic [ref=f18e19]:
+          - button " yes" [ref=f18e20] [cursor=pointer]:
+            - generic [ref=f18e21]: 
+            - text: "yes"
+          - button "" [ref=f18e22] [cursor=pointer]
+      - generic [ref=f18e26]:
+        - generic [ref=f18e27]:
+          - link "Blog" [ref=f18e28] [cursor=pointer]:
+            - /url: /blog/
+          - link "Community" [ref=f18e29] [cursor=pointer]:
+            - /url: https://community.hetzner.com/
+          - link "Jobs" [ref=f18e30] [cursor=pointer]:
+            - /url: https://career.hetzner.com/de/
+          - button "About us " [ref=f18e32] [cursor=pointer]:
+            - generic [ref=f18e33]:
+              - text: About us
+              - generic [ref=f18e34]: 
+        - generic [ref=f18e35]:
+          - generic [ref=f18e37]:
+            - button "EUR VAT 0%" [ref=f18e38] [cursor=pointer]:
+              - generic [ref=f18e42]: EUR
+              - generic [ref=f18e44]:
+                - text: VAT
+                - generic [ref=f18e45]: 0%
+            - text:       
+          - link " Support" [ref=f18e46] [cursor=pointer]:
+            - /url: /support/
+            - generic [ref=f18e47]: 
+            - text: Support
+          - button " Login " [ref=f18e49] [cursor=pointer]:
+            - generic [ref=f18e50]:
+              - generic [ref=f18e51]: 
+              - text: Login
+              - generic [ref=f18e52]: 
+      - generic [ref=f18e53]:
+        - link [ref=f18e55] [cursor=pointer]:
+          - /url: https://www.hetzner.com/
+          - img "Logo Hetzner Online" [ref=f18e56]
+        - list [ref=f18e58]:
+          - listitem [ref=f18e59] [cursor=pointer]: Dedicated 
+          - listitem [ref=f18e60] [cursor=pointer]:
+            - link "Cloud" [ref=f18e61]:
+              - /url: /cloud/
+          - listitem [ref=f18e62] [cursor=pointer]: Web & Managed 
+          - listitem [ref=f18e63] [cursor=pointer]: Storage 
+          - listitem [ref=f18e64] [cursor=pointer]: Services 
+  - navigation:
+    - generic:
+      - heading "Close " [level=4]:
+        - text: Close
+        - generic [ref=f18e65]: 
+    - generic:
+      - link "Server Auction from € 61.70 " [ref=f18e66] [cursor=pointer]:
+        - /url: /sb/
+        - generic [ref=f18e68]:
+          - generic [ref=f18e69]: Server Auction
+          - generic [ref=f18e73]:
+            - generic: from
+            - generic [ref=f18e74]: € 61.70
+        - generic [ref=f18e75]: 
+      - separator [ref=f18e76]
+      - link "Server Finder from € 59.00 " [ref=f18e77] [cursor=pointer]:
+        - /url: /dedicated-rootserver/
+        - generic [ref=f18e79]:
+          - generic [ref=f18e80]: Server Finder
+          - generic [ref=f18e84]:
+            - generic: from
+            - generic [ref=f18e85]: € 59.00
+        - generic [ref=f18e86]: 
+      - separator [ref=f18e87]
+      - separator [ref=f18e88]
+      - generic:
+        - generic:
+          - heading "Dedicated " [level=4]:
+            - text: Dedicated
+            - generic [ref=f18e89] [cursor=pointer]: 
+        - link "Cloud":
+          - /url: /cloud/
+          - heading "Cloud" [level=4]
+        - generic:
+          - heading "Web & Managed " [level=4]:
+            - text: Web & Managed
+            - generic [ref=f18e90] [cursor=pointer]: 
+        - generic:
+          - heading "Storage " [level=4]:
+            - text: Storage
+            - generic [ref=f18e91] [cursor=pointer]: 
+        - generic:
+          - heading "Services " [level=4]:
+            - text: Services
+            - generic [ref=f18e92] [cursor=pointer]: 
+      - separator [ref=f18e93]
+      - generic:
+        - link "Blog":
+          - /url: /blog/
+          - heading "Blog" [level=4]
+        - link "Jobs":
+          - /url: https://career.hetzner.com/
+          - heading "Jobs" [level=4]
+        - link "Community":
+          - /url: https://community.hetzner.com/
+          - heading "Community" [level=4]
+        - generic:
+          - heading "About us " [level=4]:
+            - text: About us
+            - generic [ref=f18e94] [cursor=pointer]: 
+        - link "Support":
+          - /url: /support/
+          - heading "Support" [level=4]
+        - generic:
+          - heading "Login " [level=4]:
+            - text: Login
+            - generic [ref=f18e95] [cursor=pointer]: 
+  - main [ref=f18e96]:
+    - generic [ref=f18e97]:
+      - img "background" [ref=f18e98]
+      - generic [ref=f18e100]:
+        - generic [ref=f18e101]: Cloud
+        - generic [ref=f18e103]:
+          - 'heading "Cost-Optimized: Cheap Entry Level" [level=1] [ref=f18e105]'
+          - generic [ref=f18e108]:
+            - generic [ref=f18e109]:
+              - generic [ref=f18e110]: 
+              - text: Very cost-effective
+            - generic [ref=f18e112]:
+              - generic [ref=f18e113]: 
+              - text: For test environments
+            - generic [ref=f18e115]:
+              - generic [ref=f18e116]: 
+              - text: Low to medium CPU usage
+          - link "Create cloud instance" [ref=f18e119] [cursor=pointer]:
+            - /url: https://console.hetzner.com
+    - generic [ref=f18e120]:
+      - generic [ref=f18e124]:
+        - generic [ref=f18e125]:
+          - img "iconset 3d 2d test Cost Optimized" [ref=f18e127]
+          - heading "Affordable Cloud Servers" [level=2] [ref=f18e128]
+        - generic [ref=f18e129]:
+          - generic [ref=f18e130]:
+            - paragraph [ref=f18e131]:
+              - generic [ref=f18e132]:
+                - strong [ref=f18e133]: With our Cost-Optimized plan, you get cloud instances at a very affordable price.
+                - text: Perfect for new test and development environments, smaller projects, or private blogs and web hosting.
+            - paragraph [ref=f18e134]: Since proven hardware generations that continue to be used are sufficient for these areas of application, we use them specifically and pass the savings directly on to you. However, this resource-saving use means that the number of available servers is limited.
+          - generic [ref=f18e135]:
+            - strong [ref=f18e140]: GDPR-compliant
+            - generic [ref=f18e141]: Over 400,000 happy customers
+      - generic [ref=f18e151]:
+        - generic [ref=f18e152]:
+          - generic [ref=f18e153]:
+            - generic [ref=f18e155] [cursor=pointer]:
+              - text: VCPU
+              - generic [ref=f18e156]: 
+              - text: 
+            - generic [ref=f18e158] [cursor=pointer]:
+              - text: RAM
+              - generic [ref=f18e159]: 
+              - text: 
+            - generic [ref=f18e161] [cursor=pointer]:
+              - text: Drives
+              - generic [ref=f18e162]: 
+              - text: 
+            - generic [ref=f18e163] [cursor=pointer]:
+              - generic [ref=f18e164]:
+                - generic [ref=f18e165]: 
+                - generic [ref=f18e166]: Your server's bill will never exceed its monthly price cap. If you delete your cloud server before the end of the billing month, we will only bill you for the hourly rate. We will bill you for each cloud server until you choose to delete them.
+              - generic [ref=f18e167]:
+                - text: Price
+                - generic [ref=f18e168]: 
+                - text: 
+          - generic [ref=f18e169]:
+            - generic [ref=f18e170]: CX23
+            - generic [ref=f18e172]: not available
+            - generic [ref=f18e174]:
+              - text: "2"
+              - generic [ref=f18e178]: Intel®/AMD
+            - generic [ref=f18e179]: 4 GB
+            - generic [ref=f18e185]:
+              - text: 40 GB
+              - generic [ref=f18e195]: NVMe
+            - generic [ref=f18e200]:
+              - generic: from
+              - generic [ref=f18e201]: € 5.99
+              - generic: /month
+            - generic [ref=f18e202]:
+              - generic [ref=f18e205]:
+                - generic [ref=f18e206]: € 0.0096
+                - generic: /hour
+              - text: 
+            - generic:
+              - link "Create":
+                - /url: https://console.hetzner.com/create/server?type=cx23&useIPv4=true&useIPv6=false&usePrivateNet=false&location=hel1
+              - generic: This product is currently unavailable. Please check back later.
+            - generic [ref=f18e207] [cursor=pointer]: 
+            - generic [ref=f18e210]:
+              - generic [ref=f18e211]:
+                - generic [ref=f18e212]: eu-central
+                - generic [ref=f18e213]: NBG1
+                - generic [ref=f18e215]: HEL1
+              - generic [ref=f18e217]:
+                - generic [ref=f18e218]:
+                  - generic [ref=f18e219]: Traffic inclusive
+                  - generic [ref=f18e220]:
+                    - generic [ref=f18e221]: 20 TB
+                    - generic [ref=f18e222]:
+                      - generic [ref=f18e223] [cursor=pointer]: 
+                      - generic [ref=f18e225]:
+                        - text: Cloud servers located in the EU include at least 20 TB of included traffic. For each additional TB at EU-Central locations we charge
+                        - generic [ref=f18e226]: € 1.00
+                        - text: .
+                    - text: 
+                - generic [ref=f18e234]:
+                  - generic [ref=f18e235]: € 5.99
+                  - generic: /month
+          - generic [ref=f18e236]:
+            - generic [ref=f18e237]: CAX11
+            - generic [ref=f18e239]: not available
+            - generic [ref=f18e241]:
+              - text: "2"
+              - generic [ref=f18e245]: Ampere®
+            - generic [ref=f18e246]: 4 GB
+            - generic [ref=f18e252]:
+              - text: 40 GB
+              - generic [ref=f18e262]: NVMe
+            - generic [ref=f18e267]:
+              - generic: from
+              - generic [ref=f18e268]: € 6.49
+              - generic: /month
+            - generic [ref=f18e269]:
+              - generic [ref=f18e272]:
+                - generic [ref=f18e273]: € 0.0104
+                - generic: /hour
+              - text: 
+            - generic:
+              - link "Create":
+                - /url: https://console.hetzner.com/create/server?type=cax11&useIPv4=true&useIPv6=false&usePrivateNet=false&location=fsn1
+              - generic: This product is currently unavailable. Please check back later.
+            - generic [ref=f18e274] [cursor=pointer]: 
+            - generic [ref=f18e277]:
+              - generic [ref=f18e278]:
+                - generic [ref=f18e279]: eu-central
+                - generic [ref=f18e280]: NBG1
+                - generic [ref=f18e282]: HEL1
+              - generic [ref=f18e284]:
+                - generic [ref=f18e285]:
+                  - generic [ref=f18e286]: Traffic inclusive
+                  - generic [ref=f18e287]:
+                    - generic [ref=f18e288]: 20 TB
+                    - generic [ref=f18e289]:
+                      - generic [ref=f18e290] [cursor=pointer]: 
+                      - generic [ref=f18e292]:
+                        - text: Cloud servers located in the EU include at least 20 TB of included traffic. For each additional TB at EU-Central locations we charge
+                        - generic [ref=f18e293]: € 1.00
+                        - text: .
+                    - text: 
+                - generic [ref=f18e301]:
+                  - generic [ref=f18e302]: € 6.49
+                  - generic: /month
+          - generic [ref=f18e303]:
+            - generic [ref=f18e304]: CX33
+            - generic [ref=f18e306]: not available
+            - generic [ref=f18e308]:
+              - text: "4"
+              - generic [ref=f18e312]: Intel®/AMD
+            - generic [ref=f18e313]: 8 GB
+            - generic [ref=f18e319]:
+              - text: 80 GB
+              - generic [ref=f18e329]: NVMe
+            - generic [ref=f18e334]:
+              - generic: from
+              - generic [ref=f18e335]: € 8.99
+              - generic: /month
+            - generic [ref=f18e336]:
+              - generic [ref=f18e339]:
+                - generic [ref=f18e340]: € 0.0144
+                - generic: /hour
+              - text: 
+            - generic:
+              - link "Create":
+                - /url: https://console.hetzner.com/create/server?type=cx33&useIPv4=true&useIPv6=false&usePrivateNet=false&location=hel1
+              - generic: This product is currently unavailable. Please check back later.
+            - generic [ref=f18e341] [cursor=pointer]: 
+            - generic [ref=f18e344]:
+              - generic [ref=f18e345]:
+                - generic [ref=f18e346]: eu-central
+                - generic [ref=f18e347]: NBG1
+                - generic [ref=f18e349]: HEL1
+              - generic [ref=f18e351]:
+                - generic [ref=f18e352]:
+                  - generic [ref=f18e353]: Traffic inclusive
+                  - generic [ref=f18e354]:
+                    - generic [ref=f18e355]: 20 TB
+                    - generic [ref=f18e356]:
+                      - generic [ref=f18e357] [cursor=pointer]: 
+                      - generic [ref=f18e359]:
+                        - text: Cloud servers located in the EU include at least 20 TB of included traffic. For each additional TB at EU-Central locations we charge
+                        - generic [ref=f18e360]: € 1.00
+                        - text: .
+                    - text: 
+                - generic [ref=f18e368]:
+                  - generic [ref=f18e369]: € 8.99
+                  - generic: /month
+          - generic [ref=f18e370]:
+            - generic [ref=f18e371]: CAX21
+            - generic [ref=f18e373]: not available
+            - generic [ref=f18e375]:
+              - text: "4"
+              - generic [ref=f18e379]: Ampere®
+            - generic [ref=f18e380]: 8 GB
+            - generic [ref=f18e386]:
+              - text: 80 GB
+              - generic [ref=f18e396]: NVMe
+            - generic [ref=f18e401]:
+              - generic: from
+              - generic [ref=f18e402]: € 10.99
+              - generic: /month
+            - generic [ref=f18e403]:
+              - generic [ref=f18e406]:
+                - generic [ref=f18e407]: € 0.0176
+                - generic: /hour
+              - text: 
+            - generic:
+              - link "Create":
+                - /url: https://console.hetzner.com/create/server?type=cax21&useIPv4=true&useIPv6=false&usePrivateNet=false&location=nbg1
+              - generic: This product is currently unavailable. Please check back later.
+            - generic [ref=f18e408] [cursor=pointer]: 
+            - generic [ref=f18e411]:
+              - generic [ref=f18e412]:
+                - generic [ref=f18e413]: eu-central
+                - generic [ref=f18e414]: NBG1
+                - generic [ref=f18e416]: HEL1
+              - generic [ref=f18e418]:
+                - generic [ref=f18e419]:
+                  - generic [ref=f18e420]: Traffic inclusive
+                  - generic [ref=f18e421]:
+                    - generic [ref=f18e422]: 20 TB
+                    - generic [ref=f18e423]:
+                      - generic [ref=f18e424] [cursor=pointer]: 
+                      - generic [ref=f18e426]:
+                        - text: Cloud servers located in the EU include at least 20 TB of included traffic. For each additional TB at EU-Central locations we charge
+                        - generic [ref=f18e427]: € 1.00
+                        - text: .
+                    - text: 
+                - generic [ref=f18e435]:
+                  - generic [ref=f18e436]: € 10.99
+                  - generic: /month
+          - generic [ref=f18e437]:
+            - generic [ref=f18e438]: CX43
+            - generic [ref=f18e440]: not available
+            - generic [ref=f18e442]:
+              - text: "8"
+              - generic [ref=f18e446]: Intel®/AMD
+            - generic [ref=f18e447]: 16 GB
+            - generic [ref=f18e453]:
+              - text: 160 GB
+              - generic [ref=f18e463]: NVMe
+            - generic [ref=f18e468]:
+              - generic: from
+              - generic [ref=f18e469]: € 16.49
+              - generic: /month
+            - generic [ref=f18e470]:
+              - generic [ref=f18e473]:
+                - generic [ref=f18e474]: € 0.0264
+                - generic: /hour
+              - text: 
+            - generic:
+              - link "Create":
+                - /url: https://console.hetzner.com/create/server?type=cx43&useIPv4=true&useIPv6=false&usePrivateNet=false&location=nbg1
+              - generic: This product is currently unavailable. Please check back later.
+            - generic [ref=f18e475] [cursor=pointer]: 
+            - generic [ref=f18e478]:
+              - generic [ref=f18e479]:
+                - generic [ref=f18e480]: eu-central
+                - generic [ref=f18e481]: NBG1
+                - generic [ref=f18e483]: HEL1
+              - generic [ref=f18e485]:
+                - generic [ref=f18e486]:
+                  - generic [ref=f18e487]: Traffic inclusive
+                  - generic [ref=f18e488]:
+                    - generic [ref=f18e489]: 20 TB
+                    - generic [ref=f18e490]:
+                      - generic [ref=f18e491] [cursor=pointer]: 
+                      - generic [ref=f18e493]:
+                        - text: Cloud servers located in the EU include at least 20 TB of included traffic. For each additional TB at EU-Central locations we charge
+                        - generic [ref=f18e494]: € 1.00
+                        - text: .
+                    - text: 
+                - generic [ref=f18e502]:
+                  - generic [ref=f18e503]: € 16.49
+                  - generic: /month
+          - generic [ref=f18e504]:
+            - generic [ref=f18e505]: CAX31
+            - generic [ref=f18e507]: not available
+            - generic [ref=f18e509]:
+              - text: "8"
+              - generic [ref=f18e513]: Ampere®
+            - generic [ref=f18e514]: 16 GB
+            - generic [ref=f18e520]:
+              - text: 160 GB
+              - generic [ref=f18e530]: NVMe
+            - generic [ref=f18e535]:
+              - generic: from
+              - generic [ref=f18e536]: € 21.49
+              - generic: /month
+            - generic [ref=f18e537]:
+              - generic [ref=f18e540]:
+                - generic [ref=f18e541]: € 0.0344
+                - generic: /hour
+              - text: 
+            - generic:
+              - link "Create":
+                - /url: https://console.hetzner.com/create/server?type=cax31&useIPv4=true&useIPv6=false&usePrivateNet=false&location=hel1
+              - generic: This product is currently unavailable. Please check back later.
+            - generic [ref=f18e542] [cursor=pointer]: 
+            - generic [ref=f18e545]:
+              - generic [ref=f18e546]:
+                - generic [ref=f18e547]: eu-central
+                - generic [ref=f18e548]: NBG1
+                - generic [ref=f18e550]: HEL1
+              - generic [ref=f18e552]:
+                - generic [ref=f18e553]:
+                  - generic [ref=f18e554]: Traffic inclusive
+                  - generic [ref=f18e555]:
+                    - generic [ref=f18e556]: 20 TB
+                    - generic [ref=f18e557]:
+                      - generic [ref=f18e558] [cursor=pointer]: 
+                      - generic [ref=f18e560]:
+                        - text: Cloud servers located in the EU include at least 20 TB of included traffic. For each additional TB at EU-Central locations we charge
+                        - generic [ref=f18e561]: € 1.00
+                        - text: .
+                    - text: 
+                - generic [ref=f18e569]:
+                  - generic [ref=f18e570]: € 21.49
+                  - generic: /month
+          - generic [ref=f18e571]:
+            - generic [ref=f18e572]: CX53
+            - generic [ref=f18e574]: not available
+            - generic [ref=f18e576]:
+              - text: "16"
+              - generic [ref=f18e580]: Intel®/AMD
+            - generic [ref=f18e581]: 32 GB
+            - generic [ref=f18e587]:
+              - text: 320 GB
+              - generic [ref=f18e597]: NVMe
+            - generic [ref=f18e602]:
+              - generic: from
+              - generic [ref=f18e603]: € 29.99
+              - generic: /month
+            - generic [ref=f18e604]:
+              - generic [ref=f18e607]:
+                - generic [ref=f18e608]: € 0.0481
+                - generic: /hour
+              - text: 
+            - generic:
+              - link "Create":
+                - /url: https://console.hetzner.com/create/server?type=cx53&useIPv4=true&useIPv6=false&usePrivateNet=false&location=hel1
+              - generic: This product is currently unavailable. Please check back later.
+            - generic [ref=f18e609] [cursor=pointer]: 
+            - generic [ref=f18e612]:
+              - generic [ref=f18e613]:
+                - generic [ref=f18e614]: eu-central
+                - generic [ref=f18e615]: NBG1
+                - generic [ref=f18e617]: HEL1
+              - generic [ref=f18e619]:
+                - generic [ref=f18e620]:
+                  - generic [ref=f18e621]: Traffic inclusive
+                  - generic [ref=f18e622]:
+                    - generic [ref=f18e623]: 20 TB
+                    - generic [ref=f18e624]:
+                      - generic [ref=f18e625] [cursor=pointer]: 
+                      - generic [ref=f18e627]:
+                        - text: Cloud servers located in the EU include at least 20 TB of included traffic. For each additional TB at EU-Central locations we charge
+                        - generic [ref=f18e628]: € 1.00
+                        - text: .
+                    - text: 
+                - generic [ref=f18e636]:
+                  - generic [ref=f18e637]: € 29.99
+                  - generic: /month
+          - generic [ref=f18e638]:
+            - generic [ref=f18e639]: CAX41
+            - generic [ref=f18e641]: not available
+            - generic [ref=f18e643]:
+              - text: "16"
+              - generic [ref=f18e647]: Ampere®
+            - generic [ref=f18e648]: 32 GB
+            - generic [ref=f18e654]:
+              - text: 320 GB
+              - generic [ref=f18e664]: NVMe
+            - generic [ref=f18e669]:
+              - generic: from
+              - generic [ref=f18e670]: € 41.49
+              - generic: /month
+            - generic [ref=f18e671]:
+              - generic [ref=f18e674]:
+                - generic [ref=f18e675]: € 0.0665
+                - generic: /hour
+              - text: 
+            - generic:
+              - link "Create":
+                - /url: https://console.hetzner.com/create/server?type=cax41&useIPv4=true&useIPv6=false&usePrivateNet=false&location=hel1
+              - generic: This product is currently unavailable. Please check back later.
+            - generic [ref=f18e676] [cursor=pointer]: 
+            - generic [ref=f18e679]:
+              - generic [ref=f18e680]:
+                - generic [ref=f18e681]: eu-central
+                - generic [ref=f18e682]: NBG1
+                - generic [ref=f18e684]: HEL1
+              - generic [ref=f18e686]:
+                - generic [ref=f18e687]:
+                  - generic [ref=f18e688]: Traffic inclusive
+                  - generic [ref=f18e689]:
+                    - generic [ref=f18e690]: 20 TB
+                    - generic [ref=f18e691]:
+                      - generic [ref=f18e692] [cursor=pointer]: 
+                      - generic [ref=f18e694]:
+                        - text: Cloud servers located in the EU include at least 20 TB of included traffic. For each additional TB at EU-Central locations we charge
+                        - generic [ref=f18e695]: € 1.00
+                        - text: .
+                    - text: 
+                - generic [ref=f18e703]:
+                  - generic [ref=f18e704]: € 41.49
+                  - generic: /month
+          - generic [ref=f18e705]:
+            - text:  
+            - generic [ref=f18e706]:
+              - text: Price incl. IPv4 ▪
+              - generic [ref=f18e707]: excl. VAT.
+        - generic [ref=f18e710]:
+          - generic [ref=f18e711]: Available Locations
+          - generic [ref=f18e713]:
+            - generic [ref=f18e714]: eu-central
+            - generic [ref=f18e715]: FSN
+            - generic [ref=f18e717]: NBG
+            - generic [ref=f18e719]: HEL
+        - generic [ref=f18e722]:
+          - generic [ref=f18e723]:
+            - generic [ref=f18e724]: 
+            - generic [ref=f18e726]:
+              - generic [ref=f18e727]: Extremely cost-effective
+              - paragraph [ref=f18e729]: Thanks to proven hardware with Arm64 and x86 (Intel®/AMD) architecture.
+          - generic [ref=f18e730]:
+            - generic [ref=f18e731]: 
+            - generic [ref=f18e733]:
+              - generic [ref=f18e734]: Transparent prices
+              - paragraph [ref=f18e736]: No hidden costs; you can view all expenses at any time.
+          - generic [ref=f18e737]:
+            - generic [ref=f18e738]: 
+            - generic [ref=f18e740]:
+              - generic [ref=f18e741]: Low to medium traffic
+              - paragraph [ref=f18e743]: For workloads that can handle variable CPU performance.
+          - generic [ref=f18e744]:
+            - generic [ref=f18e745]: 
+            - generic [ref=f18e747]:
+              - generic [ref=f18e748]: Perfect for test environments
+              - paragraph [ref=f18e750]: Creates ideal conditions for simple testing and development environments.
+        - link "Create cloud instance " [ref=f18e752] [cursor=pointer]:
+          - /url: https://console.hetzner.com/
+          - text: Create cloud instance
+          - generic [ref=f18e753]: 
+      - generic [ref=f18e758]:
+        - generic [ref=f18e759]:
+          - heading "Just a few steps away from your own cloud server" [level=3] [ref=f18e760]
+          - paragraph
+          - paragraph [ref=f18e761]: This is the plan for you if you want to set up a cloud server in a cost-effective and uncomplicated way. Whether you need development and test environments, proof-of-concepts and prototypes, learning and training environments, smaller websites, or your own private blog – here you can flexibly try things out, build them up, and discard them again without worrying about high costs.
+          - paragraph
+        - img "simple cloud cost optimized Hetzner" [ref=f18e763]
+      - generic [ref=f18e768]:
+        - generic [ref=f18e769]:
+          - heading "How can our servers be so price-friendly?" [level=3] [ref=f18e770]
+          - paragraph
+          - paragraph [ref=f18e771]: We use proven components for as long as it makes technical and economic sense. This extends the service life of the components and is therefore sustainable and resource-efficient. For you, this means noticeably lower prices.
+          - paragraph [ref=f18e772]: For example, our Cost-Optimized plan uses older but reliable processor generations from Ampere®, Intel®, and AMD. For the typical use cases of this plan, this is the ideal compromise between cost and performance.
+          - paragraph
+        - img "simple cloud cost optimized cheap efficiency Hetzner" [ref=f18e774]
+      - generic [ref=f18e775]:
+        - img "Background Grid Particles" [ref=f18e776]
+        - generic [ref=f18e780]:
+          - 'heading "Cloud comparison: save on your cloud expenses" [level=2] [ref=f18e781]'
+          - generic [ref=f18e783]:
+            - generic [ref=f18e784]:
+              - heading "Hetzner Cloud is the winner in terms of price-performance ratio" [level=3] [ref=f18e785]
+              - paragraph
+              - paragraph [ref=f18e786]:
+                - generic [ref=f18e787]:
+                  - text: The independent price-performance check shows that Hetzner offers significantly more computing power per dollar compared to its competitors. The analysis is based on objective benchmark data from
+                  - link "sparecores.com" [ref=f18e788] [cursor=pointer]:
+                    - /url: https://sparecores.com/
+                  - text: and highlights how efficiently our cloud servers operate in relation to their costs.
+              - paragraph
+              - link "Create cloud instance " [ref=f18e792] [cursor=pointer]:
+                - /url: https://console.hetzner.com/
+                - text: Create cloud instance
+                - generic [ref=f18e793]: 
+            - generic "Value for money" [ref=f18e797]:
+              - generic [ref=f18e798]:
+                - heading "Value for money" [level=5] [ref=f18e799]
+                - generic [ref=f18e802]:
+                  - generic:
+                    - slider [ref=f18e803] [cursor=pointer]: "2"
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img "Handle init"
+                            - img "Handle hover"
+                            - img "Handle active"
+                            - generic [aria-hidden]:
+                              - generic: 8 vCPU
+                - generic [ref=f18e804]:
+                  - generic [ref=f18e805]: Low Price
+                  - generic [ref=f18e808]: High Performance
+                  - generic [ref=f18e811]:
+                    - generic [ref=f18e812] [cursor=pointer]:
+                      - generic [ref=f18e813]: AWS
+                      - generic:
+                        - generic:
+                          - generic: AWS
+                          - generic:
+                            - generic: t3a.2xlarge
+                            - generic: € 303.33/mo.
+                          - generic:
+                            - generic: Geekbench
+                            - generic: "2.630"
+                    - generic [ref=f18e814] [cursor=pointer]:
+                      - generic [ref=f18e815]: Azure
+                      - generic:
+                        - generic:
+                          - generic: Azure
+                          - generic:
+                            - generic: D8_v5
+                            - generic: € 499.08/mo.
+                          - generic:
+                            - generic: Geekbench
+                            - generic: "5.707"
+                    - generic [ref=f18e816] [cursor=pointer]:
+                      - generic [ref=f18e817]: Google
+                      - generic:
+                        - generic:
+                          - generic: Google
+                          - generic:
+                            - generic: e2-standard-8
+                            - generic: € 268.92/mo.
+                          - generic:
+                            - generic: Geekbench
+                            - generic: "3.520"
+                    - generic [ref=f18e818] [cursor=pointer]:
+                      - generic [ref=f18e819]: Hetzner
+                      - generic:
+                        - generic:
+                          - generic: Hetzner
+                          - generic:
+                            - generic: cpx42
+                            - generic: € 69.49/mo.
+                          - generic:
+                            - generic: Geekbench
+                            - generic: "9.735"
+      - generic [ref=f18e822]:
+        - heading "Everything you need, included." [level=2] [ref=f18e824]
+        - generic [ref=f18e826]:
+          - generic [ref=f18e827]:
+            - generic [ref=f18e830]:
+              - generic [ref=f18e831]: API
+              - paragraph [ref=f18e833]: All essential functions for automatic management of the cloud infrastructure are also available via a developer-friendly REST API and a CLI tool.
+            - generic [ref=f18e836]:
+              - generic [ref=f18e837]: Integrations
+              - paragraph [ref=f18e839]: Integrations for various programming languages (e.g., Python and Go) and management frameworks (e.g., Ansible, Terraform, or Kubernetes) allow for a high degree of automation and integration of the cloud infrastructure, for example, in CI/CD pipelines.
+            - generic [ref=f18e842]:
+              - generic [ref=f18e843]: Networks
+              - paragraph [ref=f18e845]: Networks enable servers to communicate via a private network. They also allow complex network topologies to be created. Typical use cases include operating a Kubernetes cluster or a database that is not publicly accessible.
+            - generic [ref=f18e848]:
+              - generic [ref=f18e849]: Firewalls
+              - paragraph [ref=f18e851]: Our stateful firewalls enable easy infrastructure security without additional costs. Unwanted incoming and outgoing data traffic is blocked based on defined rules. Once configured, you can assign them to as many cloud servers as you like.
+            - generic [ref=f18e854]:
+              - generic [ref=f18e855]: Images
+              - paragraph [ref=f18e857]: Ubuntu, Debian, Fedora, and many other Linux distributions are available as operating systems. So whether you are looking for a particularly beginner-friendly solution or want to operate long-term, predictable enterprise servers, the right option is available.
+          - generic [ref=f18e858]:
+            - generic [ref=f18e859]:
+              - generic [ref=f18e860] [cursor=pointer]
+              - generic [ref=f18e861] [cursor=pointer]
+              - generic [ref=f18e862] [cursor=pointer]
+              - generic [ref=f18e863] [cursor=pointer]
+            - generic "Previous slide": 
+            - generic "Next slide" [ref=f18e864] [cursor=pointer]: 
+      - generic [ref=f18e869]:
+        - generic [ref=f18e870]:
+          - generic [ref=f18e871]:
+            - generic [ref=f18e872]: "Enhance your cloud with add-ons: Snapshots"
+            - generic [ref=f18e873]: Snapshots are one-time, manually created copies of the server hard drive that remain permanently stored until they are actively deleted. They are ideal for recording defined system states or duplicating identical servers. Snapshots remain intact even after the original server has been deleted and allow full control over the timing and retention period. Other useful add-ons are Backups and Floating IPs.
+          - link "Create cloud instance " [ref=f18e875] [cursor=pointer]:
+            - /url: https://console.hetzner.com/
+            - text: Create cloud instance
+            - generic [ref=f18e876]: 
+        - generic [ref=f18e877]:
+          - generic [ref=f18e878]:
+            - img "circle-plus-prime" [ref=f18e880]
+            - generic [ref=f18e881]:
+              - generic [ref=f18e882]: Snapshots
+              - generic [ref=f18e883]: per GB per month
+            - generic [ref=f18e884]: € 0.0143
+          - generic [ref=f18e889]:
+            - img "circle-plus-prime" [ref=f18e891]
+            - generic [ref=f18e892]:
+              - generic [ref=f18e893]: Backups
+              - generic [ref=f18e894]: "mo. price related to instance, starting at:"
+            - generic [ref=f18e895]: € 1.1980
+          - generic [ref=f18e900]:
+            - img "circle-plus-prime" [ref=f18e902]
+            - generic [ref=f18e903]:
+              - generic [ref=f18e904]: Floating IPs
+              - generic [ref=f18e905]: per IPv6 per month
+            - generic [ref=f18e906]: € 1.00
+      - generic [ref=f18e921]:
+        - heading "Scale your cloud with powerful add-ons" [level=2] [ref=f18e922]
+        - generic [ref=f18e923]:
+          - generic [ref=f18e924]:
+            - generic [ref=f18e925]:
+              - generic [ref=f18e926]: Block Storage
+              - link "Learn more" [ref=f18e932] [cursor=pointer]:
+                - /url: /cloud/block-storage/
+            - generic [ref=f18e933]:
+              - generic [ref=f18e934]: Object Storage
+              - link "Learn more" [ref=f18e940] [cursor=pointer]:
+                - /url: /storage/object-storage/
+            - generic [ref=f18e941]:
+              - generic [ref=f18e942]: Load Balancer
+              - link "Learn more" [ref=f18e948] [cursor=pointer]:
+                - /url: /cloud/load-balancer/
+          - generic [ref=f18e950]:
+            - generic [ref=f18e951] [cursor=pointer]
+            - generic [ref=f18e952] [cursor=pointer]
+      - generic [ref=f18e953]:
+        - generic [ref=f18e958]:
+          - list [ref=f18e959]:
+            - listitem [ref=f18e960]: Start your first cloud project now
+            - listitem
+          - paragraph [ref=f18e962]: As always, we keep it simple - from setup to use. If questions come up, though, our docs and tutorials are ready to help.
+          - generic [ref=f18e963]: € 5.99
+          - link "Create cloud instance" [ref=f18e968] [cursor=pointer]:
+            - /url: https://accounts.hetzner.com/login
+        - generic [ref=f18e970]:
+          - link "Cloud Docs Docs" [ref=f18e971] [cursor=pointer]:
+            - /url: https://docs.hetzner.com/cloud
+            - generic [ref=f18e972]: Cloud Docs
+            - generic [ref=f18e973]: Docs
+            - text: 
+          - link "Cloud Guides Tutorials" [ref=f18e974] [cursor=pointer]:
+            - /url: https://community.hetzner.com/tutorials
+            - generic [ref=f18e975]: Cloud Guides
+            - generic [ref=f18e976]: Tutorials
+            - text: 
+          - link "API Docs Docs" [ref=f18e977] [cursor=pointer]:
+            - /url: https://docs.hetzner.cloud/
+            - generic [ref=f18e978]: API Docs
+            - generic [ref=f18e979]: Docs
+            - text: 
+      - generic [ref=f18e987]:
+        - heading "Frequently asked questions" [level=2] [ref=f18e988]
+        - generic [ref=f18e991]:
+          - list [ref=f18e992]:
+            - listitem [ref=f18e993]:
+              - button " How do you bill your servers?" [ref=f18e994] [cursor=pointer]:
+                - generic [ref=f18e995]: 
+                - paragraph: How do you bill your servers?
+            - listitem [ref=f18e996]:
+              - button " Do you bill servers that are off?" [ref=f18e997] [cursor=pointer]:
+                - generic [ref=f18e998]: 
+                - paragraph: Do you bill servers that are off?
+            - listitem [ref=f18e999]:
+              - button " What are the Hetzner Cloud Volumes?" [ref=f18e1000] [cursor=pointer]:
+                - generic [ref=f18e1001]: 
+                - paragraph: What are the Hetzner Cloud Volumes?
+            - listitem [ref=f18e1002]:
+              - button " How does Hetzner Online store the data in Volumes?" [ref=f18e1003] [cursor=pointer]:
+                - generic [ref=f18e1004]: 
+                - paragraph: How does Hetzner Online store the data in Volumes?
+            - listitem [ref=f18e1005]:
+              - button " How many servers can I create?" [ref=f18e1006] [cursor=pointer]:
+                - generic [ref=f18e1007]: 
+                - paragraph: How many servers can I create?
+            - listitem [ref=f18e1008]:
+              - button " Do you plan to add x feature?/Will you add more features?" [ref=f18e1009] [cursor=pointer]:
+                - generic [ref=f18e1010]: 
+                - paragraph: Do you plan to add x feature?/Will you add more features?
+            - listitem [ref=f18e1011]:
+              - button " Will you add additional locations in different geographic regions?" [ref=f18e1012] [cursor=pointer]:
+                - generic [ref=f18e1013]: 
+                - paragraph: Will you add additional locations in different geographic regions?
+          - link "More FAQs " [ref=f18e1015] [cursor=pointer]:
+            - /url: https://docs.hetzner.com/de/cloud/
+            - text: More FAQs
+            - generic [ref=f18e1016]: 
+      - generic [ref=f18e1020]:
+        - heading "Not the right one? Discover our other offers" [level=2] [ref=f18e1021]
+        - generic [ref=f18e1023]:
+          - generic [ref=f18e1024]:
+            - generic [ref=f18e1025]: "Shared: Regular Performance"
+            - generic [ref=f18e1029]:
+              - generic [ref=f18e1031]:
+                - generic [ref=f18e1032]: starting from
+                - generic [ref=f18e1035]:
+                  - generic [ref=f18e1036]: € 11.
+                  - generic [ref=f18e1037]:
+                    - generic [ref=f18e1038]: "99"
+                    - generic [ref=f18e1039]: max/mo.
+              - link "Explore this plan " [ref=f18e1041] [cursor=pointer]:
+                - /url: /cloud/regular-performance/
+                - text: Explore this plan
+                - generic [ref=f18e1042]: 
+          - generic [ref=f18e1043]:
+            - generic [ref=f18e1044]: "Dedicated: General Purpose"
+            - generic [ref=f18e1048]:
+              - generic [ref=f18e1050]:
+                - generic [ref=f18e1051]: starting from
+                - generic [ref=f18e1054]:
+                  - generic [ref=f18e1055]: € 43.
+                  - generic [ref=f18e1056]:
+                    - generic [ref=f18e1057]: "49"
+                    - generic [ref=f18e1058]: max/mo.
+              - link "Explore this plan " [ref=f18e1060] [cursor=pointer]:
+                - /url: /cloud/general-purpose/
+                - text: Explore this plan
+                - generic [ref=f18e1061]: 
+  - contentinfo [ref=f18e1063]:
+    - generic [ref=f18e1065]:
+      - generic [ref=f18e1066]:
+        - generic [ref=f18e1067]:
+          - link [ref=f18e1068] [cursor=pointer]:
+            - /url: https://www.hetzner.com/
+            - img "Logo Hetzner Online" [ref=f18e1069]
+          - generic [ref=f18e1070]:
+            - generic [ref=f18e1071]: Subscribe to our Newsletter
+            - generic [ref=f18e1073]:
+              - textbox "mail address" [ref=f18e1074]
+              - button "" [ref=f18e1076] [cursor=pointer]
+        - generic [ref=f18e1078]:
+          - generic [ref=f18e1079]:
+            - generic [ref=f18e1080]: Hetzner 
+            - generic [ref=f18e1081]:
+              - link "Company" [ref=f18e1082] [cursor=pointer]:
+                - /url: /unternehmen/ueber-uns/
+              - link "Our Customers" [ref=f18e1084] [cursor=pointer]:
+                - /url: /customers/
+              - link "Sustainability" [ref=f18e1086] [cursor=pointer]:
+                - /url: /unternehmen/nachhaltigkeit/
+              - link "new new Blog" [ref=f18e1088] [cursor=pointer]:
+                - /url: /blog/
+                - generic [ref=f18e1089]: new new
+                - generic [ref=f18e1091]: Blog
+              - link "Career" [ref=f18e1092] [cursor=pointer]:
+                - /url: https://career.hetzner.com/
+              - link "Pressroom" [ref=f18e1094] [cursor=pointer]:
+                - /url: /pressroom/
+          - generic [ref=f18e1096]:
+            - generic [ref=f18e1097]: Support 
+            - generic [ref=f18e1098]:
+              - link "Support Center" [ref=f18e1099] [cursor=pointer]:
+                - /url: /support/
+              - link "Contact" [ref=f18e1101] [cursor=pointer]:
+                - /url: /support-form/
+              - link "Downloads" [ref=f18e1103] [cursor=pointer]:
+                - /url: /unternehmen/downloads/
+              - link "Hetzner Docs" [ref=f18e1105] [cursor=pointer]:
+                - /url: https://docs.hetzner.com/
+              - link "Status" [ref=f18e1107] [cursor=pointer]:
+                - /url: https://status.hetzner.com/
+          - generic [ref=f18e1109]:
+            - generic [ref=f18e1110]: Legal 
+            - generic [ref=f18e1111]:
+              - link "Legal notice" [ref=f18e1112] [cursor=pointer]:
+                - /url: /legal/legal-notice/
+              - link "Data privacy" [ref=f18e1114] [cursor=pointer]:
+                - /url: /legal/privacy-policy/
+              - link "System policies" [ref=f18e1116] [cursor=pointer]:
+                - /url: /legal/system-policies/
+              - link "Terms and conditions" [ref=f18e1118] [cursor=pointer]:
+                - /url: /legal/terms-and-conditions/
+              - link "Digital Services Act" [ref=f18e1120] [cursor=pointer]:
+                - /url: /legal/digital-services-act/
+              - link "Abuse form" [ref=f18e1122] [cursor=pointer]:
+                - /url: https://abuse.hetzner.com/
+      - generic [ref=f18e1124]:
+        - generic [ref=f18e1125]:
+          - generic [ref=f18e1127]:
+            - button "EUR VAT 0%" [ref=f18e1128] [cursor=pointer]:
+              - generic [ref=f18e1132]: EUR
+              - generic [ref=f18e1134]:
+                - text: VAT
+                - generic [ref=f18e1135]: 0%
+            - text:       
+          - generic [ref=f18e1136]:
+            - text: © 2026 Hetzner Online GmbH. All Rights Reserved. Prices
+            - generic [ref=f18e1137]: incl. 19 % VAT
+        - generic [ref=f18e1139]:
+          - link "Visit us on facebook" [ref=f18e1140] [cursor=pointer]:
+            - /url: https://www.facebook.com/hetzner.de/
+            - img "facebook logo" [ref=f18e1141]
+          - link "Visit us on instagram" [ref=f18e1142] [cursor=pointer]:
+            - /url: https://www.instagram.com/hetzner.online/
+            - img "instagram logo" [ref=f18e1143]
+          - link "Visit us on youtube" [ref=f18e1144] [cursor=pointer]:
+            - /url: https://www.youtube.com/user/HetznerOnline/
+            - img "youtube logo" [ref=f18e1145]
+          - link "Visit us on Mastodon" [ref=f18e1146] [cursor=pointer]:
+            - /url: https://mastodon.hetzner.social/@Hetzner
+            - img "mastodon logo" [ref=f18e1147]
+          - link "Visit us on x.com (formerly twitter)" [ref=f18e1148] [cursor=pointer]:
+            - /url: https://twitter.com/Hetzner_Online/
+            - img "twitter logo" [ref=f18e1149]
+          - link "Visit us on linkedin" [ref=f18e1150] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/hetzner-online/
+            - img "linkedin logo" [ref=f18e1151]
+  - generic [ref=f18e1152] [cursor=pointer]: 

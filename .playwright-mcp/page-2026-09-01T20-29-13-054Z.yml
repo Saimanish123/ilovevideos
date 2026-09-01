@@ -1,0 +1,486 @@
+- generic [active] [ref=f23e1]:
+  - alert [ref=f23e2]
+  - generic [ref=f23e3]:
+    - banner [ref=f23e4]:
+      - generic [ref=f23e6]:
+        - link "umami" [ref=f23e14] [cursor=pointer]:
+          - /url: /
+        - navigation [ref=f23e15]:
+          - list [ref=f23e16]:
+            - listitem [ref=f23e17]:
+              - button "Product" [ref=f23e18]
+            - listitem [ref=f23e21]:
+              - button "Use Cases" [ref=f23e22]
+            - listitem [ref=f23e25]:
+              - button "Resources" [ref=f23e26]
+            - listitem [ref=f23e29]:
+              - link "Docs" [ref=f23e30] [cursor=pointer]:
+                - /url: /docs
+            - listitem [ref=f23e31]:
+              - link "Pricing" [ref=f23e32] [cursor=pointer]:
+                - /url: /pricing
+        - generic [ref=f23e33]:
+          - link "38K" [ref=f23e34] [cursor=pointer]:
+            - /url: https://github.com/umami-software/umami
+          - link "Log in" [ref=f23e39] [cursor=pointer]:
+            - /url: https://cloud.umami.is/login?ref=umami-nav-header
+          - link "Sign up" [ref=f23e40] [cursor=pointer]:
+            - /url: https://cloud.umami.is/signup?ref=umami-nav-header
+    - main [ref=f23e41]:
+      - article [ref=f23e42]:
+        - generic [ref=f23e43]:
+          - generic [ref=f23e44]:
+            - heading "Pricing" [level=1] [ref=f23e45]
+            - paragraph [ref=f23e46]: Simple usage based pricing
+          - generic [ref=f23e47]:
+            - generic [ref=f23e48]:
+              - generic [ref=f23e49]:
+                - heading "Hobby" [level=2] [ref=f23e50]
+                - generic [ref=f23e51]:
+                  - generic [ref=f23e52]: $0
+                  - generic [ref=f23e53]: / month
+                - link "Get started" [ref=f23e55] [cursor=pointer]:
+                  - /url: https://cloud.umami.is/signup?ref=umami-pricing&plan=hobby
+              - generic [ref=f23e56]:
+                - paragraph [ref=f23e57]: "Get started:"
+                - list [ref=f23e58]:
+                  - listitem [ref=f23e59]:
+                    - generic [ref=f23e63]: Up to 100K events per month
+                  - listitem [ref=f23e64]:
+                    - generic [ref=f23e68]: 1 website
+                  - listitem [ref=f23e69]:
+                    - generic [ref=f23e73]: 6 month data retention
+                  - listitem [ref=f23e74]:
+                    - generic [ref=f23e78]: Community support
+            - generic [ref=f23e79]:
+              - generic [ref=f23e80]:
+                - heading "Pro" [level=2] [ref=f23e81]
+                - generic [ref=f23e82]:
+                  - generic [ref=f23e83]: $20
+                  - generic [ref=f23e84]: / month
+                - link "Try 14-day free trial" [ref=f23e86] [cursor=pointer]:
+                  - /url: https://cloud.umami.is/signup?ref=umami-pricing&plan=pro
+              - generic [ref=f23e87]:
+                - paragraph [ref=f23e88]: "Everything in Hobby, plus:"
+                - list [ref=f23e89]:
+                  - listitem [ref=f23e90]:
+                    - generic [ref=f23e94]: 1 million events per month included
+                  - listitem [ref=f23e95]:
+                    - generic [ref=f23e99]: $0.00003 per additional event
+                  - listitem [ref=f23e100]:
+                    - generic [ref=f23e104]: Up to 20 websites
+                  - listitem [ref=f23e105]:
+                    - generic [ref=f23e109]: Up to 10 team members
+                  - listitem [ref=f23e110]:
+                    - generic [ref=f23e114]: 2 year data retention
+                  - listitem [ref=f23e115]:
+                    - generic [ref=f23e119]: API access
+                  - listitem [ref=f23e120]:
+                    - generic [ref=f23e124]: Email support
+            - generic [ref=f23e125]:
+              - generic [ref=f23e126]:
+                - heading "Business" [level=2] [ref=f23e127]
+                - generic [ref=f23e128]:
+                  - generic [ref=f23e129]: $200
+                  - generic [ref=f23e130]: / month
+                - link "Try 14-day free trial" [ref=f23e132] [cursor=pointer]:
+                  - /url: https://cloud.umami.is/signup?ref=umami-pricing&plan=business
+              - generic [ref=f23e133]:
+                - paragraph [ref=f23e134]: "Everything in Pro, plus:"
+                - list [ref=f23e135]:
+                  - listitem [ref=f23e136]:
+                    - generic [ref=f23e140]: 10 million events per month included
+                  - listitem [ref=f23e141]:
+                    - generic [ref=f23e145]: $0.00002 per additional event
+                  - listitem [ref=f23e146]:
+                    - generic [ref=f23e150]: Unlimited websites
+                  - listitem [ref=f23e151]:
+                    - generic [ref=f23e155]: Unlimited team members
+                  - listitem [ref=f23e156]:
+                    - generic [ref=f23e160]: 5 year data retention
+                  - listitem [ref=f23e161]:
+                    - generic [ref=f23e165]: Session replays
+                  - listitem [ref=f23e166]:
+                    - generic [ref=f23e170]: Heatmaps
+                  - listitem [ref=f23e171]:
+                    - generic [ref=f23e175]: White-labeling
+                  - listitem [ref=f23e176]:
+                    - generic [ref=f23e180]: Streaming API
+                  - listitem [ref=f23e181]:
+                    - generic [ref=f23e185]: Email and chat support
+            - generic [ref=f23e186]:
+              - generic [ref=f23e187]:
+                - heading "Enterprise" [level=2] [ref=f23e188]
+                - generic [ref=f23e189]: Custom
+                - link "Contact us" [ref=f23e192] [cursor=pointer]:
+                  - /url: mailto:sales@umami.is?subject=Umami Cloud enterprise pricing
+              - generic [ref=f23e193]:
+                - paragraph [ref=f23e194]: "Everything in Business, plus:"
+                - list [ref=f23e195]:
+                  - listitem [ref=f23e196]:
+                    - generic [ref=f23e200]: Single sign on (SAML SSO)
+                  - listitem [ref=f23e201]:
+                    - generic [ref=f23e205]: Onboarding support
+                  - listitem [ref=f23e206]:
+                    - generic [ref=f23e210]: Uptime SLA
+                  - listitem [ref=f23e211]:
+                    - generic [ref=f23e215]: Custom pricing
+                  - listitem [ref=f23e216]:
+                    - generic [ref=f23e220]: Custom data retention
+                  - listitem [ref=f23e221]:
+                    - generic [ref=f23e225]: Invoice billing
+                  - listitem [ref=f23e226]:
+                    - generic [ref=f23e230]: Enterprise support
+          - table [ref=f23e232]:
+            - rowgroup [ref=f23e233]:
+              - row [ref=f23e234]:
+                - columnheader [ref=f23e235]
+                - columnheader "Hobby" [ref=f23e236]
+                - columnheader "Pro" [ref=f23e237]
+                - columnheader "Business" [ref=f23e238]
+                - columnheader "Enterprise" [ref=f23e239]
+            - rowgroup [ref=f23e240]:
+              - row [ref=f23e241]:
+                - cell "Data" [ref=f23e242]
+              - row [ref=f23e243]:
+                - cell "Events (included)" [ref=f23e244]
+                - cell "100K" [ref=f23e245]
+                - cell "1 million" [ref=f23e246]
+                - cell "10 million" [ref=f23e247]
+                - cell "Custom" [ref=f23e248]
+              - row [ref=f23e249]:
+                - cell "Additional events" [ref=f23e250]
+                - cell [ref=f23e251]
+                - cell "$0.00003 per event" [ref=f23e252]
+                - cell "$0.00002 per event" [ref=f23e253]
+                - cell "Custom" [ref=f23e254]
+              - row [ref=f23e255]:
+                - cell "Data retention" [ref=f23e256]
+                - cell "6 months" [ref=f23e257]
+                - cell "2 years" [ref=f23e258]
+                - cell "5 years" [ref=f23e259]
+                - cell "Custom" [ref=f23e260]
+              - row [ref=f23e261]:
+                - cell "Data export" [ref=f23e262]
+                - cell [ref=f23e263]
+                - cell [ref=f23e267]
+                - cell [ref=f23e271]
+                - cell [ref=f23e275]
+              - row [ref=f23e279]:
+                - cell "Data import" [ref=f23e280]
+                - cell [ref=f23e281]
+                - cell [ref=f23e282]
+                - cell [ref=f23e286]
+                - cell [ref=f23e290]
+              - row [ref=f23e294]:
+                - cell "Session replays (included)" [ref=f23e295]
+                - cell [ref=f23e296]
+                - cell [ref=f23e297]
+                - cell "5,000" [ref=f23e298]
+                - cell "Custom" [ref=f23e299]
+              - row [ref=f23e300]:
+                - cell "Additional replays" [ref=f23e301]
+                - cell [ref=f23e302]
+                - cell [ref=f23e303]
+                - cell "$0.005 per replay" [ref=f23e304]
+                - cell "Custom" [ref=f23e305]
+              - row [ref=f23e306]:
+                - cell "Analytics" [ref=f23e307]
+              - row [ref=f23e308]:
+                - cell "Websites" [ref=f23e309]
+                - cell "1" [ref=f23e310]
+                - cell "Up to 20" [ref=f23e311]
+                - cell "Unlimited" [ref=f23e312]
+                - cell "Unlimited" [ref=f23e313]
+              - row [ref=f23e314]:
+                - cell "Teams" [ref=f23e315]
+                - cell [ref=f23e316]
+                - cell [ref=f23e317]
+                - cell [ref=f23e321]
+                - cell [ref=f23e325]
+              - row [ref=f23e329]:
+                - cell "Team members" [ref=f23e330]
+                - cell [ref=f23e331]
+                - cell "Up to 10" [ref=f23e332]
+                - cell "Unlimited" [ref=f23e333]
+                - cell "Unlimited" [ref=f23e334]
+              - row [ref=f23e335]:
+                - cell "Custom events" [ref=f23e336]
+                - cell [ref=f23e337]
+                - cell [ref=f23e341]
+                - cell [ref=f23e345]
+                - cell [ref=f23e349]
+              - row [ref=f23e353]:
+                - cell "Event properties" [ref=f23e354]
+                - cell [ref=f23e355]
+                - cell [ref=f23e359]
+                - cell [ref=f23e363]
+                - cell [ref=f23e367]
+              - row [ref=f23e371]:
+                - cell "Session properties" [ref=f23e372]
+                - cell [ref=f23e373]
+                - cell [ref=f23e377]
+                - cell [ref=f23e381]
+                - cell [ref=f23e385]
+              - row [ref=f23e389]:
+                - cell "Session replays" [ref=f23e390]
+                - cell [ref=f23e391]
+                - cell [ref=f23e392]
+                - cell [ref=f23e393]
+                - cell [ref=f23e397]
+              - row [ref=f23e401]:
+                - cell "Heatmaps" [ref=f23e402]
+                - cell [ref=f23e403]
+                - cell [ref=f23e404]
+                - cell [ref=f23e405]
+                - cell [ref=f23e409]
+              - row [ref=f23e413]:
+                - cell "API access" [ref=f23e414]
+                - cell [ref=f23e415]
+                - cell [ref=f23e416]
+                - cell [ref=f23e420]
+                - cell [ref=f23e424]
+              - row [ref=f23e428]:
+                - cell "Streaming API" [ref=f23e429]
+                - cell [ref=f23e430]
+                - cell [ref=f23e431]
+                - cell [ref=f23e432]
+                - cell [ref=f23e436]
+              - row [ref=f23e440]:
+                - cell "Reports" [ref=f23e441]
+              - row [ref=f23e442]:
+                - cell "Breakdown" [ref=f23e443]
+                - cell [ref=f23e444]
+                - cell [ref=f23e448]
+                - cell [ref=f23e452]
+                - cell [ref=f23e456]
+              - row [ref=f23e460]:
+                - cell "Funnel Analysis" [ref=f23e461]
+                - cell [ref=f23e462]
+                - cell [ref=f23e466]
+                - cell [ref=f23e470]
+                - cell [ref=f23e474]
+              - row [ref=f23e478]:
+                - cell "User Retention" [ref=f23e479]
+                - cell [ref=f23e480]
+                - cell [ref=f23e484]
+                - cell [ref=f23e488]
+                - cell [ref=f23e492]
+              - row [ref=f23e496]:
+                - cell "UTM parameters" [ref=f23e497]
+                - cell [ref=f23e498]
+                - cell [ref=f23e502]
+                - cell [ref=f23e506]
+                - cell [ref=f23e510]
+              - row [ref=f23e514]:
+                - cell "Goals" [ref=f23e515]
+                - cell [ref=f23e516]
+                - cell [ref=f23e520]
+                - cell [ref=f23e524]
+                - cell [ref=f23e528]
+              - row [ref=f23e532]:
+                - cell "User Journey" [ref=f23e533]
+                - cell [ref=f23e534]
+                - cell [ref=f23e538]
+                - cell [ref=f23e542]
+                - cell [ref=f23e546]
+              - row [ref=f23e550]:
+                - cell "Revenue" [ref=f23e551]
+                - cell [ref=f23e552]
+                - cell [ref=f23e556]
+                - cell [ref=f23e560]
+                - cell [ref=f23e564]
+              - row [ref=f23e568]:
+                - cell "Attribution" [ref=f23e569]
+                - cell [ref=f23e570]
+                - cell [ref=f23e574]
+                - cell [ref=f23e578]
+                - cell [ref=f23e582]
+              - row [ref=f23e586]:
+                - cell "Monitoring" [ref=f23e587]
+              - row [ref=f23e588]:
+                - cell "Realtime events" [ref=f23e589]
+                - cell [ref=f23e590]
+                - cell [ref=f23e594]
+                - cell [ref=f23e598]
+                - cell [ref=f23e602]
+              - row [ref=f23e606]:
+                - cell "Custom dashboards" [ref=f23e607]
+                - cell [ref=f23e608]
+                - cell [ref=f23e612]
+                - cell [ref=f23e616]
+                - cell [ref=f23e620]
+              - row [ref=f23e624]:
+                - cell "Email reports" [ref=f23e625]
+                - cell [ref=f23e626]
+                - cell [ref=f23e627]
+                - cell [ref=f23e631]
+                - cell [ref=f23e635]
+              - row [ref=f23e639]:
+                - cell "Customization" [ref=f23e640]
+              - row [ref=f23e641]:
+                - cell "White-labeling" [ref=f23e642]
+                - cell [ref=f23e643]
+                - cell [ref=f23e644]
+                - cell [ref=f23e645]
+                - cell [ref=f23e649]
+              - row [ref=f23e653]:
+                - cell "Privacy" [ref=f23e654]
+              - row [ref=f23e655]:
+                - cell "GDPR compliant" [ref=f23e656]
+                - cell [ref=f23e657]
+                - cell [ref=f23e661]
+                - cell [ref=f23e665]
+                - cell [ref=f23e669]
+              - row [ref=f23e673]:
+                - cell "CCPA compliant" [ref=f23e674]
+                - cell [ref=f23e675]
+                - cell [ref=f23e679]
+                - cell [ref=f23e683]
+                - cell [ref=f23e687]
+              - row [ref=f23e691]:
+                - cell "No cookie banners required" [ref=f23e692]
+                - cell [ref=f23e693]
+                - cell [ref=f23e697]
+                - cell [ref=f23e701]
+                - cell [ref=f23e705]
+              - row [ref=f23e709]:
+                - cell "Support" [ref=f23e710]
+              - row [ref=f23e711]:
+                - cell "Community support" [ref=f23e712]
+                - cell [ref=f23e713]
+                - cell [ref=f23e717]
+                - cell [ref=f23e721]
+                - cell [ref=f23e725]
+              - row [ref=f23e729]:
+                - cell "Email support" [ref=f23e730]
+                - cell [ref=f23e731]
+                - cell [ref=f23e732]
+                - cell [ref=f23e736]
+                - cell [ref=f23e740]
+              - row [ref=f23e744]:
+                - cell "Email and chat support" [ref=f23e745]
+                - cell [ref=f23e746]
+                - cell [ref=f23e747]
+                - cell [ref=f23e748]
+                - cell [ref=f23e752]
+              - row [ref=f23e756]:
+                - cell "Uptime SLA" [ref=f23e757]
+                - cell [ref=f23e758]
+                - cell [ref=f23e759]
+                - cell [ref=f23e760]
+                - cell [ref=f23e761]
+              - row [ref=f23e765]:
+                - cell "Enterprise support" [ref=f23e766]
+                - cell [ref=f23e767]
+                - cell [ref=f23e768]
+                - cell [ref=f23e769]
+                - cell [ref=f23e770]
+              - row [ref=f23e774]:
+                - cell "Onboarding assistance" [ref=f23e775]
+                - cell [ref=f23e776]
+                - cell [ref=f23e777]
+                - cell [ref=f23e778]
+                - cell [ref=f23e779]
+              - row [ref=f23e783]:
+                - cell "Designated support engineer" [ref=f23e784]
+                - cell [ref=f23e785]
+                - cell [ref=f23e786]
+                - cell [ref=f23e787]
+                - cell [ref=f23e788]
+              - row [ref=f23e792]:
+                - cell "Security" [ref=f23e793]
+              - row [ref=f23e794]:
+                - cell "Single sign on (SAML SSO)" [ref=f23e795]
+                - cell [ref=f23e796]
+                - cell [ref=f23e797]
+                - cell [ref=f23e798]
+                - cell [ref=f23e799]
+              - row [ref=f23e803]:
+                - cell "Audit log" [ref=f23e804]
+                - cell [ref=f23e805]
+                - cell [ref=f23e806]
+                - cell [ref=f23e807]
+                - cell [ref=f23e808]
+          - heading "Frequently asked questions" [level=2] [ref=f23e813]
+          - generic [ref=f23e815]:
+            - button "How is usage measured?" [ref=f23e816] [cursor=pointer]:
+              - generic [ref=f23e821]: Usage is measured by counting pageviews to a website plus any custom events or custom event properties stored. Each website pageview counts as one event. If you save event properties, each data property stored counts as one event.
+            - button "What happens if I exceed my event limit?" [ref=f23e822] [cursor=pointer]:
+              - generic [ref=f23e827]: If you exceed the events included in your plan, additional events are billed at a per-event rate. Your data collection will not be interrupted and you won't lose any data. You can monitor your usage at any time from your Umami Cloud dashboard.
+            - button "How does the free trial work?" [ref=f23e828] [cursor=pointer]:
+              - generic [ref=f23e833]: Umami Cloud's free trial will last for 14 days from the purchase date. The trial gives you full access to all features in that plan. At the end of the trial, you will be billed the regular amount. You can cancel your trial at any time within the trial period for no cost.
+            - button "How will I be billed?" [ref=f23e834] [cursor=pointer]:
+              - generic [ref=f23e839]: Billing occurs on a monthly basis and you can cancel at any time. If you upgraded to a paid plan via a trial, your first invoice will arrive after your trial period ends.
+            - button "Can I change or cancel my plan at any time?" [ref=f23e840] [cursor=pointer]:
+              - generic [ref=f23e845]: Yes, you can upgrade, downgrade, or cancel your plan at any time from your account settings. Changes take effect on your next billing cycle. There are no long-term contracts or cancellation fees.
+            - button "Can I export my data?" [ref=f23e846] [cursor=pointer]:
+              - generic [ref=f23e851]: Yes, all of your data can be exported from Umami Cloud. You have full ownership of your data at all times. Export your analytics via the API or the dashboard to use in your own tools, reports, or data warehouse. There is no vendor lock-in — if you ever decide to leave, your data goes with you.
+            - button "Is Umami GDPR compliant?" [ref=f23e852] [cursor=pointer]:
+              - generic [ref=f23e857]: Yes, Umami is fully GDPR and CCPA compliant. Umami does not use cookies, does not collect personal data, and does not track users across websites. All data is anonymized, so you can use Umami without needing to display a cookie consent banner.
+            - button "Where are your servers located?" [ref=f23e858] [cursor=pointer]:
+              - generic [ref=f23e863]: Umami Cloud servers are located in the US and EU and adhere to GDPR and CCPA regulations.
+            - button "Do I need a cookie consent banner with Umami?" [ref=f23e864] [cursor=pointer]:
+              - generic [ref=f23e869]: No. Umami does not use cookies or collect any personally identifiable information. This means you can use Umami without a cookie consent banner, resulting in a better experience for your visitors and more accurate analytics since no visitors are missed due to declined consent.
+            - button "What's the difference between Umami Cloud and self-hosting?" [ref=f23e870] [cursor=pointer]:
+              - generic [ref=f23e875]: Umami is open-source and can be self-hosted for free. Umami Cloud is our managed hosting service that handles infrastructure, updates, and maintenance for you. Cloud also includes additional features like email reports and the streaming API that are not available in the self-hosted version.
+          - generic [ref=f23e876]:
+            - generic [ref=f23e877]: Try Umami now.
+            - link "Get started for free" [ref=f23e879] [cursor=pointer]:
+              - /url: https://cloud.umami.is/signup?ref=umami-get-started-banner
+    - contentinfo [ref=f23e880]:
+      - generic [ref=f23e881]:
+        - generic [ref=f23e882]:
+          - link "umami" [ref=f23e891] [cursor=pointer]:
+            - /url: /
+          - generic [ref=f23e892]:
+            - heading "Product" [level=3] [ref=f23e893]
+            - link "Platform" [ref=f23e894] [cursor=pointer]:
+              - /url: /platform
+            - link "Pricing" [ref=f23e895] [cursor=pointer]:
+              - /url: /pricing
+            - link "Use Cases" [ref=f23e896] [cursor=pointer]:
+              - /url: /product
+            - link "Compare" [ref=f23e897] [cursor=pointer]:
+              - /url: /compare
+            - link "Cloud" [ref=f23e898] [cursor=pointer]:
+              - /url: https://cloud.umami.is/?ref=umami-nav-footer
+          - generic [ref=f23e899]:
+            - heading "Resources" [level=3] [ref=f23e900]
+            - link "Blog" [ref=f23e901] [cursor=pointer]:
+              - /url: /blog
+            - link "Documentation" [ref=f23e902] [cursor=pointer]:
+              - /url: https://umami.is/docs
+            - link "Guides" [ref=f23e903] [cursor=pointer]:
+              - /url: /guides
+            - link "API Reference" [ref=f23e904] [cursor=pointer]:
+              - /url: https://umami.is/docs/api
+            - link "Release Notes" [ref=f23e905] [cursor=pointer]:
+              - /url: https://github.com/umami-software/umami/releases
+            - link "Community" [ref=f23e906] [cursor=pointer]:
+              - /url: /community
+          - generic [ref=f23e907]:
+            - heading "Company" [level=3] [ref=f23e908]
+            - link "Contact" [ref=f23e909] [cursor=pointer]:
+              - /url: /contact
+            - link "Privacy" [ref=f23e910] [cursor=pointer]:
+              - /url: /privacy
+            - link "Terms" [ref=f23e911] [cursor=pointer]:
+              - /url: /terms
+            - link "DPA" [ref=f23e912] [cursor=pointer]:
+              - /url: /dpa
+            - link "Subprocessors" [ref=f23e913] [cursor=pointer]:
+              - /url: /subprocessors
+            - link "Security" [ref=f23e914] [cursor=pointer]:
+              - /url: /security
+        - generic [ref=f23e915]:
+          - generic [ref=f23e916]:
+            - link "GitHub" [ref=f23e917] [cursor=pointer]:
+              - /url: https://github.com/umami-software/umami
+            - link "Discord" [ref=f23e920] [cursor=pointer]:
+              - /url: https://umami.is/discord
+            - link "X" [ref=f23e923] [cursor=pointer]:
+              - /url: https://twitter.com/umami_software
+            - link "LinkedIn" [ref=f23e926] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/umami-software/
+          - paragraph [ref=f23e929]: © 2026 Umami Software, Inc.

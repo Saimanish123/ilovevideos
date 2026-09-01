@@ -1,0 +1,22 @@
+onlyBuiltDependencies:
+  - "@biomejs/biome"
+  - "@swc/core"
+  - "@parcel/watcher"
+  - esbuild
+  - sharp
+# Pinned to the last release older than the machine's minimumReleaseAge policy (2026-09-02).
+overrides:
+  use-intl: 4.14.1
+# Machine-level minimumReleaseAge rejects day-old releases pulled transitively; exclude the intl packages.
+minimumReleaseAgeExclude:
+  - use-intl
+  - next-intl
+  - next-intl-swc-plugin-extractor
+  - lucide-react
+  - icu-minify
+  - "@eloqnt/format-po"
+  - "@eloqnt/*"
+allowBuilds:
+  '@parcel/watcher': true
+  '@swc/core': true
+  esbuild: true

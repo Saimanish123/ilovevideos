@@ -1,0 +1,862 @@
+- generic [active] [ref=f290e1]:
+  - link "Skip to main content" [ref=f290e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=f290e6]:
+    - generic:
+      - generic: "Why does every website that converts YouTube videos to MP3 try to give you a virus and tons of ads? : r/TooAfraidToAsk"
+      - banner [ref=f290e10]:
+        - navigation [ref=f290e11]:
+          - link "Home" [ref=f290e15] [cursor=pointer]:
+            - /url: https://www.reddit.com/
+          - search [ref=f290e34]:
+            - generic [ref=f290e36]:
+              - textbox [ref=f290e43]:
+                - /placeholder: Search Reddit
+              - generic [aria-hidden]: Search Reddit
+          - generic [ref=f290e44]:
+            - link "Sign Up" [ref=f290e50] [cursor=pointer]:
+              - /url: https://www.reddit.com/register/
+            - link "Log In" [ref=f290e56] [cursor=pointer]:
+              - /url: https://www.reddit.com/login/
+            - button "Expand user menu" [ref=f290e63] [cursor=pointer]
+      - generic [ref=f290e69]:
+        - generic [ref=f290e70]:
+          - generic [ref=f290e71]:
+            - generic:
+              - generic:
+                - link "Skip to Sign up" [ref=f290e72] [cursor=pointer]:
+                  - /url: "#left-sidebar-container"
+                - link "Skip to Right Sidebar" [ref=f290e73] [cursor=pointer]:
+                  - /url: "#right-sidebar-container"
+          - generic [ref=f290e74]:
+            - main [ref=f290e75]:
+              - 'generic "Why does every website that converts YouTube videos to MP3 try to give you a virus and tons of ads? : r/TooAfraidToAsk"'
+              - generic [ref=f290e76]:
+                - generic [ref=f290e77]:
+                  - generic [ref=f290e78]:
+                    - button "Back" [ref=f290e80] [cursor=pointer]
+                    - link "Go to TooAfraidToAsk" [ref=f290e88] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/TooAfraidToAsk/
+                    - group [ref=f290e93]:
+                      - generic [ref=f290e94]:
+                        - link "r/TooAfraidToAsk" [ref=f290e98] [cursor=pointer]:
+                          - /url: https://www.reddit.com/r/TooAfraidToAsk/
+                        - generic [aria-hidden] [ref=f290e99]: •
+                        - time [ref=f290e101]: 4y ago
+                      - 'link "Author: knowledgelover94" [ref=f290e107] [cursor=pointer]':
+                        - /url: https://www.reddit.com/user/knowledgelover94/
+                        - generic [ref=f290e108]: knowledgelover94
+                  - generic [ref=f290e109]:
+                    - img "Archived post" [ref=f290e113]
+                    - button "Open user actions" [ref=f290e117] [cursor=pointer]
+                - generic [ref=f290e123]:
+                  - 'heading "Post Title: Why does every website that converts YouTube videos to MP3 try to give you a virus and tons of ads?" [level=1] [ref=f290e124]': Why does every website that converts YouTube videos to MP3 try to give you a virus and tons of ads?
+                  - 'link "Flair: Culture & Society" [ref=f290e127] [cursor=pointer]':
+                    - /url: /r/TooAfraidToAsk/?f=flair_name%3A%22Culture%20%26%20Society%22
+                    - 'generic "Flair: Culture & Society" [ref=f290e129]': Culture & Society
+                - generic [ref=f290e133]:
+                  - paragraph [ref=f290e134]: I make videos and I end up needing to convert videos on YouTube to audio. There’s several websites that do this for you, but every single one of them barrages you with pop ups and I even fell for one that said I needed an update and almost got a bad computer virus.
+                  - paragraph [ref=f290e135]: Why is every website that offers this service like this? What’s even their incentive for giving me a virus anyways?
+                - generic: Archived post. New comments cannot be posted and votes cannot be cast.
+                - generic "Actions available for this post" [ref=f290e143]:
+                  - generic [ref=f290e146]:
+                    - button "Upvote" [disabled]
+                    - generic [ref=f290e147]: "2"
+                    - button "Downvote" [disabled]
+                  - button "12 Go to comments" [ref=f290e149] [cursor=pointer]:
+                    - generic [ref=f290e150]: "12"
+                    - generic [ref=f290e156]: Go to comments
+                  - button "Share" [ref=f290e160] [cursor=pointer]
+              - generic "Want Faster, Better, Cheaper AI?" [ref=f290e167]:
+                - generic [ref=f290e168]:
+                  - 'generic "Advertisement: Want Faster, Better, Cheaper AI?" [ref=f290e169]':
+                    - 'link "Advertisement: Want Faster, Better, Cheaper AI?" [ref=f290e170] [cursor=pointer]':
+                      - /url: https://alb.reddit.com/cr?za=S5T4zOHALyfN3gGBWNLorMa6489MzY0Cw3SiZlQDFBlIaZSppiStT_Hxjj5TVc1ubb3MfSK31ZIJ2Eq9piu9DFiEk2yaQZvuGp3YBuOXho8P5uBMq6F85eEjSUUgmNJ_JQDnWK1JhV8G5VX0I8-feTbWfKciWqw9qo2keORt1C3LMt3Z0O8ebzuJXBbaWDqjwwsC9IYyyaENLS8vyQJLFG-9AFVf_0FBwqP2PqvvoeeANxBHyDYEGP-qqNKGaad3BFRgxdxNgm4PhDkqLyIOkbkrkeaJ4in8071GGUJNQEtnuJ0M_bMnqz8P7u1BoOU0KiyTXaH58oiqmRUh8Z2n0odR_6cWpEyO_hZ3rUMCDJ1jgDWoHVDgGggrqgoVlAPFULfIsD3G6UatuZCVBBlFUXALd0Tk-RGf7oHrjqWn7I2rjcG2YlziV4EGd6vb1tVZphy-IWXyfVt15bsz4f0l4fYYccEg0v_llL9RuaemDDC060KHjRYVw9UZz4-X8td4H0M1NO_X4ZBHvQWl1yALQtiOUF07GTneg1jEJZiynTwdxbFwuuv3v8Mijc72B0jTDu_rbGJlDJX90NJBUSv-yd_b23bgW968KGJ-678F8Ft0ivJsltxvaniTX4S0jTF3o5kYNHQS4obW_KDZIZKdhj3hyVDSocpHyQY_um6VuFRooH_1TedDIJUJ04546CizgN0IbA&zp=Al4Sk307cD7UXJqF_Zati1kc1cbWVCtODzLrPPzQzc-R7CfDSHJs-wCE3VftDZAm3rJA2gRE0n_-g_Z31vm4w0cUWrb1GnSx0D6vz8wAWzFwnUGaJPo2QgV3n1kPNXaMPgrmY-xeVKitmzBaSm0zsHdmpcSHMLvKMUyWwZC-7G-5DzJJnCtrQltDoMs2pUUIiI9VA1iiua_z2Rg7BnJlNDbET-7wiiUQ3xGRmH7R4JH9wybcRF14kEU3agw5lQCe4O1ShPq_P1AIfZw5R1FZZLY
+                  - generic [ref=f290e171]:
+                    - generic [ref=f290e172]:
+                      - link "Rob" [ref=f290e175] [cursor=pointer]:
+                        - /url: /user/Rob/
+                        - img "u/Rob avatar" [ref=f290e178]
+                      - generic [ref=f290e180]: •
+                      - link "Ad" [ref=f290e182] [cursor=pointer]:
+                        - /url: /user/Rob/
+                      - link [ref=f290e185] [cursor=pointer]:
+                        - /url: https://alb.reddit.com/cr?za=S5T4zOHALyfN3gGBWNLorMa6489MzY0Cw3SiZlQDFBlIaZSppiStT_Hxjj5TVc1ubb3MfSK31ZIJ2Eq9piu9DFiEk2yaQZvuGp3YBuOXho8P5uBMq6F85eEjSUUgmNJ_JQDnWK1JhV8G5VX0I8-feTbWfKciWqw9qo2keORt1C3LMt3Z0O8ebzuJXBbaWDqjwwsC9IYyyaENLS8vyQJLFG-9AFVf_0FBwqP2PqvvoeeANxBHyDYEGP-qqNKGaad3BFRgxdxNgm4PhDkqLyIOkbkrkeaJ4in8071GGUJNQEtnuJ0M_bMnqz8P7u1BoOU0KiyTXaH58oiqmRUh8Z2n0odR_6cWpEyO_hZ3rUMCDJ1jgDWoHVDgGggrqgoVlAPFULfIsD3G6UatuZCVBBlFUXALd0Tk-RGf7oHrjqWn7I2rjcG2YlziV4EGd6vb1tVZphy-IWXyfVt15bsz4f0l4fYYccEg0v_llL9RuaemDDC060KHjRYVw9UZz4-X8td4H0M1NO_X4ZBHvQWl1yALQtiOUF07GTneg1jEJZiynTwdxbFwuuv3v8Mijc72B0jTDu_rbGJlDJX90NJBUSv-yd_b23bgW968KGJ-678F8Ft0ivJsltxvaniTX4S0jTF3o5kYNHQS4obW_KDZIZKdhj3hyVDSocpHyQY_um6VuFRooH_1TedDIJUJ04546CizgN0IbA&zp=Al4Sk307cD7UXJqF_Zati1kc1cbWVCtODzLrPPzQzc-R7CfDSHJs-wCE3VftDZAm3rJA2gRE0n_-g_Z31vm4w0cUWrb1GnSx0D6vz8wAWzFwnUGaJPo2QgV3n1kPNXaMPgrmY-xeVKitmzBaSm0zsHdmpcSHMLvKMUyWwZC-7G-5DzJJnCtrQltDoMs2pUUIiI9VA1iiua_z2Rg7BnJlNDbET-7wiiUQ3xGRmH7R4JH9wybcRF14kEU3agw5lQCe4O1ShPq_P1AIfZw5R1FZZLY
+                    - button "Open user actions" [ref=f290e191] [cursor=pointer]
+                  - generic [ref=f290e197]:
+                    - generic [ref=f290e198]:
+                      - link "Want Faster, Better, Cheaper AI?" [ref=f290e200] [cursor=pointer]:
+                        - /url: https://alb.reddit.com/cr?za=S5T4zOHALyfN3gGBWNLorMa6489MzY0Cw3SiZlQDFBlIaZSppiStT_Hxjj5TVc1ubb3MfSK31ZIJ2Eq9piu9DFiEk2yaQZvuGp3YBuOXho8P5uBMq6F85eEjSUUgmNJ_JQDnWK1JhV8G5VX0I8-feTbWfKciWqw9qo2keORt1C3LMt3Z0O8ebzuJXBbaWDqjwwsC9IYyyaENLS8vyQJLFG-9AFVf_0FBwqP2PqvvoeeANxBHyDYEGP-qqNKGaad3BFRgxdxNgm4PhDkqLyIOkbkrkeaJ4in8071GGUJNQEtnuJ0M_bMnqz8P7u1BoOU0KiyTXaH58oiqmRUh8Z2n0odR_6cWpEyO_hZ3rUMCDJ1jgDWoHVDgGggrqgoVlAPFULfIsD3G6UatuZCVBBlFUXALd0Tk-RGf7oHrjqWn7I2rjcG2YlziV4EGd6vb1tVZphy-IWXyfVt15bsz4f0l4fYYccEg0v_llL9RuaemDDC060KHjRYVw9UZz4-X8td4H0M1NO_X4ZBHvQWl1yALQtiOUF07GTneg1jEJZiynTwdxbFwuuv3v8Mijc72B0jTDu_rbGJlDJX90NJBUSv-yd_b23bgW968KGJ-678F8Ft0ivJsltxvaniTX4S0jTF3o5kYNHQS4obW_KDZIZKdhj3hyVDSocpHyQY_um6VuFRooH_1TedDIJUJ04546CizgN0IbA&zp=Al4Sk307cD7UXJqF_Zati1kc1cbWVCtODzLrPPzQzc-R7CfDSHJs-wCE3VftDZAm3rJA2gRE0n_-g_Z31vm4w0cUWrb1GnSx0D6vz8wAWzFwnUGaJPo2QgV3n1kPNXaMPgrmY-xeVKitmzBaSm0zsHdmpcSHMLvKMUyWwZC-7G-5DzJJnCtrQltDoMs2pUUIiI9VA1iiua_z2Rg7BnJlNDbET-7wiiUQ3xGRmH7R4JH9wybcRF14kEU3agw5lQCe4O1ShPq_P1AIfZw5R1FZZLY
+                      - generic [ref=f290e201]:
+                        - link [ref=f290e203] [cursor=pointer]:
+                          - /url: https://alb.reddit.com/cr?za=S5T4zOHALyfN3gGBWNLorMa6489MzY0Cw3SiZlQDFBlIaZSppiStT_Hxjj5TVc1ubb3MfSK31ZIJ2Eq9piu9DFiEk2yaQZvuGp3YBuOXho8P5uBMq6F85eEjSUUgmNJ_JQDnWK1JhV8G5VX0I8-feTbWfKciWqw9qo2keORt1C3LMt3Z0O8ebzuJXBbaWDqjwwsC9IYyyaENLS8vyQJLFG-9AFVf_0FBwqP2PqvvoeeANxBHyDYEGP-qqNKGaad3BFRgxdxNgm4PhDkqLyIOkbkrkeaJ4in8071GGUJNQEtnuJ0M_bMnqz8P7u1BoOU0KiyTXaH58oiqmRUh8Z2n0odR_6cWpEyO_hZ3rUMCDJ1jgDWoHVDgGggrqgoVlAPFULfIsD3G6UatuZCVBBlFUXALd0Tk-RGf7oHrjqWn7I2rjcG2YlziV4EGd6vb1tVZphy-IWXyfVt15bsz4f0l4fYYccEg0v_llL9RuaemDDC060KHjRYVw9UZz4-X8td4H0M1NO_X4ZBHvQWl1yALQtiOUF07GTneg1jEJZiynTwdxbFwuuv3v8Mijc72B0jTDu_rbGJlDJX90NJBUSv-yd_b23bgW968KGJ-678F8Ft0ivJsltxvaniTX4S0jTF3o5kYNHQS4obW_KDZIZKdhj3hyVDSocpHyQY_um6VuFRooH_1TedDIJUJ04546CizgN0IbA&zp=Al4Sk307cD7UXJqF_Zati1kc1cbWVCtODzLrPPzQzc-R7CfDSHJs-wCE3VftDZAm3rJA2gRE0n_-g_Z31vm4w0cUWrb1GnSx0D6vz8wAWzFwnUGaJPo2QgV3n1kPNXaMPgrmY-xeVKitmzBaSm0zsHdmpcSHMLvKMUyWwZC-7G-5DzJJnCtrQltDoMs2pUUIiI9VA1iiua_z2Rg7BnJlNDbET-7wiiUQ3xGRmH7R4JH9wybcRF14kEU3agw5lQCe4O1ShPq_P1AIfZw5R1FZZLY
+                        - generic [ref=f290e204]:
+                          - link "Sign Up" [ref=f290e206] [cursor=pointer]:
+                            - /url: https://alb.reddit.com/cr?za=S5T4zOHALyfN3gGBWNLorMa6489MzY0Cw3SiZlQDFBlIaZSppiStT_Hxjj5TVc1ubb3MfSK31ZIJ2Eq9piu9DFiEk2yaQZvuGp3YBuOXho8P5uBMq6F85eEjSUUgmNJ_JQDnWK1JhV8G5VX0I8-feTbWfKciWqw9qo2keORt1C3LMt3Z0O8ebzuJXBbaWDqjwwsC9IYyyaENLS8vyQJLFG-9AFVf_0FBwqP2PqvvoeeANxBHyDYEGP-qqNKGaad3BFRgxdxNgm4PhDkqLyIOkbkrkeaJ4in8071GGUJNQEtnuJ0M_bMnqz8P7u1BoOU0KiyTXaH58oiqmRUh8Z2n0odR_6cWpEyO_hZ3rUMCDJ1jgDWoHVDgGggrqgoVlAPFULfIsD3G6UatuZCVBBlFUXALd0Tk-RGf7oHrjqWn7I2rjcG2YlziV4EGd6vb1tVZphy-IWXyfVt15bsz4f0l4fYYccEg0v_llL9RuaemDDC060KHjRYVw9UZz4-X8td4H0M1NO_X4ZBHvQWl1yALQtiOUF07GTneg1jEJZiynTwdxbFwuuv3v8Mijc72B0jTDu_rbGJlDJX90NJBUSv-yd_b23bgW968KGJ-678F8Ft0ivJsltxvaniTX4S0jTF3o5kYNHQS4obW_KDZIZKdhj3hyVDSocpHyQY_um6VuFRooH_1TedDIJUJ04546CizgN0IbA&zp=Al4Sk307cD7UXJqF_Zati1kc1cbWVCtODzLrPPzQzc-R7CfDSHJs-wCE3VftDZAm3rJA2gRE0n_-g_Z31vm4w0cUWrb1GnSx0D6vz8wAWzFwnUGaJPo2QgV3n1kPNXaMPgrmY-xeVKitmzBaSm0zsHdmpcSHMLvKMUyWwZC-7G-5DzJJnCtrQltDoMs2pUUIiI9VA1iiua_z2Rg7BnJlNDbET-7wiiUQ3xGRmH7R4JH9wybcRF14kEU3agw5lQCe4O1ShPq_P1AIfZw5R1FZZLY
+                          - link "marketplace.neurometric.ai" [ref=f290e211] [cursor=pointer]:
+                            - /url: https://alb.reddit.com/cr?za=S5T4zOHALyfN3gGBWNLorMa6489MzY0Cw3SiZlQDFBlIaZSppiStT_Hxjj5TVc1ubb3MfSK31ZIJ2Eq9piu9DFiEk2yaQZvuGp3YBuOXho8P5uBMq6F85eEjSUUgmNJ_JQDnWK1JhV8G5VX0I8-feTbWfKciWqw9qo2keORt1C3LMt3Z0O8ebzuJXBbaWDqjwwsC9IYyyaENLS8vyQJLFG-9AFVf_0FBwqP2PqvvoeeANxBHyDYEGP-qqNKGaad3BFRgxdxNgm4PhDkqLyIOkbkrkeaJ4in8071GGUJNQEtnuJ0M_bMnqz8P7u1BoOU0KiyTXaH58oiqmRUh8Z2n0odR_6cWpEyO_hZ3rUMCDJ1jgDWoHVDgGggrqgoVlAPFULfIsD3G6UatuZCVBBlFUXALd0Tk-RGf7oHrjqWn7I2rjcG2YlziV4EGd6vb1tVZphy-IWXyfVt15bsz4f0l4fYYccEg0v_llL9RuaemDDC060KHjRYVw9UZz4-X8td4H0M1NO_X4ZBHvQWl1yALQtiOUF07GTneg1jEJZiynTwdxbFwuuv3v8Mijc72B0jTDu_rbGJlDJX90NJBUSv-yd_b23bgW968KGJ-678F8Ft0ivJsltxvaniTX4S0jTF3o5kYNHQS4obW_KDZIZKdhj3hyVDSocpHyQY_um6VuFRooH_1TedDIJUJ04546CizgN0IbA&zp=Al4Sk307cD7UXJqF_Zati1kc1cbWVCtODzLrPPzQzc-R7CfDSHJs-wCE3VftDZAm3rJA2gRE0n_-g_Z31vm4w0cUWrb1GnSx0D6vz8wAWzFwnUGaJPo2QgV3n1kPNXaMPgrmY-xeVKitmzBaSm0zsHdmpcSHMLvKMUyWwZC-7G-5DzJJnCtrQltDoMs2pUUIiI9VA1iiua_z2Rg7BnJlNDbET-7wiiUQ3xGRmH7R4JH9wybcRF14kEU3agw5lQCe4O1ShPq_P1AIfZw5R1FZZLY
+                    - link [ref=f290e214] [cursor=pointer]:
+                      - /url: https://alb.reddit.com/cr?za=S5T4zOHALyfN3gGBWNLorMa6489MzY0Cw3SiZlQDFBlIaZSppiStT_Hxjj5TVc1ubb3MfSK31ZIJ2Eq9piu9DFiEk2yaQZvuGp3YBuOXho8P5uBMq6F85eEjSUUgmNJ_JQDnWK1JhV8G5VX0I8-feTbWfKciWqw9qo2keORt1C3LMt3Z0O8ebzuJXBbaWDqjwwsC9IYyyaENLS8vyQJLFG-9AFVf_0FBwqP2PqvvoeeANxBHyDYEGP-qqNKGaad3BFRgxdxNgm4PhDkqLyIOkbkrkeaJ4in8071GGUJNQEtnuJ0M_bMnqz8P7u1BoOU0KiyTXaH58oiqmRUh8Z2n0odR_6cWpEyO_hZ3rUMCDJ1jgDWoHVDgGggrqgoVlAPFULfIsD3G6UatuZCVBBlFUXALd0Tk-RGf7oHrjqWn7I2rjcG2YlziV4EGd6vb1tVZphy-IWXyfVt15bsz4f0l4fYYccEg0v_llL9RuaemDDC060KHjRYVw9UZz4-X8td4H0M1NO_X4ZBHvQWl1yALQtiOUF07GTneg1jEJZiynTwdxbFwuuv3v8Mijc72B0jTDu_rbGJlDJX90NJBUSv-yd_b23bgW968KGJ-678F8Ft0ivJsltxvaniTX4S0jTF3o5kYNHQS4obW_KDZIZKdhj3hyVDSocpHyQY_um6VuFRooH_1TedDIJUJ04546CizgN0IbA&zp=Al4Sk307cD7UXJqF_Zati1kc1cbWVCtODzLrPPzQzc-R7CfDSHJs-wCE3VftDZAm3rJA2gRE0n_-g_Z31vm4w0cUWrb1GnSx0D6vz8wAWzFwnUGaJPo2QgV3n1kPNXaMPgrmY-xeVKitmzBaSm0zsHdmpcSHMLvKMUyWwZC-7G-5DzJJnCtrQltDoMs2pUUIiI9VA1iiua_z2Rg7BnJlNDbET-7wiiUQ3xGRmH7R4JH9wybcRF14kEU3agw5lQCe4O1ShPq_P1AIfZw5R1FZZLY
+                      - 'img "Thumbnail image: Want Faster, Better, Cheaper AI?" [ref=f290e215]'
+              - generic [ref=f290e222]:
+                - generic [ref=f290e224]:
+                  - generic [aria-hidden] [ref=f290e225]: "Sort by:"
+                  - button "Sort by Best" [ref=f290e230] [cursor=pointer]:
+                    - generic [ref=f290e231]: Best
+                - button "Search Comments Expand comment search" [ref=f290e239] [cursor=pointer]:
+                  - generic [ref=f290e240]: Search Comments
+                  - generic [ref=f290e247]: Expand comment search
+              - region "Comments" [ref=f290e250]:
+                - heading "Comments Section" [level=1] [ref=f290e251]
+                - article "Comment from Jalex2321 4 years ago" [ref=f290e253]:
+                  - generic [ref=f290e254] [cursor=pointer]:
+                    - link "Jalex2321's profile --- avatar" [ref=f290e260]:
+                      - /url: https://www.reddit.com/user/Jalex2321/
+                    - generic [ref=f290e276]:
+                      - link "Jalex2321's profile" [ref=f290e280]:
+                        - /url: https://www.reddit.com/user/Jalex2321/
+                        - text: Jalex2321
+                      - generic [aria-hidden] [ref=f290e281]: •
+                      - link [ref=f290e283]:
+                        - /url: https://www.reddit.com/r/TooAfraidToAsk/comments/11mwitx/comment/jbk0yq0/
+                        - time [ref=f290e285]: 4y ago
+                  - generic [ref=f290e287]:
+                    - generic [ref=f290e290]:
+                      - paragraph [ref=f290e291]: The virus would come from the pop up, which isn't controlled by the YT converter website. Website hire pop up content, so what is shown is out of their reach and control. Pop ups is how those tools make their revenue.
+                      - paragraph [ref=f290e292]: If you actually have a use for downloading YT videos, then buy a YT downloader tool.
+                    - 'article "Comment thread level 1: Reply from knowledgelover94 4 years ago" [ref=f290e297]':
+                      - generic [ref=f290e298] [cursor=pointer]:
+                        - link "knowledgelover94's profile --- avatar" [ref=f290e304]:
+                          - /url: https://www.reddit.com/user/knowledgelover94/
+                        - generic [ref=f290e320]:
+                          - link "knowledgelover94's profile" [ref=f290e324]:
+                            - /url: https://www.reddit.com/user/knowledgelover94/
+                            - text: knowledgelover94
+                          - generic "Comment distinguished as the original poster" [ref=f290e327]: OP
+                          - generic [aria-hidden] [ref=f290e328]: •
+                          - link [ref=f290e330]:
+                            - /url: https://www.reddit.com/r/TooAfraidToAsk/comments/11mwitx/comment/jbk4any/
+                            - time [ref=f290e332]: 4y ago
+                      - generic [ref=f290e334]:
+                        - generic [ref=f290e337]:
+                          - paragraph [ref=f290e338]: Mmm you’re saying they allow ads for revenue and don’t really have control over how those adds affect their site?
+                          - paragraph [ref=f290e339]: I mean I’m not talking about a little ad on the side. I mean when you click the button to convert the file, doing so directs you to a scam website. It’s like super built into these sites. All of them.
+                        - 'article "Comment thread level 2: Reply from Jalex2321 4 years ago" [ref=f290e344]':
+                          - generic [ref=f290e345] [cursor=pointer]:
+                            - link "Jalex2321's profile --- avatar" [ref=f290e351]:
+                              - /url: https://www.reddit.com/user/Jalex2321/
+                            - generic [ref=f290e367]:
+                              - link "Jalex2321's profile" [ref=f290e371]:
+                                - /url: https://www.reddit.com/user/Jalex2321/
+                                - text: Jalex2321
+                              - generic [aria-hidden] [ref=f290e372]: •
+                              - link [ref=f290e374]:
+                                - /url: https://www.reddit.com/r/TooAfraidToAsk/comments/11mwitx/comment/jbk52bd/
+                                - time [ref=f290e376]: 4y ago
+                          - paragraph [ref=f290e382]: Yes, that is how it works.
+                - article "Comment from Cornball73 4 years ago" [ref=f290e386]:
+                  - generic [ref=f290e387] [cursor=pointer]:
+                    - link "Cornball73's profile --- avatar" [ref=f290e393]:
+                      - /url: https://www.reddit.com/user/Cornball73/
+                    - generic [ref=f290e403]:
+                      - link "Cornball73's profile" [ref=f290e407]:
+                        - /url: https://www.reddit.com/user/Cornball73/
+                        - text: Cornball73
+                      - generic [aria-hidden] [ref=f290e408]: •
+                      - link [ref=f290e410]:
+                        - /url: https://www.reddit.com/r/TooAfraidToAsk/comments/11mwitx/comment/jbk4z7d/
+                        - time [ref=f290e412]: 4y ago
+                  - generic [ref=f290e414]:
+                    - paragraph [ref=f290e418]: Use audacity to record the audio from the video.
+                    - 'article "Comment thread level 1: Reply from knowledgelover94 4 years ago" [ref=f290e423]':
+                      - generic [ref=f290e424] [cursor=pointer]:
+                        - link "knowledgelover94's profile --- avatar" [ref=f290e430]:
+                          - /url: https://www.reddit.com/user/knowledgelover94/
+                        - generic [ref=f290e446]:
+                          - link "knowledgelover94's profile" [ref=f290e450]:
+                            - /url: https://www.reddit.com/user/knowledgelover94/
+                            - text: knowledgelover94
+                          - generic "Comment distinguished as the original poster" [ref=f290e453]: OP
+                          - generic [aria-hidden] [ref=f290e454]: •
+                          - link [ref=f290e456]:
+                            - /url: https://www.reddit.com/r/TooAfraidToAsk/comments/11mwitx/comment/jbk6p6x/
+                            - time [ref=f290e458]: 4y ago
+                      - generic [ref=f290e460]:
+                        - paragraph [ref=f290e464]: How? How do I even get the video from YouTube to audacity without using one of those websites?
+                        - 'article "Comment thread level 2: Reply from Cornball73 4 years ago" [ref=f290e469]':
+                          - generic [ref=f290e470] [cursor=pointer]:
+                            - link "Cornball73's profile --- avatar" [ref=f290e476]:
+                              - /url: https://www.reddit.com/user/Cornball73/
+                            - generic [ref=f290e486]:
+                              - link "Cornball73's profile" [ref=f290e490]:
+                                - /url: https://www.reddit.com/user/Cornball73/
+                                - text: Cornball73
+                              - generic [aria-hidden] [ref=f290e491]: •
+                              - link [ref=f290e493]:
+                                - /url: https://www.reddit.com/r/TooAfraidToAsk/comments/11mwitx/comment/jbk7dwo/
+                                - time [ref=f290e495]: 4y ago
+                          - paragraph [ref=f290e501]: Hit “record” on audacity, play the video. Audacity will record the audio. Hopefully I’m not totally misunderstanding what you’re trying to do.
+                - article "Comment from [deleted] 4 years ago" [ref=f290e505]:
+                  - generic "[deleted] 4y ago" [ref=f290e506] [cursor=pointer]:
+                    - generic [ref=f290e520]:
+                      - generic [ref=f290e521]: "[deleted]"
+                      - generic [aria-hidden] [ref=f290e524]: •
+                      - link [ref=f290e526]:
+                        - /url: https://www.reddit.com/r/TooAfraidToAsk/comments/11mwitx/comment/jbk097u/
+                        - time [ref=f290e528]: 4y ago
+                  - paragraph [ref=f290e534]: Weird, haven't had that issue in years.
+                - article "Comment from aM_RT 4 years ago" [ref=f290e538]:
+                  - generic [ref=f290e539] [cursor=pointer]:
+                    - link "aM_RT's profile --- avatar" [ref=f290e545]:
+                      - /url: https://www.reddit.com/user/aM_RT/
+                    - generic [ref=f290e555]:
+                      - link "aM_RT's profile" [ref=f290e559]:
+                        - /url: https://www.reddit.com/user/aM_RT/
+                        - text: aM_RT
+                      - generic [aria-hidden] [ref=f290e560]: •
+                      - link [ref=f290e562]:
+                        - /url: https://www.reddit.com/r/TooAfraidToAsk/comments/11mwitx/comment/jbk6udh/
+                        - time [ref=f290e564]: 4y ago
+                  - paragraph [ref=f290e570]: Download for free AVC (Any Video Converter). You can download most of the videos on the internet and do most conversions.
+                - article "Comment from But_I_Digress_ 4 years ago" [ref=f290e574]:
+                  - generic [ref=f290e575] [cursor=pointer]:
+                    - link "But_I_Digress_'s profile --- avatar" [ref=f290e581]:
+                      - /url: https://www.reddit.com/user/But_I_Digress_/
+                    - generic [ref=f290e590]:
+                      - generic [ref=f290e591]:
+                        - link "But_I_Digress_'s profile" [ref=f290e595]:
+                          - /url: https://www.reddit.com/user/But_I_Digress_/
+                          - text: But_I_Digress_
+                        - generic [aria-hidden] [ref=f290e596]: •
+                        - link [ref=f290e598]:
+                          - /url: https://www.reddit.com/r/TooAfraidToAsk/comments/11mwitx/comment/jbk2bf7/
+                          - time [ref=f290e600]: 4y ago
+                      - generic [ref=f290e603]:
+                        - img "Profile Badge for the Achievement Top 1% Commenter" [ref=f290e604]
+                        - text: Top 1% Commenter
+                  - paragraph [ref=f290e610]: Severs and developers aren't free! We all want to get paid for our work. They obviously do this to pay their expenses. Use a legit paid service if you find these sites too sketchy.
+            - generic [ref=f290e613]:
+              - generic [ref=f290e614]:
+                - complementary "Related Posts Section" [ref=f290e615]:
+                  - heading "Related Posts Section" [level=1] [ref=f290e616]: More posts you may like
+                  - generic [ref=f290e617]: Related posts
+                  - list [ref=f290e623]:
+                    - listitem [ref=f290e624]:
+                      - generic [ref=f290e625]:
+                        - generic [ref=f290e626]:
+                          - link "Google tries to ban websites that convert youtube videos to .mp3" [ref=f290e627] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/Music/comments/wl07c/google_tries_to_ban_websites_that_convert_youtube/
+                          - generic [ref=f290e629]:
+                            - generic [ref=f290e630]:
+                              - generic [ref=f290e633]:
+                                - link "r/Music" [ref=f290e634] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/Music/
+                                - generic [aria-hidden] [ref=f290e639]: •
+                                - time [ref=f290e641]: 14y ago
+                              - link [ref=f290e643] [cursor=pointer]:
+                                - /url: /r/Music/comments/wl07c/google_tries_to_ban_websites_that_convert_youtube/
+                                - heading "List item post - Google tries to ban websites that convert youtube videos to..." [level=3] [ref=f290e646]: Google tries to ban websites that convert youtube videos to .mp3
+                            - generic [ref=f290e648]:
+                              - link "r/Music - Google tries to ban websites that convert youtube videos to .mp3" [ref=f290e649] [cursor=pointer]:
+                                - /url: http://www.change.org/petitions/youtube-googlede-allow-third-party-recording-tools-for-youtube-freedomonyoutube
+                                - img "r/Music - Google tries to ban websites that convert youtube videos to .mp3" [ref=f290e650]
+                              - generic: change
+                          - generic [ref=f290e652]:
+                            - generic [ref=f290e653]: 1.9K
+                            - text: upvotes ·
+                            - generic [ref=f290e654]: "753"
+                            - text: comments
+                        - separator [ref=f290e655]
+                    - listitem [ref=f290e656]:
+                      - generic [ref=f290e657]:
+                        - generic [ref=f290e658]:
+                          - link "I made a safe YouTube to MP3 converter without ads" [ref=f290e659] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/Piracy/comments/1jbqd6j/i_made_a_safe_youtube_to_mp3_converter_without_ads/
+                          - generic [ref=f290e662]:
+                            - generic [ref=f290e665]:
+                              - link "r/Piracy" [ref=f290e666] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/Piracy/
+                              - generic [aria-hidden] [ref=f290e671]: •
+                              - time [ref=f290e673]: 1y ago
+                            - link [ref=f290e675] [cursor=pointer]:
+                              - /url: /r/Piracy/comments/1jbqd6j/i_made_a_safe_youtube_to_mp3_converter_without_ads/
+                              - heading "List item post - I made a safe YouTube to MP3 converter without ads" [level=3] [ref=f290e678]: I made a safe YouTube to MP3 converter without ads
+                          - generic [ref=f290e680]:
+                            - generic [ref=f290e681]: 9.7K
+                            - text: upvotes ·
+                            - generic [ref=f290e682]: "712"
+                            - text: comments
+                        - separator [ref=f290e683]
+                    - listitem [ref=f290e684]:
+                      - generic [ref=f290e685]:
+                        - generic [ref=f290e686]:
+                          - link "Youtube to mp3 converter that is safe" [ref=f290e687] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/browsers/comments/1jo4cb1/youtube_to_mp3_converter_that_is_safe/
+                          - generic [ref=f290e690]:
+                            - generic [ref=f290e693]:
+                              - link "r/browsers" [ref=f290e694] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/browsers/
+                              - generic [aria-hidden] [ref=f290e699]: •
+                              - time [ref=f290e701]: 1y ago
+                            - link [ref=f290e703] [cursor=pointer]:
+                              - /url: /r/browsers/comments/1jo4cb1/youtube_to_mp3_converter_that_is_safe/
+                              - heading "List item post - Youtube to mp3 converter that is safe" [level=3] [ref=f290e706]: Youtube to mp3 converter that is safe
+                          - generic [ref=f290e708]:
+                            - generic [ref=f290e709]: 2.5K
+                            - text: upvotes ·
+                            - generic [ref=f290e710]: "96"
+                            - text: comments
+                        - separator [ref=f290e711]
+                    - listitem
+                    - listitem [ref=f290e712]:
+                      - generic [ref=f290e713]:
+                        - generic [ref=f290e714]:
+                          - link "Has anyone given up on using YouTube because of the constant bombardment of ads?" [ref=f290e715] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/askanything/comments/1s7sapu/has_anyone_given_up_on_using_youtube_because_of/
+                          - generic [ref=f290e718]:
+                            - generic [ref=f290e721]:
+                              - link "r/askanything" [ref=f290e722] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/askanything/
+                              - generic [aria-hidden] [ref=f290e727]: •
+                              - time [ref=f290e729]: 5mo ago
+                            - link [ref=f290e731] [cursor=pointer]:
+                              - /url: /r/askanything/comments/1s7sapu/has_anyone_given_up_on_using_youtube_because_of/
+                              - heading "List item post - Has anyone given up on using YouTube because of the constan..." [level=3] [ref=f290e734]: Has anyone given up on using YouTube because of the constant bombardment of ads?
+                          - generic [ref=f290e736]:
+                            - generic [ref=f290e737]: 1K
+                            - text: upvotes ·
+                            - generic [ref=f290e738]: "921"
+                            - text: comments
+                        - separator [ref=f290e739]
+                    - listitem [ref=f290e740]:
+                      - generic [ref=f290e741]:
+                        - generic [ref=f290e742]:
+                          - link "Youtube to mp3 for very long videos?" [ref=f290e743] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/Piracy/comments/1ctq091/youtube_to_mp3_for_very_long_videos/
+                          - generic [ref=f290e746]:
+                            - generic [ref=f290e749]:
+                              - link "r/Piracy" [ref=f290e750] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/Piracy/
+                              - generic [aria-hidden] [ref=f290e755]: •
+                              - time [ref=f290e757]: 2y ago
+                            - link [ref=f290e759] [cursor=pointer]:
+                              - /url: /r/Piracy/comments/1ctq091/youtube_to_mp3_for_very_long_videos/
+                              - heading "List item post - Youtube to mp3 for very long videos?" [level=3] [ref=f290e762]: Youtube to mp3 for very long videos?
+                          - generic [ref=f290e764]:
+                            - generic [ref=f290e765]: "3"
+                            - text: upvotes ·
+                            - generic [ref=f290e766]: "18"
+                            - text: comments
+                        - separator [ref=f290e767]
+                    - listitem [ref=f290e768]:
+                      - generic [ref=f290e769]:
+                        - generic [ref=f290e770]:
+                          - link "Does anyone know of any software that converts whole youTube playlists into separate mp3 files for each video? (free and safe)" [ref=f290e771] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/software/comments/tkjczu/does_anyone_know_of_any_software_that_converts/
+                          - generic [ref=f290e774]:
+                            - generic [ref=f290e777]:
+                              - link "r/software" [ref=f290e778] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/software/
+                              - generic [aria-hidden] [ref=f290e783]: •
+                              - time [ref=f290e785]: 5y ago
+                            - link [ref=f290e787] [cursor=pointer]:
+                              - /url: /r/software/comments/tkjczu/does_anyone_know_of_any_software_that_converts/
+                              - heading "List item post - Does anyone know of any software that converts whole youTub..." [level=3] [ref=f290e790]: Does anyone know of any software that converts whole youTube playlists into separate mp3 files for each video? (free and safe)
+                          - generic [ref=f290e792]:
+                            - generic [ref=f290e793]: "39"
+                            - text: upvotes ·
+                            - generic [ref=f290e794]: "38"
+                            - text: comments
+                        - separator [ref=f290e795]
+                    - listitem [ref=f290e796]:
+                      - generic [ref=f290e797]:
+                        - generic [ref=f290e798]:
+                          - link "Any good way to download YouTube MP3s safely?" [ref=f290e799] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/software/comments/18b831n/any_good_way_to_download_youtube_mp3s_safely/
+                          - generic [ref=f290e802]:
+                            - generic [ref=f290e805]:
+                              - link "r/software" [ref=f290e806] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/software/
+                              - generic [aria-hidden] [ref=f290e811]: •
+                              - time [ref=f290e813]: 3y ago
+                            - link [ref=f290e815] [cursor=pointer]:
+                              - /url: /r/software/comments/18b831n/any_good_way_to_download_youtube_mp3s_safely/
+                              - heading "List item post - Any good way to download YouTube MP3s safely?" [level=3] [ref=f290e818]: Any good way to download YouTube MP3s safely?
+                          - generic [ref=f290e820]:
+                            - generic [ref=f290e821]: "62"
+                            - text: upvotes ·
+                            - generic [ref=f290e822]: "56"
+                            - text: comments
+                        - separator [ref=f290e823]
+                    - listitem [ref=f290e824]:
+                      - generic [ref=f290e825]:
+                        - generic [ref=f290e826]:
+                          - link "Youtube to mp3 converter for samples?" [ref=f290e827] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/makinghiphop/comments/9l1ni9/youtube_to_mp3_converter_for_samples/
+                          - generic [ref=f290e830]:
+                            - generic [ref=f290e833]:
+                              - link "r/makinghiphop" [ref=f290e834] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/makinghiphop/
+                              - generic [aria-hidden] [ref=f290e839]: •
+                              - time [ref=f290e841]: 8y ago
+                            - link [ref=f290e843] [cursor=pointer]:
+                              - /url: /r/makinghiphop/comments/9l1ni9/youtube_to_mp3_converter_for_samples/
+                              - heading "List item post - Youtube to mp3 converter for samples?" [level=3] [ref=f290e846]: Youtube to mp3 converter for samples?
+                          - generic [ref=f290e848]:
+                            - generic [ref=f290e849]: "7"
+                            - text: upvotes ·
+                            - generic [ref=f290e850]: "38"
+                            - text: comments
+                        - separator [ref=f290e851]
+                    - listitem
+                    - listitem [ref=f290e852]:
+                      - generic [ref=f290e853]:
+                        - generic [ref=f290e854]:
+                          - link "What YouTube to MP3 converters are safe to use?" [ref=f290e855] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/makinghiphop/comments/cmauj9/what_youtube_to_mp3_converters_are_safe_to_use/
+                          - generic [ref=f290e858]:
+                            - generic [ref=f290e861]:
+                              - link "r/makinghiphop" [ref=f290e862] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/makinghiphop/
+                              - generic [aria-hidden] [ref=f290e867]: •
+                              - time [ref=f290e869]: 7y ago
+                            - link [ref=f290e871] [cursor=pointer]:
+                              - /url: /r/makinghiphop/comments/cmauj9/what_youtube_to_mp3_converters_are_safe_to_use/
+                              - heading "List item post - What YouTube to MP3 converters are safe to use?" [level=3] [ref=f290e874]: What YouTube to MP3 converters are safe to use?
+                          - generic [ref=f290e876]:
+                            - generic [ref=f290e877]: "15"
+                            - text: upvotes ·
+                            - generic [ref=f290e878]: "38"
+                            - text: comments
+                        - separator [ref=f290e879]
+                    - listitem [ref=f290e880]:
+                      - generic [ref=f290e881]:
+                        - generic [ref=f290e882]:
+                          - link "Okay, what's the best youtube to mp3 converter I can use?" [ref=f290e883] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/SomeOrdinaryGmrs/comments/yqk2rs/okay_whats_the_best_youtube_to_mp3_converter_i/
+                          - generic [ref=f290e886]:
+                            - generic [ref=f290e889]:
+                              - link "r/SomeOrdinaryGmrs" [ref=f290e890] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/SomeOrdinaryGmrs/
+                              - generic [aria-hidden] [ref=f290e895]: •
+                              - time [ref=f290e897]: 4y ago
+                            - link [ref=f290e899] [cursor=pointer]:
+                              - /url: /r/SomeOrdinaryGmrs/comments/yqk2rs/okay_whats_the_best_youtube_to_mp3_converter_i/
+                              - heading "List item post - Okay, what's the best youtube to mp3 converter I can use?" [level=3] [ref=f290e902]: Okay, what's the best youtube to mp3 converter I can use?
+                          - generic [ref=f290e904]:
+                            - generic [ref=f290e905]: "33"
+                            - text: upvotes ·
+                            - generic [ref=f290e906]: "94"
+                            - text: comments
+                        - separator [ref=f290e907]
+                    - listitem [ref=f290e908]:
+                      - generic [ref=f290e909]:
+                        - generic [ref=f290e910]:
+                          - link "Is it illegal to use a youtube to mp3 converter in Germany?" [ref=f290e911] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/germany/comments/187wlk4/is_it_illegal_to_use_a_youtube_to_mp3_converter/
+                          - generic [ref=f290e914]:
+                            - generic [ref=f290e917]:
+                              - link "r/germany" [ref=f290e918] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/germany/
+                              - generic [aria-hidden] [ref=f290e923]: •
+                              - time [ref=f290e925]: 3y ago
+                            - link [ref=f290e927] [cursor=pointer]:
+                              - /url: /r/germany/comments/187wlk4/is_it_illegal_to_use_a_youtube_to_mp3_converter/
+                              - heading "List item post - Is it illegal to use a youtube to mp3 converter in Germany?" [level=3] [ref=f290e930]: Is it illegal to use a youtube to mp3 converter in Germany?
+                          - generic [ref=f290e932]:
+                            - generic [ref=f290e933]: "4"
+                            - text: upvotes ·
+                            - generic [ref=f290e934]: "56"
+                            - text: comments
+                        - separator [ref=f290e935]
+                    - listitem [ref=f290e936]:
+                      - generic [ref=f290e937]:
+                        - generic [ref=f290e938]:
+                          - link "what is a safe website to convert youtube videos to mp3?" [ref=f290e939] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/AskReddit/comments/1apjhic/what_is_a_safe_website_to_convert_youtube_videos/
+                          - generic [ref=f290e942]:
+                            - generic [ref=f290e945]:
+                              - link "r/AskReddit" [ref=f290e946] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/AskReddit/
+                              - generic [aria-hidden] [ref=f290e951]: •
+                              - time [ref=f290e953]: 3y ago
+                            - link [ref=f290e955] [cursor=pointer]:
+                              - /url: /r/AskReddit/comments/1apjhic/what_is_a_safe_website_to_convert_youtube_videos/
+                              - heading "List item post - what is a safe website to convert youtube videos to mp3?" [level=3] [ref=f290e958]: what is a safe website to convert youtube videos to mp3?
+                          - generic [ref=f290e960]:
+                            - generic [ref=f290e961]: "5"
+                            - text: upvotes ·
+                            - generic [ref=f290e962]: "10"
+                            - text: comments
+                        - separator [ref=f290e963]
+                    - listitem [ref=f290e964]:
+                      - generic [ref=f290e965]:
+                        - generic [ref=f290e966]:
+                          - link "Which YouTube to .mp3 converter gives the best sound quality?" [ref=f290e967] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/software/comments/2kkc9i/which_youtube_to_mp3_converter_gives_the_best/
+                          - generic [ref=f290e970]:
+                            - generic [ref=f290e973]:
+                              - link "r/software" [ref=f290e974] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/software/
+                              - generic [aria-hidden] [ref=f290e979]: •
+                              - time [ref=f290e981]: 12y ago
+                            - link [ref=f290e983] [cursor=pointer]:
+                              - /url: /r/software/comments/2kkc9i/which_youtube_to_mp3_converter_gives_the_best/
+                              - heading "List item post - Which YouTube to .mp3 converter gives the best sound qualit..." [level=3] [ref=f290e986]: Which YouTube to .mp3 converter gives the best sound quality?
+                          - generic [ref=f290e988]:
+                            - generic [ref=f290e989]: "35"
+                            - text: upvotes ·
+                            - generic [ref=f290e990]: "37"
+                            - text: comments
+                        - separator [ref=f290e991]
+                    - listitem [ref=f290e992]:
+                      - generic [ref=f290e993]:
+                        - generic [ref=f290e994]:
+                          - link "All YouTube to MP3 converters stopped working for me" [ref=f290e995] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/software/comments/1gqon2v/all_youtube_to_mp3_converters_stopped_working_for/
+                          - generic [ref=f290e998]:
+                            - generic [ref=f290e1001]:
+                              - link "r/software" [ref=f290e1002] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/software/
+                              - generic [aria-hidden] [ref=f290e1007]: •
+                              - time [ref=f290e1009]: 2y ago
+                            - link [ref=f290e1011] [cursor=pointer]:
+                              - /url: /r/software/comments/1gqon2v/all_youtube_to_mp3_converters_stopped_working_for/
+                              - heading "List item post - All YouTube to MP3 converters stopped working for me" [level=3] [ref=f290e1014]: All YouTube to MP3 converters stopped working for me
+                          - generic [ref=f290e1016]:
+                            - generic [ref=f290e1017]: "18"
+                            - text: upvotes ·
+                            - generic [ref=f290e1018]: "36"
+                            - text: comments
+                        - separator [ref=f290e1019]
+                    - listitem [ref=f290e1020]:
+                      - generic [ref=f290e1021]:
+                        - generic [ref=f290e1022]:
+                          - link "Youtube to MP3 that supports playlists and video downloader" [ref=f290e1023] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/DataHoarder/comments/1igdbb9/youtube_to_mp3_that_supports_playlists_and_video/
+                          - generic [ref=f290e1026]:
+                            - generic [ref=f290e1029]:
+                              - link "r/DataHoarder" [ref=f290e1030] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/DataHoarder/
+                              - generic [aria-hidden] [ref=f290e1037]: •
+                              - time [ref=f290e1039]: 2y ago
+                            - link [ref=f290e1041] [cursor=pointer]:
+                              - /url: /r/DataHoarder/comments/1igdbb9/youtube_to_mp3_that_supports_playlists_and_video/
+                              - heading "List item post - Youtube to MP3 that supports playlists and video downloader" [level=3] [ref=f290e1044]: Youtube to MP3 that supports playlists and video downloader
+                          - generic [ref=f290e1046]:
+                            - generic [ref=f290e1047]: 1K
+                            - text: upvotes ·
+                            - generic [ref=f290e1048]: "37"
+                            - text: comments
+                        - separator [ref=f290e1049]
+                    - listitem [ref=f290e1050]:
+                      - generic [ref=f290e1051]:
+                        - generic [ref=f290e1052]:
+                          - link "Could i have got a virus from youtube to mp3 converting?" [ref=f290e1053] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/antivirus/comments/kuk5z5/could_i_have_got_a_virus_from_youtube_to_mp3/
+                          - generic [ref=f290e1056]:
+                            - generic [ref=f290e1059]:
+                              - link "r/antivirus" [ref=f290e1060] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/antivirus/
+                              - generic [aria-hidden] [ref=f290e1065]: •
+                              - time [ref=f290e1067]: 6y ago
+                            - link [ref=f290e1069] [cursor=pointer]:
+                              - /url: /r/antivirus/comments/kuk5z5/could_i_have_got_a_virus_from_youtube_to_mp3/
+                              - heading "List item post - Could i have got a virus from youtube to mp3 converting?" [level=3] [ref=f290e1072]: Could i have got a virus from youtube to mp3 converting?
+                          - generic [ref=f290e1074]:
+                            - generic [ref=f290e1075]: "2"
+                            - text: upvotes ·
+                            - generic [ref=f290e1076]: "5"
+                            - text: comments
+                        - separator [ref=f290e1077]
+                    - listitem [ref=f290e1078]:
+                      - generic [ref=f290e1079]:
+                        - generic [ref=f290e1080]:
+                          - link "Are there any safe YouTube to MP3 converters out there?" [ref=f290e1081] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/software/comments/6ql782/are_there_any_safe_youtube_to_mp3_converters_out/
+                          - generic [ref=f290e1084]:
+                            - generic [ref=f290e1087]:
+                              - link "r/software" [ref=f290e1088] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/software/
+                              - generic [aria-hidden] [ref=f290e1093]: •
+                              - time [ref=f290e1095]: 9y ago
+                            - link [ref=f290e1097] [cursor=pointer]:
+                              - /url: /r/software/comments/6ql782/are_there_any_safe_youtube_to_mp3_converters_out/
+                              - heading "List item post - Are there any safe YouTube to MP3 converters out there?" [level=3] [ref=f290e1100]: Are there any safe YouTube to MP3 converters out there?
+                          - generic [ref=f290e1102]:
+                            - generic [ref=f290e1103]: "38"
+                            - text: upvotes ·
+                            - generic [ref=f290e1104]: "68"
+                            - text: comments
+                        - separator [ref=f290e1105]
+                    - listitem [ref=f290e1106]:
+                      - generic [ref=f290e1107]:
+                        - generic [ref=f290e1108]:
+                          - link "YouTube ads, how do they get away with it?" [ref=f290e1109] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/TooAfraidToAsk/comments/1s3p08f/youtube_ads_how_do_they_get_away_with_it/
+                          - generic [ref=f290e1112]:
+                            - generic [ref=f290e1115]:
+                              - link "r/TooAfraidToAsk" [ref=f290e1116] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/TooAfraidToAsk/
+                              - generic [aria-hidden] [ref=f290e1121]: •
+                              - time [ref=f290e1123]: 5mo ago
+                            - link [ref=f290e1125] [cursor=pointer]:
+                              - /url: /r/TooAfraidToAsk/comments/1s3p08f/youtube_ads_how_do_they_get_away_with_it/
+                              - heading "List item post - YouTube ads, how do they get away with it?" [level=3] [ref=f290e1128]: YouTube ads, how do they get away with it?
+                          - generic [ref=f290e1130]:
+                            - generic [ref=f290e1131]: "110"
+                            - text: upvotes ·
+                            - generic [ref=f290e1132]: "36"
+                            - text: comments
+                        - separator [ref=f290e1133]
+                    - listitem [ref=f290e1134]:
+                      - generic [ref=f290e1135]:
+                        - generic [ref=f290e1136]:
+                          - link "What is the best YouTube video to MP3 converter?" [ref=f290e1137] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/youtube/comments/1lo8i8g/what_is_the_best_youtube_video_to_mp3_converter/
+                          - generic [ref=f290e1140]:
+                            - generic [ref=f290e1143]:
+                              - link "r/youtube" [ref=f290e1144] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/youtube/
+                              - generic [aria-hidden] [ref=f290e1149]: •
+                              - time [ref=f290e1151]: 1y ago
+                            - link [ref=f290e1153] [cursor=pointer]:
+                              - /url: /r/youtube/comments/1lo8i8g/what_is_the_best_youtube_video_to_mp3_converter/
+                              - heading "List item post - What is the best YouTube video to MP3 converter?" [level=3] [ref=f290e1156]: What is the best YouTube video to MP3 converter?
+                          - generic [ref=f290e1158]:
+                            - generic [ref=f290e1159]: "3"
+                            - text: upvotes ·
+                            - generic [ref=f290e1160]: "19"
+                            - text: comments
+                        - separator [ref=f290e1161]
+                    - listitem [ref=f290e1162]:
+                      - generic [ref=f290e1163]:
+                        - generic [ref=f290e1164]:
+                          - link "Looking for a YouTube to MP3 converter that also works with other social media videos" [ref=f290e1165] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/DataHoarder/comments/1ld1qbm/looking_for_a_youtube_to_mp3_converter_that_also/
+                          - generic [ref=f290e1168]:
+                            - generic [ref=f290e1171]:
+                              - link "r/DataHoarder" [ref=f290e1172] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/DataHoarder/
+                              - generic [aria-hidden] [ref=f290e1179]: •
+                              - time [ref=f290e1181]: 1y ago
+                            - link [ref=f290e1183] [cursor=pointer]:
+                              - /url: /r/DataHoarder/comments/1ld1qbm/looking_for_a_youtube_to_mp3_converter_that_also/
+                              - heading "List item post - Looking for a YouTube to MP3 converter that also works with..." [level=3] [ref=f290e1186]: Looking for a YouTube to MP3 converter that also works with other social media videos
+                          - generic [ref=f290e1188]:
+                            - generic [ref=f290e1189]: "32"
+                            - text: upvotes ·
+                            - generic [ref=f290e1190]: "17"
+                            - text: comments
+                        - separator [ref=f290e1191]
+                    - listitem [ref=f290e1192]:
+                      - generic [ref=f290e1193]:
+                        - generic [ref=f290e1194]:
+                          - link "what is a safe YouTube to mp3 converter?" [ref=f290e1195] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/software/comments/wqhnpo/what_is_a_safe_youtube_to_mp3_converter/
+                          - generic [ref=f290e1198]:
+                            - generic [ref=f290e1201]:
+                              - link "r/software" [ref=f290e1202] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/software/
+                              - generic [aria-hidden] [ref=f290e1207]: •
+                              - time [ref=f290e1209]: 4y ago
+                            - link [ref=f290e1211] [cursor=pointer]:
+                              - /url: /r/software/comments/wqhnpo/what_is_a_safe_youtube_to_mp3_converter/
+                              - heading "List item post - what is a safe YouTube to mp3 converter?" [level=3] [ref=f290e1214]: what is a safe YouTube to mp3 converter?
+                          - generic [ref=f290e1216]:
+                            - generic [ref=f290e1217]: "3"
+                            - text: upvotes ·
+                            - generic [ref=f290e1218]: "10"
+                            - text: comments
+                        - separator [ref=f290e1219]
+                    - listitem [ref=f290e1220]:
+                      - generic [ref=f290e1221]:
+                        - generic [ref=f290e1222]:
+                          - link "Dude What's up with youtube ads?!" [ref=f290e1223] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/mildlyinfuriating/comments/1v3lxgq/dude_whats_up_with_youtube_ads/
+                          - generic [ref=f290e1225]:
+                            - generic [ref=f290e1226]:
+                              - generic [ref=f290e1229]:
+                                - link "r/mildlyinfuriating" [ref=f290e1230] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/mildlyinfuriating/
+                                - generic [aria-hidden] [ref=f290e1235]: •
+                                - time [ref=f290e1237]: 1mo ago
+                              - link [ref=f290e1239] [cursor=pointer]:
+                                - /url: /r/mildlyinfuriating/comments/1v3lxgq/dude_whats_up_with_youtube_ads/
+                                - heading "List item post - Dude What's up with youtube ads?!" [level=3] [ref=f290e1242]: Dude What's up with youtube ads?!
+                            - generic [ref=f290e1244]:
+                              - link "r/mildlyinfuriating - Dude What's up with youtube ads?!" [ref=f290e1245] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/mildlyinfuriating/comments/1v3lxgq/dude_whats_up_with_youtube_ads/
+                                - img "r/mildlyinfuriating - Dude What's up with youtube ads?!" [ref=f290e1246]
+                              - generic: 0:46
+                          - generic [ref=f290e1248]:
+                            - generic [ref=f290e1249]: "21"
+                            - text: upvotes ·
+                            - generic [ref=f290e1250]: "22"
+                            - text: comments
+                        - separator [ref=f290e1251]
+                    - listitem [ref=f290e1252]:
+                      - generic [ref=f290e1253]:
+                        - generic [ref=f290e1254]:
+                          - link "Is it just me or did \"youtube to mp3\" type sites become a lot more dangerous to use" [ref=f290e1255] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/self/comments/xu9rc0/is_it_just_me_or_did_youtube_to_mp3_type_sites/
+                          - generic [ref=f290e1258]:
+                            - generic [ref=f290e1261]:
+                              - link "r/self" [ref=f290e1262] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/self/
+                              - generic [aria-hidden] [ref=f290e1267]: •
+                              - time [ref=f290e1269]: 4y ago
+                            - link [ref=f290e1271] [cursor=pointer]:
+                              - /url: /r/self/comments/xu9rc0/is_it_just_me_or_did_youtube_to_mp3_type_sites/
+                              - heading "List item post - Is it just me or did \"youtube to mp3\" type sites become a l..." [level=3] [ref=f290e1274]: Is it just me or did "youtube to mp3" type sites become a lot more dangerous to use
+                          - generic [ref=f290e1276]:
+                            - generic [ref=f290e1277]: "7"
+                            - text: upvotes ·
+                            - generic [ref=f290e1278]: "7"
+                            - text: comments
+                        - separator [ref=f290e1279]
+                    - listitem [ref=f290e1280]:
+                      - generic [ref=f290e1281]:
+                        - generic [ref=f290e1282]:
+                          - link "What Are the Issues with Using MP3 Rips from YouTube for DJing (Beyond Legal Concerns)?" [ref=f290e1283] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/DJs/comments/1esves9/what_are_the_issues_with_using_mp3_rips_from/
+                          - generic [ref=f290e1286]:
+                            - generic [ref=f290e1289]:
+                              - link "r/DJs" [ref=f290e1290] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/DJs/
+                              - generic [aria-hidden] [ref=f290e1295]: •
+                              - time [ref=f290e1297]: 2y ago
+                            - link [ref=f290e1299] [cursor=pointer]:
+                              - /url: /r/DJs/comments/1esves9/what_are_the_issues_with_using_mp3_rips_from/
+                              - heading "List item post - What Are the Issues with Using MP3 Rips from YouTube for DJ..." [level=3] [ref=f290e1302]: What Are the Issues with Using MP3 Rips from YouTube for DJing (Beyond Legal Concerns)?
+                          - generic [ref=f290e1304]:
+                            - generic [ref=f290e1305]: "53"
+                            - text: comments
+                        - separator [ref=f290e1306]
+                    - listitem [ref=f290e1307]:
+                      - generic [ref=f290e1309]:
+                        - link "YouTube to mp3 download - cobalt tools?" [ref=f290e1310] [cursor=pointer]:
+                          - /url: https://www.reddit.com/r/software/comments/1d8qsm2/youtube_to_mp3_download_cobalt_tools/
+                        - generic [ref=f290e1313]:
+                          - generic [ref=f290e1316]:
+                            - link "r/software" [ref=f290e1317] [cursor=pointer]:
+                              - /url: https://www.reddit.com/r/software/
+                            - generic [aria-hidden] [ref=f290e1322]: •
+                            - time [ref=f290e1324]: 2y ago
+                          - link [ref=f290e1326] [cursor=pointer]:
+                            - /url: /r/software/comments/1d8qsm2/youtube_to_mp3_download_cobalt_tools/
+                            - heading "List item post - YouTube to mp3 download - cobalt tools?" [level=3] [ref=f290e1329]: YouTube to mp3 download - cobalt tools?
+                        - generic [ref=f290e1331]:
+                          - generic [ref=f290e1332]: "22"
+                          - text: upvotes ·
+                          - generic [ref=f290e1333]: "51"
+                          - text: comments
+                - generic [ref=f290e1334]:
+                  - heading "View Post in" [level=2] [ref=f290e1336]
+                  - generic [ref=f290e1338]:
+                    - link "简体中文" [ref=f290e1340] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/TooAfraidToAsk/comments/11mwitx/why_does_every_website_that_converts_youtube/?tl=zh-hans
+                    - link "繁體中文" [ref=f290e1342] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/TooAfraidToAsk/comments/11mwitx/why_does_every_website_that_converts_youtube/?tl=zh-hant
+                    - link "日本語" [ref=f290e1344] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/TooAfraidToAsk/comments/11mwitx/why_does_every_website_that_converts_youtube/?tl=ja
+                    - link "Português (Brasil)" [ref=f290e1346] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/TooAfraidToAsk/comments/11mwitx/why_does_every_website_that_converts_youtube/?tl=pt-br
+                    - group [ref=f290e1347]:
+                      - generic "See more" [ref=f290e1348] [cursor=pointer]
+                - complementary "Community information" [ref=f290e1353]:
+                  - generic [ref=f290e1355]:
+                    - heading "Community Info Section" [level=1] [ref=f290e1356]
+                    - generic [ref=f290e1357]:
+                      - link "r/TooAfraidToAsk" [ref=f290e1359] [cursor=pointer]:
+                        - /url: /r/TooAfraidToAsk/
+                      - button "Join" [ref=f290e1364] [cursor=pointer]
+                    - generic [ref=f290e1365]:
+                      - generic [ref=f290e1366]: Everything & Anything You Were Too Afraid To Ask
+                      - generic [ref=f290e1367]: A place for any question you’ve ever been TooAfraidToAsk
+                      - generic: Public
+                - generic [ref=f290e1373]:
+                  - heading "Top Posts" [level=2] [ref=f290e1374]
+                  - list [ref=f290e1375]:
+                    - listitem [ref=f290e1376]:
+                      - 'link "Reddit reReddit: Top posts of March 9, 2023" [ref=f290e1377] [cursor=pointer]':
+                        - /url: https://www.reddit.com/posts/2023/march-9-1/global/
+                        - generic [ref=f290e1378]: Reddit
+                        - generic [ref=f290e1393]: "reReddit: Top posts of March 9, 2023"
+                        - separator [ref=f290e1394]
+                    - listitem [ref=f290e1395]:
+                      - 'link "Reddit reReddit: Top posts of March 2023" [ref=f290e1396] [cursor=pointer]':
+                        - /url: https://www.reddit.com/posts/2023/march/global/
+                        - generic [ref=f290e1397]: Reddit
+                        - generic [ref=f290e1412]: "reReddit: Top posts of March 2023"
+                        - separator [ref=f290e1413]
+                    - listitem [ref=f290e1414]:
+                      - 'link "Reddit reReddit: Top posts of 2023" [ref=f290e1415] [cursor=pointer]':
+                        - /url: https://www.reddit.com/posts/2023/global/
+                        - generic [ref=f290e1416]: Reddit
+                        - generic [ref=f290e1431]: "reReddit: Top posts of 2023"
+                        - separator [ref=f290e1432]
+              - list [ref=f290e1434]:
+                - listitem [ref=f290e1435]:
+                  - link "Home" [ref=f290e1437] [cursor=pointer]:
+                    - /url: /?feed=home
+                - listitem [ref=f290e1438]:
+                  - link "Popular" [ref=f290e1440] [cursor=pointer]:
+                    - /url: /r/popular/
+                - listitem [ref=f290e1441]:
+                  - link "News" [ref=f290e1443] [cursor=pointer]:
+                    - /url: /news/
+                - listitem [ref=f290e1444]:
+                  - link "Explore" [ref=f290e1446] [cursor=pointer]:
+                    - /url: /explore/
+                - listitem [ref=f290e1447]:
+                  - link "Best of Reddit" [ref=f290e1449] [cursor=pointer]:
+                    - /url: https://www.reddit.com/posts/2026/global/
+                - listitem [ref=f290e1450]:
+                  - link "Best of Reddit in Portuguese" [ref=f290e1452] [cursor=pointer]:
+                    - /url: https://www.reddit.com/posts/2026/tl-pt-BR/
+                - listitem [ref=f290e1453]:
+                  - link "Best of Reddit in German" [ref=f290e1455] [cursor=pointer]:
+                    - /url: https://www.reddit.com/posts/2026/tl-de/
+                - listitem [ref=f290e1456]:
+                  - link "Reddit Rules" [ref=f290e1458] [cursor=pointer]:
+                    - /url: https://www.redditinc.com/policies/content-policy
+                - listitem [ref=f290e1459]:
+                  - link "Privacy Policy" [ref=f290e1461] [cursor=pointer]:
+                    - /url: https://www.reddit.com/policies/privacy-policy
+                - listitem [ref=f290e1462]:
+                  - link "User Agreement" [ref=f290e1464] [cursor=pointer]:
+                    - /url: https://www.redditinc.com/policies/user-agreement
+                - listitem [ref=f290e1465]:
+                  - link "Accessibility" [ref=f290e1467] [cursor=pointer]:
+                    - /url: https://support.reddithelp.com/hc/sections/38303584022676-Accessibility
+                - listitem [ref=f290e1468]:
+                  - link "Reddit, Inc. © 2026. All rights reserved." [ref=f290e1469] [cursor=pointer]:
+                    - /url: https://redditinc.com
+        - generic [ref=f290e1472]:
+          - paragraph [ref=f290e1473]: Join the most real place on the internet
+          - generic [ref=f290e1475]:
+            - generic [ref=f290e1478]:
+              - iframe [ref=f290e1483]:
+                - button "Continue with Google. Opens in new tab" [ref=f292e3] [cursor=pointer]:
+                  - generic [ref=f292e5]: Continue with Google
+              - generic [ref=f290e1485] [cursor=pointer]:
+                - generic [ref=f290e1486]: Continue with Apple
+                - button "Sign in with Apple" [ref=f290e1492]:
+                  - generic [ref=f290e1493]:
+                    - img:
+                      - generic:
+                        - img:
+                          - generic:  Sign in with Apple
+            - link "Continue with Phone Number" [ref=f290e1498] [cursor=pointer]:
+              - /url: https://www.reddit.com/login/
+            - link "Continue with Email" [ref=f290e1507] [cursor=pointer]:
+              - /url: https://www.reddit.com/register/
+          - paragraph [ref=f290e1514]:
+            - text: By continuing, you agree to our
+            - link "User Agreement" [ref=f290e1515] [cursor=pointer]:
+              - /url: https://www.redditinc.com/policies/user-agreement
+            - text: and acknowledge that you understand the
+            - link "Privacy Policy" [ref=f290e1516] [cursor=pointer]:
+              - /url: https://www.redditinc.com/policies/privacy-policy
+            - text: .

@@ -1,0 +1,57 @@
+{
+  "name": "ilovevideos",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.17.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "lint:copy": "tsx scripts/lint-copy.ts",
+    "lint:registry": "tsx scripts/validate-registry.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "check": "pnpm typecheck && pnpm lint && pnpm lint:copy && pnpm lint:registry && pnpm test"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.7.0",
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "@ffmpeg/util": "^0.12.2",
+    "clsx": "^2.1.1",
+    "cva": "1.0.0-beta.4",
+    "geist": "^1.7.2",
+    "gifenc": "^1.0.3",
+    "lucide-react": "1.38.0",
+    "mediabunny": "^1.55.5",
+    "motion": "^13.1.1",
+    "next": "^16.3.4",
+    "next-intl": "4.14.1",
+    "next-themes": "^0.4.6",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "schema-dts": "^2.0.0",
+    "zod": "^4.5.4",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@biomejs/biome": "^2.5.11",
+    "@playwright/test": "^1.62.1",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^4.1.11"
+  }
+}

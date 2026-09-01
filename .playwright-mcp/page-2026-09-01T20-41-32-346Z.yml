@@ -1,0 +1,8 @@
+- generic [ref=f2e6]:
+  - heading "Looks like we hit a roadblock" [level=1] [ref=f2e7]
+  - paragraph [ref=f2e8]:
+    - text: That link doesn't work.
+    - link "Go to home" [ref=f2e9] [cursor=pointer]:
+      - /url: /
+    - text: to keep designing.
+  - paragraph [ref=f2e10]: "Error: 404 • Ray ID: a34718a64f9474f4-MAA"

@@ -1,0 +1,43 @@
+- generic [ref=f56e3]:
+  - generic [ref=f56e4]: "| | | | |"
+  - main [ref=f56e5]:
+    - generic [ref=f56e7]:
+      - generic [ref=f56e14]:
+        - heading "404 Error" [level=5] [ref=f56e17]
+        - heading "Oops! Page not found" [level=1] [ref=f56e20]
+        - heading "We can't seem to find the page you're looking for. Don't worry though — we're here to help you get back on track. Try searching for what you need or," [level=5] [ref=f56e23]
+        - link "Return To Adobe Help" [ref=f56e28] [cursor=pointer]:
+          - /url: /support.html
+        - generic [ref=f56e39]:
+          - paragraph [ref=f56e45]: Try these instead
+          - generic [ref=f56e48]:
+            - link [ref=f56e52] [cursor=pointer]:
+              - /url: /creative-cloud/apps/troubleshoot/diagnostics-repair-tools/run-creative-cloud-cleaner-tool.html
+              - generic [ref=f56e53]:
+                - heading "Download and run the Creative Cloud Cleaner tool" [level=4] [ref=f56e55]
+                - paragraph [ref=f56e57]: Learn how to run the Creative Cloud Cleaner Tool.
+                - generic [ref=f56e58]:
+                  - img "Creative Cloud" [ref=f56e59]
+                  - paragraph [ref=f56e60]: Creative Cloud
+            - link [ref=f56e64] [cursor=pointer]:
+              - /url: /creative-cloud/apps/generative-ai/generative-credits-faq.html
+              - generic [ref=f56e65]:
+                - heading "Generative credits FAQ" [level=4] [ref=f56e67]
+                - paragraph [ref=f56e69]: Wondering what generative credits are, how many you have in your account, and how you can use them? We've got you covered.
+                - generic [ref=f56e70]:
+                  - img "Creative Cloud" [ref=f56e71]
+                  - paragraph [ref=f56e72]: Creative Cloud
+            - link [ref=f56e76] [cursor=pointer]:
+              - /url: /creative-cloud/apps/integration-with-other-apps/manage-fonts/install-fonts.html
+              - generic [ref=f56e77]:
+                - heading "Install fonts" [level=4] [ref=f56e79]
+                - paragraph [ref=f56e81]: Learn how to install fonts in the Creative Cloud desktop app.
+                - generic [ref=f56e82]:
+                  - img "Creative Cloud" [ref=f56e83]
+                  - paragraph [ref=f56e84]: Creative Cloud
+      - group [ref=f56e103]:
+        - paragraph [ref=f56e104]: Was this page helpful?
+        - generic "Was this page helpful?" [ref=f56e105]:
+          - button "Yes, thanks" [ref=f56e106] [cursor=pointer]
+          - button "Not really" [ref=f56e114] [cursor=pointer]
+  - generic: / / / / / /

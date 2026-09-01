@@ -1,0 +1,225 @@
+- generic [active] [ref=f80e1]:
+  - main [ref=f80e6]:
+    - navigation [ref=f80e10]:
+      - link "Veed" [ref=f80e11] [cursor=pointer]:
+        - /url: /
+      - list [ref=f80e15]:
+        - listitem [ref=f80e16]:
+          - button "Create with AI" [ref=f80e17] [cursor=pointer]
+        - listitem [ref=f80e20]:
+          - link "Ads & templates" [ref=f80e21] [cursor=pointer]:
+            - /url: /create
+        - listitem [ref=f80e24]:
+          - link "Tools" [ref=f80e25] [cursor=pointer]:
+            - /url: /tools
+        - listitem [ref=f80e28]:
+          - link "Enterprise" [ref=f80e29] [cursor=pointer]:
+            - /url: /contact-sales
+        - listitem [ref=f80e30]:
+          - link "Pricing" [ref=f80e31] [cursor=pointer]:
+            - /url: /pricing
+      - generic [ref=f80e32]:
+        - link "Login" [ref=f80e33] [cursor=pointer]:
+          - /url: https://www.veed.io/login
+        - link "Sign Up" [ref=f80e34] [cursor=pointer]:
+          - /url: https://www.veed.io/signup
+    - generic [ref=f80e36]:
+      - generic [ref=f80e37]:
+        - generic [ref=f80e38]:
+          - heading "Great videos start with a plan" [level=1] [ref=f80e39]
+          - paragraph [ref=f80e41]:
+            - link "Start for free" [ref=f80e42] [cursor=pointer]:
+              - /url: /signup?source=pricing-free-plan
+            - text: ", upgrade to get powerful features."
+        - generic [ref=f80e122]:
+          - paragraph [ref=f80e123]: Trusted by millions of teams
+          - generic [ref=f80e126]:
+            - img "Amazon logo" [ref=f80e128]
+            - img "Visa logo" [ref=f80e130]
+            - img "NBCUniversal logo" [ref=f80e132]
+            - img "Google logo" [ref=f80e134]
+            - img "Merck logo" [ref=f80e136]
+            - img "UBS logo" [ref=f80e138]
+            - img "Netflix logo" [ref=f80e140]
+            - img "Pentax logo" [ref=f80e142]
+            - img "Venture Foods logo" [ref=f80e144]
+            - img "P&G logo" [ref=f80e146]
+            - img "BBC logo" [ref=f80e148]
+            - img "Target logo" [ref=f80e150]
+            - img "Meta logo" [ref=f80e152]
+        - button "See all features" [disabled] [ref=f80e181]
+      - generic [ref=f80e182]:
+        - heading "Frequently Asked Questions" [level=2] [ref=f80e183]
+        - generic [ref=f80e184]:
+          - heading [level=3] [ref=f80e186]:
+            - button "Do you offer a trial for paid plans?" [ref=f80e187] [cursor=pointer]
+          - heading [level=3] [ref=f80e191]:
+            - button "Can I really cancel anytime?" [ref=f80e192] [cursor=pointer]
+          - heading [level=3] [ref=f80e196]:
+            - button "What currencies and payment options are available?" [ref=f80e197] [cursor=pointer]
+          - heading [level=3] [ref=f80e201]:
+            - button "Can I add more AI credits to my plan?" [ref=f80e202] [cursor=pointer]
+          - heading [level=3] [ref=f80e206]:
+            - button "How do AI credits work?" [ref=f80e207] [cursor=pointer]
+          - heading [level=3] [ref=f80e211]:
+            - button "What are the limits on subtitles and translations?" [ref=f80e212] [cursor=pointer]
+          - heading [level=3] [ref=f80e216]:
+            - button "How do you charge for multiple users?" [ref=f80e217] [cursor=pointer]
+          - heading [level=3] [ref=f80e221]:
+            - button "What is your refund policy?" [ref=f80e222] [cursor=pointer]
+          - heading [level=3] [ref=f80e226]:
+            - button "Do you offer plans for educational institutions?" [ref=f80e227] [cursor=pointer]
+    - generic [ref=f80e230]:
+      - generic [ref=f80e231]:
+        - generic [ref=f80e233]:
+          - paragraph [ref=f80e234]: Generation
+          - generic [ref=f80e235]:
+            - link "AI Video Generator" [ref=f80e236] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/ai-video
+            - link "Text to Video AI" [ref=f80e237] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/ai-video/text-to-video
+            - link "VEED AI" [ref=f80e238] [cursor=pointer]:
+              - /url: https://www.veed.io/ai
+            - link "Fabric 1.0" [ref=f80e239] [cursor=pointer]:
+              - /url: https://www.veed.io/ai/fabric-1-0
+            - link "AI Avatars" [ref=f80e240] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/ai-avatar
+            - link "AI Image Generator" [ref=f80e241] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/ai-image-generator
+            - link "Image to Video AI" [ref=f80e242] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/image-to-video-ai
+            - link "VideoGPT" [ref=f80e243] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/video-gpt
+            - link "AI Reel Generator" [ref=f80e244] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/ai-video/ai-reel-generator
+            - link "Dubbing AI" [ref=f80e245] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/voice-dubber/ai-dubbing
+            - link "Text to Speech Video" [ref=f80e246] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/text-to-speech-video
+            - link "AI Voice Generator" [ref=f80e247] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/text-to-speech-video/ai-voice-generator
+            - link "Lyric Video Maker" [ref=f80e248] [cursor=pointer]:
+              - /url: https://www.veed.io/create/lyric-video-maker
+            - link "Script Generator" [ref=f80e249] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/script-generator
+            - link "AI Background Expand" [ref=f80e250] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/ai-background-expand
+        - generic [ref=f80e252]:
+          - paragraph [ref=f80e253]: Video Editing
+          - generic [ref=f80e254]:
+            - link "Video Editor" [ref=f80e255] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/video-editor
+            - link "Add Subtitles to Video" [ref=f80e256] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/add-subtitles
+            - link "Auto Subtitle Generator" [ref=f80e257] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/auto-subtitle-generator-online
+            - link "Video Caption Generator" [ref=f80e258] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/auto-subtitle-generator-online/video-caption-generator
+            - link "Add Text to Video" [ref=f80e259] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/add-text-to-video
+            - link "Add Audio to Video" [ref=f80e260] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/add-audio-to-video
+            - link "Video Background Remover" [ref=f80e261] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/video-background-remover
+            - link "Video Compressor" [ref=f80e262] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/video-compressor
+            - link "Video Converter" [ref=f80e263] [cursor=pointer]:
+              - /url: https://www.veed.io/convert/video-converter
+            - link "Video to Text" [ref=f80e264] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/video-to-text
+            - link "Audio to Text" [ref=f80e265] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/audio-to-text
+            - link "Video Translator" [ref=f80e266] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/video-translator
+            - link "Audio Editor" [ref=f80e267] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/audio-editor
+            - link "Online Teleprompter" [ref=f80e268] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/teleprompter
+            - link "Remove Background Noise from Video" [ref=f80e269] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/remove-background-noise-from-video
+            - link "Remove Background Noise from Audio" [ref=f80e270] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/remove-background-noise-from-audio
+            - link "Eye Contact AI" [ref=f80e271] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/eye-tracking-software/eye-contact-ai
+        - generic [ref=f80e273]:
+          - paragraph [ref=f80e274]: API
+          - generic [ref=f80e275]:
+            - link "AI Video APIs" [ref=f80e276] [cursor=pointer]:
+              - /url: https://www.veed.io/api
+            - link "Fabric 1.0 API" [ref=f80e277] [cursor=pointer]:
+              - /url: https://www.veed.io/ai/fabric-1-0-api
+            - link "Lip Sync API" [ref=f80e278] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/lip-sync-api
+            - link "Lip Sync 2.0 API" [ref=f80e279] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/lip-sync-2-0-api
+            - link "Subtitle API" [ref=f80e280] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/subtitles-api
+            - link "Background Removal API" [ref=f80e281] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/background-remover-api
+            - link "Background Removal Fast API" [ref=f80e282] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/background-remover-api/fast
+            - link "Green Screen API" [ref=f80e283] [cursor=pointer]:
+              - /url: https://www.veed.io/tools/background-remover-api/green-screen-api
+            - link "Live Avatar API Waitlist" [ref=f80e284] [cursor=pointer]:
+              - /url: https://forms.gle/9Q7hqCCxkW5ZAedo6
+        - generic [ref=f80e285]:
+          - generic [ref=f80e286]:
+            - paragraph [ref=f80e287]: Product
+            - generic [ref=f80e288]:
+              - link "Pricing" [ref=f80e289] [cursor=pointer]:
+                - /url: https://www.veed.io/pricing
+              - link "Enterprise" [ref=f80e290] [cursor=pointer]:
+                - /url: https://www.veed.io/enterprise
+          - generic [ref=f80e291]:
+            - paragraph [ref=f80e292]: Resources
+            - generic [ref=f80e293]:
+              - link "Blog" [ref=f80e294] [cursor=pointer]:
+                - /url: https://www.veed.io/blog
+              - link "Learn" [ref=f80e295] [cursor=pointer]:
+                - /url: https://www.veed.io/learn
+              - link "Webinars" [ref=f80e296] [cursor=pointer]:
+                - /url: https://www.veed.io/webinars
+              - link "Alternatives" [ref=f80e297] [cursor=pointer]:
+                - /url: https://www.veed.io/alternatives
+              - link "Affiliate Program" [ref=f80e298] [cursor=pointer]:
+                - /url: https://www.veed.io/affiliate
+        - generic [ref=f80e299]:
+          - generic [ref=f80e300]:
+            - paragraph [ref=f80e301]: Company
+            - generic [ref=f80e302]:
+              - link "About Us" [ref=f80e303] [cursor=pointer]:
+                - /url: https://www.veed.io/about
+              - link "Careers" [ref=f80e304] [cursor=pointer]:
+                - /url: https://www.veed.io/careers
+              - link "Newsroom" [ref=f80e305] [cursor=pointer]:
+                - /url: https://www.veed.io/newsroom
+              - link "Trust Center" [ref=f80e306] [cursor=pointer]:
+                - /url: https://trust.veed.io/
+              - link "Privacy Policy" [ref=f80e307] [cursor=pointer]:
+                - /url: https://www.veed.io/privacy
+              - link "Cookie Policy" [ref=f80e308] [cursor=pointer]:
+                - /url: https://www.veed.io/cookie-policy
+              - link "Terms of Use" [ref=f80e309] [cursor=pointer]:
+                - /url: https://www.veed.io/terms-of-use
+              - link "Contact Support" [ref=f80e310] [cursor=pointer]:
+                - /url: https://help.veed.io
+              - link "Media Enquiries" [ref=f80e311] [cursor=pointer]:
+                - /url: mailto:press@veed.io
+          - generic [ref=f80e312]:
+            - paragraph [ref=f80e313]: Connect
+            - generic [ref=f80e314]:
+              - link "YouTube" [ref=f80e315] [cursor=pointer]:
+                - /url: https://www.youtube.com/veedstudio
+              - link "LinkedIn" [ref=f80e316] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/veedhq/
+              - link "X / Twitter" [ref=f80e317] [cursor=pointer]:
+                - /url: https://twitter.com/veedstudio
+              - link "Instagram" [ref=f80e318] [cursor=pointer]:
+                - /url: https://www.instagram.com/veedstudio/
+              - link "TikTok" [ref=f80e319] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@veedstudio
+              - link "Email" [ref=f80e320] [cursor=pointer]:
+                - /url: mailto:hello@veed.io
+      - paragraph [ref=f80e322]: © Copyright 2026 VEED
+  - alert [ref=f80e323]
+  - iframe [aria-hidden] [ref=f80e324]

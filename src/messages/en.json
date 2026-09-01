@@ -1,0 +1,13 @@
+{
+  "common": {
+    "siteName": "ilovevideos",
+    "tagline": "Every video tool. Free. On your device.",
+    "allTools": "All tools",
+    "privacyLine": "Your file stays on this device.",
+    "chooseFile": "choose a file",
+    "dropHere": "Drop a video here or",
+    "download": "Download",
+    "startOver": "Start over",
+    "remove": "Remove"
+  }
+}

@@ -1,0 +1,91 @@
+- generic [active] [ref=f163e1]:
+  - generic [ref=f163e2]:
+    - link [ref=f163e4] [cursor=pointer]:
+      - /url: https://123apps.com/
+    - navigation "Menu" [ref=f163e7]:
+      - list [ref=f163e8]:
+        - listitem [ref=f163e9]:
+          - link "Video" [ref=f163e10] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f163e16]:
+          - link "Audio" [ref=f163e17] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f163e23]:
+          - link "PDF" [ref=f163e24] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f163e30]:
+          - link "Converters" [ref=f163e31] [cursor=pointer]:
+            - /url: "#"
+    - generic [ref=f163e37]:
+      - button "EN" [ref=f163e38] [cursor=pointer]
+      - button "Sign In" [ref=f163e43] [cursor=pointer]
+  - generic [ref=f163e49]:
+    - generic [ref=f163e50]: Pricing
+    - generic [ref=f163e51]: All apps are free to use, but there are limits on file size and operations per day.
+    - generic [ref=f163e52]:
+      - generic [ref=f163e53]:
+        - generic [ref=f163e54] [cursor=pointer]: Monthly
+        - generic [ref=f163e55] [cursor=pointer]: Yearly-20%
+      - table [ref=f163e57]:
+        - rowgroup [ref=f163e58]:
+          - row [ref=f163e59]:
+            - cell [ref=f163e60]
+            - cell "Free ₹0" [ref=f163e61]:
+              - generic [ref=f163e62]: Free
+              - generic [ref=f163e63]: ₹0
+            - cell "Premium ₹190 per month" [ref=f163e64]:
+              - generic [ref=f163e65]: Premium
+              - generic [ref=f163e66]: ₹190
+              - generic [ref=f163e67]: per month
+          - row [ref=f163e68]:
+            - cell [ref=f163e69]:
+              - generic [ref=f163e70]:
+                - text: Tools included
+                - generic [ref=f163e71] [cursor=pointer]
+            - cell "51" [ref=f163e72]
+            - cell "51" [ref=f163e73]
+          - row [ref=f163e74]:
+            - cell [ref=f163e75]:
+              - generic [ref=f163e76]:
+                - text: Files per day
+                - generic [ref=f163e77] [cursor=pointer]
+            - cell "5" [ref=f163e78]
+            - cell "Unlimited" [ref=f163e79]
+          - row [ref=f163e80]:
+            - cell "Maximum file size" [ref=f163e81]
+            - cell "500 MB" [ref=f163e82]
+            - cell "4 GB" [ref=f163e83]
+          - row [ref=f163e84]:
+            - cell [ref=f163e85]:
+              - generic [ref=f163e86]:
+                - text: Speed
+                - generic [ref=f163e87] [cursor=pointer]
+            - cell "Fast" [ref=f163e88]
+            - cell "Faster" [ref=f163e89]
+          - row [ref=f163e90]:
+            - cell "Ads" [ref=f163e91]
+            - cell "Yes" [ref=f163e92]
+            - cell "No" [ref=f163e93]
+          - row [ref=f163e94]:
+            - cell "Limits for Video Tools" [ref=f163e95]:
+              - generic [ref=f163e96]:
+                - generic [ref=f163e97]: Limits for
+                - generic [ref=f163e98] [cursor=pointer]: Video Tools
+            - cell [ref=f163e100]:
+              - button "Get Started" [ref=f163e101] [cursor=pointer]
+            - cell [ref=f163e102]:
+              - button "Get Started" [ref=f163e103] [cursor=pointer]
+  - generic [ref=f163e104]:
+    - generic [ref=f163e105]: © 123apps.com
+    - generic [ref=f163e106]:
+      - link "Privacy" [ref=f163e107] [cursor=pointer]:
+        - /url: /legal
+      - link "Refund policy" [ref=f163e108] [cursor=pointer]:
+        - /url: /refunds
+      - link "Pricing" [ref=f163e109] [cursor=pointer]:
+        - /url: /pricing
+      - link "Help" [ref=f163e110] [cursor=pointer]:
+        - /url: https://123apps.com/help
+      - button "Contact us" [ref=f163e111] [cursor=pointer]
+    - link "English" [ref=f163e112] [cursor=pointer]:
+      - /url: "#"

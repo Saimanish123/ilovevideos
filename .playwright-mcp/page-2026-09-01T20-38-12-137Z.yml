@@ -1,0 +1,1043 @@
+- generic [active] [ref=f28e1]:
+  - link "Skip to main content" [ref=f28e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=f28e6]:
+    - generic:
+      - generic: "Any free software that does the same thing as Ezgif? : r/software"
+      - banner [ref=f28e10]:
+        - navigation [ref=f28e11]:
+          - link "Home" [ref=f28e15] [cursor=pointer]:
+            - /url: https://www.reddit.com/
+          - search [ref=f28e34]:
+            - generic [ref=f28e36]:
+              - textbox [ref=f28e43]:
+                - /placeholder: Search Reddit
+              - generic [aria-hidden]: Search Reddit
+          - generic [ref=f28e44]:
+            - link "Sign Up" [ref=f28e50] [cursor=pointer]:
+              - /url: https://www.reddit.com/register/
+            - link "Log In" [ref=f28e56] [cursor=pointer]:
+              - /url: https://www.reddit.com/login/
+            - button "Expand user menu" [ref=f28e63] [cursor=pointer]
+      - generic [ref=f28e69]:
+        - generic [ref=f28e70]:
+          - generic [ref=f28e71]:
+            - generic:
+              - generic:
+                - link "Skip to Sign up" [ref=f28e72] [cursor=pointer]:
+                  - /url: "#left-sidebar-container"
+                - link "Skip to Right Sidebar" [ref=f28e73] [cursor=pointer]:
+                  - /url: "#right-sidebar-container"
+          - generic [ref=f28e74]:
+            - main [ref=f28e75]:
+              - 'generic "Any free software that does the same thing as Ezgif? : r/software"'
+              - generic [ref=f28e76]:
+                - generic [ref=f28e77]:
+                  - generic [ref=f28e78]:
+                    - button "Back" [ref=f28e80] [cursor=pointer]
+                    - link "Go to software" [ref=f28e88] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/software/
+                    - group [ref=f28e93]:
+                      - generic [ref=f28e94]:
+                        - link "r/software" [ref=f28e98] [cursor=pointer]:
+                          - /url: https://www.reddit.com/r/software/
+                        - generic [aria-hidden] [ref=f28e99]: •
+                        - time [ref=f28e101]: 3y ago
+                      - 'link "Author: kngfbng" [ref=f28e107] [cursor=pointer]':
+                        - /url: https://www.reddit.com/user/kngfbng/
+                        - generic [ref=f28e108]: kngfbng
+                  - generic [ref=f28e109]:
+                    - img "Archived post" [ref=f28e113]
+                    - button "Open user actions" [ref=f28e117] [cursor=pointer]
+                - generic [ref=f28e123]:
+                  - 'heading "Post Title: Any free software that does the same thing as Ezgif?" [level=1] [ref=f28e124]': Any free software that does the same thing as Ezgif?
+                  - link [ref=f28e127] [cursor=pointer]:
+                    - /url: /r/software/?f=flair_name%3A%22Looking%20for%20software%20%3AWindows%3A%20%3ASearching%3A%22
+                    - 'generic "Flair: Looking for software :Windows: :Searching:" [ref=f28e129]':
+                      - generic [ref=f28e130]:
+                        - text: Looking for software
+                        - img "emoji:Windows:" [ref=f28e133]
+                        - img "emoji:Searching:" [ref=f28e136]
+                - generic [ref=f28e139]:
+                  - generic [ref=f28e140]:
+                    - paragraph [ref=f28e141]:
+                      - text: Whenever I want to quickly edit a gif, I use
+                      - link "ezgif.com" [ref=f28e142] [cursor=pointer]:
+                        - /url: https://ezgif.com
+                      - text: . The problem is it only allows a single image at a time, which is a chore if you have a few dozen.
+                    - paragraph [ref=f28e143]: There are several free gif editors/creators out there, either online or offline, but they are all very bare bones compared to Ezgif. It's mostly image in, image out with some added effects, resize and maybe crop. Finer controls such as frame rate or compression are rare and apparently never in the same place. I tried another site and the original webp file size quadrupled when converting to gif even while halving width (I'm aware gif is larger, but I get a much better ratio on Ezgif).
+                    - paragraph [ref=f28e144]: I need to convert a series of animated webp to gif specifically, so that's a must. I know ffmpeg and imagemagik can do that even in bulk, but I'd rather have a GUI where I can easily preview the output to tweak settings if needed. Maybe just a GUI for ffmpeg? Basically Ezgif locally, or an equivalent online alternative with bulk capabilities.
+                    - paragraph [ref=f28e145]: Any pointers?
+                    - paragraph [ref=f28e146]: "Edit: I wished I was going to say here that I went with one of the suggestions and had a grand time, but that's not true. The programs recommended couldn't work with animated webp files and my attempt at running a GUI for ImageMagick from Github was more frustrating than so many things I can't just put my finger on one."
+                    - paragraph [ref=f28e147]: Thanks to those who gave suggestions, anyway.
+                  - button "Read more" [ref=f28e148] [cursor=pointer]
+                - generic: Archived post. New comments cannot be posted and votes cannot be cast.
+                - generic "Actions available for this post" [ref=f28e161]:
+                  - generic [ref=f28e164]:
+                    - button "Upvote" [disabled]
+                    - generic [ref=f28e165]: "18"
+                    - button "Downvote" [disabled]
+                  - button "20 Go to comments" [ref=f28e167] [cursor=pointer]:
+                    - generic [ref=f28e168]: "20"
+                    - generic [ref=f28e174]: Go to comments
+                  - button "Share" [ref=f28e178] [cursor=pointer]
+              - generic "Reliable Hosting for Revenue Websites" [ref=f28e185]:
+                - generic [ref=f28e186]:
+                  - 'generic "Advertisement: Reliable Hosting for Revenue Websites" [ref=f28e187]':
+                    - 'link "Advertisement: Reliable Hosting for Revenue Websites" [ref=f28e188] [cursor=pointer]':
+                      - /url: https://alb.reddit.com/cr?za=1OS8HC2nlui5SexeSTFeSs-tZImRV32s8fEUfkcynsrYkWOCeCGH9ASSFtdo-vHPiPDKpXZRIsQ6FwUr_JYuaAIXgkmYLRPLixySARSi8-AMHSdJpUuorvv6Y5yRT-z5q4pNtKB-Xn0B14AFJdqMq7qKcuZtqeLrtIFaGLUfkD_hUGodndYUHtffTPmJeII1g6ZsXAsoanXihJeRt6ZfDKUX_eLL0pP2-E01oTTD1Yk9VpG9eMeTZzY4P5sgPyRyf1Q4MVZO4gKO_KojOSxaWohOX81j6Ry0lYoVb79FFqZ8BrL6ultLQwhIoIl7UYBELmBueRJD2SPqpd8gkIvGvU2PAaYaBNZFHDK3II09fGmq0U6Anz2oSN4rW6STf2rt1TBpcVKqYPnS-wjaUy4rZYk0NUxI5tf7X5Lm2_tR8dOoWanLIS4TmFJB0b0xSX06OfGNwNSa20VDEyywsyh8j7IFSGDCxtTBNrNCNsm0If9E9J8CXUfjPJBYfoUKw91UaY9JQyy5VdOzqDm1xh6icuUJ7Wq0JYMfJucLTeEfEn3fcmwXt5tshedxKCN561V7KegUa23Dv82D-qpAsPyIy2AX52N-EzFV7ohsezd5NrkQZ0ud1xo3W5uVnih3mcRhev2TfeOcGeR4Pyi_pKti4HYwYBPtVETuGdGP1FYsLW6O4HqoAMdY6Iuu4xscRktSl1AwHAg&zp=gyx0tMqHwEd1YBHPzQIFAa7XgToIbvd_RCAN1196EcWENkwxt-xb5OX46tUWM6N1t3R1VjSEqG8LWDLEe6QiB-4SiULRezdD-J0BBdnlI6h00ukxjBH6ASflj-Ieee9Q3hIP_ZoQvoeNojtBL52y3p1EfcSpryj_b-mAda2oTC_NkmdLkh_XYVpusLjHkXK07ktbMG4xOEdQfv5peCuzoLqP1Uz5hZ3WNDTOMioTfQcKlgWiEkH2fmiwsj2OfB-0QELd6JXnxcdeNsmWod2UnMuphmFSMUUM-NESGPhRFzhPmoLkFYUPg4P_y4unwX1SMWLsjjCaLSl3COlBVdgAh25INKBLdTFjuCAJ3YCseYRJ498gRk9dW3CZuPUjrT6L7xMu1nTH3fcyHodb7JT4wCvbGK8ru7yc8b6jeRaO
+                  - generic [ref=f28e189]:
+                    - generic [ref=f28e190]:
+                      - link "ult83" [ref=f28e193] [cursor=pointer]:
+                        - /url: /user/ult83/
+                        - img "u/ult83 avatar" [ref=f28e196]
+                      - generic [ref=f28e198]: •
+                      - link "Ad" [ref=f28e200] [cursor=pointer]:
+                        - /url: /user/ult83/
+                      - link [ref=f28e203] [cursor=pointer]:
+                        - /url: https://alb.reddit.com/cr?za=1OS8HC2nlui5SexeSTFeSs-tZImRV32s8fEUfkcynsrYkWOCeCGH9ASSFtdo-vHPiPDKpXZRIsQ6FwUr_JYuaAIXgkmYLRPLixySARSi8-AMHSdJpUuorvv6Y5yRT-z5q4pNtKB-Xn0B14AFJdqMq7qKcuZtqeLrtIFaGLUfkD_hUGodndYUHtffTPmJeII1g6ZsXAsoanXihJeRt6ZfDKUX_eLL0pP2-E01oTTD1Yk9VpG9eMeTZzY4P5sgPyRyf1Q4MVZO4gKO_KojOSxaWohOX81j6Ry0lYoVb79FFqZ8BrL6ultLQwhIoIl7UYBELmBueRJD2SPqpd8gkIvGvU2PAaYaBNZFHDK3II09fGmq0U6Anz2oSN4rW6STf2rt1TBpcVKqYPnS-wjaUy4rZYk0NUxI5tf7X5Lm2_tR8dOoWanLIS4TmFJB0b0xSX06OfGNwNSa20VDEyywsyh8j7IFSGDCxtTBNrNCNsm0If9E9J8CXUfjPJBYfoUKw91UaY9JQyy5VdOzqDm1xh6icuUJ7Wq0JYMfJucLTeEfEn3fcmwXt5tshedxKCN561V7KegUa23Dv82D-qpAsPyIy2AX52N-EzFV7ohsezd5NrkQZ0ud1xo3W5uVnih3mcRhev2TfeOcGeR4Pyi_pKti4HYwYBPtVETuGdGP1FYsLW6O4HqoAMdY6Iuu4xscRktSl1AwHAg&zp=gyx0tMqHwEd1YBHPzQIFAa7XgToIbvd_RCAN1196EcWENkwxt-xb5OX46tUWM6N1t3R1VjSEqG8LWDLEe6QiB-4SiULRezdD-J0BBdnlI6h00ukxjBH6ASflj-Ieee9Q3hIP_ZoQvoeNojtBL52y3p1EfcSpryj_b-mAda2oTC_NkmdLkh_XYVpusLjHkXK07ktbMG4xOEdQfv5peCuzoLqP1Uz5hZ3WNDTOMioTfQcKlgWiEkH2fmiwsj2OfB-0QELd6JXnxcdeNsmWod2UnMuphmFSMUUM-NESGPhRFzhPmoLkFYUPg4P_y4unwX1SMWLsjjCaLSl3COlBVdgAh25INKBLdTFjuCAJ3YCseYRJ498gRk9dW3CZuPUjrT6L7xMu1nTH3fcyHodb7JT4wCvbGK8ru7yc8b6jeRaO
+                    - button "Open user actions" [ref=f28e209] [cursor=pointer]
+                  - generic [ref=f28e215]:
+                    - generic [ref=f28e216]:
+                      - link "Reliable Hosting for Revenue Websites" [ref=f28e218] [cursor=pointer]:
+                        - /url: https://alb.reddit.com/cr?za=1OS8HC2nlui5SexeSTFeSs-tZImRV32s8fEUfkcynsrYkWOCeCGH9ASSFtdo-vHPiPDKpXZRIsQ6FwUr_JYuaAIXgkmYLRPLixySARSi8-AMHSdJpUuorvv6Y5yRT-z5q4pNtKB-Xn0B14AFJdqMq7qKcuZtqeLrtIFaGLUfkD_hUGodndYUHtffTPmJeII1g6ZsXAsoanXihJeRt6ZfDKUX_eLL0pP2-E01oTTD1Yk9VpG9eMeTZzY4P5sgPyRyf1Q4MVZO4gKO_KojOSxaWohOX81j6Ry0lYoVb79FFqZ8BrL6ultLQwhIoIl7UYBELmBueRJD2SPqpd8gkIvGvU2PAaYaBNZFHDK3II09fGmq0U6Anz2oSN4rW6STf2rt1TBpcVKqYPnS-wjaUy4rZYk0NUxI5tf7X5Lm2_tR8dOoWanLIS4TmFJB0b0xSX06OfGNwNSa20VDEyywsyh8j7IFSGDCxtTBNrNCNsm0If9E9J8CXUfjPJBYfoUKw91UaY9JQyy5VdOzqDm1xh6icuUJ7Wq0JYMfJucLTeEfEn3fcmwXt5tshedxKCN561V7KegUa23Dv82D-qpAsPyIy2AX52N-EzFV7ohsezd5NrkQZ0ud1xo3W5uVnih3mcRhev2TfeOcGeR4Pyi_pKti4HYwYBPtVETuGdGP1FYsLW6O4HqoAMdY6Iuu4xscRktSl1AwHAg&zp=gyx0tMqHwEd1YBHPzQIFAa7XgToIbvd_RCAN1196EcWENkwxt-xb5OX46tUWM6N1t3R1VjSEqG8LWDLEe6QiB-4SiULRezdD-J0BBdnlI6h00ukxjBH6ASflj-Ieee9Q3hIP_ZoQvoeNojtBL52y3p1EfcSpryj_b-mAda2oTC_NkmdLkh_XYVpusLjHkXK07ktbMG4xOEdQfv5peCuzoLqP1Uz5hZ3WNDTOMioTfQcKlgWiEkH2fmiwsj2OfB-0QELd6JXnxcdeNsmWod2UnMuphmFSMUUM-NESGPhRFzhPmoLkFYUPg4P_y4unwX1SMWLsjjCaLSl3COlBVdgAh25INKBLdTFjuCAJ3YCseYRJ498gRk9dW3CZuPUjrT6L7xMu1nTH3fcyHodb7JT4wCvbGK8ru7yc8b6jeRaO
+                      - generic [ref=f28e219]:
+                        - link [ref=f28e221] [cursor=pointer]:
+                          - /url: https://alb.reddit.com/cr?za=1OS8HC2nlui5SexeSTFeSs-tZImRV32s8fEUfkcynsrYkWOCeCGH9ASSFtdo-vHPiPDKpXZRIsQ6FwUr_JYuaAIXgkmYLRPLixySARSi8-AMHSdJpUuorvv6Y5yRT-z5q4pNtKB-Xn0B14AFJdqMq7qKcuZtqeLrtIFaGLUfkD_hUGodndYUHtffTPmJeII1g6ZsXAsoanXihJeRt6ZfDKUX_eLL0pP2-E01oTTD1Yk9VpG9eMeTZzY4P5sgPyRyf1Q4MVZO4gKO_KojOSxaWohOX81j6Ry0lYoVb79FFqZ8BrL6ultLQwhIoIl7UYBELmBueRJD2SPqpd8gkIvGvU2PAaYaBNZFHDK3II09fGmq0U6Anz2oSN4rW6STf2rt1TBpcVKqYPnS-wjaUy4rZYk0NUxI5tf7X5Lm2_tR8dOoWanLIS4TmFJB0b0xSX06OfGNwNSa20VDEyywsyh8j7IFSGDCxtTBNrNCNsm0If9E9J8CXUfjPJBYfoUKw91UaY9JQyy5VdOzqDm1xh6icuUJ7Wq0JYMfJucLTeEfEn3fcmwXt5tshedxKCN561V7KegUa23Dv82D-qpAsPyIy2AX52N-EzFV7ohsezd5NrkQZ0ud1xo3W5uVnih3mcRhev2TfeOcGeR4Pyi_pKti4HYwYBPtVETuGdGP1FYsLW6O4HqoAMdY6Iuu4xscRktSl1AwHAg&zp=gyx0tMqHwEd1YBHPzQIFAa7XgToIbvd_RCAN1196EcWENkwxt-xb5OX46tUWM6N1t3R1VjSEqG8LWDLEe6QiB-4SiULRezdD-J0BBdnlI6h00ukxjBH6ASflj-Ieee9Q3hIP_ZoQvoeNojtBL52y3p1EfcSpryj_b-mAda2oTC_NkmdLkh_XYVpusLjHkXK07ktbMG4xOEdQfv5peCuzoLqP1Uz5hZ3WNDTOMioTfQcKlgWiEkH2fmiwsj2OfB-0QELd6JXnxcdeNsmWod2UnMuphmFSMUUM-NESGPhRFzhPmoLkFYUPg4P_y4unwX1SMWLsjjCaLSl3COlBVdgAh25INKBLdTFjuCAJ3YCseYRJ498gRk9dW3CZuPUjrT6L7xMu1nTH3fcyHodb7JT4wCvbGK8ru7yc8b6jeRaO
+                        - generic [ref=f28e222]:
+                          - link "Shop Now" [ref=f28e224] [cursor=pointer]:
+                            - /url: https://alb.reddit.com/cr?za=1OS8HC2nlui5SexeSTFeSs-tZImRV32s8fEUfkcynsrYkWOCeCGH9ASSFtdo-vHPiPDKpXZRIsQ6FwUr_JYuaAIXgkmYLRPLixySARSi8-AMHSdJpUuorvv6Y5yRT-z5q4pNtKB-Xn0B14AFJdqMq7qKcuZtqeLrtIFaGLUfkD_hUGodndYUHtffTPmJeII1g6ZsXAsoanXihJeRt6ZfDKUX_eLL0pP2-E01oTTD1Yk9VpG9eMeTZzY4P5sgPyRyf1Q4MVZO4gKO_KojOSxaWohOX81j6Ry0lYoVb79FFqZ8BrL6ultLQwhIoIl7UYBELmBueRJD2SPqpd8gkIvGvU2PAaYaBNZFHDK3II09fGmq0U6Anz2oSN4rW6STf2rt1TBpcVKqYPnS-wjaUy4rZYk0NUxI5tf7X5Lm2_tR8dOoWanLIS4TmFJB0b0xSX06OfGNwNSa20VDEyywsyh8j7IFSGDCxtTBNrNCNsm0If9E9J8CXUfjPJBYfoUKw91UaY9JQyy5VdOzqDm1xh6icuUJ7Wq0JYMfJucLTeEfEn3fcmwXt5tshedxKCN561V7KegUa23Dv82D-qpAsPyIy2AX52N-EzFV7ohsezd5NrkQZ0ud1xo3W5uVnih3mcRhev2TfeOcGeR4Pyi_pKti4HYwYBPtVETuGdGP1FYsLW6O4HqoAMdY6Iuu4xscRktSl1AwHAg&zp=gyx0tMqHwEd1YBHPzQIFAa7XgToIbvd_RCAN1196EcWENkwxt-xb5OX46tUWM6N1t3R1VjSEqG8LWDLEe6QiB-4SiULRezdD-J0BBdnlI6h00ukxjBH6ASflj-Ieee9Q3hIP_ZoQvoeNojtBL52y3p1EfcSpryj_b-mAda2oTC_NkmdLkh_XYVpusLjHkXK07ktbMG4xOEdQfv5peCuzoLqP1Uz5hZ3WNDTOMioTfQcKlgWiEkH2fmiwsj2OfB-0QELd6JXnxcdeNsmWod2UnMuphmFSMUUM-NESGPhRFzhPmoLkFYUPg4P_y4unwX1SMWLsjjCaLSl3COlBVdgAh25INKBLdTFjuCAJ3YCseYRJ498gRk9dW3CZuPUjrT6L7xMu1nTH3fcyHodb7JT4wCvbGK8ru7yc8b6jeRaO
+                          - link "ultahost.com" [ref=f28e229] [cursor=pointer]:
+                            - /url: https://alb.reddit.com/cr?za=1OS8HC2nlui5SexeSTFeSs-tZImRV32s8fEUfkcynsrYkWOCeCGH9ASSFtdo-vHPiPDKpXZRIsQ6FwUr_JYuaAIXgkmYLRPLixySARSi8-AMHSdJpUuorvv6Y5yRT-z5q4pNtKB-Xn0B14AFJdqMq7qKcuZtqeLrtIFaGLUfkD_hUGodndYUHtffTPmJeII1g6ZsXAsoanXihJeRt6ZfDKUX_eLL0pP2-E01oTTD1Yk9VpG9eMeTZzY4P5sgPyRyf1Q4MVZO4gKO_KojOSxaWohOX81j6Ry0lYoVb79FFqZ8BrL6ultLQwhIoIl7UYBELmBueRJD2SPqpd8gkIvGvU2PAaYaBNZFHDK3II09fGmq0U6Anz2oSN4rW6STf2rt1TBpcVKqYPnS-wjaUy4rZYk0NUxI5tf7X5Lm2_tR8dOoWanLIS4TmFJB0b0xSX06OfGNwNSa20VDEyywsyh8j7IFSGDCxtTBNrNCNsm0If9E9J8CXUfjPJBYfoUKw91UaY9JQyy5VdOzqDm1xh6icuUJ7Wq0JYMfJucLTeEfEn3fcmwXt5tshedxKCN561V7KegUa23Dv82D-qpAsPyIy2AX52N-EzFV7ohsezd5NrkQZ0ud1xo3W5uVnih3mcRhev2TfeOcGeR4Pyi_pKti4HYwYBPtVETuGdGP1FYsLW6O4HqoAMdY6Iuu4xscRktSl1AwHAg&zp=gyx0tMqHwEd1YBHPzQIFAa7XgToIbvd_RCAN1196EcWENkwxt-xb5OX46tUWM6N1t3R1VjSEqG8LWDLEe6QiB-4SiULRezdD-J0BBdnlI6h00ukxjBH6ASflj-Ieee9Q3hIP_ZoQvoeNojtBL52y3p1EfcSpryj_b-mAda2oTC_NkmdLkh_XYVpusLjHkXK07ktbMG4xOEdQfv5peCuzoLqP1Uz5hZ3WNDTOMioTfQcKlgWiEkH2fmiwsj2OfB-0QELd6JXnxcdeNsmWod2UnMuphmFSMUUM-NESGPhRFzhPmoLkFYUPg4P_y4unwX1SMWLsjjCaLSl3COlBVdgAh25INKBLdTFjuCAJ3YCseYRJ498gRk9dW3CZuPUjrT6L7xMu1nTH3fcyHodb7JT4wCvbGK8ru7yc8b6jeRaO
+                    - link [ref=f28e232] [cursor=pointer]:
+                      - /url: https://alb.reddit.com/cr?za=1OS8HC2nlui5SexeSTFeSs-tZImRV32s8fEUfkcynsrYkWOCeCGH9ASSFtdo-vHPiPDKpXZRIsQ6FwUr_JYuaAIXgkmYLRPLixySARSi8-AMHSdJpUuorvv6Y5yRT-z5q4pNtKB-Xn0B14AFJdqMq7qKcuZtqeLrtIFaGLUfkD_hUGodndYUHtffTPmJeII1g6ZsXAsoanXihJeRt6ZfDKUX_eLL0pP2-E01oTTD1Yk9VpG9eMeTZzY4P5sgPyRyf1Q4MVZO4gKO_KojOSxaWohOX81j6Ry0lYoVb79FFqZ8BrL6ultLQwhIoIl7UYBELmBueRJD2SPqpd8gkIvGvU2PAaYaBNZFHDK3II09fGmq0U6Anz2oSN4rW6STf2rt1TBpcVKqYPnS-wjaUy4rZYk0NUxI5tf7X5Lm2_tR8dOoWanLIS4TmFJB0b0xSX06OfGNwNSa20VDEyywsyh8j7IFSGDCxtTBNrNCNsm0If9E9J8CXUfjPJBYfoUKw91UaY9JQyy5VdOzqDm1xh6icuUJ7Wq0JYMfJucLTeEfEn3fcmwXt5tshedxKCN561V7KegUa23Dv82D-qpAsPyIy2AX52N-EzFV7ohsezd5NrkQZ0ud1xo3W5uVnih3mcRhev2TfeOcGeR4Pyi_pKti4HYwYBPtVETuGdGP1FYsLW6O4HqoAMdY6Iuu4xscRktSl1AwHAg&zp=gyx0tMqHwEd1YBHPzQIFAa7XgToIbvd_RCAN1196EcWENkwxt-xb5OX46tUWM6N1t3R1VjSEqG8LWDLEe6QiB-4SiULRezdD-J0BBdnlI6h00ukxjBH6ASflj-Ieee9Q3hIP_ZoQvoeNojtBL52y3p1EfcSpryj_b-mAda2oTC_NkmdLkh_XYVpusLjHkXK07ktbMG4xOEdQfv5peCuzoLqP1Uz5hZ3WNDTOMioTfQcKlgWiEkH2fmiwsj2OfB-0QELd6JXnxcdeNsmWod2UnMuphmFSMUUM-NESGPhRFzhPmoLkFYUPg4P_y4unwX1SMWLsjjCaLSl3COlBVdgAh25INKBLdTFjuCAJ3YCseYRJ498gRk9dW3CZuPUjrT6L7xMu1nTH3fcyHodb7JT4wCvbGK8ru7yc8b6jeRaO
+                      - 'img "Thumbnail image: Reliable Hosting for Revenue Websites" [ref=f28e233]'
+              - generic [ref=f28e240]:
+                - generic [ref=f28e242]:
+                  - generic [aria-hidden] [ref=f28e243]: "Sort by:"
+                  - button "Sort by Best" [ref=f28e248] [cursor=pointer]:
+                    - generic [ref=f28e249]: Best
+                - button "Search Comments Expand comment search" [ref=f28e257] [cursor=pointer]:
+                  - generic [ref=f28e258]: Search Comments
+                  - generic [ref=f28e265]: Expand comment search
+              - region "Comments" [ref=f28e268]:
+                - heading "Comments Section" [level=1] [ref=f28e269]
+                - article "Comment from Historical-Heat-9795 3 years ago" [ref=f28e271]:
+                  - generic [ref=f28e272] [cursor=pointer]:
+                    - link "Historical-Heat-9795's profile --- avatar" [ref=f28e278]:
+                      - /url: https://www.reddit.com/user/Historical-Heat-9795/
+                      - img "u/Historical-Heat-9795 avatar" [ref=f28e281]
+                    - generic [ref=f28e285]:
+                      - link "Historical-Heat-9795's profile" [ref=f28e289]:
+                        - /url: https://www.reddit.com/user/Historical-Heat-9795/
+                        - text: Historical-Heat-9795
+                      - generic [aria-hidden] [ref=f28e290]: •
+                      - link [ref=f28e292]:
+                        - /url: https://www.reddit.com/r/software/comments/18gwhsn/comment/kd5r81j/
+                        - time [ref=f28e294]: 3y ago
+                  - generic [ref=f28e296]:
+                    - paragraph [ref=f28e300]: You can try Aseprite (paid) or GrafX2 (free). Strictly speaking, they are more intended for pixel art, but both support GIF editing and Aseprite has many tools for animation.
+                    - 'article "Comment thread level 1: Reply from kngfbng 3 years ago" [ref=f28e305]':
+                      - generic [ref=f28e306] [cursor=pointer]:
+                        - link "kngfbng's profile --- avatar" [ref=f28e312]:
+                          - /url: https://www.reddit.com/user/kngfbng/
+                        - generic [ref=f28e322]:
+                          - link "kngfbng's profile" [ref=f28e326]:
+                            - /url: https://www.reddit.com/user/kngfbng/
+                            - text: kngfbng
+                          - generic "Comment distinguished as the original poster" [ref=f28e329]: OP
+                          - generic [aria-hidden] [ref=f28e330]: •
+                          - link [ref=f28e332]:
+                            - /url: https://www.reddit.com/r/software/comments/18gwhsn/comment/kdc30gw/
+                            - time [ref=f28e334]: 3y ago
+                      - generic [ref=f28e339]:
+                        - paragraph [ref=f28e340]: I tried to download GrafX2, but only got 404 errors -- downloading for Windows. Judging from the features described and screenshots, I'm not sure it would convert animated webp, but I'd need to run it to test.
+                        - paragraph [ref=f28e341]: I didn't try Aseprite because I'm a cheapskate. :D
+                - article "Comment from ElMachoGrande 3 years ago" [ref=f28e345]:
+                  - generic [ref=f28e346] [cursor=pointer]:
+                    - link "ElMachoGrande's profile --- avatar" [ref=f28e352]:
+                      - /url: https://www.reddit.com/user/ElMachoGrande/
+                    - generic [ref=f28e362]:
+                      - link "ElMachoGrande's profile" [ref=f28e366]:
+                        - /url: https://www.reddit.com/user/ElMachoGrande/
+                        - text: ElMachoGrande
+                      - generic [aria-hidden] [ref=f28e367]: •
+                      - link [ref=f28e369]:
+                        - /url: https://www.reddit.com/r/software/comments/18gwhsn/comment/kd5tclu/
+                        - time [ref=f28e371]: 3y ago
+                  - generic [ref=f28e373]:
+                    - paragraph [ref=f28e377]: ImageMagick. There isn't much it can't do.
+                    - 'article "Comment thread level 1: Reply from kngfbng 3 years ago" [ref=f28e382]':
+                      - generic [ref=f28e383] [cursor=pointer]:
+                        - link "kngfbng's profile --- avatar" [ref=f28e389]:
+                          - /url: https://www.reddit.com/user/kngfbng/
+                        - generic [ref=f28e399]:
+                          - link "kngfbng's profile" [ref=f28e403]:
+                            - /url: https://www.reddit.com/user/kngfbng/
+                            - text: kngfbng
+                          - generic "Comment distinguished as the original poster" [ref=f28e406]: OP
+                          - generic [aria-hidden] [ref=f28e407]: •
+                          - link [ref=f28e409]:
+                            - /url: https://www.reddit.com/r/software/comments/18gwhsn/comment/kdcczh8/
+                            - time [ref=f28e411]: 3y ago
+                      - generic [ref=f28e413]:
+                        - generic [ref=f28e416]:
+                          - paragraph [ref=f28e417]: I'd really rather have a GUI.
+                          - paragraph [ref=f28e418]: I asked Google and it recommended FotoKilof, but I'll need to first get a degree in computer science to be able to understand what the fuck to do with that nonsense in Github -- why don't they just have install.exe file is so beyond me I can't put it into words.
+                        - generic [ref=f28e421]:
+                          - 'article "Comment thread level 2: Reply from ElMachoGrande 3 years ago" [ref=f28e423]':
+                            - generic [ref=f28e424] [cursor=pointer]:
+                              - link "ElMachoGrande's profile --- avatar" [ref=f28e430]:
+                                - /url: https://www.reddit.com/user/ElMachoGrande/
+                              - generic [ref=f28e440]:
+                                - link "ElMachoGrande's profile" [ref=f28e444]:
+                                  - /url: https://www.reddit.com/user/ElMachoGrande/
+                                  - text: ElMachoGrande
+                                - generic [aria-hidden] [ref=f28e445]: •
+                                - link [ref=f28e447]:
+                                  - /url: https://www.reddit.com/r/software/comments/18gwhsn/comment/kdcrp3f/
+                                  - time [ref=f28e449]: 3y ago
+                            - paragraph [ref=f28e455]: Ah, then I can't help you. I prefer being able to batch stuff. For example, I often create thumbnails of thousands of images, and just double clicking a batchfile and then browse reddit for a while while it works is great for me.
+                          - 'article "Comment thread level 2: Reply from weirdscix 2 years ago" [ref=f28e459]':
+                            - generic [ref=f28e460] [cursor=pointer]:
+                              - link "weirdscix's profile --- avatar" [ref=f28e466]:
+                                - /url: https://www.reddit.com/user/weirdscix/
+                              - generic [ref=f28e482]:
+                                - link "weirdscix's profile" [ref=f28e486]:
+                                  - /url: https://www.reddit.com/user/weirdscix/
+                                  - text: weirdscix
+                                - generic [aria-hidden] [ref=f28e487]: •
+                                - link [ref=f28e489]:
+                                  - /url: https://www.reddit.com/r/software/comments/18gwhsn/comment/l6ce6ui/
+                                  - time [ref=f28e491]: 2y ago
+                            - generic [ref=f28e496]:
+                              - paragraph [ref=f28e497]: They have clear instructions, download two linked installers, then run a command, that's it, took me 2 minutes
+                              - paragraph [ref=f28e498]: Anyway, it doesn't support .gif anyway
+                          - 'article "Comment thread level 2: Reply from delabeca49 3 years ago" [ref=f28e502]':
+                            - generic [ref=f28e503] [cursor=pointer]:
+                              - link "delabeca49's profile --- avatar" [ref=f28e509]:
+                                - /url: https://www.reddit.com/user/delabeca49/
+                                - img "u/delabeca49 avatar" [ref=f28e512]
+                              - generic [ref=f28e516]:
+                                - link "delabeca49's profile" [ref=f28e520]:
+                                  - /url: https://www.reddit.com/user/delabeca49/
+                                  - text: delabeca49
+                                - generic [aria-hidden] [ref=f28e521]: •
+                                - link [ref=f28e523]:
+                                  - /url: https://www.reddit.com/r/software/comments/18gwhsn/comment/kjyilye/
+                                  - time [ref=f28e525]: 3y ago
+                            - paragraph [ref=f28e531]: Probably because it was created with python and python isn't meant to be compiled as install.exe, it technically can be an .exe, however 90% of anti virus will flag it.
+                - article "Comment from Miserable-Panic-5715 2 years ago" [ref=f28e535]:
+                  - generic [ref=f28e536] [cursor=pointer]:
+                    - link "Miserable-Panic-5715's profile --- avatar" [ref=f28e542]:
+                      - /url: https://www.reddit.com/user/Miserable-Panic-5715/
+                    - generic [ref=f28e558]:
+                      - link "Miserable-Panic-5715's profile" [ref=f28e562]:
+                        - /url: https://www.reddit.com/user/Miserable-Panic-5715/
+                        - text: Miserable-Panic-5715
+                      - generic [aria-hidden] [ref=f28e563]: •
+                      - link [ref=f28e565]:
+                        - /url: https://www.reddit.com/r/software/comments/18gwhsn/comment/l6kdunq/
+                        - time [ref=f28e567]: 2y ago
+                  - paragraph [ref=f28e573]: Did you ever find the software? I used ezgif a lot too but recently ive gotten into using ffmepg and imagick, and both worked really great. I’d say its much easier and faster than using ezgif.
+                - generic "Run even more Windows apps on Mac with increased support on Parallels Desktop 27." [ref=f28e577]:
+                  - generic [ref=f28e578]:
+                    - 'generic "Advertisement: Run even more Windows apps on Mac with increased support on Parallels Desktop 27." [ref=f28e579]':
+                      - 'link "Advertisement: Run even more Windows apps on Mac with increased support on Parallels Desktop 27." [ref=f28e580] [cursor=pointer]':
+                        - /url: https://alb.reddit.com/cr?za=kYig6556JKKFZaSAWn3KW_70z9LTqUx_xumzXyXJ_Jj7ongrtIJUTFeCKfI3zIF6y48ARq8z2kMKGaeugNfFXo9N4hA-fjyxMgPY2Jdk_dUheEqFzNWRyKubTleQn58c17oQqYNqJeb6r_wv8IU7m8fYalt2c212ZDdFZaH8j2nue7C6-cDbngG5iaqfKHC6VbJlLJ8xeScdsRWJf-hiCGd5Fgg2lMfRvGAMRT3NNk8HW7_R2V9AWqekEzAIFB2QPYjcqchYn3sqKwyOh2iSRdaicjulDJQki37saWma3fQJZXoIVpUql-R8Mn_ynt0kvRV1GAbY3m1CFpOhyPtdwNrEpEc4C9HIwLdTjLymrz9FAz4_3uf424kxWhh5FASNNAKQvGot5YHs9RwlhBu7psmha0eGSBX-RYKWSbTGhsJusOeIMBVS32xZj_HaJjqNbk-niOZAlQ32dmCjfTp2Mvt60qkYkcjSSfP0k-MhNrMKU4RDSfcWs0oAlAd5s2_E0QgpheDNyWY0WFqds932mknY19aNQdIelKqnVHNA_XBaF_riM0NSYLrA0RAKv5WihML4Zm2CW5rqLTghqrMv1VW19UxduHRmj-9_JBv4uU6sqrHGFbLSCninjWNTdhB54dwe5Sm8fSRmWGRXaBYd611zDPwGr0rLsiAw3uWRTGNqm1xdM4Edmpx9O8t7mCE6Q4w&zp=yyDbTHFZfgzr2TOO8YgpMjs8k0gpkEEq_u1_24NsKhHkeHBEcPPrQA6Z5p-m1gkQ5VPZ_ah5qY1EC5DJagTukPX7Gs7JdLVjOpDPoL_jEbzpPTm8Xbg3E4reV-sJE_2zNYi7G4A2uxDj7rk4XZ-hiRC1DVAZbob-2UPc9Gd3DigiyapBzX8hEg9WbgoLJMoXwz575KzoViXJU9JADOBB2--Vb9F0rTuLVJwNZ7Rs3kAfAFI8Gs8bUbaS6MYM9IQ9ZtrGNLWj7SBsAZPAr4of-isf9m3mVi-JSqyuzDPvU-vwNxszQn61-_bo7GpX9kDD9YifM7sJIgoDKfxrg__JnGlp4gboJ3N-t1paCWXD72T22cpoWL_SKm7K9Kgef9J3ZG-XYXUJOTizCXs74YwYDbceUDiTG56QUZunChjfpOhDtFmwab943zIu1ghx40GhOOVFze5E4Q
+                    - generic [ref=f28e581]:
+                      - generic [ref=f28e582]:
+                        - link "u/parallels-desktop" [ref=f28e585] [cursor=pointer]:
+                          - /url: /user/parallels-desktop/
+                          - img "u/parallels-desktop avatar" [ref=f28e588]
+                        - generic [ref=f28e590]: •
+                        - link "Ad" [ref=f28e592] [cursor=pointer]:
+                          - /url: /user/parallels-desktop/
+                        - link [ref=f28e595] [cursor=pointer]:
+                          - /url: https://alb.reddit.com/cr?za=kYig6556JKKFZaSAWn3KW_70z9LTqUx_xumzXyXJ_Jj7ongrtIJUTFeCKfI3zIF6y48ARq8z2kMKGaeugNfFXo9N4hA-fjyxMgPY2Jdk_dUheEqFzNWRyKubTleQn58c17oQqYNqJeb6r_wv8IU7m8fYalt2c212ZDdFZaH8j2nue7C6-cDbngG5iaqfKHC6VbJlLJ8xeScdsRWJf-hiCGd5Fgg2lMfRvGAMRT3NNk8HW7_R2V9AWqekEzAIFB2QPYjcqchYn3sqKwyOh2iSRdaicjulDJQki37saWma3fQJZXoIVpUql-R8Mn_ynt0kvRV1GAbY3m1CFpOhyPtdwNrEpEc4C9HIwLdTjLymrz9FAz4_3uf424kxWhh5FASNNAKQvGot5YHs9RwlhBu7psmha0eGSBX-RYKWSbTGhsJusOeIMBVS32xZj_HaJjqNbk-niOZAlQ32dmCjfTp2Mvt60qkYkcjSSfP0k-MhNrMKU4RDSfcWs0oAlAd5s2_E0QgpheDNyWY0WFqds932mknY19aNQdIelKqnVHNA_XBaF_riM0NSYLrA0RAKv5WihML4Zm2CW5rqLTghqrMv1VW19UxduHRmj-9_JBv4uU6sqrHGFbLSCninjWNTdhB54dwe5Sm8fSRmWGRXaBYd611zDPwGr0rLsiAw3uWRTGNqm1xdM4Edmpx9O8t7mCE6Q4w&zp=yyDbTHFZfgzr2TOO8YgpMjs8k0gpkEEq_u1_24NsKhHkeHBEcPPrQA6Z5p-m1gkQ5VPZ_ah5qY1EC5DJagTukPX7Gs7JdLVjOpDPoL_jEbzpPTm8Xbg3E4reV-sJE_2zNYi7G4A2uxDj7rk4XZ-hiRC1DVAZbob-2UPc9Gd3DigiyapBzX8hEg9WbgoLJMoXwz575KzoViXJU9JADOBB2--Vb9F0rTuLVJwNZ7Rs3kAfAFI8Gs8bUbaS6MYM9IQ9ZtrGNLWj7SBsAZPAr4of-isf9m3mVi-JSqyuzDPvU-vwNxszQn61-_bo7GpX9kDD9YifM7sJIgoDKfxrg__JnGlp4gboJ3N-t1paCWXD72T22cpoWL_SKm7K9Kgef9J3ZG-XYXUJOTizCXs74YwYDbceUDiTG56QUZunChjfpOhDtFmwab943zIu1ghx40GhOOVFze5E4Q
+                      - button "Open user actions" [ref=f28e601] [cursor=pointer]
+                    - generic [ref=f28e607]:
+                      - generic [ref=f28e608]:
+                        - link "Run even more Windows apps on Mac with increased support on Parallels Desktop 27." [ref=f28e610] [cursor=pointer]:
+                          - /url: https://alb.reddit.com/cr?za=kYig6556JKKFZaSAWn3KW_70z9LTqUx_xumzXyXJ_Jj7ongrtIJUTFeCKfI3zIF6y48ARq8z2kMKGaeugNfFXo9N4hA-fjyxMgPY2Jdk_dUheEqFzNWRyKubTleQn58c17oQqYNqJeb6r_wv8IU7m8fYalt2c212ZDdFZaH8j2nue7C6-cDbngG5iaqfKHC6VbJlLJ8xeScdsRWJf-hiCGd5Fgg2lMfRvGAMRT3NNk8HW7_R2V9AWqekEzAIFB2QPYjcqchYn3sqKwyOh2iSRdaicjulDJQki37saWma3fQJZXoIVpUql-R8Mn_ynt0kvRV1GAbY3m1CFpOhyPtdwNrEpEc4C9HIwLdTjLymrz9FAz4_3uf424kxWhh5FASNNAKQvGot5YHs9RwlhBu7psmha0eGSBX-RYKWSbTGhsJusOeIMBVS32xZj_HaJjqNbk-niOZAlQ32dmCjfTp2Mvt60qkYkcjSSfP0k-MhNrMKU4RDSfcWs0oAlAd5s2_E0QgpheDNyWY0WFqds932mknY19aNQdIelKqnVHNA_XBaF_riM0NSYLrA0RAKv5WihML4Zm2CW5rqLTghqrMv1VW19UxduHRmj-9_JBv4uU6sqrHGFbLSCninjWNTdhB54dwe5Sm8fSRmWGRXaBYd611zDPwGr0rLsiAw3uWRTGNqm1xdM4Edmpx9O8t7mCE6Q4w&zp=yyDbTHFZfgzr2TOO8YgpMjs8k0gpkEEq_u1_24NsKhHkeHBEcPPrQA6Z5p-m1gkQ5VPZ_ah5qY1EC5DJagTukPX7Gs7JdLVjOpDPoL_jEbzpPTm8Xbg3E4reV-sJE_2zNYi7G4A2uxDj7rk4XZ-hiRC1DVAZbob-2UPc9Gd3DigiyapBzX8hEg9WbgoLJMoXwz575KzoViXJU9JADOBB2--Vb9F0rTuLVJwNZ7Rs3kAfAFI8Gs8bUbaS6MYM9IQ9ZtrGNLWj7SBsAZPAr4of-isf9m3mVi-JSqyuzDPvU-vwNxszQn61-_bo7GpX9kDD9YifM7sJIgoDKfxrg__JnGlp4gboJ3N-t1paCWXD72T22cpoWL_SKm7K9Kgef9J3ZG-XYXUJOTizCXs74YwYDbceUDiTG56QUZunChjfpOhDtFmwab943zIu1ghx40GhOOVFze5E4Q
+                        - generic [ref=f28e611]:
+                          - link [ref=f28e613] [cursor=pointer]:
+                            - /url: https://alb.reddit.com/cr?za=kYig6556JKKFZaSAWn3KW_70z9LTqUx_xumzXyXJ_Jj7ongrtIJUTFeCKfI3zIF6y48ARq8z2kMKGaeugNfFXo9N4hA-fjyxMgPY2Jdk_dUheEqFzNWRyKubTleQn58c17oQqYNqJeb6r_wv8IU7m8fYalt2c212ZDdFZaH8j2nue7C6-cDbngG5iaqfKHC6VbJlLJ8xeScdsRWJf-hiCGd5Fgg2lMfRvGAMRT3NNk8HW7_R2V9AWqekEzAIFB2QPYjcqchYn3sqKwyOh2iSRdaicjulDJQki37saWma3fQJZXoIVpUql-R8Mn_ynt0kvRV1GAbY3m1CFpOhyPtdwNrEpEc4C9HIwLdTjLymrz9FAz4_3uf424kxWhh5FASNNAKQvGot5YHs9RwlhBu7psmha0eGSBX-RYKWSbTGhsJusOeIMBVS32xZj_HaJjqNbk-niOZAlQ32dmCjfTp2Mvt60qkYkcjSSfP0k-MhNrMKU4RDSfcWs0oAlAd5s2_E0QgpheDNyWY0WFqds932mknY19aNQdIelKqnVHNA_XBaF_riM0NSYLrA0RAKv5WihML4Zm2CW5rqLTghqrMv1VW19UxduHRmj-9_JBv4uU6sqrHGFbLSCninjWNTdhB54dwe5Sm8fSRmWGRXaBYd611zDPwGr0rLsiAw3uWRTGNqm1xdM4Edmpx9O8t7mCE6Q4w&zp=yyDbTHFZfgzr2TOO8YgpMjs8k0gpkEEq_u1_24NsKhHkeHBEcPPrQA6Z5p-m1gkQ5VPZ_ah5qY1EC5DJagTukPX7Gs7JdLVjOpDPoL_jEbzpPTm8Xbg3E4reV-sJE_2zNYi7G4A2uxDj7rk4XZ-hiRC1DVAZbob-2UPc9Gd3DigiyapBzX8hEg9WbgoLJMoXwz575KzoViXJU9JADOBB2--Vb9F0rTuLVJwNZ7Rs3kAfAFI8Gs8bUbaS6MYM9IQ9ZtrGNLWj7SBsAZPAr4of-isf9m3mVi-JSqyuzDPvU-vwNxszQn61-_bo7GpX9kDD9YifM7sJIgoDKfxrg__JnGlp4gboJ3N-t1paCWXD72T22cpoWL_SKm7K9Kgef9J3ZG-XYXUJOTizCXs74YwYDbceUDiTG56QUZunChjfpOhDtFmwab943zIu1ghx40GhOOVFze5E4Q
+                          - generic [ref=f28e614]:
+                            - link "Download" [ref=f28e616] [cursor=pointer]:
+                              - /url: https://alb.reddit.com/cr?za=kYig6556JKKFZaSAWn3KW_70z9LTqUx_xumzXyXJ_Jj7ongrtIJUTFeCKfI3zIF6y48ARq8z2kMKGaeugNfFXo9N4hA-fjyxMgPY2Jdk_dUheEqFzNWRyKubTleQn58c17oQqYNqJeb6r_wv8IU7m8fYalt2c212ZDdFZaH8j2nue7C6-cDbngG5iaqfKHC6VbJlLJ8xeScdsRWJf-hiCGd5Fgg2lMfRvGAMRT3NNk8HW7_R2V9AWqekEzAIFB2QPYjcqchYn3sqKwyOh2iSRdaicjulDJQki37saWma3fQJZXoIVpUql-R8Mn_ynt0kvRV1GAbY3m1CFpOhyPtdwNrEpEc4C9HIwLdTjLymrz9FAz4_3uf424kxWhh5FASNNAKQvGot5YHs9RwlhBu7psmha0eGSBX-RYKWSbTGhsJusOeIMBVS32xZj_HaJjqNbk-niOZAlQ32dmCjfTp2Mvt60qkYkcjSSfP0k-MhNrMKU4RDSfcWs0oAlAd5s2_E0QgpheDNyWY0WFqds932mknY19aNQdIelKqnVHNA_XBaF_riM0NSYLrA0RAKv5WihML4Zm2CW5rqLTghqrMv1VW19UxduHRmj-9_JBv4uU6sqrHGFbLSCninjWNTdhB54dwe5Sm8fSRmWGRXaBYd611zDPwGr0rLsiAw3uWRTGNqm1xdM4Edmpx9O8t7mCE6Q4w&zp=yyDbTHFZfgzr2TOO8YgpMjs8k0gpkEEq_u1_24NsKhHkeHBEcPPrQA6Z5p-m1gkQ5VPZ_ah5qY1EC5DJagTukPX7Gs7JdLVjOpDPoL_jEbzpPTm8Xbg3E4reV-sJE_2zNYi7G4A2uxDj7rk4XZ-hiRC1DVAZbob-2UPc9Gd3DigiyapBzX8hEg9WbgoLJMoXwz575KzoViXJU9JADOBB2--Vb9F0rTuLVJwNZ7Rs3kAfAFI8Gs8bUbaS6MYM9IQ9ZtrGNLWj7SBsAZPAr4of-isf9m3mVi-JSqyuzDPvU-vwNxszQn61-_bo7GpX9kDD9YifM7sJIgoDKfxrg__JnGlp4gboJ3N-t1paCWXD72T22cpoWL_SKm7K9Kgef9J3ZG-XYXUJOTizCXs74YwYDbceUDiTG56QUZunChjfpOhDtFmwab943zIu1ghx40GhOOVFze5E4Q
+                            - link "parallels.com" [ref=f28e621] [cursor=pointer]:
+                              - /url: https://alb.reddit.com/cr?za=kYig6556JKKFZaSAWn3KW_70z9LTqUx_xumzXyXJ_Jj7ongrtIJUTFeCKfI3zIF6y48ARq8z2kMKGaeugNfFXo9N4hA-fjyxMgPY2Jdk_dUheEqFzNWRyKubTleQn58c17oQqYNqJeb6r_wv8IU7m8fYalt2c212ZDdFZaH8j2nue7C6-cDbngG5iaqfKHC6VbJlLJ8xeScdsRWJf-hiCGd5Fgg2lMfRvGAMRT3NNk8HW7_R2V9AWqekEzAIFB2QPYjcqchYn3sqKwyOh2iSRdaicjulDJQki37saWma3fQJZXoIVpUql-R8Mn_ynt0kvRV1GAbY3m1CFpOhyPtdwNrEpEc4C9HIwLdTjLymrz9FAz4_3uf424kxWhh5FASNNAKQvGot5YHs9RwlhBu7psmha0eGSBX-RYKWSbTGhsJusOeIMBVS32xZj_HaJjqNbk-niOZAlQ32dmCjfTp2Mvt60qkYkcjSSfP0k-MhNrMKU4RDSfcWs0oAlAd5s2_E0QgpheDNyWY0WFqds932mknY19aNQdIelKqnVHNA_XBaF_riM0NSYLrA0RAKv5WihML4Zm2CW5rqLTghqrMv1VW19UxduHRmj-9_JBv4uU6sqrHGFbLSCninjWNTdhB54dwe5Sm8fSRmWGRXaBYd611zDPwGr0rLsiAw3uWRTGNqm1xdM4Edmpx9O8t7mCE6Q4w&zp=yyDbTHFZfgzr2TOO8YgpMjs8k0gpkEEq_u1_24NsKhHkeHBEcPPrQA6Z5p-m1gkQ5VPZ_ah5qY1EC5DJagTukPX7Gs7JdLVjOpDPoL_jEbzpPTm8Xbg3E4reV-sJE_2zNYi7G4A2uxDj7rk4XZ-hiRC1DVAZbob-2UPc9Gd3DigiyapBzX8hEg9WbgoLJMoXwz575KzoViXJU9JADOBB2--Vb9F0rTuLVJwNZ7Rs3kAfAFI8Gs8bUbaS6MYM9IQ9ZtrGNLWj7SBsAZPAr4of-isf9m3mVi-JSqyuzDPvU-vwNxszQn61-_bo7GpX9kDD9YifM7sJIgoDKfxrg__JnGlp4gboJ3N-t1paCWXD72T22cpoWL_SKm7K9Kgef9J3ZG-XYXUJOTizCXs74YwYDbceUDiTG56QUZunChjfpOhDtFmwab943zIu1ghx40GhOOVFze5E4Q
+                      - link [ref=f28e624] [cursor=pointer]:
+                        - /url: https://alb.reddit.com/cr?za=kYig6556JKKFZaSAWn3KW_70z9LTqUx_xumzXyXJ_Jj7ongrtIJUTFeCKfI3zIF6y48ARq8z2kMKGaeugNfFXo9N4hA-fjyxMgPY2Jdk_dUheEqFzNWRyKubTleQn58c17oQqYNqJeb6r_wv8IU7m8fYalt2c212ZDdFZaH8j2nue7C6-cDbngG5iaqfKHC6VbJlLJ8xeScdsRWJf-hiCGd5Fgg2lMfRvGAMRT3NNk8HW7_R2V9AWqekEzAIFB2QPYjcqchYn3sqKwyOh2iSRdaicjulDJQki37saWma3fQJZXoIVpUql-R8Mn_ynt0kvRV1GAbY3m1CFpOhyPtdwNrEpEc4C9HIwLdTjLymrz9FAz4_3uf424kxWhh5FASNNAKQvGot5YHs9RwlhBu7psmha0eGSBX-RYKWSbTGhsJusOeIMBVS32xZj_HaJjqNbk-niOZAlQ32dmCjfTp2Mvt60qkYkcjSSfP0k-MhNrMKU4RDSfcWs0oAlAd5s2_E0QgpheDNyWY0WFqds932mknY19aNQdIelKqnVHNA_XBaF_riM0NSYLrA0RAKv5WihML4Zm2CW5rqLTghqrMv1VW19UxduHRmj-9_JBv4uU6sqrHGFbLSCninjWNTdhB54dwe5Sm8fSRmWGRXaBYd611zDPwGr0rLsiAw3uWRTGNqm1xdM4Edmpx9O8t7mCE6Q4w&zp=yyDbTHFZfgzr2TOO8YgpMjs8k0gpkEEq_u1_24NsKhHkeHBEcPPrQA6Z5p-m1gkQ5VPZ_ah5qY1EC5DJagTukPX7Gs7JdLVjOpDPoL_jEbzpPTm8Xbg3E4reV-sJE_2zNYi7G4A2uxDj7rk4XZ-hiRC1DVAZbob-2UPc9Gd3DigiyapBzX8hEg9WbgoLJMoXwz575KzoViXJU9JADOBB2--Vb9F0rTuLVJwNZ7Rs3kAfAFI8Gs8bUbaS6MYM9IQ9ZtrGNLWj7SBsAZPAr4of-isf9m3mVi-JSqyuzDPvU-vwNxszQn61-_bo7GpX9kDD9YifM7sJIgoDKfxrg__JnGlp4gboJ3N-t1paCWXD72T22cpoWL_SKm7K9Kgef9J3ZG-XYXUJOTizCXs74YwYDbceUDiTG56QUZunChjfpOhDtFmwab943zIu1ghx40GhOOVFze5E4Q
+                        - 'img "Thumbnail image: Run even more Windows apps on Mac with increased support on Parallels Desktop 27." [ref=f28e625]'
+                - article "Comment from greendude120 2 years ago" [ref=f28e627]:
+                  - generic [ref=f28e628] [cursor=pointer]:
+                    - link "greendude120's profile --- avatar" [ref=f28e634]:
+                      - /url: https://www.reddit.com/user/greendude120/
+                      - img "u/greendude120 avatar" [ref=f28e637]
+                    - generic [ref=f28e641]:
+                      - link "greendude120's profile" [ref=f28e645]:
+                        - /url: https://www.reddit.com/user/greendude120/
+                        - text: greendude120
+                      - generic [aria-hidden] [ref=f28e646]: •
+                      - link [ref=f28e648]:
+                        - /url: https://www.reddit.com/r/software/comments/18gwhsn/comment/lj698sc/
+                        - time [ref=f28e650]: 2y ago
+                  - paragraph [ref=f28e656]: Have you found a good program since this post? I'm in the same boat.
+                - article "Comment from TantPower 3 years ago" [ref=f28e660]:
+                  - generic [ref=f28e661] [cursor=pointer]:
+                    - link "TantPower's profile --- avatar" [ref=f28e667]:
+                      - /url: https://www.reddit.com/user/TantPower/
+                      - img "u/TantPower avatar" [ref=f28e670]
+                    - generic [ref=f28e674]:
+                      - link "TantPower's profile" [ref=f28e678]:
+                        - /url: https://www.reddit.com/user/TantPower/
+                        - text: TantPower
+                      - generic [aria-hidden] [ref=f28e679]: •
+                      - link [ref=f28e681]:
+                        - /url: https://www.reddit.com/r/software/comments/18gwhsn/comment/kdas4ib/
+                        - time [ref=f28e683]: 3y ago
+                  - paragraph [ref=f28e689]: This also my problem, Thank you for sharing this !
+                - article "Comment from [deleted] 3 years ago" [ref=f28e693]:
+                  - generic "[deleted] 3y ago" [ref=f28e694] [cursor=pointer]:
+                    - generic [ref=f28e701]:
+                      - generic [ref=f28e702]: "[deleted]"
+                      - generic [aria-hidden] [ref=f28e705]: •
+                      - time [ref=f28e707]: 3y ago
+                - article "Comment from [deleted] 3 years ago" [ref=f28e710]:
+                  - generic "[deleted] 3y ago" [ref=f28e711] [cursor=pointer]:
+                    - generic [ref=f28e718]:
+                      - generic [ref=f28e719]: "[deleted]"
+                      - generic [aria-hidden] [ref=f28e722]: •
+                      - link [ref=f28e724]:
+                        - /url: https://www.reddit.com/r/software/comments/18gwhsn/comment/kd5nsc7/
+                        - time [ref=f28e726]: 3y ago
+                - article "Comment from [deleted] 3 years ago" [ref=f28e729]:
+                  - generic "[deleted] 3y ago" [ref=f28e730] [cursor=pointer]:
+                    - generic [ref=f28e737]:
+                      - generic [ref=f28e738]: "[deleted]"
+                      - generic [aria-hidden] [ref=f28e741]: •
+                      - link [ref=f28e743]:
+                        - /url: https://www.reddit.com/r/software/comments/18gwhsn/comment/kd5kmqc/
+                        - time [ref=f28e745]: 3y ago
+            - generic [ref=f28e747]:
+              - generic [ref=f28e748]:
+                - complementary "People also ask about section" [ref=f28e750]:
+                  - heading "People also ask about section" [level=1] [ref=f28e751]
+                  - generic [ref=f28e752]: People also ask about
+                  - generic [ref=f28e757]:
+                    - link "Best free GIF editors similar to Ezgif" [ref=f28e759] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/d7014751-e1e7-48d5-a7aa-08bbbc4fa95e/?q=Best+free+GIF+editors+similar+to+Ezgif&source=PDP&ep=pdp_unit&relatedPostId=t3_18gwhsn
+                    - link "How to create GIFs from images easily" [ref=f28e768] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/18894947-954e-4dff-bc33-5a508453eaaa/?q=How+to+create+GIFs+from+images+easily&source=PDP&ep=pdp_unit&relatedPostId=t3_18gwhsn
+                    - link "Tips for making spinning GIFs" [ref=f28e777] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/c506aee0-012c-4bc3-8a14-b2d4eca08fa2/?q=Tips+for+making+spinning+GIFs&source=PDP&ep=pdp_unit&relatedPostId=t3_18gwhsn
+                    - link "Best software for remote team collaboration" [ref=f28e786] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/feb7165a-1098-4951-af11-8863b651dfc6/?q=Best+software+for+remote+team+collaboration&source=PDP&ep=pdp_unit&relatedPostId=t3_18gwhsn
+                    - link "Top programming languages to learn in 2024" [ref=f28e795] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/2e66b53f-6f1c-45a6-812f-820c09206848/?q=Top+programming+languages+to+learn+in+2024&source=PDP&ep=pdp_unit&relatedPostId=t3_18gwhsn
+                - complementary "Related Posts Section" [ref=f28e803]:
+                  - heading "Related Posts Section" [level=1] [ref=f28e804]: More posts you may like
+                  - generic [ref=f28e805]: Related posts
+                  - list [ref=f28e811]:
+                    - listitem [ref=f28e812]:
+                      - generic [ref=f28e813]:
+                        - generic [ref=f28e814]:
+                          - link "Introducing Reddit's Video-to-GIF Mechanic" [ref=f28e815] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/gifs/comments/6re45u/introducing_reddits_videotogif_mechanic/
+                          - generic [ref=f28e818]:
+                            - generic [ref=f28e821]:
+                              - link "r/gifs" [ref=f28e822] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/gifs/
+                              - generic [aria-hidden] [ref=f28e827]: •
+                              - time [ref=f28e829]: 9y ago
+                            - link [ref=f28e831] [cursor=pointer]:
+                              - /url: /r/gifs/comments/6re45u/introducing_reddits_videotogif_mechanic/
+                              - heading "List item post - Introducing Reddit's Video-to-GIF Mechanic" [level=3] [ref=f28e834]: Introducing Reddit's Video-to-GIF Mechanic
+                          - generic [ref=f28e836]:
+                            - generic [ref=f28e837]: "976"
+                            - text: upvotes ·
+                            - generic [ref=f28e838]: "72"
+                            - text: comments
+                        - separator [ref=f28e839]
+                    - listitem [ref=f28e840]:
+                      - generic [ref=f28e842]:
+                        - generic:
+                          - 'generic "Advertisement: Human-verified 270M+ B2B database. 100% valid emails. 10x more credits than Apollo/ZoomInfo." [ref=f28e843]':
+                            - 'link "Advertisement: Human-verified 270M+ B2B database. 100% valid emails. 10x more credits than Apollo/ZoomInfo." [ref=f28e844] [cursor=pointer]':
+                              - /url: https://alb.reddit.com/cr?za=7yKhaAtn3DyjFgOhI5mG3vWEGol5A23Q7UPKLT9wiUi5OhsPmJ36Sy2MAPxmIxT9b7C-aNgfo6kwBXhjTC0qgRvHnOluNhWBybVaaxCb9W4D_4-MY0xPwAum1H0q3zg7n1GYVTS1xnHP--W3n0KJVHkaJe9YBWw0hqW3Z9J2-o42m6L670BRQ6pqGoHMeFC0YwvTe-Wo6Hjuqmd2xQnsooKRPE7W27dRM-fg0oMKfsIuxIjQ8NZ0gwPXzO4uVvSarGvcGE73e1gu3pmCf7Xh4IP0nfu4wZn2s5d0GWSopIOe6TqYDr7ZgmZk3sjYPqjaL54-jmSV7q1t4PuJNcMmzxpZXVhXKjinFQgfk8Eo1nkywGz2qafn9yGoTNu5SsaMFAz8oIn_qfLhpOL6txMxlwfI_3fF0HZshQlIeSiwBDvC9qt9fIk1473wRkiSujrg11IG2pEtvVvFOoMlgkG0k06prmAgytQfb1VbXGw3dXRyfX7wny9HW2enYpex-kbRKfMNyZg4ZPIuPKBaGx3iU1B8ayYPXwLYank3a5j-wHpWOAEJLf8YhiNhQotaOC9w7olVpqxiIJ_1Q7Bng4YlT_91wlyMX7YvbGrX5JQE8DtqDuSYUX3GPSkdkD3J2S99V8lyNZ5wf7nryHWh1UR_WpYVwaKGukkUvM2PXtCFdK6WOMsviwoSHFGd&zp=dP6YdJZw-2tAh5Wq0Ja4TO6csQ3XeI5cdEthMnY2Ia_DWfXaRtz8I6NEpfbtPRuXIEs_exlB7cadOw_HnjXaQELY2d7t6JFN8ZuRDVLB4qgGXwfpZVq-J1myHd7ubd7_2djF7g1yyTSNL0a1Xr4fI9qmJsBrtan-sqpokyg3K3mbSKg1fPdEBPFqzKLuVz10t4vwVOHA0NMXtqTu2NAlVRn1MyABieDXMCNpWm-SuGNyQJ_VthUKyJFRl54CMxIuBwyHei9bhA
+                          - generic [ref=f28e845]:
+                            - generic [ref=f28e846]:
+                              - generic [ref=f28e847]:
+                                - generic [ref=f28e848]:
+                                  - generic [ref=f28e849]:
+                                    - link "u/Impossible-Shock9622 avatar Impossible-Shock9622" [ref=f28e852] [cursor=pointer]:
+                                      - /url: /user/Impossible-Shock9622/
+                                      - img "u/Impossible-Shock9622 avatar" [ref=f28e855]
+                                      - generic [ref=f28e856]: Impossible-Shock9622
+                                    - generic [ref=f28e857]: •
+                                    - link "Ad" [ref=f28e859] [cursor=pointer]:
+                                      - /url: /user/Impossible-Shock9622/
+                                    - generic:
+                                      - link:
+                                        - /url: https://alb.reddit.com/cr?za=7yKhaAtn3DyjFgOhI5mG3vWEGol5A23Q7UPKLT9wiUi5OhsPmJ36Sy2MAPxmIxT9b7C-aNgfo6kwBXhjTC0qgRvHnOluNhWBybVaaxCb9W4D_4-MY0xPwAum1H0q3zg7n1GYVTS1xnHP--W3n0KJVHkaJe9YBWw0hqW3Z9J2-o42m6L670BRQ6pqGoHMeFC0YwvTe-Wo6Hjuqmd2xQnsooKRPE7W27dRM-fg0oMKfsIuxIjQ8NZ0gwPXzO4uVvSarGvcGE73e1gu3pmCf7Xh4IP0nfu4wZn2s5d0GWSopIOe6TqYDr7ZgmZk3sjYPqjaL54-jmSV7q1t4PuJNcMmzxpZXVhXKjinFQgfk8Eo1nkywGz2qafn9yGoTNu5SsaMFAz8oIn_qfLhpOL6txMxlwfI_3fF0HZshQlIeSiwBDvC9qt9fIk1473wRkiSujrg11IG2pEtvVvFOoMlgkG0k06prmAgytQfb1VbXGw3dXRyfX7wny9HW2enYpex-kbRKfMNyZg4ZPIuPKBaGx3iU1B8ayYPXwLYank3a5j-wHpWOAEJLf8YhiNhQotaOC9w7olVpqxiIJ_1Q7Bng4YlT_91wlyMX7YvbGrX5JQE8DtqDuSYUX3GPSkdkD3J2S99V8lyNZ5wf7nryHWh1UR_WpYVwaKGukkUvM2PXtCFdK6WOMsviwoSHFGd&zp=dP6YdJZw-2tAh5Wq0Ja4TO6csQ3XeI5cdEthMnY2Ia_DWfXaRtz8I6NEpfbtPRuXIEs_exlB7cadOw_HnjXaQELY2d7t6JFN8ZuRDVLB4qgGXwfpZVq-J1myHd7ubd7_2djF7g1yyTSNL0a1Xr4fI9qmJsBrtan-sqpokyg3K3mbSKg1fPdEBPFqzKLuVz10t4vwVOHA0NMXtqTu2NAlVRn1MyABieDXMCNpWm-SuGNyQJ_VthUKyJFRl54CMxIuBwyHei9bhA
+                                  - button "Open user actions" [ref=f28e866] [cursor=pointer]
+                                - link "Human-verified 270M+ B2B database. 100% valid emails. 10x more credits than Apollo/ZoomInfo." [ref=f28e873] [cursor=pointer]:
+                                  - /url: https://alb.reddit.com/cr?za=7yKhaAtn3DyjFgOhI5mG3vWEGol5A23Q7UPKLT9wiUi5OhsPmJ36Sy2MAPxmIxT9b7C-aNgfo6kwBXhjTC0qgRvHnOluNhWBybVaaxCb9W4D_4-MY0xPwAum1H0q3zg7n1GYVTS1xnHP--W3n0KJVHkaJe9YBWw0hqW3Z9J2-o42m6L670BRQ6pqGoHMeFC0YwvTe-Wo6Hjuqmd2xQnsooKRPE7W27dRM-fg0oMKfsIuxIjQ8NZ0gwPXzO4uVvSarGvcGE73e1gu3pmCf7Xh4IP0nfu4wZn2s5d0GWSopIOe6TqYDr7ZgmZk3sjYPqjaL54-jmSV7q1t4PuJNcMmzxpZXVhXKjinFQgfk8Eo1nkywGz2qafn9yGoTNu5SsaMFAz8oIn_qfLhpOL6txMxlwfI_3fF0HZshQlIeSiwBDvC9qt9fIk1473wRkiSujrg11IG2pEtvVvFOoMlgkG0k06prmAgytQfb1VbXGw3dXRyfX7wny9HW2enYpex-kbRKfMNyZg4ZPIuPKBaGx3iU1B8ayYPXwLYank3a5j-wHpWOAEJLf8YhiNhQotaOC9w7olVpqxiIJ_1Q7Bng4YlT_91wlyMX7YvbGrX5JQE8DtqDuSYUX3GPSkdkD3J2S99V8lyNZ5wf7nryHWh1UR_WpYVwaKGukkUvM2PXtCFdK6WOMsviwoSHFGd&zp=dP6YdJZw-2tAh5Wq0Ja4TO6csQ3XeI5cdEthMnY2Ia_DWfXaRtz8I6NEpfbtPRuXIEs_exlB7cadOw_HnjXaQELY2d7t6JFN8ZuRDVLB4qgGXwfpZVq-J1myHd7ubd7_2djF7g1yyTSNL0a1Xr4fI9qmJsBrtan-sqpokyg3K3mbSKg1fPdEBPFqzKLuVz10t4vwVOHA0NMXtqTu2NAlVRn1MyABieDXMCNpWm-SuGNyQJ_VthUKyJFRl54CMxIuBwyHei9bhA
+                                  - generic "Human-verified 270M+ B2B database. 100% valid emails. 10x more credits than Apollo/ZoomInfo." [ref=f28e874]
+                              - link [ref=f28e877] [cursor=pointer]:
+                                - /url: https://alb.reddit.com/cr?za=7yKhaAtn3DyjFgOhI5mG3vWEGol5A23Q7UPKLT9wiUi5OhsPmJ36Sy2MAPxmIxT9b7C-aNgfo6kwBXhjTC0qgRvHnOluNhWBybVaaxCb9W4D_4-MY0xPwAum1H0q3zg7n1GYVTS1xnHP--W3n0KJVHkaJe9YBWw0hqW3Z9J2-o42m6L670BRQ6pqGoHMeFC0YwvTe-Wo6Hjuqmd2xQnsooKRPE7W27dRM-fg0oMKfsIuxIjQ8NZ0gwPXzO4uVvSarGvcGE73e1gu3pmCf7Xh4IP0nfu4wZn2s5d0GWSopIOe6TqYDr7ZgmZk3sjYPqjaL54-jmSV7q1t4PuJNcMmzxpZXVhXKjinFQgfk8Eo1nkywGz2qafn9yGoTNu5SsaMFAz8oIn_qfLhpOL6txMxlwfI_3fF0HZshQlIeSiwBDvC9qt9fIk1473wRkiSujrg11IG2pEtvVvFOoMlgkG0k06prmAgytQfb1VbXGw3dXRyfX7wny9HW2enYpex-kbRKfMNyZg4ZPIuPKBaGx3iU1B8ayYPXwLYank3a5j-wHpWOAEJLf8YhiNhQotaOC9w7olVpqxiIJ_1Q7Bng4YlT_91wlyMX7YvbGrX5JQE8DtqDuSYUX3GPSkdkD3J2S99V8lyNZ5wf7nryHWh1UR_WpYVwaKGukkUvM2PXtCFdK6WOMsviwoSHFGd&zp=dP6YdJZw-2tAh5Wq0Ja4TO6csQ3XeI5cdEthMnY2Ia_DWfXaRtz8I6NEpfbtPRuXIEs_exlB7cadOw_HnjXaQELY2d7t6JFN8ZuRDVLB4qgGXwfpZVq-J1myHd7ubd7_2djF7g1yyTSNL0a1Xr4fI9qmJsBrtan-sqpokyg3K3mbSKg1fPdEBPFqzKLuVz10t4vwVOHA0NMXtqTu2NAlVRn1MyABieDXMCNpWm-SuGNyQJ_VthUKyJFRl54CMxIuBwyHei9bhA
+                                - 'img "Thumbnail image: Human-verified 270M+ B2B database. 100% valid emails. 10x more credits than Apollo/ZoomInfo." [ref=f28e879]'
+                            - generic [ref=f28e880]:
+                              - link [ref=f28e882] [cursor=pointer]:
+                                - /url: https://alb.reddit.com/cr?za=7yKhaAtn3DyjFgOhI5mG3vWEGol5A23Q7UPKLT9wiUi5OhsPmJ36Sy2MAPxmIxT9b7C-aNgfo6kwBXhjTC0qgRvHnOluNhWBybVaaxCb9W4D_4-MY0xPwAum1H0q3zg7n1GYVTS1xnHP--W3n0KJVHkaJe9YBWw0hqW3Z9J2-o42m6L670BRQ6pqGoHMeFC0YwvTe-Wo6Hjuqmd2xQnsooKRPE7W27dRM-fg0oMKfsIuxIjQ8NZ0gwPXzO4uVvSarGvcGE73e1gu3pmCf7Xh4IP0nfu4wZn2s5d0GWSopIOe6TqYDr7ZgmZk3sjYPqjaL54-jmSV7q1t4PuJNcMmzxpZXVhXKjinFQgfk8Eo1nkywGz2qafn9yGoTNu5SsaMFAz8oIn_qfLhpOL6txMxlwfI_3fF0HZshQlIeSiwBDvC9qt9fIk1473wRkiSujrg11IG2pEtvVvFOoMlgkG0k06prmAgytQfb1VbXGw3dXRyfX7wny9HW2enYpex-kbRKfMNyZg4ZPIuPKBaGx3iU1B8ayYPXwLYank3a5j-wHpWOAEJLf8YhiNhQotaOC9w7olVpqxiIJ_1Q7Bng4YlT_91wlyMX7YvbGrX5JQE8DtqDuSYUX3GPSkdkD3J2S99V8lyNZ5wf7nryHWh1UR_WpYVwaKGukkUvM2PXtCFdK6WOMsviwoSHFGd&zp=dP6YdJZw-2tAh5Wq0Ja4TO6csQ3XeI5cdEthMnY2Ia_DWfXaRtz8I6NEpfbtPRuXIEs_exlB7cadOw_HnjXaQELY2d7t6JFN8ZuRDVLB4qgGXwfpZVq-J1myHd7ubd7_2djF7g1yyTSNL0a1Xr4fI9qmJsBrtan-sqpokyg3K3mbSKg1fPdEBPFqzKLuVz10t4vwVOHA0NMXtqTu2NAlVRn1MyABieDXMCNpWm-SuGNyQJ_VthUKyJFRl54CMxIuBwyHei9bhA
+                              - generic [ref=f28e883]:
+                                - link "dropleads.io" [ref=f28e886] [cursor=pointer]:
+                                  - /url: https://alb.reddit.com/cr?za=7yKhaAtn3DyjFgOhI5mG3vWEGol5A23Q7UPKLT9wiUi5OhsPmJ36Sy2MAPxmIxT9b7C-aNgfo6kwBXhjTC0qgRvHnOluNhWBybVaaxCb9W4D_4-MY0xPwAum1H0q3zg7n1GYVTS1xnHP--W3n0KJVHkaJe9YBWw0hqW3Z9J2-o42m6L670BRQ6pqGoHMeFC0YwvTe-Wo6Hjuqmd2xQnsooKRPE7W27dRM-fg0oMKfsIuxIjQ8NZ0gwPXzO4uVvSarGvcGE73e1gu3pmCf7Xh4IP0nfu4wZn2s5d0GWSopIOe6TqYDr7ZgmZk3sjYPqjaL54-jmSV7q1t4PuJNcMmzxpZXVhXKjinFQgfk8Eo1nkywGz2qafn9yGoTNu5SsaMFAz8oIn_qfLhpOL6txMxlwfI_3fF0HZshQlIeSiwBDvC9qt9fIk1473wRkiSujrg11IG2pEtvVvFOoMlgkG0k06prmAgytQfb1VbXGw3dXRyfX7wny9HW2enYpex-kbRKfMNyZg4ZPIuPKBaGx3iU1B8ayYPXwLYank3a5j-wHpWOAEJLf8YhiNhQotaOC9w7olVpqxiIJ_1Q7Bng4YlT_91wlyMX7YvbGrX5JQE8DtqDuSYUX3GPSkdkD3J2S99V8lyNZ5wf7nryHWh1UR_WpYVwaKGukkUvM2PXtCFdK6WOMsviwoSHFGd&zp=dP6YdJZw-2tAh5Wq0Ja4TO6csQ3XeI5cdEthMnY2Ia_DWfXaRtz8I6NEpfbtPRuXIEs_exlB7cadOw_HnjXaQELY2d7t6JFN8ZuRDVLB4qgGXwfpZVq-J1myHd7ubd7_2djF7g1yyTSNL0a1Xr4fI9qmJsBrtan-sqpokyg3K3mbSKg1fPdEBPFqzKLuVz10t4vwVOHA0NMXtqTu2NAlVRn1MyABieDXMCNpWm-SuGNyQJ_VthUKyJFRl54CMxIuBwyHei9bhA
+                                - link "Sign Up" [ref=f28e888] [cursor=pointer]:
+                                  - /url: https://alb.reddit.com/cr?za=7yKhaAtn3DyjFgOhI5mG3vWEGol5A23Q7UPKLT9wiUi5OhsPmJ36Sy2MAPxmIxT9b7C-aNgfo6kwBXhjTC0qgRvHnOluNhWBybVaaxCb9W4D_4-MY0xPwAum1H0q3zg7n1GYVTS1xnHP--W3n0KJVHkaJe9YBWw0hqW3Z9J2-o42m6L670BRQ6pqGoHMeFC0YwvTe-Wo6Hjuqmd2xQnsooKRPE7W27dRM-fg0oMKfsIuxIjQ8NZ0gwPXzO4uVvSarGvcGE73e1gu3pmCf7Xh4IP0nfu4wZn2s5d0GWSopIOe6TqYDr7ZgmZk3sjYPqjaL54-jmSV7q1t4PuJNcMmzxpZXVhXKjinFQgfk8Eo1nkywGz2qafn9yGoTNu5SsaMFAz8oIn_qfLhpOL6txMxlwfI_3fF0HZshQlIeSiwBDvC9qt9fIk1473wRkiSujrg11IG2pEtvVvFOoMlgkG0k06prmAgytQfb1VbXGw3dXRyfX7wny9HW2enYpex-kbRKfMNyZg4ZPIuPKBaGx3iU1B8ayYPXwLYank3a5j-wHpWOAEJLf8YhiNhQotaOC9w7olVpqxiIJ_1Q7Bng4YlT_91wlyMX7YvbGrX5JQE8DtqDuSYUX3GPSkdkD3J2S99V8lyNZ5wf7nryHWh1UR_WpYVwaKGukkUvM2PXtCFdK6WOMsviwoSHFGd&zp=dP6YdJZw-2tAh5Wq0Ja4TO6csQ3XeI5cdEthMnY2Ia_DWfXaRtz8I6NEpfbtPRuXIEs_exlB7cadOw_HnjXaQELY2d7t6JFN8ZuRDVLB4qgGXwfpZVq-J1myHd7ubd7_2djF7g1yyTSNL0a1Xr4fI9qmJsBrtan-sqpokyg3K3mbSKg1fPdEBPFqzKLuVz10t4vwVOHA0NMXtqTu2NAlVRn1MyABieDXMCNpWm-SuGNyQJ_VthUKyJFRl54CMxIuBwyHei9bhA
+                      - separator [ref=f28e891]
+                    - listitem [ref=f28e892]:
+                      - generic [ref=f28e893]:
+                        - generic [ref=f28e894]:
+                          - link "Did I Get a Virus from ezgif.com" [ref=f28e895] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/techsupport/comments/16ln6qr/did_i_get_a_virus_from_ezgifcom/
+                          - generic [ref=f28e898]:
+                            - generic [ref=f28e901]:
+                              - link "r/techsupport" [ref=f28e902] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/techsupport/
+                              - generic [aria-hidden] [ref=f28e907]: •
+                              - time [ref=f28e909]: 3y ago
+                            - link [ref=f28e911] [cursor=pointer]:
+                              - /url: /r/techsupport/comments/16ln6qr/did_i_get_a_virus_from_ezgifcom/
+                              - heading "List item post - Did I Get a Virus from ezgif.com" [level=3] [ref=f28e914]: Did I Get a Virus from ezgif.com
+                          - generic [ref=f28e916]:
+                            - generic [ref=f28e917]: "8"
+                            - text: upvotes ·
+                            - generic [ref=f28e918]: "13"
+                            - text: comments
+                        - separator [ref=f28e919]
+                    - listitem [ref=f28e920]:
+                      - generic [ref=f28e921]:
+                        - generic [ref=f28e922]:
+                          - link "Looking for a Desktop Video-to-GIF converter, preferably open-source, pay OK." [ref=f28e923] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/software/comments/qvjd1g/looking_for_a_desktop_videotogif_converter/
+                          - generic [ref=f28e926]:
+                            - generic [ref=f28e929]:
+                              - link "r/software" [ref=f28e930] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/software/
+                              - generic [aria-hidden] [ref=f28e935]: •
+                              - time [ref=f28e937]: 5y ago
+                            - link [ref=f28e939] [cursor=pointer]:
+                              - /url: /r/software/comments/qvjd1g/looking_for_a_desktop_videotogif_converter/
+                              - heading "List item post - Looking for a Desktop Video-to-GIF converter, preferably op..." [level=3] [ref=f28e942]: Looking for a Desktop Video-to-GIF converter, preferably open-source, pay OK.
+                          - generic [ref=f28e944]:
+                            - generic [ref=f28e945]: "35"
+                            - text: upvotes ·
+                            - generic [ref=f28e946]: "24"
+                            - text: comments
+                        - separator [ref=f28e947]
+                    - listitem
+                    - listitem [ref=f28e948]:
+                      - generic [ref=f28e949]:
+                        - generic [ref=f28e950]:
+                          - link "Screen recording software to generate gifs" [ref=f28e951] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/software/comments/zt5oau/screen_recording_software_to_generate_gifs/
+                          - generic [ref=f28e954]:
+                            - generic [ref=f28e957]:
+                              - link "r/software" [ref=f28e958] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/software/
+                              - generic [aria-hidden] [ref=f28e963]: •
+                              - time [ref=f28e965]: 4y ago
+                            - link [ref=f28e967] [cursor=pointer]:
+                              - /url: /r/software/comments/zt5oau/screen_recording_software_to_generate_gifs/
+                              - heading "List item post - Screen recording software to generate gifs" [level=3] [ref=f28e970]: Screen recording software to generate gifs
+                          - generic [ref=f28e972]:
+                            - generic [ref=f28e973]: "12"
+                            - text: upvotes ·
+                            - generic [ref=f28e974]: "14"
+                            - text: comments
+                        - separator [ref=f28e975]
+                    - listitem [ref=f28e976]:
+                      - generic [ref=f28e977]:
+                        - generic [ref=f28e978]:
+                          - link "How can I recreate the little jittery movement along the lines of the character?" [ref=f28e979] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/davinciresolve/comments/1vw34jc/how_can_i_recreate_the_little_jittery_movement/
+                          - generic [ref=f28e981]:
+                            - generic [ref=f28e982]:
+                              - generic [ref=f28e985]:
+                                - link "r/davinciresolve" [ref=f28e986] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/davinciresolve/
+                                - generic [aria-hidden] [ref=f28e991]: •
+                                - time [ref=f28e993]: 9d ago
+                              - link [ref=f28e995] [cursor=pointer]:
+                                - /url: /r/davinciresolve/comments/1vw34jc/how_can_i_recreate_the_little_jittery_movement/
+                                - heading "List item post - How can I recreate the little jittery movement along the li..." [level=3] [ref=f28e998]: How can I recreate the little jittery movement along the lines of the character?
+                            - generic [ref=f28e1000]:
+                              - link "r/davinciresolve - How can I recreate the little jittery movement along the lines of the character?" [ref=f28e1001] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/davinciresolve/comments/1vw34jc/how_can_i_recreate_the_little_jittery_movement/
+                                - img "r/davinciresolve - How can I recreate the little jittery movement along the lines of the character?" [ref=f28e1002]
+                              - generic: 0:05
+                          - generic [ref=f28e1004]:
+                            - generic [ref=f28e1005]: "97"
+                            - text: upvotes ·
+                            - generic [ref=f28e1006]: "29"
+                            - text: comments
+                        - separator [ref=f28e1007]
+                    - listitem [ref=f28e1008]:
+                      - generic [ref=f28e1009]:
+                        - generic [ref=f28e1010]:
+                          - link "Is there a way to put stremio as a widow on top of other apps or Chrome in pc?" [ref=f28e1011] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/Stremio/comments/17qjutb/is_there_a_way_to_put_stremio_as_a_widow_on_top/
+                          - generic [ref=f28e1014]:
+                            - generic [ref=f28e1017]:
+                              - link "r/Stremio" [ref=f28e1018] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/Stremio/
+                              - generic [aria-hidden] [ref=f28e1023]: •
+                              - time [ref=f28e1025]: 3y ago
+                            - link [ref=f28e1027] [cursor=pointer]:
+                              - /url: /r/Stremio/comments/17qjutb/is_there_a_way_to_put_stremio_as_a_widow_on_top/
+                              - heading "List item post - Is there a way to put stremio as a widow on top of other ap..." [level=3] [ref=f28e1030]: Is there a way to put stremio as a widow on top of other apps or Chrome in pc?
+                          - generic [ref=f28e1032]:
+                            - generic [ref=f28e1033]: "7"
+                            - text: upvotes ·
+                            - generic [ref=f28e1034]: "16"
+                            - text: comments
+                        - separator [ref=f28e1035]
+                    - listitem [ref=f28e1036]:
+                      - generic [ref=f28e1037]:
+                        - generic [ref=f28e1038]:
+                          - link "Scratch users be like" [ref=f28e1039] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/scratch/comments/1vlo43w/scratch_users_be_like/
+                          - generic [ref=f28e1041]:
+                            - generic [ref=f28e1042]:
+                              - generic [ref=f28e1045]:
+                                - link "r/scratch" [ref=f28e1046] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/scratch/
+                                - generic [aria-hidden] [ref=f28e1051]: •
+                                - time [ref=f28e1053]: 21d ago
+                              - link [ref=f28e1055] [cursor=pointer]:
+                                - /url: /r/scratch/comments/1vlo43w/scratch_users_be_like/
+                                - heading "List item post - Scratch users be like" [level=3] [ref=f28e1058]: Scratch users be like
+                            - link "r/scratch - Scratch users be like" [ref=f28e1061] [cursor=pointer]:
+                              - /url: https://www.reddit.com/r/scratch/comments/1vlo43w/scratch_users_be_like/
+                              - img "r/scratch - Scratch users be like" [ref=f28e1062]
+                          - generic [ref=f28e1064]:
+                            - generic [ref=f28e1065]: "141"
+                            - text: upvotes ·
+                            - generic [ref=f28e1066]: "20"
+                            - text: comments
+                        - separator [ref=f28e1067]
+                    - listitem [ref=f28e1068]:
+                      - generic [ref=f28e1069]:
+                        - generic [ref=f28e1070]:
+                          - link "I think EZGIF is down rn" [ref=f28e1071] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/software/comments/1b3mhha/i_think_ezgif_is_down_rn/
+                          - generic [ref=f28e1074]:
+                            - generic [ref=f28e1077]:
+                              - link "r/software" [ref=f28e1078] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/software/
+                              - generic [aria-hidden] [ref=f28e1083]: •
+                              - time [ref=f28e1085]: 3y ago
+                            - link [ref=f28e1087] [cursor=pointer]:
+                              - /url: /r/software/comments/1b3mhha/i_think_ezgif_is_down_rn/
+                              - heading "List item post - I think EZGIF is down rn" [level=3] [ref=f28e1090]: I think EZGIF is down rn
+                          - generic [ref=f28e1092]:
+                            - generic [ref=f28e1093]: "2"
+                            - text: upvotes ·
+                            - generic [ref=f28e1094]: "2"
+                            - text: comments
+                        - separator [ref=f28e1095]
+                    - listitem
+                    - listitem [ref=f28e1096]:
+                      - generic [ref=f28e1097]:
+                        - generic [ref=f28e1098]:
+                          - link "The new ui sucks" [ref=f28e1099] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/mildlyinfuriating/comments/1vnab74/the_new_ui_sucks/
+                          - generic [ref=f28e1101]:
+                            - generic [ref=f28e1102]:
+                              - generic [ref=f28e1105]:
+                                - link "r/mildlyinfuriating" [ref=f28e1106] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/mildlyinfuriating/
+                                - generic [aria-hidden] [ref=f28e1111]: •
+                                - time [ref=f28e1113]: 19d ago
+                              - link [ref=f28e1115] [cursor=pointer]:
+                                - /url: /r/mildlyinfuriating/comments/1vnab74/the_new_ui_sucks/
+                                - heading "List item post - The new ui sucks" [level=3] [ref=f28e1118]: The new ui sucks
+                            - link "r/mildlyinfuriating - The new ui sucks" [ref=f28e1121] [cursor=pointer]:
+                              - /url: https://www.reddit.com/r/mildlyinfuriating/comments/1vnab74/the_new_ui_sucks/
+                              - img "r/mildlyinfuriating - The new ui sucks" [ref=f28e1122]
+                          - generic [ref=f28e1124]:
+                            - generic [ref=f28e1125]: "6"
+                            - text: comments
+                        - separator [ref=f28e1126]
+                    - listitem [ref=f28e1127]:
+                      - generic [ref=f28e1128]:
+                        - generic [ref=f28e1129]:
+                          - link "Free offline software that allows you to convert multiple images into a transparent gif?" [ref=f28e1130] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/software/comments/1vn0z79/free_offline_software_that_allows_you_to_convert/
+                          - generic [ref=f28e1133]:
+                            - generic [ref=f28e1136]:
+                              - link "r/software" [ref=f28e1137] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/software/
+                              - generic [aria-hidden] [ref=f28e1142]: •
+                              - time [ref=f28e1144]: 20d ago
+                            - link [ref=f28e1146] [cursor=pointer]:
+                              - /url: /r/software/comments/1vn0z79/free_offline_software_that_allows_you_to_convert/
+                              - heading "List item post - Free offline software that allows you to convert multiple i..." [level=3] [ref=f28e1149]: Free offline software that allows you to convert multiple images into a transparent gif?
+                          - generic [ref=f28e1151]:
+                            - generic [ref=f28e1152]: "7"
+                            - text: upvotes ·
+                            - generic [ref=f28e1153]: "11"
+                            - text: comments
+                        - separator [ref=f28e1154]
+                    - listitem [ref=f28e1155]:
+                      - generic [ref=f28e1156]:
+                        - generic [ref=f28e1157]:
+                          - link "What is the best gif maker for Youtube videos?" [ref=f28e1158] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/AskReddit/comments/15nt00l/what_is_the_best_gif_maker_for_youtube_videos/
+                          - generic [ref=f28e1161]:
+                            - generic [ref=f28e1164]:
+                              - link "r/AskReddit" [ref=f28e1165] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/AskReddit/
+                              - generic [aria-hidden] [ref=f28e1170]: •
+                              - time [ref=f28e1172]: 3y ago
+                            - link [ref=f28e1174] [cursor=pointer]:
+                              - /url: /r/AskReddit/comments/15nt00l/what_is_the_best_gif_maker_for_youtube_videos/
+                              - heading "List item post - What is the best gif maker for Youtube videos?" [level=3] [ref=f28e1177]: What is the best gif maker for Youtube videos?
+                          - generic [ref=f28e1179]:
+                            - generic [ref=f28e1180]: "10"
+                            - text: comments
+                        - separator [ref=f28e1181]
+                    - listitem [ref=f28e1182]:
+                      - generic [ref=f28e1183]:
+                        - generic [ref=f28e1184]:
+                          - link "Anybody had this glitch?" [ref=f28e1185] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/scratch/comments/1tvg5md/anybody_had_this_glitch/
+                          - generic [ref=f28e1187]:
+                            - generic [ref=f28e1188]:
+                              - generic [ref=f28e1191]:
+                                - link "r/scratch" [ref=f28e1192] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/scratch/
+                                - generic [aria-hidden] [ref=f28e1197]: •
+                                - time [ref=f28e1199]: 3mo ago
+                              - link [ref=f28e1201] [cursor=pointer]:
+                                - /url: /r/scratch/comments/1tvg5md/anybody_had_this_glitch/
+                                - heading "List item post - Anybody had this glitch?" [level=3] [ref=f28e1204]: Anybody had this glitch?
+                            - generic [ref=f28e1206]:
+                              - link "r/scratch - Anybody had this glitch?" [ref=f28e1207] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/scratch/comments/1tvg5md/anybody_had_this_glitch/
+                                - img "r/scratch - Anybody had this glitch?" [ref=f28e1208]
+                              - generic: "2"
+                          - generic [ref=f28e1210]:
+                            - generic [ref=f28e1211]: "41"
+                            - text: upvotes ·
+                            - generic [ref=f28e1212]: "37"
+                            - text: comments
+                        - separator [ref=f28e1213]
+                    - listitem [ref=f28e1214]:
+                      - generic [ref=f28e1215]:
+                        - generic [ref=f28e1216]:
+                          - link "Free High-Quality Gif Maker" [ref=f28e1217] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/VideoEditing/comments/13upo14/free_highquality_gif_maker/
+                          - generic [ref=f28e1220]:
+                            - generic [ref=f28e1223]:
+                              - link "r/VideoEditing" [ref=f28e1224] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/VideoEditing/
+                              - generic [aria-hidden] [ref=f28e1229]: •
+                              - time [ref=f28e1231]: 3y ago
+                            - link [ref=f28e1233] [cursor=pointer]:
+                              - /url: /r/VideoEditing/comments/13upo14/free_highquality_gif_maker/
+                              - heading "List item post - Free High-Quality Gif Maker" [level=3] [ref=f28e1236]: Free High-Quality Gif Maker
+                          - generic [ref=f28e1238]:
+                            - generic [ref=f28e1239]: "21"
+                            - text: upvotes ·
+                            - generic [ref=f28e1240]: "27"
+                            - text: comments
+                        - separator [ref=f28e1241]
+                    - listitem [ref=f28e1242]:
+                      - generic [ref=f28e1243]:
+                        - generic [ref=f28e1244]:
+                          - link "Weird bug." [ref=f28e1245] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/scratch/comments/1vaiqx6/weird_bug/
+                          - generic [ref=f28e1247]:
+                            - generic [ref=f28e1248]:
+                              - generic [ref=f28e1251]:
+                                - link "r/scratch" [ref=f28e1252] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/scratch/
+                                - generic [aria-hidden] [ref=f28e1257]: •
+                                - time [ref=f28e1259]: 1mo ago
+                              - link [ref=f28e1261] [cursor=pointer]:
+                                - /url: /r/scratch/comments/1vaiqx6/weird_bug/
+                                - heading "List item post - Weird bug." [level=3] [ref=f28e1264]: Weird bug.
+                            - generic [ref=f28e1266]:
+                              - link "r/scratch - Weird bug." [ref=f28e1267] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/scratch/comments/1vaiqx6/weird_bug/
+                                - img "r/scratch - Weird bug." [ref=f28e1268]
+                              - generic: 0:17
+                          - generic [ref=f28e1270]:
+                            - generic [ref=f28e1271]: "46"
+                            - text: upvotes ·
+                            - generic [ref=f28e1272]: "12"
+                            - text: comments
+                        - separator [ref=f28e1273]
+                    - listitem [ref=f28e1274]:
+                      - generic [ref=f28e1275]:
+                        - generic [ref=f28e1276]:
+                          - link "How to make gif like this ? Which software?" [ref=f28e1277] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/howto/comments/11anakj/how_to_make_gif_like_this_which_software/
+                          - generic [ref=f28e1279]:
+                            - generic [ref=f28e1280]:
+                              - generic [ref=f28e1283]:
+                                - link "r/howto" [ref=f28e1284] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/howto/
+                                - generic [aria-hidden] [ref=f28e1289]: •
+                                - time [ref=f28e1291]: 4y ago
+                              - link [ref=f28e1293] [cursor=pointer]:
+                                - /url: /r/howto/comments/11anakj/how_to_make_gif_like_this_which_software/
+                                - heading "List item post - How to make gif like this ? Which software?" [level=3] [ref=f28e1296]: How to make gif like this ? Which software?
+                            - link "r/howto - How to make gif like this ? Which software?" [ref=f28e1299] [cursor=pointer]:
+                              - /url: https://www.reddit.com/r/howto/comments/11anakj/how_to_make_gif_like_this_which_software/
+                              - img "r/howto - How to make gif like this ? Which software?" [ref=f28e1300]
+                          - generic [ref=f28e1302]:
+                            - generic [ref=f28e1303]: "556"
+                            - text: upvotes ·
+                            - generic [ref=f28e1304]: "66"
+                            - text: comments
+                        - separator [ref=f28e1305]
+                    - listitem [ref=f28e1306]:
+                      - generic [ref=f28e1307]:
+                        - generic [ref=f28e1308]:
+                          - link "Never give up on Scratch I've been improving so much" [ref=f28e1309] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/scratch/comments/1q32plg/never_give_up_on_scratch_ive_been_improving_so/
+                          - generic [ref=f28e1311]:
+                            - generic [ref=f28e1312]:
+                              - generic [ref=f28e1315]:
+                                - link "r/scratch" [ref=f28e1316] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/scratch/
+                                - generic [aria-hidden] [ref=f28e1321]: •
+                                - time [ref=f28e1323]: 8mo ago
+                              - link [ref=f28e1325] [cursor=pointer]:
+                                - /url: /r/scratch/comments/1q32plg/never_give_up_on_scratch_ive_been_improving_so/
+                                - heading "List item post - Never give up on Scratch I've been improving so much" [level=3] [ref=f28e1328]: Never give up on Scratch I've been improving so much
+                            - generic [ref=f28e1330]:
+                              - link "r/scratch - Never give up on Scratch I've been improving so much" [ref=f28e1331] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/scratch/comments/1q32plg/never_give_up_on_scratch_ive_been_improving_so/
+                                - img "r/scratch - Never give up on Scratch I've been improving so much" [ref=f28e1332]
+                              - generic: 0:27
+                          - generic [ref=f28e1334]:
+                            - generic [ref=f28e1335]: "109"
+                            - text: upvotes ·
+                            - generic [ref=f28e1336]: "25"
+                            - text: comments
+                        - separator [ref=f28e1337]
+                    - listitem [ref=f28e1338]:
+                      - generic [ref=f28e1339]:
+                        - generic [ref=f28e1340]:
+                          - link "Ezgif running sloooooooooow, freezing up" [ref=f28e1341] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/ezgif/comments/1qn102o/ezgif_running_sloooooooooow_freezing_up/
+                          - generic [ref=f28e1344]:
+                            - generic [ref=f28e1347]:
+                              - link "r/ezgif" [ref=f28e1348] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/ezgif/
+                              - generic [aria-hidden] [ref=f28e1353]: •
+                              - time [ref=f28e1355]: 7mo ago
+                            - link [ref=f28e1357] [cursor=pointer]:
+                              - /url: /r/ezgif/comments/1qn102o/ezgif_running_sloooooooooow_freezing_up/
+                              - heading "List item post - Ezgif running sloooooooooow, freezing up" [level=3] [ref=f28e1360]: Ezgif running sloooooooooow, freezing up
+                          - generic [ref=f28e1362]:
+                            - generic [ref=f28e1363]: "4"
+                            - text: upvotes ·
+                            - generic [ref=f28e1364]: "6"
+                            - text: comments
+                        - separator [ref=f28e1365]
+                    - listitem [ref=f28e1366]:
+                      - generic [ref=f28e1367]:
+                        - generic [ref=f28e1368]:
+                          - link "Everywhere i go in scratch i see this stupid text" [ref=f28e1369] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/scratch/comments/1tmsjlu/everywhere_i_go_in_scratch_i_see_this_stupid_text/
+                          - generic [ref=f28e1372]:
+                            - generic [ref=f28e1375]:
+                              - link "r/scratch" [ref=f28e1376] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/scratch/
+                              - generic [aria-hidden] [ref=f28e1381]: •
+                              - time [ref=f28e1383]: 3mo ago
+                            - link [ref=f28e1385] [cursor=pointer]:
+                              - /url: /r/scratch/comments/1tmsjlu/everywhere_i_go_in_scratch_i_see_this_stupid_text/
+                              - heading "List item post - Everywhere i go in scratch i see this stupid text" [level=3] [ref=f28e1388]: Everywhere i go in scratch i see this stupid text
+                          - generic [ref=f28e1390]:
+                            - generic [ref=f28e1391]: "24"
+                            - text: upvotes ·
+                            - generic [ref=f28e1392]: "8"
+                            - text: comments
+                        - separator [ref=f28e1393]
+                    - listitem [ref=f28e1394]:
+                      - generic [ref=f28e1395]:
+                        - generic [ref=f28e1396]:
+                          - link "lag thing i made" [ref=f28e1397] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/scratch/comments/1s6u4m0/lag_thing_i_made/
+                          - generic [ref=f28e1399]:
+                            - generic [ref=f28e1400]:
+                              - generic [ref=f28e1403]:
+                                - link "r/scratch" [ref=f28e1404] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/scratch/
+                                - generic [aria-hidden] [ref=f28e1409]: •
+                                - time [ref=f28e1411]: 5mo ago
+                              - link [ref=f28e1413] [cursor=pointer]:
+                                - /url: /r/scratch/comments/1s6u4m0/lag_thing_i_made/
+                                - heading "List item post - lag thing i made" [level=3] [ref=f28e1416]: lag thing i made
+                            - link "r/scratch - lag thing i made" [ref=f28e1419] [cursor=pointer]:
+                              - /url: https://www.reddit.com/r/scratch/comments/1s6u4m0/lag_thing_i_made/
+                              - img "r/scratch - lag thing i made" [ref=f28e1420]
+                          - generic [ref=f28e1422]:
+                            - generic [ref=f28e1423]: "43"
+                            - text: upvotes ·
+                            - generic [ref=f28e1424]: "26"
+                            - text: comments
+                        - separator [ref=f28e1425]
+                    - listitem [ref=f28e1426]:
+                      - generic [ref=f28e1427]:
+                        - generic [ref=f28e1428]:
+                          - link "Mogger Giznel" [ref=f28e1429] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/NatureofPredators/comments/1t6n279/mogger_giznel/
+                          - generic [ref=f28e1431]:
+                            - generic [ref=f28e1432]:
+                              - generic [ref=f28e1435]:
+                                - link "r/NatureofPredators" [ref=f28e1436] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/NatureofPredators/
+                                - generic [aria-hidden] [ref=f28e1441]: •
+                                - time [ref=f28e1443]: 4mo ago
+                              - link [ref=f28e1445] [cursor=pointer]:
+                                - /url: /r/NatureofPredators/comments/1t6n279/mogger_giznel/
+                                - heading "List item post - Mogger Giznel" [level=3] [ref=f28e1448]: Mogger Giznel
+                            - link "r/NatureofPredators - Mogger Giznel" [ref=f28e1451] [cursor=pointer]:
+                              - /url: https://www.reddit.com/r/NatureofPredators/comments/1t6n279/mogger_giznel/
+                              - img "r/NatureofPredators - Mogger Giznel" [ref=f28e1452]
+                          - generic [ref=f28e1454]:
+                            - generic [ref=f28e1455]: "300"
+                            - text: upvotes ·
+                            - generic [ref=f28e1456]: "11"
+                            - text: comments
+                        - separator [ref=f28e1457]
+                    - listitem [ref=f28e1458]:
+                      - generic [ref=f28e1459]:
+                        - generic [ref=f28e1460]:
+                          - link "How to make a gif?" [ref=f28e1461] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/howto/comments/16lf4e2/how_to_make_a_gif/
+                          - generic [ref=f28e1464]:
+                            - generic [ref=f28e1467]:
+                              - link "r/howto" [ref=f28e1468] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/howto/
+                              - generic [aria-hidden] [ref=f28e1473]: •
+                              - time [ref=f28e1475]: 3y ago
+                            - link [ref=f28e1477] [cursor=pointer]:
+                              - /url: /r/howto/comments/16lf4e2/how_to_make_a_gif/
+                              - heading "List item post - How to make a gif?" [level=3] [ref=f28e1480]: How to make a gif?
+                          - generic [ref=f28e1482]:
+                            - generic [ref=f28e1483]: "2"
+                            - text: upvotes ·
+                            - generic [ref=f28e1484]: "2"
+                            - text: comments
+                        - separator [ref=f28e1485]
+                    - listitem [ref=f28e1486]:
+                      - generic [ref=f28e1487]:
+                        - generic [ref=f28e1488]:
+                          - link "Best free software to create high quality gifs?" [ref=f28e1489] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/graphic_design/comments/1nc6fym/best_free_software_to_create_high_quality_gifs/
+                          - generic [ref=f28e1492]:
+                            - generic [ref=f28e1495]:
+                              - link "r/graphic_design" [ref=f28e1496] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/graphic_design/
+                              - generic [aria-hidden] [ref=f28e1501]: •
+                              - time [ref=f28e1503]: 1y ago
+                            - link [ref=f28e1505] [cursor=pointer]:
+                              - /url: /r/graphic_design/comments/1nc6fym/best_free_software_to_create_high_quality_gifs/
+                              - heading "List item post - Best free software to create high quality gifs?" [level=3] [ref=f28e1508]: Best free software to create high quality gifs?
+                          - generic [ref=f28e1510]:
+                            - generic [ref=f28e1511]: "3"
+                            - text: upvotes ·
+                            - generic [ref=f28e1512]: "12"
+                            - text: comments
+                        - separator [ref=f28e1513]
+                    - listitem [ref=f28e1514]:
+                      - generic [ref=f28e1515]:
+                        - generic [ref=f28e1516]:
+                          - link "Another little fun bit of coding." [ref=f28e1517] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/scratch/comments/1qiscpg/another_little_fun_bit_of_coding/
+                          - generic [ref=f28e1519]:
+                            - generic [ref=f28e1520]:
+                              - generic [ref=f28e1523]:
+                                - link "r/scratch" [ref=f28e1524] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/scratch/
+                                - generic [aria-hidden] [ref=f28e1529]: •
+                                - time [ref=f28e1531]: 7mo ago
+                              - link [ref=f28e1533] [cursor=pointer]:
+                                - /url: /r/scratch/comments/1qiscpg/another_little_fun_bit_of_coding/
+                                - heading "List item post - Another little fun bit of coding." [level=3] [ref=f28e1536]: Another little fun bit of coding.
+                            - generic [ref=f28e1538]:
+                              - link "r/scratch - Another little fun bit of coding." [ref=f28e1539] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/scratch/comments/1qiscpg/another_little_fun_bit_of_coding/
+                                - img "r/scratch - Another little fun bit of coding." [ref=f28e1540]
+                              - generic: 1:16
+                          - generic [ref=f28e1542]:
+                            - generic [ref=f28e1543]: "85"
+                            - text: upvotes ·
+                            - generic [ref=f28e1544]: "17"
+                            - text: comments
+                        - separator [ref=f28e1545]
+                    - listitem [ref=f28e1546]:
+                      - generic [ref=f28e1547]:
+                        - generic [ref=f28e1548]:
+                          - link "Looking for GIF Tool" [ref=f28e1549] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/software/comments/1cgoqr8/looking_for_gif_tool/
+                          - generic [ref=f28e1552]:
+                            - generic [ref=f28e1555]:
+                              - link "r/software" [ref=f28e1556] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/software/
+                              - generic [aria-hidden] [ref=f28e1561]: •
+                              - time [ref=f28e1563]: 2y ago
+                            - link [ref=f28e1565] [cursor=pointer]:
+                              - /url: /r/software/comments/1cgoqr8/looking_for_gif_tool/
+                              - heading "List item post - Looking for GIF Tool" [level=3] [ref=f28e1568]: Looking for GIF Tool
+                          - generic [ref=f28e1570]:
+                            - generic [ref=f28e1571]: "4"
+                            - text: upvotes ·
+                            - generic [ref=f28e1572]: "3"
+                            - text: comments
+                        - separator [ref=f28e1573]
+                    - listitem [ref=f28e1574]:
+                      - generic [ref=f28e1576]:
+                        - link "designed this when I was 12 years old under the username betterscratchcat what do you think" [ref=f28e1577] [cursor=pointer]:
+                          - /url: https://www.reddit.com/r/scratch/comments/1smgwnk/designed_this_when_i_was_12_years_old_under_the/
+                        - generic [ref=f28e1579]:
+                          - generic [ref=f28e1580]:
+                            - generic [ref=f28e1583]:
+                              - link "r/scratch" [ref=f28e1584] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/scratch/
+                              - generic [aria-hidden] [ref=f28e1589]: •
+                              - time [ref=f28e1591]: 5mo ago
+                            - link [ref=f28e1593] [cursor=pointer]:
+                              - /url: /r/scratch/comments/1smgwnk/designed_this_when_i_was_12_years_old_under_the/
+                              - heading "List item post - designed this when I was 12 years old under the username be..." [level=3] [ref=f28e1596]: designed this when I was 12 years old under the username betterscratchcat what do you think
+                          - link "r/scratch - designed this when I was 12 years old under the username betterscratchcat what do you think" [ref=f28e1599] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/scratch/comments/1smgwnk/designed_this_when_i_was_12_years_old_under_the/
+                            - img "r/scratch - designed this when I was 12 years old under the username betterscratchcat what do you think" [ref=f28e1600]
+                        - generic [ref=f28e1602]:
+                          - generic [ref=f28e1603]: "35"
+                          - text: upvotes ·
+                          - generic [ref=f28e1604]: "10"
+                          - text: comments
+                - generic [ref=f28e1605]:
+                  - heading "View Post in" [level=2] [ref=f28e1607]
+                  - generic [ref=f28e1609]:
+                    - link "Français" [ref=f28e1611] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/software/comments/18gwhsn/any_free_software_that_does_the_same_thing_as/?tl=fr
+                    - link "简体中文" [ref=f28e1613] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/software/comments/18gwhsn/any_free_software_that_does_the_same_thing_as/?tl=zh-hans
+                    - link "繁體中文" [ref=f28e1615] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/software/comments/18gwhsn/any_free_software_that_does_the_same_thing_as/?tl=zh-hant
+                    - link "日本語" [ref=f28e1617] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/software/comments/18gwhsn/any_free_software_that_does_the_same_thing_as/?tl=ja
+                    - link "Русский" [ref=f28e1619] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/software/comments/18gwhsn/any_free_software_that_does_the_same_thing_as/?tl=ru
+                    - link "Português (Brasil)" [ref=f28e1621] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/software/comments/18gwhsn/any_free_software_that_does_the_same_thing_as/?tl=pt-br
+                    - group [ref=f28e1622]:
+                      - generic "See more" [ref=f28e1623] [cursor=pointer]
+                - complementary "Community information" [ref=f28e1628]:
+                  - generic [ref=f28e1630]:
+                    - heading "Community Info Section" [level=1] [ref=f28e1631]
+                    - generic [ref=f28e1632]:
+                      - link "r/software" [ref=f28e1634] [cursor=pointer]:
+                        - /url: /r/software/
+                      - button "Join" [ref=f28e1639] [cursor=pointer]
+                    - generic [ref=f28e1640]:
+                      - generic [ref=f28e1641]: Software - Anything software-related
+                      - generic [ref=f28e1642]: Anything software-related. Please follow our rules to avoid getting punished.
+                      - generic: Public
+                - generic [ref=f28e1648]:
+                  - heading "Top Posts" [level=2] [ref=f28e1649]
+                  - list [ref=f28e1650]:
+                    - listitem [ref=f28e1651]:
+                      - 'link "Reddit reReddit: Top posts of December 12, 2023" [ref=f28e1652] [cursor=pointer]':
+                        - /url: https://www.reddit.com/posts/2023/december-12-1/global/
+                        - generic [ref=f28e1653]: Reddit
+                        - generic [ref=f28e1668]: "reReddit: Top posts of December 12, 2023"
+                        - separator [ref=f28e1669]
+                    - listitem [ref=f28e1670]:
+                      - 'link "Reddit reReddit: Top posts of December 2023" [ref=f28e1671] [cursor=pointer]':
+                        - /url: https://www.reddit.com/posts/2023/december/global/
+                        - generic [ref=f28e1672]: Reddit
+                        - generic [ref=f28e1687]: "reReddit: Top posts of December 2023"
+                        - separator [ref=f28e1688]
+                    - listitem [ref=f28e1689]:
+                      - 'link "Reddit reReddit: Top posts of 2023" [ref=f28e1690] [cursor=pointer]':
+                        - /url: https://www.reddit.com/posts/2023/global/
+                        - generic [ref=f28e1691]: Reddit
+                        - generic [ref=f28e1706]: "reReddit: Top posts of 2023"
+                        - separator [ref=f28e1707]
+              - list [ref=f28e1709]:
+                - listitem [ref=f28e1710]:
+                  - link "Home" [ref=f28e1712] [cursor=pointer]:
+                    - /url: /?feed=home
+                - listitem [ref=f28e1713]:
+                  - link "Popular" [ref=f28e1715] [cursor=pointer]:
+                    - /url: /r/popular/
+                - listitem [ref=f28e1716]:
+                  - link "News" [ref=f28e1718] [cursor=pointer]:
+                    - /url: /news/
+                - listitem [ref=f28e1719]:
+                  - link "Explore" [ref=f28e1721] [cursor=pointer]:
+                    - /url: /explore/
+                - listitem [ref=f28e1722]:
+                  - link "Best of Reddit" [ref=f28e1724] [cursor=pointer]:
+                    - /url: https://www.reddit.com/posts/2026/global/
+                - listitem [ref=f28e1725]:
+                  - link "Best of Reddit in Portuguese" [ref=f28e1727] [cursor=pointer]:
+                    - /url: https://www.reddit.com/posts/2026/tl-pt-BR/
+                - listitem [ref=f28e1728]:
+                  - link "Best of Reddit in German" [ref=f28e1730] [cursor=pointer]:
+                    - /url: https://www.reddit.com/posts/2026/tl-de/
+                - listitem [ref=f28e1731]:
+                  - link "Reddit Rules" [ref=f28e1733] [cursor=pointer]:
+                    - /url: https://www.redditinc.com/policies/content-policy
+                - listitem [ref=f28e1734]:
+                  - link "Privacy Policy" [ref=f28e1736] [cursor=pointer]:
+                    - /url: https://www.reddit.com/policies/privacy-policy
+                - listitem [ref=f28e1737]:
+                  - link "User Agreement" [ref=f28e1739] [cursor=pointer]:
+                    - /url: https://www.redditinc.com/policies/user-agreement
+                - listitem [ref=f28e1740]:
+                  - link "Accessibility" [ref=f28e1742] [cursor=pointer]:
+                    - /url: https://support.reddithelp.com/hc/sections/38303584022676-Accessibility
+                - listitem [ref=f28e1743]:
+                  - link "Reddit, Inc. © 2026. All rights reserved." [ref=f28e1744] [cursor=pointer]:
+                    - /url: https://redditinc.com
+        - generic [ref=f28e1747]:
+          - paragraph [ref=f28e1748]: Join the most real place on the internet
+          - generic [ref=f28e1750]:
+            - generic [ref=f28e1753]:
+              - iframe [ref=f28e1758]:
+                - button "Continue with Google. Opens in new tab" [ref=f29e3] [cursor=pointer]:
+                  - generic [ref=f29e5]: Continue with Google
+              - generic [ref=f28e1760] [cursor=pointer]:
+                - generic [ref=f28e1761]: Continue with Apple
+                - button "Sign in with Apple" [ref=f28e1767]:
+                  - generic [ref=f28e1768]:
+                    - img:
+                      - generic:
+                        - img:
+                          - generic:  Sign in with Apple
+            - link "Continue with Phone Number" [ref=f28e1773] [cursor=pointer]:
+              - /url: https://www.reddit.com/login/
+            - link "Continue with Email" [ref=f28e1782] [cursor=pointer]:
+              - /url: https://www.reddit.com/register/
+          - paragraph [ref=f28e1789]:
+            - text: By continuing, you agree to our
+            - link "User Agreement" [ref=f28e1790] [cursor=pointer]:
+              - /url: https://www.redditinc.com/policies/user-agreement
+            - text: and acknowledge that you understand the
+            - link "Privacy Policy" [ref=f28e1791] [cursor=pointer]:
+              - /url: https://www.redditinc.com/policies/privacy-policy
+            - text: .

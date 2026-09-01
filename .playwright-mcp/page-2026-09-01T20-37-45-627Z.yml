@@ -1,0 +1,1388 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e6]:
+    - generic:
+      - generic: "I created a browser-based video editor. 100% Free! : r/webdev"
+      - banner [ref=e10]:
+        - navigation [ref=e11]:
+          - link "Home" [ref=e15] [cursor=pointer]:
+            - /url: https://www.reddit.com/
+          - search [ref=e34]:
+            - generic [ref=e36]:
+              - textbox [ref=e43]:
+                - /placeholder: Search Reddit
+              - generic [aria-hidden]: Search Reddit
+          - generic [ref=e44]:
+            - link "Sign Up" [ref=e50] [cursor=pointer]:
+              - /url: https://www.reddit.com/register/
+            - link "Log In" [ref=e56] [cursor=pointer]:
+              - /url: https://www.reddit.com/login/
+            - button "Expand user menu" [ref=e63] [cursor=pointer]
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - generic:
+              - generic:
+                - link "Skip to Sign up" [ref=e72] [cursor=pointer]:
+                  - /url: "#left-sidebar-container"
+                - link "Skip to Right Sidebar" [ref=e73] [cursor=pointer]:
+                  - /url: "#right-sidebar-container"
+          - generic [ref=e74]:
+            - main [ref=e75]:
+              - 'generic "I created a browser-based video editor. 100% Free! : r/webdev"'
+              - generic [ref=e76]:
+                - generic [ref=e77]:
+                  - generic [ref=e78]:
+                    - button "Back" [ref=e80] [cursor=pointer]
+                    - link "Go to webdev" [ref=e88] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/webdev/
+                    - group [ref=e93]:
+                      - generic [ref=e94]:
+                        - link "r/webdev" [ref=e98] [cursor=pointer]:
+                          - /url: https://www.reddit.com/r/webdev/
+                        - generic [aria-hidden] [ref=e99]: •
+                        - time [ref=e101]: 5y ago
+                      - 'link "Author: beckerman_jacob" [ref=e107] [cursor=pointer]':
+                        - /url: https://www.reddit.com/user/beckerman_jacob/
+                        - generic [ref=e108]: beckerman_jacob
+                  - button "Open user actions" [ref=e112] [cursor=pointer]
+                - generic [ref=e118]:
+                  - 'heading "Post Title: I created a browser-based video editor. 100% Free!" [level=1] [ref=e119]': I created a browser-based video editor. 100% Free!
+                  - 'link "Flair: Showoff Saturday" [ref=e122] [cursor=pointer]':
+                    - /url: /r/webdev/?f=flair_name%3A%22Showoff%20Saturday%22
+                    - 'generic "Flair: Showoff Saturday" [ref=e124]': Showoff Saturday
+                - generic [ref=e127]:
+                  - generic [ref=e128]:
+                    - paragraph [ref=e129]: Hey everyone,
+                    - paragraph [ref=e130]: After looking around online for a free video editor, I started getting frustrated with the options out there. After working on a video for a while, I would click the export button only to be hit by one of the following options (ordered from most to least aggravating)
+                    - list [ref=e131]:
+                      - listitem [ref=e132]:
+                        - paragraph [ref=e133]: Pay a monthly subscription to export your video 🤬
+                      - listitem [ref=e134]:
+                        - paragraph [ref=e135]: Export with a watermark 😠
+                      - listitem [ref=e136]:
+                        - paragraph [ref=e137]: Export at a low resolution
+                    - paragraph [ref=e138]:
+                      - text: So I decided to build a video editor by myself and it's been one hell of journey, but today I'm excited to show you guys
+                      - link "Mastershot" [ref=e139] [cursor=pointer]:
+                        - /url: https://mastershot.app/
+                      - text: ". It's a completely browser-based video editor. This means that everything (including the rendering) happens in your browser! It's 100% free with no watermarks and up to 1080p export. Here's a list of some of the things you can do with it:"
+                    - list [ref=e140]:
+                      - listitem [ref=e141]:
+                        - paragraph [ref=e142]: Trim video/audio/images
+                      - listitem [ref=e143]:
+                        - paragraph [ref=e144]: Extract audio from video to separate track
+                      - listitem [ref=e145]:
+                        - paragraph [ref=e146]: Add text to video/images
+                      - listitem [ref=e147]:
+                        - paragraph [ref=e148]: Overlay videos on top of each other (picture in picture/grid/rows)
+                    - paragraph [ref=e149]:
+                      - strong [ref=e150]: Coming Soon
+                    - list [ref=e151]:
+                      - listitem [ref=e152]:
+                        - paragraph [ref=e153]: Integrations for stock images/videos.
+                      - listitem [ref=e154]:
+                        - paragraph [ref=e155]: Chroma Keying (Green screen)
+                      - listitem [ref=e156]:
+                        - paragraph [ref=e157]: Transitions between clips
+                      - listitem [ref=e158]:
+                        - paragraph [ref=e159]: Keyframe animations
+                    - paragraph [ref=e160]:
+                      - text: Check it out at
+                      - link "https://mastershot.app" [ref=e161] [cursor=pointer]:
+                        - /url: https://mastershot.app/
+                    - paragraph [ref=e162]: "The tech stack used for this project is as follows:"
+                    - paragraph [ref=e163]: Frontend - VanillaJS with WebGL for the preview screen.Renderer - Webassembly port of ffmpeg + canvas renderer for future (WebGL shaders, transitions, etc)
+                    - paragraph [ref=e164]: What do you guys think?
+                    - paragraph
+                    - paragraph [ref=e165]:
+                      - strong [ref=e166]: "EDIT: Since people have suggested adding a donation page, here it is:"
+                      - link [ref=e167] [cursor=pointer]:
+                        - /url: https://www.buymeacoffee.com/mastershot
+                        - strong [ref=e168]: https://www.buymeacoffee.com/mastershot
+                  - button "Read more" [ref=e169] [cursor=pointer]
+                - generic "Actions available for this post" [ref=e176]:
+                  - generic [ref=e179]:
+                    - button "Upvote" [ref=e180] [cursor=pointer]
+                    - generic [ref=e185]: 2K
+                    - button "Downvote" [ref=e187] [cursor=pointer]
+                  - button "427 Go to comments" [ref=e192] [cursor=pointer]:
+                    - generic [ref=e193]: "427"
+                    - generic [ref=e199]: Go to comments
+                  - button "Share" [ref=e203] [cursor=pointer]
+              - generic "Transcription that handles crosstalk and noise" [ref=e210]:
+                - generic [ref=e211]:
+                  - 'generic "Advertisement: Transcription that handles crosstalk and noise" [ref=e212]':
+                    - 'link "Advertisement: Transcription that handles crosstalk and noise" [ref=e213] [cursor=pointer]':
+                      - /url: https://alb.reddit.com/cr?za=A6es8HoBT_ZD0kej6HQKlHZHazeNLqelTL69CAVgKxB5z8XSDmPmIk9pXAnq0Fpgvy82M7igABi0d6-pORSu2sh1L5QmCeZ1G22E7kZs5rtoOYALdzS6xg-ZG5Bb7tZQBVJeMV4Zb2IH_krbwpoCJpArAWX_RjF24EYtdlqaW4gvZAAASDWhvy18f0H9pAYh6Rj2fhlJS1yxEGnOpxVEn-zkG3RC_6DliEvTOp8zQTAy6qfDvES66F-bSP8tSp9hIOeJORQHADOpV2EDdycwZlXtDn-mQ7SStPORh-kgoIitfSI7MHZ6loAinYJtcu5NN-EobcMZ48wVOYNHdQHDCf87VozCL7wyJBLw_2PwAp_oXKxT-6rSKCmViBqrLgh7MV39eKIxsXgQ09sjxlAzH89nhBm2VUC2Ur03iDFcyicGRJAREjJIHjddFefBPee81TaDK57Wpv621fbCqqODPr132MPOKXxggw-B8LUhOFyPOFP9VFFI1O3mrO6JuCxDGj0R_SiNl3hFRcc7xLu5v3YiNrrojJuQbTM-WUxX9wueykhrH1l6NitEKhfD8vvkGnDxHXVQcID39gDEu1ppaQ1gqeDcjYGpvF086icVun6x69wndsa1AvB4fF70-kdWr6NT3kOkyYn-bOLucnKOIYu4_dqeG9u4fIMi1y1Fs1g-KYNzrFy9apXTlsQpEdNNRHg-&zp=pR32bMIjV8TLj4n_xMc4-8A3lVocuby_YvxWMum2somNw4MpEO0w8vTKtYKQKLSzFDCImfhmkUii9qaoPybBn1ZSqpcS7CGAwbtC7yDQpxleYB8SfZDW_9-co6abt_q3fcV3C9eVGwGcA05HGBPXGdXmOq96arn-2TyoV7BK6zR4M2iDQ7hdZL-ZO6xXq7mjtrHHawwNMVy1CnfyCTGEUrFQK8rBsfY6Wy-YDfP9YOVez2wkaGvXAPSOdo8D0NgicehqOccVAWQHCIe7xe2ginr-FCtH8jQHIAWz7b1uBdCJihzzrfjpCVnBPx3RsmYzuygsAJGvOjglJLGk_zIGX04XEHlUmbWOxZba4FJUGnDNjRqfg7Qxku5JMkkRtjVYpV6BuUCNUnyNWskRRUvHhVPxFmi8yY4UYlRlicndhj04z0bS1DQfTEKGxNew8hCkpJco6C6obZB_7FLLYDdVZNAsF4dcpVAyBKU7ki3uuZzMAJOtCCwQaYIjjwWmtjeUJs_PhHtuXSv9Jpxu2KnRBHK0nPjpHRoERdNL-iNnvow0D9_68Rgh92pOxxh6qi0dQv4mFM19mQrsJ9V8EMk7sdR3CFO2VlIH7Dacwhrboyp65hl-KjCyBOxQ68a9YIU0d9NLlSxSAZejCR3pxzw
+                  - generic [ref=e214]:
+                    - generic [ref=e215]:
+                      - link "ElevenLabs" [ref=e218] [cursor=pointer]:
+                        - /url: /user/ElevenLabs/
+                        - img "u/ElevenLabs avatar" [ref=e221]
+                      - generic [ref=e223]: •
+                      - link "Ad" [ref=e225] [cursor=pointer]:
+                        - /url: /user/ElevenLabs/
+                      - link [ref=e228] [cursor=pointer]:
+                        - /url: https://alb.reddit.com/cr?za=A6es8HoBT_ZD0kej6HQKlHZHazeNLqelTL69CAVgKxB5z8XSDmPmIk9pXAnq0Fpgvy82M7igABi0d6-pORSu2sh1L5QmCeZ1G22E7kZs5rtoOYALdzS6xg-ZG5Bb7tZQBVJeMV4Zb2IH_krbwpoCJpArAWX_RjF24EYtdlqaW4gvZAAASDWhvy18f0H9pAYh6Rj2fhlJS1yxEGnOpxVEn-zkG3RC_6DliEvTOp8zQTAy6qfDvES66F-bSP8tSp9hIOeJORQHADOpV2EDdycwZlXtDn-mQ7SStPORh-kgoIitfSI7MHZ6loAinYJtcu5NN-EobcMZ48wVOYNHdQHDCf87VozCL7wyJBLw_2PwAp_oXKxT-6rSKCmViBqrLgh7MV39eKIxsXgQ09sjxlAzH89nhBm2VUC2Ur03iDFcyicGRJAREjJIHjddFefBPee81TaDK57Wpv621fbCqqODPr132MPOKXxggw-B8LUhOFyPOFP9VFFI1O3mrO6JuCxDGj0R_SiNl3hFRcc7xLu5v3YiNrrojJuQbTM-WUxX9wueykhrH1l6NitEKhfD8vvkGnDxHXVQcID39gDEu1ppaQ1gqeDcjYGpvF086icVun6x69wndsa1AvB4fF70-kdWr6NT3kOkyYn-bOLucnKOIYu4_dqeG9u4fIMi1y1Fs1g-KYNzrFy9apXTlsQpEdNNRHg-&zp=pR32bMIjV8TLj4n_xMc4-8A3lVocuby_YvxWMum2somNw4MpEO0w8vTKtYKQKLSzFDCImfhmkUii9qaoPybBn1ZSqpcS7CGAwbtC7yDQpxleYB8SfZDW_9-co6abt_q3fcV3C9eVGwGcA05HGBPXGdXmOq96arn-2TyoV7BK6zR4M2iDQ7hdZL-ZO6xXq7mjtrHHawwNMVy1CnfyCTGEUrFQK8rBsfY6Wy-YDfP9YOVez2wkaGvXAPSOdo8D0NgicehqOccVAWQHCIe7xe2ginr-FCtH8jQHIAWz7b1uBdCJihzzrfjpCVnBPx3RsmYzuygsAJGvOjglJLGk_zIGX04XEHlUmbWOxZba4FJUGnDNjRqfg7Qxku5JMkkRtjVYpV6BuUCNUnyNWskRRUvHhVPxFmi8yY4UYlRlicndhj04z0bS1DQfTEKGxNew8hCkpJco6C6obZB_7FLLYDdVZNAsF4dcpVAyBKU7ki3uuZzMAJOtCCwQaYIjjwWmtjeUJs_PhHtuXSv9Jpxu2KnRBHK0nPjpHRoERdNL-iNnvow0D9_68Rgh92pOxxh6qi0dQv4mFM19mQrsJ9V8EMk7sdR3CFO2VlIH7Dacwhrboyp65hl-KjCyBOxQ68a9YIU0d9NLlSxSAZejCR3pxzw
+                    - button "Open user actions" [ref=e234] [cursor=pointer]
+                  - generic [ref=e240]:
+                    - generic [ref=e241]:
+                      - link "Transcription that handles crosstalk and noise" [ref=e243] [cursor=pointer]:
+                        - /url: https://alb.reddit.com/cr?za=A6es8HoBT_ZD0kej6HQKlHZHazeNLqelTL69CAVgKxB5z8XSDmPmIk9pXAnq0Fpgvy82M7igABi0d6-pORSu2sh1L5QmCeZ1G22E7kZs5rtoOYALdzS6xg-ZG5Bb7tZQBVJeMV4Zb2IH_krbwpoCJpArAWX_RjF24EYtdlqaW4gvZAAASDWhvy18f0H9pAYh6Rj2fhlJS1yxEGnOpxVEn-zkG3RC_6DliEvTOp8zQTAy6qfDvES66F-bSP8tSp9hIOeJORQHADOpV2EDdycwZlXtDn-mQ7SStPORh-kgoIitfSI7MHZ6loAinYJtcu5NN-EobcMZ48wVOYNHdQHDCf87VozCL7wyJBLw_2PwAp_oXKxT-6rSKCmViBqrLgh7MV39eKIxsXgQ09sjxlAzH89nhBm2VUC2Ur03iDFcyicGRJAREjJIHjddFefBPee81TaDK57Wpv621fbCqqODPr132MPOKXxggw-B8LUhOFyPOFP9VFFI1O3mrO6JuCxDGj0R_SiNl3hFRcc7xLu5v3YiNrrojJuQbTM-WUxX9wueykhrH1l6NitEKhfD8vvkGnDxHXVQcID39gDEu1ppaQ1gqeDcjYGpvF086icVun6x69wndsa1AvB4fF70-kdWr6NT3kOkyYn-bOLucnKOIYu4_dqeG9u4fIMi1y1Fs1g-KYNzrFy9apXTlsQpEdNNRHg-&zp=pR32bMIjV8TLj4n_xMc4-8A3lVocuby_YvxWMum2somNw4MpEO0w8vTKtYKQKLSzFDCImfhmkUii9qaoPybBn1ZSqpcS7CGAwbtC7yDQpxleYB8SfZDW_9-co6abt_q3fcV3C9eVGwGcA05HGBPXGdXmOq96arn-2TyoV7BK6zR4M2iDQ7hdZL-ZO6xXq7mjtrHHawwNMVy1CnfyCTGEUrFQK8rBsfY6Wy-YDfP9YOVez2wkaGvXAPSOdo8D0NgicehqOccVAWQHCIe7xe2ginr-FCtH8jQHIAWz7b1uBdCJihzzrfjpCVnBPx3RsmYzuygsAJGvOjglJLGk_zIGX04XEHlUmbWOxZba4FJUGnDNjRqfg7Qxku5JMkkRtjVYpV6BuUCNUnyNWskRRUvHhVPxFmi8yY4UYlRlicndhj04z0bS1DQfTEKGxNew8hCkpJco6C6obZB_7FLLYDdVZNAsF4dcpVAyBKU7ki3uuZzMAJOtCCwQaYIjjwWmtjeUJs_PhHtuXSv9Jpxu2KnRBHK0nPjpHRoERdNL-iNnvow0D9_68Rgh92pOxxh6qi0dQv4mFM19mQrsJ9V8EMk7sdR3CFO2VlIH7Dacwhrboyp65hl-KjCyBOxQ68a9YIU0d9NLlSxSAZejCR3pxzw
+                      - generic [ref=e244]:
+                        - link [ref=e246] [cursor=pointer]:
+                          - /url: https://alb.reddit.com/cr?za=A6es8HoBT_ZD0kej6HQKlHZHazeNLqelTL69CAVgKxB5z8XSDmPmIk9pXAnq0Fpgvy82M7igABi0d6-pORSu2sh1L5QmCeZ1G22E7kZs5rtoOYALdzS6xg-ZG5Bb7tZQBVJeMV4Zb2IH_krbwpoCJpArAWX_RjF24EYtdlqaW4gvZAAASDWhvy18f0H9pAYh6Rj2fhlJS1yxEGnOpxVEn-zkG3RC_6DliEvTOp8zQTAy6qfDvES66F-bSP8tSp9hIOeJORQHADOpV2EDdycwZlXtDn-mQ7SStPORh-kgoIitfSI7MHZ6loAinYJtcu5NN-EobcMZ48wVOYNHdQHDCf87VozCL7wyJBLw_2PwAp_oXKxT-6rSKCmViBqrLgh7MV39eKIxsXgQ09sjxlAzH89nhBm2VUC2Ur03iDFcyicGRJAREjJIHjddFefBPee81TaDK57Wpv621fbCqqODPr132MPOKXxggw-B8LUhOFyPOFP9VFFI1O3mrO6JuCxDGj0R_SiNl3hFRcc7xLu5v3YiNrrojJuQbTM-WUxX9wueykhrH1l6NitEKhfD8vvkGnDxHXVQcID39gDEu1ppaQ1gqeDcjYGpvF086icVun6x69wndsa1AvB4fF70-kdWr6NT3kOkyYn-bOLucnKOIYu4_dqeG9u4fIMi1y1Fs1g-KYNzrFy9apXTlsQpEdNNRHg-&zp=pR32bMIjV8TLj4n_xMc4-8A3lVocuby_YvxWMum2somNw4MpEO0w8vTKtYKQKLSzFDCImfhmkUii9qaoPybBn1ZSqpcS7CGAwbtC7yDQpxleYB8SfZDW_9-co6abt_q3fcV3C9eVGwGcA05HGBPXGdXmOq96arn-2TyoV7BK6zR4M2iDQ7hdZL-ZO6xXq7mjtrHHawwNMVy1CnfyCTGEUrFQK8rBsfY6Wy-YDfP9YOVez2wkaGvXAPSOdo8D0NgicehqOccVAWQHCIe7xe2ginr-FCtH8jQHIAWz7b1uBdCJihzzrfjpCVnBPx3RsmYzuygsAJGvOjglJLGk_zIGX04XEHlUmbWOxZba4FJUGnDNjRqfg7Qxku5JMkkRtjVYpV6BuUCNUnyNWskRRUvHhVPxFmi8yY4UYlRlicndhj04z0bS1DQfTEKGxNew8hCkpJco6C6obZB_7FLLYDdVZNAsF4dcpVAyBKU7ki3uuZzMAJOtCCwQaYIjjwWmtjeUJs_PhHtuXSv9Jpxu2KnRBHK0nPjpHRoERdNL-iNnvow0D9_68Rgh92pOxxh6qi0dQv4mFM19mQrsJ9V8EMk7sdR3CFO2VlIH7Dacwhrboyp65hl-KjCyBOxQ68a9YIU0d9NLlSxSAZejCR3pxzw
+                        - generic [ref=e247]:
+                          - link "Learn More" [ref=e249] [cursor=pointer]:
+                            - /url: https://alb.reddit.com/cr?za=A6es8HoBT_ZD0kej6HQKlHZHazeNLqelTL69CAVgKxB5z8XSDmPmIk9pXAnq0Fpgvy82M7igABi0d6-pORSu2sh1L5QmCeZ1G22E7kZs5rtoOYALdzS6xg-ZG5Bb7tZQBVJeMV4Zb2IH_krbwpoCJpArAWX_RjF24EYtdlqaW4gvZAAASDWhvy18f0H9pAYh6Rj2fhlJS1yxEGnOpxVEn-zkG3RC_6DliEvTOp8zQTAy6qfDvES66F-bSP8tSp9hIOeJORQHADOpV2EDdycwZlXtDn-mQ7SStPORh-kgoIitfSI7MHZ6loAinYJtcu5NN-EobcMZ48wVOYNHdQHDCf87VozCL7wyJBLw_2PwAp_oXKxT-6rSKCmViBqrLgh7MV39eKIxsXgQ09sjxlAzH89nhBm2VUC2Ur03iDFcyicGRJAREjJIHjddFefBPee81TaDK57Wpv621fbCqqODPr132MPOKXxggw-B8LUhOFyPOFP9VFFI1O3mrO6JuCxDGj0R_SiNl3hFRcc7xLu5v3YiNrrojJuQbTM-WUxX9wueykhrH1l6NitEKhfD8vvkGnDxHXVQcID39gDEu1ppaQ1gqeDcjYGpvF086icVun6x69wndsa1AvB4fF70-kdWr6NT3kOkyYn-bOLucnKOIYu4_dqeG9u4fIMi1y1Fs1g-KYNzrFy9apXTlsQpEdNNRHg-&zp=pR32bMIjV8TLj4n_xMc4-8A3lVocuby_YvxWMum2somNw4MpEO0w8vTKtYKQKLSzFDCImfhmkUii9qaoPybBn1ZSqpcS7CGAwbtC7yDQpxleYB8SfZDW_9-co6abt_q3fcV3C9eVGwGcA05HGBPXGdXmOq96arn-2TyoV7BK6zR4M2iDQ7hdZL-ZO6xXq7mjtrHHawwNMVy1CnfyCTGEUrFQK8rBsfY6Wy-YDfP9YOVez2wkaGvXAPSOdo8D0NgicehqOccVAWQHCIe7xe2ginr-FCtH8jQHIAWz7b1uBdCJihzzrfjpCVnBPx3RsmYzuygsAJGvOjglJLGk_zIGX04XEHlUmbWOxZba4FJUGnDNjRqfg7Qxku5JMkkRtjVYpV6BuUCNUnyNWskRRUvHhVPxFmi8yY4UYlRlicndhj04z0bS1DQfTEKGxNew8hCkpJco6C6obZB_7FLLYDdVZNAsF4dcpVAyBKU7ki3uuZzMAJOtCCwQaYIjjwWmtjeUJs_PhHtuXSv9Jpxu2KnRBHK0nPjpHRoERdNL-iNnvow0D9_68Rgh92pOxxh6qi0dQv4mFM19mQrsJ9V8EMk7sdR3CFO2VlIH7Dacwhrboyp65hl-KjCyBOxQ68a9YIU0d9NLlSxSAZejCR3pxzw
+                          - link "join.elevenlabs.io" [ref=e254] [cursor=pointer]:
+                            - /url: https://alb.reddit.com/cr?za=A6es8HoBT_ZD0kej6HQKlHZHazeNLqelTL69CAVgKxB5z8XSDmPmIk9pXAnq0Fpgvy82M7igABi0d6-pORSu2sh1L5QmCeZ1G22E7kZs5rtoOYALdzS6xg-ZG5Bb7tZQBVJeMV4Zb2IH_krbwpoCJpArAWX_RjF24EYtdlqaW4gvZAAASDWhvy18f0H9pAYh6Rj2fhlJS1yxEGnOpxVEn-zkG3RC_6DliEvTOp8zQTAy6qfDvES66F-bSP8tSp9hIOeJORQHADOpV2EDdycwZlXtDn-mQ7SStPORh-kgoIitfSI7MHZ6loAinYJtcu5NN-EobcMZ48wVOYNHdQHDCf87VozCL7wyJBLw_2PwAp_oXKxT-6rSKCmViBqrLgh7MV39eKIxsXgQ09sjxlAzH89nhBm2VUC2Ur03iDFcyicGRJAREjJIHjddFefBPee81TaDK57Wpv621fbCqqODPr132MPOKXxggw-B8LUhOFyPOFP9VFFI1O3mrO6JuCxDGj0R_SiNl3hFRcc7xLu5v3YiNrrojJuQbTM-WUxX9wueykhrH1l6NitEKhfD8vvkGnDxHXVQcID39gDEu1ppaQ1gqeDcjYGpvF086icVun6x69wndsa1AvB4fF70-kdWr6NT3kOkyYn-bOLucnKOIYu4_dqeG9u4fIMi1y1Fs1g-KYNzrFy9apXTlsQpEdNNRHg-&zp=pR32bMIjV8TLj4n_xMc4-8A3lVocuby_YvxWMum2somNw4MpEO0w8vTKtYKQKLSzFDCImfhmkUii9qaoPybBn1ZSqpcS7CGAwbtC7yDQpxleYB8SfZDW_9-co6abt_q3fcV3C9eVGwGcA05HGBPXGdXmOq96arn-2TyoV7BK6zR4M2iDQ7hdZL-ZO6xXq7mjtrHHawwNMVy1CnfyCTGEUrFQK8rBsfY6Wy-YDfP9YOVez2wkaGvXAPSOdo8D0NgicehqOccVAWQHCIe7xe2ginr-FCtH8jQHIAWz7b1uBdCJihzzrfjpCVnBPx3RsmYzuygsAJGvOjglJLGk_zIGX04XEHlUmbWOxZba4FJUGnDNjRqfg7Qxku5JMkkRtjVYpV6BuUCNUnyNWskRRUvHhVPxFmi8yY4UYlRlicndhj04z0bS1DQfTEKGxNew8hCkpJco6C6obZB_7FLLYDdVZNAsF4dcpVAyBKU7ki3uuZzMAJOtCCwQaYIjjwWmtjeUJs_PhHtuXSv9Jpxu2KnRBHK0nPjpHRoERdNL-iNnvow0D9_68Rgh92pOxxh6qi0dQv4mFM19mQrsJ9V8EMk7sdR3CFO2VlIH7Dacwhrboyp65hl-KjCyBOxQ68a9YIU0d9NLlSxSAZejCR3pxzw
+                    - link [ref=e257] [cursor=pointer]:
+                      - /url: https://alb.reddit.com/cr?za=A6es8HoBT_ZD0kej6HQKlHZHazeNLqelTL69CAVgKxB5z8XSDmPmIk9pXAnq0Fpgvy82M7igABi0d6-pORSu2sh1L5QmCeZ1G22E7kZs5rtoOYALdzS6xg-ZG5Bb7tZQBVJeMV4Zb2IH_krbwpoCJpArAWX_RjF24EYtdlqaW4gvZAAASDWhvy18f0H9pAYh6Rj2fhlJS1yxEGnOpxVEn-zkG3RC_6DliEvTOp8zQTAy6qfDvES66F-bSP8tSp9hIOeJORQHADOpV2EDdycwZlXtDn-mQ7SStPORh-kgoIitfSI7MHZ6loAinYJtcu5NN-EobcMZ48wVOYNHdQHDCf87VozCL7wyJBLw_2PwAp_oXKxT-6rSKCmViBqrLgh7MV39eKIxsXgQ09sjxlAzH89nhBm2VUC2Ur03iDFcyicGRJAREjJIHjddFefBPee81TaDK57Wpv621fbCqqODPr132MPOKXxggw-B8LUhOFyPOFP9VFFI1O3mrO6JuCxDGj0R_SiNl3hFRcc7xLu5v3YiNrrojJuQbTM-WUxX9wueykhrH1l6NitEKhfD8vvkGnDxHXVQcID39gDEu1ppaQ1gqeDcjYGpvF086icVun6x69wndsa1AvB4fF70-kdWr6NT3kOkyYn-bOLucnKOIYu4_dqeG9u4fIMi1y1Fs1g-KYNzrFy9apXTlsQpEdNNRHg-&zp=pR32bMIjV8TLj4n_xMc4-8A3lVocuby_YvxWMum2somNw4MpEO0w8vTKtYKQKLSzFDCImfhmkUii9qaoPybBn1ZSqpcS7CGAwbtC7yDQpxleYB8SfZDW_9-co6abt_q3fcV3C9eVGwGcA05HGBPXGdXmOq96arn-2TyoV7BK6zR4M2iDQ7hdZL-ZO6xXq7mjtrHHawwNMVy1CnfyCTGEUrFQK8rBsfY6Wy-YDfP9YOVez2wkaGvXAPSOdo8D0NgicehqOccVAWQHCIe7xe2ginr-FCtH8jQHIAWz7b1uBdCJihzzrfjpCVnBPx3RsmYzuygsAJGvOjglJLGk_zIGX04XEHlUmbWOxZba4FJUGnDNjRqfg7Qxku5JMkkRtjVYpV6BuUCNUnyNWskRRUvHhVPxFmi8yY4UYlRlicndhj04z0bS1DQfTEKGxNew8hCkpJco6C6obZB_7FLLYDdVZNAsF4dcpVAyBKU7ki3uuZzMAJOtCCwQaYIjjwWmtjeUJs_PhHtuXSv9Jpxu2KnRBHK0nPjpHRoERdNL-iNnvow0D9_68Rgh92pOxxh6qi0dQv4mFM19mQrsJ9V8EMk7sdR3CFO2VlIH7Dacwhrboyp65hl-KjCyBOxQ68a9YIU0d9NLlSxSAZejCR3pxzw
+                      - 'img "Thumbnail image: Transcription that handles crosstalk and noise" [ref=e258]'
+              - generic [ref=e260]:
+                - generic:
+                  - generic [ref=e261]:
+                    - button "Button to add a comment" [disabled]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - textbox [disabled]:
+                                  - /placeholder: Join the conversation
+                  - generic [ref=e266]:
+                    - generic [ref=e268]:
+                      - generic [aria-hidden] [ref=e269]: "Sort by:"
+                      - button "Sort by Best" [ref=e274] [cursor=pointer]:
+                        - generic [ref=e275]: Best
+                    - button "Search Comments Expand comment search" [ref=e283] [cursor=pointer]:
+                      - generic [ref=e284]: Search Comments
+                      - generic [ref=e291]: Expand comment search
+              - region "Comments" [ref=e294]:
+                - heading "Comments Section" [level=1] [ref=e295]
+                - article "Comment from CJ_dev 5 years ago" [ref=e297]:
+                  - generic [ref=e298] [cursor=pointer]:
+                    - link "CJ_dev's profile --- avatar" [ref=e304]:
+                      - /url: https://www.reddit.com/user/CJ_dev/
+                    - generic [ref=e320]:
+                      - link "CJ_dev's profile" [ref=e324]:
+                        - /url: https://www.reddit.com/user/CJ_dev/
+                        - text: CJ_dev
+                      - generic [aria-hidden] [ref=e325]: •
+                      - link [ref=e327]:
+                        - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0qjlws/
+                        - time [ref=e329]: 5y ago
+                  - generic [ref=e331]:
+                    - paragraph [ref=e335]:
+                      - link [ref=e338] [cursor=pointer]:
+                        - /url: /search/?q=FFmpeg+WASM&cId=3c3100e9-3ad3-4483-830e-ad0f320b1413&iId=96cfe567-32b9-4737-b062-366f9cd24d6b
+                      - text: "! Been working with it myself lately too. Epic how much you can achieve with browsers."
+                    - generic [ref=e344]:
+                      - 'article "Comment thread level 1: Reply from beckerman_jacob 5 years ago" [ref=e346]':
+                        - generic [ref=e347] [cursor=pointer]:
+                          - link "beckerman_jacob's profile --- avatar" [ref=e353]:
+                            - /url: https://www.reddit.com/user/beckerman_jacob/
+                            - img "u/beckerman_jacob avatar" [ref=e356]
+                          - generic [ref=e360]:
+                            - link "beckerman_jacob's profile" [ref=e364]:
+                              - /url: https://www.reddit.com/user/beckerman_jacob/
+                              - text: beckerman_jacob
+                            - generic "Comment distinguished as the original poster" [ref=e367]: OP
+                            - generic [aria-hidden] [ref=e368]: •
+                            - link [ref=e370]:
+                              - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0qxwph/
+                              - time [ref=e372]: 5y ago
+                        - paragraph [ref=e378]: It truly is an amazing library
+                      - button "5 more replies" [ref=e384] [cursor=pointer]:
+                        - generic [ref=e389]:
+                          - generic [ref=e390]: "5"
+                          - text: more replies
+                - article "Comment from Wesley_Ford_Sr 5 years ago" [ref=e392]:
+                  - generic [ref=e393] [cursor=pointer]:
+                    - link "Wesley_Ford_Sr's profile --- avatar" [ref=e399]:
+                      - /url: https://www.reddit.com/user/Wesley_Ford_Sr/
+                      - img "u/Wesley_Ford_Sr avatar" [ref=e402]
+                    - generic [ref=e406]:
+                      - link "Wesley_Ford_Sr's profile" [ref=e410]:
+                        - /url: https://www.reddit.com/user/Wesley_Ford_Sr/
+                        - text: Wesley_Ford_Sr
+                      - generic [aria-hidden] [ref=e411]: •
+                      - link [ref=e413]:
+                        - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0r0vgt/
+                        - time [ref=e415]: 5y ago
+                  - generic [ref=e417]:
+                    - paragraph [ref=e421]: This inspires me to start another project I won’t complete
+                    - generic [ref=e424]:
+                      - 'article "Comment thread level 1: Reply from beckerman_jacob 5 years ago" [ref=e426]':
+                        - generic [ref=e427] [cursor=pointer]:
+                          - link "beckerman_jacob's profile --- avatar" [ref=e433]:
+                            - /url: https://www.reddit.com/user/beckerman_jacob/
+                            - img "u/beckerman_jacob avatar" [ref=e436]
+                          - generic [ref=e440]:
+                            - link "beckerman_jacob's profile" [ref=e444]:
+                              - /url: https://www.reddit.com/user/beckerman_jacob/
+                              - text: beckerman_jacob
+                            - generic "Comment distinguished as the original poster" [ref=e447]: OP
+                            - generic [aria-hidden] [ref=e448]: •
+                            - link [ref=e450]:
+                              - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0r17py/
+                              - time [ref=e452]: 5y ago
+                        - generic [ref=e454]:
+                          - paragraph [ref=e458]:
+                            - text: You have no idea how much this resonates with me. I’m a
+                            - link [ref=e461] [cursor=pointer]:
+                              - /url: /search/?q=serial+starter+projects&cId=1f08123b-7f9a-40af-a1df-aa57880f8c14&iId=dd6f4ed7-0e2d-499c-b6bf-d1514454aba1
+                            - text: and the only reason I was able to get this far with this project was because of the positive feedback I received from the various communities I’ve posted this to.
+                          - button "8 more replies" [ref=e471] [cursor=pointer]:
+                            - generic [ref=e476]:
+                              - generic [ref=e477]: "8"
+                              - text: more replies
+                      - button "1 more reply" [ref=e481] [cursor=pointer]:
+                        - generic [ref=e486]:
+                          - generic [ref=e487]: "1"
+                          - text: more reply
+                - article "Comment from notinthevaccine 5 years ago" [ref=e489]:
+                  - generic [ref=e490] [cursor=pointer]:
+                    - link "notinthevaccine's profile --- avatar" [ref=e496]:
+                      - /url: https://www.reddit.com/user/notinthevaccine/
+                    - generic [ref=e506]:
+                      - link "notinthevaccine's profile" [ref=e510]:
+                        - /url: https://www.reddit.com/user/notinthevaccine/
+                        - text: notinthevaccine
+                      - generic [aria-hidden] [ref=e511]: •
+                      - link [ref=e513]:
+                        - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0qhmwp/
+                        - time [ref=e515]: 5y ago
+                  - generic [ref=e517]:
+                    - paragraph [ref=e521]: Happy you made something like this, my dad was looking for an easy option to edit videos. Gotta try it and come back with what I think!
+                    - 'article "Comment thread level 1: Reply from beckerman_jacob 5 years ago" [ref=e526]':
+                      - generic [ref=e527] [cursor=pointer]:
+                        - link "beckerman_jacob's profile --- avatar" [ref=e533]:
+                          - /url: https://www.reddit.com/user/beckerman_jacob/
+                          - img "u/beckerman_jacob avatar" [ref=e536]
+                        - generic [ref=e540]:
+                          - link "beckerman_jacob's profile" [ref=e544]:
+                            - /url: https://www.reddit.com/user/beckerman_jacob/
+                            - text: beckerman_jacob
+                          - generic "Comment distinguished as the original poster" [ref=e547]: OP
+                          - generic [aria-hidden] [ref=e548]: •
+                          - link [ref=e550]:
+                            - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0qhrw7/
+                            - time [ref=e552]: 5y ago
+                      - generic [ref=e554]:
+                        - paragraph [ref=e558]: That would be perfect! I would really like to hear what sort of usability issues I have.
+                        - button "2 more replies" [ref=e565] [cursor=pointer]:
+                          - generic [ref=e570]:
+                            - generic [ref=e571]: "2"
+                            - text: more replies
+                - article "Comment from Tokogogoloshe 5 years ago" [ref=e573]:
+                  - generic [ref=e574] [cursor=pointer]:
+                    - link "Tokogogoloshe's profile --- avatar" [ref=e580]:
+                      - /url: https://www.reddit.com/user/Tokogogoloshe/
+                    - generic [ref=e590]:
+                      - link "Tokogogoloshe's profile" [ref=e594]:
+                        - /url: https://www.reddit.com/user/Tokogogoloshe/
+                        - text: Tokogogoloshe
+                      - generic [aria-hidden] [ref=e595]: •
+                      - link [ref=e597]:
+                        - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0r06w7/
+                        - time [ref=e599]: 5y ago
+                  - generic [ref=e601]:
+                    - paragraph [ref=e605]: Tell you what. I need to make some training videos next week. I’ll try using this and mail you some feedback.
+                    - generic [ref=e608]:
+                      - 'article "Comment thread level 1: Reply from beckerman_jacob 5 years ago" [ref=e610]':
+                        - generic [ref=e611] [cursor=pointer]:
+                          - link "beckerman_jacob's profile --- avatar" [ref=e617]:
+                            - /url: https://www.reddit.com/user/beckerman_jacob/
+                            - img "u/beckerman_jacob avatar" [ref=e620]
+                          - generic [ref=e624]:
+                            - link "beckerman_jacob's profile" [ref=e628]:
+                              - /url: https://www.reddit.com/user/beckerman_jacob/
+                              - text: beckerman_jacob
+                            - generic "Comment distinguished as the original poster" [ref=e631]: OP
+                            - generic [aria-hidden] [ref=e632]: •
+                            - link [ref=e634]:
+                              - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0r0bhr/
+                              - time [ref=e636]: 5y ago
+                        - generic [ref=e638]:
+                          - paragraph [ref=e642]: That would be amazing!
+                          - button "7 more replies" [ref=e649] [cursor=pointer]:
+                            - generic [ref=e654]:
+                              - generic [ref=e655]: "7"
+                              - text: more replies
+                      - button "2 more replies" [ref=e659] [cursor=pointer]:
+                        - generic [ref=e664]:
+                          - generic [ref=e665]: "2"
+                          - text: more replies
+                - generic "Build In-Demand AI Career Skills with the Google AI Professional Certificate" [ref=e667]:
+                  - generic [ref=e668]:
+                    - 'generic "Advertisement: Build In-Demand AI Career Skills with the Google AI Professional Certificate" [ref=e669]':
+                      - 'link "Advertisement: Build In-Demand AI Career Skills with the Google AI Professional Certificate" [ref=e670] [cursor=pointer]':
+                        - /url: https://alb.reddit.com/cr?za=mOqY7QCWYf7Az-GchM93yKo5uGYBN9O3KkPlHo_f7jByRa-49jw2i_-0P868Qge6oMFwWlIbfJU1Aljn3DCNkvOW1JPVJJOpmDAecUCivTPAVOxwT2SIBk2kl_Qv4JgjbL6ioQKn_2Yhk2_-r9cOh9E4XKNBFYUHy48P9FdG9fCMlmUEz7kplEWE3DxT8RkRfd7yc1E6fyEVRNA5cRWazn7Oi8mLC0YYnkFuM40Ce_hkbR1UNCW8gSwAW6Yf7BMs79vv1hACfmJehjKMFzS-BZurwIRXq9FpItZTN1jGVkPv583yOwD2hB8p3GULVRmKR6mwz8FlB7ZM4xgyOYeD2a_zHddb33MkmmQTMZx7-Coa9tvN6WGM6dwbtmROMzlbGvrgBChoNdn3mLlBejV1zvrg1m89nOxb417GZ_w_KpwccCEdLRXBIs0dWo_s7wEKGwyYCooLdOB6IxgHRgjptwuw3asbZOwJjVvWkXtKvVJVk6m1BDWq0xCumdWjQn0aV0qrVGD8z1ivdVZG2s1iJSY75CEVRC-uJkYdvSPBmjPFfzr2FuQ_YGxQWnXxAjCsHshW4eVsPENkPvDHBHWMRAkXbaUrehTH1H0neRBGf0HY1bmzB9v8KR62SJzcd-LH1MFtyh_oaTITaXHEvy-Q77qrCs0z8qQLMYg_IHNJshjeSmjHeYF5QO-GA2XoLOvZinAb&zp=r6au0JArFdEO4hjt1YwVbjCj3qpE1JEITOjhIy8DIYhsXnO5B_TD8L4PFVb66oL0Lq2a8iD2uYS7gqXtc1b_YMeHBQ3dNgtpUXQJWT5Gfsl1MASnJiSIxhz4jjkXLy1zvXhZ6nZ7h2sBHmte9c-NXi6CHn1Szu3L-YfNtKD-uLysUU9DuEQsoE9Nw7iDKkqadtJ78gzcKhlnnv9W8RJI1tTx7RakiNmel_uyBLyN0oDme4b5WFXreNkJ8H2vA82J1mENffaz1nFvXjpz-MPR0CEcs-Z5WjRYLmT2oU0mNFuCErYy8J9a-XLAetI-9FiAPVIMyYxBwM0PBe9gN49IEoVS9UBnuYhLRlGTwhEfUEL6junwj0eAMWTGCE4ZssOag9_FnFNbuHQJrl9OWCO1b17N6LoWjAu6NqWmOSI-UB4TBF6DFntrryVT_UG84hPc3ShhufZykfDV4zMi96XJkgRzwl6iyWVTA__nr4u6oxA1HNRgGbH9QZ8R2BcVP9TLIoq-HW792M9_btYLZ3gr-ZLJMyO0TiMVd79nqKVzvB98WPqMNRzGBMai-yCTQyettYaikuLJK1zMKoDhZWN89A0A-0MG-YWVIpnYIv34E_CPL2JBxB418GH1lUuMjDIUxK2uDNMMrYV0XuWBl_sASLFfbZjp1EC0rowEXjNGBYwtf1M3YSxCH6tfq1Am0dORk86RwnLTfzBkcNGgyBLdMkCBpcbeoRgQ36ymiZEIy8X0AsoPISMUrAI2v-AcnuKLt27HpwKnpMaazQKkQoRRjuAvhYciuR4xkMgiqi8P-YUir0KJitxel0F7QxyoU_5hTsYll-X1FMKQgGU-h4xxMNNL8WnHjiu5cPDVlMqAOCDdBbF9waRdJJI_eKZ4Nx-VcMvfG0QOpKuk9aCE0dMLDDYQS81TmKIKwBCwtZlJYDa2u75lgrNq7__HRR6lOzlBliBv89P4zPhMGPyrwNPEphWsk0I
+                    - generic [ref=e671]:
+                      - generic [ref=e672]:
+                        - link "u/coursera" [ref=e675] [cursor=pointer]:
+                          - /url: /user/coursera/
+                          - img "u/coursera avatar" [ref=e678]
+                        - generic [ref=e680]: •
+                        - link "Ad" [ref=e682] [cursor=pointer]:
+                          - /url: /user/coursera/
+                        - link [ref=e685] [cursor=pointer]:
+                          - /url: https://alb.reddit.com/cr?za=mOqY7QCWYf7Az-GchM93yKo5uGYBN9O3KkPlHo_f7jByRa-49jw2i_-0P868Qge6oMFwWlIbfJU1Aljn3DCNkvOW1JPVJJOpmDAecUCivTPAVOxwT2SIBk2kl_Qv4JgjbL6ioQKn_2Yhk2_-r9cOh9E4XKNBFYUHy48P9FdG9fCMlmUEz7kplEWE3DxT8RkRfd7yc1E6fyEVRNA5cRWazn7Oi8mLC0YYnkFuM40Ce_hkbR1UNCW8gSwAW6Yf7BMs79vv1hACfmJehjKMFzS-BZurwIRXq9FpItZTN1jGVkPv583yOwD2hB8p3GULVRmKR6mwz8FlB7ZM4xgyOYeD2a_zHddb33MkmmQTMZx7-Coa9tvN6WGM6dwbtmROMzlbGvrgBChoNdn3mLlBejV1zvrg1m89nOxb417GZ_w_KpwccCEdLRXBIs0dWo_s7wEKGwyYCooLdOB6IxgHRgjptwuw3asbZOwJjVvWkXtKvVJVk6m1BDWq0xCumdWjQn0aV0qrVGD8z1ivdVZG2s1iJSY75CEVRC-uJkYdvSPBmjPFfzr2FuQ_YGxQWnXxAjCsHshW4eVsPENkPvDHBHWMRAkXbaUrehTH1H0neRBGf0HY1bmzB9v8KR62SJzcd-LH1MFtyh_oaTITaXHEvy-Q77qrCs0z8qQLMYg_IHNJshjeSmjHeYF5QO-GA2XoLOvZinAb&zp=r6au0JArFdEO4hjt1YwVbjCj3qpE1JEITOjhIy8DIYhsXnO5B_TD8L4PFVb66oL0Lq2a8iD2uYS7gqXtc1b_YMeHBQ3dNgtpUXQJWT5Gfsl1MASnJiSIxhz4jjkXLy1zvXhZ6nZ7h2sBHmte9c-NXi6CHn1Szu3L-YfNtKD-uLysUU9DuEQsoE9Nw7iDKkqadtJ78gzcKhlnnv9W8RJI1tTx7RakiNmel_uyBLyN0oDme4b5WFXreNkJ8H2vA82J1mENffaz1nFvXjpz-MPR0CEcs-Z5WjRYLmT2oU0mNFuCErYy8J9a-XLAetI-9FiAPVIMyYxBwM0PBe9gN49IEoVS9UBnuYhLRlGTwhEfUEL6junwj0eAMWTGCE4ZssOag9_FnFNbuHQJrl9OWCO1b17N6LoWjAu6NqWmOSI-UB4TBF6DFntrryVT_UG84hPc3ShhufZykfDV4zMi96XJkgRzwl6iyWVTA__nr4u6oxA1HNRgGbH9QZ8R2BcVP9TLIoq-HW792M9_btYLZ3gr-ZLJMyO0TiMVd79nqKVzvB98WPqMNRzGBMai-yCTQyettYaikuLJK1zMKoDhZWN89A0A-0MG-YWVIpnYIv34E_CPL2JBxB418GH1lUuMjDIUxK2uDNMMrYV0XuWBl_sASLFfbZjp1EC0rowEXjNGBYwtf1M3YSxCH6tfq1Am0dORk86RwnLTfzBkcNGgyBLdMkCBpcbeoRgQ36ymiZEIy8X0AsoPISMUrAI2v-AcnuKLt27HpwKnpMaazQKkQoRRjuAvhYciuR4xkMgiqi8P-YUir0KJitxel0F7QxyoU_5hTsYll-X1FMKQgGU-h4xxMNNL8WnHjiu5cPDVlMqAOCDdBbF9waRdJJI_eKZ4Nx-VcMvfG0QOpKuk9aCE0dMLDDYQS81TmKIKwBCwtZlJYDa2u75lgrNq7__HRR6lOzlBliBv89P4zPhMGPyrwNPEphWsk0I
+                      - button "Open user actions" [ref=e691] [cursor=pointer]
+                    - generic [ref=e697]:
+                      - generic [ref=e698]:
+                        - link "Build In-Demand AI Career Skills with the Google AI Professional Certificate" [ref=e700] [cursor=pointer]:
+                          - /url: https://alb.reddit.com/cr?za=mOqY7QCWYf7Az-GchM93yKo5uGYBN9O3KkPlHo_f7jByRa-49jw2i_-0P868Qge6oMFwWlIbfJU1Aljn3DCNkvOW1JPVJJOpmDAecUCivTPAVOxwT2SIBk2kl_Qv4JgjbL6ioQKn_2Yhk2_-r9cOh9E4XKNBFYUHy48P9FdG9fCMlmUEz7kplEWE3DxT8RkRfd7yc1E6fyEVRNA5cRWazn7Oi8mLC0YYnkFuM40Ce_hkbR1UNCW8gSwAW6Yf7BMs79vv1hACfmJehjKMFzS-BZurwIRXq9FpItZTN1jGVkPv583yOwD2hB8p3GULVRmKR6mwz8FlB7ZM4xgyOYeD2a_zHddb33MkmmQTMZx7-Coa9tvN6WGM6dwbtmROMzlbGvrgBChoNdn3mLlBejV1zvrg1m89nOxb417GZ_w_KpwccCEdLRXBIs0dWo_s7wEKGwyYCooLdOB6IxgHRgjptwuw3asbZOwJjVvWkXtKvVJVk6m1BDWq0xCumdWjQn0aV0qrVGD8z1ivdVZG2s1iJSY75CEVRC-uJkYdvSPBmjPFfzr2FuQ_YGxQWnXxAjCsHshW4eVsPENkPvDHBHWMRAkXbaUrehTH1H0neRBGf0HY1bmzB9v8KR62SJzcd-LH1MFtyh_oaTITaXHEvy-Q77qrCs0z8qQLMYg_IHNJshjeSmjHeYF5QO-GA2XoLOvZinAb&zp=r6au0JArFdEO4hjt1YwVbjCj3qpE1JEITOjhIy8DIYhsXnO5B_TD8L4PFVb66oL0Lq2a8iD2uYS7gqXtc1b_YMeHBQ3dNgtpUXQJWT5Gfsl1MASnJiSIxhz4jjkXLy1zvXhZ6nZ7h2sBHmte9c-NXi6CHn1Szu3L-YfNtKD-uLysUU9DuEQsoE9Nw7iDKkqadtJ78gzcKhlnnv9W8RJI1tTx7RakiNmel_uyBLyN0oDme4b5WFXreNkJ8H2vA82J1mENffaz1nFvXjpz-MPR0CEcs-Z5WjRYLmT2oU0mNFuCErYy8J9a-XLAetI-9FiAPVIMyYxBwM0PBe9gN49IEoVS9UBnuYhLRlGTwhEfUEL6junwj0eAMWTGCE4ZssOag9_FnFNbuHQJrl9OWCO1b17N6LoWjAu6NqWmOSI-UB4TBF6DFntrryVT_UG84hPc3ShhufZykfDV4zMi96XJkgRzwl6iyWVTA__nr4u6oxA1HNRgGbH9QZ8R2BcVP9TLIoq-HW792M9_btYLZ3gr-ZLJMyO0TiMVd79nqKVzvB98WPqMNRzGBMai-yCTQyettYaikuLJK1zMKoDhZWN89A0A-0MG-YWVIpnYIv34E_CPL2JBxB418GH1lUuMjDIUxK2uDNMMrYV0XuWBl_sASLFfbZjp1EC0rowEXjNGBYwtf1M3YSxCH6tfq1Am0dORk86RwnLTfzBkcNGgyBLdMkCBpcbeoRgQ36ymiZEIy8X0AsoPISMUrAI2v-AcnuKLt27HpwKnpMaazQKkQoRRjuAvhYciuR4xkMgiqi8P-YUir0KJitxel0F7QxyoU_5hTsYll-X1FMKQgGU-h4xxMNNL8WnHjiu5cPDVlMqAOCDdBbF9waRdJJI_eKZ4Nx-VcMvfG0QOpKuk9aCE0dMLDDYQS81TmKIKwBCwtZlJYDa2u75lgrNq7__HRR6lOzlBliBv89P4zPhMGPyrwNPEphWsk0I
+                        - generic [ref=e701]:
+                          - link [ref=e703] [cursor=pointer]:
+                            - /url: https://alb.reddit.com/cr?za=mOqY7QCWYf7Az-GchM93yKo5uGYBN9O3KkPlHo_f7jByRa-49jw2i_-0P868Qge6oMFwWlIbfJU1Aljn3DCNkvOW1JPVJJOpmDAecUCivTPAVOxwT2SIBk2kl_Qv4JgjbL6ioQKn_2Yhk2_-r9cOh9E4XKNBFYUHy48P9FdG9fCMlmUEz7kplEWE3DxT8RkRfd7yc1E6fyEVRNA5cRWazn7Oi8mLC0YYnkFuM40Ce_hkbR1UNCW8gSwAW6Yf7BMs79vv1hACfmJehjKMFzS-BZurwIRXq9FpItZTN1jGVkPv583yOwD2hB8p3GULVRmKR6mwz8FlB7ZM4xgyOYeD2a_zHddb33MkmmQTMZx7-Coa9tvN6WGM6dwbtmROMzlbGvrgBChoNdn3mLlBejV1zvrg1m89nOxb417GZ_w_KpwccCEdLRXBIs0dWo_s7wEKGwyYCooLdOB6IxgHRgjptwuw3asbZOwJjVvWkXtKvVJVk6m1BDWq0xCumdWjQn0aV0qrVGD8z1ivdVZG2s1iJSY75CEVRC-uJkYdvSPBmjPFfzr2FuQ_YGxQWnXxAjCsHshW4eVsPENkPvDHBHWMRAkXbaUrehTH1H0neRBGf0HY1bmzB9v8KR62SJzcd-LH1MFtyh_oaTITaXHEvy-Q77qrCs0z8qQLMYg_IHNJshjeSmjHeYF5QO-GA2XoLOvZinAb&zp=r6au0JArFdEO4hjt1YwVbjCj3qpE1JEITOjhIy8DIYhsXnO5B_TD8L4PFVb66oL0Lq2a8iD2uYS7gqXtc1b_YMeHBQ3dNgtpUXQJWT5Gfsl1MASnJiSIxhz4jjkXLy1zvXhZ6nZ7h2sBHmte9c-NXi6CHn1Szu3L-YfNtKD-uLysUU9DuEQsoE9Nw7iDKkqadtJ78gzcKhlnnv9W8RJI1tTx7RakiNmel_uyBLyN0oDme4b5WFXreNkJ8H2vA82J1mENffaz1nFvXjpz-MPR0CEcs-Z5WjRYLmT2oU0mNFuCErYy8J9a-XLAetI-9FiAPVIMyYxBwM0PBe9gN49IEoVS9UBnuYhLRlGTwhEfUEL6junwj0eAMWTGCE4ZssOag9_FnFNbuHQJrl9OWCO1b17N6LoWjAu6NqWmOSI-UB4TBF6DFntrryVT_UG84hPc3ShhufZykfDV4zMi96XJkgRzwl6iyWVTA__nr4u6oxA1HNRgGbH9QZ8R2BcVP9TLIoq-HW792M9_btYLZ3gr-ZLJMyO0TiMVd79nqKVzvB98WPqMNRzGBMai-yCTQyettYaikuLJK1zMKoDhZWN89A0A-0MG-YWVIpnYIv34E_CPL2JBxB418GH1lUuMjDIUxK2uDNMMrYV0XuWBl_sASLFfbZjp1EC0rowEXjNGBYwtf1M3YSxCH6tfq1Am0dORk86RwnLTfzBkcNGgyBLdMkCBpcbeoRgQ36ymiZEIy8X0AsoPISMUrAI2v-AcnuKLt27HpwKnpMaazQKkQoRRjuAvhYciuR4xkMgiqi8P-YUir0KJitxel0F7QxyoU_5hTsYll-X1FMKQgGU-h4xxMNNL8WnHjiu5cPDVlMqAOCDdBbF9waRdJJI_eKZ4Nx-VcMvfG0QOpKuk9aCE0dMLDDYQS81TmKIKwBCwtZlJYDa2u75lgrNq7__HRR6lOzlBliBv89P4zPhMGPyrwNPEphWsk0I
+                          - generic [ref=e704]:
+                            - link "Learn More" [ref=e706] [cursor=pointer]:
+                              - /url: https://alb.reddit.com/cr?za=mOqY7QCWYf7Az-GchM93yKo5uGYBN9O3KkPlHo_f7jByRa-49jw2i_-0P868Qge6oMFwWlIbfJU1Aljn3DCNkvOW1JPVJJOpmDAecUCivTPAVOxwT2SIBk2kl_Qv4JgjbL6ioQKn_2Yhk2_-r9cOh9E4XKNBFYUHy48P9FdG9fCMlmUEz7kplEWE3DxT8RkRfd7yc1E6fyEVRNA5cRWazn7Oi8mLC0YYnkFuM40Ce_hkbR1UNCW8gSwAW6Yf7BMs79vv1hACfmJehjKMFzS-BZurwIRXq9FpItZTN1jGVkPv583yOwD2hB8p3GULVRmKR6mwz8FlB7ZM4xgyOYeD2a_zHddb33MkmmQTMZx7-Coa9tvN6WGM6dwbtmROMzlbGvrgBChoNdn3mLlBejV1zvrg1m89nOxb417GZ_w_KpwccCEdLRXBIs0dWo_s7wEKGwyYCooLdOB6IxgHRgjptwuw3asbZOwJjVvWkXtKvVJVk6m1BDWq0xCumdWjQn0aV0qrVGD8z1ivdVZG2s1iJSY75CEVRC-uJkYdvSPBmjPFfzr2FuQ_YGxQWnXxAjCsHshW4eVsPENkPvDHBHWMRAkXbaUrehTH1H0neRBGf0HY1bmzB9v8KR62SJzcd-LH1MFtyh_oaTITaXHEvy-Q77qrCs0z8qQLMYg_IHNJshjeSmjHeYF5QO-GA2XoLOvZinAb&zp=r6au0JArFdEO4hjt1YwVbjCj3qpE1JEITOjhIy8DIYhsXnO5B_TD8L4PFVb66oL0Lq2a8iD2uYS7gqXtc1b_YMeHBQ3dNgtpUXQJWT5Gfsl1MASnJiSIxhz4jjkXLy1zvXhZ6nZ7h2sBHmte9c-NXi6CHn1Szu3L-YfNtKD-uLysUU9DuEQsoE9Nw7iDKkqadtJ78gzcKhlnnv9W8RJI1tTx7RakiNmel_uyBLyN0oDme4b5WFXreNkJ8H2vA82J1mENffaz1nFvXjpz-MPR0CEcs-Z5WjRYLmT2oU0mNFuCErYy8J9a-XLAetI-9FiAPVIMyYxBwM0PBe9gN49IEoVS9UBnuYhLRlGTwhEfUEL6junwj0eAMWTGCE4ZssOag9_FnFNbuHQJrl9OWCO1b17N6LoWjAu6NqWmOSI-UB4TBF6DFntrryVT_UG84hPc3ShhufZykfDV4zMi96XJkgRzwl6iyWVTA__nr4u6oxA1HNRgGbH9QZ8R2BcVP9TLIoq-HW792M9_btYLZ3gr-ZLJMyO0TiMVd79nqKVzvB98WPqMNRzGBMai-yCTQyettYaikuLJK1zMKoDhZWN89A0A-0MG-YWVIpnYIv34E_CPL2JBxB418GH1lUuMjDIUxK2uDNMMrYV0XuWBl_sASLFfbZjp1EC0rowEXjNGBYwtf1M3YSxCH6tfq1Am0dORk86RwnLTfzBkcNGgyBLdMkCBpcbeoRgQ36ymiZEIy8X0AsoPISMUrAI2v-AcnuKLt27HpwKnpMaazQKkQoRRjuAvhYciuR4xkMgiqi8P-YUir0KJitxel0F7QxyoU_5hTsYll-X1FMKQgGU-h4xxMNNL8WnHjiu5cPDVlMqAOCDdBbF9waRdJJI_eKZ4Nx-VcMvfG0QOpKuk9aCE0dMLDDYQS81TmKIKwBCwtZlJYDa2u75lgrNq7__HRR6lOzlBliBv89P4zPhMGPyrwNPEphWsk0I
+                            - link "coursera.org" [ref=e711] [cursor=pointer]:
+                              - /url: https://alb.reddit.com/cr?za=mOqY7QCWYf7Az-GchM93yKo5uGYBN9O3KkPlHo_f7jByRa-49jw2i_-0P868Qge6oMFwWlIbfJU1Aljn3DCNkvOW1JPVJJOpmDAecUCivTPAVOxwT2SIBk2kl_Qv4JgjbL6ioQKn_2Yhk2_-r9cOh9E4XKNBFYUHy48P9FdG9fCMlmUEz7kplEWE3DxT8RkRfd7yc1E6fyEVRNA5cRWazn7Oi8mLC0YYnkFuM40Ce_hkbR1UNCW8gSwAW6Yf7BMs79vv1hACfmJehjKMFzS-BZurwIRXq9FpItZTN1jGVkPv583yOwD2hB8p3GULVRmKR6mwz8FlB7ZM4xgyOYeD2a_zHddb33MkmmQTMZx7-Coa9tvN6WGM6dwbtmROMzlbGvrgBChoNdn3mLlBejV1zvrg1m89nOxb417GZ_w_KpwccCEdLRXBIs0dWo_s7wEKGwyYCooLdOB6IxgHRgjptwuw3asbZOwJjVvWkXtKvVJVk6m1BDWq0xCumdWjQn0aV0qrVGD8z1ivdVZG2s1iJSY75CEVRC-uJkYdvSPBmjPFfzr2FuQ_YGxQWnXxAjCsHshW4eVsPENkPvDHBHWMRAkXbaUrehTH1H0neRBGf0HY1bmzB9v8KR62SJzcd-LH1MFtyh_oaTITaXHEvy-Q77qrCs0z8qQLMYg_IHNJshjeSmjHeYF5QO-GA2XoLOvZinAb&zp=r6au0JArFdEO4hjt1YwVbjCj3qpE1JEITOjhIy8DIYhsXnO5B_TD8L4PFVb66oL0Lq2a8iD2uYS7gqXtc1b_YMeHBQ3dNgtpUXQJWT5Gfsl1MASnJiSIxhz4jjkXLy1zvXhZ6nZ7h2sBHmte9c-NXi6CHn1Szu3L-YfNtKD-uLysUU9DuEQsoE9Nw7iDKkqadtJ78gzcKhlnnv9W8RJI1tTx7RakiNmel_uyBLyN0oDme4b5WFXreNkJ8H2vA82J1mENffaz1nFvXjpz-MPR0CEcs-Z5WjRYLmT2oU0mNFuCErYy8J9a-XLAetI-9FiAPVIMyYxBwM0PBe9gN49IEoVS9UBnuYhLRlGTwhEfUEL6junwj0eAMWTGCE4ZssOag9_FnFNbuHQJrl9OWCO1b17N6LoWjAu6NqWmOSI-UB4TBF6DFntrryVT_UG84hPc3ShhufZykfDV4zMi96XJkgRzwl6iyWVTA__nr4u6oxA1HNRgGbH9QZ8R2BcVP9TLIoq-HW792M9_btYLZ3gr-ZLJMyO0TiMVd79nqKVzvB98WPqMNRzGBMai-yCTQyettYaikuLJK1zMKoDhZWN89A0A-0MG-YWVIpnYIv34E_CPL2JBxB418GH1lUuMjDIUxK2uDNMMrYV0XuWBl_sASLFfbZjp1EC0rowEXjNGBYwtf1M3YSxCH6tfq1Am0dORk86RwnLTfzBkcNGgyBLdMkCBpcbeoRgQ36ymiZEIy8X0AsoPISMUrAI2v-AcnuKLt27HpwKnpMaazQKkQoRRjuAvhYciuR4xkMgiqi8P-YUir0KJitxel0F7QxyoU_5hTsYll-X1FMKQgGU-h4xxMNNL8WnHjiu5cPDVlMqAOCDdBbF9waRdJJI_eKZ4Nx-VcMvfG0QOpKuk9aCE0dMLDDYQS81TmKIKwBCwtZlJYDa2u75lgrNq7__HRR6lOzlBliBv89P4zPhMGPyrwNPEphWsk0I
+                      - link [ref=e714] [cursor=pointer]:
+                        - /url: https://alb.reddit.com/cr?za=mOqY7QCWYf7Az-GchM93yKo5uGYBN9O3KkPlHo_f7jByRa-49jw2i_-0P868Qge6oMFwWlIbfJU1Aljn3DCNkvOW1JPVJJOpmDAecUCivTPAVOxwT2SIBk2kl_Qv4JgjbL6ioQKn_2Yhk2_-r9cOh9E4XKNBFYUHy48P9FdG9fCMlmUEz7kplEWE3DxT8RkRfd7yc1E6fyEVRNA5cRWazn7Oi8mLC0YYnkFuM40Ce_hkbR1UNCW8gSwAW6Yf7BMs79vv1hACfmJehjKMFzS-BZurwIRXq9FpItZTN1jGVkPv583yOwD2hB8p3GULVRmKR6mwz8FlB7ZM4xgyOYeD2a_zHddb33MkmmQTMZx7-Coa9tvN6WGM6dwbtmROMzlbGvrgBChoNdn3mLlBejV1zvrg1m89nOxb417GZ_w_KpwccCEdLRXBIs0dWo_s7wEKGwyYCooLdOB6IxgHRgjptwuw3asbZOwJjVvWkXtKvVJVk6m1BDWq0xCumdWjQn0aV0qrVGD8z1ivdVZG2s1iJSY75CEVRC-uJkYdvSPBmjPFfzr2FuQ_YGxQWnXxAjCsHshW4eVsPENkPvDHBHWMRAkXbaUrehTH1H0neRBGf0HY1bmzB9v8KR62SJzcd-LH1MFtyh_oaTITaXHEvy-Q77qrCs0z8qQLMYg_IHNJshjeSmjHeYF5QO-GA2XoLOvZinAb&zp=r6au0JArFdEO4hjt1YwVbjCj3qpE1JEITOjhIy8DIYhsXnO5B_TD8L4PFVb66oL0Lq2a8iD2uYS7gqXtc1b_YMeHBQ3dNgtpUXQJWT5Gfsl1MASnJiSIxhz4jjkXLy1zvXhZ6nZ7h2sBHmte9c-NXi6CHn1Szu3L-YfNtKD-uLysUU9DuEQsoE9Nw7iDKkqadtJ78gzcKhlnnv9W8RJI1tTx7RakiNmel_uyBLyN0oDme4b5WFXreNkJ8H2vA82J1mENffaz1nFvXjpz-MPR0CEcs-Z5WjRYLmT2oU0mNFuCErYy8J9a-XLAetI-9FiAPVIMyYxBwM0PBe9gN49IEoVS9UBnuYhLRlGTwhEfUEL6junwj0eAMWTGCE4ZssOag9_FnFNbuHQJrl9OWCO1b17N6LoWjAu6NqWmOSI-UB4TBF6DFntrryVT_UG84hPc3ShhufZykfDV4zMi96XJkgRzwl6iyWVTA__nr4u6oxA1HNRgGbH9QZ8R2BcVP9TLIoq-HW792M9_btYLZ3gr-ZLJMyO0TiMVd79nqKVzvB98WPqMNRzGBMai-yCTQyettYaikuLJK1zMKoDhZWN89A0A-0MG-YWVIpnYIv34E_CPL2JBxB418GH1lUuMjDIUxK2uDNMMrYV0XuWBl_sASLFfbZjp1EC0rowEXjNGBYwtf1M3YSxCH6tfq1Am0dORk86RwnLTfzBkcNGgyBLdMkCBpcbeoRgQ36ymiZEIy8X0AsoPISMUrAI2v-AcnuKLt27HpwKnpMaazQKkQoRRjuAvhYciuR4xkMgiqi8P-YUir0KJitxel0F7QxyoU_5hTsYll-X1FMKQgGU-h4xxMNNL8WnHjiu5cPDVlMqAOCDdBbF9waRdJJI_eKZ4Nx-VcMvfG0QOpKuk9aCE0dMLDDYQS81TmKIKwBCwtZlJYDa2u75lgrNq7__HRR6lOzlBliBv89P4zPhMGPyrwNPEphWsk0I
+                        - 'img "Thumbnail image: Build In-Demand AI Career Skills with the Google AI Professional Certificate" [ref=e715]'
+                - article "Comment from grooomps 5 years ago" [ref=e717]:
+                  - generic [ref=e718] [cursor=pointer]:
+                    - link "grooomps's profile --- avatar" [ref=e724]:
+                      - /url: https://www.reddit.com/user/grooomps/
+                      - img "u/grooomps avatar" [ref=e727]
+                    - generic [ref=e731]:
+                      - link "grooomps's profile" [ref=e735]:
+                        - /url: https://www.reddit.com/user/grooomps/
+                        - text: grooomps
+                      - generic [aria-hidden] [ref=e736]: •
+                      - link [ref=e738]:
+                        - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0rbayn/
+                        - time [ref=e740]: 5y ago
+                  - generic [ref=e742]:
+                    - paragraph [ref=e746]: one little tip,i just went to open it to have a look and i can't even see it, demo it, trial it, without putting in my email.i hate not being able to at least see what i'm going to get before signing up, even if it's free...do you think it's possible to have the ability to play around and not export until sign up?
+                    - generic [ref=e749]:
+                      - 'article "Comment thread level 1: Reply from beckerman_jacob 5 years ago" [ref=e751]':
+                        - generic [ref=e752] [cursor=pointer]:
+                          - link "beckerman_jacob's profile --- avatar" [ref=e758]:
+                            - /url: https://www.reddit.com/user/beckerman_jacob/
+                            - img "u/beckerman_jacob avatar" [ref=e761]
+                          - generic [ref=e765]:
+                            - link "beckerman_jacob's profile" [ref=e769]:
+                              - /url: https://www.reddit.com/user/beckerman_jacob/
+                              - text: beckerman_jacob
+                            - generic "Comment distinguished as the original poster" [ref=e772]: OP
+                            - generic [aria-hidden] [ref=e773]: •
+                            - link [ref=e775]:
+                              - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0rbjl0/
+                              - time [ref=e777]: 5y ago
+                        - generic [ref=e779]:
+                          - paragraph [ref=e783]: I have been hearing this request pop up a fair bit. It's on my backlog, but it requires a fair bit of work so I don't know how quickly I'll be rolling it out.
+                          - button "16 more replies" [ref=e790] [cursor=pointer]:
+                            - generic [ref=e795]:
+                              - generic [ref=e796]: "16"
+                              - text: more replies
+                      - button "2 more replies" [ref=e800] [cursor=pointer]:
+                        - generic [ref=e805]:
+                          - generic [ref=e806]: "2"
+                          - text: more replies
+                - article "Comment from intelisec 5 years ago" [ref=e808]:
+                  - generic [ref=e809] [cursor=pointer]:
+                    - link "intelisec's profile --- avatar" [ref=e815]:
+                      - /url: https://www.reddit.com/user/intelisec/
+                      - img "u/intelisec avatar" [ref=e818]
+                    - generic [ref=e822]:
+                      - link "intelisec's profile" [ref=e826]:
+                        - /url: https://www.reddit.com/user/intelisec/
+                        - text: intelisec
+                      - generic [aria-hidden] [ref=e827]: •
+                      - link [ref=e829]:
+                        - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0rbgq2/
+                        - time [ref=e831]: 5y ago
+                  - generic [ref=e833]:
+                    - paragraph [ref=e837]: Great job! I would also add on your H2 or even H3 tag on the main page how you don’t have any watermark’s after video exports, which is HUGE among “free” video editors online. Also, please provide a donate tab so we can contribute to your open source ventures.
+                    - generic [ref=e840]:
+                      - 'article "Comment thread level 1: Reply from beckerman_jacob 5 years ago" [ref=e842]':
+                        - generic [ref=e843] [cursor=pointer]:
+                          - link "beckerman_jacob's profile --- avatar" [ref=e849]:
+                            - /url: https://www.reddit.com/user/beckerman_jacob/
+                            - img "u/beckerman_jacob avatar" [ref=e852]
+                          - generic [ref=e856]:
+                            - link "beckerman_jacob's profile" [ref=e860]:
+                              - /url: https://www.reddit.com/user/beckerman_jacob/
+                              - text: beckerman_jacob
+                            - generic "Comment distinguished as the original poster" [ref=e863]: OP
+                            - generic [aria-hidden] [ref=e864]: •
+                            - link [ref=e866]:
+                              - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0rpw2y/
+                              - time [ref=e868]: 5y ago
+                        - paragraph [ref=e874]: I decided to go with BuyMeACoffe. Updated the post with the link. Thanks for the suggestion!
+                      - button "1 more reply" [ref=e880] [cursor=pointer]:
+                        - generic [ref=e885]:
+                          - generic [ref=e886]: "1"
+                          - text: more reply
+                - article "Comment from Fiskepudding 5 years ago" [ref=e888]:
+                  - generic [ref=e889] [cursor=pointer]:
+                    - link "Fiskepudding's profile --- avatar" [ref=e895]:
+                      - /url: https://www.reddit.com/user/Fiskepudding/
+                      - img "u/Fiskepudding avatar" [ref=e898]
+                    - generic [ref=e902]:
+                      - link "Fiskepudding's profile" [ref=e906]:
+                        - /url: https://www.reddit.com/user/Fiskepudding/
+                        - text: Fiskepudding
+                      - generic [aria-hidden] [ref=e907]: •
+                      - link [ref=e909]:
+                        - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0qsrct/
+                        - time [ref=e911]: 5y ago
+                  - generic [ref=e913]:
+                    - generic [ref=e916]:
+                      - paragraph [ref=e917]: Any plans on open sourcing it on github?
+                      - paragraph [ref=e918]: I'm on my phone so I haven't tried it, but the landing page looks great.
+                    - 'article "Comment thread level 1: Reply from beckerman_jacob 5 years ago" [ref=e923]':
+                      - generic [ref=e924] [cursor=pointer]:
+                        - link "beckerman_jacob's profile --- avatar" [ref=e930]:
+                          - /url: https://www.reddit.com/user/beckerman_jacob/
+                          - img "u/beckerman_jacob avatar" [ref=e933]
+                        - generic [ref=e937]:
+                          - link "beckerman_jacob's profile" [ref=e941]:
+                            - /url: https://www.reddit.com/user/beckerman_jacob/
+                            - text: beckerman_jacob
+                          - generic "Comment distinguished as the original poster" [ref=e944]: OP
+                          - generic [aria-hidden] [ref=e945]: •
+                          - link [ref=e947]:
+                            - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0qxv9u/
+                            - time [ref=e949]: 5y ago
+                      - generic [ref=e951]:
+                        - paragraph [ref=e955]:
+                          - text: I will probably end up
+                          - link [ref=e958] [cursor=pointer]:
+                            - /url: /search/?q=open+sourcing+individual+components&cId=b0b3fe11-15bf-4396-a89e-89b3413e7a76&iId=75b33e47-2a0c-4e64-82af-b9d00f9149ed
+                          - text: individual components, but not the entire project.
+                        - button "7 more replies" [ref=e968] [cursor=pointer]:
+                          - generic [ref=e973]:
+                            - generic [ref=e974]: "7"
+                            - text: more replies
+                - article "Comment from [deleted] 5 years ago" [ref=e976]:
+                  - generic "[deleted] 5y ago" [ref=e977] [cursor=pointer]:
+                    - generic [ref=e991]:
+                      - generic [ref=e992]: "[deleted]"
+                      - generic [aria-hidden] [ref=e995]: •
+                      - link [ref=e997]:
+                        - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0qgd34/
+                        - time [ref=e999]: 5y ago
+                  - generic [ref=e1001]:
+                    - paragraph [ref=e1005]: damn looks pretty good!
+                    - 'article "Comment thread level 1: Reply from beckerman_jacob 5 years ago" [ref=e1010]':
+                      - generic [ref=e1011] [cursor=pointer]:
+                        - link "beckerman_jacob's profile --- avatar" [ref=e1017]:
+                          - /url: https://www.reddit.com/user/beckerman_jacob/
+                          - img "u/beckerman_jacob avatar" [ref=e1020]
+                        - generic [ref=e1024]:
+                          - link "beckerman_jacob's profile" [ref=e1028]:
+                            - /url: https://www.reddit.com/user/beckerman_jacob/
+                            - text: beckerman_jacob
+                          - generic "Comment distinguished as the original poster" [ref=e1031]: OP
+                          - generic [aria-hidden] [ref=e1032]: •
+                          - link [ref=e1034]:
+                            - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0qgo3y/
+                            - time [ref=e1036]: 5y ago
+                      - paragraph [ref=e1042]: Thanks!
+                - generic "Built an API? Compete for $100K + 500K ALGO by turning it into a paid endpoint" [ref=e1046]:
+                  - generic [ref=e1047]:
+                    - 'generic "Advertisement: Built an API? Compete for $100K + 500K ALGO by turning it into a paid endpoint" [ref=e1048]':
+                      - 'link "Advertisement: Built an API? Compete for $100K + 500K ALGO by turning it into a paid endpoint" [ref=e1049] [cursor=pointer]':
+                        - /url: https://alb.reddit.com/cr?za=hbnSOmJyD3cW2-MK6gy1RE7E48FmhebEZTUyHd9VA2w6zLeKtC5eT1e8ayjNlNZVBoj3cIS1Qv8E3BTM8TLCIZJN0y_PCH-qUbxHtHPDdt-5wx1K36_X9QwBTmtwD6GP3smLuJODbRHyimLoUjHjnJ7CfpaBYRS7UlFbGGB_eM2Tixs_ZbdZisXbvmbxEf_HIQHcJ6YG4OJsxeAMBc6Xa3jGs1FZ73kVw7UuNXKXZuoLza6GLaPACvTNKk2dB-PiK4srpv6ztZE1odt7sSW7COxmMGjtnxDC0t0JpyJuLdfrbghA8QZbUyQt67r_JQxbxRhcEtWjywFOaTrJRilX3YfGQZ8Uqn3Nsi7cJZBelIgFT7UFROB60MFe-0LI2farB3ywh8cwEkyvP7il0xtMMyPqNDHMtJB4noBEYBfeOR_wxwzlgbXJ_zObiyaMJA8V3lEF6C7zZWO9ZctQuS1RpxUA3cQaNg2JhKva6FkxW-IBfsF1-H_7FHPTxQl2_AHbgO3VXRi8B48-D8W-Fv-rnJvfnqnUpj2oKsUxCpgYfvMPi88GIroH5DHUD45cwB1XJLAqLGQwKnK_67_JbC3JEnPFq22YTmnRXa61lNFtqzxEQY2iCquU30I3J6i0STJ5LsRAaTz8OwiGZi2G_u1WX1pNefIgZChJ7m9VWkrefvGT-yzTYuHjjjUbEYYqeA&zp=Rc5ic6mg-jHSt4u0vxmmUcm9o0McuSEHR494TbUsD2nGwrNPAAsP5X6OfN8Hv_0vXTcfjD4GudtpElY2B2bpy2NqdcAHaPtlZvMFSAFUEIp2fUq_AOeC_SmfMTMmVFKTQoVE3bGATgrS73RM3E50oL_yzo05SJa9TFjLgcXzt_Wg_jItoNyO1WoDOvFfUh_g1kGQY0ihVxOdLSVrLxpHOd2uMdu0EeS_qFlCv5PsvmqfiXAwIHDOgzOQ6ES2cywLpmLC3Y091pMtII8Guk9NE1gDfaKjOJVt014UzQkE9NzkIAcUIje42dCa7fJnoQAT8a0BSVr_FgUhFsyqvP-6yute9IbUnUWO7u4FHqHnHLuk_097fxqmnR5U3fRhNf-UBB5bJu8PrtQ3WDg_VwjcDLKjWqUHw92YkBP5sK1kwdsBsO0ZIt6Wl5_88thMdG_TanCgvad30hvMQV8ZJgU
+                    - generic [ref=e1050]:
+                      - generic [ref=e1051]:
+                        - link "u/AlgorandFoundation" [ref=e1054] [cursor=pointer]:
+                          - /url: /user/AlgorandFoundation/
+                          - img "u/AlgorandFoundation avatar" [ref=e1057]
+                        - generic [ref=e1059]: •
+                        - link "Ad" [ref=e1061] [cursor=pointer]:
+                          - /url: /user/AlgorandFoundation/
+                        - link [ref=e1064] [cursor=pointer]:
+                          - /url: https://alb.reddit.com/cr?za=hbnSOmJyD3cW2-MK6gy1RE7E48FmhebEZTUyHd9VA2w6zLeKtC5eT1e8ayjNlNZVBoj3cIS1Qv8E3BTM8TLCIZJN0y_PCH-qUbxHtHPDdt-5wx1K36_X9QwBTmtwD6GP3smLuJODbRHyimLoUjHjnJ7CfpaBYRS7UlFbGGB_eM2Tixs_ZbdZisXbvmbxEf_HIQHcJ6YG4OJsxeAMBc6Xa3jGs1FZ73kVw7UuNXKXZuoLza6GLaPACvTNKk2dB-PiK4srpv6ztZE1odt7sSW7COxmMGjtnxDC0t0JpyJuLdfrbghA8QZbUyQt67r_JQxbxRhcEtWjywFOaTrJRilX3YfGQZ8Uqn3Nsi7cJZBelIgFT7UFROB60MFe-0LI2farB3ywh8cwEkyvP7il0xtMMyPqNDHMtJB4noBEYBfeOR_wxwzlgbXJ_zObiyaMJA8V3lEF6C7zZWO9ZctQuS1RpxUA3cQaNg2JhKva6FkxW-IBfsF1-H_7FHPTxQl2_AHbgO3VXRi8B48-D8W-Fv-rnJvfnqnUpj2oKsUxCpgYfvMPi88GIroH5DHUD45cwB1XJLAqLGQwKnK_67_JbC3JEnPFq22YTmnRXa61lNFtqzxEQY2iCquU30I3J6i0STJ5LsRAaTz8OwiGZi2G_u1WX1pNefIgZChJ7m9VWkrefvGT-yzTYuHjjjUbEYYqeA&zp=Rc5ic6mg-jHSt4u0vxmmUcm9o0McuSEHR494TbUsD2nGwrNPAAsP5X6OfN8Hv_0vXTcfjD4GudtpElY2B2bpy2NqdcAHaPtlZvMFSAFUEIp2fUq_AOeC_SmfMTMmVFKTQoVE3bGATgrS73RM3E50oL_yzo05SJa9TFjLgcXzt_Wg_jItoNyO1WoDOvFfUh_g1kGQY0ihVxOdLSVrLxpHOd2uMdu0EeS_qFlCv5PsvmqfiXAwIHDOgzOQ6ES2cywLpmLC3Y091pMtII8Guk9NE1gDfaKjOJVt014UzQkE9NzkIAcUIje42dCa7fJnoQAT8a0BSVr_FgUhFsyqvP-6yute9IbUnUWO7u4FHqHnHLuk_097fxqmnR5U3fRhNf-UBB5bJu8PrtQ3WDg_VwjcDLKjWqUHw92YkBP5sK1kwdsBsO0ZIt6Wl5_88thMdG_TanCgvad30hvMQV8ZJgU
+                      - button "Open user actions" [ref=e1070] [cursor=pointer]
+                    - generic [ref=e1076]:
+                      - generic [ref=e1077]:
+                        - link "Built an API? Compete for $100K + 500K ALGO by turning it into a paid endpoint" [ref=e1079] [cursor=pointer]:
+                          - /url: https://alb.reddit.com/cr?za=hbnSOmJyD3cW2-MK6gy1RE7E48FmhebEZTUyHd9VA2w6zLeKtC5eT1e8ayjNlNZVBoj3cIS1Qv8E3BTM8TLCIZJN0y_PCH-qUbxHtHPDdt-5wx1K36_X9QwBTmtwD6GP3smLuJODbRHyimLoUjHjnJ7CfpaBYRS7UlFbGGB_eM2Tixs_ZbdZisXbvmbxEf_HIQHcJ6YG4OJsxeAMBc6Xa3jGs1FZ73kVw7UuNXKXZuoLza6GLaPACvTNKk2dB-PiK4srpv6ztZE1odt7sSW7COxmMGjtnxDC0t0JpyJuLdfrbghA8QZbUyQt67r_JQxbxRhcEtWjywFOaTrJRilX3YfGQZ8Uqn3Nsi7cJZBelIgFT7UFROB60MFe-0LI2farB3ywh8cwEkyvP7il0xtMMyPqNDHMtJB4noBEYBfeOR_wxwzlgbXJ_zObiyaMJA8V3lEF6C7zZWO9ZctQuS1RpxUA3cQaNg2JhKva6FkxW-IBfsF1-H_7FHPTxQl2_AHbgO3VXRi8B48-D8W-Fv-rnJvfnqnUpj2oKsUxCpgYfvMPi88GIroH5DHUD45cwB1XJLAqLGQwKnK_67_JbC3JEnPFq22YTmnRXa61lNFtqzxEQY2iCquU30I3J6i0STJ5LsRAaTz8OwiGZi2G_u1WX1pNefIgZChJ7m9VWkrefvGT-yzTYuHjjjUbEYYqeA&zp=Rc5ic6mg-jHSt4u0vxmmUcm9o0McuSEHR494TbUsD2nGwrNPAAsP5X6OfN8Hv_0vXTcfjD4GudtpElY2B2bpy2NqdcAHaPtlZvMFSAFUEIp2fUq_AOeC_SmfMTMmVFKTQoVE3bGATgrS73RM3E50oL_yzo05SJa9TFjLgcXzt_Wg_jItoNyO1WoDOvFfUh_g1kGQY0ihVxOdLSVrLxpHOd2uMdu0EeS_qFlCv5PsvmqfiXAwIHDOgzOQ6ES2cywLpmLC3Y091pMtII8Guk9NE1gDfaKjOJVt014UzQkE9NzkIAcUIje42dCa7fJnoQAT8a0BSVr_FgUhFsyqvP-6yute9IbUnUWO7u4FHqHnHLuk_097fxqmnR5U3fRhNf-UBB5bJu8PrtQ3WDg_VwjcDLKjWqUHw92YkBP5sK1kwdsBsO0ZIt6Wl5_88thMdG_TanCgvad30hvMQV8ZJgU
+                        - generic [ref=e1080]:
+                          - link [ref=e1082] [cursor=pointer]:
+                            - /url: https://alb.reddit.com/cr?za=hbnSOmJyD3cW2-MK6gy1RE7E48FmhebEZTUyHd9VA2w6zLeKtC5eT1e8ayjNlNZVBoj3cIS1Qv8E3BTM8TLCIZJN0y_PCH-qUbxHtHPDdt-5wx1K36_X9QwBTmtwD6GP3smLuJODbRHyimLoUjHjnJ7CfpaBYRS7UlFbGGB_eM2Tixs_ZbdZisXbvmbxEf_HIQHcJ6YG4OJsxeAMBc6Xa3jGs1FZ73kVw7UuNXKXZuoLza6GLaPACvTNKk2dB-PiK4srpv6ztZE1odt7sSW7COxmMGjtnxDC0t0JpyJuLdfrbghA8QZbUyQt67r_JQxbxRhcEtWjywFOaTrJRilX3YfGQZ8Uqn3Nsi7cJZBelIgFT7UFROB60MFe-0LI2farB3ywh8cwEkyvP7il0xtMMyPqNDHMtJB4noBEYBfeOR_wxwzlgbXJ_zObiyaMJA8V3lEF6C7zZWO9ZctQuS1RpxUA3cQaNg2JhKva6FkxW-IBfsF1-H_7FHPTxQl2_AHbgO3VXRi8B48-D8W-Fv-rnJvfnqnUpj2oKsUxCpgYfvMPi88GIroH5DHUD45cwB1XJLAqLGQwKnK_67_JbC3JEnPFq22YTmnRXa61lNFtqzxEQY2iCquU30I3J6i0STJ5LsRAaTz8OwiGZi2G_u1WX1pNefIgZChJ7m9VWkrefvGT-yzTYuHjjjUbEYYqeA&zp=Rc5ic6mg-jHSt4u0vxmmUcm9o0McuSEHR494TbUsD2nGwrNPAAsP5X6OfN8Hv_0vXTcfjD4GudtpElY2B2bpy2NqdcAHaPtlZvMFSAFUEIp2fUq_AOeC_SmfMTMmVFKTQoVE3bGATgrS73RM3E50oL_yzo05SJa9TFjLgcXzt_Wg_jItoNyO1WoDOvFfUh_g1kGQY0ihVxOdLSVrLxpHOd2uMdu0EeS_qFlCv5PsvmqfiXAwIHDOgzOQ6ES2cywLpmLC3Y091pMtII8Guk9NE1gDfaKjOJVt014UzQkE9NzkIAcUIje42dCa7fJnoQAT8a0BSVr_FgUhFsyqvP-6yute9IbUnUWO7u4FHqHnHLuk_097fxqmnR5U3fRhNf-UBB5bJu8PrtQ3WDg_VwjcDLKjWqUHw92YkBP5sK1kwdsBsO0ZIt6Wl5_88thMdG_TanCgvad30hvMQV8ZJgU
+                          - generic [ref=e1083]:
+                            - link "Sign Up" [ref=e1085] [cursor=pointer]:
+                              - /url: https://alb.reddit.com/cr?za=hbnSOmJyD3cW2-MK6gy1RE7E48FmhebEZTUyHd9VA2w6zLeKtC5eT1e8ayjNlNZVBoj3cIS1Qv8E3BTM8TLCIZJN0y_PCH-qUbxHtHPDdt-5wx1K36_X9QwBTmtwD6GP3smLuJODbRHyimLoUjHjnJ7CfpaBYRS7UlFbGGB_eM2Tixs_ZbdZisXbvmbxEf_HIQHcJ6YG4OJsxeAMBc6Xa3jGs1FZ73kVw7UuNXKXZuoLza6GLaPACvTNKk2dB-PiK4srpv6ztZE1odt7sSW7COxmMGjtnxDC0t0JpyJuLdfrbghA8QZbUyQt67r_JQxbxRhcEtWjywFOaTrJRilX3YfGQZ8Uqn3Nsi7cJZBelIgFT7UFROB60MFe-0LI2farB3ywh8cwEkyvP7il0xtMMyPqNDHMtJB4noBEYBfeOR_wxwzlgbXJ_zObiyaMJA8V3lEF6C7zZWO9ZctQuS1RpxUA3cQaNg2JhKva6FkxW-IBfsF1-H_7FHPTxQl2_AHbgO3VXRi8B48-D8W-Fv-rnJvfnqnUpj2oKsUxCpgYfvMPi88GIroH5DHUD45cwB1XJLAqLGQwKnK_67_JbC3JEnPFq22YTmnRXa61lNFtqzxEQY2iCquU30I3J6i0STJ5LsRAaTz8OwiGZi2G_u1WX1pNefIgZChJ7m9VWkrefvGT-yzTYuHjjjUbEYYqeA&zp=Rc5ic6mg-jHSt4u0vxmmUcm9o0McuSEHR494TbUsD2nGwrNPAAsP5X6OfN8Hv_0vXTcfjD4GudtpElY2B2bpy2NqdcAHaPtlZvMFSAFUEIp2fUq_AOeC_SmfMTMmVFKTQoVE3bGATgrS73RM3E50oL_yzo05SJa9TFjLgcXzt_Wg_jItoNyO1WoDOvFfUh_g1kGQY0ihVxOdLSVrLxpHOd2uMdu0EeS_qFlCv5PsvmqfiXAwIHDOgzOQ6ES2cywLpmLC3Y091pMtII8Guk9NE1gDfaKjOJVt014UzQkE9NzkIAcUIje42dCa7fJnoQAT8a0BSVr_FgUhFsyqvP-6yute9IbUnUWO7u4FHqHnHLuk_097fxqmnR5U3fRhNf-UBB5bJu8PrtQ3WDg_VwjcDLKjWqUHw92YkBP5sK1kwdsBsO0ZIt6Wl5_88thMdG_TanCgvad30hvMQV8ZJgU
+                            - link "algorand.co" [ref=e1090] [cursor=pointer]:
+                              - /url: https://alb.reddit.com/cr?za=hbnSOmJyD3cW2-MK6gy1RE7E48FmhebEZTUyHd9VA2w6zLeKtC5eT1e8ayjNlNZVBoj3cIS1Qv8E3BTM8TLCIZJN0y_PCH-qUbxHtHPDdt-5wx1K36_X9QwBTmtwD6GP3smLuJODbRHyimLoUjHjnJ7CfpaBYRS7UlFbGGB_eM2Tixs_ZbdZisXbvmbxEf_HIQHcJ6YG4OJsxeAMBc6Xa3jGs1FZ73kVw7UuNXKXZuoLza6GLaPACvTNKk2dB-PiK4srpv6ztZE1odt7sSW7COxmMGjtnxDC0t0JpyJuLdfrbghA8QZbUyQt67r_JQxbxRhcEtWjywFOaTrJRilX3YfGQZ8Uqn3Nsi7cJZBelIgFT7UFROB60MFe-0LI2farB3ywh8cwEkyvP7il0xtMMyPqNDHMtJB4noBEYBfeOR_wxwzlgbXJ_zObiyaMJA8V3lEF6C7zZWO9ZctQuS1RpxUA3cQaNg2JhKva6FkxW-IBfsF1-H_7FHPTxQl2_AHbgO3VXRi8B48-D8W-Fv-rnJvfnqnUpj2oKsUxCpgYfvMPi88GIroH5DHUD45cwB1XJLAqLGQwKnK_67_JbC3JEnPFq22YTmnRXa61lNFtqzxEQY2iCquU30I3J6i0STJ5LsRAaTz8OwiGZi2G_u1WX1pNefIgZChJ7m9VWkrefvGT-yzTYuHjjjUbEYYqeA&zp=Rc5ic6mg-jHSt4u0vxmmUcm9o0McuSEHR494TbUsD2nGwrNPAAsP5X6OfN8Hv_0vXTcfjD4GudtpElY2B2bpy2NqdcAHaPtlZvMFSAFUEIp2fUq_AOeC_SmfMTMmVFKTQoVE3bGATgrS73RM3E50oL_yzo05SJa9TFjLgcXzt_Wg_jItoNyO1WoDOvFfUh_g1kGQY0ihVxOdLSVrLxpHOd2uMdu0EeS_qFlCv5PsvmqfiXAwIHDOgzOQ6ES2cywLpmLC3Y091pMtII8Guk9NE1gDfaKjOJVt014UzQkE9NzkIAcUIje42dCa7fJnoQAT8a0BSVr_FgUhFsyqvP-6yute9IbUnUWO7u4FHqHnHLuk_097fxqmnR5U3fRhNf-UBB5bJu8PrtQ3WDg_VwjcDLKjWqUHw92YkBP5sK1kwdsBsO0ZIt6Wl5_88thMdG_TanCgvad30hvMQV8ZJgU
+                      - link [ref=e1093] [cursor=pointer]:
+                        - /url: https://alb.reddit.com/cr?za=hbnSOmJyD3cW2-MK6gy1RE7E48FmhebEZTUyHd9VA2w6zLeKtC5eT1e8ayjNlNZVBoj3cIS1Qv8E3BTM8TLCIZJN0y_PCH-qUbxHtHPDdt-5wx1K36_X9QwBTmtwD6GP3smLuJODbRHyimLoUjHjnJ7CfpaBYRS7UlFbGGB_eM2Tixs_ZbdZisXbvmbxEf_HIQHcJ6YG4OJsxeAMBc6Xa3jGs1FZ73kVw7UuNXKXZuoLza6GLaPACvTNKk2dB-PiK4srpv6ztZE1odt7sSW7COxmMGjtnxDC0t0JpyJuLdfrbghA8QZbUyQt67r_JQxbxRhcEtWjywFOaTrJRilX3YfGQZ8Uqn3Nsi7cJZBelIgFT7UFROB60MFe-0LI2farB3ywh8cwEkyvP7il0xtMMyPqNDHMtJB4noBEYBfeOR_wxwzlgbXJ_zObiyaMJA8V3lEF6C7zZWO9ZctQuS1RpxUA3cQaNg2JhKva6FkxW-IBfsF1-H_7FHPTxQl2_AHbgO3VXRi8B48-D8W-Fv-rnJvfnqnUpj2oKsUxCpgYfvMPi88GIroH5DHUD45cwB1XJLAqLGQwKnK_67_JbC3JEnPFq22YTmnRXa61lNFtqzxEQY2iCquU30I3J6i0STJ5LsRAaTz8OwiGZi2G_u1WX1pNefIgZChJ7m9VWkrefvGT-yzTYuHjjjUbEYYqeA&zp=Rc5ic6mg-jHSt4u0vxmmUcm9o0McuSEHR494TbUsD2nGwrNPAAsP5X6OfN8Hv_0vXTcfjD4GudtpElY2B2bpy2NqdcAHaPtlZvMFSAFUEIp2fUq_AOeC_SmfMTMmVFKTQoVE3bGATgrS73RM3E50oL_yzo05SJa9TFjLgcXzt_Wg_jItoNyO1WoDOvFfUh_g1kGQY0ihVxOdLSVrLxpHOd2uMdu0EeS_qFlCv5PsvmqfiXAwIHDOgzOQ6ES2cywLpmLC3Y091pMtII8Guk9NE1gDfaKjOJVt014UzQkE9NzkIAcUIje42dCa7fJnoQAT8a0BSVr_FgUhFsyqvP-6yute9IbUnUWO7u4FHqHnHLuk_097fxqmnR5U3fRhNf-UBB5bJu8PrtQ3WDg_VwjcDLKjWqUHw92YkBP5sK1kwdsBsO0ZIt6Wl5_88thMdG_TanCgvad30hvMQV8ZJgU
+                        - 'img "Thumbnail image: Built an API? Compete for $100K + 500K ALGO by turning it into a paid endpoint" [ref=e1094]'
+                - article "Comment from FrostZTech 5 years ago" [ref=e1096]:
+                  - generic [ref=e1097] [cursor=pointer]:
+                    - link "FrostZTech's profile --- avatar" [ref=e1103]:
+                      - /url: https://www.reddit.com/user/FrostZTech/
+                    - generic [ref=e1113]:
+                      - link "FrostZTech's profile" [ref=e1117]:
+                        - /url: https://www.reddit.com/user/FrostZTech/
+                        - text: FrostZTech
+                      - generic [aria-hidden] [ref=e1118]: •
+                      - link [ref=e1120]:
+                        - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0raa5c/
+                        - time [ref=e1122]: 5y ago
+                  - generic [ref=e1124]:
+                    - paragraph [ref=e1128]: This is really amazing man, tbh I also went out to find online video editors and only thing I found was subscriptions and low-res watermark exports!
+                    - 'article "Comment thread level 1: Reply from beckerman_jacob 5 years ago" [ref=e1133]':
+                      - generic [ref=e1134] [cursor=pointer]:
+                        - link "beckerman_jacob's profile --- avatar" [ref=e1140]:
+                          - /url: https://www.reddit.com/user/beckerman_jacob/
+                          - img "u/beckerman_jacob avatar" [ref=e1143]
+                        - generic [ref=e1147]:
+                          - link "beckerman_jacob's profile" [ref=e1151]:
+                            - /url: https://www.reddit.com/user/beckerman_jacob/
+                            - text: beckerman_jacob
+                          - generic "Comment distinguished as the original poster" [ref=e1154]: OP
+                          - generic [aria-hidden] [ref=e1155]: •
+                          - link [ref=e1157]:
+                            - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0rajvz/
+                            - time [ref=e1159]: 5y ago
+                      - generic [ref=e1161]:
+                        - paragraph [ref=e1165]: Yup, that was my issue as well. Luckily I had the skills to do something about it.
+                        - button "2 more replies" [ref=e1172] [cursor=pointer]:
+                          - generic [ref=e1177]:
+                            - generic [ref=e1178]: "2"
+                            - text: more replies
+                - article "Comment from powofoto 5 years ago" [ref=e1180]:
+                  - generic [ref=e1181] [cursor=pointer]:
+                    - link "powofoto's profile --- avatar" [ref=e1187]:
+                      - /url: https://www.reddit.com/user/powofoto/
+                      - img "u/powofoto avatar" [ref=e1190]
+                    - generic [ref=e1194]:
+                      - link "powofoto's profile" [ref=e1198]:
+                        - /url: https://www.reddit.com/user/powofoto/
+                        - text: powofoto
+                      - generic [aria-hidden] [ref=e1199]: •
+                      - link [ref=e1201]:
+                        - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0qy2qv/
+                        - time [ref=e1203]: 5y ago
+                  - generic [ref=e1205]:
+                    - paragraph [ref=e1209]: One mobile so can't test it out, do you have the ability to rotate video as well?
+                    - 'article "Comment thread level 1: Reply from beckerman_jacob 5 years ago" [ref=e1214]':
+                      - generic [ref=e1215] [cursor=pointer]:
+                        - link "beckerman_jacob's profile --- avatar" [ref=e1221]:
+                          - /url: https://www.reddit.com/user/beckerman_jacob/
+                          - img "u/beckerman_jacob avatar" [ref=e1224]
+                        - generic [ref=e1228]:
+                          - link "beckerman_jacob's profile" [ref=e1232]:
+                            - /url: https://www.reddit.com/user/beckerman_jacob/
+                            - text: beckerman_jacob
+                          - generic "Comment distinguished as the original poster" [ref=e1235]: OP
+                          - generic [aria-hidden] [ref=e1236]: •
+                          - link [ref=e1238]:
+                            - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0qy9p9/
+                            - time [ref=e1240]: 5y ago
+                      - generic [ref=e1242]:
+                        - paragraph [ref=e1246]: Not yet. Currently I have the ability to move and scale video. Rotation is up next.
+                        - button "1 more reply" [ref=e1253] [cursor=pointer]:
+                          - generic [ref=e1258]:
+                            - generic [ref=e1259]: "1"
+                            - text: more reply
+                - article "Comment from petenpatrol 5 years ago" [ref=e1261]:
+                  - generic [ref=e1262] [cursor=pointer]:
+                    - link "petenpatrol's profile --- avatar" [ref=e1268]:
+                      - /url: https://www.reddit.com/user/petenpatrol/
+                      - img "u/petenpatrol avatar" [ref=e1271]
+                    - generic [ref=e1275]:
+                      - link "petenpatrol's profile" [ref=e1279]:
+                        - /url: https://www.reddit.com/user/petenpatrol/
+                        - text: petenpatrol
+                      - generic [aria-hidden] [ref=e1280]: •
+                      - link [ref=e1282]:
+                        - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0qym40/
+                        - time [ref=e1284]: 5y ago
+                  - generic [ref=e1286]:
+                    - paragraph [ref=e1290]: Really awesome. How long have you been working on this? Is all the design from you or did you use a component pack?
+                    - 'article "Comment thread level 1: Reply from beckerman_jacob 5 years ago" [ref=e1295]':
+                      - generic [ref=e1296] [cursor=pointer]:
+                        - link "beckerman_jacob's profile --- avatar" [ref=e1302]:
+                          - /url: https://www.reddit.com/user/beckerman_jacob/
+                          - img "u/beckerman_jacob avatar" [ref=e1305]
+                        - generic [ref=e1309]:
+                          - link "beckerman_jacob's profile" [ref=e1313]:
+                            - /url: https://www.reddit.com/user/beckerman_jacob/
+                            - text: beckerman_jacob
+                          - generic "Comment distinguished as the original poster" [ref=e1316]: OP
+                          - generic [aria-hidden] [ref=e1317]: •
+                          - link [ref=e1319]:
+                            - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0qyvvt/
+                            - time [ref=e1321]: 5y ago
+                      - paragraph [ref=e1327]: I’ve been working on this for about 6 months as a side project (alongside a full time job) mainly during the evenings. I used tailwindcss for design without a component pack.
+                - article "Comment from [deleted] 5 years ago" [ref=e1331]:
+                  - generic "[deleted] 5y ago" [ref=e1332] [cursor=pointer]:
+                    - generic [ref=e1346]:
+                      - generic [ref=e1347]: "[deleted]"
+                      - generic [aria-hidden] [ref=e1350]: •
+                      - link [ref=e1352]:
+                        - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0rg38d/
+                        - time [ref=e1354]: 5y ago
+                  - generic [ref=e1356]:
+                    - paragraph [ref=e1360]: 2k 4k options in near future?
+                    - 'article "Comment thread level 1: Reply from beckerman_jacob 5 years ago" [ref=e1365]':
+                      - generic [ref=e1366] [cursor=pointer]:
+                        - link "beckerman_jacob's profile --- avatar" [ref=e1372]:
+                          - /url: https://www.reddit.com/user/beckerman_jacob/
+                          - img "u/beckerman_jacob avatar" [ref=e1375]
+                        - generic [ref=e1379]:
+                          - link "beckerman_jacob's profile" [ref=e1383]:
+                            - /url: https://www.reddit.com/user/beckerman_jacob/
+                            - text: beckerman_jacob
+                          - generic "Comment distinguished as the original poster" [ref=e1386]: OP
+                          - generic [aria-hidden] [ref=e1387]: •
+                          - link [ref=e1389]:
+                            - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0rgl81/
+                            - time [ref=e1391]: 5y ago
+                      - paragraph [ref=e1397]: 2k is probably doable, but with 4k I think there will be some issues. Especially the final export will take a very very long time. If I create an electron app as a wrapper for this site I can probably 5x the rendering speed which would make 4k possible. I don’t see that happening in the near future though
+                - article "Comment from swibbles 5 years ago" [ref=e1401]:
+                  - generic [ref=e1402] [cursor=pointer]:
+                    - link "swibbles's profile --- avatar" [ref=e1408]:
+                      - /url: https://www.reddit.com/user/swibbles/
+                    - generic [ref=e1418]:
+                      - link "swibbles's profile" [ref=e1422]:
+                        - /url: https://www.reddit.com/user/swibbles/
+                        - text: swibbles
+                      - generic [aria-hidden] [ref=e1423]: •
+                      - link [ref=e1425]:
+                        - /url: https://www.reddit.com/r/webdev/comments/nt6gus/comment/h0qyq0s/
+                        - time [ref=e1427]: 5y ago
+                  - generic [ref=e1429]:
+                    - generic [ref=e1432]:
+                      - paragraph [ref=e1433]: Awesome! I’ll check it out next time I’m editing :)
+                      - paragraph [ref=e1434]: Would you consider open-sourcing this?
+                    - button "1 more reply" [ref=e1441] [cursor=pointer]:
+                      - generic [ref=e1446]:
+                        - generic [ref=e1447]: "1"
+                        - text: more reply
+            - generic [ref=e1451]:
+              - generic [ref=e1452]:
+                - complementary "People also ask about section" [ref=e1454]:
+                  - heading "People also ask about section" [level=1] [ref=e1455]
+                  - generic [ref=e1456]: People also ask about
+                  - generic [ref=e1461]:
+                    - link "Best online video editors without watermarks" [ref=e1463] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/3b8d201e-b73c-493a-ae3f-6bba0f951730/?q=Best+online+video+editors+without+watermarks&source=PDP&ep=pdp_unit&relatedPostId=t3_nt6gus
+                    - link "Top free video editing apps" [ref=e1472] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/bb8d2364-ed4c-4bee-b003-238063fdd1c7/?q=Top+free+video+editing+apps&source=PDP&ep=pdp_unit&relatedPostId=t3_nt6gus
+                    - link "Browser video editing tools comparison" [ref=e1481] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/256b3b89-da14-47f1-82db-a5369bb1e9b0/?q=Browser+video+editing+tools+comparison&source=PDP&ep=pdp_unit&relatedPostId=t3_nt6gus
+                    - link "Top frameworks for modern web development" [ref=e1490] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/1af5d006-3966-416f-ba98-5a416311476f/?q=Top+frameworks+for+modern+web+development&source=PDP&ep=pdp_unit&relatedPostId=t3_nt6gus
+                    - link "Best practices for responsive web design" [ref=e1499] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/84f0c998-9158-4ec6-970e-a3c1b1b71377/?q=Best+practices+for+responsive+web+design&source=PDP&ep=pdp_unit&relatedPostId=t3_nt6gus
+                - complementary "Related Posts Section" [ref=e1507]:
+                  - heading "Related Posts Section" [level=1] [ref=e1508]: More posts you may like
+                  - generic [ref=e1509]: Related posts
+                  - list [ref=e1515]:
+                    - listitem [ref=e1516]:
+                      - generic [ref=e1517]:
+                        - generic [ref=e1518]:
+                          - link "Footage - End It calls out Banana Man at last night’s Toronto Show" [ref=e1519] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/Hardcore/comments/1tyf5b7/footage_end_it_calls_out_banana_man_at_last/
+                          - generic [ref=e1521]:
+                            - generic [ref=e1522]:
+                              - generic [ref=e1525]:
+                                - link "r/Hardcore" [ref=e1526] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/Hardcore/
+                                - generic [aria-hidden] [ref=e1531]: •
+                                - time [ref=e1533]: 3mo ago
+                              - link [ref=e1535] [cursor=pointer]:
+                                - /url: /r/Hardcore/comments/1tyf5b7/footage_end_it_calls_out_banana_man_at_last/
+                                - heading "List item post - Footage - End It calls out Banana Man at last night’s Toron..." [level=3] [ref=e1538]: Footage - End It calls out Banana Man at last night’s Toronto Show
+                            - generic [ref=e1540]:
+                              - link "r/Hardcore - Footage - End It calls out Banana Man at last night’s Toronto Show" [ref=e1541] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/Hardcore/comments/1tyf5b7/footage_end_it_calls_out_banana_man_at_last/
+                                - img "r/Hardcore - Footage - End It calls out Banana Man at last night’s Toronto Show" [ref=e1542]
+                              - generic: 2:06
+                          - generic [ref=e1544]:
+                            - generic [ref=e1545]: 1.5K
+                            - text: upvotes ·
+                            - generic [ref=e1546]: 1.1K
+                            - text: comments
+                        - separator [ref=e1547]
+                    - listitem [ref=e1548]:
+                      - generic [ref=e1550]:
+                        - generic:
+                          - 'generic "Advertisement: How do you benefit from standardized CCUS?" [ref=e1551]':
+                            - 'link "Advertisement: How do you benefit from standardized CCUS?" [ref=e1552] [cursor=pointer]':
+                              - /url: https://alb.reddit.com/cr?za=OoCRJvos64FKKUnlpWkMbfzn-2GUSWi38w1JR1lpSbCeAMixS7TReuQ6vJBunb8XjwCU7djjBmvrY4OMaucJSoYkjSp6gFGXYGTjUoUZveJrTzA8n417dA-DS0s7N34xiZmCViNbGk8HP9yIfIUzej_L686rs9ULVLDnnsgemAD7757fLG8Iz7pBi-92lFuTk0aGT_B_pxIvZnI11h_tSoleRlzBbZn2LnmQGz3AtpbXv7__wYKUup1hgcwSMlVjD7xvdG9Jg6PEg9U4iNBRABo8yD2B2XgfW8p1hdAlgTlGnbEPXCNKQNK872A9WyuCUneVZeb_AhFfgb-R9HKCZbhE_vq-PEmm3jCCVTZl5aslL0JCungYF2cDGLqaRTHBEml5gZjutiPzN2uBx64n2JosLLIpFc1YFMyJ1hzdEzlJ6MqUuzjrc236U-nHtavvZ4AMQuW2YBufPNNVrTEPeDJSHp1knPROsK39iuRs_gFns46KWJGDUKY8F26Z32LSlBTVw0Mj5QESjJzmroi1rcyYhcfvN9bPkBLS2ms6Bzk0ggiKWpugQE88D3CLmcfMTO6KKjCib7J-J0eBL7_r9vHlfTCM-NKHU9HZjFVlErR7mg2t7sTQdkB3nRKzIkFrigHO4__xNbzodjMRbQ-myGNgvZZYMWv57gwxUHyRJYUVj2oZkgHMEXv7&zp=aDiGCu6u5Fz0pOHjKvFfCJy_nv_h0q6Tby9P2nvtLzWD0VEOlMayBmbcbmYbH0LKz06WtzmEayidzXmk0nTHiAsV0YA2Tkc7Gna9bJm4WCx8QKymobtzg84w09WVSe7em_9ruHIDLBaZuMBqU7LjNhcMXRVjuPm8l4yw1w92t2z59_UUAUXBtnfxSGYDDv_Ir43ML7ZYtwLpkDKGzrVMtPStrePQUENIdp4XIMXV0CVaPMAwqR99K55x8ldIUi5q8JYZXlyQnyxQxmPkT_a1D-6Ia9bx5dQqUBatwGQZZACm1Y5ADGMLqtyZTidZPWjVcKD9dwlJhPHjlYcP2HaY84bHZ0PZcNdNqpfJAW8k9N2A6hBTHEyLBlRv9qt4
+                          - generic [ref=e1553]:
+                            - generic [ref=e1554]:
+                              - generic [ref=e1555]:
+                                - generic [ref=e1556]:
+                                  - generic [ref=e1557]:
+                                    - link "u/Everllence avatar Everllence" [ref=e1560] [cursor=pointer]:
+                                      - /url: /user/Everllence/
+                                      - img "u/Everllence avatar" [ref=e1563]
+                                      - generic [ref=e1564]: Everllence
+                                    - generic [ref=e1565]: •
+                                    - link "Ad" [ref=e1567] [cursor=pointer]:
+                                      - /url: /user/Everllence/
+                                    - link [ref=e1570] [cursor=pointer]:
+                                      - /url: https://alb.reddit.com/cr?za=OoCRJvos64FKKUnlpWkMbfzn-2GUSWi38w1JR1lpSbCeAMixS7TReuQ6vJBunb8XjwCU7djjBmvrY4OMaucJSoYkjSp6gFGXYGTjUoUZveJrTzA8n417dA-DS0s7N34xiZmCViNbGk8HP9yIfIUzej_L686rs9ULVLDnnsgemAD7757fLG8Iz7pBi-92lFuTk0aGT_B_pxIvZnI11h_tSoleRlzBbZn2LnmQGz3AtpbXv7__wYKUup1hgcwSMlVjD7xvdG9Jg6PEg9U4iNBRABo8yD2B2XgfW8p1hdAlgTlGnbEPXCNKQNK872A9WyuCUneVZeb_AhFfgb-R9HKCZbhE_vq-PEmm3jCCVTZl5aslL0JCungYF2cDGLqaRTHBEml5gZjutiPzN2uBx64n2JosLLIpFc1YFMyJ1hzdEzlJ6MqUuzjrc236U-nHtavvZ4AMQuW2YBufPNNVrTEPeDJSHp1knPROsK39iuRs_gFns46KWJGDUKY8F26Z32LSlBTVw0Mj5QESjJzmroi1rcyYhcfvN9bPkBLS2ms6Bzk0ggiKWpugQE88D3CLmcfMTO6KKjCib7J-J0eBL7_r9vHlfTCM-NKHU9HZjFVlErR7mg2t7sTQdkB3nRKzIkFrigHO4__xNbzodjMRbQ-myGNgvZZYMWv57gwxUHyRJYUVj2oZkgHMEXv7&zp=aDiGCu6u5Fz0pOHjKvFfCJy_nv_h0q6Tby9P2nvtLzWD0VEOlMayBmbcbmYbH0LKz06WtzmEayidzXmk0nTHiAsV0YA2Tkc7Gna9bJm4WCx8QKymobtzg84w09WVSe7em_9ruHIDLBaZuMBqU7LjNhcMXRVjuPm8l4yw1w92t2z59_UUAUXBtnfxSGYDDv_Ir43ML7ZYtwLpkDKGzrVMtPStrePQUENIdp4XIMXV0CVaPMAwqR99K55x8ldIUi5q8JYZXlyQnyxQxmPkT_a1D-6Ia9bx5dQqUBatwGQZZACm1Y5ADGMLqtyZTidZPWjVcKD9dwlJhPHjlYcP2HaY84bHZ0PZcNdNqpfJAW8k9N2A6hBTHEyLBlRv9qt4
+                                  - button "Open user actions" [ref=e1576] [cursor=pointer]
+                                - link "How do you benefit from standardized CCUS?" [ref=e1583] [cursor=pointer]:
+                                  - /url: https://alb.reddit.com/cr?za=OoCRJvos64FKKUnlpWkMbfzn-2GUSWi38w1JR1lpSbCeAMixS7TReuQ6vJBunb8XjwCU7djjBmvrY4OMaucJSoYkjSp6gFGXYGTjUoUZveJrTzA8n417dA-DS0s7N34xiZmCViNbGk8HP9yIfIUzej_L686rs9ULVLDnnsgemAD7757fLG8Iz7pBi-92lFuTk0aGT_B_pxIvZnI11h_tSoleRlzBbZn2LnmQGz3AtpbXv7__wYKUup1hgcwSMlVjD7xvdG9Jg6PEg9U4iNBRABo8yD2B2XgfW8p1hdAlgTlGnbEPXCNKQNK872A9WyuCUneVZeb_AhFfgb-R9HKCZbhE_vq-PEmm3jCCVTZl5aslL0JCungYF2cDGLqaRTHBEml5gZjutiPzN2uBx64n2JosLLIpFc1YFMyJ1hzdEzlJ6MqUuzjrc236U-nHtavvZ4AMQuW2YBufPNNVrTEPeDJSHp1knPROsK39iuRs_gFns46KWJGDUKY8F26Z32LSlBTVw0Mj5QESjJzmroi1rcyYhcfvN9bPkBLS2ms6Bzk0ggiKWpugQE88D3CLmcfMTO6KKjCib7J-J0eBL7_r9vHlfTCM-NKHU9HZjFVlErR7mg2t7sTQdkB3nRKzIkFrigHO4__xNbzodjMRbQ-myGNgvZZYMWv57gwxUHyRJYUVj2oZkgHMEXv7&zp=aDiGCu6u5Fz0pOHjKvFfCJy_nv_h0q6Tby9P2nvtLzWD0VEOlMayBmbcbmYbH0LKz06WtzmEayidzXmk0nTHiAsV0YA2Tkc7Gna9bJm4WCx8QKymobtzg84w09WVSe7em_9ruHIDLBaZuMBqU7LjNhcMXRVjuPm8l4yw1w92t2z59_UUAUXBtnfxSGYDDv_Ir43ML7ZYtwLpkDKGzrVMtPStrePQUENIdp4XIMXV0CVaPMAwqR99K55x8ldIUi5q8JYZXlyQnyxQxmPkT_a1D-6Ia9bx5dQqUBatwGQZZACm1Y5ADGMLqtyZTidZPWjVcKD9dwlJhPHjlYcP2HaY84bHZ0PZcNdNqpfJAW8k9N2A6hBTHEyLBlRv9qt4
+                                  - generic "How do you benefit from standardized CCUS?" [ref=e1584]
+                              - link [ref=e1587] [cursor=pointer]:
+                                - /url: https://alb.reddit.com/cr?za=OoCRJvos64FKKUnlpWkMbfzn-2GUSWi38w1JR1lpSbCeAMixS7TReuQ6vJBunb8XjwCU7djjBmvrY4OMaucJSoYkjSp6gFGXYGTjUoUZveJrTzA8n417dA-DS0s7N34xiZmCViNbGk8HP9yIfIUzej_L686rs9ULVLDnnsgemAD7757fLG8Iz7pBi-92lFuTk0aGT_B_pxIvZnI11h_tSoleRlzBbZn2LnmQGz3AtpbXv7__wYKUup1hgcwSMlVjD7xvdG9Jg6PEg9U4iNBRABo8yD2B2XgfW8p1hdAlgTlGnbEPXCNKQNK872A9WyuCUneVZeb_AhFfgb-R9HKCZbhE_vq-PEmm3jCCVTZl5aslL0JCungYF2cDGLqaRTHBEml5gZjutiPzN2uBx64n2JosLLIpFc1YFMyJ1hzdEzlJ6MqUuzjrc236U-nHtavvZ4AMQuW2YBufPNNVrTEPeDJSHp1knPROsK39iuRs_gFns46KWJGDUKY8F26Z32LSlBTVw0Mj5QESjJzmroi1rcyYhcfvN9bPkBLS2ms6Bzk0ggiKWpugQE88D3CLmcfMTO6KKjCib7J-J0eBL7_r9vHlfTCM-NKHU9HZjFVlErR7mg2t7sTQdkB3nRKzIkFrigHO4__xNbzodjMRbQ-myGNgvZZYMWv57gwxUHyRJYUVj2oZkgHMEXv7&zp=aDiGCu6u5Fz0pOHjKvFfCJy_nv_h0q6Tby9P2nvtLzWD0VEOlMayBmbcbmYbH0LKz06WtzmEayidzXmk0nTHiAsV0YA2Tkc7Gna9bJm4WCx8QKymobtzg84w09WVSe7em_9ruHIDLBaZuMBqU7LjNhcMXRVjuPm8l4yw1w92t2z59_UUAUXBtnfxSGYDDv_Ir43ML7ZYtwLpkDKGzrVMtPStrePQUENIdp4XIMXV0CVaPMAwqR99K55x8ldIUi5q8JYZXlyQnyxQxmPkT_a1D-6Ia9bx5dQqUBatwGQZZACm1Y5ADGMLqtyZTidZPWjVcKD9dwlJhPHjlYcP2HaY84bHZ0PZcNdNqpfJAW8k9N2A6hBTHEyLBlRv9qt4
+                                - 'img "Thumbnail image: How do you benefit from standardized CCUS?" [ref=e1589]'
+                            - generic [ref=e1590]:
+                              - link [ref=e1592] [cursor=pointer]:
+                                - /url: https://alb.reddit.com/cr?za=OoCRJvos64FKKUnlpWkMbfzn-2GUSWi38w1JR1lpSbCeAMixS7TReuQ6vJBunb8XjwCU7djjBmvrY4OMaucJSoYkjSp6gFGXYGTjUoUZveJrTzA8n417dA-DS0s7N34xiZmCViNbGk8HP9yIfIUzej_L686rs9ULVLDnnsgemAD7757fLG8Iz7pBi-92lFuTk0aGT_B_pxIvZnI11h_tSoleRlzBbZn2LnmQGz3AtpbXv7__wYKUup1hgcwSMlVjD7xvdG9Jg6PEg9U4iNBRABo8yD2B2XgfW8p1hdAlgTlGnbEPXCNKQNK872A9WyuCUneVZeb_AhFfgb-R9HKCZbhE_vq-PEmm3jCCVTZl5aslL0JCungYF2cDGLqaRTHBEml5gZjutiPzN2uBx64n2JosLLIpFc1YFMyJ1hzdEzlJ6MqUuzjrc236U-nHtavvZ4AMQuW2YBufPNNVrTEPeDJSHp1knPROsK39iuRs_gFns46KWJGDUKY8F26Z32LSlBTVw0Mj5QESjJzmroi1rcyYhcfvN9bPkBLS2ms6Bzk0ggiKWpugQE88D3CLmcfMTO6KKjCib7J-J0eBL7_r9vHlfTCM-NKHU9HZjFVlErR7mg2t7sTQdkB3nRKzIkFrigHO4__xNbzodjMRbQ-myGNgvZZYMWv57gwxUHyRJYUVj2oZkgHMEXv7&zp=aDiGCu6u5Fz0pOHjKvFfCJy_nv_h0q6Tby9P2nvtLzWD0VEOlMayBmbcbmYbH0LKz06WtzmEayidzXmk0nTHiAsV0YA2Tkc7Gna9bJm4WCx8QKymobtzg84w09WVSe7em_9ruHIDLBaZuMBqU7LjNhcMXRVjuPm8l4yw1w92t2z59_UUAUXBtnfxSGYDDv_Ir43ML7ZYtwLpkDKGzrVMtPStrePQUENIdp4XIMXV0CVaPMAwqR99K55x8ldIUi5q8JYZXlyQnyxQxmPkT_a1D-6Ia9bx5dQqUBatwGQZZACm1Y5ADGMLqtyZTidZPWjVcKD9dwlJhPHjlYcP2HaY84bHZ0PZcNdNqpfJAW8k9N2A6hBTHEyLBlRv9qt4
+                              - generic [ref=e1593]:
+                                - link "everllence.com" [ref=e1596] [cursor=pointer]:
+                                  - /url: https://alb.reddit.com/cr?za=OoCRJvos64FKKUnlpWkMbfzn-2GUSWi38w1JR1lpSbCeAMixS7TReuQ6vJBunb8XjwCU7djjBmvrY4OMaucJSoYkjSp6gFGXYGTjUoUZveJrTzA8n417dA-DS0s7N34xiZmCViNbGk8HP9yIfIUzej_L686rs9ULVLDnnsgemAD7757fLG8Iz7pBi-92lFuTk0aGT_B_pxIvZnI11h_tSoleRlzBbZn2LnmQGz3AtpbXv7__wYKUup1hgcwSMlVjD7xvdG9Jg6PEg9U4iNBRABo8yD2B2XgfW8p1hdAlgTlGnbEPXCNKQNK872A9WyuCUneVZeb_AhFfgb-R9HKCZbhE_vq-PEmm3jCCVTZl5aslL0JCungYF2cDGLqaRTHBEml5gZjutiPzN2uBx64n2JosLLIpFc1YFMyJ1hzdEzlJ6MqUuzjrc236U-nHtavvZ4AMQuW2YBufPNNVrTEPeDJSHp1knPROsK39iuRs_gFns46KWJGDUKY8F26Z32LSlBTVw0Mj5QESjJzmroi1rcyYhcfvN9bPkBLS2ms6Bzk0ggiKWpugQE88D3CLmcfMTO6KKjCib7J-J0eBL7_r9vHlfTCM-NKHU9HZjFVlErR7mg2t7sTQdkB3nRKzIkFrigHO4__xNbzodjMRbQ-myGNgvZZYMWv57gwxUHyRJYUVj2oZkgHMEXv7&zp=aDiGCu6u5Fz0pOHjKvFfCJy_nv_h0q6Tby9P2nvtLzWD0VEOlMayBmbcbmYbH0LKz06WtzmEayidzXmk0nTHiAsV0YA2Tkc7Gna9bJm4WCx8QKymobtzg84w09WVSe7em_9ruHIDLBaZuMBqU7LjNhcMXRVjuPm8l4yw1w92t2z59_UUAUXBtnfxSGYDDv_Ir43ML7ZYtwLpkDKGzrVMtPStrePQUENIdp4XIMXV0CVaPMAwqR99K55x8ldIUi5q8JYZXlyQnyxQxmPkT_a1D-6Ia9bx5dQqUBatwGQZZACm1Y5ADGMLqtyZTidZPWjVcKD9dwlJhPHjlYcP2HaY84bHZ0PZcNdNqpfJAW8k9N2A6hBTHEyLBlRv9qt4
+                                - link "Learn More" [ref=e1598] [cursor=pointer]:
+                                  - /url: https://alb.reddit.com/cr?za=OoCRJvos64FKKUnlpWkMbfzn-2GUSWi38w1JR1lpSbCeAMixS7TReuQ6vJBunb8XjwCU7djjBmvrY4OMaucJSoYkjSp6gFGXYGTjUoUZveJrTzA8n417dA-DS0s7N34xiZmCViNbGk8HP9yIfIUzej_L686rs9ULVLDnnsgemAD7757fLG8Iz7pBi-92lFuTk0aGT_B_pxIvZnI11h_tSoleRlzBbZn2LnmQGz3AtpbXv7__wYKUup1hgcwSMlVjD7xvdG9Jg6PEg9U4iNBRABo8yD2B2XgfW8p1hdAlgTlGnbEPXCNKQNK872A9WyuCUneVZeb_AhFfgb-R9HKCZbhE_vq-PEmm3jCCVTZl5aslL0JCungYF2cDGLqaRTHBEml5gZjutiPzN2uBx64n2JosLLIpFc1YFMyJ1hzdEzlJ6MqUuzjrc236U-nHtavvZ4AMQuW2YBufPNNVrTEPeDJSHp1knPROsK39iuRs_gFns46KWJGDUKY8F26Z32LSlBTVw0Mj5QESjJzmroi1rcyYhcfvN9bPkBLS2ms6Bzk0ggiKWpugQE88D3CLmcfMTO6KKjCib7J-J0eBL7_r9vHlfTCM-NKHU9HZjFVlErR7mg2t7sTQdkB3nRKzIkFrigHO4__xNbzodjMRbQ-myGNgvZZYMWv57gwxUHyRJYUVj2oZkgHMEXv7&zp=aDiGCu6u5Fz0pOHjKvFfCJy_nv_h0q6Tby9P2nvtLzWD0VEOlMayBmbcbmYbH0LKz06WtzmEayidzXmk0nTHiAsV0YA2Tkc7Gna9bJm4WCx8QKymobtzg84w09WVSe7em_9ruHIDLBaZuMBqU7LjNhcMXRVjuPm8l4yw1w92t2z59_UUAUXBtnfxSGYDDv_Ir43ML7ZYtwLpkDKGzrVMtPStrePQUENIdp4XIMXV0CVaPMAwqR99K55x8ldIUi5q8JYZXlyQnyxQxmPkT_a1D-6Ia9bx5dQqUBatwGQZZACm1Y5ADGMLqtyZTidZPWjVcKD9dwlJhPHjlYcP2HaY84bHZ0PZcNdNqpfJAW8k9N2A6hBTHEyLBlRv9qt4
+                      - separator [ref=e1601]
+                    - listitem [ref=e1602]:
+                      - generic [ref=e1603]:
+                        - generic [ref=e1604]:
+                          - link "i gave my little bro my old pc and he's been playing games with my steam and other accs, he started playing roblox and he has been playing nearly daily and just today he tried to install an injector program for ''hacking'' with scripts. should i do something else or is this safe?" [ref=e1605] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/antivirus/comments/1ebgpgv/i_gave_my_little_bro_my_old_pc_and_hes_been/
+                          - generic [ref=e1607]:
+                            - generic [ref=e1608]:
+                              - generic [ref=e1611]:
+                                - link "r/antivirus" [ref=e1612] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/antivirus/
+                                - generic [aria-hidden] [ref=e1617]: •
+                                - time [ref=e1619]: 2y ago
+                              - link [ref=e1621] [cursor=pointer]:
+                                - /url: /r/antivirus/comments/1ebgpgv/i_gave_my_little_bro_my_old_pc_and_hes_been/
+                                - heading "List item post - i gave my little bro my old pc and he's been playing games ..." [level=3] [ref=e1624]: i gave my little bro my old pc and he's been playing games with my steam and other accs, he started playing roblox and he has been playing nearly daily and just today he tried to install an injector program for ''hacking'' with scripts. should i do something else or is this safe?
+                            - link "r/antivirus - i gave my little bro my old pc and he's been playing games with my steam and other accs, he started playing roblox and he has been playing nearly daily and just today he tried to install an injector program for ''hacking'' with scripts. should i do something else or is this safe?" [ref=e1627] [cursor=pointer]:
+                              - /url: https://www.reddit.com/r/antivirus/comments/1ebgpgv/i_gave_my_little_bro_my_old_pc_and_hes_been/
+                              - img "r/antivirus - i gave my little bro my old pc and he's been playing games with my steam and other accs, he started playing roblox and he has been playing nearly daily and just today he tried to install an injector program for ''hacking'' with scripts. should i do something else or is this safe?" [ref=e1628]
+                          - generic [ref=e1630]:
+                            - generic [ref=e1631]: "357"
+                            - text: upvotes ·
+                            - generic [ref=e1632]: "201"
+                            - text: comments
+                        - separator [ref=e1633]
+                    - listitem [ref=e1634]:
+                      - generic [ref=e1635]:
+                        - generic [ref=e1636]:
+                          - 'link "Call of Duty: Mobile - June 11th Public Test Build" [ref=e1637] [cursor=pointer]':
+                            - /url: https://www.reddit.com/r/CallOfDutyMobile/comments/1u3bdgk/call_of_duty_mobile_june_11th_public_test_build/
+                          - generic [ref=e1639]:
+                            - generic [ref=e1640]:
+                              - generic [ref=e1643]:
+                                - link "r/CallOfDutyMobile" [ref=e1644] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/CallOfDutyMobile/
+                                - generic [aria-hidden] [ref=e1649]: •
+                                - time [ref=e1651]: 3mo ago
+                              - link [ref=e1653] [cursor=pointer]:
+                                - /url: /r/CallOfDutyMobile/comments/1u3bdgk/call_of_duty_mobile_june_11th_public_test_build/
+                                - 'heading "List item post - Call of Duty: Mobile - June 11th Public Test Build" [level=3] [ref=e1656]': "Call of Duty: Mobile - June 11th Public Test Build"
+                            - 'link "r/CallOfDutyMobile - Call of Duty: Mobile - June 11th Public Test Build" [ref=e1659] [cursor=pointer]':
+                              - /url: https://www.reddit.com/r/CallOfDutyMobile/comments/1u3bdgk/call_of_duty_mobile_june_11th_public_test_build/
+                              - 'img "r/CallOfDutyMobile - Call of Duty: Mobile - June 11th Public Test Build" [ref=e1660]'
+                          - generic [ref=e1662]:
+                            - generic [ref=e1663]: "39"
+                            - text: upvotes ·
+                            - generic [ref=e1664]: "187"
+                            - text: comments
+                        - separator [ref=e1665]
+                    - listitem
+                    - listitem [ref=e1666]:
+                      - generic [ref=e1667]:
+                        - generic [ref=e1668]:
+                          - 'link "Crew merch just gave us our first look at the Fantastic Four in Avengers: Doomsday" [ref=e1669] [cursor=pointer]':
+                            - /url: https://www.reddit.com/r/FantasticFour/comments/1nn1zm8/crew_merch_just_gave_us_our_first_look_at_the/
+                          - generic [ref=e1671]:
+                            - generic [ref=e1672]:
+                              - generic [ref=e1675]:
+                                - link "r/FantasticFour" [ref=e1676] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/FantasticFour/
+                                - generic [aria-hidden] [ref=e1681]: •
+                                - time [ref=e1683]: 1y ago
+                              - link "Spoiler List item post - Crew merch just gave us our first look at the Fantastic Fou..." [ref=e1685] [cursor=pointer]:
+                                - /url: /r/FantasticFour/comments/1nn1zm8/crew_merch_just_gave_us_our_first_look_at_the/
+                                - generic [ref=e1687]:
+                                  - generic [ref=e1688]: Spoiler
+                                  - heading "List item post - Crew merch just gave us our first look at the Fantastic Fou..." [level=3] [ref=e1694]: "Crew merch just gave us our first look at the Fantastic Four in Avengers: Doomsday"
+                            - 'link "r/FantasticFour - Crew merch just gave us our first look at the Fantastic Four in Avengers: Doomsday" [ref=e1697] [cursor=pointer]':
+                              - /url: https://www.reddit.com/r/FantasticFour/comments/1nn1zm8/crew_merch_just_gave_us_our_first_look_at_the/
+                              - 'img "r/FantasticFour - Crew merch just gave us our first look at the Fantastic Four in Avengers: Doomsday" [ref=e1698]'
+                          - generic [ref=e1700]:
+                            - generic [ref=e1701]: "264"
+                            - text: upvotes ·
+                            - generic [ref=e1702]: "45"
+                            - text: comments
+                        - separator [ref=e1703]
+                    - listitem [ref=e1704]:
+                      - generic [ref=e1705]:
+                        - generic [ref=e1706]:
+                          - link "The Spider Exercise - A classic guitar warm up drill" [ref=e1707] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/guitarlessons/comments/10mmr1k/the_spider_exercise_a_classic_guitar_warm_up_drill/
+                          - generic [ref=e1709]:
+                            - generic [ref=e1710]:
+                              - generic [ref=e1713]:
+                                - link "r/guitarlessons" [ref=e1714] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/guitarlessons/
+                                - generic [aria-hidden] [ref=e1719]: •
+                                - time [ref=e1721]: 4y ago
+                              - link [ref=e1723] [cursor=pointer]:
+                                - /url: /r/guitarlessons/comments/10mmr1k/the_spider_exercise_a_classic_guitar_warm_up_drill/
+                                - heading "List item post - The Spider Exercise - A classic guitar warm up drill" [level=3] [ref=e1726]: The Spider Exercise - A classic guitar warm up drill
+                            - link "r/guitarlessons - The Spider Exercise - A classic guitar warm up drill" [ref=e1729] [cursor=pointer]:
+                              - /url: https://www.reddit.com/r/guitarlessons/comments/10mmr1k/the_spider_exercise_a_classic_guitar_warm_up_drill/
+                              - img "r/guitarlessons - The Spider Exercise - A classic guitar warm up drill" [ref=e1730]
+                          - generic [ref=e1732]:
+                            - generic [ref=e1733]: "402"
+                            - text: upvotes ·
+                            - generic [ref=e1734]: "48"
+                            - text: comments
+                        - separator [ref=e1735]
+                    - listitem [ref=e1736]:
+                      - generic [ref=e1737]:
+                        - generic [ref=e1738]:
+                          - link "I made a browser-based, free video editor" [ref=e1739] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/VideoEditing/comments/r832c4/i_made_a_browserbased_free_video_editor/
+                          - generic [ref=e1742]:
+                            - generic [ref=e1745]:
+                              - link "r/VideoEditing" [ref=e1746] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/VideoEditing/
+                              - generic [aria-hidden] [ref=e1751]: •
+                              - time [ref=e1753]: 5y ago
+                            - link [ref=e1755] [cursor=pointer]:
+                              - /url: /r/VideoEditing/comments/r832c4/i_made_a_browserbased_free_video_editor/
+                              - heading "List item post - I made a browser-based, free video editor" [level=3] [ref=e1758]: I made a browser-based, free video editor
+                          - generic [ref=e1760]:
+                            - generic [ref=e1761]: "516"
+                            - text: upvotes ·
+                            - generic [ref=e1762]: "175"
+                            - text: comments
+                        - separator [ref=e1763]
+                    - listitem [ref=e1764]:
+                      - generic [ref=e1765]:
+                        - generic [ref=e1766]:
+                          - link "Favorite Free Alternatives to Adobe?" [ref=e1767] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/videography/comments/tjfa60/favorite_free_alternatives_to_adobe/
+                          - generic [ref=e1770]:
+                            - generic [ref=e1773]:
+                              - link "r/videography" [ref=e1774] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/videography/
+                              - generic [aria-hidden] [ref=e1779]: •
+                              - time [ref=e1781]: 5y ago
+                            - link [ref=e1783] [cursor=pointer]:
+                              - /url: /r/videography/comments/tjfa60/favorite_free_alternatives_to_adobe/
+                              - heading "List item post - Favorite Free Alternatives to Adobe?" [level=3] [ref=e1786]: Favorite Free Alternatives to Adobe?
+                          - generic [ref=e1788]:
+                            - generic [ref=e1789]: "83"
+                            - text: upvotes ·
+                            - generic [ref=e1790]: "71"
+                            - text: comments
+                        - separator [ref=e1791]
+                    - listitem [ref=e1792]:
+                      - generic [ref=e1793]:
+                        - generic [ref=e1794]:
+                          - link "Any good free video editing software without watermarks?" [ref=e1795] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/videography/comments/v8yuwb/any_good_free_video_editing_software_without/
+                          - generic [ref=e1798]:
+                            - generic [ref=e1801]:
+                              - link "r/videography" [ref=e1802] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/videography/
+                              - generic [aria-hidden] [ref=e1807]: •
+                              - time [ref=e1809]: 4y ago
+                            - link [ref=e1811] [cursor=pointer]:
+                              - /url: /r/videography/comments/v8yuwb/any_good_free_video_editing_software_without/
+                              - heading "List item post - Any good free video editing software without watermarks?" [level=3] [ref=e1814]: Any good free video editing software without watermarks?
+                          - generic [ref=e1816]:
+                            - generic [ref=e1817]: "187"
+                            - text: upvotes ·
+                            - generic [ref=e1818]: "296"
+                            - text: comments
+                        - separator [ref=e1819]
+                    - listitem
+                    - listitem [ref=e1820]:
+                      - generic [ref=e1821]:
+                        - generic [ref=e1822]:
+                          - link "I've been working on a smoother ad-free reddit alternative frontend" [ref=e1823] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/webdev/comments/1rti6wx/ive_been_working_on_a_smoother_adfree_reddit/
+                          - generic [ref=e1825]:
+                            - generic [ref=e1826]:
+                              - generic [ref=e1829]:
+                                - link "r/webdev" [ref=e1830] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/webdev/
+                                - generic [aria-hidden] [ref=e1835]: •
+                                - time [ref=e1837]: 6mo ago
+                              - link [ref=e1839] [cursor=pointer]:
+                                - /url: /r/webdev/comments/1rti6wx/ive_been_working_on_a_smoother_adfree_reddit/
+                                - heading "List item post - I've been working on a smoother ad-free reddit alternative ..." [level=3] [ref=e1842]: I've been working on a smoother ad-free reddit alternative frontend
+                            - link "r/webdev - I've been working on a smoother ad-free reddit alternative frontend" [ref=e1845] [cursor=pointer]:
+                              - /url: https://www.reddit.com/r/webdev/comments/1rti6wx/ive_been_working_on_a_smoother_adfree_reddit/
+                              - img "r/webdev - I've been working on a smoother ad-free reddit alternative frontend" [ref=e1846]
+                          - generic [ref=e1848]:
+                            - generic [ref=e1849]: "97"
+                            - text: upvotes ·
+                            - generic [ref=e1850]: "84"
+                            - text: comments
+                        - separator [ref=e1851]
+                    - listitem [ref=e1852]:
+                      - generic [ref=e1853]:
+                        - generic [ref=e1854]:
+                          - link "Studio Series Constructicons" [ref=e1855] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/transformers/comments/1lkqo2n/studio_series_constructicons/
+                          - generic [ref=e1857]:
+                            - generic [ref=e1858]:
+                              - generic [ref=e1861]:
+                                - link "r/transformers" [ref=e1862] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/transformers/
+                                - generic [aria-hidden] [ref=e1867]: •
+                                - time [ref=e1869]: 1y ago
+                              - link [ref=e1871] [cursor=pointer]:
+                                - /url: /r/transformers/comments/1lkqo2n/studio_series_constructicons/
+                                - heading "List item post - Studio Series Constructicons" [level=3] [ref=e1874]: Studio Series Constructicons
+                            - generic [ref=e1876]:
+                              - link "r/transformers - Studio Series Constructicons" [ref=e1877] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/transformers/comments/1lkqo2n/studio_series_constructicons/
+                                - img "r/transformers - Studio Series Constructicons" [ref=e1878]
+                              - generic: "2"
+                          - generic [ref=e1880]:
+                            - generic [ref=e1881]: "128"
+                            - text: upvotes ·
+                            - generic [ref=e1882]: "24"
+                            - text: comments
+                        - separator [ref=e1883]
+                    - listitem [ref=e1884]:
+                      - generic [ref=e1885]:
+                        - generic [ref=e1886]:
+                          - link "Need help with downloading voice lines from the League wiki" [ref=e1887] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/leagueoflegends/comments/ktrfi7/need_help_with_downloading_voice_lines_from_the/
+                          - generic [ref=e1890]:
+                            - generic [ref=e1893]:
+                              - link "r/leagueoflegends" [ref=e1894] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/leagueoflegends/
+                              - generic [aria-hidden] [ref=e1899]: •
+                              - time [ref=e1901]: 6y ago
+                            - link [ref=e1903] [cursor=pointer]:
+                              - /url: /r/leagueoflegends/comments/ktrfi7/need_help_with_downloading_voice_lines_from_the/
+                              - heading "List item post - Need help with downloading voice lines from the League wiki" [level=3] [ref=e1906]: Need help with downloading voice lines from the League wiki
+                          - generic [ref=e1908]:
+                            - generic [ref=e1909]: "4"
+                            - text: upvotes ·
+                            - generic [ref=e1910]: "13"
+                            - text: comments
+                        - separator [ref=e1911]
+                    - listitem [ref=e1912]:
+                      - generic [ref=e1913]:
+                        - generic [ref=e1914]:
+                          - link "I made a simple website which lets you generate clean, animated webcam borders" [ref=e1915] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/Twitch/comments/kskukb/i_made_a_simple_website_which_lets_you_generate/
+                          - generic [ref=e1918]:
+                            - generic [ref=e1921]:
+                              - link "r/Twitch" [ref=e1922] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/Twitch/
+                              - generic [aria-hidden] [ref=e1927]: •
+                              - time [ref=e1929]: 6y ago
+                            - link [ref=e1931] [cursor=pointer]:
+                              - /url: /r/Twitch/comments/kskukb/i_made_a_simple_website_which_lets_you_generate/
+                              - heading "List item post - I made a simple website which lets you generate clean, anim..." [level=3] [ref=e1934]: I made a simple website which lets you generate clean, animated webcam borders
+                          - generic [ref=e1936]:
+                            - generic [ref=e1937]: "108"
+                            - text: upvotes ·
+                            - generic [ref=e1938]: "33"
+                            - text: comments
+                        - separator [ref=e1939]
+                    - listitem [ref=e1940]:
+                      - generic [ref=e1941]:
+                        - generic [ref=e1942]:
+                          - link "[3D Printing] Anyone know where I can find STL files of War Hound Titans similar in appearance to the FW Titans?" [ref=e1943] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/PoorHammer/comments/n0wlfb/3d_printing_anyone_know_where_i_can_find_stl/
+                          - generic [ref=e1946]:
+                            - generic [ref=e1949]:
+                              - link "r/PoorHammer" [ref=e1950] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/PoorHammer/
+                              - generic [aria-hidden] [ref=e1957]: •
+                              - time [ref=e1959]: 5y ago
+                            - link [ref=e1961] [cursor=pointer]:
+                              - /url: /r/PoorHammer/comments/n0wlfb/3d_printing_anyone_know_where_i_can_find_stl/
+                              - heading "List item post - [3D Printing] Anyone know where I can find STL files of War..." [level=3] [ref=e1964]: "[3D Printing] Anyone know where I can find STL files of War Hound Titans similar in appearance to the FW Titans?"
+                          - generic [ref=e1966]:
+                            - generic [ref=e1967]: "33"
+                            - text: upvotes ·
+                            - generic [ref=e1968]: "11"
+                            - text: comments
+                        - separator [ref=e1969]
+                    - listitem [ref=e1970]:
+                      - generic [ref=e1971]:
+                        - generic [ref=e1972]:
+                          - link "I’ve edited this video for my real state client. I added some effects to make it more engaging. Can you guys rate it?" [ref=e1973] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/videography/comments/1nfnfuf/ive_edited_this_video_for_my_real_state_client_i/
+                          - generic [ref=e1975]:
+                            - generic [ref=e1976]:
+                              - generic [ref=e1979]:
+                                - link "r/videography" [ref=e1980] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/videography/
+                                - generic [aria-hidden] [ref=e1985]: •
+                                - time [ref=e1987]: 1y ago
+                              - link [ref=e1989] [cursor=pointer]:
+                                - /url: /r/videography/comments/1nfnfuf/ive_edited_this_video_for_my_real_state_client_i/
+                                - heading "List item post - I’ve edited this video for my real state client. I added so..." [level=3] [ref=e1992]: I’ve edited this video for my real state client. I added some effects to make it more engaging. Can you guys rate it?
+                            - generic [ref=e1994]:
+                              - link "r/videography - I’ve edited this video for my real state client. I added some effects to make it more engaging. Can you guys rate it?" [ref=e1995] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/videography/comments/1nfnfuf/ive_edited_this_video_for_my_real_state_client_i/
+                                - img "r/videography - I’ve edited this video for my real state client. I added some effects to make it more engaging. Can you guys rate it?" [ref=e1996]
+                              - generic: 1:31
+                          - generic [ref=e1998]:
+                            - generic [ref=e1999]: "24"
+                            - text: comments
+                        - separator [ref=e2000]
+                    - listitem [ref=e2001]:
+                      - generic [ref=e2002]:
+                        - generic [ref=e2003]:
+                          - link "A fast, free, simple video cutter/splitter?" [ref=e2004] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/software/comments/rt4qzi/a_fast_free_simple_video_cuttersplitter/
+                          - generic [ref=e2007]:
+                            - generic [ref=e2010]:
+                              - link "r/software" [ref=e2011] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/software/
+                              - generic [aria-hidden] [ref=e2016]: •
+                              - time [ref=e2018]: 5y ago
+                            - link [ref=e2020] [cursor=pointer]:
+                              - /url: /r/software/comments/rt4qzi/a_fast_free_simple_video_cuttersplitter/
+                              - heading "List item post - A fast, free, simple video cutter/splitter?" [level=3] [ref=e2023]: A fast, free, simple video cutter/splitter?
+                          - generic [ref=e2025]:
+                            - generic [ref=e2026]: "40"
+                            - text: upvotes ·
+                            - generic [ref=e2027]: "65"
+                            - text: comments
+                        - separator [ref=e2028]
+                    - listitem [ref=e2029]:
+                      - generic [ref=e2030]:
+                        - generic [ref=e2031]:
+                          - link "My first real video edit, thoughts?" [ref=e2032] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/videography/comments/1qmd6cm/my_first_real_video_edit_thoughts/
+                          - generic [ref=e2034]:
+                            - generic [ref=e2035]:
+                              - generic [ref=e2038]:
+                                - link "r/videography" [ref=e2039] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/videography/
+                                - generic [aria-hidden] [ref=e2044]: •
+                                - time [ref=e2046]: 7mo ago
+                              - link [ref=e2048] [cursor=pointer]:
+                                - /url: /r/videography/comments/1qmd6cm/my_first_real_video_edit_thoughts/
+                                - heading "List item post - My first real video edit, thoughts?" [level=3] [ref=e2051]: My first real video edit, thoughts?
+                            - generic [ref=e2053]:
+                              - link "r/videography - My first real video edit, thoughts?" [ref=e2054] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/videography/comments/1qmd6cm/my_first_real_video_edit_thoughts/
+                                - img "r/videography - My first real video edit, thoughts?" [ref=e2055]
+                              - generic: 0:22
+                          - generic [ref=e2057]:
+                            - generic [ref=e2058]: "23"
+                            - text: upvotes ·
+                            - generic [ref=e2059]: "32"
+                            - text: comments
+                        - separator [ref=e2060]
+                    - listitem [ref=e2061]:
+                      - generic [ref=e2062]:
+                        - generic [ref=e2063]:
+                          - link "opensource browser-based video editor with WebGPU. no backend, everything runs locally, its free" [ref=e2064] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/VideoEditors/comments/1qtq5tn/opensource_browserbased_video_editor_with_webgpu/
+                          - generic [ref=e2066]:
+                            - generic [ref=e2067]:
+                              - generic [ref=e2070]:
+                                - link "r/VideoEditors" [ref=e2071] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/VideoEditors/
+                                - generic [aria-hidden] [ref=e2076]: •
+                                - time [ref=e2078]: 7mo ago
+                              - link [ref=e2080] [cursor=pointer]:
+                                - /url: /r/VideoEditors/comments/1qtq5tn/opensource_browserbased_video_editor_with_webgpu/
+                                - heading "List item post - opensource browser-based video editor with WebGPU. no backe..." [level=3] [ref=e2083]: opensource browser-based video editor with WebGPU. no backend, everything runs locally, its free
+                            - link "r/VideoEditors - opensource browser-based video editor with WebGPU. no backend, everything runs locally, its free" [ref=e2086] [cursor=pointer]:
+                              - /url: https://www.reddit.com/r/VideoEditors/comments/1qtq5tn/opensource_browserbased_video_editor_with_webgpu/
+                              - img "r/VideoEditors - opensource browser-based video editor with WebGPU. no backend, everything runs locally, its free" [ref=e2087]
+                          - generic [ref=e2089]:
+                            - generic [ref=e2090]: "166"
+                            - text: upvotes ·
+                            - generic [ref=e2091]: "34"
+                            - text: comments
+                        - separator [ref=e2092]
+                    - listitem [ref=e2093]:
+                      - generic [ref=e2094]:
+                        - generic [ref=e2095]:
+                          - link "What’s the simplest editor I can use for a single-page website? Last time I did anything was during the FP/DW era" [ref=e2096] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/webdev/comments/1msh1ve/whats_the_simplest_editor_i_can_use_for_a/
+                          - generic [ref=e2098]:
+                            - generic [ref=e2099]:
+                              - generic [ref=e2102]:
+                                - link "r/webdev" [ref=e2103] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/webdev/
+                                - generic [aria-hidden] [ref=e2108]: •
+                                - time [ref=e2110]: 1y ago
+                              - link [ref=e2112] [cursor=pointer]:
+                                - /url: /r/webdev/comments/1msh1ve/whats_the_simplest_editor_i_can_use_for_a/
+                                - heading "List item post - What’s the simplest editor I can use for a single-page webs..." [level=3] [ref=e2115]: What’s the simplest editor I can use for a single-page website? Last time I did anything was during the FP/DW era
+                            - link "r/webdev - What’s the simplest editor I can use for a single-page website? Last time I did anything was during the FP/DW era" [ref=e2118] [cursor=pointer]:
+                              - /url: https://www.reddit.com/r/webdev/comments/1msh1ve/whats_the_simplest_editor_i_can_use_for_a/
+                              - img "r/webdev - What’s the simplest editor I can use for a single-page website? Last time I did anything was during the FP/DW era" [ref=e2119]
+                          - generic [ref=e2121]:
+                            - generic [ref=e2122]: "20"
+                            - text: upvotes ·
+                            - generic [ref=e2123]: "33"
+                            - text: comments
+                        - separator [ref=e2124]
+                    - listitem [ref=e2125]:
+                      - generic [ref=e2126]:
+                        - generic [ref=e2127]:
+                          - link "Framing a shed - 16d common nails vs 16d sinkers" [ref=e2128] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/Carpentry/comments/13787uy/framing_a_shed_16d_common_nails_vs_16d_sinkers/
+                          - generic [ref=e2131]:
+                            - generic [ref=e2134]:
+                              - link "r/Carpentry" [ref=e2135] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/Carpentry/
+                              - generic [aria-hidden] [ref=e2140]: •
+                              - time [ref=e2142]: 3y ago
+                            - link [ref=e2144] [cursor=pointer]:
+                              - /url: /r/Carpentry/comments/13787uy/framing_a_shed_16d_common_nails_vs_16d_sinkers/
+                              - heading "List item post - Framing a shed - 16d common nails vs 16d sinkers" [level=3] [ref=e2147]: Framing a shed - 16d common nails vs 16d sinkers
+                          - generic [ref=e2149]:
+                            - generic [ref=e2150]: "2"
+                            - text: upvotes ·
+                            - generic [ref=e2151]: "8"
+                            - text: comments
+                        - separator [ref=e2152]
+                    - listitem [ref=e2153]:
+                      - generic [ref=e2154]:
+                        - generic [ref=e2155]:
+                          - 'link "[Showoff Saturday] Spearite: I built a free browser-based pixel art & sprite editor (fully client-side)" [ref=e2156] [cursor=pointer]':
+                            - /url: https://www.reddit.com/r/webdev/comments/1tlqwqz/showoff_saturday_spearite_i_built_a_free/
+                          - generic [ref=e2158]:
+                            - generic [ref=e2159]:
+                              - generic [ref=e2162]:
+                                - link "r/webdev" [ref=e2163] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/webdev/
+                                - generic [aria-hidden] [ref=e2168]: •
+                                - time [ref=e2170]: 3mo ago
+                              - link [ref=e2172] [cursor=pointer]:
+                                - /url: /r/webdev/comments/1tlqwqz/showoff_saturday_spearite_i_built_a_free/
+                                - 'heading "List item post - [Showoff Saturday] Spearite: I built a free browser-based p..." [level=3] [ref=e2175]': "[Showoff Saturday] Spearite: I built a free browser-based pixel art & sprite editor (fully client-side)"
+                            - 'link "r/webdev - [Showoff Saturday] Spearite: I built a free browser-based pixel art & sprite editor (fully client-side)" [ref=e2178] [cursor=pointer]':
+                              - /url: https://www.reddit.com/r/webdev/comments/1tlqwqz/showoff_saturday_spearite_i_built_a_free/
+                              - 'img "r/webdev - [Showoff Saturday] Spearite: I built a free browser-based pixel art & sprite editor (fully client-side)" [ref=e2179]'
+                          - generic [ref=e2181]:
+                            - generic [ref=e2182]: "53"
+                            - text: upvotes ·
+                            - generic [ref=e2183]: "18"
+                            - text: comments
+                        - separator [ref=e2184]
+                    - listitem [ref=e2185]:
+                      - generic [ref=e2186]:
+                        - generic [ref=e2187]:
+                          - link "Best browser video editor with local processing?" [ref=e2188] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/chromeos/comments/1qlu0uy/best_browser_video_editor_with_local_processing/
+                          - generic [ref=e2191]:
+                            - generic [ref=e2194]:
+                              - link "r/chromeos" [ref=e2195] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/chromeos/
+                              - generic [aria-hidden] [ref=e2200]: •
+                              - time [ref=e2202]: 7mo ago
+                            - link [ref=e2204] [cursor=pointer]:
+                              - /url: /r/chromeos/comments/1qlu0uy/best_browser_video_editor_with_local_processing/
+                              - heading "List item post - Best browser video editor with local processing?" [level=3] [ref=e2207]: Best browser video editor with local processing?
+                          - generic [ref=e2209]:
+                            - generic [ref=e2210]: "8"
+                            - text: upvotes ·
+                            - generic [ref=e2211]: "12"
+                            - text: comments
+                        - separator [ref=e2212]
+                    - listitem [ref=e2213]:
+                      - generic [ref=e2214]:
+                        - generic [ref=e2215]:
+                          - link "I built an open-source browser-based video editor with WebGPU rendering" [ref=e2216] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/webdev/comments/1qy8kwi/i_built_an_opensource_browserbased_video_editor/
+                          - generic [ref=e2218]:
+                            - generic [ref=e2219]:
+                              - generic [ref=e2222]:
+                                - link "r/webdev" [ref=e2223] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/webdev/
+                                - generic [aria-hidden] [ref=e2228]: •
+                                - time [ref=e2230]: 7mo ago
+                              - link [ref=e2232] [cursor=pointer]:
+                                - /url: /r/webdev/comments/1qy8kwi/i_built_an_opensource_browserbased_video_editor/
+                                - heading "List item post - I built an open-source browser-based video editor with WebG..." [level=3] [ref=e2235]: I built an open-source browser-based video editor with WebGPU rendering
+                            - link "r/webdev - I built an open-source browser-based video editor with WebGPU rendering" [ref=e2238] [cursor=pointer]:
+                              - /url: https://www.reddit.com/r/webdev/comments/1qy8kwi/i_built_an_opensource_browserbased_video_editor/
+                              - img "r/webdev - I built an open-source browser-based video editor with WebGPU rendering" [ref=e2239]
+                          - generic [ref=e2241]:
+                            - generic [ref=e2242]: "29"
+                            - text: comments
+                        - separator [ref=e2243]
+                    - listitem [ref=e2244]:
+                      - generic [ref=e2245]:
+                        - generic [ref=e2246]:
+                          - link "I made a browser-based, free video editor" [ref=e2247] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/webdev/comments/ua47e1/i_made_a_browserbased_free_video_editor/
+                          - generic [ref=e2250]:
+                            - generic [ref=e2253]:
+                              - link "r/webdev" [ref=e2254] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/webdev/
+                              - generic [aria-hidden] [ref=e2259]: •
+                              - time [ref=e2261]: 4y ago
+                            - link [ref=e2263] [cursor=pointer]:
+                              - /url: /r/webdev/comments/ua47e1/i_made_a_browserbased_free_video_editor/
+                              - heading "List item post - I made a browser-based, free video editor" [level=3] [ref=e2266]: I made a browser-based, free video editor
+                          - generic [ref=e2268]:
+                            - generic [ref=e2269]: "45"
+                            - text: upvotes ·
+                            - generic [ref=e2270]: "47"
+                            - text: comments
+                        - separator [ref=e2271]
+                    - listitem [ref=e2272]:
+                      - generic [ref=e2273]:
+                        - generic [ref=e2274]:
+                          - link "Looking for a video editor? I'll edit your footage for free!" [ref=e2275] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/YouTubeCreators/comments/1vpk9w1/looking_for_a_video_editor_ill_edit_your_footage/
+                          - generic [ref=e2278]:
+                            - generic [ref=e2281]:
+                              - link "r/YouTubeCreators" [ref=e2282] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/YouTubeCreators/
+                              - generic [aria-hidden] [ref=e2287]: •
+                              - time [ref=e2289]: 17d ago
+                            - link [ref=e2291] [cursor=pointer]:
+                              - /url: /r/YouTubeCreators/comments/1vpk9w1/looking_for_a_video_editor_ill_edit_your_footage/
+                              - heading "List item post - Looking for a video editor? I'll edit your footage for free!" [level=3] [ref=e2294]: Looking for a video editor? I'll edit your footage for free!
+                          - generic [ref=e2296]:
+                            - generic [ref=e2297]: "5"
+                            - text: upvotes ·
+                            - generic [ref=e2298]: "19"
+                            - text: comments
+                        - separator [ref=e2299]
+                    - listitem [ref=e2300]:
+                      - generic [ref=e2302]:
+                        - link "What do you girlies wear to play pickleball?" [ref=e2303] [cursor=pointer]:
+                          - /url: https://www.reddit.com/r/Pickleball/comments/1vkgtdg/what_do_you_girlies_wear_to_play_pickleball/
+                        - generic [ref=e2306]:
+                          - generic [ref=e2309]:
+                            - link "r/Pickleball" [ref=e2310] [cursor=pointer]:
+                              - /url: https://www.reddit.com/r/Pickleball/
+                            - generic [aria-hidden] [ref=e2315]: •
+                            - time [ref=e2317]: 22d ago
+                          - link [ref=e2319] [cursor=pointer]:
+                            - /url: /r/Pickleball/comments/1vkgtdg/what_do_you_girlies_wear_to_play_pickleball/
+                            - heading "List item post - What do you girlies wear to play pickleball?" [level=3] [ref=e2322]: What do you girlies wear to play pickleball?
+                        - generic [ref=e2324]:
+                          - generic [ref=e2325]: "33"
+                          - text: comments
+                - generic [ref=e2326]:
+                  - heading "View Post in" [level=2] [ref=e2328]
+                  - generic [ref=e2330]:
+                    - link "Português (Brasil)" [ref=e2332] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/webdev/comments/nt6gus/i_created_a_browserbased_video_editor_100_free/?tl=pt-br
+                    - link "Tiếng Việt" [ref=e2334] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/webdev/comments/nt6gus/i_created_a_browserbased_video_editor_100_free/?tl=vi
+                    - link "简体中文" [ref=e2336] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/webdev/comments/nt6gus/i_created_a_browserbased_video_editor_100_free/?tl=zh-hans
+                    - link "日本語" [ref=e2338] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/webdev/comments/nt6gus/i_created_a_browserbased_video_editor_100_free/?tl=ja
+                    - group [ref=e2339]:
+                      - generic "See more" [ref=e2340] [cursor=pointer]
+                - complementary "Community information" [ref=e2345]:
+                  - generic [ref=e2347]:
+                    - heading "Community Info Section" [level=1] [ref=e2348]
+                    - generic [ref=e2349]:
+                      - link "r/webdev" [ref=e2351] [cursor=pointer]:
+                        - /url: /r/webdev/
+                      - button "Join" [ref=e2356] [cursor=pointer]
+                    - generic [ref=e2357]:
+                      - generic [ref=e2358]: "webdev: reddit for web developers"
+                      - generic [ref=e2359]: "A community dedicated to all things web development: both front-end and back-end. For more design-related questions, try /r/web_design."
+                      - button "Show more" [ref=e2360] [cursor=pointer]
+                      - generic: Public
+                - generic [ref=e2368]:
+                  - heading "Top Posts" [level=2] [ref=e2369]
+                  - list [ref=e2370]:
+                    - listitem [ref=e2371]:
+                      - 'link "Reddit reReddit: Top posts of June 5, 2021" [ref=e2372] [cursor=pointer]':
+                        - /url: https://www.reddit.com/posts/2021/june-5-1/global/
+                        - generic [ref=e2373]: Reddit
+                        - generic [ref=e2388]: "reReddit: Top posts of June 5, 2021"
+                        - separator [ref=e2389]
+                    - listitem [ref=e2390]:
+                      - 'link "Reddit reReddit: Top posts of June 2021" [ref=e2391] [cursor=pointer]':
+                        - /url: https://www.reddit.com/posts/2021/june/global/
+                        - generic [ref=e2392]: Reddit
+                        - generic [ref=e2407]: "reReddit: Top posts of June 2021"
+                        - separator [ref=e2408]
+                    - listitem [ref=e2409]:
+                      - 'link "Reddit reReddit: Top posts of 2021" [ref=e2410] [cursor=pointer]':
+                        - /url: https://www.reddit.com/posts/2021/global/
+                        - generic [ref=e2411]: Reddit
+                        - generic [ref=e2426]: "reReddit: Top posts of 2021"
+                        - separator [ref=e2427]
+              - list [ref=e2429]:
+                - listitem [ref=e2430]:
+                  - link "Home" [ref=e2432] [cursor=pointer]:
+                    - /url: /?feed=home
+                - listitem [ref=e2433]:
+                  - link "Popular" [ref=e2435] [cursor=pointer]:
+                    - /url: /r/popular/
+                - listitem [ref=e2436]:
+                  - link "News" [ref=e2438] [cursor=pointer]:
+                    - /url: /news/
+                - listitem [ref=e2439]:
+                  - link "Explore" [ref=e2441] [cursor=pointer]:
+                    - /url: /explore/
+                - listitem [ref=e2442]:
+                  - link "Best of Reddit" [ref=e2444] [cursor=pointer]:
+                    - /url: https://www.reddit.com/posts/2026/global/
+                - listitem [ref=e2445]:
+                  - link "Best of Reddit in Portuguese" [ref=e2447] [cursor=pointer]:
+                    - /url: https://www.reddit.com/posts/2026/tl-pt-BR/
+                - listitem [ref=e2448]:
+                  - link "Best of Reddit in German" [ref=e2450] [cursor=pointer]:
+                    - /url: https://www.reddit.com/posts/2026/tl-de/
+                - listitem [ref=e2451]:
+                  - link "Reddit Rules" [ref=e2453] [cursor=pointer]:
+                    - /url: https://www.redditinc.com/policies/content-policy
+                - listitem [ref=e2454]:
+                  - link "Privacy Policy" [ref=e2456] [cursor=pointer]:
+                    - /url: https://www.reddit.com/policies/privacy-policy
+                - listitem [ref=e2457]:
+                  - link "User Agreement" [ref=e2459] [cursor=pointer]:
+                    - /url: https://www.redditinc.com/policies/user-agreement
+                - listitem [ref=e2460]:
+                  - link "Accessibility" [ref=e2462] [cursor=pointer]:
+                    - /url: https://support.reddithelp.com/hc/sections/38303584022676-Accessibility
+                - listitem [ref=e2463]:
+                  - link "Reddit, Inc. © 2026. All rights reserved." [ref=e2464] [cursor=pointer]:
+                    - /url: https://redditinc.com
+        - generic [ref=e2467]:
+          - paragraph [ref=e2468]: Join the most real place on the internet
+          - generic [ref=e2470]:
+            - generic [ref=e2473]:
+              - iframe [ref=e2478]:
+                - button "Continue with Google. Opens in new tab" [ref=f1e3] [cursor=pointer]:
+                  - generic [ref=f1e5]: Continue with Google
+              - generic [ref=e2480] [cursor=pointer]:
+                - generic [ref=e2481]: Continue with Apple
+                - button "Sign in with Apple" [ref=e2487]:
+                  - generic [ref=e2488]:
+                    - img:
+                      - generic:
+                        - img:
+                          - generic:  Sign in with Apple
+            - link "Continue with Phone Number" [ref=e2493] [cursor=pointer]:
+              - /url: https://www.reddit.com/login/
+            - link "Continue with Email" [ref=e2502] [cursor=pointer]:
+              - /url: https://www.reddit.com/register/
+          - paragraph [ref=e2509]:
+            - text: By continuing, you agree to our
+            - link "User Agreement" [ref=e2510] [cursor=pointer]:
+              - /url: https://www.redditinc.com/policies/user-agreement
+            - text: and acknowledge that you understand the
+            - link "Privacy Policy" [ref=e2511] [cursor=pointer]:
+              - /url: https://www.redditinc.com/policies/privacy-policy
+            - text: .

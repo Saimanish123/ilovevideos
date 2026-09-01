@@ -1,0 +1,375 @@
+- generic [active] [ref=f46e1]:
+  - link "Skip to main content" [ref=f46e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=f46e6]:
+    - generic:
+      - generic: "Kapwing is predatory. Do not use it under any circumstances. : r/Kapwing"
+      - banner [ref=f46e10]:
+        - navigation [ref=f46e11]:
+          - link "Home" [ref=f46e15] [cursor=pointer]:
+            - /url: https://www.reddit.com/
+          - search [ref=f46e34]:
+            - generic [ref=f46e36]:
+              - textbox [ref=f46e43]:
+                - /placeholder: Search Reddit
+              - generic [aria-hidden]: Search Reddit
+          - generic [ref=f46e44]:
+            - link "Sign Up" [ref=f46e50] [cursor=pointer]:
+              - /url: https://www.reddit.com/register/
+            - link "Log In" [ref=f46e56] [cursor=pointer]:
+              - /url: https://www.reddit.com/login/
+            - button "Expand user menu" [ref=f46e63] [cursor=pointer]
+      - generic [ref=f46e69]:
+        - generic [ref=f46e70]:
+          - generic [ref=f46e71]:
+            - generic:
+              - generic:
+                - link "Skip to Sign up" [ref=f46e72] [cursor=pointer]:
+                  - /url: "#left-sidebar-container"
+                - link "Skip to Right Sidebar" [ref=f46e73] [cursor=pointer]:
+                  - /url: "#right-sidebar-container"
+          - generic [ref=f46e74]:
+            - main [ref=f46e75]:
+              - 'generic "Kapwing is predatory. Do not use it under any circumstances. : r/Kapwing"'
+              - generic [ref=f46e76]:
+                - generic [ref=f46e77]:
+                  - generic [ref=f46e78]:
+                    - button "Back" [ref=f46e80] [cursor=pointer]
+                    - link "Go to Kapwing" [ref=f46e88] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/Kapwing/
+                    - group [ref=f46e93]:
+                      - generic [ref=f46e94]:
+                        - link "r/Kapwing" [ref=f46e98] [cursor=pointer]:
+                          - /url: https://www.reddit.com/r/Kapwing/
+                        - generic [aria-hidden] [ref=f46e99]: •
+                        - time [ref=f46e101]: 3y ago
+                      - 'link "Author: PullOut_AllOfYou" [ref=f46e107] [cursor=pointer]':
+                        - /url: https://www.reddit.com/user/PullOut_AllOfYou/
+                        - generic [ref=f46e108]: PullOut_AllOfYou
+                  - button "Open user actions" [ref=f46e112] [cursor=pointer]
+                - 'heading "Post Title: Kapwing is predatory. Do not use it under any circumstances." [level=1] [ref=f46e119]': Kapwing is predatory. Do not use it under any circumstances.
+                - generic: Sorry, this post has been removed by the moderators of r/Kapwing.
+                - generic "Actions available for this post" [ref=f46e126]:
+                  - generic [ref=f46e129]:
+                    - button "Upvote" [ref=f46e130] [cursor=pointer]
+                    - generic [ref=f46e135]: "29"
+                    - button "Downvote" [ref=f46e137] [cursor=pointer]
+                  - button "12 Go to comments" [ref=f46e142] [cursor=pointer]:
+                    - generic [ref=f46e143]: "12"
+                    - generic [ref=f46e149]: Go to comments
+                  - button "Share" [ref=f46e153] [cursor=pointer]
+              - generic [ref=f46e161]:
+                - generic:
+                  - generic [ref=f46e162]:
+                    - button "Button to add a comment" [disabled]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - textbox [disabled]:
+                                  - /placeholder: Join the conversation
+                  - generic [ref=f46e167]:
+                    - generic [ref=f46e169]:
+                      - generic [aria-hidden] [ref=f46e170]: "Sort by:"
+                      - button "Sort by Best" [ref=f46e175] [cursor=pointer]:
+                        - generic [ref=f46e176]: Best
+                    - button "Search Comments Expand comment search" [ref=f46e184] [cursor=pointer]:
+                      - generic [ref=f46e185]: Search Comments
+                      - generic [ref=f46e192]: Expand comment search
+              - region "Comments" [ref=f46e195]:
+                - heading "Comments Section" [level=1] [ref=f46e196]
+                - article "Comment from Global-Profile1193 3 years ago" [ref=f46e198]:
+                  - generic [ref=f46e199] [cursor=pointer]:
+                    - link "Global-Profile1193's profile --- avatar" [ref=f46e205]:
+                      - /url: https://www.reddit.com/user/Global-Profile1193/
+                    - generic [ref=f46e215]:
+                      - link "Global-Profile1193's profile" [ref=f46e219]:
+                        - /url: https://www.reddit.com/user/Global-Profile1193/
+                        - text: Global-Profile1193
+                      - generic [aria-hidden] [ref=f46e220]: •
+                      - link [ref=f46e222]:
+                        - /url: https://www.reddit.com/r/Kapwing/comments/15ft9fb/comment/jufh643/
+                        - time [ref=f46e224]: 3y ago
+                  - generic [ref=f46e226]:
+                    - paragraph [ref=f46e230]: Yeah I completely agree, I started using it back in 2020 on a Chromebook and the interface was so much easier and faster and there was no watermark. Now I’m scrambling trying to finish editing a video and I have to crop out the watermark and the aspect ratio looks bad it is simply frustrating. The editor will take 2-3 minutes to load on my chromebook.
+                    - generic [ref=f46e236]:
+                      - generic [ref=f46e238]:
+                        - button "Upvote" [ref=f46e239] [cursor=pointer]
+                        - generic [ref=f46e244]: "3"
+                        - button "Downvote" [ref=f46e246] [cursor=pointer]
+                      - button "Reply" [ref=f46e252] [cursor=pointer]
+                      - button "Share" [ref=f46e260] [cursor=pointer]
+                      - button "Open user actions" [ref=f46e269] [cursor=pointer]
+                - article "Comment from Delicious_Impress960 3 years ago" [ref=f46e275]:
+                  - generic [ref=f46e276] [cursor=pointer]:
+                    - link "Delicious_Impress960's profile --- avatar" [ref=f46e282]:
+                      - /url: https://www.reddit.com/user/Delicious_Impress960/
+                    - generic [ref=f46e292]:
+                      - link "Delicious_Impress960's profile" [ref=f46e296]:
+                        - /url: https://www.reddit.com/user/Delicious_Impress960/
+                        - text: Delicious_Impress960
+                      - generic [aria-hidden] [ref=f46e297]: •
+                      - link [ref=f46e299]:
+                        - /url: https://www.reddit.com/r/Kapwing/comments/15ft9fb/comment/juoanc6/
+                        - time [ref=f46e301]: 3y ago
+                  - generic [ref=f46e303]:
+                    - paragraph [ref=f46e307]: My understanding is you have to upload videos in small doses (cut up) with the free browser version. It wasn't like this before.
+                    - generic [ref=f46e313]:
+                      - generic [ref=f46e315]:
+                        - button "Upvote" [ref=f46e316] [cursor=pointer]
+                        - generic [ref=f46e321]: "2"
+                        - button "Downvote" [ref=f46e323] [cursor=pointer]
+                      - button "Reply" [ref=f46e329] [cursor=pointer]
+                      - button "Share" [ref=f46e337] [cursor=pointer]
+                      - button "Open user actions" [ref=f46e346] [cursor=pointer]
+                - article "Comment from BlackCatTTF 3 years ago" [ref=f46e352]:
+                  - generic [ref=f46e353] [cursor=pointer]:
+                    - link "BlackCatTTF's profile --- avatar" [ref=f46e359]:
+                      - /url: https://www.reddit.com/user/BlackCatTTF/
+                    - generic [ref=f46e369]:
+                      - link "BlackCatTTF's profile" [ref=f46e373]:
+                        - /url: https://www.reddit.com/user/BlackCatTTF/
+                        - text: BlackCatTTF
+                      - generic [aria-hidden] [ref=f46e374]: •
+                      - link [ref=f46e376]:
+                        - /url: https://www.reddit.com/r/Kapwing/comments/15ft9fb/comment/jvaub7b/
+                        - time [ref=f46e378]: 3y ago
+                  - generic [ref=f46e383]:
+                    - paragraph [ref=f46e384]: 100% agreed with you. Kapwing was my go to editor for when I wanted to edit something. I found how you can paste links in from different websites very convenient for my editing style. Now I can't even export a 15 second video without Kapwing putting it's big ass watermark on the screen. Plus, I really liked the waveform, and I used it to edit a friend's video who makes music. Can you guess what they put the waveform behind?
+                    - paragraph [ref=f46e385]: I remember using their credits and referral system to get free Pro. I used to open up 10 minute email and get enough credits so I can at least get monthly. Then I'd use a prepaid gift card to buy it.
+                    - paragraph [ref=f46e386]: I have switched to Davinci Resolve, a lot more better than whatever Kapwing has become. I'm a lot more better off a free editor that isn't Kapwing. I'll miss the waveform, but oh well.
+                - article "Comment from slayer44556 2 years ago" [ref=f46e390]:
+                  - generic [ref=f46e391] [cursor=pointer]:
+                    - link "slayer44556's profile --- avatar" [ref=f46e397]:
+                      - /url: https://www.reddit.com/user/slayer44556/
+                      - img "u/slayer44556 avatar" [ref=f46e400]
+                    - generic [ref=f46e404]:
+                      - link "slayer44556's profile" [ref=f46e408]:
+                        - /url: https://www.reddit.com/user/slayer44556/
+                        - text: slayer44556
+                      - generic [aria-hidden] [ref=f46e409]: •
+                      - link [ref=f46e411]:
+                        - /url: https://www.reddit.com/r/Kapwing/comments/15ft9fb/comment/l4of5ox/
+                        - time [ref=f46e413]: 2y ago
+                  - paragraph [ref=f46e419]: they made it worse now you can't even download a video its stupid ass hell now I have no way off downloading anything from youtube for my videos
+                - article "Comment from [deleted] 2 years ago" [ref=f46e423]:
+                  - generic "[deleted] 2y ago" [ref=f46e424] [cursor=pointer]:
+                    - generic [ref=f46e438]:
+                      - generic [ref=f46e439]: "[deleted]"
+                      - generic [aria-hidden] [ref=f46e442]: •
+                      - link [ref=f46e444]:
+                        - /url: https://www.reddit.com/r/Kapwing/comments/15ft9fb/comment/lajagr8/
+                        - time [ref=f46e446]: 2y ago
+                  - generic [ref=f46e451]:
+                    - paragraph [ref=f46e452]: I know I’m a little more than late, but I used to use Kapwing to edit videos during Covid when I had nothing to do, but I also used it for school occasionally. Well, I logged onto my old account a couple days ago and they had deleted everything simply because I didn’t pay $25 a month. They are driving everyone away, instead of pushing them to buy premium.
+                    - paragraph [ref=f46e453]: There are so many more better options out there, like InShot, an editor I found, that literally lets you watch an ad to get rid of their watermark and there’s no limit to the length of a video you can export. They also have a one-time payment for Premium, or four dollars a month. If Kapwing had done this, they probably never would’ve fallen off the way they did.
+                - article "Comment from Mictoon-animation 2 years ago" [ref=f46e457]:
+                  - generic [ref=f46e458] [cursor=pointer]:
+                    - link "Mictoon-animation's profile --- avatar" [ref=f46e464]:
+                      - /url: https://www.reddit.com/user/Mictoon-animation/
+                      - img "u/Mictoon-animation avatar" [ref=f46e467]
+                    - generic [ref=f46e471]:
+                      - link "Mictoon-animation's profile" [ref=f46e475]:
+                        - /url: https://www.reddit.com/user/Mictoon-animation/
+                        - text: Mictoon-animation
+                      - generic [aria-hidden] [ref=f46e476]: •
+                      - link [ref=f46e478]:
+                        - /url: https://www.reddit.com/r/Kapwing/comments/15ft9fb/comment/lam7oii/
+                        - time [ref=f46e480]: 2y ago
+                      - generic [aria-hidden] [ref=f46e481]: •
+                      - generic [ref=f46e482]:
+                        - text: Edited
+                        - time [ref=f46e484]: 2y ago
+                  - generic [ref=f46e489]:
+                    - paragraph [ref=f46e490]: I'm pissed that you can't export videos that is total of 30 minutes!
+                    - paragraph [ref=f46e491]: Okay let me explain, imagine you finish a 4 minute video and export it, the hard work you enjoy will be there and then....you can't, not because its passed over 4 minutes but because you already exported many videos that if you export this one it will pass 30 minutes (the 30 minutes are the total videos you exported). And if you ran out of minutes then sorry bucko WAIT FOR A MONTH! I'm pissed because of me but tbh its an alright like its a monthly subscription.
+                - article "Comment from SeriousPan 3 years ago" [ref=f46e495]:
+                  - generic [ref=f46e496] [cursor=pointer]:
+                    - link "SeriousPan's profile --- avatar" [ref=f46e502]:
+                      - /url: https://www.reddit.com/user/SeriousPan/
+                    - generic [ref=f46e512]:
+                      - link "SeriousPan's profile" [ref=f46e516]:
+                        - /url: https://www.reddit.com/user/SeriousPan/
+                        - text: SeriousPan
+                      - generic [aria-hidden] [ref=f46e517]: •
+                      - link [ref=f46e519]:
+                        - /url: https://www.reddit.com/r/Kapwing/comments/15ft9fb/comment/juwrfq3/
+                        - time [ref=f46e521]: 3y ago
+                  - paragraph [ref=f46e527]: Cunts are charging me money and are still putting watermarks on my videos?! The balls on these dudes, I swear.
+                - article "Comment from sugrstrawbs 3 years ago" [ref=f46e531]:
+                  - generic [ref=f46e532] [cursor=pointer]:
+                    - link "sugrstrawbs's profile --- avatar" [ref=f46e538]:
+                      - /url: https://www.reddit.com/user/sugrstrawbs/
+                      - img "u/sugrstrawbs avatar" [ref=f46e541]
+                    - generic [ref=f46e545]:
+                      - link "sugrstrawbs's profile" [ref=f46e549]:
+                        - /url: https://www.reddit.com/user/sugrstrawbs/
+                        - text: sugrstrawbs
+                      - generic [aria-hidden] [ref=f46e550]: •
+                      - link [ref=f46e552]:
+                        - /url: https://www.reddit.com/r/Kapwing/comments/15ft9fb/comment/jvjv1tx/
+                        - time [ref=f46e554]: 3y ago
+                  - generic [ref=f46e559]:
+                    - paragraph [ref=f46e560]: These changes are killer. I especially liked the emoji support within subtitles.
+                    - paragraph [ref=f46e561]: Anyone have free alternatives they recommend? Mainly looking for one that allows you to upload SRT files for subtitles (in the event that auto-transcribe isnt free, like kapwing). Love the color-animated subtitles as well, emoji support, and an INSANE selling point would be if any of these sites offered a mobile app as well.
+                - article "Comment from [deleted] 3 years ago" [ref=f46e565]:
+                  - generic "[deleted] 3y ago" [ref=f46e566] [cursor=pointer]:
+                    - generic [ref=f46e580]:
+                      - generic [ref=f46e581]: "[deleted]"
+                      - generic [aria-hidden] [ref=f46e584]: •
+                      - link [ref=f46e586]:
+                        - /url: https://www.reddit.com/r/Kapwing/comments/15ft9fb/comment/jvu5blg/
+                        - time [ref=f46e588]: 3y ago
+                  - paragraph [ref=f46e594]: I use DaVinci Resolve and Clipchamp now, I hate that shitty-ass Kapwing
+                - article "Comment from SnowyTheSkello 3 years ago" [ref=f46e598]:
+                  - generic [ref=f46e599] [cursor=pointer]:
+                    - link "SnowyTheSkello's profile --- avatar" [ref=f46e605]:
+                      - /url: https://www.reddit.com/user/SnowyTheSkello/
+                      - img "u/SnowyTheSkello avatar" [ref=f46e608]
+                    - generic [ref=f46e612]:
+                      - link "SnowyTheSkello's profile" [ref=f46e616]:
+                        - /url: https://www.reddit.com/user/SnowyTheSkello/
+                        - text: SnowyTheSkello
+                      - generic [aria-hidden] [ref=f46e617]: •
+                      - link [ref=f46e619]:
+                        - /url: https://www.reddit.com/r/Kapwing/comments/15ft9fb/comment/k05puvi/
+                        - time [ref=f46e621]: 3y ago
+                  - paragraph [ref=f46e627]: Glad i'm not the only one who doesn't like whatever BS kapwing is pulling out of their ass.
+                - article "Comment from SmashKing97 3 years ago" [ref=f46e631]:
+                  - generic [ref=f46e632] [cursor=pointer]:
+                    - link "SmashKing97's profile --- avatar" [ref=f46e638]:
+                      - /url: https://www.reddit.com/user/SmashKing97/
+                      - img "u/SmashKing97 avatar" [ref=f46e641]
+                    - generic [ref=f46e645]:
+                      - link "SmashKing97's profile" [ref=f46e649]:
+                        - /url: https://www.reddit.com/user/SmashKing97/
+                        - text: SmashKing97
+                      - generic [aria-hidden] [ref=f46e650]: •
+                      - link [ref=f46e652]:
+                        - /url: https://www.reddit.com/r/Kapwing/comments/15ft9fb/comment/k1219j9/
+                        - time [ref=f46e654]: 3y ago
+                  - paragraph [ref=f46e660]: Keep talking King, everything you just said is a 100% true. I remember the glory days of Kapwing too, it has just gone to shit. And to top it all off, along with the changes you listed, they also added another feature for free users that your video can't be longer than 4 minutes. What a goddamn joke. Anyhow, thanks for the software recommendation! Will definitely be testing that out!
+            - generic [ref=f46e663]:
+              - generic [ref=f46e664]:
+                - complementary "Related Posts Section" [ref=f46e665]:
+                  - heading "Related Posts Section" [level=1] [ref=f46e666]: More posts you may like
+                  - generic [ref=f46e667]: Related posts
+                  - list [ref=f46e673]:
+                    - listitem [ref=f46e674]:
+                      - generic [ref=f46e676]:
+                        - link "Use Kai to Avoid Generation Failures when Creating Content with AI" [ref=f46e677] [cursor=pointer]:
+                          - /url: https://www.reddit.com/r/Kapwing/comments/1vyfmia/use_kai_to_avoid_generation_failures_when/
+                        - generic [ref=f46e679]:
+                          - generic [ref=f46e680]:
+                            - generic [ref=f46e683]:
+                              - link "r/Kapwing" [ref=f46e684] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/Kapwing/
+                              - generic [aria-hidden] [ref=f46e689]: •
+                              - time [ref=f46e691]: 7d ago
+                            - link [ref=f46e693] [cursor=pointer]:
+                              - /url: /r/Kapwing/comments/1vyfmia/use_kai_to_avoid_generation_failures_when/
+                              - heading "List item post - Use Kai to Avoid Generation Failures when Creating Content ..." [level=3] [ref=f46e696]: Use Kai to Avoid Generation Failures when Creating Content with AI
+                          - link "r/Kapwing - Use Kai to Avoid Generation Failures when Creating Content with AI" [ref=f46e699] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/Kapwing/comments/1vyfmia/use_kai_to_avoid_generation_failures_when/
+                            - img "r/Kapwing - Use Kai to Avoid Generation Failures when Creating Content with AI" [ref=f46e700]
+                        - generic [ref=f46e702]:
+                          - generic [ref=f46e703]: "1"
+                          - text: upvote
+                - complementary "Community information" [ref=f46e704]:
+                  - generic [ref=f46e706]:
+                    - heading "Community Info Section" [level=1] [ref=f46e707]
+                    - generic [ref=f46e708]:
+                      - link "r/Kapwing" [ref=f46e710] [cursor=pointer]:
+                        - /url: /r/Kapwing/
+                      - button "Join" [ref=f46e715] [cursor=pointer]
+                    - generic [ref=f46e716]:
+                      - generic [ref=f46e717]: Kapwing
+                      - generic [ref=f46e718]: Welcome to r/Kapwing — a community for creators who make, edit, and share videos using Kapwing. Post your work, ask questions, discover new features, and inspire others along the way. All skill levels welcome! Need help from the Kapwing team? Contact them directly at help@kapwing.com for official support.
+                      - button "Show more" [ref=f46e719] [cursor=pointer]
+                      - generic: Public
+                - generic [ref=f46e727]:
+                  - heading "Top Posts" [level=2] [ref=f46e728]
+                  - list [ref=f46e729]:
+                    - listitem [ref=f46e730]:
+                      - 'link "Reddit reReddit: Top posts of August 2, 2023" [ref=f46e731] [cursor=pointer]':
+                        - /url: https://www.reddit.com/posts/2023/august-2-1/global/
+                        - generic [ref=f46e732]: Reddit
+                        - generic [ref=f46e747]: "reReddit: Top posts of August 2, 2023"
+                        - separator [ref=f46e748]
+                    - listitem [ref=f46e749]:
+                      - 'link "Reddit reReddit: Top posts of August 2023" [ref=f46e750] [cursor=pointer]':
+                        - /url: https://www.reddit.com/posts/2023/august/global/
+                        - generic [ref=f46e751]: Reddit
+                        - generic [ref=f46e766]: "reReddit: Top posts of August 2023"
+                        - separator [ref=f46e767]
+                    - listitem [ref=f46e768]:
+                      - 'link "Reddit reReddit: Top posts of 2023" [ref=f46e769] [cursor=pointer]':
+                        - /url: https://www.reddit.com/posts/2023/global/
+                        - generic [ref=f46e770]: Reddit
+                        - generic [ref=f46e785]: "reReddit: Top posts of 2023"
+                        - separator [ref=f46e786]
+              - list [ref=f46e788]:
+                - listitem [ref=f46e789]:
+                  - link "Home" [ref=f46e791] [cursor=pointer]:
+                    - /url: /?feed=home
+                - listitem [ref=f46e792]:
+                  - link "Popular" [ref=f46e794] [cursor=pointer]:
+                    - /url: /r/popular/
+                - listitem [ref=f46e795]:
+                  - link "News" [ref=f46e797] [cursor=pointer]:
+                    - /url: /news/
+                - listitem [ref=f46e798]:
+                  - link "Explore" [ref=f46e800] [cursor=pointer]:
+                    - /url: /explore/
+                - listitem [ref=f46e801]:
+                  - link "Best of Reddit" [ref=f46e803] [cursor=pointer]:
+                    - /url: https://www.reddit.com/posts/2026/global/
+                - listitem [ref=f46e804]:
+                  - link "Best of Reddit in Portuguese" [ref=f46e806] [cursor=pointer]:
+                    - /url: https://www.reddit.com/posts/2026/tl-pt-BR/
+                - listitem [ref=f46e807]:
+                  - link "Best of Reddit in German" [ref=f46e809] [cursor=pointer]:
+                    - /url: https://www.reddit.com/posts/2026/tl-de/
+                - listitem [ref=f46e810]:
+                  - link "Reddit Rules" [ref=f46e812] [cursor=pointer]:
+                    - /url: https://www.redditinc.com/policies/content-policy
+                - listitem [ref=f46e813]:
+                  - link "Privacy Policy" [ref=f46e815] [cursor=pointer]:
+                    - /url: https://www.reddit.com/policies/privacy-policy
+                - listitem [ref=f46e816]:
+                  - link "User Agreement" [ref=f46e818] [cursor=pointer]:
+                    - /url: https://www.redditinc.com/policies/user-agreement
+                - listitem [ref=f46e819]:
+                  - link "Accessibility" [ref=f46e821] [cursor=pointer]:
+                    - /url: https://support.reddithelp.com/hc/sections/38303584022676-Accessibility
+                - listitem [ref=f46e822]:
+                  - link "Reddit, Inc. © 2026. All rights reserved." [ref=f46e823] [cursor=pointer]:
+                    - /url: https://redditinc.com
+        - generic [ref=f46e826]:
+          - paragraph [ref=f46e827]: Join the most real place on the internet
+          - generic [ref=f46e829]:
+            - generic [ref=f46e832]:
+              - iframe [ref=f46e837]:
+                - button "Continue with Google. Opens in new tab" [ref=f48e3] [cursor=pointer]:
+                  - generic [ref=f48e5]: Continue with Google
+              - generic [ref=f46e839] [cursor=pointer]:
+                - generic [ref=f46e840]: Continue with Apple
+                - button "Sign in with Apple" [ref=f46e846]:
+                  - generic [ref=f46e847]:
+                    - img:
+                      - generic:
+                        - img:
+                          - generic:  Sign in with Apple
+            - link "Continue with Phone Number" [ref=f46e852] [cursor=pointer]:
+              - /url: https://www.reddit.com/login/
+            - link "Continue with Email" [ref=f46e861] [cursor=pointer]:
+              - /url: https://www.reddit.com/register/
+          - paragraph [ref=f46e868]:
+            - text: By continuing, you agree to our
+            - link "User Agreement" [ref=f46e869] [cursor=pointer]:
+              - /url: https://www.redditinc.com/policies/user-agreement
+            - text: and acknowledge that you understand the
+            - link "Privacy Policy" [ref=f46e870] [cursor=pointer]:
+              - /url: https://www.redditinc.com/policies/privacy-policy
+            - text: .

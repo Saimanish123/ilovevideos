@@ -1,0 +1,124 @@
+/*
+ * Design tokens. Source of truth: docs/06-design-system.md.
+ * Grayscale only (chroma 0). The only chromatic token is --color-destructive.
+ */
+@import "tailwindcss";
+
+@theme {
+  /* Gray ramp — OKLCH, zero chroma */
+  --color-gray-0: oklch(100% 0 0);
+  --color-gray-50: oklch(98.5% 0 0);
+  --color-gray-100: oklch(96.5% 0 0);
+  --color-gray-200: oklch(92% 0 0);
+  --color-gray-300: oklch(86% 0 0);
+  --color-gray-400: oklch(70% 0 0);
+  --color-gray-500: oklch(56% 0 0);
+  --color-gray-600: oklch(46% 0 0);
+  --color-gray-700: oklch(36% 0 0);
+  --color-gray-800: oklch(26% 0 0);
+  --color-gray-900: oklch(15% 0 0);
+  --color-gray-950: oklch(8% 0 0);
+  --color-gray-1000: oklch(0% 0 0);
+
+  /* Disable Tailwind's chromatic palette so it cannot be used by accident */
+  --color-slate-*: initial;
+  --color-zinc-*: initial;
+  --color-neutral-*: initial;
+  --color-stone-*: initial;
+  --color-red-*: initial;
+  --color-orange-*: initial;
+  --color-amber-*: initial;
+  --color-yellow-*: initial;
+  --color-lime-*: initial;
+  --color-green-*: initial;
+  --color-emerald-*: initial;
+  --color-teal-*: initial;
+  --color-cyan-*: initial;
+  --color-sky-*: initial;
+  --color-blue-*: initial;
+  --color-indigo-*: initial;
+  --color-violet-*: initial;
+  --color-purple-*: initial;
+  --color-fuchsia-*: initial;
+  --color-pink-*: initial;
+  --color-rose-*: initial;
+
+  /* Semantic (light). Dark values are set in globals.css on [data-theme="dark"]. */
+  --color-bg: var(--bg);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-bg-raised: var(--bg-raised);
+  --color-bg-stage: var(--bg-stage);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-overlay: var(--overlay);
+
+  /* Type */
+  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+
+  --text-display: clamp(2.5rem, 2rem + 2.5vw, 4.5rem);
+  --text-display--line-height: 1;
+  --text-display--letter-spacing: -0.03em;
+  --text-display--font-weight: 600;
+  --text-h1: clamp(2rem, 1.6rem + 1.5vw, 3rem);
+  --text-h1--line-height: 1.1;
+  --text-h1--letter-spacing: -0.025em;
+  --text-h1--font-weight: 600;
+  --text-h2: 1.5rem;
+  --text-h2--line-height: 1.2;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h2--font-weight: 600;
+  --text-h3: 1.125rem;
+  --text-h3--line-height: 1.35;
+  --text-h3--letter-spacing: -0.01em;
+  --text-h3--font-weight: 600;
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.6;
+  --text-body: 1rem;
+  --text-body--line-height: 1.6;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-xs--letter-spacing: 0.01em;
+
+  /* Shape */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: initial;
+  --radius-2xl: initial;
+  --radius-3xl: initial;
+  --radius-4xl: initial;
+
+  /* Elevation */
+  --shadow-1: 0 0 0 1px var(--border);
+  --shadow-2: 0 0 0 1px var(--border), 0 8px 24px -8px var(--shadow-color);
+  --shadow-sm: initial;
+  --shadow-md: initial;
+  --shadow-lg: initial;
+  --shadow-xl: initial;
+  --shadow-2xl: initial;
+
+  /* Motion — exact values shared with .claude/skills/animate */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-in: initial;
+  --duration-instant: 80ms;
+  --duration-fast: 150ms;
+  --duration-base: 220ms;
+  --duration-slow: 320ms;
+  --duration-slower: 480ms;
+
+  /* Layout */
+  --container-content: 1200px;
+  --container-stage: 1440px;
+}

@@ -1,0 +1,81 @@
+- generic [active] [ref=f173e1]:
+  - link "Skip to content" [ref=f173e2] [cursor=pointer]:
+    - /url: "#content"
+  - banner [ref=f173e3]:
+    - generic [ref=f173e9]:
+      - link [ref=f173e14] [cursor=pointer]:
+        - /url: https://www.monumetric.com
+        - img "monu-logo" [ref=f173e15]
+      - generic [ref=f173e17]:
+        - generic [ref=f173e19]:
+          - navigation "Menu" [ref=f173e20]:
+            - list [ref=f173e21]:
+              - listitem [ref=f173e22]:
+                - link [ref=f173e23] [cursor=pointer]:
+                  - /url: "#"
+                - text:       BETA  10MM + PV'S/MO  500K - 10MM PV'S/MO  80K - 500K PV'S/MO  10K - 80K PV'S/MO
+              - listitem [ref=f173e27]:
+                - link [ref=f173e28] [cursor=pointer]:
+                  - /url: https://www.monumetric.com/about-us/
+                - text:   
+              - listitem [ref=f173e32]:
+                - link "Blog" [ref=f173e33] [cursor=pointer]:
+                  - /url: https://www.monumetric.com/blog/
+              - listitem [ref=f173e34]:
+                - link "Advertisers" [ref=f173e35] [cursor=pointer]:
+                  - /url: https://www.monumetric.com/advertise-with-us/
+              - listitem [ref=f173e36]:
+                - link "Join" [ref=f173e37] [cursor=pointer]:
+                  - /url: https://www.monumetric.com/join/
+              - listitem [ref=f173e38]:
+                - link "Login" [ref=f173e39] [cursor=pointer]:
+                  - /url: https://account.monumetric.com/login
+          - text:       BETA  10MM + PV'S/MO  500K - 10MM PV'S/MO  80K - 500K PV'S/MO  10K - 80K PV'S/MO   
+        - search [ref=f173e42]:
+          - generic [ref=f173e43]:
+            - button "Search" [ref=f173e44] [cursor=pointer]
+            - generic:
+              - generic: Search
+              - searchbox "Search Search"
+  - main [ref=f173e48]:
+    - heading "The page can’t be found." [level=1] [ref=f173e50]
+    - paragraph [ref=f173e52]: It looks like nothing was found at this location.
+  - contentinfo [ref=f173e53]:
+    - generic [ref=f173e57]:
+      - generic [ref=f173e59]:
+        - generic [ref=f173e63]:
+          - navigation "Menu" [ref=f173e64]:
+            - list [ref=f173e65]:
+              - listitem [ref=f173e66]:
+                - text: 
+                - link "Home" [ref=f173e67] [cursor=pointer]:
+                  - /url: https://www.monumetric.com/
+              - listitem [ref=f173e68]:
+                - text: 
+                - link "Careers" [ref=f173e69] [cursor=pointer]:
+                  - /url: https://www.monumetric.com/careers/
+              - listitem [ref=f173e70]:
+                - text: 
+                - link "Privacy Policy" [ref=f173e71] [cursor=pointer]:
+                  - /url: https://www.monumetric.com/privacy-policy/
+              - listitem [ref=f173e72]:
+                - text: 
+                - link "Privacy Policy for Maker" [ref=f173e73] [cursor=pointer]:
+                  - /url: https://www.monumetric.com/privacy-policy-for-maker-by-monumetric/
+              - listitem [ref=f173e74]:
+                - text: 
+                - link "Terms & Conditions" [ref=f173e75] [cursor=pointer]:
+                  - /url: https://www.monumetric.com/terms-conditions/
+          - text:     
+        - list [ref=f173e80]:
+          - listitem [ref=f173e81]:
+            - link "Twitter" [ref=f173e82] [cursor=pointer]:
+              - /url: https://twitter.com/Monumetric
+          - listitem [ref=f173e86]:
+            - link "Facebook-f" [ref=f173e87] [cursor=pointer]:
+              - /url: https://www.facebook.com/Monumetric/
+          - listitem [ref=f173e91]:
+            - link "Linkedin-in" [ref=f173e92] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/monumetric
+      - generic: 
+  - generic [ref=f173e96]: desktop

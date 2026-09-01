@@ -1,0 +1,352 @@
+- generic [ref=f36e3]:
+  - generic [ref=f36e4]:
+    - banner [ref=f36e5]:
+      - navigation "Global" [ref=f36e8]:
+        - link "Simple Analytics" [ref=f36e11] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f36e15]:
+          - button "Product" [ref=f36e17] [cursor=pointer]
+          - button "Why Simple Analytics" [ref=f36e22] [cursor=pointer]
+          - button "Solutions" [ref=f36e27] [cursor=pointer]
+          - link "Pricing" [ref=f36e31] [cursor=pointer]:
+            - /url: /pricing
+          - link "Docs" [ref=f36e32] [cursor=pointer]:
+            - /url: https://docs.simpleanalytics.com
+        - generic [ref=f36e33]:
+          - img "Toggle dark mode" [ref=f36e34] [cursor=pointer]
+          - generic [ref=f36e49] [cursor=pointer]: Log in
+          - link "Book a demo" [ref=f36e50] [cursor=pointer]:
+            - /url: /demo
+    - main [ref=f36e51]:
+      - generic [ref=f36e53]:
+        - generic [ref=f36e54]:
+          - heading "Pricing." [level=1] [ref=f36e55]
+          - paragraph [ref=f36e56]: Choose the setup that fits how your team uses analytics
+        - generic [ref=f36e58]:
+          - generic [ref=f36e59]:
+            - generic [ref=f36e60]:
+              - generic [ref=f36e61]: Self-serve
+              - generic [ref=f36e62]:
+                - heading "Simple, privacy-friendly analytics" [level=2] [ref=f36e63]
+                - generic [ref=f36e64]:
+                  - radiogroup "Payment frequency" [ref=f36e65]:
+                    - text: Payment frequency
+                    - radio "Monthly" [checked] [ref=f36e66] [cursor=pointer]
+                    - radio "Annually" [ref=f36e67] [cursor=pointer]
+                  - generic [ref=f36e68]: 2 months free
+              - paragraph [ref=f36e69]: A simple dashboard to understand your website traffic
+              - generic [ref=f36e70]:
+                - generic [ref=f36e71]: $20
+                - generic [ref=f36e72]: /month
+              - generic [ref=f36e73]:
+                - paragraph [ref=f36e74]: Estimate your monthly pageviews
+                - generic [ref=f36e75]:
+                  - slider [ref=f36e77]: "0"
+                  - generic [ref=f36e78]:
+                    - generic [ref=f36e79]: 100k
+                    - generic [ref=f36e80]: 100k pageviews
+                    - generic [ref=f36e81]: 2.5M
+              - list [ref=f36e82]:
+                - listitem [ref=f36e83]:
+                  - generic [ref=f36e86]: See your website traffic in seconds
+                - listitem [ref=f36e87]:
+                  - generic [ref=f36e90]: One-page dashboard, no configuration
+                - listitem [ref=f36e91]:
+                  - generic [ref=f36e94]: No cookies, no consent banners, no personal data
+                - listitem [ref=f36e95]:
+                  - generic [ref=f36e98]: EU-hosted and compliant by design
+              - paragraph [ref=f36e99]:
+                - generic [ref=f36e100]:
+                  - text: Want to see all features?
+                  - button "Compare all features." [ref=f36e101] [cursor=pointer]
+              - generic [ref=f36e102] [cursor=pointer]: Start for free
+              - paragraph [ref=f36e103]:
+                - text: Includes 1 user
+                - generic [ref=f36e104]: +$20/mo per extra user
+            - generic [ref=f36e106]:
+              - generic [ref=f36e107]:
+                - paragraph [ref=f36e108]: Free for hobby sites
+                - generic [ref=f36e109]:
+                  - generic [ref=f36e110]:
+                    - generic [ref=f36e111]: 1 user
+                    - generic [ref=f36e114]: 5 websites
+                  - generic [ref=f36e117]:
+                    - generic [ref=f36e118]: 1 month history
+                    - generic [ref=f36e121]: Badge required
+              - generic [ref=f36e124] [cursor=pointer]: Start for free
+          - generic [ref=f36e125]:
+            - generic [ref=f36e126]: Enterprise
+            - generic [ref=f36e127]:
+              - generic [ref=f36e128]:
+                - heading "Simple Analytics as a data layer" [level=2] [ref=f36e129]: Simple Analytics asa data layer
+                - paragraph [ref=f36e130]: Recover 20-60% of traffic invisible to other tools
+              - generic [ref=f36e131]:
+                - generic [ref=f36e136]:
+                  - paragraph [ref=f36e137]: Complete data
+                  - paragraph [ref=f36e138]: Capture traffic lost to consent banners and ad-blockers
+                - generic [ref=f36e143]:
+                  - paragraph [ref=f36e144]: Traffic recovery
+                  - paragraph [ref=f36e145]: Find the gap between actual traffic and reported traffic
+                - generic [ref=f36e150]:
+                  - paragraph [ref=f36e151]: Works with your stack
+                  - paragraph [ref=f36e152]: Run alongside GA4, Adobe Analytics, or your current setup
+                - generic [ref=f36e157]:
+                  - paragraph [ref=f36e158]: Raw data access
+                  - paragraph [ref=f36e159]: Export to warehouses, Looker Studio, or BI tools
+                - generic [ref=f36e164]:
+                  - paragraph [ref=f36e165]: Team reporting
+                  - paragraph [ref=f36e166]: Create filtered views for teams, brands, or sites
+                - generic [ref=f36e171]:
+                  - paragraph [ref=f36e172]: Enterprise-ready
+                  - paragraph [ref=f36e173]: Support for security reviews, procurement, billing, and SOC 2
+              - generic [ref=f36e174] [cursor=pointer]: Request a demo
+              - generic [ref=f36e178]:
+                - paragraph [ref=f36e179]: Enterprise capabilities
+                - generic [ref=f36e180]:
+                  - generic [ref=f36e181]: Single Sign-On
+                  - generic [ref=f36e182]: Role-based access
+                  - generic [ref=f36e183]: Enterprise SLA
+                  - generic [ref=f36e184]: SOC2 compliance
+                  - generic [ref=f36e185]: Contract reviews
+                  - generic [ref=f36e186]: Looker Studio
+                  - generic [ref=f36e187]: Priority support
+                  - generic [ref=f36e188]: Vendor onboarding
+                  - generic [ref=f36e189]: Data proxy
+                  - generic [ref=f36e190]: Manual invoicing
+        - generic [ref=f36e191]:
+          - generic [ref=f36e193]:
+            - link [ref=f36e195] [cursor=pointer]:
+              - /url: https://www.bloomberg.com/
+              - img "Logo of Bloomberg" [ref=f36e196]
+            - generic: Bloomberg
+          - generic [ref=f36e201]:
+            - link [ref=f36e203] [cursor=pointer]:
+              - /url: https://www.michelin.com/
+              - img "Logo of Michelin" [ref=f36e204]
+            - generic: Michelin
+          - generic [ref=f36e211]:
+            - link [ref=f36e213] [cursor=pointer]:
+              - /url: https://www.hyundai.com/
+              - img "Logo of Hyundai" [ref=f36e214]
+            - generic: Hyundai
+          - generic [ref=f36e217]:
+            - link [ref=f36e219] [cursor=pointer]:
+              - /url: https://www.gov.uk/
+              - img "Logo of the Government of the United Kingdom" [ref=f36e220]
+            - generic: GOV.UK
+          - generic [ref=f36e223]:
+            - link [ref=f36e225] [cursor=pointer]:
+              - /url: https://polkadot.com/
+              - img "Logo of Polkadot" [ref=f36e226]
+            - generic: Polkadot
+          - generic [ref=f36e235]:
+            - link [ref=f36e237] [cursor=pointer]:
+              - /url: https://www.bankofengland.co.uk/
+              - img "Logo of Bank of England" [ref=f36e238]
+            - generic: Bank of England
+          - generic [ref=f36e242]:
+            - link [ref=f36e244] [cursor=pointer]:
+              - /url: https://www.sketch.com/
+              - img "Logo of Sketch" [ref=f36e245]
+            - generic: Sketch
+          - generic [ref=f36e254]:
+            - link [ref=f36e256] [cursor=pointer]:
+              - /url: https://excalidraw.com/
+              - img "Logo of Excalidraw" [ref=f36e257]
+            - generic: Excalidraw
+          - generic [ref=f36e260]:
+            - link [ref=f36e262] [cursor=pointer]:
+              - /url: https://nomads.com/
+              - img "Logo of Nomads" [ref=f36e263]
+            - generic: Nomads
+        - paragraph [ref=f36e267]:
+          - generic [ref=f36e268] [cursor=pointer]: Show all plan features
+        - generic [ref=f36e271]:
+          - heading "Frequently Asked Questions." [level=3] [ref=f36e272]
+          - generic [ref=f36e274]:
+            - group [ref=f36e275]:
+              - generic "What we do and don't do with your data Link to What we do and don't do with your data" [ref=f36e276] [cursor=pointer]:
+                - generic [ref=f36e279]: What we do and don't do with your data
+                - button "Link to What we do and don't do with your data"
+            - group [ref=f36e282]:
+              - generic "What metrics do we collect? Link to What metrics do we collect?" [ref=f36e283] [cursor=pointer]:
+                - generic [ref=f36e286]: What metrics do we collect?
+                - button "Link to What metrics do we collect?"
+            - group [ref=f36e289]:
+              - generic "How does the free plan work? Link to How does the free plan work?" [ref=f36e290] [cursor=pointer]:
+                - generic [ref=f36e293]: How does the free plan work?
+                - button "Link to How does the free plan work?"
+            - group [ref=f36e296]:
+              - generic "How does the free trial work? Link to How does the free trial work?" [ref=f36e297] [cursor=pointer]:
+                - generic [ref=f36e300]: How does the free trial work?
+                - button "Link to How does the free trial work?"
+            - group [ref=f36e303]:
+              - generic "Is Simple Analytics GDPR-compliant? Link to Is Simple Analytics GDPR-compliant?" [ref=f36e304] [cursor=pointer]:
+                - generic [ref=f36e307]: Is Simple Analytics GDPR-compliant?
+                - button "Link to Is Simple Analytics GDPR-compliant?"
+            - group [ref=f36e310]:
+              - generic "Can I cancel anytime? Link to Can I cancel anytime?" [ref=f36e311] [cursor=pointer]:
+                - generic [ref=f36e314]: Can I cancel anytime?
+                - button "Link to Can I cancel anytime?"
+            - group [ref=f36e317]:
+              - generic "What happens when your traffic grows? Link to What happens when your traffic grows?" [ref=f36e318] [cursor=pointer]:
+                - generic [ref=f36e321]: What happens when your traffic grows?
+                - button "Link to What happens when your traffic grows?"
+            - group [ref=f36e324]:
+              - generic "How do we charge for yearly plans? Link to How do we charge for yearly plans?" [ref=f36e325] [cursor=pointer]:
+                - generic [ref=f36e328]: How do we charge for yearly plans?
+                - button "Link to How do we charge for yearly plans?"
+            - group [ref=f36e331]:
+              - generic "What does 30 day history mean? Link to What does 30 day history mean?" [ref=f36e332] [cursor=pointer]:
+                - generic [ref=f36e335]: What does 30 day history mean?
+                - button "Link to What does 30 day history mean?"
+            - group [ref=f36e338]:
+              - generic "What does unlimited pageviews mean? Link to What does unlimited pageviews mean?" [ref=f36e339] [cursor=pointer]:
+                - generic [ref=f36e342]: What does unlimited pageviews mean?
+                - button "Link to What does unlimited pageviews mean?"
+            - group [ref=f36e345]:
+              - generic "What payment methods do you accept? Link to What payment methods do you accept?" [ref=f36e346] [cursor=pointer]:
+                - generic [ref=f36e349]: What payment methods do you accept?
+                - button "Link to What payment methods do you accept?"
+          - generic [ref=f36e352]:
+            - paragraph [ref=f36e353]:
+              - generic [ref=f36e354] [cursor=pointer]: Start for free now
+            - paragraph [ref=f36e355]:
+              - generic [ref=f36e356]: Free forever
+              - generic [ref=f36e359]: No credit card required
+              - generic [ref=f36e362]: Cancel anytime
+  - contentinfo [ref=f36e365]:
+    - generic [ref=f36e366]:
+      - generic [ref=f36e368]:
+        - generic [ref=f36e369]:
+          - heading "Product" [level=3] [ref=f36e370]
+          - list [ref=f36e371]:
+            - listitem [ref=f36e372]:
+              - link "Features" [ref=f36e373] [cursor=pointer]:
+                - /url: /features
+            - listitem [ref=f36e376]:
+              - link "How it works" [ref=f36e377] [cursor=pointer]:
+                - /url: /methodology
+            - listitem [ref=f36e380]:
+              - link "Integrations" [ref=f36e381] [cursor=pointer]:
+                - /url: /integrations
+            - listitem [ref=f36e384]:
+              - link "API" [ref=f36e385] [cursor=pointer]:
+                - /url: /api
+            - listitem [ref=f36e388]:
+              - link "AI assistant" [ref=f36e389] [cursor=pointer]:
+                - /url: /features/ai
+            - listitem [ref=f36e392]:
+              - link "Pricing" [ref=f36e393] [cursor=pointer]:
+                - /url: /pricing
+        - generic [ref=f36e396]:
+          - heading "Why Simple Analytics" [level=3] [ref=f36e397]
+          - list [ref=f36e398]:
+            - listitem [ref=f36e399]:
+              - link "More complete traffic visibility" [ref=f36e400] [cursor=pointer]:
+                - /url: /consent-analytics-gap
+            - listitem [ref=f36e403]:
+              - link "Analytics without consent" [ref=f36e404] [cursor=pointer]:
+                - /url: /analytics-without-consent
+            - listitem [ref=f36e407]:
+              - link "Google Analytics alternative" [ref=f36e408] [cursor=pointer]:
+                - /url: /google-analytics-alternative
+            - listitem [ref=f36e411]:
+              - link "Hosted in EU" [ref=f36e412] [cursor=pointer]:
+                - /url: /eu-hosted-analytics
+            - listitem [ref=f36e415]:
+              - link "Migrate from GA4" [ref=f36e416] [cursor=pointer]:
+                - /url: /migrate-from-google-analytics
+            - listitem [ref=f36e419]:
+              - link "Website analytics" [ref=f36e420] [cursor=pointer]:
+                - /url: /web-analytics
+        - generic [ref=f36e423]:
+          - heading "Comparison" [level=3] [ref=f36e424]
+          - list [ref=f36e425]:
+            - listitem [ref=f36e426]:
+              - link "vs Google Analytics" [ref=f36e427] [cursor=pointer]:
+                - /url: /google-analytics-alternative
+            - listitem [ref=f36e430]:
+              - link "vs Matomo" [ref=f36e431] [cursor=pointer]:
+                - /url: /matomo-alternative
+            - listitem [ref=f36e434]:
+              - link "vs Plausible" [ref=f36e435] [cursor=pointer]:
+                - /url: /plausible-alternative
+            - listitem [ref=f36e438]:
+              - link "vs Fathom" [ref=f36e439] [cursor=pointer]:
+                - /url: /fathom-alternative
+            - listitem [ref=f36e442]:
+              - link "vs Piwik PRO" [ref=f36e443] [cursor=pointer]:
+                - /url: /piwik-pro-alternative
+            - listitem [ref=f36e446]:
+              - link "vs Adobe Analytics" [ref=f36e447] [cursor=pointer]:
+                - /url: /adobe-analytics-alternative
+        - generic [ref=f36e450]:
+          - heading "Solutions" [level=3] [ref=f36e451]
+          - list [ref=f36e452]:
+            - listitem [ref=f36e453]:
+              - link "Agencies" [ref=f36e454] [cursor=pointer]:
+                - /url: /use-cases/agencies
+            - listitem [ref=f36e457]:
+              - link "Enterprise" [ref=f36e458] [cursor=pointer]:
+                - /url: /use-cases/enterprise
+            - listitem [ref=f36e461]:
+              - link "EU companies" [ref=f36e462] [cursor=pointer]:
+                - /url: /eu-hosted-analytics
+            - listitem [ref=f36e465]:
+              - link "White label" [ref=f36e466] [cursor=pointer]:
+                - /url: /use-cases/white-label
+        - generic [ref=f36e469]:
+          - heading "Learn" [level=3] [ref=f36e470]
+          - list [ref=f36e471]:
+            - listitem [ref=f36e472]:
+              - link "Documentation" [ref=f36e473] [cursor=pointer]:
+                - /url: https://docs.simpleanalytics.com
+            - listitem [ref=f36e476]:
+              - link "Guides" [ref=f36e477] [cursor=pointer]:
+                - /url: /guides
+            - listitem [ref=f36e480]:
+              - link "Blog" [ref=f36e481] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f36e484]:
+              - link "Changelog" [ref=f36e485] [cursor=pointer]:
+                - /url: /changelog
+            - listitem [ref=f36e488]:
+              - link "Partner Program" [ref=f36e489] [cursor=pointer]:
+                - /url: /partners
+            - listitem [ref=f36e492]:
+              - link "Free tools" [ref=f36e493] [cursor=pointer]:
+                - /url: /tools
+        - generic [ref=f36e496]:
+          - heading "Company" [level=3] [ref=f36e497]
+          - list [ref=f36e498]:
+            - listitem [ref=f36e499]:
+              - link "About us" [ref=f36e500] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f36e503]:
+              - link "Our promise" [ref=f36e504] [cursor=pointer]:
+                - /url: /our-promise
+            - listitem [ref=f36e507]:
+              - link "What we collect" [ref=f36e508] [cursor=pointer]:
+                - /url: /data-collection
+            - listitem [ref=f36e511]:
+              - link "Security" [ref=f36e512] [cursor=pointer]:
+                - /url: /security
+            - listitem [ref=f36e515]:
+              - link "GDPR compliance" [ref=f36e516] [cursor=pointer]:
+                - /url: /gdpr-compliance
+            - listitem [ref=f36e519]:
+              - link "Subprocessors" [ref=f36e520] [cursor=pointer]:
+                - /url: /subprocessors
+      - generic [ref=f36e523]:
+        - generic [ref=f36e524]: Simple Analytics B.V.
+        - navigation [ref=f36e528]:
+          - link "Privacy" [ref=f36e529] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Terms" [ref=f36e530] [cursor=pointer]:
+            - /url: /general-terms-and-conditions
+          - link "DPA" [ref=f36e531] [cursor=pointer]:
+            - /url: /data-processing-agreement
+          - link "Status" [ref=f36e532] [cursor=pointer]:
+            - /url: https://status.simpleanalytics.com
+        - img "Toggle dark mode" [ref=f36e533] [cursor=pointer]

@@ -1,0 +1,95 @@
+- generic [active] [ref=f93e1]:
+  - link "Skip to main content" [ref=f93e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f93e3]:
+    - link [ref=f93e5] [cursor=pointer]:
+      - /url: /hc/en-us
+      - img "Clideo Help Help Center home page" [ref=f93e6]
+    - search [ref=f93e11]:
+      - searchbox "Search" [ref=f93e12]
+    - navigation [ref=f93e14]:
+      - link "Go to Clideo" [ref=f93e15] [cursor=pointer]:
+        - /url: https://clideo.com/
+      - link "Submit a request" [ref=f93e18] [cursor=pointer]:
+        - /url: /hc/en-us/requests/new
+  - main [ref=f93e19]:
+    - generic [ref=f93e21]:
+      - list [ref=f93e22]:
+        - listitem "Clideo Help" [ref=f93e23]:
+          - link "Clideo Help" [ref=f93e24] [cursor=pointer]:
+            - /url: /hc/en-us
+        - listitem "My Account" [ref=f93e25]:
+          - text: ">"
+          - link "My Account" [ref=f93e26] [cursor=pointer]:
+            - /url: /hc/en-us/categories/4408677950866-My-Account
+        - listitem "Projects" [ref=f93e27]:
+          - text: ">"
+          - link "Projects" [ref=f93e28] [cursor=pointer]:
+            - /url: /hc/en-us/categories/4408677950866-My-Account#4408678000658
+      - heading "How long are my projects stored?" [level=1] [ref=f93e29]
+    - article [ref=f93e31]:
+      - generic [ref=f93e34]:
+        - paragraph [ref=f93e35]: Registered users can store their projects for a specified period of time, depending on the plan.
+        - paragraph [ref=f93e36]: The Clideo website stores projects created with any Clideo online tools (except for converter tools) as well as synchronized projects from the iOS Video Editor app.
+        - paragraph [ref=f93e37]: The iOS Video Editor app only stores projects created in the Video Editor (web or iOS).
+        - heading "Storage period" [level=2] [ref=f93e38]
+        - list [ref=f93e39]:
+          - listitem [level=1] [ref=f93e40]:
+            - strong [ref=f93e41]: Free
+            - text: registered users without a subscription have access to the projects created within the last
+            - strong [ref=f93e42]: 14 days
+            - text: . Projects that were created outside this time frame are locked.
+          - listitem [level=1] [ref=f93e43]:
+            - strong [ref=f93e44]: Premium
+            - text: users with a subscription have
+            - strong [ref=f93e45]: unlimited
+            - text: access to their projects as long as their subscription is active.
+        - heading "Storage after the end of subscription" [level=2] [ref=f93e46]
+        - paragraph [ref=f93e47]: After the last day of the canceled subscription, projects older than 14 days become locked.
+        - paragraph [ref=f93e48]: You have a 30-day grace period to renew your subscription and regain access to your projects. If you don’t renew within those 30 days, starting on day 31, you'll only have access to projects created or edited within the last 14 days.
+        - paragraph [ref=f93e49]:
+          - text: Please note that we
+          - strong [ref=f93e51]: cannot guarantee
+          - text: the availability of your older projects, as we are
+          - strong [ref=f93e53]: not a cloud storage service
+          - text: . To avoid losing your work, we strongly recommend
+          - strong [ref=f93e55]: downloading your projects
+          - text: once they are completed.
+      - generic [ref=f93e56]:
+        - generic [ref=f93e57]: Was this article helpful?
+        - group "Was this article helpful?" [ref=f93e58]:
+          - button "This article was helpful" [ref=f93e59] [cursor=pointer]: "Yes"
+          - button "This article was not helpful" [ref=f93e60] [cursor=pointer]: "No"
+      - generic [ref=f93e61]:
+        - generic [ref=f93e62]:
+          - heading "Recently viewed articles" [level=2] [ref=f93e63]
+          - list [ref=f93e64]:
+            - listitem [ref=f93e65]:
+              - link "Are there any usage limitations?" [ref=f93e66] [cursor=pointer]:
+                - /url: /hc/en-us/articles/4412770604562-Are-there-any-usage-limitations
+        - generic [ref=f93e67]:
+          - heading "Related articles" [level=2] [ref=f93e68]
+          - list [ref=f93e69]:
+            - listitem [ref=f93e70]:
+              - link "Are there any usage limitations?" [ref=f93e71] [cursor=pointer]:
+                - /url: /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBLWn20DBDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJJYIbcDBDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJFL2hjL2VuLXVzL2FydGljbGVzLzQ0MTI3NzA2MDQ1NjItQXJlLXRoZXJlLWFueS11c2FnZS1saW1pdGF0aW9ucwY7CFQ6CXJhbmtpBg%3D%3D--c109e4993039b3daaa3a3fdb0f1412066428dac5
+            - listitem [ref=f93e72]:
+              - link "Are my uploaded files safe?" [ref=f93e73] [cursor=pointer]:
+                - /url: /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJKdQmIEBDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJJYIbcDBDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJAL2hjL2VuLXVzL2FydGljbGVzLzQ0MTY4NzQ5MTMxNzAtQXJlLW15LXVwbG9hZGVkLWZpbGVzLXNhZmUGOwhUOglyYW5raQc%3D--6b91b69804b81c20e963ef406036ee8f218d5f15
+            - listitem [ref=f93e74]:
+              - link "Do Clideo tools autosave my projects?" [ref=f93e75] [cursor=pointer]:
+                - /url: /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBKwLJcDBDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJJYIbcDBDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJKL2hjL2VuLXVzL2FydGljbGVzLzQ0MTM0Njc3MDEyNjYtRG8tQ2xpZGVvLXRvb2xzLWF1dG9zYXZlLW15LXByb2plY3RzBjsIVDoJcmFua2kI--054610da823cdb373924eba3c714ae33601a0790
+            - listitem [ref=f93e76]:
+              - link "How to download my project?" [ref=f93e77] [cursor=pointer]:
+                - /url: /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBJ7f40DBDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJJYIbcDBDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJAL2hjL2VuLXVzL2FydGljbGVzLzQ0MTMzMDUzNTUwMjYtSG93LXRvLWRvd25sb2FkLW15LXByb2plY3QGOwhUOglyYW5raQk%3D--e66475e30a5a9c7450d5dcb104587f9636258e1a
+            - listitem [ref=f93e78]:
+              - link "How to sign up or sign in to Clideo?" [ref=f93e79] [cursor=pointer]:
+                - /url: /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBKP240DBDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJJYIbcDBDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJJL2hjL2VuLXVzL2FydGljbGVzLzQ0MTMzMTEzODk0NTgtSG93LXRvLXNpZ24tdXAtb3Itc2lnbi1pbi10by1DbGlkZW8GOwhUOglyYW5raQo%3D--fb8f764ce124f097dd5a459f93ea1a432754fce5
+  - contentinfo [ref=f93e80]:
+    - generic [ref=f93e81]:
+      - navigation [ref=f93e82]:
+        - link "Terms of Use" [ref=f93e83] [cursor=pointer]:
+          - /url: https://clideo.com/terms
+        - link "Privacy Policy" [ref=f93e84] [cursor=pointer]:
+          - /url: https://clideo.com/privacy
+      - generic [ref=f93e85]: © 2019–2026 Clideo ltd. All rights reserved.

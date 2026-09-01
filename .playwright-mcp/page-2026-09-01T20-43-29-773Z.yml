@@ -1,0 +1,497 @@
+- generic [active] [ref=f250e1]:
+  - navigation [ref=f250e3]:
+    - list [ref=f250e4]:
+      - listitem [ref=f250e5]:
+        - link [ref=f250e6] [cursor=pointer]:
+          - /url: /?redirect=false
+          - img "descript logo" [ref=f250e7]
+      - listitem [ref=f250e8]:
+        - paragraph [ref=f250e9] [cursor=pointer]:
+          - generic [ref=f250e10]: Features
+          - img "chevron icon" [ref=f250e11]
+      - listitem [ref=f250e12]:
+        - link "Underlord" [ref=f250e13] [cursor=pointer]:
+          - /url: /underlord
+      - listitem [ref=f250e15]:
+        - paragraph [ref=f250e16] [cursor=pointer]:
+          - generic [ref=f250e17]: Solutions
+          - img "chevron icon" [ref=f250e18]
+      - listitem [ref=f250e19]:
+        - paragraph [ref=f250e20] [cursor=pointer]:
+          - generic [ref=f250e21]: Resources
+          - img "chevron icon" [ref=f250e22]
+      - listitem [ref=f250e23]:
+        - link "Pricing" [ref=f250e24] [cursor=pointer]:
+          - /url: /pricing
+      - listitem [ref=f250e26]:
+        - link "Contact sales" [ref=f250e27] [cursor=pointer]:
+          - /url: /contact
+      - listitem [ref=f250e29]:
+        - link "Sign in" [ref=f250e30] [cursor=pointer]:
+          - /url: https://web.descript.com/
+      - link "Sign up" [ref=f250e32] [cursor=pointer]:
+        - /url: https://web.descript.com/?sign_up=true
+  - generic [ref=f250e34]:
+    - generic [ref=f250e35]:
+      - heading "PRICING" [level=1] [ref=f250e37]
+      - heading "A plan for whatever you create" [level=2] [ref=f250e39]
+    - generic [ref=f250e40]:
+      - generic [ref=f250e42]:
+        - generic [ref=f250e43]:
+          - button "Monthly" [ref=f250e45] [cursor=pointer]
+          - button "Annual" [pressed] [ref=f250e46] [cursor=pointer]
+        - paragraph [ref=f250e47]: Saving up to 35% over monthly plan
+      - generic [ref=f250e48]:
+        - generic [ref=f250e49]:
+          - generic [ref=f250e50]:
+            - paragraph [ref=f250e51]
+            - heading "Hobbyist" [level=3] [ref=f250e52]
+            - generic [ref=f250e54]:
+              - paragraph [ref=f250e55]: $16
+              - paragraph [aria-hidden] [ref=f250e56]: $24
+            - generic [ref=f250e57]:
+              - paragraph [ref=f250e58]: per person / month
+              - paragraph [ref=f250e59]: 1 person included
+            - paragraph [ref=f250e60]: Elevate your projects, watermark-free
+          - generic [ref=f250e61]:
+            - link "Get started" [ref=f250e62] [cursor=pointer]:
+              - /url: https://web.descript.com/checkout?selected_product_group=descript_hobbyist_v3&selected_interval=year
+            - list [ref=f250e63]:
+              - listitem [ref=f250e64]:
+                - paragraph [ref=f250e66]: 10 media hours / month
+              - listitem [ref=f250e67]:
+                - paragraph [ref=f250e69]: 400 AI credits / month
+              - listitem [ref=f250e70]:
+                - paragraph [ref=f250e72]: Export 1080p, watermark-free
+              - listitem [ref=f250e73]:
+                - paragraph [ref=f250e75]: Access to Underlord, our AI video co-editor
+              - listitem [ref=f250e76]:
+                - paragraph [ref=f250e78]: AI tools including Studio Sound, Remove Filler Words, Create Clips, and more
+              - listitem [ref=f250e79]:
+                - paragraph [ref=f250e81]: AI Speech with custom voice clones and video regenerate
+        - generic [ref=f250e82]:
+          - generic [ref=f250e83]:
+            - paragraph [ref=f250e84]: Most Popular
+            - heading "Creator" [level=3] [ref=f250e85]
+            - generic [ref=f250e87]:
+              - paragraph [ref=f250e88]: $24
+              - paragraph [aria-hidden] [ref=f250e89]: $35
+            - generic [ref=f250e90]:
+              - paragraph [ref=f250e91]: per person / month
+              - paragraph [ref=f250e92]: Scale to a team of 3 (billed separately)
+            - paragraph [ref=f250e93]: Unlock advanced AI-powered creativity
+          - generic [ref=f250e94]:
+            - link "Get started" [ref=f250e95] [cursor=pointer]:
+              - /url: https://web.descript.com/checkout?selected_product_group=descript_creator_v3&selected_interval=year
+            - list [ref=f250e96]:
+              - listitem [ref=f250e97]:
+                - paragraph [ref=f250e99]: 30 media hours / month
+              - listitem [ref=f250e100]:
+                - paragraph [ref=f250e102]: 800 AI credits / month
+              - listitem [ref=f250e103]:
+                - paragraph [ref=f250e105]: Export 4k, watermark-free
+              - listitem [ref=f250e106]:
+                - paragraph [ref=f250e108]: Full access to Underlord, our AI video co-editor and 20+ more AI tools
+              - listitem [ref=f250e109]:
+                - paragraph [ref=f250e111]: Generate video with the latest AI models
+              - listitem [ref=f250e112]:
+                - paragraph [ref=f250e114]: Unlimited access to royalty-free stock media library
+              - listitem [ref=f250e115]:
+                - paragraph [ref=f250e117]: Access to top ups for more media hours and AI credits
+        - generic [ref=f250e118]:
+          - generic [ref=f250e119]:
+            - paragraph [ref=f250e120]
+            - heading "Business" [level=3] [ref=f250e121]
+            - generic [ref=f250e123]:
+              - paragraph [ref=f250e124]: $50
+              - paragraph [aria-hidden] [ref=f250e125]: $65
+            - generic [ref=f250e126]:
+              - paragraph [ref=f250e127]: per person / month
+              - paragraph [ref=f250e128]: Scale to a team of 5 (billed separately)
+            - paragraph [ref=f250e129]: Empower collaboration on your team
+          - generic [ref=f250e130]:
+            - link "Get started" [ref=f250e131] [cursor=pointer]:
+              - /url: https://web.descript.com/checkout?selected_product_group=descript_business_v3&selected_interval=year
+            - list [ref=f250e132]:
+              - listitem [ref=f250e133]:
+                - paragraph [ref=f250e135]: 40 media hours / month
+              - listitem [ref=f250e136]:
+                - paragraph [ref=f250e138]: 1500 AI credits / month
+              - listitem [ref=f250e139]:
+                - paragraph [ref=f250e141]: Team-wide access to Brand Studio
+              - listitem [ref=f250e142]:
+                - paragraph [ref=f250e144]: Translate and dub video in 30+ languages with proofread
+              - listitem [ref=f250e145]:
+                - paragraph [ref=f250e147]: Generate custom avatars from photo upload or text
+              - listitem [ref=f250e148]:
+                - paragraph [ref=f250e150]: Priority support (with SLA)
+              - listitem [ref=f250e151]:
+                - paragraph [ref=f250e153]: Access to top ups for more media hours and AI credits
+        - generic [ref=f250e154]:
+          - generic [ref=f250e155]:
+            - paragraph [ref=f250e156]
+            - heading "Enterprise" [level=3] [ref=f250e157]
+            - paragraph [ref=f250e158]: Custom
+            - paragraph [ref=f250e159]: For teams with more video to make than editors to make it
+          - generic [ref=f250e160]:
+            - link "Talk to sales" [ref=f250e161] [cursor=pointer]:
+              - /url: https://www.descript.com/contact
+            - list [ref=f250e162]:
+              - listitem [ref=f250e163]:
+                - paragraph [ref=f250e165]: "Text-based editing: Edit video by editing a doc"
+              - listitem [ref=f250e166]:
+                - paragraph [ref=f250e168]: "AI credits and media hours: sized to your team"
+              - listitem [ref=f250e169]:
+                - paragraph [ref=f250e171]: "Brand Studio: shared templates and company-wide guardrails"
+              - listitem [ref=f250e172]:
+                - paragraph [ref=f250e174]: "AI and data controls: opt-out of training, custom retention"
+              - listitem [ref=f250e175]:
+                - paragraph [ref=f250e177]: "SOC 2 Type II: SSO, SCIM, and audit logs"
+              - listitem [ref=f250e178]:
+                - paragraph [ref=f250e180]: "Procurement: custom MSA, legal terms, flexible billing"
+              - listitem [ref=f250e181]:
+                - paragraph [ref=f250e183]: "Support: dedicated CSM, onboarding, priority response"
+            - generic [ref=f250e184]:
+              - paragraph [ref=f250e185]: "Trusted by teams at:"
+              - generic [ref=f250e187]:
+                - list [ref=f250e188]:
+                  - listitem [ref=f250e189]:
+                    - img "Shopify" [ref=f250e191]
+                  - listitem [ref=f250e192]:
+                    - img "BBC" [ref=f250e194]
+                  - listitem [ref=f250e195]:
+                    - img "Netflix" [ref=f250e197]
+                  - listitem [ref=f250e198]:
+                    - img "Spotify" [ref=f250e200]
+                  - listitem [ref=f250e201]:
+                    - img "Siemens" [ref=f250e203]
+                - list [ref=f250e205]:
+                  - listitem [ref=f250e206]
+                  - listitem [ref=f250e209]
+                  - listitem [ref=f250e212]
+                  - listitem [ref=f250e215]
+                  - listitem [ref=f250e218]
+      - generic [ref=f250e223]:
+        - paragraph [ref=f250e224]: Free
+        - paragraph [ref=f250e225]: $0
+        - paragraph [ref=f250e226]: Get started on your creative journey with text-based editing and give our AI tools a spin.
+        - link "Get started for free" [ref=f250e227] [cursor=pointer]:
+          - /url: https://web.descript.com/?sign_up=true
+  - generic [ref=f250e229]:
+    - paragraph [ref=f250e231]: "More than 6 million creators & teams use Descript, including:"
+    - generic [ref=f250e232]:
+      - list [ref=f250e233]:
+        - listitem [ref=f250e234]:
+          - img "Amazon" [ref=f250e236]
+        - listitem [ref=f250e237]:
+          - img "Canva" [ref=f250e239]
+        - listitem [ref=f250e240]:
+          - img "Salesforce" [ref=f250e242]
+        - listitem [ref=f250e243]:
+          - img "Figma" [ref=f250e245]
+        - listitem [ref=f250e246]:
+          - img "Apple" [ref=f250e248]
+        - listitem [ref=f250e249]:
+          - img "Okta" [ref=f250e251]
+        - listitem [ref=f250e252]:
+          - img "Spotify" [ref=f250e254]
+        - listitem [ref=f250e255]:
+          - img "Vox" [ref=f250e257]
+        - listitem [ref=f250e258]:
+          - img "Reuters" [ref=f250e260]
+        - listitem [ref=f250e261]:
+          - img "CBS" [ref=f250e263]
+        - listitem [ref=f250e264]:
+          - img "Microsoft" [ref=f250e266]
+        - listitem [ref=f250e267]:
+          - img "New York Times" [ref=f250e269]
+        - listitem [ref=f250e270]:
+          - img "GitHub" [ref=f250e272]
+        - listitem [ref=f250e273]:
+          - img "KPMG" [ref=f250e275]
+        - listitem [ref=f250e276]:
+          - img "Coke" [ref=f250e278]
+      - list [ref=f250e279]:
+        - listitem [ref=f250e280]:
+          - img "Amazon" [ref=f250e282]
+        - listitem [ref=f250e283]:
+          - img "Canva" [ref=f250e285]
+        - listitem [ref=f250e286]:
+          - img "Salesforce" [ref=f250e288]
+        - listitem [ref=f250e289]:
+          - img "Figma" [ref=f250e291]
+        - listitem [ref=f250e292]:
+          - img "Apple" [ref=f250e294]
+        - listitem [ref=f250e295]:
+          - img "Okta" [ref=f250e297]
+        - listitem [ref=f250e298]:
+          - img "Spotify" [ref=f250e300]
+        - listitem [ref=f250e301]:
+          - img "Vox" [ref=f250e303]
+        - listitem [ref=f250e304]:
+          - img "Reuters" [ref=f250e306]
+        - listitem [ref=f250e307]:
+          - img "CBS" [ref=f250e309]
+        - listitem [ref=f250e310]:
+          - img "Microsoft" [ref=f250e312]
+        - listitem [ref=f250e313]:
+          - img "New York Times" [ref=f250e315]
+        - listitem [ref=f250e316]:
+          - img "GitHub" [ref=f250e318]
+        - listitem [ref=f250e319]:
+          - img "KPMG" [ref=f250e321]
+        - listitem [ref=f250e322]:
+          - img "Coke" [ref=f250e324]
+  - generic [ref=f250e327]:
+    - 'heading "Enterprise: a plan for any team" [level=2] [ref=f250e329]'
+    - paragraph [ref=f250e330]: Make everyone a collaborator—and make more video. Get enterprise-grade security, personalized support, and extra features like Brand Studio, which keeps brand elements aligned across distributed teams.
+    - list [ref=f250e331]:
+      - listitem [ref=f250e332]:
+        - generic [ref=f250e333]: Advanced Security and SSO / SCIM
+      - listitem [ref=f250e334]:
+        - generic [ref=f250e335]: Granular brand controls
+      - listitem [ref=f250e336]:
+        - generic [ref=f250e337]: Custom AI credits
+      - listitem [ref=f250e338]:
+        - generic [ref=f250e339]: Custom media minutes
+      - listitem [ref=f250e340]:
+        - generic [ref=f250e341]: Custom legal terms
+      - listitem [ref=f250e342]:
+        - generic [ref=f250e343]: Custom AI Controls
+      - listitem [ref=f250e344]:
+        - generic [ref=f250e345]: Flexible licensing model
+      - listitem [ref=f250e346]:
+        - generic [ref=f250e347]: Flexible billing
+    - link "Contact us to learn more" [ref=f250e349] [cursor=pointer]:
+      - /url: /contact
+  - generic [ref=f250e354]:
+    - heading "Frequently asked questions" [level=2] [ref=f250e356]
+    - list [ref=f250e357]:
+      - listitem [ref=f250e358] [cursor=pointer]:
+        - generic [ref=f250e359]:
+          - heading "What are media hours and AI credits?" [level=3] [ref=f250e360]
+          - 'button "Toggle answer: What are media hours and AI credits?" [ref=f250e361]'
+        - paragraph [ref=f250e363]: Media hours track uploaded media files and media recorded in Descript, regardless of whether they're transcribed (though you still have the option to transcribe them). AI credits track your usage of AI features like Underlord, Studio Sound, Green Screen, Eye Contact, and AI-generated media and avatars.
+      - listitem [ref=f250e364] [cursor=pointer]:
+        - generic [ref=f250e365]:
+          - heading "I’m interested in setting up an Enterprise plan for my business. Where can I learn more?" [level=3] [ref=f250e366]
+          - 'button "Toggle answer: I’m interested in setting up an Enterprise plan for my business. Where can I learn more?" [ref=f250e367]'
+        - paragraph [ref=f250e369]:
+          - link "Contact sales" [ref=f250e370]:
+            - /url: /contact
+          - text: to learn more about our Enterprise plans.
+      - listitem [ref=f250e371] [cursor=pointer]:
+        - generic [ref=f250e372]:
+          - heading "Do I need to enter a credit card to try Descript?" [level=3] [ref=f250e373]
+          - 'button "Toggle answer: Do I need to enter a credit card to try Descript?" [ref=f250e374]'
+        - paragraph [ref=f250e376]: No, Descript's Free plan includes everything you need to record, edit and mix audio and video content.
+      - listitem [ref=f250e377] [cursor=pointer]:
+        - generic [ref=f250e378]:
+          - heading "How are subscription payments processed?" [level=3] [ref=f250e379]
+          - 'button "Toggle answer: How are subscription payments processed?" [ref=f250e380]'
+        - paragraph [ref=f250e382]:
+          - text: Descript Hobbyist, Creator, and Business plan subscriptions are processed automatically to the credit card you provide, according to your selected billing cycle. Users requiring custom invoicing options (such as ACH transfer) can reach out to our
+          - link "Enterprise team" [ref=f250e383]:
+            - /url: /enterprise
+          - text: to learn more.
+      - listitem [ref=f250e384] [cursor=pointer]:
+        - generic [ref=f250e385]:
+          - heading "Do you offer special rates for students, educators, and non-profits?" [level=3] [ref=f250e386]
+          - 'button "Toggle answer: Do you offer special rates for students, educators, and non-profits?" [ref=f250e387]'
+        - paragraph [ref=f250e389]:
+          - text: Yes, fill out
+          - link "this form" [ref=f250e390]:
+            - /url: https://descript.notion.site/e677e85ecdec4c87ba2f3a5644895e9f
+      - listitem [ref=f250e391] [cursor=pointer]:
+        - generic [ref=f250e392]:
+          - heading "How does Descript protect my privacy?" [level=3] [ref=f250e393]
+          - 'button "Toggle answer: How does Descript protect my privacy?" [ref=f250e394]'
+        - paragraph [ref=f250e396]:
+          - text: Your Project Information is confidential, even from Descript. We are SOC 2 Type II compliant. Read more about
+          - link "Descript Security" [ref=f250e397]:
+            - /url: /security
+          - text: .
+      - listitem [ref=f250e398] [cursor=pointer]:
+        - generic [ref=f250e399]:
+          - heading "How do I cancel my subscription?" [level=3] [ref=f250e400]
+          - 'button "Toggle answer: How do I cancel my subscription?" [ref=f250e401]'
+        - paragraph [ref=f250e403]:
+          - text: You can easily cancel your subscription from your
+          - link "Descript subscription page" [ref=f250e404]:
+            - /url: https://web.descript.com/subscription
+          - text: . You can also delete your account and permanently wipe your data from our servers.
+  - contentinfo [ref=f250e405]:
+    - generic [ref=f250e407]:
+      - generic [ref=f250e408]:
+        - link "Descript home" [ref=f250e409] [cursor=pointer]:
+          - /url: /
+          - img "Descript" [ref=f250e410]
+        - generic [ref=f250e411]:
+          - link "X (Twitter)" [ref=f250e412] [cursor=pointer]:
+            - /url: https://x.com/descript
+          - link "YouTube" [ref=f250e413] [cursor=pointer]:
+            - /url: https://www.youtube.com/@Descript
+          - link "LinkedIn" [ref=f250e414] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/descript
+          - link "Facebook" [ref=f250e415] [cursor=pointer]:
+            - /url: https://www.facebook.com/descriptapp
+        - paragraph [ref=f250e416]: © Descript 2026
+      - generic [ref=f250e417]:
+        - generic [ref=f250e418]:
+          - generic [ref=f250e419]:
+            - paragraph [ref=f250e420]: Features
+            - list [ref=f250e421]:
+              - listitem [ref=f250e422]:
+                - link "Underlord" [ref=f250e423] [cursor=pointer]:
+                  - /url: /underlord
+              - listitem [ref=f250e424]:
+                - link "Video Editing" [ref=f250e425] [cursor=pointer]:
+                  - /url: /video-editing
+              - listitem [ref=f250e426]:
+                - link "Podcasting" [ref=f250e427] [cursor=pointer]:
+                  - /url: /podcasting
+              - listitem [ref=f250e428]:
+                - link "Create Clips" [ref=f250e429] [cursor=pointer]:
+                  - /url: /clips
+              - listitem [ref=f250e430]:
+                - link "Transcription" [ref=f250e431] [cursor=pointer]:
+                  - /url: /transcription
+              - listitem [ref=f250e432]:
+                - link "Rooms" [ref=f250e433] [cursor=pointer]:
+                  - /url: /rooms
+              - listitem [ref=f250e434]:
+                - link "Screen Recording" [ref=f250e435] [cursor=pointer]:
+                  - /url: /screen-recording
+              - listitem [ref=f250e436]:
+                - link "Captions and subtitles" [ref=f250e437] [cursor=pointer]:
+                  - /url: /captions
+              - listitem [ref=f250e438]:
+                - link "Translate video" [ref=f250e439] [cursor=pointer]:
+                  - /url: /ai/translate-video
+              - listitem [ref=f250e440]:
+                - link "Eye Contact" [ref=f250e441] [cursor=pointer]:
+                  - /url: /eye-contact
+              - listitem [ref=f250e442]:
+                - link "Text-to-Speech" [ref=f250e443] [cursor=pointer]:
+                  - /url: /text-to-speech
+              - listitem [ref=f250e444]:
+                - link "Studio Sound" [ref=f250e445] [cursor=pointer]:
+                  - /url: /studio-sound
+              - listitem [ref=f250e446]:
+                - link "Regenerate" [ref=f250e447] [cursor=pointer]:
+                  - /url: /regenerate
+              - listitem [ref=f250e448]:
+                - link "Green Screen" [ref=f250e449] [cursor=pointer]:
+                  - /url: /tools/green-screen
+          - generic [ref=f250e450]:
+            - paragraph [ref=f250e451]: Product
+            - list [ref=f250e452]:
+              - listitem [ref=f250e453]:
+                - link "Pricing" [ref=f250e454] [cursor=pointer]:
+                  - /url: /pricing
+              - listitem [ref=f250e455]:
+                - link "Download" [ref=f250e456] [cursor=pointer]:
+                  - /url: /download
+              - listitem [ref=f250e457]:
+                - link "Status" [ref=f250e458] [cursor=pointer]:
+                  - /url: https://status.descript.com
+              - listitem [ref=f250e459]:
+                - link "Changelog" [ref=f250e460] [cursor=pointer]:
+                  - /url: https://feedback.descript.com/changelog
+              - listitem [ref=f250e461]:
+                - link "Feature Requests" [ref=f250e462] [cursor=pointer]:
+                  - /url: https://feedback.descript.com/features
+              - listitem [ref=f250e463]:
+                - link "Integrations" [ref=f250e464] [cursor=pointer]:
+                  - /url: /integrations
+          - generic [ref=f250e465]:
+            - paragraph [ref=f250e466]: Resources
+            - list [ref=f250e467]:
+              - listitem [ref=f250e468]:
+                - link "Blog" [ref=f250e469] [cursor=pointer]:
+                  - /url: /blog
+              - listitem [ref=f250e470]:
+                - link "Tools" [ref=f250e471] [cursor=pointer]:
+                  - /url: /tools
+              - listitem [ref=f250e472]:
+                - link "Community & Events" [ref=f250e473] [cursor=pointer]:
+                  - /url: /community
+              - listitem [ref=f250e474]:
+                - link "Affiliate Program" [ref=f250e475] [cursor=pointer]:
+                  - /url: /affiliate
+              - listitem [ref=f250e476]:
+                - link "Help & Support" [ref=f250e477] [cursor=pointer]:
+                  - /url: https://help.descript.com/
+          - generic [ref=f250e478]:
+            - paragraph [ref=f250e479]: Company
+            - list [ref=f250e480]:
+              - listitem [ref=f250e481]:
+                - link "About Us" [ref=f250e482] [cursor=pointer]:
+                  - /url: /about
+              - listitem [ref=f250e483]:
+                - link "Careers" [ref=f250e484] [cursor=pointer]:
+                  - /url: /careers
+              - listitem [ref=f250e485]:
+                - link "Research" [ref=f250e486] [cursor=pointer]:
+                  - /url: /research
+              - listitem [ref=f250e487]:
+                - link "Ethics" [ref=f250e488] [cursor=pointer]:
+                  - /url: /ethics
+              - listitem [ref=f250e489]:
+                - link "Privacy" [ref=f250e490] [cursor=pointer]:
+                  - /url: /privacy
+              - listitem [ref=f250e491]:
+                - link "Terms" [ref=f250e492] [cursor=pointer]:
+                  - /url: /terms
+        - generic [ref=f250e494]:
+          - generic [ref=f250e495]:
+            - paragraph [ref=f250e496]: Guides
+            - list [ref=f250e497]:
+              - listitem [ref=f250e498]:
+                - link "All guides" [ref=f250e499] [cursor=pointer]:
+                  - /url: /blog
+              - listitem [ref=f250e500]:
+                - link "How to record a podcast" [ref=f250e501] [cursor=pointer]:
+                  - /url: /blog/article/record-a-podcast-remotely
+              - listitem [ref=f250e502]:
+                - link "How to start a YouTube channel" [ref=f250e503] [cursor=pointer]:
+                  - /url: /blog/article/how-to-start-a-youtube-channel-the-ultimate-guide-2023
+              - listitem [ref=f250e504]:
+                - link "How to make a slideshow on TikTok" [ref=f250e505] [cursor=pointer]:
+                  - /url: /blog/article/how-to-make-slideshow-on-tiktok
+              - listitem [ref=f250e506]:
+                - link "YouTube video size guide" [ref=f250e507] [cursor=pointer]:
+                  - /url: /blog/article/the-ultimate-guide-to-youtube-video-sizes
+              - listitem [ref=f250e508]:
+                - link "How to create a YouTube video" [ref=f250e509] [cursor=pointer]:
+                  - /url: /blog/article/how-to-make-youtube-video
+              - listitem [ref=f250e510]:
+                - link "How to clip and trim YouTube Videos" [ref=f250e511] [cursor=pointer]:
+                  - /url: /blog/article/how-to-clip-youtube-video
+          - generic [ref=f250e512]:
+            - paragraph [ref=f250e513]: Tools
+            - list [ref=f250e514]:
+              - listitem [ref=f250e515]:
+                - link "All tools" [ref=f250e516] [cursor=pointer]:
+                  - /url: /tools
+              - listitem [ref=f250e517]:
+                - link "Video Editor" [ref=f250e518] [cursor=pointer]:
+                  - /url: /tools/video-editor
+              - listitem [ref=f250e519]:
+                - link "Audio to Text Converter" [ref=f250e520] [cursor=pointer]:
+                  - /url: /tools/audio-text
+              - listitem [ref=f250e521]:
+                - link "Video Background Changer" [ref=f250e522] [cursor=pointer]:
+                  - /url: /tools/video-background-changer
+              - listitem [ref=f250e523]:
+                - link "Add Music to Audio" [ref=f250e524] [cursor=pointer]:
+                  - /url: /tools/add-background-music-to-audio
+              - listitem [ref=f250e525]:
+                - link "AI Video Describer" [ref=f250e526] [cursor=pointer]:
+                  - /url: /tools/describe-video
+          - generic [ref=f250e527]:
+            - link "Descript for teams" [ref=f250e528] [cursor=pointer]:
+              - /url: /teams
+            - link "Descript for enterprise" [ref=f250e529] [cursor=pointer]:
+              - /url: /enterprise
+  - alert [ref=f250e530]

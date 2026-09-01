@@ -1,0 +1,305 @@
+- generic [active] [ref=f312e1]:
+  - generic [ref=f312e4]:
+    - paragraph [ref=f312e6]:
+      - link "Skip to main content" [ref=f312e7] [cursor=pointer]:
+        - /url: "#_r_1_"
+    - banner [ref=f312e11]:
+      - generic [ref=f312e15]:
+        - link "Canva home" [ref=f312e18] [cursor=pointer]:
+          - /url: https://www.canva.com/
+        - navigation [ref=f312e25]:
+          - list [ref=f312e26]:
+            - listitem [ref=f312e27]:
+              - button "Design" [ref=f312e28] [cursor=pointer]
+            - listitem [ref=f312e30]:
+              - button "Product" [ref=f312e31] [cursor=pointer]
+            - listitem [ref=f312e33]:
+              - button "Plans" [ref=f312e34] [cursor=pointer]
+            - listitem [ref=f312e36]:
+              - button "Business" [ref=f312e37] [cursor=pointer]
+            - listitem [ref=f312e39]:
+              - button "Education" [ref=f312e40] [cursor=pointer]
+            - listitem [ref=f312e42]:
+              - button "Help" [ref=f312e43] [cursor=pointer]
+        - generic [ref=f312e47]:
+          - button "Sign up" [ref=f312e49] [cursor=pointer]
+          - button "Log in" [ref=f312e51] [cursor=pointer]
+    - main [ref=f312e53]:
+      - generic [ref=f312e57]:
+        - generic [ref=f312e60]:
+          - generic [ref=f312e62]:
+            - link [ref=f312e63] [cursor=pointer]:
+              - /url: /help/
+              - heading "Help" [level=5] [ref=f312e64]
+            - separator [ref=f312e66]
+            - button "Ask a question" [ref=f312e68] [cursor=pointer]
+          - navigation "Breadcrumb" [ref=f312e74]:
+            - list [ref=f312e75]:
+              - listitem [ref=f312e76]:
+                - link "Downloading, previewing, and uploading" [ref=f312e78] [cursor=pointer]:
+                  - /url: /help/download-preview-upload/
+              - listitem [ref=f312e80]:
+                - button "Show hidden breadcrumb item" [ref=f312e83] [cursor=pointer]:
+                  - paragraph [ref=f312e85]: ...
+              - listitem [ref=f312e86]:
+                - button "Downloading designs as video or GIF - Expand breadcrumb" [ref=f312e88] [cursor=pointer]:
+                  - generic [ref=f312e89]: Downloading designs as video or GIF
+          - article [ref=f312e92]:
+            - heading "Downloading designs as video or GIF" [level=1] [ref=f312e93]
+            - navigation [ref=f312e94]:
+              - paragraph [ref=f312e96]: In this article
+              - list [ref=f312e98]:
+                - listitem [ref=f312e99]:
+                  - link [ref=f312e100] [cursor=pointer]:
+                    - /url: "#download-designs-as-video-or-gif"
+                    - paragraph [ref=f312e104]: Download designs as video or GIF
+                - listitem [ref=f312e105]:
+                  - link [ref=f312e106] [cursor=pointer]:
+                    - /url: "#video-and-gif-download-limits"
+                    - paragraph [ref=f312e110]: Video and GIF download limits
+            - separator [ref=f312e112]
+            - generic [ref=f312e113]:
+              - paragraph [ref=f312e114]: Easily download your designs in video format.
+              - generic [ref=f312e116]:
+                - button "Copy link to heading" [ref=f312e119] [cursor=pointer]
+                - heading "Download designs as video or GIF" [level=3] [ref=f312e121]
+              - list [ref=f312e122]:
+                - listitem [ref=f312e123]: Open the design you want to download.
+                - listitem [ref=f312e124]:
+                  - text: "Optional: Above the"
+                  - link "video editor" [ref=f312e125] [cursor=pointer]:
+                    - /url: https://www.canva.com/video-editor/
+                  - text: ", select (Preview) to preview your design."
+                - listitem [ref=f312e126]: Above the editor, select Share, and then Download.
+                - listitem [ref=f312e127]: Select the file type you want to download your design in. If you used audio, select MP4 Video.
+                - listitem [ref=f312e128]: Select Download. If you used paid elements, select Pay and Download.
+              - paragraph [ref=f312e129]:
+                - text: If the error icon shows up on your video, follow the steps found in
+                - link "My video won’t playback" [ref=f312e130] [cursor=pointer]:
+                  - /url: /help/my-video-wont-playback/
+                - text: .
+            - note [ref=f312e131]:
+              - generic [ref=f312e136]:
+                - paragraph [ref=f312e137]: If you used premium or paid audio
+                - paragraph [ref=f312e138]:
+                  - text: If you used paid audio and if you’ll be posting your design on social media and video sharing sites,
+                  - link "verify your license" [ref=f312e139] [cursor=pointer]:
+                    - /url: /help/verify-music/
+                  - text: when downloading to avoid
+                  - link "copyright claims" [ref=f312e140] [cursor=pointer]:
+                    - /url: /help/content-id-claim/
+                  - text: .
+            - generic [ref=f312e141]:
+              - generic [ref=f312e143]:
+                - button "Copy link to heading" [ref=f312e146] [cursor=pointer]
+                - heading "Video and GIF download limits" [level=3] [ref=f312e148]
+              - paragraph [ref=f312e149]: Canva Free users can download the following video files.
+              - list [ref=f312e150]:
+                - listitem [ref=f312e151]: MP4 videos up to 30 minutes in length with a max resolution of 1920 * 1080px
+                - listitem [ref=f312e152]: GIFs up to 1 minute in length with a max resolution of 1280 * 720px
+              - paragraph [ref=f312e153]: While Canva Pro, Canva Teams, Canva for Nonprofits, and Canva Education users can download the following video files.
+              - list [ref=f312e154]:
+                - listitem [ref=f312e155]: MP4 videos up to 2 hours in length with a max resolution of 3840 * 2160px
+                - listitem [ref=f312e156]: GIFs up to 2 minutes in length with a max resolution of 1920 * 1080px
+            - note [ref=f312e157]:
+              - paragraph [ref=f312e163]:
+                - text: If you’re having problems downloading your design, head over to
+                - link "I can’t download my design or video" [ref=f312e164] [cursor=pointer]:
+                  - /url: /help/cant-download-design-or-video/
+                - text: or
+                - link "Lines, texts, or images moved during download" [ref=f312e165] [cursor=pointer]:
+                  - /url: /help/elements-moved-download/
+                - text: for solutions.
+            - generic [ref=f312e170]:
+              - heading "Was this helpful?" [level=4] [ref=f312e171]
+              - group "Was this helpful?" [ref=f312e172]:
+                - generic [ref=f312e174]:
+                  - button "Helpful" [ref=f312e176] [cursor=pointer]
+                  - paragraph [ref=f312e180]: Helpful
+                - generic [ref=f312e183]:
+                  - button "Unhelpful" [ref=f312e185] [cursor=pointer]
+                  - paragraph [ref=f312e189]: Unhelpful
+            - heading "People also viewed" [level=4] [ref=f312e192]
+        - paragraph [ref=f312e276]:
+          - link "Skip to end of footer" [ref=f312e277] [cursor=pointer]:
+            - /url: "#_r_k_"
+        - generic [ref=f312e281]:
+          - generic [ref=f312e288]:
+            - heading "Download Canva for free" [level=2] [ref=f312e293]
+            - navigation [ref=f312e298]:
+              - list [ref=f312e300]:
+                - listitem [ref=f312e301]:
+                  - heading "Product" [level=2] [ref=f312e303]
+                  - list "Product" [ref=f312e305]:
+                    - listitem [ref=f312e306]:
+                      - link "Latest launches" [ref=f312e307] [cursor=pointer]:
+                        - /url: https://www.canva.com/launches/
+                    - listitem [ref=f312e309]:
+                      - link "Visual Suite" [ref=f312e310] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/visual-suite/
+                    - listitem [ref=f312e312]:
+                      - link "Canva AI" [ref=f312e313] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/canva-ai/
+                    - listitem [ref=f312e315]:
+                      - link "Brand management" [ref=f312e316] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/solutions/brand-management-tools/
+                    - listitem [ref=f312e318]:
+                      - link "Social media" [ref=f312e319] [cursor=pointer]:
+                        - /url: https://www.canva.com/social-media/
+                    - listitem [ref=f312e321]:
+                      - link "Features" [ref=f312e322] [cursor=pointer]:
+                        - /url: https://www.canva.com/features/
+                    - listitem [ref=f312e324]:
+                      - link "Print" [ref=f312e325] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_gb/print/
+                    - listitem [ref=f312e327]:
+                      - link "Affinity" [ref=f312e328] [cursor=pointer]:
+                        - /url: https://www.affinity.studio/
+                    - listitem [ref=f312e335]:
+                      - link "Template library" [ref=f312e336] [cursor=pointer]:
+                        - /url: https://www.canva.in/templates/
+                    - listitem [ref=f312e338]:
+                      - link "Design Trends" [ref=f312e339] [cursor=pointer]:
+                        - /url: https://www.canva.com/design-trends/
+                - listitem [ref=f312e341]:
+                  - heading "Plans" [level=2] [ref=f312e343]
+                  - list "Plans" [ref=f312e345]:
+                    - listitem [ref=f312e346]:
+                      - link "Pricing" [ref=f312e347] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/pricing/
+                    - listitem [ref=f312e349]:
+                      - link "Pro" [ref=f312e350] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/pro/
+                    - listitem [ref=f312e352]:
+                      - link "Business" [ref=f312e353] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/canva-business/
+                    - listitem [ref=f312e355]:
+                      - link "Enterprise" [ref=f312e356] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/enterprise/
+                    - listitem [ref=f312e358]:
+                      - link "Education" [ref=f312e359] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/education/
+                    - listitem [ref=f312e361]:
+                      - link "Higher education" [ref=f312e362] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/higher-education/
+                    - listitem [ref=f312e364]:
+                      - link "Nonprofits" [ref=f312e365] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/nonprofits/
+                    - listitem [ref=f312e367]:
+                      - link "Contact Sales" [ref=f312e368] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/contact-sales/
+                - listitem [ref=f312e370]:
+                  - heading "About" [level=2] [ref=f312e372]
+                  - list "About" [ref=f312e374]:
+                    - listitem [ref=f312e375]:
+                      - link "About Canva" [ref=f312e376] [cursor=pointer]:
+                        - /url: https://www.canva.com/about/
+                    - listitem [ref=f312e378]:
+                      - link "Newsroom" [ref=f312e379] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/newsroom/news/
+                    - listitem [ref=f312e381]:
+                      - link "Events" [ref=f312e382] [cursor=pointer]:
+                        - /url: https://www.canva.com/events/
+                    - listitem [ref=f312e384]:
+                      - link "Canva Originals" [ref=f312e385] [cursor=pointer]:
+                        - /url: https://shop.canva.com/
+                    - listitem [ref=f312e387]:
+                      - link "Careers" [ref=f312e388] [cursor=pointer]:
+                        - /url: https://www.lifeatcanva.com/en
+                    - listitem [ref=f312e395]:
+                      - link "Social impact" [ref=f312e396] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/step-two/
+                    - listitem [ref=f312e398]:
+                      - link "Sustainability" [ref=f312e399] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/sustainability/
+                    - listitem [ref=f312e401]:
+                      - link "Case studies" [ref=f312e402] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/case-studies/
+                - listitem [ref=f312e404]:
+                  - heading "Community" [level=2] [ref=f312e406]
+                  - list "Community" [ref=f312e408]:
+                    - listitem [ref=f312e409]:
+                      - link "Canva Communities" [ref=f312e410] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/community/
+                    - listitem [ref=f312e412]:
+                      - link "Creators" [ref=f312e413] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/creators/
+                    - listitem [ref=f312e415]:
+                      - link "Affiliates" [ref=f312e416] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/help/canva-affiliate-marketing-program/
+                    - listitem [ref=f312e418]:
+                      - link "Canva Represents Fund" [ref=f312e419] [cursor=pointer]:
+                        - /url: https://www.canva.com/canva-represents/
+                    - listitem [ref=f312e421]:
+                      - link "Content partners" [ref=f312e422] [cursor=pointer]:
+                        - /url: https://www.canva.com/partners/content/
+                    - listitem [ref=f312e424]:
+                      - link "Business partner directory" [ref=f312e425] [cursor=pointer]:
+                        - /url: https://partners.canva.com/directory/
+                    - listitem [ref=f312e427]:
+                      - link "Canva Developers" [ref=f312e428] [cursor=pointer]:
+                        - /url: https://www.canva.com/developers/
+                - listitem [ref=f312e435]:
+                  - heading "Inspiration" [level=2] [ref=f312e437]
+                  - list "Inspiration" [ref=f312e439]:
+                    - listitem [ref=f312e440]:
+                      - link "Design Trends" [ref=f312e441] [cursor=pointer]:
+                        - /url: https://www.canva.com/design-trends/
+                    - listitem [ref=f312e443]:
+                      - link "AI creativity podcast" [ref=f312e444] [cursor=pointer]:
+                        - /url: https://promptedpodcast.com/
+                    - listitem [ref=f312e451]:
+                      - link "Learn blog" [ref=f312e452] [cursor=pointer]:
+                        - /url: https://www.canva.com/learn/
+                    - listitem [ref=f312e454]:
+                      - link "Templates Marketplace" [ref=f312e455] [cursor=pointer]:
+                        - /url: https://www.canva.in/templates/
+                    - listitem [ref=f312e457]:
+                      - link "Font pairing" [ref=f312e458] [cursor=pointer]:
+                        - /url: https://www.canva.com/learn/the-ultimate-guide-to-font-pairing/
+                    - listitem [ref=f312e460]:
+                      - link "Colour wheel" [ref=f312e461] [cursor=pointer]:
+                        - /url: https://www.canva.com/colors/color-wheel/
+                    - listitem [ref=f312e463]:
+                      - link "Colours" [ref=f312e464] [cursor=pointer]:
+                        - /url: https://www.canva.com/colors/
+                    - listitem [ref=f312e466]:
+                      - link "Colour palette generator" [ref=f312e467] [cursor=pointer]:
+                        - /url: https://www.canva.com/colors/color-palette-generator/
+                - listitem [ref=f312e469]:
+                  - heading "Help" [level=2] [ref=f312e471]
+                  - list "Help" [ref=f312e473]:
+                    - listitem [ref=f312e474]:
+                      - link "Help Centre" [ref=f312e475] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/help/
+                    - listitem [ref=f312e477]:
+                      - link "Security" [ref=f312e478] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/security/
+                    - listitem [ref=f312e480]:
+                      - link "Trust Centre" [ref=f312e481] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/trust/
+                    - listitem [ref=f312e483]:
+                      - link "Canva Safe AI" [ref=f312e484] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/safe-ai-canva-shield/
+                    - listitem [ref=f312e486]:
+                      - link "Accessibility" [ref=f312e487] [cursor=pointer]:
+                        - /url: https://www.canva.com/accessibility/
+                    - listitem [ref=f312e489]:
+                      - link "Enterprise services" [ref=f312e490] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/enterprise/professional-services/
+                    - listitem [ref=f312e492]:
+                      - link "Design School" [ref=f312e493] [cursor=pointer]:
+                        - /url: https://www.canva.com/design-school/
+                    - listitem [ref=f312e500]:
+                      - link "Sitemap" [ref=f312e501] [cursor=pointer]:
+                        - /url: https://www.canva.com/en_in/sitemap/
+          - generic [ref=f312e505]:
+            - button "English (US)" [ref=f312e515] [cursor=pointer]
+            - paragraph [ref=f312e528]: © 2026 All Rights Reserved
+        - paragraph [ref=f312e530]:
+          - link "Skip to start of footer" [ref=f312e531] [cursor=pointer]:
+            - /url: "#_r_j_"
+  - generic [ref=f312e533]: Suggestions will appear below the field as you type
+  - generic [aria-hidden] [ref=f312e534]: Copy link to heading
+  - generic [aria-hidden] [ref=f312e535]: Copy link to heading
+  - generic [aria-hidden] [ref=f312e536]: 2 more

@@ -1,0 +1,336 @@
+- generic [active] [ref=f79e1]:
+  - generic [ref=f79e2]:
+    - banner [ref=f79e3]:
+      - generic [ref=f79e4]:
+        - link "CloudConvert" [ref=f79e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f79e7]:
+            - img "CloudConvert Logo" [ref=f79e8]
+            - generic [ref=f79e9]: CloudConvert
+        - navigation [ref=f79e11]:
+          - list [ref=f79e13]:
+            - listitem [ref=f79e14]:
+              - button "Tools" [ref=f79e15]
+            - listitem [ref=f79e20]:
+              - button "API" [ref=f79e21]
+            - listitem [ref=f79e26]:
+              - link "Pricing" [ref=f79e27] [cursor=pointer]:
+                - /url: /pricing
+        - generic [ref=f79e29]:
+          - link "Sign in" [ref=f79e30] [cursor=pointer]:
+            - /url: /login
+          - link "Sign up" [ref=f79e32] [cursor=pointer]:
+            - /url: /register
+          - button "Switch to dark mode" [ref=f79e34]
+    - main [ref=f79e37]:
+      - generic [ref=f79e39]:
+        - generic [ref=f79e43]:
+          - generic [ref=f79e44]:
+            - heading "Pricing" [level=1] [ref=f79e45]
+            - paragraph [ref=f79e46]: Pay only for what you need. Use the slider to choose the number of conversion credits you want, and see prices update instantly.
+          - generic [ref=f79e47]:
+            - generic [ref=f79e48]: Select your volume
+            - generic [ref=f79e49]:
+              - generic [ref=f79e50]: 1,000
+              - generic [ref=f79e51]: credits
+            - slider "Thumb" [ref=f79e56]
+            - generic [ref=f79e57]:
+              - generic [ref=f79e58]: "500"
+              - generic [ref=f79e59]: 1,000,000
+            - paragraph [ref=f79e60]:
+              - text: Packages from
+              - strong [ref=f79e61]: ...
+        - table [ref=f79e65]:
+          - rowgroup [ref=f79e66]:
+            - row [ref=f79e67]:
+              - cell [ref=f79e68]
+              - columnheader "Free For personal use, testing and hobby projects. €0 Sign Up" [ref=f79e69]:
+                - generic [ref=f79e70]:
+                  - generic [ref=f79e71]: Free
+                  - generic [ref=f79e73]: For personal use, testing and hobby projects.
+                  - generic [ref=f79e74]: €0
+                  - link "Sign Up" [ref=f79e77] [cursor=pointer]:
+                    - /url: /register
+              - columnheader "Package One-time payment. Credits never expire. ... Buy Now" [ref=f79e79]:
+                - generic [ref=f79e80]:
+                  - generic [ref=f79e81]: Package
+                  - generic [ref=f79e83]: One-time payment. Credits never expire.
+                  - generic [ref=f79e84]: ...
+                  - link "Buy Now" [ref=f79e87] [cursor=pointer]:
+                    - /url: /checkout/package/1000
+              - columnheader "Subscription Monthly credits at our best rates. ... /month Subscribe" [ref=f79e89]:
+                - generic [ref=f79e90]:
+                  - generic [ref=f79e91]: Subscription
+                  - generic [ref=f79e93]: Monthly credits at our best rates.
+                  - generic [ref=f79e94]:
+                    - generic [ref=f79e95]: ...
+                    - generic [ref=f79e96]: /month
+                  - link "Subscribe" [ref=f79e100] [cursor=pointer]:
+                    - /url: /checkout/subscription/1000
+              - columnheader "Enterprise Custom plans for large-scale workloads. Custom Contact Sales" [ref=f79e102]:
+                - generic [ref=f79e103]:
+                  - generic [ref=f79e104]: Enterprise
+                  - generic [ref=f79e106]: Custom plans for large-scale workloads.
+                  - generic [ref=f79e107]: Custom
+                  - link "Contact Sales" [ref=f79e110] [cursor=pointer]:
+                    - /url: /contact
+          - rowgroup [ref=f79e112]:
+            - row [ref=f79e113]:
+              - rowheader "Conversion Credits" [ref=f79e114]
+              - cell "10 / day" [ref=f79e116]
+              - cell "1,000 2" [ref=f79e120]:
+                - generic [ref=f79e122]:
+                  - generic [ref=f79e123]: 1,000
+                  - slider "Thumb" [ref=f79e128]
+              - cell "1,000 / month 2" [ref=f79e129]:
+                - generic [ref=f79e131]:
+                  - generic [ref=f79e132]: 1,000 / month
+                  - slider "Thumb" [ref=f79e137]
+              - cell "Custom" [ref=f79e138]
+            - row [ref=f79e142]:
+              - rowheader "Cost per Credit" [ref=f79e143]
+              - cell "Free" [ref=f79e145]
+              - cell "..." [ref=f79e147]
+              - cell "..." [ref=f79e149]
+              - cell "Custom" [ref=f79e151]
+            - row [ref=f79e153]:
+              - rowheader "Credit Expiry" [ref=f79e154]
+              - cell "Daily reset" [ref=f79e156]
+              - cell "Never" [ref=f79e158]
+              - cell "Monthly reset" [ref=f79e160]
+              - cell "Custom" [ref=f79e162]
+            - row [ref=f79e164]:
+              - rowheader "Features" [ref=f79e165]
+              - cell [ref=f79e167]
+              - cell [ref=f79e168]
+              - cell [ref=f79e169]
+              - cell [ref=f79e170]
+            - row [ref=f79e171]:
+              - rowheader "All API Features" [ref=f79e172]
+              - cell [ref=f79e174]
+              - cell [ref=f79e178]
+              - cell [ref=f79e182]
+              - cell [ref=f79e186]
+            - row [ref=f79e190]:
+              - rowheader "All Bandwidth Included" [ref=f79e191]
+              - cell [ref=f79e193]
+              - cell [ref=f79e197]
+              - cell [ref=f79e201]
+              - cell [ref=f79e205]
+            - row [ref=f79e209]:
+              - rowheader "Processing Priority" [ref=f79e210]
+              - cell "Low" [ref=f79e212]
+              - cell "High" [ref=f79e214]
+              - cell "High" [ref=f79e216]
+              - cell "High" [ref=f79e218]
+            - row [ref=f79e220]:
+              - rowheader "Max File Size" [ref=f79e221]
+              - cell "1 GB" [ref=f79e223]
+              - cell "Unlimited" [ref=f79e227]
+              - cell "Unlimited" [ref=f79e233]
+              - cell "Unlimited" [ref=f79e239]
+            - row [ref=f79e245]:
+              - rowheader "Max Processing Time" [ref=f79e246]
+              - cell "5 minutes" [ref=f79e248]
+              - cell "Unlimited" [ref=f79e252]
+              - cell "Unlimited" [ref=f79e258]
+              - cell "Unlimited" [ref=f79e264]
+            - row [ref=f79e270]:
+              - rowheader "Concurrent Tasks" [ref=f79e271]
+              - cell "5" [ref=f79e273]
+              - cell "Unlimited" [ref=f79e277]
+              - cell "Unlimited" [ref=f79e283]
+              - cell "Unlimited" [ref=f79e289]
+            - row [ref=f79e295]:
+              - rowheader "Dedicated Capacity" [ref=f79e296]
+              - cell [ref=f79e298]
+              - cell [ref=f79e302]
+              - cell [ref=f79e306]
+              - cell "Optional" [ref=f79e310]
+            - row [ref=f79e312]:
+              - rowheader "Install Custom Fonts" [ref=f79e313]
+              - cell [ref=f79e315]
+              - cell [ref=f79e319]
+              - cell [ref=f79e323]
+              - cell [ref=f79e327]
+            - row [ref=f79e331]:
+              - rowheader "Support & Compliance" [ref=f79e332]
+              - cell [ref=f79e334]
+              - cell [ref=f79e335]
+              - cell [ref=f79e336]
+              - cell [ref=f79e337]
+            - row [ref=f79e338]:
+              - rowheader "Support" [ref=f79e339]
+              - cell [ref=f79e341]
+              - cell "Standard" [ref=f79e345]
+              - cell "Standard" [ref=f79e347]
+              - cell "Priority" [ref=f79e349]
+            - row [ref=f79e351]:
+              - rowheader "99.9% SLA" [ref=f79e352]
+              - cell [ref=f79e354]
+              - cell [ref=f79e358]
+              - cell [ref=f79e362]
+              - cell [ref=f79e366]
+            - row [ref=f79e370]:
+              - rowheader "Data Processing Agreement" [ref=f79e371]
+              - cell [ref=f79e373]
+              - cell [ref=f79e377]
+              - cell [ref=f79e381]
+              - cell [ref=f79e385]
+            - row [ref=f79e389]:
+              - rowheader "Auto-Refill" [ref=f79e390]
+              - cell [ref=f79e392]
+              - cell [ref=f79e396]
+              - cell [ref=f79e400]
+              - cell [ref=f79e404]
+            - row [ref=f79e408]:
+              - rowheader "Team Billing" [ref=f79e409]
+              - cell [ref=f79e411]
+              - cell [ref=f79e415]
+              - cell [ref=f79e419]
+              - cell [ref=f79e423]
+            - row [ref=f79e427]:
+              - rowheader "SSO / SAML 2.0" [ref=f79e428]
+              - cell [ref=f79e430]
+              - cell [ref=f79e434]
+              - cell [ref=f79e438]
+              - cell [ref=f79e442]
+            - row [ref=f79e446]:
+              - rowheader "Custom Security Reviews" [ref=f79e447]
+              - cell [ref=f79e449]
+              - cell [ref=f79e453]
+              - cell [ref=f79e457]
+              - cell [ref=f79e461]
+            - row [ref=f79e465]:
+              - rowheader "Custom Contracts & NDAs" [ref=f79e466]
+              - cell [ref=f79e468]
+              - cell [ref=f79e472]
+              - cell [ref=f79e476]
+              - cell [ref=f79e480]
+            - row [ref=f79e484]:
+              - rowheader "Metered Billing / Invoicing" [ref=f79e485]
+              - cell [ref=f79e487]
+              - cell [ref=f79e491]
+              - cell [ref=f79e495]
+              - cell [ref=f79e499]
+        - generic [ref=f79e505]:
+          - generic [ref=f79e506]:
+            - heading "What are conversion credits?" [level=3] [ref=f79e507]
+            - generic [ref=f79e508]:
+              - paragraph [ref=f79e510]:
+                - text: The longer a conversion takes, the more resources it consumes and the more expensive it becomes. Our packages and subscriptions typically consume
+                - strong [ref=f79e511]: one credit per minute of conversion time
+                - text: .Depending on the conversion type, each conversion also has
+                - strong [ref=f79e512]: a base credit cost
+                - text: . By default, conversions consume
+                - strong [ref=f79e513]: at least one credit
+                - text: ", with additional credits charged for every extra minute if the conversion takes longer than one minute. We also offer a few"
+                - strong [ref=f79e514]: premium conversion types
+                - text: that require more resources and therefore have a minimum base cost of two credits. Of course, only successful conversions are charged.
+              - generic [ref=f79e515]:
+                - table [ref=f79e516]:
+                  - rowgroup [ref=f79e517]:
+                    - row [ref=f79e518]:
+                      - columnheader "Conversion Type" [ref=f79e519]
+                      - columnheader "Base Credits" [ref=f79e520]
+                  - rowgroup [ref=f79e521]:
+                    - row [ref=f79e522]:
+                      - cell "General" [ref=f79e523]
+                      - cell "1" [ref=f79e524]
+                    - row [ref=f79e525]:
+                      - cell "Office to PDF" [ref=f79e526]
+                      - cell "2" [ref=f79e527]
+                    - row [ref=f79e528]:
+                      - cell "iWork to PDF" [ref=f79e529]
+                      - cell "2" [ref=f79e530]
+                    - row [ref=f79e531]:
+                      - cell "PDF to Office" [ref=f79e532]
+                      - cell "4" [ref=f79e533]
+                - button "Credits Calculator" [ref=f79e534]
+          - generic [ref=f79e538]:
+            - heading "Why do I have to pay for a base amount of credits per conversion?" [level=3] [ref=f79e539]
+            - paragraph [ref=f79e542]: Ninety-five percent of our conversions take only a few seconds, and we already account for that. To make costs more predictable, our pricing is based on a combination of the minimum credits consumed per conversion type and the total conversion time.
+          - generic [ref=f79e543]:
+            - heading "What is the difference between a package and a subscription?" [level=3] [ref=f79e544]
+            - paragraph [ref=f79e547]:
+              - strong [ref=f79e548]: Packages
+              - text: are one-time purchases — your credits never expire and you can use them whenever you like ("pay as you go").
+              - strong [ref=f79e549]: Subscriptions
+              - text: charge a monthly fee for a fixed amount of credits at a lower per-credit price, but unused credits
+              - strong [ref=f79e550]: do not roll over
+              - text: at the end of the month. Subscriptions can be up to 50% cheaper than packages.
+          - generic [ref=f79e551]:
+            - heading "Can I combine packages and subscriptions?" [level=3] [ref=f79e552]
+            - paragraph [ref=f79e555]: Yes! Your credits from your monthly subscription will be consumed first, and then your package credits will be consumed.
+          - generic [ref=f79e556]:
+            - heading "How can I make sure my account never runs out of credits?" [level=3] [ref=f79e557]
+            - paragraph [ref=f79e560]:
+              - text: An
+              - strong [ref=f79e561]: auto-refill
+              - text: option is available for packages. When enabled, your account is automatically refilled as soon as it runs out of credits. You can activate it in the
+              - link "billing settings" [ref=f79e562] [cursor=pointer]:
+                - /url: /settings/billing/plan
+              - text: .
+          - generic [ref=f79e563]:
+            - heading "Can I share my package/subscription with multiple accounts?" [level=3] [ref=f79e564]
+            - paragraph [ref=f79e567]: Yes. Team billing is available, so organizations such as companies or schools can use one central billing account with unlimited team members. Only billing is shared across accounts; files and conversions remain private.
+          - generic [ref=f79e568]:
+            - heading "When can I cancel/change my subscription?" [level=3] [ref=f79e569]
+            - paragraph [ref=f79e572]: You can cancel your subscription at any time. There is no minimum term. You can also switch to a different subscription at any time, but any remaining conversion credits will expire.
+          - generic [ref=f79e573]:
+            - heading "Which payment methods are available?" [level=3] [ref=f79e574]
+            - paragraph [ref=f79e577]: We accept all major credit cards including Visa, MasterCard, and American Express.
+        - generic [ref=f79e579]:
+          - heading "Ready to get started?" [level=2] [ref=f79e580]
+          - paragraph [ref=f79e581]: Start free with 10 conversions per day. No credit card required.
+          - generic [ref=f79e582]:
+            - link "Get Started Free" [ref=f79e583] [cursor=pointer]:
+              - /url: /register
+            - link "Contact Sales" [ref=f79e587] [cursor=pointer]:
+              - /url: /contact
+    - contentinfo [ref=f79e591]:
+      - generic [ref=f79e592]:
+        - button "Switch to dark mode" [ref=f79e594]
+        - navigation [ref=f79e598]:
+          - generic [ref=f79e599]:
+            - generic [ref=f79e600]:
+              - heading "Company" [level=3] [ref=f79e601]
+              - list [ref=f79e602]:
+                - listitem [ref=f79e603]:
+                  - link "About Us" [ref=f79e604] [cursor=pointer]:
+                    - /url: /about
+                - listitem [ref=f79e606]:
+                  - link "Security" [ref=f79e607] [cursor=pointer]:
+                    - /url: /security
+            - generic [ref=f79e609]:
+              - heading "Resources" [level=3] [ref=f79e610]
+              - list [ref=f79e611]:
+                - listitem [ref=f79e612]:
+                  - link "Blog" [ref=f79e613] [cursor=pointer]:
+                    - /url: /blog
+                - listitem [ref=f79e615]:
+                  - link "Status" [ref=f79e616] [cursor=pointer]:
+                    - /url: https://status.cloudconvert.com
+            - generic [ref=f79e618]:
+              - heading "Legal" [level=3] [ref=f79e619]
+              - list [ref=f79e620]:
+                - listitem [ref=f79e621]:
+                  - link "Privacy" [ref=f79e622] [cursor=pointer]:
+                    - /url: /privacy
+                - listitem [ref=f79e624]:
+                  - link "Terms" [ref=f79e625] [cursor=pointer]:
+                    - /url: /terms
+                - listitem [ref=f79e627]:
+                  - link "Imprint" [ref=f79e628] [cursor=pointer]:
+                    - /url: /about#imprint
+            - generic [ref=f79e630]:
+              - heading "Contact" [level=3] [ref=f79e631]
+              - list [ref=f79e632]:
+                - listitem [ref=f79e633]:
+                  - link "Contact Us" [ref=f79e634] [cursor=pointer]:
+                    - /url: /contact
+        - generic [ref=f79e636]:
+          - generic [ref=f79e637]: © 2026 Lunaweb GmbH
+          - generic [ref=f79e638]: Made in Munich, Germany
+  - region "Notifications (F8)":
+    - list

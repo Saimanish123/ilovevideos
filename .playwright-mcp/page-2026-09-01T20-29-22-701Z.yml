@@ -1,0 +1,293 @@
+- generic [ref=f27e2]:
+  - link "Skip to main content" [ref=f27e3] [cursor=pointer]:
+    - /url: "#content"
+  - banner [ref=f27e4]:
+    - generic [ref=f27e6]:
+      - link [ref=f27e9] [cursor=pointer]:
+        - /url: /
+        - img "Fathom Analytics" [ref=f27e11]
+      - navigation [ref=f27e13]:
+        - generic [ref=f27e14]:
+          - link "Product" [ref=f27e15] [cursor=pointer]:
+            - /url: /features
+          - button "Why Fathom" [ref=f27e16] [cursor=pointer]
+          - link "Pricing" [ref=f27e19] [cursor=pointer]:
+            - /url: /pricing
+          - button "Resources" [ref=f27e20] [cursor=pointer]
+        - menu:
+          - generic:
+            - group "Why Fathom":
+              - menuitem "The Google Analytics Alternative Why you should ditch Google Analytics":
+                - generic: The Google Analytics Alternative
+                - generic: Why you should ditch Google Analytics
+              - menuitem "No cookies & GDPR compliant Actionable insights while staying compliant with privacy laws":
+                - generic: No cookies & GDPR compliant
+                - generic: Actionable insights while staying compliant with privacy laws
+              - menuitem "About us 100% independently owned, zero VC pressure":
+                - generic: About us
+                - generic: 100% independently owned, zero VC pressure
+            - group "Resources":
+              - menuitem "Help Center & Docs"
+              - menuitem "API"
+              - menuitem "Blog"
+              - menuitem "Changelog"
+              - menuitem "Status"
+      - generic [ref=f27e23]:
+        - link "Free trial" [ref=f27e24] [cursor=pointer]:
+          - /url: https://app.usefathom.com/register
+        - link "Login" [ref=f27e25] [cursor=pointer]:
+          - /url: https://app.usefathom.com/
+    - text:  
+  - main [ref=f27e26]:
+    - article [ref=f27e27]:
+      - generic [ref=f27e29]:
+        - heading "Simple and sustainable pricing" [level=1] [ref=f27e30]
+        - paragraph [ref=f27e31]: Get the information you need about your website without compromising anyone’s digital privacy. Start with a 7-day free trial of Fathom and then pay a fair and sustainable monthly price based on your average monthly page views.
+      - generic [ref=f27e34]:
+        - generic [ref=f27e35]: About how many pageviews and events do you get per month?
+        - generic [ref=f27e36]:
+          - slider "About how many pageviews and events do you get per month?" [ref=f27e37] [cursor=pointer]: "2"
+          - generic [ref=f27e38]:
+            - generic [ref=f27e39]: 100k
+            - generic [ref=f27e40]: 500k
+            - generic [ref=f27e41]: 2M
+            - generic [ref=f27e42]: 10M
+            - generic [ref=f27e43]: 25M+
+        - generic [ref=f27e45]:
+          - generic [ref=f27e46]:
+            - paragraph [ref=f27e47]: Up to 500,000 pageviews
+            - paragraph [ref=f27e48]:
+              - generic [ref=f27e49]: $45/month
+            - paragraph [ref=f27e50]:
+              - button "Pay yearly instead (2 months free)" [ref=f27e51] [cursor=pointer]
+          - link "Start your 7-day free trial" [ref=f27e52] [cursor=pointer]:
+            - /url: https://app.usefathom.com/register?plan=price_1OMiuQJpbH9soFseaah1xMDb
+        - generic [ref=f27e53]:
+          - generic [ref=f27e54]:
+            - generic [ref=f27e56]:
+              - heading "50 sites included" [level=4] [ref=f27e57]
+              - paragraph [ref=f27e58]: Bigger pageview plans include more. Need extra? Add them yourself in packs of 50 for $10/month.
+            - generic [ref=f27e60]:
+              - heading "Forever data retention" [level=4] [ref=f27e61]
+              - paragraph [ref=f27e62]: 2, 4 or 8 years? How about forever! While you're a customer, your full analytics history stays available.
+            - generic [ref=f27e64]:
+              - heading "Saved dashboard views" [level=4] [ref=f27e65]
+              - paragraph [ref=f27e66]: Save your filters and switch between them in one click.
+            - generic [ref=f27e68]:
+              - heading "Shared dashboards" [level=4] [ref=f27e69]
+              - paragraph [ref=f27e70]: Give clients or team members read-only access to a dashboard. Add a password if you want to keep it private.
+            - generic [ref=f27e72]:
+              - heading "Ecommerce and event tracking" [level=4] [ref=f27e73]
+              - paragraph [ref=f27e74]: Track conversions, revenue, and custom events on every plan. No extra fees.
+            - generic [ref=f27e76]:
+              - heading "UTM campaign tracking" [level=4] [ref=f27e77]
+              - paragraph [ref=f27e78]: See which newsletters, ads, and campaigns drive traffic and conversions.
+            - generic [ref=f27e80]:
+              - heading "Automatic bot filtering" [level=4] [ref=f27e81]
+              - paragraph [ref=f27e82]: Bots and crawlers are filtered out so your stats reflect real visitors.
+            - generic [ref=f27e84]:
+              - heading "Analytics API" [level=4] [ref=f27e85]
+              - paragraph [ref=f27e86]: Full API access with 600 requests per hour included. Pull your data into your own tools and workflows.
+            - generic [ref=f27e88]:
+              - heading "No cookie banners required" [level=4] [ref=f27e89]
+              - paragraph [ref=f27e90]: Privacy-first analytics that works under GDPR without consent popups.
+            - generic [ref=f27e92]:
+              - heading "100% data ownership" [level=4] [ref=f27e93]
+              - paragraph [ref=f27e94]: Your data belongs to you. We never sell it or use it for advertising.
+            - generic [ref=f27e96]:
+              - heading "Unlimited email reports and exports" [level=4] [ref=f27e97]
+              - paragraph [ref=f27e98]: Schedule email reports and export your data whenever you need it.
+            - generic [ref=f27e100]:
+              - heading "Email support from real humans" [level=4] [ref=f27e101]
+              - paragraph [ref=f27e102]: Questions get answered by real people, not a ticket maze.
+          - paragraph [ref=f27e103]:
+            - link "See all our features" [ref=f27e104] [cursor=pointer]:
+              - /url: /features
+              - text: See all our features
+              - generic [ref=f27e105]: 
+          - generic [ref=f27e106]: All pricing is in USD and renews automatically unless cancelled. Every plan includes at least 50 sites, with bigger plans including more. Need extra? Add them yourself in packs of 50 for $10/month.
+      - generic [ref=f27e107]: Join thousands of companies already using Fathom Analytics
+      - generic [ref=f27e108]:
+        - img "Bootstrap" [ref=f27e109]
+        - img "IBM" [ref=f27e110]
+        - img "HashiCorp" [ref=f27e111]
+        - img "GitHub" [ref=f27e112]
+        - img "New York Times" [ref=f27e113]
+        - img "Laravel" [ref=f27e114]
+      - generic [ref=f27e115]:
+        - blockquote [ref=f27e117]:
+          - paragraph [ref=f27e118]: After switching to Fathom for my web properties, I find I'm more attentive to my sites because I'm always aware of how many people are on them and which pages are most popular.
+          - generic [ref=f27e121]:
+            - img "Caleb Porzio" [ref=f27e122]
+            - generic [ref=f27e123]: Caleb PorzioCreator of Alpine.js
+        - blockquote [ref=f27e125]:
+          - paragraph [ref=f27e126]: Wow, what a breath of fresh air. I love how simple Fathom Analytics is, and it really gives you all the traffic metrics you could need.
+          - generic [ref=f27e129]:
+            - img "Joel Gascoigne" [ref=f27e130]
+            - generic [ref=f27e131]: Joel GascoigneCEO of Buffer
+        - blockquote [ref=f27e133]:
+          - paragraph [ref=f27e134]: Fathom Analytics is a great Google Analytics alternative because it is focused on protecting visitors’ privacy and does not bog down loading times, leading to faster websites.
+          - generic [ref=f27e137]:
+            - img "Nathalie Lussier" [ref=f27e138]
+            - generic [ref=f27e139]: Nathalie LussierFounder of AccessAlly.com
+      - heading "Frequently asked questions (and answers)" [level=2] [ref=f27e140]
+      - generic [ref=f27e141]:
+        - generic [ref=f27e142]:
+          - heading "Will you do a pre-sales call or live demo for us?" [level=4] [ref=f27e143]
+          - paragraph [ref=f27e144]:
+            - text: We unfortunately don't offer live demos or do calls in our sales process. That said, our software is ridiculously easy to use and you can watch a
+            - link "10 minute video demo" [ref=f27e145] [cursor=pointer]:
+              - /url: /video/dashboard-walkthrough
+            - text: or click around on
+            - link "our live demo" [ref=f27e146] [cursor=pointer]:
+              - /url: https://app.usefathom.com/demo
+            - text: . Every
+            - link "feature is documented" [ref=f27e147] [cursor=pointer]:
+              - /url: /docs
+            - text: and you can even give our software a 7-day free trial (run it alongside your existing analytics). Of course, if you need help or have specific questions, we're here
+            - link "via email" [ref=f27e148] [cursor=pointer]:
+              - /url: /about/contact
+            - text: ", just let us know how we can be of assistance."
+        - generic [ref=f27e149]:
+          - heading "Do you have a lower/free option?" [level=4] [ref=f27e150]
+          - paragraph [ref=f27e151]: "Nope, and here's why: we've heavily invested in enterprise-level infrastructure with great speed and reliability (we don't just host our software on cheap VPS servers that go offline). Our business model is selling software, not your data. So we've priced for long-term sustainability of our company. That way we can offer our product for a very long time (forever)."
+        - generic [ref=f27e152]:
+          - heading "Do you ever do sales or discounts?" [level=4] [ref=f27e153]
+          - paragraph [ref=f27e154]: Never. Not even for Black Friday. So rest assured, the price you are seeing today or are paying in your account currently is the best price EVER. We've never done discounts, nor will we ever. We feel this is fair, because everyone pays the exact same price.
+        - generic [ref=f27e155]:
+          - heading "What happens if I hit my pageview limit?" [level=4] [ref=f27e156]
+          - paragraph [ref=f27e157]: We'll never turn your analytics off for occasional traffic spikes or if a payment fails the first time (hey, this has happened to all of us at least once). Instead, if you go over for two months in a row, we'll let you know we're upgrading you. From there, you can decide to stay or cancel your account (no hard feelings either way).
+        - generic [ref=f27e158]:
+          - heading "Can I switch to a different pageview limit?" [level=4] [ref=f27e159]
+          - paragraph [ref=f27e160]: Of course! If you exceed your pageview limits for two months in a row, we'll offer to do that for you. Or, if you're under your current tier for two months in a row (and it's not our lowest tier already), you can downgrade from within our billing settings.
+        - generic [ref=f27e161]:
+          - heading "How many sites does my plan include?" [level=4] [ref=f27e162]
+          - paragraph [ref=f27e163]:
+            - text: Every plan includes at least 50 sites, and the bigger pageview plans include more (75 on the 1M plan, scaling up to hundreds on the largest plans). You'll see the exact number for each plan in the
+            - link "pricing table" [ref=f27e164] [cursor=pointer]:
+              - /url: "#pricing"
+            - text: . If you need more than your plan includes, you can add sites yourself in packs of 50 for $10/month each (or $100/year, which gets you two months free) from your billing settings. You can add up to 15 packs (750 extra sites) yourself. Need more than that?
+            - link "Get in touch" [ref=f27e165] [cursor=pointer]:
+              - /url: /about/contact
+            - text: and we'll sort you out.
+        - generic [ref=f27e166]:
+          - heading "What if I want to cancel my account or trial?" [level=4] [ref=f27e167]
+          - paragraph [ref=f27e168]: We're not interested in having someone's money if they aren't happy. So if you want to cancel your account at any point, you can do so right from your settings - you don't even have to call or email us (unless you have a question). There are no contracts, meaning you can cancel anytime (with a complete data export).
+        - generic [ref=f27e169]:
+          - heading "Does custom event tracking count as pageviews?" [level=4] [ref=f27e170]
+          - paragraph [ref=f27e171]: Yes. If you decide to use our custom event tracking system on your website or use our API, those requests will be counted as if they were pageviews.
+        - generic [ref=f27e172]:
+          - heading "What if I have another question?" [level=4] [ref=f27e173]
+          - paragraph [ref=f27e174]:
+            - link "Reach out" [ref=f27e175] [cursor=pointer]:
+              - /url: /about/contact
+            - text: "! We will be happy to help with any pre-sales questions."
+  - contentinfo [ref=f27e176]:
+    - generic [ref=f27e177]:
+      - generic [ref=f27e178]:
+        - link [ref=f27e180] [cursor=pointer]:
+          - /url: /
+          - img "Fathom Analytics" [ref=f27e182]
+        - article [ref=f27e183]:
+          - paragraph [ref=f27e184]:
+            - text: We've counted billions of pageviews for thousands of customers, all without ever compromising anyone's digital privacy. We hope you'll
+            - link "join us" [ref=f27e185] [cursor=pointer]:
+              - /url: https://app.usefathom.com/register
+            - text: .
+          - generic [ref=f27e186]:
+            - generic [ref=f27e187]: 
+            - text: 2018-2026 Fathom Analytics.
+      - generic [ref=f27e189]:
+        - generic [ref=f27e190]:
+          - heading "Get started" [level=4] [ref=f27e191]
+          - list [ref=f27e192]:
+            - listitem [ref=f27e193]:
+              - link "How Fathom works" [ref=f27e194] [cursor=pointer]:
+                - /url: /features/how-fathom-analytics-works
+            - listitem [ref=f27e195]:
+              - link "Pricing" [ref=f27e196] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=f27e197]:
+              - link "Start a free trial" [ref=f27e198] [cursor=pointer]:
+                - /url: https://app.usefathom.com/register
+            - listitem [ref=f27e199]:
+              - link "View our demo" [ref=f27e200] [cursor=pointer]:
+                - /url: https://app.usefathom.com/demo
+          - heading "Learn" [level=4] [ref=f27e201]
+          - list [ref=f27e202]:
+            - listitem [ref=f27e203]:
+              - link "Blog" [ref=f27e204] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f27e205]:
+              - link "Podcast" [ref=f27e206] [cursor=pointer]:
+                - /url: /podcast
+            - listitem [ref=f27e207]:
+              - link "Help Centre" [ref=f27e208] [cursor=pointer]:
+                - /url: /docs
+            - listitem [ref=f27e209]:
+              - link "API documentation" [ref=f27e210] [cursor=pointer]:
+                - /url: /api/v1
+        - generic [ref=f27e211]:
+          - heading "Our software" [level=4] [ref=f27e212]
+          - list [ref=f27e213]:
+            - listitem [ref=f27e214]:
+              - link "Our features" [ref=f27e215] [cursor=pointer]:
+                - /url: /features
+            - listitem [ref=f27e216]:
+              - link "About our company" [ref=f27e217] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f27e218]:
+              - link "vs Google Analytics" [ref=f27e219] [cursor=pointer]:
+                - /url: /features/vs-google-analytics
+            - listitem [ref=f27e220]:
+              - link "vs Matomo" [ref=f27e221] [cursor=pointer]:
+                - /url: /features/vs-matomo
+            - listitem [ref=f27e222]:
+              - link "vs Cloudflare" [ref=f27e223] [cursor=pointer]:
+                - /url: /features/vs-cloudflare-web-analytics
+          - heading "Legal" [level=4] [ref=f27e224]
+          - list [ref=f27e225]:
+            - listitem [ref=f27e226]:
+              - link "Privacy" [ref=f27e227] [cursor=pointer]:
+                - /url: /legal/privacy
+            - listitem [ref=f27e228]:
+              - link "Terms" [ref=f27e229] [cursor=pointer]:
+                - /url: /legal/terms
+            - listitem [ref=f27e230]:
+              - link "GDPR compliance" [ref=f27e231] [cursor=pointer]:
+                - /url: /legal/compliance/gdpr-compliant-website-analytics
+        - generic [ref=f27e232]:
+          - heading "Details" [level=4] [ref=f27e233]
+          - list [ref=f27e234]:
+            - listitem [ref=f27e235]:
+              - link "Contact" [ref=f27e236] [cursor=pointer]:
+                - /url: /about/contact
+            - listitem [ref=f27e237]:
+              - link "Data" [ref=f27e238] [cursor=pointer]:
+                - /url: /data
+            - listitem [ref=f27e239]:
+              - link "Partners" [ref=f27e240] [cursor=pointer]:
+                - /url: /affiliates
+            - listitem [ref=f27e241]:
+              - link "Changelog" [ref=f27e242] [cursor=pointer]:
+                - /url: /changelog
+            - listitem [ref=f27e243]:
+              - link "Status" [ref=f27e244] [cursor=pointer]:
+                - /url: https://status.usefathom.com/
+            - listitem [ref=f27e245]:
+              - link "Roadmap" [ref=f27e246] [cursor=pointer]:
+                - /url: /roadmap
+            - listitem [ref=f27e247]:
+              - link "Imprint" [ref=f27e248] [cursor=pointer]:
+                - /url: /about/imprint
+            - listitem [ref=f27e249]:
+              - link "Sitemap" [ref=f27e250] [cursor=pointer]:
+                - /url: /sitemap
+          - generic [ref=f27e251]:
+            - link "Follow us on X/Twitter" [ref=f27e252] [cursor=pointer]:
+              - /url: https://twitter.com/usefathom
+            - link "Subscribe on YouTube" [ref=f27e255] [cursor=pointer]:
+              - /url: https://www.youtube.com/@FathomAnalytics
+            - link "Follow us on LinkedIn" [ref=f27e258] [cursor=pointer]:
+              - /url: https://ca.linkedin.com/company/fathom-analytics
+  - text: 

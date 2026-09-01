@@ -1,0 +1,238 @@
+- generic [active] [ref=e1]:
+  - paragraph [ref=e2]
+  - generic [ref=e3]: DuckDuckGo
+  - paragraph [ref=e4]
+  - generic [ref=e5]:
+    - textbox [ref=e6]: video tools research
+    - button "Search" [ref=e7] [cursor=pointer]
+    - generic [ref=e8]:
+      - combobox [ref=e9] [cursor=pointer]:
+        - option "All Regions" [selected]
+        - option "Argentina"
+        - option "Australia"
+        - option "Austria"
+        - option "Belgium (fr)"
+        - option "Belgium (nl)"
+        - option "Brazil"
+        - option "Bulgaria"
+        - option "Canada (en)"
+        - option "Canada (fr)"
+        - option "Catalonia"
+        - option "Chile"
+        - option "China"
+        - option "Colombia"
+        - option "Croatia"
+        - option "Czech Republic"
+        - option "Denmark"
+        - option "Estonia"
+        - option "Finland"
+        - option "France"
+        - option "Germany"
+        - option "Greece"
+        - option "Hong Kong"
+        - option "Hungary"
+        - option "Iceland"
+        - option "India (en)"
+        - option "Indonesia (en)"
+        - option "Ireland"
+        - option "Israel (en)"
+        - option "Italy"
+        - option "Japan"
+        - option "Korea"
+        - option "Latvia"
+        - option "Lithuania"
+        - option "Malaysia (en)"
+        - option "Mexico"
+        - option "Netherlands"
+        - option "New Zealand"
+        - option "Norway"
+        - option "Pakistan (en)"
+        - option "Peru"
+        - option "Philippines (en)"
+        - option "Poland"
+        - option "Portugal"
+        - option "Romania"
+        - option "Russia"
+        - option "Saudi Arabia"
+        - option "Singapore"
+        - option "Slovakia"
+        - option "Slovenia"
+        - option "South Africa"
+        - option "Spain (ca)"
+        - option "Spain (es)"
+        - option "Sweden"
+        - option "Switzerland (de)"
+        - option "Switzerland (fr)"
+        - option "Taiwan"
+        - option "Thailand (en)"
+        - option "Turkey"
+        - option "US (English)"
+        - option "US (Spanish)"
+        - option "Ukraine"
+        - option "United Kingdom"
+        - option "Vietnam (en)"
+      - combobox [ref=e10] [cursor=pointer]:
+        - option "Any Time" [selected]
+        - option "Past Day"
+        - option "Past Week"
+        - option "Past Month"
+        - option "Past Year"
+  - paragraph [ref=e11]
+  - table [ref=e12]:
+    - rowgroup [ref=e13]:
+      - row [ref=e14]:
+        - cell
+        - cell [ref=e15]:
+          - button "Next Page >" [ref=e17] [cursor=pointer]
+  - paragraph [ref=e18]
+  - table
+  - table [ref=e19]:
+    - rowgroup [ref=e20]:
+      - row [ref=e21]:
+        - cell "1." [ref=e22]
+        - cell [ref=e23]:
+          - link "Learn about the best video research tools on the market - AIR Media-Tech" [ref=e24] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fair.io%2Fen%2Fai%2Dtools%2Ftop%2D6%2Dviral%2Dvideo%2Dresearch%2Dtools%2Devery%2Dcreator%2Dmust%2Dknow%2Din%2D2026&rut=a79ef49c2b5ca105f810e6c2fe5a9aaa2439c4b950cc2305f9177c6c2fac508b
+      - row [ref=e25]:
+        - cell [ref=e26]
+        - cell "Learn how AI can help you reduce the video research time in half to help you with your creative process → Save time with AIR Media-Tech" [ref=e27]
+      - row [ref=e28]:
+        - cell [ref=e29]
+        - cell "air.io/en/ai-tools/top-6-viral-video-research-tools-every-creator-must-know-in-2026 2026-01-30T00:00:00.0000000" [ref=e30]
+      - row [ref=e31]:
+        - cell [ref=e32]
+        - cell [ref=e33]
+      - row [ref=e34]:
+        - cell "2." [ref=e35]
+        - cell [ref=e36]:
+          - link "Video Research - topai.tools" [ref=e37] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Ftopai.tools%2Fs%2Fvideo%2Dresearch&rut=33d1f9566fc6ae5f28cff1e248339e7888c1ce79a11e5330cfc206d35924b67f
+      - row [ref=e38]:
+        - cell [ref=e39]
+        - cell "Explore the top 20+ Video Research AI, including video search engine, wave.video, video marketing tool, video summaries, video search tool and more" [ref=e40]
+      - row [ref=e41]:
+        - cell [ref=e42]
+        - cell "topai.tools/s/video-research" [ref=e43]
+      - row [ref=e44]:
+        - cell [ref=e45]
+        - cell [ref=e46]
+      - row [ref=e47]:
+        - cell "3." [ref=e48]
+        - cell [ref=e49]:
+          - 'link "A Closer Look into Recent Video-based Learning Research: A ... - Springer" [ref=e50] [cursor=pointer]':
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs40593%2D025%2D00481%2Dx&rut=c451cb4fd74b2fdb6003fc2781356a26e9466b871cb6d81e47f4b4ed13caa049
+      - row [ref=e51]:
+        - cell [ref=e52]
+        - 'cell "Specifically, our research goals encompass a close investigation of: (a) methodological approaches, (b) video characteristics, (c) tasks and technologies used to develop methods, tools, and frameworks that support learning, (d) guidelines to design learning videos, as well as (e) findings from controlled experiments and data analysis." [ref=e53]'
+      - row [ref=e54]:
+        - cell [ref=e55]
+        - cell "link.springer.com/article/10.1007/s40593-025-00481-x 2025-05-21T00:00:00.0000000" [ref=e56]
+      - row [ref=e57]:
+        - cell [ref=e58]
+        - cell [ref=e59]
+      - row [ref=e60]:
+        - cell "4." [ref=e61]
+        - cell [ref=e62]:
+          - link "Video Creator Tools - MIDiA Research" [ref=e63] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.midiaresearch.com%2Fvideo%2Dcreator%2Dtools&rut=349fc6abc5bfde5277df0804e4a4291de93c37e57c27136bd6a26c313380f3ba
+      - row [ref=e64]:
+        - cell [ref=e65]
+        - cell "This report analyses creator software usage and behaviours of video creators. It focuses on their roles, software tools used, income and spending behaviours, perspectives on AI tools, creative motivation, most important workflow moments, tools needed and most common pain points." [ref=e66]
+      - row [ref=e67]:
+        - cell [ref=e68]
+        - cell "www.midiaresearch.com/video-creator-tools" [ref=e69]
+      - row [ref=e70]:
+        - cell [ref=e71]
+        - cell [ref=e72]
+      - row [ref=e73]:
+        - cell "5." [ref=e74]
+        - cell [ref=e75]:
+          - link "AI research tools to analyze videos - BUHAVE" [ref=e76] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.buhave.com%2Fai%2Dtools%2Fai%2Dresearch%2Dtools%2Dto%2Danalyze%2Dvideos%2F&rut=0dde841589a78003bc9d142af3312c717ef0d3363605d41cb8730190f1b7b97c
+      - row [ref=e77]:
+        - cell [ref=e78]
+        - cell "By turning video streams into actionable data, these tools save time, improve decision-making, and enhance research accuracy. Whether in academic studies, media monitoring, or security, AI-powered video analysis tools enable deeper understanding and more efficient use of video content." [ref=e79]
+      - row [ref=e80]:
+        - cell [ref=e81]
+        - cell "www.buhave.com/ai-tools/ai-research-tools-to-analyze-videos/ 2026-06-23T00:00:00.0000000" [ref=e82]
+      - row [ref=e83]:
+        - cell [ref=e84]
+        - cell [ref=e85]
+      - row [ref=e86]:
+        - cell "6." [ref=e87]
+        - cell [ref=e88]:
+          - link "Best AI Video Analysis Tools in 2026 - Tested & Ranked | Mixpeek" [ref=e89] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fmixpeek.com%2Fcurated%2Dlists%2Fbest%2Dai%2Dvideo%2Danalysis%2Dtools&rut=fc156b189250184a662205b5f58ff536a5fe6919b4eb11f0bc1ea2d9d912097f
+      - row [ref=e90]:
+        - cell [ref=e91]
+        - cell "Back to All Lists Best AI Video Analysis Tools in 2026 We evaluated leading AI video analysis platforms on scene understanding, temporal reasoning, and metadata extraction quality. This guide covers tools for content intelligence, surveillance, and media production workflows." [ref=e92]
+      - row [ref=e93]:
+        - cell [ref=e94]
+        - cell "mixpeek.com/curated-lists/best-ai-video-analysis-tools" [ref=e95]
+      - row [ref=e96]:
+        - cell [ref=e97]
+        - cell [ref=e98]
+      - row [ref=e99]:
+        - cell "7." [ref=e100]
+        - cell [ref=e101]:
+          - link "Research Video" [ref=e102] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fresearchvideo.zhdk.ch%2F&rut=2a7369dbfd7a96934853efb2f5265e74eea6349748815c31a0826fe163cc5415
+      - row [ref=e103]:
+        - cell [ref=e104]
+        - cell "RESEARCH VIDEO developed a software solution for publishing research as annotated videos and combined it with a theoretical framework for enriched publications. You are invited to use the tool for free and to read texts and tutorials on how to use RESEARCH VIDEO, how to organize the process of research and how to publish annotated videos." [ref=e105]
+      - row [ref=e106]:
+        - cell [ref=e107]
+        - cell "researchvideo.zhdk.ch" [ref=e108]
+      - row [ref=e109]:
+        - cell [ref=e110]
+        - cell [ref=e111]
+      - row [ref=e112]:
+        - cell "8." [ref=e113]
+        - cell [ref=e114]:
+          - link "9 Top Video Market Research Tools For Businesses - Insight7" [ref=e115] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Finsight7.io%2F9%2Dtop%2Dvideo%2Dmarket%2Dresearch%2Dtools%2Dfor%2Dbusinesses%2F&rut=ad8becf9eee7c82ccebf2c8826e7a26ffeb904c0b0978bfb2488cd1188a93247
+      - row [ref=e116]:
+        - cell [ref=e117]
+        - cell "Video research tools offer dynamic solutions for gathering insights that traditional methods simply cannot match. By enabling businesses to capture and analyze video feedback, these tools facilitate a deeper connection with customers and enhance engagement strategies." [ref=e118]
+      - row [ref=e119]:
+        - cell [ref=e120]
+        - cell "insight7.io/9-top-video-market-research-tools-for-businesses/" [ref=e121]
+      - row [ref=e122]:
+        - cell [ref=e123]
+        - cell [ref=e124]
+      - row [ref=e125]:
+        - cell "9." [ref=e126]
+        - cell [ref=e127]:
+          - 'link "Video as a Tool in Qualitative Research: Insights and Applications" [ref=e128] [cursor=pointer]':
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Finternationaljournalofresearch.com%2F2023%2F10%2F13%2Fvideo%2Das%2Da%2Dtool%2Din%2Dqualitative%2Dresearch%2Dinsights%2Dand%2Dapplications%2F&rut=bc78b9d52df11077c5d33466db16ff41ecd8fd5c2e7ea480c71514be71076a08
+      - row [ref=e129]:
+        - cell [ref=e130]
+        - 'cell "Video as a Tool in Qualitative Research: Insights and Applications The evolution of technology has triggered a crucial shift in the landscape of qualitative research methodology. Among the myriad of tools available, video has emerged as a remarkable medium for data collection, analysis, and presentation in qualitative research." [ref=e131]'
+      - row [ref=e132]:
+        - cell [ref=e133]
+        - cell "internationaljournalofresearch.com/2023/10/13/video-as-a-tool-in-qualitative-research-insights-and-applications/" [ref=e134]
+      - row [ref=e135]:
+        - cell [ref=e136]
+        - cell [ref=e137]
+      - row [ref=e138]:
+        - cell "10." [ref=e139]
+        - cell [ref=e140]:
+          - link "AI Video Analysis Open Source Tools For Researchers" [ref=e141] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Finsight7.io%2Fai%2Dvideo%2Danalysis%2Dopen%2Dsource%2Dtools%2Dfor%2Dresearchers%2F&rut=bc6f73ee079af0a3827539171cfa392791bda4d98f3fb21776c7abbbedde5bfa
+      - row [ref=e142]:
+        - cell [ref=e143]
+        - cell "This article explores the best open-source AI video analysis tools available today, highlighting their key features, benefits, and use cases. Whether you are conducting qualitative research, surveillance studies, or social behavior analysis, these tools will help you process and interpret video data with precision." [ref=e144]
+      - row [ref=e145]:
+        - cell [ref=e146]
+        - cell "insight7.io/ai-video-analysis-open-source-tools-for-researchers/ 2025-02-05T00:00:00.0000000" [ref=e147]
+      - row [ref=e148]:
+        - cell [ref=e149]
+        - cell [ref=e150]
+      - row [ref=e151]:
+        - cell [ref=e152]:
+          - button "Next Page >" [ref=e154] [cursor=pointer]
+  - paragraph [ref=e155]
+  - generic [ref=e156]:
+    - textbox [ref=e157]: video tools research
+    - button "Search" [ref=e158] [cursor=pointer]
+  - paragraph [ref=e159]

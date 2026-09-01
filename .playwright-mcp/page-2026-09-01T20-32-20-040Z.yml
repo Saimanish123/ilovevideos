@@ -1,0 +1,503 @@
+- generic [active] [ref=f63e1]:
+  - link "Skip to main content" [ref=f63e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=f63e6]:
+    - generic:
+      - generic: "Is there any video compressor avilable online which can reduce 2/4 gb videos size? Online or wev based would be good : r/software"
+      - banner [ref=f63e10]:
+        - navigation [ref=f63e11]:
+          - link "Home" [ref=f63e15] [cursor=pointer]:
+            - /url: https://www.reddit.com/
+          - search [ref=f63e34]:
+            - generic [ref=f63e36]:
+              - textbox [ref=f63e43]:
+                - /placeholder: Search Reddit
+              - generic [aria-hidden]: Search Reddit
+          - generic [ref=f63e44]:
+            - link "Sign Up" [ref=f63e50] [cursor=pointer]:
+              - /url: https://www.reddit.com/register/
+            - link "Log In" [ref=f63e56] [cursor=pointer]:
+              - /url: https://www.reddit.com/login/
+            - button "Expand user menu" [ref=f63e63] [cursor=pointer]
+      - generic [ref=f63e69]:
+        - generic [ref=f63e70]:
+          - generic [ref=f63e71]:
+            - generic:
+              - generic:
+                - link "Skip to Sign up" [ref=f63e72] [cursor=pointer]:
+                  - /url: "#left-sidebar-container"
+                - link "Skip to Right Sidebar" [ref=f63e73] [cursor=pointer]:
+                  - /url: "#right-sidebar-container"
+          - generic [ref=f63e74]:
+            - main [ref=f63e75]:
+              - 'generic "Is there any video compressor avilable online which can reduce 2/4 gb videos size? Online or wev based would be good : r/software"'
+              - generic [ref=f63e76]:
+                - generic [ref=f63e77]:
+                  - generic [ref=f63e78]:
+                    - button "Back" [ref=f63e80] [cursor=pointer]
+                    - link "Go to software" [ref=f63e88] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/software/
+                    - group [ref=f63e93]:
+                      - generic [ref=f63e94]:
+                        - link "r/software" [ref=f63e98] [cursor=pointer]:
+                          - /url: https://www.reddit.com/r/software/
+                        - generic [aria-hidden] [ref=f63e99]: •
+                        - time [ref=f63e101]: 3y ago
+                      - 'link "Author: Emad_341" [ref=f63e107] [cursor=pointer]':
+                        - /url: https://www.reddit.com/user/Emad_341/
+                        - generic [ref=f63e108]: Emad_341
+                  - generic [ref=f63e109]:
+                    - img "Archived post" [ref=f63e113]
+                    - button "Open user actions" [ref=f63e117] [cursor=pointer]
+                - generic [ref=f63e123]:
+                  - 'heading "Post Title: Is there any video compressor avilable online which can reduce 2/4 gb videos size? Online or wev based would be good" [level=1] [ref=f63e124]': Is there any video compressor avilable online which can reduce 2/4 gb videos size? Online or wev based would be good
+                  - link [ref=f63e127] [cursor=pointer]:
+                    - /url: /r/software/?f=flair_name%3A%22Looking%20for%20software%20%3AAndroid%3A%20%3ASearching%3A%22
+                    - 'generic "Flair: Looking for software :Android: :Searching:" [ref=f63e129]':
+                      - generic [ref=f63e130]:
+                        - text: Looking for software
+                        - img "emoji:Android:" [ref=f63e133]
+                        - img "emoji:Searching:" [ref=f63e136]
+                - generic: Archived post. New comments cannot be posted and votes cannot be cast.
+                - generic "Actions available for this post" [ref=f63e144]:
+                  - generic [ref=f63e147]:
+                    - button "Upvote" [disabled]
+                    - generic [ref=f63e148]: "2"
+                    - button "Downvote" [disabled]
+                  - button "21 Go to comments" [ref=f63e150] [cursor=pointer]:
+                    - generic [ref=f63e151]: "21"
+                    - generic [ref=f63e157]: Go to comments
+                  - button "Share" [ref=f63e161] [cursor=pointer]
+              - generic "8x8 bridges communication gaps, mitigates risk. See how." [ref=f63e168]:
+                - generic [ref=f63e169]:
+                  - 'generic "Advertisement: 8x8 bridges communication gaps, mitigates risk. See how." [ref=f63e170]':
+                    - 'link "Advertisement: 8x8 bridges communication gaps, mitigates risk. See how." [ref=f63e171] [cursor=pointer]':
+                      - /url: https://alb.reddit.com/cr?za=PlANSJKFYrmSH9XJK9vv9AODTEbjDzhjOZ83OaOvOwGU9oqhLBAiHwHIuzIKSEMvwr3E-db27OB9oHKcsj6pwp6gAEMT_z4anEsPmP5W-Is7I5Ojey22gkfnoPZEmENgIfIm3dKo8jvAZRMFZ5XcmjdeJPMKVhtxksyv5sg0yVROB8cxCeQ-fRyILvtKaAsC6Et-ij3FAgr616JbJSqWrYxiDOX6MmquNJ70nj94sET7iJkxWGyh9jm_NYy3tJnj6Fb6uYWyZzs0QyAvRfEM8UYYXBAYcWAMzCE_r5uEUw-YGcjp7b7ukV5fWzNcYjUDqhts-TAIjeMf8LOqCv3Vvqu81pKhdg0o24bGk0oos588XQlyJM0Yshbtr4NMRA8iYAKFTxkT2vv4OVVo_x6WV_cLHVZ8xbysrHkGpfociOMqMf2E8WQw-p8tVsSOJFiAZdQCwbYjMnRQ-AZhGmjUmQVj1Cy6JX5gIYIMc0g1T00D6fTHAOQ7wibBncBvJk-LVACzw6a9t_dLGW7g0bNXuYwHjXaiBgmovgylc8ZkP4CqY9mA_HZwNfn44mGrNPr25Jw3ofm254E49Oo1EORwI50u06mmrxtNLOWuTDIlzcFMNI4EQEP54aNdQJ4iU-WqHGB2S3XgcwkEuboIAjLumT5aIR8usuRgUPgF7GU7paBUMd2rdhf_5tDwIJI1tH_0IaEWIcQ&zp=JsslUo3lDLCgz_tDeupDn_MqxlCUE79jHJDw9c0nJVSrxvThlZwAteUPZ3F15X1nP8Yb6aBNMvy9NM0TI2lVLCR1N_5yPcajjBV8Sz-IiTTtxn-s0a8zaVLjgHUqTt-m2sZIBNI7Q31j39IVULfOVwTctqL8bI34LRw5eO9xPH909P1YM1Dq46KrDs0Gk_fjTVSp4HQIlF2bEyozSxVB6E8Z9TDjRn2w9EW4wFun5Knnfp751SMcNj6M2yG5gqgzOBpdkz_nCUmBrdWbL3cORbHe8XexFObizXWvHvzDzh2VxjGBaMPKXDW2OmZ3iJJK0QZEZYnGRmtn1lMnGNpI0l3co2WLCGCS2sMf4-TKgrPa7RewzMaHqOLoHpeLD6uxqu3LtKqUCiH1kJplCA
+                  - generic [ref=f63e172]:
+                    - generic [ref=f63e173]:
+                      - link "8x8Inc" [ref=f63e176] [cursor=pointer]:
+                        - /url: /user/8x8Inc/
+                        - img "u/8x8Inc avatar" [ref=f63e179]
+                      - generic [ref=f63e181]: •
+                      - link "Ad" [ref=f63e183] [cursor=pointer]:
+                        - /url: /user/8x8Inc/
+                      - link [ref=f63e186] [cursor=pointer]:
+                        - /url: https://alb.reddit.com/cr?za=PlANSJKFYrmSH9XJK9vv9AODTEbjDzhjOZ83OaOvOwGU9oqhLBAiHwHIuzIKSEMvwr3E-db27OB9oHKcsj6pwp6gAEMT_z4anEsPmP5W-Is7I5Ojey22gkfnoPZEmENgIfIm3dKo8jvAZRMFZ5XcmjdeJPMKVhtxksyv5sg0yVROB8cxCeQ-fRyILvtKaAsC6Et-ij3FAgr616JbJSqWrYxiDOX6MmquNJ70nj94sET7iJkxWGyh9jm_NYy3tJnj6Fb6uYWyZzs0QyAvRfEM8UYYXBAYcWAMzCE_r5uEUw-YGcjp7b7ukV5fWzNcYjUDqhts-TAIjeMf8LOqCv3Vvqu81pKhdg0o24bGk0oos588XQlyJM0Yshbtr4NMRA8iYAKFTxkT2vv4OVVo_x6WV_cLHVZ8xbysrHkGpfociOMqMf2E8WQw-p8tVsSOJFiAZdQCwbYjMnRQ-AZhGmjUmQVj1Cy6JX5gIYIMc0g1T00D6fTHAOQ7wibBncBvJk-LVACzw6a9t_dLGW7g0bNXuYwHjXaiBgmovgylc8ZkP4CqY9mA_HZwNfn44mGrNPr25Jw3ofm254E49Oo1EORwI50u06mmrxtNLOWuTDIlzcFMNI4EQEP54aNdQJ4iU-WqHGB2S3XgcwkEuboIAjLumT5aIR8usuRgUPgF7GU7paBUMd2rdhf_5tDwIJI1tH_0IaEWIcQ&zp=JsslUo3lDLCgz_tDeupDn_MqxlCUE79jHJDw9c0nJVSrxvThlZwAteUPZ3F15X1nP8Yb6aBNMvy9NM0TI2lVLCR1N_5yPcajjBV8Sz-IiTTtxn-s0a8zaVLjgHUqTt-m2sZIBNI7Q31j39IVULfOVwTctqL8bI34LRw5eO9xPH909P1YM1Dq46KrDs0Gk_fjTVSp4HQIlF2bEyozSxVB6E8Z9TDjRn2w9EW4wFun5Knnfp751SMcNj6M2yG5gqgzOBpdkz_nCUmBrdWbL3cORbHe8XexFObizXWvHvzDzh2VxjGBaMPKXDW2OmZ3iJJK0QZEZYnGRmtn1lMnGNpI0l3co2WLCGCS2sMf4-TKgrPa7RewzMaHqOLoHpeLD6uxqu3LtKqUCiH1kJplCA
+                    - button "Open user actions" [ref=f63e192] [cursor=pointer]
+                  - generic [ref=f63e198]:
+                    - generic [ref=f63e199]:
+                      - link "8x8 bridges communication gaps, mitigates risk. See how." [ref=f63e201] [cursor=pointer]:
+                        - /url: https://alb.reddit.com/cr?za=PlANSJKFYrmSH9XJK9vv9AODTEbjDzhjOZ83OaOvOwGU9oqhLBAiHwHIuzIKSEMvwr3E-db27OB9oHKcsj6pwp6gAEMT_z4anEsPmP5W-Is7I5Ojey22gkfnoPZEmENgIfIm3dKo8jvAZRMFZ5XcmjdeJPMKVhtxksyv5sg0yVROB8cxCeQ-fRyILvtKaAsC6Et-ij3FAgr616JbJSqWrYxiDOX6MmquNJ70nj94sET7iJkxWGyh9jm_NYy3tJnj6Fb6uYWyZzs0QyAvRfEM8UYYXBAYcWAMzCE_r5uEUw-YGcjp7b7ukV5fWzNcYjUDqhts-TAIjeMf8LOqCv3Vvqu81pKhdg0o24bGk0oos588XQlyJM0Yshbtr4NMRA8iYAKFTxkT2vv4OVVo_x6WV_cLHVZ8xbysrHkGpfociOMqMf2E8WQw-p8tVsSOJFiAZdQCwbYjMnRQ-AZhGmjUmQVj1Cy6JX5gIYIMc0g1T00D6fTHAOQ7wibBncBvJk-LVACzw6a9t_dLGW7g0bNXuYwHjXaiBgmovgylc8ZkP4CqY9mA_HZwNfn44mGrNPr25Jw3ofm254E49Oo1EORwI50u06mmrxtNLOWuTDIlzcFMNI4EQEP54aNdQJ4iU-WqHGB2S3XgcwkEuboIAjLumT5aIR8usuRgUPgF7GU7paBUMd2rdhf_5tDwIJI1tH_0IaEWIcQ&zp=JsslUo3lDLCgz_tDeupDn_MqxlCUE79jHJDw9c0nJVSrxvThlZwAteUPZ3F15X1nP8Yb6aBNMvy9NM0TI2lVLCR1N_5yPcajjBV8Sz-IiTTtxn-s0a8zaVLjgHUqTt-m2sZIBNI7Q31j39IVULfOVwTctqL8bI34LRw5eO9xPH909P1YM1Dq46KrDs0Gk_fjTVSp4HQIlF2bEyozSxVB6E8Z9TDjRn2w9EW4wFun5Knnfp751SMcNj6M2yG5gqgzOBpdkz_nCUmBrdWbL3cORbHe8XexFObizXWvHvzDzh2VxjGBaMPKXDW2OmZ3iJJK0QZEZYnGRmtn1lMnGNpI0l3co2WLCGCS2sMf4-TKgrPa7RewzMaHqOLoHpeLD6uxqu3LtKqUCiH1kJplCA
+                      - generic [ref=f63e202]:
+                        - link [ref=f63e204] [cursor=pointer]:
+                          - /url: https://alb.reddit.com/cr?za=PlANSJKFYrmSH9XJK9vv9AODTEbjDzhjOZ83OaOvOwGU9oqhLBAiHwHIuzIKSEMvwr3E-db27OB9oHKcsj6pwp6gAEMT_z4anEsPmP5W-Is7I5Ojey22gkfnoPZEmENgIfIm3dKo8jvAZRMFZ5XcmjdeJPMKVhtxksyv5sg0yVROB8cxCeQ-fRyILvtKaAsC6Et-ij3FAgr616JbJSqWrYxiDOX6MmquNJ70nj94sET7iJkxWGyh9jm_NYy3tJnj6Fb6uYWyZzs0QyAvRfEM8UYYXBAYcWAMzCE_r5uEUw-YGcjp7b7ukV5fWzNcYjUDqhts-TAIjeMf8LOqCv3Vvqu81pKhdg0o24bGk0oos588XQlyJM0Yshbtr4NMRA8iYAKFTxkT2vv4OVVo_x6WV_cLHVZ8xbysrHkGpfociOMqMf2E8WQw-p8tVsSOJFiAZdQCwbYjMnRQ-AZhGmjUmQVj1Cy6JX5gIYIMc0g1T00D6fTHAOQ7wibBncBvJk-LVACzw6a9t_dLGW7g0bNXuYwHjXaiBgmovgylc8ZkP4CqY9mA_HZwNfn44mGrNPr25Jw3ofm254E49Oo1EORwI50u06mmrxtNLOWuTDIlzcFMNI4EQEP54aNdQJ4iU-WqHGB2S3XgcwkEuboIAjLumT5aIR8usuRgUPgF7GU7paBUMd2rdhf_5tDwIJI1tH_0IaEWIcQ&zp=JsslUo3lDLCgz_tDeupDn_MqxlCUE79jHJDw9c0nJVSrxvThlZwAteUPZ3F15X1nP8Yb6aBNMvy9NM0TI2lVLCR1N_5yPcajjBV8Sz-IiTTtxn-s0a8zaVLjgHUqTt-m2sZIBNI7Q31j39IVULfOVwTctqL8bI34LRw5eO9xPH909P1YM1Dq46KrDs0Gk_fjTVSp4HQIlF2bEyozSxVB6E8Z9TDjRn2w9EW4wFun5Knnfp751SMcNj6M2yG5gqgzOBpdkz_nCUmBrdWbL3cORbHe8XexFObizXWvHvzDzh2VxjGBaMPKXDW2OmZ3iJJK0QZEZYnGRmtn1lMnGNpI0l3co2WLCGCS2sMf4-TKgrPa7RewzMaHqOLoHpeLD6uxqu3LtKqUCiH1kJplCA
+                        - generic [ref=f63e205]:
+                          - link "View More" [ref=f63e207] [cursor=pointer]:
+                            - /url: https://alb.reddit.com/cr?za=PlANSJKFYrmSH9XJK9vv9AODTEbjDzhjOZ83OaOvOwGU9oqhLBAiHwHIuzIKSEMvwr3E-db27OB9oHKcsj6pwp6gAEMT_z4anEsPmP5W-Is7I5Ojey22gkfnoPZEmENgIfIm3dKo8jvAZRMFZ5XcmjdeJPMKVhtxksyv5sg0yVROB8cxCeQ-fRyILvtKaAsC6Et-ij3FAgr616JbJSqWrYxiDOX6MmquNJ70nj94sET7iJkxWGyh9jm_NYy3tJnj6Fb6uYWyZzs0QyAvRfEM8UYYXBAYcWAMzCE_r5uEUw-YGcjp7b7ukV5fWzNcYjUDqhts-TAIjeMf8LOqCv3Vvqu81pKhdg0o24bGk0oos588XQlyJM0Yshbtr4NMRA8iYAKFTxkT2vv4OVVo_x6WV_cLHVZ8xbysrHkGpfociOMqMf2E8WQw-p8tVsSOJFiAZdQCwbYjMnRQ-AZhGmjUmQVj1Cy6JX5gIYIMc0g1T00D6fTHAOQ7wibBncBvJk-LVACzw6a9t_dLGW7g0bNXuYwHjXaiBgmovgylc8ZkP4CqY9mA_HZwNfn44mGrNPr25Jw3ofm254E49Oo1EORwI50u06mmrxtNLOWuTDIlzcFMNI4EQEP54aNdQJ4iU-WqHGB2S3XgcwkEuboIAjLumT5aIR8usuRgUPgF7GU7paBUMd2rdhf_5tDwIJI1tH_0IaEWIcQ&zp=JsslUo3lDLCgz_tDeupDn_MqxlCUE79jHJDw9c0nJVSrxvThlZwAteUPZ3F15X1nP8Yb6aBNMvy9NM0TI2lVLCR1N_5yPcajjBV8Sz-IiTTtxn-s0a8zaVLjgHUqTt-m2sZIBNI7Q31j39IVULfOVwTctqL8bI34LRw5eO9xPH909P1YM1Dq46KrDs0Gk_fjTVSp4HQIlF2bEyozSxVB6E8Z9TDjRn2w9EW4wFun5Knnfp751SMcNj6M2yG5gqgzOBpdkz_nCUmBrdWbL3cORbHe8XexFObizXWvHvzDzh2VxjGBaMPKXDW2OmZ3iJJK0QZEZYnGRmtn1lMnGNpI0l3co2WLCGCS2sMf4-TKgrPa7RewzMaHqOLoHpeLD6uxqu3LtKqUCiH1kJplCA
+                          - link "8x8.com" [ref=f63e212] [cursor=pointer]:
+                            - /url: https://alb.reddit.com/cr?za=PlANSJKFYrmSH9XJK9vv9AODTEbjDzhjOZ83OaOvOwGU9oqhLBAiHwHIuzIKSEMvwr3E-db27OB9oHKcsj6pwp6gAEMT_z4anEsPmP5W-Is7I5Ojey22gkfnoPZEmENgIfIm3dKo8jvAZRMFZ5XcmjdeJPMKVhtxksyv5sg0yVROB8cxCeQ-fRyILvtKaAsC6Et-ij3FAgr616JbJSqWrYxiDOX6MmquNJ70nj94sET7iJkxWGyh9jm_NYy3tJnj6Fb6uYWyZzs0QyAvRfEM8UYYXBAYcWAMzCE_r5uEUw-YGcjp7b7ukV5fWzNcYjUDqhts-TAIjeMf8LOqCv3Vvqu81pKhdg0o24bGk0oos588XQlyJM0Yshbtr4NMRA8iYAKFTxkT2vv4OVVo_x6WV_cLHVZ8xbysrHkGpfociOMqMf2E8WQw-p8tVsSOJFiAZdQCwbYjMnRQ-AZhGmjUmQVj1Cy6JX5gIYIMc0g1T00D6fTHAOQ7wibBncBvJk-LVACzw6a9t_dLGW7g0bNXuYwHjXaiBgmovgylc8ZkP4CqY9mA_HZwNfn44mGrNPr25Jw3ofm254E49Oo1EORwI50u06mmrxtNLOWuTDIlzcFMNI4EQEP54aNdQJ4iU-WqHGB2S3XgcwkEuboIAjLumT5aIR8usuRgUPgF7GU7paBUMd2rdhf_5tDwIJI1tH_0IaEWIcQ&zp=JsslUo3lDLCgz_tDeupDn_MqxlCUE79jHJDw9c0nJVSrxvThlZwAteUPZ3F15X1nP8Yb6aBNMvy9NM0TI2lVLCR1N_5yPcajjBV8Sz-IiTTtxn-s0a8zaVLjgHUqTt-m2sZIBNI7Q31j39IVULfOVwTctqL8bI34LRw5eO9xPH909P1YM1Dq46KrDs0Gk_fjTVSp4HQIlF2bEyozSxVB6E8Z9TDjRn2w9EW4wFun5Knnfp751SMcNj6M2yG5gqgzOBpdkz_nCUmBrdWbL3cORbHe8XexFObizXWvHvzDzh2VxjGBaMPKXDW2OmZ3iJJK0QZEZYnGRmtn1lMnGNpI0l3co2WLCGCS2sMf4-TKgrPa7RewzMaHqOLoHpeLD6uxqu3LtKqUCiH1kJplCA
+                    - link [ref=f63e215] [cursor=pointer]:
+                      - /url: https://alb.reddit.com/cr?za=PlANSJKFYrmSH9XJK9vv9AODTEbjDzhjOZ83OaOvOwGU9oqhLBAiHwHIuzIKSEMvwr3E-db27OB9oHKcsj6pwp6gAEMT_z4anEsPmP5W-Is7I5Ojey22gkfnoPZEmENgIfIm3dKo8jvAZRMFZ5XcmjdeJPMKVhtxksyv5sg0yVROB8cxCeQ-fRyILvtKaAsC6Et-ij3FAgr616JbJSqWrYxiDOX6MmquNJ70nj94sET7iJkxWGyh9jm_NYy3tJnj6Fb6uYWyZzs0QyAvRfEM8UYYXBAYcWAMzCE_r5uEUw-YGcjp7b7ukV5fWzNcYjUDqhts-TAIjeMf8LOqCv3Vvqu81pKhdg0o24bGk0oos588XQlyJM0Yshbtr4NMRA8iYAKFTxkT2vv4OVVo_x6WV_cLHVZ8xbysrHkGpfociOMqMf2E8WQw-p8tVsSOJFiAZdQCwbYjMnRQ-AZhGmjUmQVj1Cy6JX5gIYIMc0g1T00D6fTHAOQ7wibBncBvJk-LVACzw6a9t_dLGW7g0bNXuYwHjXaiBgmovgylc8ZkP4CqY9mA_HZwNfn44mGrNPr25Jw3ofm254E49Oo1EORwI50u06mmrxtNLOWuTDIlzcFMNI4EQEP54aNdQJ4iU-WqHGB2S3XgcwkEuboIAjLumT5aIR8usuRgUPgF7GU7paBUMd2rdhf_5tDwIJI1tH_0IaEWIcQ&zp=JsslUo3lDLCgz_tDeupDn_MqxlCUE79jHJDw9c0nJVSrxvThlZwAteUPZ3F15X1nP8Yb6aBNMvy9NM0TI2lVLCR1N_5yPcajjBV8Sz-IiTTtxn-s0a8zaVLjgHUqTt-m2sZIBNI7Q31j39IVULfOVwTctqL8bI34LRw5eO9xPH909P1YM1Dq46KrDs0Gk_fjTVSp4HQIlF2bEyozSxVB6E8Z9TDjRn2w9EW4wFun5Knnfp751SMcNj6M2yG5gqgzOBpdkz_nCUmBrdWbL3cORbHe8XexFObizXWvHvzDzh2VxjGBaMPKXDW2OmZ3iJJK0QZEZYnGRmtn1lMnGNpI0l3co2WLCGCS2sMf4-TKgrPa7RewzMaHqOLoHpeLD6uxqu3LtKqUCiH1kJplCA
+                      - 'img "Thumbnail image: 8x8 bridges communication gaps, mitigates risk. See how." [ref=f63e216]'
+              - generic [ref=f63e223]:
+                - generic [ref=f63e225]:
+                  - generic [aria-hidden] [ref=f63e226]: "Sort by:"
+                  - button "Sort by Best" [ref=f63e231] [cursor=pointer]:
+                    - generic [ref=f63e232]: Best
+                - button "Search Comments Expand comment search" [ref=f63e240] [cursor=pointer]:
+                  - generic [ref=f63e241]: Search Comments
+                  - generic [ref=f63e248]: Expand comment search
+              - region "Comments" [ref=f63e251]:
+                - heading "Comments Section" [level=1] [ref=f63e252]
+                - article "Comment from Mccobsta 3 years ago" [ref=f63e254]:
+                  - generic [ref=f63e255] [cursor=pointer]:
+                    - link "Mccobsta's profile --- avatar" [ref=f63e261]:
+                      - /url: https://www.reddit.com/user/Mccobsta/
+                      - img "u/Mccobsta avatar" [ref=f63e264]
+                    - generic [ref=f63e268]:
+                      - link "Mccobsta's profile" [ref=f63e272]:
+                        - /url: https://www.reddit.com/user/Mccobsta/
+                        - text: Mccobsta
+                      - generic [aria-hidden] [ref=f63e273]: •
+                      - link [ref=f63e275]:
+                        - /url: https://www.reddit.com/r/software/comments/163jr5h/comment/jy2wu7l/
+                        - time [ref=f63e277]: 3y ago
+                  - generic [ref=f63e279]:
+                    - paragraph [ref=f63e283]: Not online but highly recommended shutter encoder you can give it a file size and it'll get it down to about that
+                    - generic [ref=f63e289]:
+                      - generic [ref=f63e291]:
+                        - button "Upvote" [disabled]
+                        - generic [ref=f63e292]: "2"
+                        - button "Downvote" [disabled]
+                      - button "Give award" [ref=f63e295] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f63e303]: Award
+                      - button "Share" [ref=f63e306] [cursor=pointer]
+                      - button "Open user actions" [ref=f63e315] [cursor=pointer]
+                    - 'article "Comment thread level 1: Reply from Emad_341 3 years ago" [ref=f63e322]':
+                      - generic [ref=f63e323] [cursor=pointer]:
+                        - link "Emad_341's profile --- avatar" [ref=f63e329]:
+                          - /url: https://www.reddit.com/user/Emad_341/
+                        - generic [ref=f63e339]:
+                          - link "Emad_341's profile" [ref=f63e343]:
+                            - /url: https://www.reddit.com/user/Emad_341/
+                            - text: Emad_341
+                          - generic "Comment distinguished as the original poster" [ref=f63e346]: OP
+                          - generic [aria-hidden] [ref=f63e347]: •
+                          - link [ref=f63e349]:
+                            - /url: https://www.reddit.com/r/software/comments/163jr5h/comment/jy3a1gc/
+                            - time [ref=f63e351]: 3y ago
+                      - generic [ref=f63e353]:
+                        - paragraph [ref=f63e357]: Can it reduce 2 or 4gb videos into 1 or less 720p would be okay
+                        - 'article "Comment thread level 2: Reply from Mccobsta 3 years ago" [ref=f63e362]':
+                          - generic [ref=f63e363] [cursor=pointer]:
+                            - link "Mccobsta's profile --- avatar" [ref=f63e369]:
+                              - /url: https://www.reddit.com/user/Mccobsta/
+                              - img "u/Mccobsta avatar" [ref=f63e372]
+                            - generic [ref=f63e376]:
+                              - link "Mccobsta's profile" [ref=f63e380]:
+                                - /url: https://www.reddit.com/user/Mccobsta/
+                                - text: Mccobsta
+                              - generic [aria-hidden] [ref=f63e381]: •
+                              - link [ref=f63e383]:
+                                - /url: https://www.reddit.com/r/software/comments/163jr5h/comment/jy3a5r8/
+                                - time [ref=f63e385]: 3y ago
+                          - generic [ref=f63e387]:
+                            - paragraph [ref=f63e391]: Definitely it uses the amazing ffmpeg it's insanely powerful
+                            - button "5 more replies" [ref=f63e398] [cursor=pointer]:
+                              - generic [ref=f63e403]:
+                                - generic [ref=f63e404]: "5"
+                                - text: more replies
+                - article "Comment from mrdebacle99 3 years ago" [ref=f63e406]:
+                  - generic [ref=f63e407] [cursor=pointer]:
+                    - link "mrdebacle99's profile --- avatar" [ref=f63e413]:
+                      - /url: https://www.reddit.com/user/mrdebacle99/
+                      - img "u/mrdebacle99 avatar" [ref=f63e416]
+                    - generic [ref=f63e420]:
+                      - link "mrdebacle99's profile" [ref=f63e424]:
+                        - /url: https://www.reddit.com/user/mrdebacle99/
+                        - text: mrdebacle99
+                      - generic [aria-hidden] [ref=f63e425]: •
+                      - link [ref=f63e427]:
+                        - /url: https://www.reddit.com/r/software/comments/163jr5h/comment/jy46soh/
+                        - time [ref=f63e429]: 3y ago
+                  - generic [ref=f63e431]:
+                    - paragraph [ref=f63e435]: I don't think you'd easily find one online for that file size. You'd probably have to use a local tool for that.
+                    - 'article "Comment thread level 1: Reply from Emad_341 3 years ago" [ref=f63e440]':
+                      - generic [ref=f63e441] [cursor=pointer]:
+                        - link "Emad_341's profile --- avatar" [ref=f63e447]:
+                          - /url: https://www.reddit.com/user/Emad_341/
+                        - generic [ref=f63e457]:
+                          - link "Emad_341's profile" [ref=f63e461]:
+                            - /url: https://www.reddit.com/user/Emad_341/
+                            - text: Emad_341
+                          - generic "Comment distinguished as the original poster" [ref=f63e464]: OP
+                          - generic [aria-hidden] [ref=f63e465]: •
+                          - link [ref=f63e467]:
+                            - /url: https://www.reddit.com/r/software/comments/163jr5h/comment/jy50w7b/
+                            - time [ref=f63e469]: 3y ago
+                      - paragraph [ref=f63e475]: Any android app recommend?
+                - article "Comment from LitCast 3 years ago" [ref=f63e479]:
+                  - generic [ref=f63e480] [cursor=pointer]:
+                    - link "LitCast's profile --- avatar" [ref=f63e486]:
+                      - /url: https://www.reddit.com/user/LitCast/
+                    - generic [ref=f63e496]:
+                      - link "LitCast's profile" [ref=f63e500]:
+                        - /url: https://www.reddit.com/user/LitCast/
+                        - text: LitCast
+                      - generic [aria-hidden] [ref=f63e501]: •
+                      - link [ref=f63e503]:
+                        - /url: https://www.reddit.com/r/software/comments/163jr5h/comment/jy3v98o/
+                        - time [ref=f63e505]: 3y ago
+                  - generic [ref=f63e507]:
+                    - paragraph [ref=f63e511]: AV1 codec can do this if you have a powerful enough GPU
+                    - 'article "Comment thread level 1: Reply from Emad_341 3 years ago" [ref=f63e516]':
+                      - generic [ref=f63e517] [cursor=pointer]:
+                        - link "Emad_341's profile --- avatar" [ref=f63e523]:
+                          - /url: https://www.reddit.com/user/Emad_341/
+                        - generic [ref=f63e533]:
+                          - link "Emad_341's profile" [ref=f63e537]:
+                            - /url: https://www.reddit.com/user/Emad_341/
+                            - text: Emad_341
+                          - generic "Comment distinguished as the original poster" [ref=f63e540]: OP
+                          - generic [aria-hidden] [ref=f63e541]: •
+                          - link [ref=f63e543]:
+                            - /url: https://www.reddit.com/r/software/comments/163jr5h/comment/jy3vi0o/
+                            - time [ref=f63e545]: 3y ago
+                      - paragraph [ref=f63e551]: I Don't have a pc and I tagged android flair
+                - generic "Build faster, experiment more, & boost creativity with the Parallels AI package" [ref=f63e555]:
+                  - generic [ref=f63e556]:
+                    - 'generic "Advertisement: Build faster, experiment more, & boost creativity with the Parallels AI package" [ref=f63e557]':
+                      - 'link "Advertisement: Build faster, experiment more, & boost creativity with the Parallels AI package" [ref=f63e558] [cursor=pointer]':
+                        - /url: https://alb.reddit.com/cr?za=OR-bQdGnUtu6RUs_Qi8rzzRCtNbLo_7TwxX96q--QfPtB8yDO1VaDQZIlzENjk3f-RxUQ8R4qhtT6xcjiITG4aflkXGoJFxcjb0wAsDfK3DvRcqsFVkRlytcK9PALFcGeA7fYhs1VHd2xJxkMP_i7W6Z7nbx5nCV7VMvHW-DL-Aiul0T4NwrBdmLW20SZZgd7DtKsRuYoL275FwxU0qN1Lsi8K4lanp_Bwq9SR6uuDv6mvZLuIhkkm38t8Sq0M4G-Blz-UZFSe9O5GjscGRs_KP-wIzHhlUtuM9xhVxgZfgVZK9T58ymPLK4yWIa6Q6kRglUUAgs-D1CL3Y0t5x3Fomh9EjUae7wlTNXklmN7ZVHSTuxbDI4RRtStBvBYorsNcAP0MNqWdyDN36m9nRmBmu9bGrYfHl6KxuXc8U9skoPrCKPQX71GJZXI62DOuInAs4fLjintDnsxJx94RkMSqDtv_3hTQQH64Ko1L84Fpi-hm0DzZvsHL5nuzYPfSJttf_xgvH5R-8h2MdbKp5p-lapQvIuVab9aaEMnxrNIchMqS2l3TG60Q2YhoJMEjqsSv0ZXJK9pGJQAuJ6fxEa_3VnYUdOdHXQkYcME0BduLp77PQKNLvm-2vAUaodtbD53CC3SwSbOezahf97s3mP_1FGW45GSpvKIk0MaRsWB1ALXr8TeTqndvS1_C40Xh4ILqs&zp=DucyeAi5sXm_PH7XldZQA6stAGvjoCHGAagJAPa9UmbNVj72N-NrwseSuC00Y7E-KHkDpqaTko0kaiFxF4A-EGcMOjm2iyhZ1R36JZ95qC3wsb5kSqkh-XzyTGQV_6qtqWn8uYOZ1f1ByxOqS3wEc4Js9b1J6mrLAk_vbNnoXZuGuNhfX4X1jLPFNVdAp4Ftyqci9Jz-4fLrudzJ22Al2QahOTkMatD34b84dLvbQ1iQXhf52t2NBUsvMBHIFdhEjXUuT_R_rfYC2HhnHpWGctWs6mjabuf3S1DlrqShef_AkVjQf7uahTx1lSsf03xyamU3E-qXVWYnIB9nHOQL1f9Y2C2OauA9yE2dMHZ7iP9x6iAZoqbt_ILMNCNcFPCMbcjynpD1DVV7EJuRuivMcvrNH0MgOxRd0YW_I8rMpLyJDFHu605hnjMiqqV9C_guiooVCkfuCQ
+                    - generic [ref=f63e559]:
+                      - generic [ref=f63e560]:
+                        - link "u/parallels-desktop" [ref=f63e563] [cursor=pointer]:
+                          - /url: /user/parallels-desktop/
+                          - img "u/parallels-desktop avatar" [ref=f63e566]
+                        - generic [ref=f63e568]: •
+                        - link "Ad" [ref=f63e570] [cursor=pointer]:
+                          - /url: /user/parallels-desktop/
+                        - link [ref=f63e573] [cursor=pointer]:
+                          - /url: https://alb.reddit.com/cr?za=OR-bQdGnUtu6RUs_Qi8rzzRCtNbLo_7TwxX96q--QfPtB8yDO1VaDQZIlzENjk3f-RxUQ8R4qhtT6xcjiITG4aflkXGoJFxcjb0wAsDfK3DvRcqsFVkRlytcK9PALFcGeA7fYhs1VHd2xJxkMP_i7W6Z7nbx5nCV7VMvHW-DL-Aiul0T4NwrBdmLW20SZZgd7DtKsRuYoL275FwxU0qN1Lsi8K4lanp_Bwq9SR6uuDv6mvZLuIhkkm38t8Sq0M4G-Blz-UZFSe9O5GjscGRs_KP-wIzHhlUtuM9xhVxgZfgVZK9T58ymPLK4yWIa6Q6kRglUUAgs-D1CL3Y0t5x3Fomh9EjUae7wlTNXklmN7ZVHSTuxbDI4RRtStBvBYorsNcAP0MNqWdyDN36m9nRmBmu9bGrYfHl6KxuXc8U9skoPrCKPQX71GJZXI62DOuInAs4fLjintDnsxJx94RkMSqDtv_3hTQQH64Ko1L84Fpi-hm0DzZvsHL5nuzYPfSJttf_xgvH5R-8h2MdbKp5p-lapQvIuVab9aaEMnxrNIchMqS2l3TG60Q2YhoJMEjqsSv0ZXJK9pGJQAuJ6fxEa_3VnYUdOdHXQkYcME0BduLp77PQKNLvm-2vAUaodtbD53CC3SwSbOezahf97s3mP_1FGW45GSpvKIk0MaRsWB1ALXr8TeTqndvS1_C40Xh4ILqs&zp=DucyeAi5sXm_PH7XldZQA6stAGvjoCHGAagJAPa9UmbNVj72N-NrwseSuC00Y7E-KHkDpqaTko0kaiFxF4A-EGcMOjm2iyhZ1R36JZ95qC3wsb5kSqkh-XzyTGQV_6qtqWn8uYOZ1f1ByxOqS3wEc4Js9b1J6mrLAk_vbNnoXZuGuNhfX4X1jLPFNVdAp4Ftyqci9Jz-4fLrudzJ22Al2QahOTkMatD34b84dLvbQ1iQXhf52t2NBUsvMBHIFdhEjXUuT_R_rfYC2HhnHpWGctWs6mjabuf3S1DlrqShef_AkVjQf7uahTx1lSsf03xyamU3E-qXVWYnIB9nHOQL1f9Y2C2OauA9yE2dMHZ7iP9x6iAZoqbt_ILMNCNcFPCMbcjynpD1DVV7EJuRuivMcvrNH0MgOxRd0YW_I8rMpLyJDFHu605hnjMiqqV9C_guiooVCkfuCQ
+                      - button "Open user actions" [ref=f63e579] [cursor=pointer]
+                    - generic [ref=f63e585]:
+                      - generic [ref=f63e586]:
+                        - link "Build faster, experiment more, & boost creativity with the Parallels AI package" [ref=f63e588] [cursor=pointer]:
+                          - /url: https://alb.reddit.com/cr?za=OR-bQdGnUtu6RUs_Qi8rzzRCtNbLo_7TwxX96q--QfPtB8yDO1VaDQZIlzENjk3f-RxUQ8R4qhtT6xcjiITG4aflkXGoJFxcjb0wAsDfK3DvRcqsFVkRlytcK9PALFcGeA7fYhs1VHd2xJxkMP_i7W6Z7nbx5nCV7VMvHW-DL-Aiul0T4NwrBdmLW20SZZgd7DtKsRuYoL275FwxU0qN1Lsi8K4lanp_Bwq9SR6uuDv6mvZLuIhkkm38t8Sq0M4G-Blz-UZFSe9O5GjscGRs_KP-wIzHhlUtuM9xhVxgZfgVZK9T58ymPLK4yWIa6Q6kRglUUAgs-D1CL3Y0t5x3Fomh9EjUae7wlTNXklmN7ZVHSTuxbDI4RRtStBvBYorsNcAP0MNqWdyDN36m9nRmBmu9bGrYfHl6KxuXc8U9skoPrCKPQX71GJZXI62DOuInAs4fLjintDnsxJx94RkMSqDtv_3hTQQH64Ko1L84Fpi-hm0DzZvsHL5nuzYPfSJttf_xgvH5R-8h2MdbKp5p-lapQvIuVab9aaEMnxrNIchMqS2l3TG60Q2YhoJMEjqsSv0ZXJK9pGJQAuJ6fxEa_3VnYUdOdHXQkYcME0BduLp77PQKNLvm-2vAUaodtbD53CC3SwSbOezahf97s3mP_1FGW45GSpvKIk0MaRsWB1ALXr8TeTqndvS1_C40Xh4ILqs&zp=DucyeAi5sXm_PH7XldZQA6stAGvjoCHGAagJAPa9UmbNVj72N-NrwseSuC00Y7E-KHkDpqaTko0kaiFxF4A-EGcMOjm2iyhZ1R36JZ95qC3wsb5kSqkh-XzyTGQV_6qtqWn8uYOZ1f1ByxOqS3wEc4Js9b1J6mrLAk_vbNnoXZuGuNhfX4X1jLPFNVdAp4Ftyqci9Jz-4fLrudzJ22Al2QahOTkMatD34b84dLvbQ1iQXhf52t2NBUsvMBHIFdhEjXUuT_R_rfYC2HhnHpWGctWs6mjabuf3S1DlrqShef_AkVjQf7uahTx1lSsf03xyamU3E-qXVWYnIB9nHOQL1f9Y2C2OauA9yE2dMHZ7iP9x6iAZoqbt_ILMNCNcFPCMbcjynpD1DVV7EJuRuivMcvrNH0MgOxRd0YW_I8rMpLyJDFHu605hnjMiqqV9C_guiooVCkfuCQ
+                        - generic [ref=f63e589]:
+                          - link [ref=f63e591] [cursor=pointer]:
+                            - /url: https://alb.reddit.com/cr?za=OR-bQdGnUtu6RUs_Qi8rzzRCtNbLo_7TwxX96q--QfPtB8yDO1VaDQZIlzENjk3f-RxUQ8R4qhtT6xcjiITG4aflkXGoJFxcjb0wAsDfK3DvRcqsFVkRlytcK9PALFcGeA7fYhs1VHd2xJxkMP_i7W6Z7nbx5nCV7VMvHW-DL-Aiul0T4NwrBdmLW20SZZgd7DtKsRuYoL275FwxU0qN1Lsi8K4lanp_Bwq9SR6uuDv6mvZLuIhkkm38t8Sq0M4G-Blz-UZFSe9O5GjscGRs_KP-wIzHhlUtuM9xhVxgZfgVZK9T58ymPLK4yWIa6Q6kRglUUAgs-D1CL3Y0t5x3Fomh9EjUae7wlTNXklmN7ZVHSTuxbDI4RRtStBvBYorsNcAP0MNqWdyDN36m9nRmBmu9bGrYfHl6KxuXc8U9skoPrCKPQX71GJZXI62DOuInAs4fLjintDnsxJx94RkMSqDtv_3hTQQH64Ko1L84Fpi-hm0DzZvsHL5nuzYPfSJttf_xgvH5R-8h2MdbKp5p-lapQvIuVab9aaEMnxrNIchMqS2l3TG60Q2YhoJMEjqsSv0ZXJK9pGJQAuJ6fxEa_3VnYUdOdHXQkYcME0BduLp77PQKNLvm-2vAUaodtbD53CC3SwSbOezahf97s3mP_1FGW45GSpvKIk0MaRsWB1ALXr8TeTqndvS1_C40Xh4ILqs&zp=DucyeAi5sXm_PH7XldZQA6stAGvjoCHGAagJAPa9UmbNVj72N-NrwseSuC00Y7E-KHkDpqaTko0kaiFxF4A-EGcMOjm2iyhZ1R36JZ95qC3wsb5kSqkh-XzyTGQV_6qtqWn8uYOZ1f1ByxOqS3wEc4Js9b1J6mrLAk_vbNnoXZuGuNhfX4X1jLPFNVdAp4Ftyqci9Jz-4fLrudzJ22Al2QahOTkMatD34b84dLvbQ1iQXhf52t2NBUsvMBHIFdhEjXUuT_R_rfYC2HhnHpWGctWs6mjabuf3S1DlrqShef_AkVjQf7uahTx1lSsf03xyamU3E-qXVWYnIB9nHOQL1f9Y2C2OauA9yE2dMHZ7iP9x6iAZoqbt_ILMNCNcFPCMbcjynpD1DVV7EJuRuivMcvrNH0MgOxRd0YW_I8rMpLyJDFHu605hnjMiqqV9C_guiooVCkfuCQ
+                          - generic [ref=f63e592]:
+                            - link "Download" [ref=f63e594] [cursor=pointer]:
+                              - /url: https://alb.reddit.com/cr?za=OR-bQdGnUtu6RUs_Qi8rzzRCtNbLo_7TwxX96q--QfPtB8yDO1VaDQZIlzENjk3f-RxUQ8R4qhtT6xcjiITG4aflkXGoJFxcjb0wAsDfK3DvRcqsFVkRlytcK9PALFcGeA7fYhs1VHd2xJxkMP_i7W6Z7nbx5nCV7VMvHW-DL-Aiul0T4NwrBdmLW20SZZgd7DtKsRuYoL275FwxU0qN1Lsi8K4lanp_Bwq9SR6uuDv6mvZLuIhkkm38t8Sq0M4G-Blz-UZFSe9O5GjscGRs_KP-wIzHhlUtuM9xhVxgZfgVZK9T58ymPLK4yWIa6Q6kRglUUAgs-D1CL3Y0t5x3Fomh9EjUae7wlTNXklmN7ZVHSTuxbDI4RRtStBvBYorsNcAP0MNqWdyDN36m9nRmBmu9bGrYfHl6KxuXc8U9skoPrCKPQX71GJZXI62DOuInAs4fLjintDnsxJx94RkMSqDtv_3hTQQH64Ko1L84Fpi-hm0DzZvsHL5nuzYPfSJttf_xgvH5R-8h2MdbKp5p-lapQvIuVab9aaEMnxrNIchMqS2l3TG60Q2YhoJMEjqsSv0ZXJK9pGJQAuJ6fxEa_3VnYUdOdHXQkYcME0BduLp77PQKNLvm-2vAUaodtbD53CC3SwSbOezahf97s3mP_1FGW45GSpvKIk0MaRsWB1ALXr8TeTqndvS1_C40Xh4ILqs&zp=DucyeAi5sXm_PH7XldZQA6stAGvjoCHGAagJAPa9UmbNVj72N-NrwseSuC00Y7E-KHkDpqaTko0kaiFxF4A-EGcMOjm2iyhZ1R36JZ95qC3wsb5kSqkh-XzyTGQV_6qtqWn8uYOZ1f1ByxOqS3wEc4Js9b1J6mrLAk_vbNnoXZuGuNhfX4X1jLPFNVdAp4Ftyqci9Jz-4fLrudzJ22Al2QahOTkMatD34b84dLvbQ1iQXhf52t2NBUsvMBHIFdhEjXUuT_R_rfYC2HhnHpWGctWs6mjabuf3S1DlrqShef_AkVjQf7uahTx1lSsf03xyamU3E-qXVWYnIB9nHOQL1f9Y2C2OauA9yE2dMHZ7iP9x6iAZoqbt_ILMNCNcFPCMbcjynpD1DVV7EJuRuivMcvrNH0MgOxRd0YW_I8rMpLyJDFHu605hnjMiqqV9C_guiooVCkfuCQ
+                            - link "parallels.com" [ref=f63e599] [cursor=pointer]:
+                              - /url: https://alb.reddit.com/cr?za=OR-bQdGnUtu6RUs_Qi8rzzRCtNbLo_7TwxX96q--QfPtB8yDO1VaDQZIlzENjk3f-RxUQ8R4qhtT6xcjiITG4aflkXGoJFxcjb0wAsDfK3DvRcqsFVkRlytcK9PALFcGeA7fYhs1VHd2xJxkMP_i7W6Z7nbx5nCV7VMvHW-DL-Aiul0T4NwrBdmLW20SZZgd7DtKsRuYoL275FwxU0qN1Lsi8K4lanp_Bwq9SR6uuDv6mvZLuIhkkm38t8Sq0M4G-Blz-UZFSe9O5GjscGRs_KP-wIzHhlUtuM9xhVxgZfgVZK9T58ymPLK4yWIa6Q6kRglUUAgs-D1CL3Y0t5x3Fomh9EjUae7wlTNXklmN7ZVHSTuxbDI4RRtStBvBYorsNcAP0MNqWdyDN36m9nRmBmu9bGrYfHl6KxuXc8U9skoPrCKPQX71GJZXI62DOuInAs4fLjintDnsxJx94RkMSqDtv_3hTQQH64Ko1L84Fpi-hm0DzZvsHL5nuzYPfSJttf_xgvH5R-8h2MdbKp5p-lapQvIuVab9aaEMnxrNIchMqS2l3TG60Q2YhoJMEjqsSv0ZXJK9pGJQAuJ6fxEa_3VnYUdOdHXQkYcME0BduLp77PQKNLvm-2vAUaodtbD53CC3SwSbOezahf97s3mP_1FGW45GSpvKIk0MaRsWB1ALXr8TeTqndvS1_C40Xh4ILqs&zp=DucyeAi5sXm_PH7XldZQA6stAGvjoCHGAagJAPa9UmbNVj72N-NrwseSuC00Y7E-KHkDpqaTko0kaiFxF4A-EGcMOjm2iyhZ1R36JZ95qC3wsb5kSqkh-XzyTGQV_6qtqWn8uYOZ1f1ByxOqS3wEc4Js9b1J6mrLAk_vbNnoXZuGuNhfX4X1jLPFNVdAp4Ftyqci9Jz-4fLrudzJ22Al2QahOTkMatD34b84dLvbQ1iQXhf52t2NBUsvMBHIFdhEjXUuT_R_rfYC2HhnHpWGctWs6mjabuf3S1DlrqShef_AkVjQf7uahTx1lSsf03xyamU3E-qXVWYnIB9nHOQL1f9Y2C2OauA9yE2dMHZ7iP9x6iAZoqbt_ILMNCNcFPCMbcjynpD1DVV7EJuRuivMcvrNH0MgOxRd0YW_I8rMpLyJDFHu605hnjMiqqV9C_guiooVCkfuCQ
+                      - link [ref=f63e602] [cursor=pointer]:
+                        - /url: https://alb.reddit.com/cr?za=OR-bQdGnUtu6RUs_Qi8rzzRCtNbLo_7TwxX96q--QfPtB8yDO1VaDQZIlzENjk3f-RxUQ8R4qhtT6xcjiITG4aflkXGoJFxcjb0wAsDfK3DvRcqsFVkRlytcK9PALFcGeA7fYhs1VHd2xJxkMP_i7W6Z7nbx5nCV7VMvHW-DL-Aiul0T4NwrBdmLW20SZZgd7DtKsRuYoL275FwxU0qN1Lsi8K4lanp_Bwq9SR6uuDv6mvZLuIhkkm38t8Sq0M4G-Blz-UZFSe9O5GjscGRs_KP-wIzHhlUtuM9xhVxgZfgVZK9T58ymPLK4yWIa6Q6kRglUUAgs-D1CL3Y0t5x3Fomh9EjUae7wlTNXklmN7ZVHSTuxbDI4RRtStBvBYorsNcAP0MNqWdyDN36m9nRmBmu9bGrYfHl6KxuXc8U9skoPrCKPQX71GJZXI62DOuInAs4fLjintDnsxJx94RkMSqDtv_3hTQQH64Ko1L84Fpi-hm0DzZvsHL5nuzYPfSJttf_xgvH5R-8h2MdbKp5p-lapQvIuVab9aaEMnxrNIchMqS2l3TG60Q2YhoJMEjqsSv0ZXJK9pGJQAuJ6fxEa_3VnYUdOdHXQkYcME0BduLp77PQKNLvm-2vAUaodtbD53CC3SwSbOezahf97s3mP_1FGW45GSpvKIk0MaRsWB1ALXr8TeTqndvS1_C40Xh4ILqs&zp=DucyeAi5sXm_PH7XldZQA6stAGvjoCHGAagJAPa9UmbNVj72N-NrwseSuC00Y7E-KHkDpqaTko0kaiFxF4A-EGcMOjm2iyhZ1R36JZ95qC3wsb5kSqkh-XzyTGQV_6qtqWn8uYOZ1f1ByxOqS3wEc4Js9b1J6mrLAk_vbNnoXZuGuNhfX4X1jLPFNVdAp4Ftyqci9Jz-4fLrudzJ22Al2QahOTkMatD34b84dLvbQ1iQXhf52t2NBUsvMBHIFdhEjXUuT_R_rfYC2HhnHpWGctWs6mjabuf3S1DlrqShef_AkVjQf7uahTx1lSsf03xyamU3E-qXVWYnIB9nHOQL1f9Y2C2OauA9yE2dMHZ7iP9x6iAZoqbt_ILMNCNcFPCMbcjynpD1DVV7EJuRuivMcvrNH0MgOxRd0YW_I8rMpLyJDFHu605hnjMiqqV9C_guiooVCkfuCQ
+                        - 'img "Thumbnail image: Build faster, experiment more, & boost creativity with the Parallels AI package" [ref=f63e603]'
+                - article "Comment from AndalusianGod 3 years ago" [ref=f63e605]:
+                  - generic [ref=f63e606] [cursor=pointer]:
+                    - link "AndalusianGod's profile --- avatar" [ref=f63e612]:
+                      - /url: https://www.reddit.com/user/AndalusianGod/
+                    - generic [ref=f63e622]:
+                      - link "AndalusianGod's profile" [ref=f63e626]:
+                        - /url: https://www.reddit.com/user/AndalusianGod/
+                        - text: AndalusianGod
+                      - generic [aria-hidden] [ref=f63e627]: •
+                      - link [ref=f63e629]:
+                        - /url: https://www.reddit.com/r/software/comments/163jr5h/comment/jy3f2ga/
+                        - time [ref=f63e631]: 3y ago
+                  - generic [ref=f63e633]:
+                    - paragraph [ref=f63e637]: Not online, but Avidemux is opensource and quite easy to use. You can also specify a target filesize and it will try to compress it to that number.
+                    - 'article "Comment thread level 1: Reply from Emad_341 3 years ago" [ref=f63e642]':
+                      - generic [ref=f63e643] [cursor=pointer]:
+                        - link "Emad_341's profile --- avatar" [ref=f63e649]:
+                          - /url: https://www.reddit.com/user/Emad_341/
+                        - generic [ref=f63e659]:
+                          - link "Emad_341's profile" [ref=f63e663]:
+                            - /url: https://www.reddit.com/user/Emad_341/
+                            - text: Emad_341
+                          - generic "Comment distinguished as the original poster" [ref=f63e666]: OP
+                          - generic [aria-hidden] [ref=f63e667]: •
+                          - link [ref=f63e669]:
+                            - /url: https://www.reddit.com/r/software/comments/163jr5h/comment/jy3vmdh/
+                            - time [ref=f63e671]: 3y ago
+                      - generic [ref=f63e673]:
+                        - paragraph [ref=f63e677]: Is this andtoid app
+                        - 'article "Comment thread level 2: Reply from AndalusianGod 3 years ago" [ref=f63e682]':
+                          - generic [ref=f63e683] [cursor=pointer]:
+                            - link "AndalusianGod's profile --- avatar" [ref=f63e689]:
+                              - /url: https://www.reddit.com/user/AndalusianGod/
+                            - generic [ref=f63e699]:
+                              - link "AndalusianGod's profile" [ref=f63e703]:
+                                - /url: https://www.reddit.com/user/AndalusianGod/
+                                - text: AndalusianGod
+                              - generic [aria-hidden] [ref=f63e704]: •
+                              - link [ref=f63e706]:
+                                - /url: https://www.reddit.com/r/software/comments/163jr5h/comment/jy41ze6/
+                                - time [ref=f63e708]: 3y ago
+                          - paragraph [ref=f63e714]:
+                            - text: Ah sorry, didn't know you were looking for android. Maybe you can try
+                            - link "Video Transcoder" [ref=f63e715] [cursor=pointer]:
+                              - /url: https://github.com/brarcher/video-transcoder
+                            - text: instead.
+                - article "Comment from jean_cule69 3 years ago" [ref=f63e719]:
+                  - generic [ref=f63e720] [cursor=pointer]:
+                    - link "jean_cule69's profile --- avatar" [ref=f63e726]:
+                      - /url: https://www.reddit.com/user/jean_cule69/
+                      - img "u/jean_cule69 avatar" [ref=f63e729]
+                    - generic [ref=f63e733]:
+                      - link "jean_cule69's profile" [ref=f63e737]:
+                        - /url: https://www.reddit.com/user/jean_cule69/
+                        - text: jean_cule69
+                      - generic [aria-hidden] [ref=f63e738]: •
+                      - link [ref=f63e740]:
+                        - /url: https://www.reddit.com/r/software/comments/163jr5h/comment/jy3u5dz/
+                        - time [ref=f63e742]: 3y ago
+                  - generic [ref=f63e744]:
+                    - paragraph [ref=f63e748]: Upload it to YouTube and download it with one of those free web YouTube downloader. That's a low tech crap lazy technique but it works I guess
+                    - 'article "Comment thread level 1: Reply from Emad_341 3 years ago" [ref=f63e753]':
+                      - generic [ref=f63e754] [cursor=pointer]:
+                        - link "Emad_341's profile --- avatar" [ref=f63e760]:
+                          - /url: https://www.reddit.com/user/Emad_341/
+                        - generic [ref=f63e770]:
+                          - link "Emad_341's profile" [ref=f63e774]:
+                            - /url: https://www.reddit.com/user/Emad_341/
+                            - text: Emad_341
+                          - generic "Comment distinguished as the original poster" [ref=f63e777]: OP
+                          - generic [aria-hidden] [ref=f63e778]: •
+                          - link [ref=f63e780]:
+                            - /url: https://www.reddit.com/r/software/comments/163jr5h/comment/jy3vknp/
+                            - time [ref=f63e782]: 3y ago
+                      - generic [ref=f63e784]:
+                        - paragraph [ref=f63e788]: But it wants my Number for long time videos
+                        - 'article "Comment thread level 2: Reply from jean_cule69 3 years ago" [ref=f63e793]':
+                          - generic [ref=f63e794] [cursor=pointer]:
+                            - link "jean_cule69's profile --- avatar" [ref=f63e800]:
+                              - /url: https://www.reddit.com/user/jean_cule69/
+                              - img "u/jean_cule69 avatar" [ref=f63e803]
+                            - generic [ref=f63e807]:
+                              - link "jean_cule69's profile" [ref=f63e811]:
+                                - /url: https://www.reddit.com/user/jean_cule69/
+                                - text: jean_cule69
+                              - generic [aria-hidden] [ref=f63e812]: •
+                              - link [ref=f63e814]:
+                                - /url: https://www.reddit.com/r/software/comments/163jr5h/comment/jy40zky/
+                                - time [ref=f63e816]: 3y ago
+                          - paragraph [ref=f63e822]: Try different ones, I'm sure some don't require it and simply use ads
+                - article "Comment from mprz 3 years ago" [ref=f63e826]:
+                  - generic [ref=f63e827] [cursor=pointer]:
+                    - link "mprz's profile --- avatar" [ref=f63e833]:
+                      - /url: https://www.reddit.com/user/mprz/
+                    - generic [ref=f63e849]:
+                      - link "mprz's profile" [ref=f63e853]:
+                        - /url: https://www.reddit.com/user/mprz/
+                        - text: mprz
+                      - generic [aria-hidden] [ref=f63e854]: •
+                      - link [ref=f63e856]:
+                        - /url: https://www.reddit.com/r/software/comments/163jr5h/comment/jy2wv4g/
+                        - time [ref=f63e858]: 3y ago
+                  - paragraph [ref=f63e864]: Handbrake
+                - article "Comment from Imnotanad 3 years ago" [ref=f63e868]:
+                  - generic [ref=f63e869] [cursor=pointer]:
+                    - link "Imnotanad's profile --- avatar" [ref=f63e875]:
+                      - /url: https://www.reddit.com/user/Imnotanad/
+                      - img "u/Imnotanad avatar" [ref=f63e878]
+                    - generic [ref=f63e882]:
+                      - link "Imnotanad's profile" [ref=f63e886]:
+                        - /url: https://www.reddit.com/user/Imnotanad/
+                        - text: Imnotanad
+                      - generic [aria-hidden] [ref=f63e887]: •
+                      - link [ref=f63e889]:
+                        - /url: https://www.reddit.com/r/software/comments/163jr5h/comment/jy2zwv4/
+                        - time [ref=f63e891]: 3y ago
+                  - paragraph [ref=f63e897]: You can "recode" or "transcode" video to another format that would make it weight less . Look for such tools
+                - article "Comment from 8-BitRedStone 3 years ago" [ref=f63e901]:
+                  - generic [ref=f63e902] [cursor=pointer]:
+                    - link "8-BitRedStone's profile --- avatar" [ref=f63e908]:
+                      - /url: https://www.reddit.com/user/8-BitRedStone/
+                      - img "u/8-BitRedStone avatar" [ref=f63e911]
+                    - generic [ref=f63e915]:
+                      - link "8-BitRedStone's profile" [ref=f63e919]:
+                        - /url: https://www.reddit.com/user/8-BitRedStone/
+                        - text: 8-BitRedStone
+                      - generic [aria-hidden] [ref=f63e920]: •
+                      - link [ref=f63e922]:
+                        - /url: https://www.reddit.com/r/software/comments/163jr5h/comment/jy6k27g/
+                        - time [ref=f63e924]: 3y ago
+                  - paragraph [ref=f63e930]:
+                    - text: Personally I would recommend ffmpeg, but you say you are on mobile. This may also work
+                    - link "https://play.google.com/store/apps/details?id=com.silentlexx.ffmpeggui&hl=en_CA&gl=US" [ref=f63e931] [cursor=pointer]:
+                      - /url: https://play.google.com/store/apps/details?id=com.silentlexx.ffmpeggui&hl=en_CA&gl=US
+            - generic [ref=f63e934]:
+              - generic [ref=f63e935]:
+                - complementary "People also ask about section" [ref=f63e937]:
+                  - heading "People also ask about section" [level=1] [ref=f63e938]
+                  - generic [ref=f63e939]: People also ask about
+                  - generic [ref=f63e944]:
+                    - link "Recommendations for online video compressors" [ref=f63e946] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/e41f3b5f-f426-4bfd-bb7b-fa5b86916e85/?q=Recommendations+for+online+video+compressors&source=PDP&ep=pdp_unit&relatedPostId=t3_163jr5h
+                    - link "Top video compressors for reducing file size" [ref=f63e955] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/5340d9dd-2425-4c4d-948d-73602930ebe3/?q=Top+video+compressors+for+reducing+file+size&source=PDP&ep=pdp_unit&relatedPostId=t3_163jr5h
+                    - link "Best programming languages to learn in 2024" [ref=f63e964] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/72682a2e-2cff-4dfd-ab83-a91ec919d98c/?q=Best+programming+languages+to+learn+in+2024&source=PDP&ep=pdp_unit&relatedPostId=t3_163jr5h
+                    - link "Top software tools for remote teams" [ref=f63e973] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/f1d0ef5a-8833-4bb0-93d0-10ff2c9daa34/?q=Top+software+tools+for+remote+teams&source=PDP&ep=pdp_unit&relatedPostId=t3_163jr5h
+                    - link "Essential apps for productivity and focus" [ref=f63e982] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/e0e44fe0-019d-41fd-8dc1-f0030ba6340d/?q=Essential+apps+for+productivity+and+focus&source=PDP&ep=pdp_unit&relatedPostId=t3_163jr5h
+                - complementary "Community information" [ref=f63e1293]:
+                  - generic [ref=f63e1295]:
+                    - heading "Community Info Section" [level=1] [ref=f63e1296]
+                    - generic [ref=f63e1297]:
+                      - link "r/software" [ref=f63e1299] [cursor=pointer]:
+                        - /url: /r/software/
+                      - button "Join" [ref=f63e1304] [cursor=pointer]
+                    - generic [ref=f63e1305]:
+                      - generic [ref=f63e1306]: Software - Anything software-related
+                      - generic [ref=f63e1307]: Anything software-related. Please follow our rules to avoid getting punished.
+                      - generic: Public
+                - generic [ref=f63e1313]:
+                  - heading "Top Posts" [level=2] [ref=f63e1314]
+                  - list [ref=f63e1315]:
+                    - listitem [ref=f63e1316]:
+                      - 'link "Reddit reReddit: Top posts of August 28, 2023" [ref=f63e1317] [cursor=pointer]':
+                        - /url: https://www.reddit.com/posts/2023/august-28-1/global/
+                        - generic [ref=f63e1318]: Reddit
+                        - generic [ref=f63e1333]: "reReddit: Top posts of August 28, 2023"
+                        - separator [ref=f63e1334]
+                    - listitem [ref=f63e1335]:
+                      - 'link "Reddit reReddit: Top posts of August 2023" [ref=f63e1336] [cursor=pointer]':
+                        - /url: https://www.reddit.com/posts/2023/august/global/
+                        - generic [ref=f63e1337]: Reddit
+                        - generic [ref=f63e1352]: "reReddit: Top posts of August 2023"
+                        - separator [ref=f63e1353]
+                    - listitem [ref=f63e1354]:
+                      - 'link "Reddit reReddit: Top posts of 2023" [ref=f63e1355] [cursor=pointer]':
+                        - /url: https://www.reddit.com/posts/2023/global/
+                        - generic [ref=f63e1356]: Reddit
+                        - generic [ref=f63e1371]: "reReddit: Top posts of 2023"
+                        - separator [ref=f63e1372]
+              - list [ref=f63e1374]:
+                - listitem [ref=f63e1375]:
+                  - link "Home" [ref=f63e1377] [cursor=pointer]:
+                    - /url: /?feed=home
+                - listitem [ref=f63e1378]:
+                  - link "Popular" [ref=f63e1380] [cursor=pointer]:
+                    - /url: /r/popular/
+                - listitem [ref=f63e1381]:
+                  - link "News" [ref=f63e1383] [cursor=pointer]:
+                    - /url: /news/
+                - listitem [ref=f63e1384]:
+                  - link "Explore" [ref=f63e1386] [cursor=pointer]:
+                    - /url: /explore/
+                - listitem [ref=f63e1387]:
+                  - link "Best of Reddit" [ref=f63e1389] [cursor=pointer]:
+                    - /url: https://www.reddit.com/posts/2026/global/
+                - listitem [ref=f63e1390]:
+                  - link "Best of Reddit in Portuguese" [ref=f63e1392] [cursor=pointer]:
+                    - /url: https://www.reddit.com/posts/2026/tl-pt-BR/
+                - listitem [ref=f63e1393]:
+                  - link "Best of Reddit in German" [ref=f63e1395] [cursor=pointer]:
+                    - /url: https://www.reddit.com/posts/2026/tl-de/
+                - listitem [ref=f63e1396]:
+                  - link "Reddit Rules" [ref=f63e1398] [cursor=pointer]:
+                    - /url: https://www.redditinc.com/policies/content-policy
+                - listitem [ref=f63e1399]:
+                  - link "Privacy Policy" [ref=f63e1401] [cursor=pointer]:
+                    - /url: https://www.reddit.com/policies/privacy-policy
+                - listitem [ref=f63e1402]:
+                  - link "User Agreement" [ref=f63e1404] [cursor=pointer]:
+                    - /url: https://www.redditinc.com/policies/user-agreement
+                - listitem [ref=f63e1405]:
+                  - link "Accessibility" [ref=f63e1407] [cursor=pointer]:
+                    - /url: https://support.reddithelp.com/hc/sections/38303584022676-Accessibility
+                - listitem [ref=f63e1408]:
+                  - link "Reddit, Inc. © 2026. All rights reserved." [ref=f63e1409] [cursor=pointer]:
+                    - /url: https://redditinc.com
+        - generic [ref=f63e1412]:
+          - paragraph [ref=f63e1413]: Join the most real place on the internet
+          - generic [ref=f63e1415]:
+            - generic [ref=f63e1418]:
+              - iframe [ref=f63e1423]:
+                - button "Continue with Google. Opens in new tab" [ref=f65e3] [cursor=pointer]:
+                  - generic [ref=f65e5]: Continue with Google
+              - generic [ref=f63e1425] [cursor=pointer]:
+                - generic [ref=f63e1426]: Continue with Apple
+                - button "Sign in with Apple" [ref=f63e1432]:
+                  - generic [ref=f63e1433]:
+                    - img:
+                      - generic:
+                        - img:
+                          - generic:  Sign in with Apple
+            - link "Continue with Phone Number" [ref=f63e1438] [cursor=pointer]:
+              - /url: https://www.reddit.com/login/
+            - link "Continue with Email" [ref=f63e1447] [cursor=pointer]:
+              - /url: https://www.reddit.com/register/
+          - paragraph [ref=f63e1454]:
+            - text: By continuing, you agree to our
+            - link "User Agreement" [ref=f63e1455] [cursor=pointer]:
+              - /url: https://www.redditinc.com/policies/user-agreement
+            - text: and acknowledge that you understand the
+            - link "Privacy Policy" [ref=f63e1456] [cursor=pointer]:
+              - /url: https://www.redditinc.com/policies/privacy-policy
+            - text: .

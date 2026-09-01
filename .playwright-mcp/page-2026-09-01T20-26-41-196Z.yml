@@ -1,0 +1,256 @@
+- generic [active] [ref=f14e1]:
+  - paragraph [ref=f14e2]
+  - generic [ref=f14e3]: DuckDuckGo
+  - paragraph [ref=f14e4]
+  - generic [ref=f14e5]:
+    - textbox [ref=f14e6]: site:reddit.com free online video compressor watermark
+    - button "Search" [ref=f14e7] [cursor=pointer]
+    - generic [ref=f14e8]:
+      - combobox [ref=f14e9] [cursor=pointer]:
+        - option "All Regions" [selected]
+        - option "Argentina"
+        - option "Australia"
+        - option "Austria"
+        - option "Belgium (fr)"
+        - option "Belgium (nl)"
+        - option "Brazil"
+        - option "Bulgaria"
+        - option "Canada (en)"
+        - option "Canada (fr)"
+        - option "Catalonia"
+        - option "Chile"
+        - option "China"
+        - option "Colombia"
+        - option "Croatia"
+        - option "Czech Republic"
+        - option "Denmark"
+        - option "Estonia"
+        - option "Finland"
+        - option "France"
+        - option "Germany"
+        - option "Greece"
+        - option "Hong Kong"
+        - option "Hungary"
+        - option "Iceland"
+        - option "India (en)"
+        - option "Indonesia (en)"
+        - option "Ireland"
+        - option "Israel (en)"
+        - option "Italy"
+        - option "Japan"
+        - option "Korea"
+        - option "Latvia"
+        - option "Lithuania"
+        - option "Malaysia (en)"
+        - option "Mexico"
+        - option "Netherlands"
+        - option "New Zealand"
+        - option "Norway"
+        - option "Pakistan (en)"
+        - option "Peru"
+        - option "Philippines (en)"
+        - option "Poland"
+        - option "Portugal"
+        - option "Romania"
+        - option "Russia"
+        - option "Saudi Arabia"
+        - option "Singapore"
+        - option "Slovakia"
+        - option "Slovenia"
+        - option "South Africa"
+        - option "Spain (ca)"
+        - option "Spain (es)"
+        - option "Sweden"
+        - option "Switzerland (de)"
+        - option "Switzerland (fr)"
+        - option "Taiwan"
+        - option "Thailand (en)"
+        - option "Turkey"
+        - option "US (English)"
+        - option "US (Spanish)"
+        - option "Ukraine"
+        - option "United Kingdom"
+        - option "Vietnam (en)"
+      - combobox [ref=f14e10] [cursor=pointer]:
+        - option "Any Time" [selected]
+        - option "Past Day"
+        - option "Past Week"
+        - option "Past Month"
+        - option "Past Year"
+  - paragraph [ref=f14e11]
+  - table [ref=f14e12]:
+    - rowgroup [ref=f14e13]:
+      - row [ref=f14e14]:
+        - cell
+        - cell [ref=f14e15]:
+          - button "Next Page >" [ref=f14e17] [cursor=pointer]
+  - paragraph [ref=f14e18]
+  - table
+  - table [ref=f14e19]:
+    - rowgroup [ref=f14e20]:
+      - row [ref=f14e21]:
+        - cell "1." [ref=f14e22]
+        - cell [ref=f14e23]:
+          - link "MP4 Video Compressor - Reduce Video Size [Fast]" [ref=f14e24] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fduckduckgo.com%2Fy.js%3Fad_domain%3Dpdfguru.com%26ad_provider%3Dbingv7aa%26ad_type%3Dtxad%26click_metadata%3DW1WG1uAlvCdt98oCi0dAisCBrThi9ynWnR1VqwEsluwH%252D5LvD7dOCuHCue4JMACrAVfO93jdtYZZrFiKpGcQ3kxR1XMxcf66VKk540XAaWpirsuw%252D1Rl6ECfgUS%252DI9AvSZSpGkbJppNds3XTzYdj5JNTrWLzbdEB4IwPo2WJOz4.moFzeZhwfhtpmPPg7pyHUA%26rut%3Dfc23ce3e4fd75b5b16e5fc7212dcf3f5a9568d70acc8ade584d2596bd7335cdb%26u3%3Dhttps%253A%252F%252Fwww.bing.com%252Faclick%253Fld%253De8dW4yYwoB1zhs8PFNeymb7TVUCUx84HmQoec09FMUUnXJyZXkLnDcXpqm2D9L0DixwBytSYYoXx5%252Du4E7ga9N2ZS%252DVvg4gn%252DtsdXsG5k5RbnSPHrs1pt5tTJYKSk7T_iX4UOdNVWJ_PaCCmTol40uVgIO4BDLDWvCdQShFcoIbL3sV8JoyeVSCW4TkbmlTNefokij43KeJd3TEQOn1qzczzvrcIM%2526u%253DaHR0cHMlM2ElMmYlMmZwZGZndXJ1LmNvbSUyZmFwcCUyZmNvbXByZXNzLXZpZGVvJTNmbmV3LWxhbmRpbmdzJTNkMSUyNmlkX3BhcnRuZXIlM2RiX3NlYXJjaCUyNmZlYXR1cmUlM2RDb21wcmVzc1ZpZGVvJTI2Y2xpY2tpZCUzZGYzZmIxNDZjMmEzODFlOWE2ZGMzN2VmYjFmMzhmOWUxJTI2Y2FtcGlkJTNkNTcxMzI1NjkzJTI2YWdpZCUzZDExODE5NzcyNzk4MDk4NjUlMjZrZXl3b3JkJTNkY29tcHJlc3MlMjUyMHZpZGVvJTI1MjB3aXRob3V0JTI1MjB3YXRlcm1hcmslMjZtYXRjaHR5cGUlM2RlJTI2Y3JlYXRpZCUzZCUyNmV4dGlkJTNkJTdiZXh0ZW5zaW9uaWQlN2QlMjZ0YXJnZXRpZCUzZGt3ZC03Mzg3NDIzMDkwODc2NiUzYWxvYy0xMTYwNzIlMjZkZXZpY2UlM2RjJTI2ZGV2bW9kJTNkJTI2cGxhY2VtZW50JTNkJTI2YWRwb3MlM2QlMjZtc2Nsa2lkJTNkZjNmYjE0NmMyYTM4MWU5YTZkYzM3ZWZiMWYzOGY5ZTE%2526rlid%253Df3fb146c2a381e9a6dc37efb1f38f9e1%26vqd%3D4%2D207433488203906697230806965663986234496%26iurl%3D%257B1%257DIG%253DED0D66A27C8F4C519CF998745235F8AA%2526CID%253D345B332F736B6DA109A924E872936C45%2526ID%253DDevEx%252C5036.1&rut=4c12375b42439fa95dd96b7a06a063cc0c5b8933b8cc4e230a38926eda70050e
+          - text: (Sponsored link -
+          - link "more info" [ref=f14e25] [cursor=pointer]:
+            - /url: https://duckduckgo.com/duckduckgo-help-pages/company/ads-by-microsoft-on-duckduckgo-private-search/
+          - text: )
+      - row [ref=f14e26]:
+        - cell [ref=f14e27]
+        - cell "(Compress Your MP4 And WebM Videos Online. Maintain Quality And Save Disk Space Now). High Quality Video Compression For MP4 & WebM. No Software Download Required. [Try Free]" [ref=f14e28]
+      - row [ref=f14e29]:
+        - cell [ref=f14e30]
+        - cell "pdfguru.com" [ref=f14e31]
+      - row [ref=f14e32]:
+        - cell [ref=f14e33]
+        - cell [ref=f14e34]
+      - row [ref=f14e35]:
+        - cell "2." [ref=f14e36]
+        - cell [ref=f14e37]:
+          - link "Is there a free online video compressor that allows videos ... - Reddit" [ref=f14e38] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2FFansly_Advice%2Fcomments%2Fxfhauq%2Fis_there_a_free_online_video_compressor_that%2F&rut=72ffc48d5c7ccfd5be196b3b25cf9340189fbc1fa2c70d82c9f7ee6f776cda81
+      - row [ref=f14e39]:
+        - cell [ref=f14e40]
+        - cell "I've been using freeconvert for video compression but my new video is slightly larger than 1GB and I can't find any other free online converters for files larger than 1GB. If you recommend I download a free software, can you send the link to a safe download? I heard handbrake and wondershare are good but there seem to be a few download links so I don't want to click the wrong one. Thank you!" [ref=f14e41]
+      - row [ref=f14e42]:
+        - cell [ref=f14e43]
+        - cell "www.reddit.com/r/Fansly_Advice/comments/xfhauq/is_there_a_free_online_video_compressor_that/" [ref=f14e44]
+      - row [ref=f14e45]:
+        - cell [ref=f14e46]
+        - cell [ref=f14e47]
+      - row [ref=f14e48]:
+        - cell "3." [ref=f14e49]
+        - cell [ref=f14e50]:
+          - 'link "Best Free Video Compressor: How to Reduce the Video Size for ... - Reddit" [ref=f14e51] [cursor=pointer]':
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2FAnyVideoConverter%2Fcomments%2F17l5s3i%2Fbest_free_video_compressor_how_to_reduce_the%2F&rut=088867283bef09026b4b28599f679f613cc0e7d2fc912f5ad48668f2f3751bcd
+      - row [ref=f14e52]:
+        - cell [ref=f14e53]
+        - cell "Thankfully, video compression comes to the rescue, allowing us to reduce the video size without compromising on quality. This comprehensive guide will explain the basic information related to video compression, the best free video compressor available for both Windows and Mac and an online video compressor without a watermark." [ref=f14e54]
+      - row [ref=f14e55]:
+        - cell [ref=f14e56]
+        - cell "www.reddit.com/r/AnyVideoConverter/comments/17l5s3i/best_free_video_compressor_how_to_reduce_the/" [ref=f14e57]
+      - row [ref=f14e58]:
+        - cell [ref=f14e59]
+        - cell [ref=f14e60]
+      - row [ref=f14e61]:
+        - cell "4." [ref=f14e62]
+        - cell [ref=f14e63]:
+          - link "Is there any video compressor avilable online which can reduce ... - Reddit" [ref=f14e64] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2Fsoftware%2Fcomments%2F163jr5h%2Fis_there_any_video_compressor_avilable_online%2F&rut=5387f1673d3da114f1999b8fa410aa6485a7bd6307a4f36a3b76971006183b1a
+      - row [ref=f14e65]:
+        - cell [ref=f14e66]
+        - cell "Is there any video compressor avilable online which can reduce 2/4 gb videos size? Online or wev based would be good" [ref=f14e67]
+      - row [ref=f14e68]:
+        - cell [ref=f14e69]
+        - cell "www.reddit.com/r/software/comments/163jr5h/is_there_any_video_compressor_avilable_online/" [ref=f14e70]
+      - row [ref=f14e71]:
+        - cell [ref=f14e72]
+        - cell [ref=f14e73]
+      - row [ref=f14e74]:
+        - cell "5." [ref=f14e75]
+        - cell [ref=f14e76]:
+          - link "Need help Compressing a 66MB video into 8MB without changing ... - Reddit" [ref=f14e77] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2Fsoftware%2Fcomments%2Fvgxc91%2Fneed_help_compressing_a_66mb_video_into_8mb%2F&rut=65fa4a40963a5cb27b3f758b4654406478347d74caa426cff6af0d9f024e6c81
+      - row [ref=f14e78]:
+        - cell [ref=f14e79]
+        - cell "You cannot compress a video without losing quality, but there are ways you can do it without visible quality loss. I'd say compressing a video by transcoding it to some codecs with higher compression efficiency is a fair way, such as HEVC, VP9, etc. And you can also lower the bitrate, resolution, frame rate, or increase the GOP length of your ..." [ref=f14e80]
+      - row [ref=f14e81]:
+        - cell [ref=f14e82]
+        - cell "www.reddit.com/r/software/comments/vgxc91/need_help_compressing_a_66mb_video_into_8mb/" [ref=f14e83]
+      - row [ref=f14e84]:
+        - cell [ref=f14e85]
+        - cell [ref=f14e86]
+      - row [ref=f14e87]:
+        - cell "6." [ref=f14e88]
+        - cell [ref=f14e89]:
+          - 'link "Best Free Video Compressor: How to Reduce the Video Size for ... - Reddit" [ref=f14e90] [cursor=pointer]':
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2FVideoEnhanceAI%2Fcomments%2F172phfq%2Fbest_free_video_compressor_how_to_reduce_the%2F&rut=b15aa8579a4ade6ee0b26278080c304f1d233b95e69ca3a49db511252b393105
+      - row [ref=f14e91]:
+        - cell [ref=f14e92]
+        - cell "What is the free online video compressor without a watermark?\" With the proliferation of high-definition video content, the size of video files can often be a daunting challenge for both creators and consumers." [ref=f14e93]
+      - row [ref=f14e94]:
+        - cell [ref=f14e95]
+        - cell "www.reddit.com/r/VideoEnhanceAI/comments/172phfq/best_free_video_compressor_how_to_reduce_the/" [ref=f14e96]
+      - row [ref=f14e97]:
+        - cell [ref=f14e98]
+        - cell [ref=f14e99]
+      - row [ref=f14e100]:
+        - cell "7." [ref=f14e101]
+        - cell [ref=f14e102]:
+          - link "Top 10 Free Online Video Compressor Tools - Newsblare" [ref=f14e103] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2FOnlineTools%2Fcomments%2F13i2o8o%2Ftop_10_free_online_video_compressor_tools%2F&rut=2108b74f14640d5f8bb783aaf94625b619d7f030614139f9758507f3162cccfe
+      - row [ref=f14e104]:
+        - cell [ref=f14e105]
+        - cell "Top 10 Free Online Video Compressor Tools - Newsblare It is feasible to compress videos without downloading or installing any software thanks to the abundance of web-based applications and online platforms. There are many free online video compressor tools on the internet that you can use without any hiccups or difficulty." [ref=f14e106]
+      - row [ref=f14e107]:
+        - cell [ref=f14e108]
+        - cell "www.reddit.com/r/OnlineTools/comments/13i2o8o/top_10_free_online_video_compressor_tools/" [ref=f14e109]
+      - row [ref=f14e110]:
+        - cell [ref=f14e111]
+        - cell [ref=f14e112]
+      - row [ref=f14e113]:
+        - cell "8." [ref=f14e114]
+        - cell [ref=f14e115]:
+          - link "Is there a free online tool that makes videos smaller in size ... - Reddit" [ref=f14e116] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2FFansly_Advice%2Fcomments%2F11g56ms%2Fis_there_a_free_online_tool_that_makes_videos%2F&rut=dbe2c4442a4b8fc4074f581f54be112e5a0be2dd9b26b022e610120992c9010a
+      - row [ref=f14e117]:
+        - cell [ref=f14e118]
+        - cell "I'm wondering if anyone knows any good online tool that does not reduce quality that much but does make the video file smaller? I tried a couple of some even included their watermark in my video.. I have couple of videos that are 100mb-300mb in size and want them to be 30mb-50mb. Please help and thank you!" [ref=f14e119]
+      - row [ref=f14e120]:
+        - cell [ref=f14e121]
+        - cell "www.reddit.com/r/Fansly_Advice/comments/11g56ms/is_there_a_free_online_tool_that_makes_videos/" [ref=f14e122]
+      - row [ref=f14e123]:
+        - cell [ref=f14e124]
+        - cell [ref=f14e125]
+      - row [ref=f14e126]:
+        - cell "9." [ref=f14e127]
+        - cell [ref=f14e128]:
+          - link "I created wide.video - a free, browser-based video editor" [ref=f14e129] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2FSideProject%2Fcomments%2F18nkrmo%2Fi_created_widevideo_a_free_browserbased_video%2F&rut=9fa33ba6f0cbe7cbe6234cea16cd3118ca89b85ca2f8272e01957d021676291f
+      - row [ref=f14e130]:
+        - cell [ref=f14e131]
+        - 'cell "Hey everyone, I''m excited to share my project with you: https://wide.video wide.video, a free online video editor, offers seamless creativity in your browser. Experience absolute privacy, with all processing conducted locally. No uploads, no installations. Enjoy effortless HD or 4K editing with support for modern formats including H.264, H.265, AV1, Rive, or Lottie. No Installs Or Uploads ..." [ref=f14e132]'
+      - row [ref=f14e133]:
+        - cell [ref=f14e134]
+        - cell "www.reddit.com/r/SideProject/comments/18nkrmo/i_created_widevideo_a_free_browserbased_video/" [ref=f14e135]
+      - row [ref=f14e136]:
+        - cell [ref=f14e137]
+        - cell [ref=f14e138]
+      - row [ref=f14e139]:
+        - cell "10." [ref=f14e140]
+        - cell [ref=f14e141]:
+          - link "Freeconvert.com (video compressor) a malicious website ... - Reddit" [ref=f14e142] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2Fgoogle%2Fcomments%2Fwmntor%2Ffreeconvertcom_video_compressor_a_malicious%2F&rut=4d3ed12b70bda3cb77733b9524d256e869a6f268d1162630c7e6aa4fcdf98cfe
+      - row [ref=f14e143]:
+        - cell [ref=f14e144]
+        - cell "Freeconvert.com (video compressor) a malicious website appeared as a first result on Google Can't say I'm not disappointed with Google algorithms right now I used this free tool to compress a video file, and the end result was a video with vulgar language" [ref=f14e145]
+      - row [ref=f14e146]:
+        - cell [ref=f14e147]
+        - cell "www.reddit.com/r/google/comments/wmntor/freeconvertcom_video_compressor_a_malicious/" [ref=f14e148]
+      - row [ref=f14e149]:
+        - cell [ref=f14e150]
+        - cell [ref=f14e151]
+      - row [ref=f14e152]:
+        - cell "11." [ref=f14e153]
+        - cell [ref=f14e154]:
+          - link "any sites where i can simply compress videos to look horribly ... - Reddit" [ref=f14e155] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2FVideoEditing%2Fcomments%2Fy8vnmm%2Fany_sites_where_i_can_simply_compress_videos_to%2F&rut=c37a48386fd7351622442840794c5da1dab11cdfb9769282ed53acbb50e950c7
+      - row [ref=f14e156]:
+        - cell [ref=f14e157]
+        - cell "Looked at your suggested video -- you may or may not get the effect you want with just reducing the size of the file. The originator of the example video may have used a variety of effects to get the output in the sample video." [ref=f14e158]
+      - row [ref=f14e159]:
+        - cell [ref=f14e160]
+        - cell "www.reddit.com/r/VideoEditing/comments/y8vnmm/any_sites_where_i_can_simply_compress_videos_to/" [ref=f14e161]
+      - row [ref=f14e162]:
+        - cell [ref=f14e163]
+        - cell [ref=f14e164]
+      - row [ref=f14e165]:
+        - cell [ref=f14e166]:
+          - button "Next Page >" [ref=f14e168] [cursor=pointer]
+  - paragraph [ref=f14e169]
+  - generic [ref=f14e170]:
+    - textbox [ref=f14e171]: site:reddit.com free online video compressor watermark
+    - button "Search" [ref=f14e172] [cursor=pointer]
+  - paragraph [ref=f14e173]

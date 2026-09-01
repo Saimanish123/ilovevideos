@@ -1,0 +1,818 @@
+- generic [active] [ref=f129e1]:
+  - generic [ref=f129e2]:
+    - generic [ref=f129e4]:
+      - navigation [ref=f129e6]:
+        - generic [ref=f129e7]:
+          - generic [ref=f129e8]:
+            - link [ref=f129e10] [cursor=pointer]:
+              - /url: /
+              - img "Kapwing" [ref=f129e11]
+            - navigation "Main" [ref=f129e12]:
+              - list [ref=f129e14]:
+                - listitem [ref=f129e15]:
+                  - button [ref=f129e16]:
+                    - link "Tools" [ref=f129e17] [cursor=pointer]:
+                      - /url: /tools
+                  - generic "Tools":
+                    - list:
+                      - listitem:
+                        - link "Video Editor Edit video clips, combine tracks together, and add effects all in one place":
+                          - /url: /video-editor
+                          - generic: Video Editor
+                          - paragraph: Edit video clips, combine tracks together, and add effects all in one place
+                      - listitem:
+                        - link "Subtitler Add captions and subtitles to videos in the browser":
+                          - /url: /subtitles
+                          - generic: Subtitler
+                          - paragraph: Add captions and subtitles to videos in the browser
+                      - listitem:
+                        - link "Speaker Focus Auto-resize videos to focus on the speakers":
+                          - /url: /ai/auto-speaker-focus
+                          - generic: Speaker Focus
+                          - paragraph: Auto-resize videos to focus on the speakers
+                      - listitem:
+                        - link "Audio Editor Record, edit, and clean audio for podcasts and videos":
+                          - /url: /tools/audio-editor
+                          - generic: Audio Editor
+                          - paragraph: Record, edit, and clean audio for podcasts and videos
+                      - listitem:
+                        - link "Text to Speech Turn text into realistic voiceovers in just a few clicks":
+                          - /url: /tools/text-to-speech
+                          - generic: Text to Speech
+                          - paragraph: Turn text into realistic voiceovers in just a few clicks
+                      - listitem:
+                        - link "Repurpose Studio Turn a video into social-ready clips":
+                          - /url: /tools/repurpose
+                          - generic: Repurpose Studio
+                          - paragraph: Turn a video into social-ready clips
+                      - listitem:
+                        - link "Resize Video Change the size and dimensions of a video":
+                          - /url: /tools/resize
+                          - generic: Resize Video
+                          - paragraph: Change the size and dimensions of a video
+                      - listitem:
+                        - link "Trim with Transcript Edit videos by editing text":
+                          - /url: /ai/text-based-video-editor
+                          - generic: Trim with Transcript
+                          - paragraph: Edit videos by editing text
+                      - listitem:
+                        - link "Dubbing Translate dialogue into 40+ languages":
+                          - /url: /ai/dubbing
+                          - generic: Dubbing
+                          - paragraph: Translate dialogue into 40+ languages
+                      - listitem:
+                        - link "Transcribe Video Turn videos into text automatically":
+                          - /url: /tools/transcribe
+                          - generic: Transcribe Video
+                          - paragraph: Turn videos into text automatically
+                      - listitem:
+                        - link "View All Discover all of Kapwing's tools in one place":
+                          - /url: /tools
+                          - generic: View All
+                          - paragraph: Discover all of Kapwing's tools in one place
+                - listitem [ref=f129e20]:
+                  - button [ref=f129e21]:
+                    - link "AI" [ref=f129e22] [cursor=pointer]:
+                      - /url: /ai
+                  - generic "AI":
+                    - list:
+                      - listitem:
+                        - link "Kapwing AI Discover all of Kapwing's AI-powered tools":
+                          - /url: /ai/overview
+                          - generic: Kapwing AI
+                          - paragraph: Discover all of Kapwing's AI-powered tools
+                      - listitem:
+                        - link "Script Generator Turn ideas into scripts in a few clicks":
+                          - /url: /ai/script-generator
+                          - generic: Script Generator
+                          - paragraph: Turn ideas into scripts in a few clicks
+                      - listitem:
+                        - link "Translate Video Make content accessible with translated audio and subtitles":
+                          - /url: /tools/translate
+                          - generic: Translate Video
+                          - paragraph: Make content accessible with translated audio and subtitles
+                      - listitem:
+                        - link "B-Roll Generator Generate relevant, high-quality B-Roll automatically":
+                          - /url: /ai/b-roll-generator
+                          - generic: B-Roll Generator
+                          - paragraph: Generate relevant, high-quality B-Roll automatically
+                      - listitem:
+                        - link "Clean Audio Enhance audio quality and remove background noise":
+                          - /url: /tools/remove-background/noise
+                          - generic: Clean Audio
+                          - paragraph: Enhance audio quality and remove background noise
+                      - listitem:
+                        - link "AI Video Editor Create videos with Kapwing's cutting-edge AI tools":
+                          - /url: /ai
+                          - generic: AI Video Editor
+                          - paragraph: Create videos with Kapwing's cutting-edge AI tools
+                      - listitem:
+                        - link "Clip Maker Generate short clips from one video":
+                          - /url: /ai/clip-maker
+                          - generic: Clip Maker
+                          - paragraph: Generate short clips from one video
+                      - listitem:
+                        - link "Character Consistency Create an AI character for reuse in video projects":
+                          - /url: /ai/character-generator
+                          - generic: Character Consistency
+                          - paragraph: Create an AI character for reuse in video projects
+                      - listitem:
+                        - link "Video Generator Create a video about anything with AI":
+                          - /url: /ai-video-generator
+                          - generic: Video Generator
+                          - paragraph: Create a video about anything with AI
+                      - listitem:
+                        - link "Smart Cut Automatically remove silences from your video":
+                          - /url: /tools/audio-editor/silence-remover
+                          - generic: Smart Cut
+                          - paragraph: Automatically remove silences from your video
+                      - listitem:
+                        - link "View All Discover all of Kapwing's smart tools":
+                          - /url: /ai/overview
+                          - generic: View All
+                          - paragraph: Discover all of Kapwing's smart tools
+                - listitem [ref=f129e25]:
+                  - button [ref=f129e26]:
+                    - link "Solutions" [ref=f129e27] [cursor=pointer]:
+                      - /url: /teams
+                  - generic "Solutions":
+                    - list:
+                      - listitem:
+                        - link "For Marketing Teams Grow your brand with modern editing tools that speed up content creation":
+                          - /url: /teams/marketing
+                          - generic: For Marketing Teams
+                          - paragraph: Grow your brand with modern editing tools that speed up content creation
+                      - listitem:
+                        - link "For Training Teams Create and edit screen recordings, tutorials, and instructional videos":
+                          - /url: /teams/training
+                          - generic: For Training Teams
+                          - paragraph: Create and edit screen recordings, tutorials, and instructional videos
+                      - listitem:
+                        - link "For Schools Bring learning to life with digital lessons and multimedia assignments":
+                          - /url: /edu
+                          - generic: For Schools
+                          - paragraph: Bring learning to life with digital lessons and multimedia assignments
+                      - listitem:
+                        - link "Make Social Media Videos Create engaging content that's tailored for every social platform":
+                          - /url: /video-editor/social-media
+                          - generic: Make Social Media Videos
+                          - paragraph: Create engaging content that's tailored for every social platform
+                      - listitem:
+                        - link "Make Video Ads Create professional, scroll-stopping video ads that generate leads":
+                          - /url: /tools/make/video-ad
+                          - generic: Make Video Ads
+                          - paragraph: Create professional, scroll-stopping video ads that generate leads
+                      - listitem:
+                        - link "Translate Videos Reach a wider audience by localizing videos, audio, and subtitles":
+                          - /url: /tools/translate
+                          - generic: Translate Videos
+                          - paragraph: Reach a wider audience by localizing videos, audio, and subtitles
+                - listitem [ref=f129e30]:
+                  - button [ref=f129e31]:
+                    - link "Learn" [ref=f129e32] [cursor=pointer]:
+                      - /url: https://www.kapwing.com/resources
+                  - generic "Learn":
+                    - list:
+                      - listitem:
+                        - link "Resources Articles and guides to help you create more":
+                          - /url: /resources
+                          - generic: Resources
+                          - paragraph: Articles and guides to help you create more
+                      - listitem:
+                        - link "Help Center Get answers to common questions about Kapwing":
+                          - /url: /help
+                          - generic: Help Center
+                          - paragraph: Get answers to common questions about Kapwing
+                      - listitem:
+                        - link "Company Blog Follow along for stories from our startup journey":
+                          - /url: /blog
+                          - generic: Company Blog
+                          - paragraph: Follow along for stories from our startup journey
+                      - listitem:
+                        - link "About Us Find out more about our company and product":
+                          - /url: /about
+                          - generic: About Us
+                          - paragraph: Find out more about our company and product
+                      - listitem:
+                        - link "Contact Us Learn how to get in touch with our team":
+                          - /url: /contact-us
+                          - generic: Contact Us
+                          - paragraph: Learn how to get in touch with our team
+                      - listitem:
+                        - link "Video Tutorials Get step-by-step guidance on how to use our tools":
+                          - /url: https://www.youtube.com/channel/UCR5GrKMeaZJxPKVMdEgKIKA?sub_confirmation=1
+                          - generic: Video Tutorials
+                          - paragraph: Get step-by-step guidance on how to use our tools
+                      - listitem:
+                        - link "Careers Learn more about working at Kapwing":
+                          - /url: /careers
+                          - generic: Careers
+                          - paragraph: Learn more about working at Kapwing
+                - listitem [ref=f129e35]:
+                  - link "Pricing" [ref=f129e36] [cursor=pointer]:
+                    - /url: /pricing
+          - generic [ref=f129e37]:
+            - link "Request a Demo" [ref=f129e38] [cursor=pointer]:
+              - /url: /demo
+            - link "Sign In" [ref=f129e39] [cursor=pointer]:
+              - /url: /signin
+          - generic [ref=f129e40]:
+            - generic [ref=f129e42]:
+              - link [ref=f129e43] [cursor=pointer]:
+                - /url: /
+                - img "Kapwing Logo" [ref=f129e44]
+              - link "KAPWING" [ref=f129e45] [cursor=pointer]:
+                - /url: /
+            - generic [ref=f129e50]:
+              - button "Video Tools" [ref=f129e51]
+              - button "AI Tools" [ref=f129e56]
+              - button "Solutions" [ref=f129e61]
+              - button "Learn" [ref=f129e66]
+              - link "Pricing" [ref=f129e71] [cursor=pointer]:
+                - /url: /pricing
+              - link "Request a Demo" [ref=f129e72] [cursor=pointer]:
+                - /url: /demo
+              - link "Sign In" [ref=f129e73] [cursor=pointer]:
+                - /url: /signin
+            - generic [ref=f129e74]:
+              - link "Start Editing" [ref=f129e75] [cursor=pointer]:
+                - /url: /signin
+              - generic [ref=f129e76]:
+                - text: or,
+                - link "sign in" [ref=f129e77] [cursor=pointer]:
+                  - /url: /signin
+      - generic [ref=f129e79]:
+        - generic [ref=f129e80]:
+          - heading "Pricing" [level=1] [ref=f129e81]
+          - generic [ref=f129e82]: Start for free. Upgrade to create more video to exactly fit your team's needs. Explore our pricing plans to find what’s best for you.
+          - generic [ref=f129e83]:
+            - text: Trusted By Teams At
+            - generic [ref=f129e86]:
+              - img "Spotify" [ref=f129e90]
+              - img "Google" [ref=f129e94]
+              - img "Code.Org" [ref=f129e98]
+              - img "Dyson" [ref=f129e102]
+              - img "NYU" [ref=f129e106]
+              - img "Facebook" [ref=f129e110]
+              - img "Columbia" [ref=f129e114]
+              - img "Whole Foods" [ref=f129e118]
+              - img "Verizon" [ref=f129e122]
+              - img "Harvard" [ref=f129e126]
+              - img "UK Parliament" [ref=f129e130]
+              - img "Louis Vuitton" [ref=f129e134]
+              - img "Alberta" [ref=f129e138]
+        - img "Kapwing pricing plans comparison with plan cards" [ref=f129e142]
+      - generic [ref=f129e144]:
+        - generic [ref=f129e146]:
+          - generic [ref=f129e147]: Free
+          - generic [ref=f129e148]: For anyone who wants to get started creating and repurposing content
+          - generic [ref=f129e150]: 10 credits
+          - generic [ref=f129e151]: $0
+          - generic [ref=f129e152]: It's Free!
+        - link "Get Started" [ref=f129e155] [cursor=pointer]:
+          - /url: /studio/editor
+        - list [ref=f129e158]:
+          - listitem [ref=f129e159]: Unlimited exports with a watermark
+          - listitem [ref=f129e160]: Export videos up to 4 minutes long
+          - listitem [ref=f129e161]: 720p video quality
+          - generic [ref=f129e162]:
+            - generic [ref=f129e163]: "Credits usable for:"
+            - listitem [ref=f129e164]: Auto-subtitling (up to 50 mins)
+            - listitem [ref=f129e165]: Text to speech (up to 3 mins)
+        - generic [ref=f129e166]:
+          - generic [ref=f129e167]: Most Popular
+          - generic [ref=f129e168]:
+            - generic [ref=f129e169]: Pro
+            - generic [ref=f129e170]: For individuals and small groups looking to create more content in less time
+            - generic [ref=f129e172]: 1,000 credits / month
+            - generic [ref=f129e173]: $16
+            - generic [ref=f129e174]: Per member, per month, billed annually
+            - generic [ref=f129e175]: $24 billed monthly
+        - link "Upgrade" [ref=f129e177] [cursor=pointer]:
+          - /url: /signin?upgrade-to=pro
+        - list [ref=f129e180]:
+          - generic [ref=f129e181]: "Everything in Free, plus these features for your team workspace:"
+          - listitem [ref=f129e182]: No Kapwing watermark on your creations
+          - listitem [ref=f129e183]: Upload files up to 6 GB
+          - listitem [ref=f129e184]: Export content in 4K resolution
+          - listitem [ref=f129e185]: Create and edit unlimited projects
+          - listitem [ref=f129e186]: Export projects up to 2 hours long
+          - listitem [ref=f129e187]: Brand Kit and custom fonts
+          - listitem [ref=f129e188]: Collaborative shared workspace
+          - listitem [ref=f129e189]: 100 GB of cloud storage
+          - generic [ref=f129e190]:
+            - generic [ref=f129e191]: "Credits usable for:"
+            - listitem [ref=f129e192]: Auto-subtitling (up to 1,000 mins / month)
+            - listitem [ref=f129e193]: Dubbing (up to 50 mins / month)
+            - listitem [ref=f129e194]: Even more premium features.
+        - generic [ref=f129e196]:
+          - generic [ref=f129e197]: Business
+          - generic [ref=f129e198]: For individuals and teams who need to supercharge their content creation workflow
+          - generic [ref=f129e200]: 4,000 credits / month
+          - generic [ref=f129e201]: $50
+          - generic [ref=f129e202]: Per member, per month, billed annually
+          - generic [ref=f129e203]: $64 billed monthly
+        - link "Upgrade" [ref=f129e205] [cursor=pointer]:
+          - /url: /signin?upgrade-to=business
+        - list [ref=f129e208]:
+          - generic [ref=f129e209]: "Everything in Pro, plus these features for your team workspace:"
+          - listitem [ref=f129e210]: Create custom voice clones
+          - listitem [ref=f129e211]: Lip sync videos
+          - listitem [ref=f129e212]: Ability to purchase additional credits
+          - listitem [ref=f129e213]: 500 GB of cloud storage
+          - generic [ref=f129e214]:
+            - generic [ref=f129e215]: "Credits usable for:"
+            - listitem [ref=f129e216]: Auto-subtitling (up to 4,000 mins / month)
+            - listitem [ref=f129e217]: Dubbing (up to 200 mins / month)
+            - listitem [ref=f129e218]: Even more premium features.
+        - generic [ref=f129e220]:
+          - generic [ref=f129e221]: Enterprise
+          - generic [ref=f129e222]: For large organizations that need advanced controls and support
+          - generic [ref=f129e224]: Custom amount of credits
+        - link "Contact Sales" [ref=f129e229] [cursor=pointer]:
+          - /url: /demo
+        - list [ref=f129e232]:
+          - generic [ref=f129e233]: "Everything in Business, plus these features for your team workspace:"
+          - listitem [ref=f129e234]: Custom billing
+          - listitem [ref=f129e235]: Dedicated account manager
+          - listitem [ref=f129e236]: Priority customer support
+          - listitem [ref=f129e237]: Onboarding & training
+          - listitem [ref=f129e238]: SAML single sign-on (SSO)
+          - listitem [ref=f129e239]: Custom cloud storage
+          - generic [ref=f129e240]:
+            - generic [ref=f129e241]: "Credits usable for:"
+            - listitem [ref=f129e242]: Custom amount of auto-subtitling
+            - listitem [ref=f129e243]: Custom amount of dubbing
+            - listitem [ref=f129e244]: Custom usage of generative AI features.
+            - listitem [ref=f129e245]: Even more premium features.
+      - heading "Compare Plans and Pricing" [level=2] [ref=f129e246]
+      - generic [ref=f129e247]:
+        - generic [ref=f129e248]:
+          - generic [ref=f129e250]:
+            - generic [ref=f129e251]: free
+            - link "Choose free" [ref=f129e252] [cursor=pointer]:
+              - /url: /signin
+          - generic [ref=f129e254]:
+            - generic [ref=f129e255]: pro
+            - link "Choose pro" [ref=f129e256] [cursor=pointer]:
+              - /url: /signin?upgrade-to=pro
+          - generic [ref=f129e258]:
+            - generic [ref=f129e259]: business
+            - link "Choose business" [ref=f129e260] [cursor=pointer]:
+              - /url: /signin?upgrade-to=business
+          - generic [ref=f129e262]:
+            - generic [ref=f129e263]: enterprise
+            - link "Contact Sales" [ref=f129e264] [cursor=pointer]:
+              - /url: /demo
+        - generic [ref=f129e265]:
+          - generic [ref=f129e266]: VIDEO CREATION
+          - generic [ref=f129e267]: Record screen, camera, and audio
+          - generic [ref=f129e290]: Transitions and video effects
+          - generic [ref=f129e313]: Free stock templates
+          - generic [ref=f129e336]: Export as MP4, PNG, JPG, MP3, GIF
+          - generic [ref=f129e359]: Paste a link to import content
+          - generic [ref=f129e382]:
+            - generic [ref=f129e383]: File upload limit
+            - generic [ref=f129e389]: 2 GB
+            - generic [ref=f129e390]: 6 GB
+            - generic [ref=f129e391]: 6 GB
+            - generic [ref=f129e392]: 6 GB
+          - generic [ref=f129e393]:
+            - generic [ref=f129e394]: Video export length
+            - generic [ref=f129e400]: 4 minutes
+            - generic [ref=f129e401]: 120 minutes
+            - generic [ref=f129e402]: 120 minutes
+            - generic [ref=f129e403]: 120 minutes
+          - generic [ref=f129e404]:
+            - generic [ref=f129e405]: Video resolution
+            - generic [ref=f129e411]: 720p
+            - generic [ref=f129e412]: 4K
+            - generic [ref=f129e413]: 4K
+            - generic [ref=f129e414]: 4K
+          - generic [ref=f129e415]:
+            - generic [ref=f129e416]: Monthly video export limit
+            - generic [ref=f129e422]: 30 minutes
+            - generic [ref=f129e423]: Unlimited
+            - generic [ref=f129e424]: Unlimited
+            - generic [ref=f129e425]: Unlimited
+          - generic [ref=f129e426]:
+            - generic [ref=f129e427]: Stock videos, photos, audio, GIFs
+            - generic [ref=f129e433]: Starter set of stock assets
+            - generic [ref=f129e434]: Unlimited stock assets
+            - generic [ref=f129e435]: Unlimited stock assets
+            - generic [ref=f129e436]: Unlimited stock assets
+          - generic [ref=f129e437]:
+            - generic [ref=f129e438]: Kapwing watermark free exports
+            - generic [ref=f129e444]: None
+            - generic [ref=f129e445]: For all projects
+            - generic [ref=f129e446]: For all projects
+            - generic [ref=f129e447]: For all projects
+        - generic [ref=f129e448]:
+          - generic [ref=f129e449]: Automatic Editing & Smart Tools
+          - generic [ref=f129e450]:
+            - generic [ref=f129e451]: Auto-subtitling
+            - generic [ref=f129e457]: Up to 50 minutes
+            - generic [ref=f129e458]: Up to 1,000 minutes per month
+            - generic [ref=f129e459]: Up to 4,000 minutes per month
+            - generic [ref=f129e460]: Custom
+          - generic [ref=f129e461]:
+            - generic [ref=f129e462]: Auto-translating
+            - generic [ref=f129e468]: Up to 25 minutes
+            - generic [ref=f129e469]: Up to 500 minutes per month
+            - generic [ref=f129e470]: Up to 2,000 minutes per month
+            - generic [ref=f129e471]: Custom
+          - generic [ref=f129e472]:
+            - generic [ref=f129e473]: Text to Speech
+            - generic [ref=f129e479]: Up to 3 minutes
+            - generic [ref=f129e480]: Up to 50 minutes per month
+            - generic [ref=f129e481]: Up to 200 minutes per month
+            - generic [ref=f129e482]: Custom
+          - generic [ref=f129e483]:
+            - generic [ref=f129e484]: Clean Audio
+            - generic [ref=f129e490]: Up to 25 minutes
+            - generic [ref=f129e491]: Up to 500 minutes per month
+            - generic [ref=f129e492]: Up to 2,000 minutes per month
+            - generic [ref=f129e493]: Custom
+          - generic [ref=f129e494]:
+            - generic [ref=f129e495]: Lip Sync
+            - generic [ref=f129e502]: Up to 30 minutes per month
+            - generic [ref=f129e503]: Up to 130 minutes per month
+            - generic [ref=f129e504]: Custom
+          - generic [ref=f129e505]: Resizer
+          - generic [ref=f129e528]: Find Scenes
+          - generic [ref=f129e551]: Auto Level Audio
+          - generic [ref=f129e574]: Chroma Key
+          - generic [ref=f129e597]: Smart Cut
+          - generic [ref=f129e617]: Video Stabilization
+          - generic [ref=f129e637]: Video Background Remover
+          - generic [ref=f129e657]: Image Background Remover
+          - generic [ref=f129e677]: Audio Waveforms
+          - generic [ref=f129e697]: Download SRT/VTT files
+          - generic [ref=f129e717]: Download video transcript
+        - generic [ref=f129e737]:
+          - generic [ref=f129e738]: Collaboration & Brand Management
+          - generic [ref=f129e739]: Commenting
+          - generic [ref=f129e762]: Project link sharing
+          - generic [ref=f129e785]: Invite team members
+          - generic [ref=f129e808]: Real time collaboration
+          - generic [ref=f129e831]: Brand Kit
+          - generic [ref=f129e851]: Custom fonts
+        - generic [ref=f129e871]:
+          - generic [ref=f129e872]: Storage & Support
+          - generic [ref=f129e873]:
+            - generic [ref=f129e874]: Cloud storage
+            - generic [ref=f129e881]: 100 GB
+            - generic [ref=f129e882]: 500 GB
+            - generic [ref=f129e883]: Custom
+          - generic [ref=f129e884]:
+            - generic [ref=f129e885]: Storage duration
+            - generic [ref=f129e891]: 3 days
+            - generic [ref=f129e892]: Duration of subscription
+            - generic [ref=f129e893]: Duration of subscription
+            - generic [ref=f129e894]: Duration of subscription
+          - generic [ref=f129e895]:
+            - generic [ref=f129e896]: Workspace folders
+            - generic [ref=f129e902]: 1 folder
+            - generic [ref=f129e903]: Unlimited
+            - generic [ref=f129e904]: Unlimited
+            - generic [ref=f129e905]: Unlimited
+          - generic [ref=f129e906]: Project version history
+          - generic [ref=f129e929]: Private folders
+          - generic [ref=f129e949]: Private projects
+          - generic [ref=f129e969]: Priority support
+          - generic [ref=f129e983]: Custom billing
+          - generic [ref=f129e997]: Dedicated account manager
+          - generic [ref=f129e1011]: Onboarding & training
+          - generic [ref=f129e1025]: SAML single sign-on (SSO)
+      - generic [ref=f129e1039]:
+        - generic [ref=f129e1041]:
+          - generic [ref=f129e1042]:
+            - generic [ref=f129e1043]: ●
+            - generic [ref=f129e1044]: Just the FAQs
+          - heading "Frequently Asked Questions" [level=2] [ref=f129e1045]
+          - paragraph [ref=f129e1046]: We have answers to the most common questions that our users ask.
+        - generic [ref=f129e1047]:
+          - generic [ref=f129e1048]:
+            - heading "What is Kapwing?" [level=3] [ref=f129e1050]
+            - generic [ref=f129e1054]: Kapwing is an online content creation platform. We're used by millions of creators each month to tell their own unique digital stories. Our product helps creators create and edit videos, GIFs, images, audio, and more. We're a small team doing our best to run an ethical and sustainable business.
+          - generic [ref=f129e1055]:
+            - heading "Can I have a free trial for Kapwing's paid plans?" [level=3] [ref=f129e1057]
+            - generic: Kapwing’s tools are available for free. You may try all of our tools before making the decision to upgrade. We do not currently offer a free trial for Kapwing's paid plans.
+          - generic [ref=f129e1061]:
+            - heading "Is paying for Kapwing a recurring payment?" [level=3] [ref=f129e1063]
+            - generic:
+              - text: Yes. Kapwing Pro and Business are only available as a subscription not as a one time charge. The subscription will auto renew until
+              - link "cancelled" [ref=f129e1067] [cursor=pointer]:
+                - /url: /help/cancel-subscription/
+              - text: .
+          - generic [ref=f129e1068]:
+            - heading "Can I have a refund?" [level=3] [ref=f129e1070]
+            - generic:
+              - text: Because we offer a free version of Kapwing to all users, we do not issue refunds for subscriptions once you decide to upgrade to Kapwing Pro or Business. Please review our
+              - link "Refund Policy" [ref=f129e1074] [cursor=pointer]:
+                - /url: /policies/refund
+              - text: before making a purchase decision.
+          - generic [ref=f129e1075]:
+            - heading "What's the fastest way to reach you in case something is wrong with my account?" [level=3] [ref=f129e1077]
+            - generic:
+              - text: Your business is really important to us! Please visit our
+              - link "contact us" [ref=f129e1081] [cursor=pointer]:
+                - /url: /contact-us
+              - text: page for options on how to quickly get in touch.
+          - generic [ref=f129e1082]:
+            - heading "What currency are the prices listed in?" [level=3] [ref=f129e1084]
+            - generic:
+              - text: All of our prices are listed in USD. Any additional charges, such as fees, taxes, exchange rates, etc. are included in our prices. You will not be charged more than the listed rates. Our payments are powered securely by
+              - link "Stripe" [ref=f129e1088] [cursor=pointer]:
+                - /url: https://www.stripe.com
+              - text: .
+          - generic [ref=f129e1089]:
+            - heading "Will I receive a receipt for my transaction?" [level=3] [ref=f129e1091]
+            - generic: Yes, you will receive a receipt for all transactions. It will be sent to the email address used to upgrade your team workspace. Your billing history will also be accessible from the Billing settings page.
+          - generic [ref=f129e1095]:
+            - heading "Do you have an annual/yearly billing option?" [level=3] [ref=f129e1097]
+            - generic: Yes! If you want better value, then Kapwing Pro is available for $16/month billed annually or $192/year. Kapwing Business can supercharge your content creation and is available for $50/month billed annually or $600/year. Click "Upgrade" to access the annual option. This will allow you to pay for an annual membership at a discount from the normal monthly price.
+      - link "See more FAQs" [ref=f129e1101] [cursor=pointer]:
+        - /url: https://www.kapwing.com/help/subscription-faq/
+      - generic [ref=f129e1103]:
+        - generic [ref=f129e1104]:
+          - generic [ref=f129e1105]: Real teams creating on Kapwing
+          - heading "Already transforming video creation across industries" [level=2] [ref=f129e1108]
+          - paragraph [ref=f129e1109]: Hear directly from the teams who publish faster, collaborate better, and stay ahead.
+          - link "View all reviews" [ref=f129e1111] [cursor=pointer]:
+            - /url: /reviews
+        - generic [ref=f129e1115]:
+          - generic [ref=f129e1117]:
+            - button "Previous review" [ref=f129e1118] [cursor=pointer]
+            - button "Next review" [ref=f129e1122] [cursor=pointer]
+          - generic [ref=f129e1126]:
+            - button "Next review" [ref=f129e1127]:
+              - generic [aria-hidden] [ref=f129e1128]: “
+              - generic [ref=f129e1129]:
+                - generic [ref=f129e1130]: It just works!
+                - generic [ref=f129e1131]: Kapwing is incredibly intuitive. Many of our marketers were able to get on the platform and use it right away with little to no instruction. No need for downloads or installations - it just works.
+                - generic [aria-hidden] [ref=f129e1132]: ”
+                - generic [ref=f129e1133]:
+                  - img "Headshot of Eunice Park" [ref=f129e1137]
+                  - generic [ref=f129e1138]:
+                    - generic [ref=f129e1139]: Eunice Park
+                    - generic [ref=f129e1140]: Studio Production Manager at Formlabs
+            - generic [ref=f129e1141]:
+              - generic [aria-hidden] [ref=f129e1142]: “
+              - generic [ref=f129e1143]:
+                - generic [ref=f129e1144]: With Kapwing, we're always ready to create.
+                - generic [ref=f129e1145]: Kapwing is an essential tool that we use in MOXIE Nashville every day. As a social media agency owner, there's a variety of video needs that my clients have. From adding subtitles to resizing videos for various platforms, Kapwing makes it possible for us to create incredible content that consistently exceeds client expectations. With Kapwing, we're always ready to create - from anywhere!
+                - generic [aria-hidden] [ref=f129e1146]: ”
+                - generic [ref=f129e1147]:
+                  - img "Headshot of Vannesia Darby" [ref=f129e1151]
+                  - generic [ref=f129e1152]:
+                    - generic [ref=f129e1153]: Vannesia Darby
+                    - generic [ref=f129e1154]: CEO at MOXIE Nashville
+            - generic [ref=f129e1155]:
+              - generic [aria-hidden] [ref=f129e1156]: “
+              - generic [ref=f129e1157]:
+                - generic [ref=f129e1158]: Spend less time learning... and more time crafting stories.
+                - generic [ref=f129e1159]: Kapwing helps you spend less time learning complex video editing platforms and more time crafting stories that will connect with your audience and customers. We've used the platform to help create engaging social media clips from our clients' podcasts and we can't wait to see how the platform simplifies this process going forward. If you've learned graphic design with Canva, you can learn video editing with Kapwing.
+                - generic [aria-hidden] [ref=f129e1160]: ”
+                - generic [ref=f129e1161]:
+                  - img "Headshot of Grant Taleck" [ref=f129e1165]
+                  - generic [ref=f129e1166]:
+                    - generic [ref=f129e1167]: Grant Taleck
+                    - generic [ref=f129e1168]: Co-Founder at AuthentIQMarketing.com
+            - generic [ref=f129e1169]:
+              - generic [aria-hidden] [ref=f129e1170]: “
+              - generic [ref=f129e1171]:
+                - generic [ref=f129e1172]: It keeps getting better!
+                - generic [ref=f129e1173]: Kapwing is probably the most important tool for me and my team. It’s always there to meet our everyday needs in creating scroll-stopping and engaging videos for us and our clients. Kapwing is smart, fast, easy to use and full of features that are exactly what we need to make our workflow faster and more effective. We love it more each day and it keeps getting better.
+                - generic [aria-hidden] [ref=f129e1174]: ”
+                - generic [ref=f129e1175]:
+                  - img "Headshot of Panos Papagapiou" [ref=f129e1179]
+                  - generic [ref=f129e1180]:
+                    - generic [ref=f129e1181]: Panos Papagapiou
+                    - generic [ref=f129e1182]: Managing Partner at EPATHLON
+            - generic [ref=f129e1183]:
+              - generic [aria-hidden] [ref=f129e1184]: “
+              - generic [ref=f129e1185]:
+                - generic [ref=f129e1186]: By the far the most user friendly software to use.
+                - generic [ref=f129e1187]: As a housewife at home looking to start a YouTube channel for fun with absolutely zero editing experience, it was so easy for me to teach myself via their YouTube channel. It takes the tediousness out of editing and encourages creativity. As long as Kapwing is around, I will be using their software.
+                - generic [aria-hidden] [ref=f129e1188]: ”
+                - generic [ref=f129e1189]:
+                  - img "Headshot of Kerry-lee Farla" [ref=f129e1193]
+                  - generic [ref=f129e1194]:
+                    - generic [ref=f129e1195]: Kerry-lee Farla
+                    - generic [ref=f129e1196]: Youtuber
+            - generic [ref=f129e1197]:
+              - generic [aria-hidden] [ref=f129e1198]: “
+              - generic [ref=f129e1199]:
+                - generic [ref=f129e1200]: Kapwing is my secret weapon!
+                - generic [ref=f129e1201]: This is one of the most powerful, yet inexpensive and easy-to-use video editing software I've found. I blow my team away with how fast and efficiently I can edit and turnaround video projects.
+                - generic [aria-hidden] [ref=f129e1202]: ”
+                - generic [ref=f129e1203]:
+                  - img "Headshot of Gracie Peng" [ref=f129e1207]
+                  - generic [ref=f129e1208]:
+                    - generic [ref=f129e1209]: Gracie Peng
+                    - generic [ref=f129e1210]: Director of Content
+            - generic [ref=f129e1211]:
+              - generic [aria-hidden] [ref=f129e1212]: “
+              - generic [ref=f129e1213]:
+                - generic [ref=f129e1214]: Kapwing is king.
+                - generic [ref=f129e1215]: When I use this software, I feel all sorts of creative juices flowing because of how jam-packed with features the software really is. A very well-made product that will keep you enticed for hours.
+                - generic [aria-hidden] [ref=f129e1216]: ”
+                - generic [ref=f129e1217]:
+                  - img "Headshot of Martin James" [ref=f129e1221]
+                  - generic [ref=f129e1222]:
+                    - generic [ref=f129e1223]: Martin James
+                    - generic [ref=f129e1224]: Video Editor
+            - generic [ref=f129e1225]:
+              - generic [aria-hidden] [ref=f129e1226]: “
+              - generic [ref=f129e1227]:
+                - generic [ref=f129e1228]: Love this site.
+                - generic [ref=f129e1229]: As an English Foreign Language Teacher, this site helps me to quickly subtitle interesting videos that I can use in class. The students love the videos, and the subtitles really help them to learn new vocabulary as well as better understand and follow the video.
+                - generic [aria-hidden] [ref=f129e1230]: ”
+                - generic [ref=f129e1231]:
+                  - img "Headshot of Heidi Rae" [ref=f129e1235]
+                  - generic [ref=f129e1236]:
+                    - generic [ref=f129e1237]: Heidi Rae
+                    - generic [ref=f129e1238]: Education
+            - generic [ref=f129e1239]:
+              - generic [aria-hidden] [ref=f129e1240]: “
+              - generic [ref=f129e1241]:
+                - generic [ref=f129e1242]: Excellent subtitling features
+                - generic [ref=f129e1243]: "[It] works perfectly for me. Have been using Kapwing for a year or so, and their automatic subtitle tool gets better and better every week, it's rare that I have to correct a word. Keep up the good work!"
+                - generic [aria-hidden] [ref=f129e1244]: ”
+                - generic [ref=f129e1245]:
+                  - img "Headshot of Natasha Ball" [ref=f129e1249]
+                  - generic [ref=f129e1250]:
+                    - generic [ref=f129e1251]: Natasha Ball
+                    - generic [ref=f129e1252]: Consultant
+            - generic [ref=f129e1253]:
+              - generic [aria-hidden] [ref=f129e1254]: “
+              - generic [ref=f129e1255]:
+                - generic [ref=f129e1256]: Best online video service ever. And a miracle for deaf people.
+                - generic [ref=f129e1257]: "[Subtitler] is able to autogenerate subtitles for video in almost any language. I'm deaf (or almost deaf, to be correct) and thanks to Kapwing I'm now able understand and react on videos from my friends :)"
+                - generic [aria-hidden] [ref=f129e1258]: ”
+                - generic [ref=f129e1259]:
+                  - img "Headshot of Mitch Rawlings" [ref=f129e1263]
+                  - generic [ref=f129e1264]:
+                    - generic [ref=f129e1265]: Mitch Rawlings
+                    - generic [ref=f129e1266]: Information Services Freelancer
+            - generic [ref=f129e1267]:
+              - generic [aria-hidden] [ref=f129e1268]: “
+              - generic [ref=f129e1269]:
+                - generic [ref=f129e1270]: This tool should be in every social media account managers' bookmark list.
+                - generic [ref=f129e1271]: I use this daily to help with video editing. Even if you're a pro video editor, there is no need to be spending hours trying to get the format correct. Kapwing does the hard work for you.
+                - generic [aria-hidden] [ref=f129e1272]: ”
+                - generic [ref=f129e1273]:
+                  - img "Headshot of Dina Segovia" [ref=f129e1277]
+                  - generic [ref=f129e1278]:
+                    - generic [ref=f129e1279]: Dina Segovia
+                    - generic [ref=f129e1280]: Virtual Freelance Worker
+      - contentinfo [ref=f129e1281]:
+        - generic [ref=f129e1282]:
+          - generic [ref=f129e1283]:
+            - generic [ref=f129e1284]:
+              - heading "Tools" [level=3] [ref=f129e1285]
+              - list [ref=f129e1286]:
+                - listitem [ref=f129e1287]:
+                  - link "Video Editor" [ref=f129e1288] [cursor=pointer]:
+                    - /url: /video-editor
+                - listitem [ref=f129e1289]:
+                  - link "Subtitles" [ref=f129e1290] [cursor=pointer]:
+                    - /url: /subtitles
+                - listitem [ref=f129e1291]:
+                  - link "Meme Generator" [ref=f129e1292] [cursor=pointer]:
+                    - /url: /meme-maker
+                - listitem [ref=f129e1293]:
+                  - link "Convert Video" [ref=f129e1294] [cursor=pointer]:
+                    - /url: /tools/convert
+                - listitem [ref=f129e1295]:
+                  - link "Video Trimmer" [ref=f129e1296] [cursor=pointer]:
+                    - /url: /tools/trim
+                - listitem [ref=f129e1297]:
+                  - link "Screen Recorder" [ref=f129e1298] [cursor=pointer]:
+                    - /url: /tools/record/screen
+              - link "View all" [ref=f129e1299] [cursor=pointer]:
+                - /url: /tools
+            - generic [ref=f129e1300]:
+              - heading "AI-powered" [level=3] [ref=f129e1301]
+              - list [ref=f129e1302]:
+                - listitem [ref=f129e1303]:
+                  - link "Smart Cut" [ref=f129e1304] [cursor=pointer]:
+                    - /url: /tools/audio-editor/silence-remover
+                - listitem [ref=f129e1305]:
+                  - link "AI Video Generator" [ref=f129e1306] [cursor=pointer]:
+                    - /url: /ai-video-generator
+                - listitem [ref=f129e1307]:
+                  - link "Clean Audio" [ref=f129e1308] [cursor=pointer]:
+                    - /url: /tools/remove-background/noise
+                - listitem [ref=f129e1309]:
+                  - link "AI Image Generator" [ref=f129e1310] [cursor=pointer]:
+                    - /url: /ai/image-generator
+                - listitem [ref=f129e1311]:
+                  - link "Text to Speech" [ref=f129e1312] [cursor=pointer]:
+                    - /url: /tools/text-to-speech
+                - listitem [ref=f129e1313]:
+                  - link "Document to Video" [ref=f129e1314] [cursor=pointer]:
+                    - /url: /ai/document-to-video
+              - link "View all" [ref=f129e1315] [cursor=pointer]:
+                - /url: /ai
+            - generic [ref=f129e1316]:
+              - heading "Templates" [level=3] [ref=f129e1317]
+              - list [ref=f129e1318]:
+                - listitem [ref=f129e1319]:
+                  - link "Video Templates" [ref=f129e1320] [cursor=pointer]:
+                    - /url: /templates
+                - listitem [ref=f129e1321]:
+                  - link "Meme Templates" [ref=f129e1322] [cursor=pointer]:
+                    - /url: /templates/memes
+                - listitem [ref=f129e1323]:
+                  - link "Collage Templates" [ref=f129e1324] [cursor=pointer]:
+                    - /url: /templates/collage
+                - listitem [ref=f129e1325]:
+                  - link "Instagram Video" [ref=f129e1326] [cursor=pointer]:
+                    - /url: /templates/instagram
+                - listitem [ref=f129e1327]:
+                  - link "Popular Templates" [ref=f129e1328] [cursor=pointer]:
+                    - /url: /templates/popular
+                - listitem [ref=f129e1329]:
+                  - link "EDU Templates" [ref=f129e1330] [cursor=pointer]:
+                    - /url: /templates/edu
+              - link "View all" [ref=f129e1331] [cursor=pointer]:
+                - /url: /templates
+            - generic [ref=f129e1332]:
+              - heading "Learn" [level=3] [ref=f129e1333]
+              - list [ref=f129e1334]:
+                - listitem [ref=f129e1335]:
+                  - link "About Us" [ref=f129e1336] [cursor=pointer]:
+                    - /url: /about
+                - listitem [ref=f129e1337]:
+                  - link "Resources" [ref=f129e1338] [cursor=pointer]:
+                    - /url: https://www.kapwing.com/resources/
+                - listitem [ref=f129e1339]:
+                  - link "Help Center" [ref=f129e1340] [cursor=pointer]:
+                    - /url: https://www.kapwing.com/help/
+                - listitem [ref=f129e1341]:
+                  - link "Blog" [ref=f129e1342] [cursor=pointer]:
+                    - /url: https://www.kapwing.com/blog/
+                - listitem [ref=f129e1343]:
+                  - link "EDU" [ref=f129e1344] [cursor=pointer]:
+                    - /url: /edu
+                - listitem [ref=f129e1345]:
+                  - link "Teams" [ref=f129e1346] [cursor=pointer]:
+                    - /url: /teams
+                - listitem [ref=f129e1347]:
+                  - link "Contact Us" [ref=f129e1348] [cursor=pointer]:
+                    - /url: /contact-us
+            - generic [ref=f129e1349]:
+              - heading "Company" [level=3] [ref=f129e1350]
+              - list [ref=f129e1351]:
+                - listitem [ref=f129e1352]:
+                  - link "Pricing" [ref=f129e1353] [cursor=pointer]:
+                    - /url: /pricing
+                - listitem [ref=f129e1354]:
+                  - link "Careers" [ref=f129e1355] [cursor=pointer]:
+                    - /url: /careers
+                - listitem [ref=f129e1356]:
+                  - link "Partnerships" [ref=f129e1357] [cursor=pointer]:
+                    - /url: /partnerships
+                - listitem [ref=f129e1358]:
+                  - link "Affiliates" [ref=f129e1359] [cursor=pointer]:
+                    - /url: /affiliates
+                - listitem [ref=f129e1360]:
+                  - link "Release Notes" [ref=f129e1361] [cursor=pointer]:
+                    - /url: /help/tag/release-notes/
+                - listitem [ref=f129e1362]:
+                  - link "Refund Policy" [ref=f129e1363] [cursor=pointer]:
+                    - /url: /policies/refund
+                - listitem [ref=f129e1364]:
+                  - link "Privacy Policy" [ref=f129e1365] [cursor=pointer]:
+                    - /url: /policies/privacy
+                - listitem [ref=f129e1366]:
+                  - link "Terms of Service" [ref=f129e1367] [cursor=pointer]:
+                    - /url: /policies/terms-of-service
+          - generic [ref=f129e1368]:
+            - generic [ref=f129e1369]: Connect with us
+            - generic [ref=f129e1370]:
+              - link "X" [ref=f129e1371] [cursor=pointer]:
+                - /url: https://x.com/KapwingApp
+              - link "YouTube" [ref=f129e1374] [cursor=pointer]:
+                - /url: https://www.youtube.com/channel/UCR5GrKMeaZJxPKVMdEgKIKA?sub_confirmation=1
+              - link "Instagram" [ref=f129e1377] [cursor=pointer]:
+                - /url: https://www.instagram.com/KapwingApp/
+              - link "TikTok" [ref=f129e1380] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@kapwing
+              - link "Facebook" [ref=f129e1383] [cursor=pointer]:
+                - /url: https://www.facebook.com/groups/kapwing
+          - generic [ref=f129e1387]:
+            - generic [ref=f129e1388]: © 2026 Kapwing
+            - link "Terms of Service" [ref=f129e1389] [cursor=pointer]:
+              - /url: /policies/terms-of-service
+            - generic [ref=f129e1390]: Made with ♥ in San Francisco, California
+        - generic:
+          - img "Kapwing wordmark"
+    - region "Notifications (F8)":
+      - list
+  - alert [ref=f129e1391]
+  - generic:
+    - region "Notifications (F8)":
+      - list

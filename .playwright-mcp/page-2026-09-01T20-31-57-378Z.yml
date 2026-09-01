@@ -1,0 +1,174 @@
+- generic [active] [ref=f41e1]:
+  - link "Skip to main content" [ref=f41e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f41e3]:
+    - link [ref=f41e5] [cursor=pointer]:
+      - /url: /hc/en-us
+      - img "Clideo Help Help Center home page" [ref=f41e6]
+    - search [ref=f41e11]:
+      - searchbox "Search" [ref=f41e12]
+    - navigation [ref=f41e14]:
+      - link "Go to Clideo" [ref=f41e15] [cursor=pointer]:
+        - /url: https://clideo.com/
+      - link "Submit a request" [ref=f41e18] [cursor=pointer]:
+        - /url: /hc/en-us/requests/new
+  - main [ref=f41e19]:
+    - generic [ref=f41e21]:
+      - list [ref=f41e22]:
+        - listitem "Clideo Help" [ref=f41e23]:
+          - link "Clideo Help" [ref=f41e24] [cursor=pointer]:
+            - /url: /hc/en-us
+        - listitem "General" [ref=f41e25]:
+          - text: ">"
+          - link "General" [ref=f41e26] [cursor=pointer]:
+            - /url: /hc/en-us/categories/4408670641426-General
+        - listitem "Terms of Use and Privacy" [ref=f41e27]:
+          - text: ">"
+          - link "Terms of Use and Privacy" [ref=f41e28] [cursor=pointer]:
+            - /url: /hc/en-us/categories/4408670641426-General#4412765480082
+      - heading "Are there any usage limitations?" [level=1] [ref=f41e29]
+    - article [ref=f41e31]:
+      - generic [ref=f41e34]:
+        - paragraph [ref=f41e35]: "You can use Clideo in three ways:"
+        - list [ref=f41e36]:
+          - listitem [ref=f41e37]:
+            - strong [ref=f41e38]: Visitor
+            - text: — free access without registration
+          - listitem [ref=f41e39]:
+            - strong [ref=f41e40]: Registered user
+            - text: — free access with a Clideo account
+          - listitem [ref=f41e41]:
+            - strong [ref=f41e42]: Premium user
+            - text: — access with a paid Clideo Pro plan
+        - paragraph [ref=f41e43]: Available features and usage limits depend on your access type.
+        - heading "Watermark" [level=2] [ref=f41e44]
+        - list [ref=f41e45]:
+          - listitem [ref=f41e46]:
+            - strong [ref=f41e47]: "Visitors and registered users:"
+            - text: Exported video and image files include a small Clideo watermark in the bottom-right corner.
+          - listitem [ref=f41e48]:
+            - strong [ref=f41e49]: "Premium users:"
+            - text: No watermark is added.
+        - heading "Upload size" [level=2] [ref=f41e50]
+        - list [ref=f41e51]:
+          - listitem [ref=f41e52]:
+            - strong [ref=f41e53]: "Visitors and registered users:"
+            - text: Up to
+            - strong [ref=f41e54]: 500 MB
+            - text: per file.
+          - listitem [ref=f41e55]:
+            - strong [ref=f41e56]: "Premium users:"
+            - text: Up to
+            - strong [ref=f41e57]: 100 GB
+            - text: per file.
+        - heading "File processing speed" [level=2] [ref=f41e58]
+        - list [ref=f41e59]:
+          - listitem [ref=f41e60]:
+            - strong [ref=f41e61]: "Visitors and registered users:"
+            - text: Standard.
+          - listitem [ref=f41e62]:
+            - strong [ref=f41e63]: "Premium users:"
+            - text: Highest.
+        - paragraph [ref=f41e64]: Processing speed also depends on a wide variety of factors, including file size, resolution, duration, and output format.
+        - heading "Continue in" [level=2] [ref=f41e65]
+        - paragraph [ref=f41e66]:
+          - text: The
+          - strong [ref=f41e67]: Continue in
+          - text: feature lets you keep editing a file in another Clideo web tool.
+        - list [ref=f41e68]:
+          - listitem [ref=f41e69]:
+            - strong [ref=f41e70]: "Visitors and registered users:"
+            - text: Not available. To continue editing in another tool, you need to export the file first and then upload it again.
+          - listitem [ref=f41e71]:
+            - strong [ref=f41e72]: "Premium users:"
+            - text: Available. After export, you can continue editing the project in another Clideo tool.
+        - heading "AI-powered features" [level=2] [ref=f41e73]
+        - paragraph [ref=f41e74]:
+          - text: AI-powered features, such as AI Agent, AI generation, automatic subtitle generation, transcription, and translation, require credits. Read more about
+          - link "how credits work" [ref=f41e75] [cursor=pointer]:
+            - /url: https://help.clideo.com/hc/en-us/articles/27594566356252
+          - text: and
+          - link "AI agent limits and credits usage" [ref=f41e76] [cursor=pointer]:
+            - /url: /hc/en-us/articles/29180537784732
+          - text: .
+        - list [ref=f41e77]:
+          - listitem [ref=f41e78]:
+            - strong [ref=f41e79]: "Visitors:"
+            - text: Not available.
+          - listitem [ref=f41e80]:
+            - strong [ref=f41e81]: "Registered users:"
+            - text: Available with 10 credits per month.
+          - listitem [ref=f41e82]:
+            - strong [ref=f41e83]: "Premium users:"
+            - text: Available starting with 500 credits per month, with the option to choose a higher credit tier if needed.
+        - heading "Text-to-speech (TTS)" [level=2] [ref=f41e84]
+        - list [ref=f41e85]:
+          - listitem [ref=f41e86]:
+            - strong [ref=f41e87]: "All users:"
+            - text: Text-to-speech is available under fair usage rules.
+          - listitem [ref=f41e88]:
+            - text: Each TTS track can contain up to
+            - strong [ref=f41e89]: 500 characters
+            - text: .
+        - heading "Export settings" [level=2] [ref=f41e90]
+        - list [ref=f41e91]:
+          - listitem [ref=f41e92]:
+            - strong [ref=f41e93]: "Visitors and registered users:"
+            - text: 480p (Standard quality), 720p (Standard quality), GIF.
+          - listitem [ref=f41e94]:
+            - strong [ref=f41e95]: "Premium users:"
+            - text: 480p (Standard quality), 720p (Standard quality), 1080p (High quality, FHD), 2160p (High quality, 4K), GIF.
+        - heading "Recording" [level=2] [ref=f41e96]
+        - list [ref=f41e97]:
+          - listitem [ref=f41e98]:
+            - strong [ref=f41e99]: "Visitors and registered users:"
+            - text: Up to
+            - strong [ref=f41e100]: 15 minutes
+            - text: per recording session.
+          - listitem [ref=f41e101]:
+            - strong [ref=f41e102]: "Premium users:"
+            - text: Up to
+            - strong [ref=f41e103]: 60 minutes
+            - text: per recording session.
+        - heading "Project storage" [level=2] [ref=f41e104]
+        - list [ref=f41e105]:
+          - listitem [ref=f41e106]:
+            - strong [ref=f41e107]: "Visitors:"
+            - text: Projects are not stored.
+          - listitem [ref=f41e108]:
+            - strong [ref=f41e109]: "Registered users and premium users:"
+            - text: Projects are stored in your account for a
+            - link "specified period of time" [ref=f41e110] [cursor=pointer]:
+              - /url: /hc/en-us/articles/4414003828882
+            - strong [ref=f41e111]: .
+      - generic [ref=f41e112]:
+        - generic [ref=f41e113]: Was this article helpful?
+        - group "Was this article helpful?" [ref=f41e114]:
+          - button "This article was helpful" [ref=f41e115] [cursor=pointer]: "Yes"
+          - button "This article was not helpful" [ref=f41e116] [cursor=pointer]: "No"
+      - generic [ref=f41e118]:
+        - heading "Related articles" [level=2] [ref=f41e119]
+        - list [ref=f41e120]:
+          - listitem [ref=f41e121]:
+            - link "Clideo Pro plans" [ref=f41e122] [cursor=pointer]:
+              - /url: /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJLmobcDBDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBLWn20DBDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSI2L2hjL2VuLXVzL2FydGljbGVzLzQ0MTQwMTIyNTM4NDItQ2xpZGVvLVByby1wbGFucwY7CFQ6CXJhbmtpBg%3D%3D--b9a05b0ba1d4636afbb8aa67a0d48ae265d52044
+          - listitem [ref=f41e123]:
+            - link "How long are my projects stored?" [ref=f41e124] [cursor=pointer]:
+              - /url: /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJJYIbcDBDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBLWn20DBDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJFL2hjL2VuLXVzL2FydGljbGVzLzQ0MTQwMDM4Mjg4ODItSG93LWxvbmctYXJlLW15LXByb2plY3RzLXN0b3JlZAY7CFQ6CXJhbmtpBw%3D%3D--2e024841438a359c5698a9093092df4a4a573a09
+          - listitem [ref=f41e125]:
+            - link "How to buy Clideo Pro?" [ref=f41e126] [cursor=pointer]:
+              - /url: /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBLU1bcDBDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBLWn20DBDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSI7L2hjL2VuLXVzL2FydGljbGVzLzQ0MTQwMTU2NTY5NzgtSG93LXRvLWJ1eS1DbGlkZW8tUHJvBjsIVDoJcmFua2kI--1adc66b352ed3fd8198b9ac9216336e82662b77b
+          - listitem [ref=f41e127]:
+            - link "Are Clideo tools free to use?" [ref=f41e128] [cursor=pointer]:
+              - /url: /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBJ1MtUDBDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBLWn20DBDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJCL2hjL2VuLXVzL2FydGljbGVzLzQ0MTQ1MDgyNjY3NzAtQXJlLUNsaWRlby10b29scy1mcmVlLXRvLXVzZQY7CFQ6CXJhbmtpCQ%3D%3D--c48bc186c7430a31af2a8ba8ad492afd0ed62736
+          - listitem [ref=f41e129]:
+            - link "What file formats does Clideo work with?" [ref=f41e130] [cursor=pointer]:
+              - /url: /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBIQlDgEBDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBLWn20DBDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJNL2hjL2VuLXVzL2FydGljbGVzLzQ0MTYxNzU2MDc4MjYtV2hhdC1maWxlLWZvcm1hdHMtZG9lcy1DbGlkZW8td29yay13aXRoBjsIVDoJcmFua2kK--894d756a3c2ba987779f041bbb02a961b9331aab
+  - contentinfo [ref=f41e131]:
+    - generic [ref=f41e132]:
+      - navigation [ref=f41e133]:
+        - link "Terms of Use" [ref=f41e134] [cursor=pointer]:
+          - /url: https://clideo.com/terms
+        - link "Privacy Policy" [ref=f41e135] [cursor=pointer]:
+          - /url: https://clideo.com/privacy
+      - generic [ref=f41e136]: © 2019–2026 Clideo ltd. All rights reserved.

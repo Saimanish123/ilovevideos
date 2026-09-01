@@ -1,0 +1,817 @@
+- generic [ref=f97e3]:
+  - generic [ref=f97e5]:
+    - link [ref=f97e7] [cursor=pointer]:
+      - /url: /
+      - img "Smallpdf" [ref=f97e8]
+    - generic [ref=f97e14]:
+      - button "Tools" [ref=f97e15] [cursor=pointer]
+      - list [ref=f97e24]:
+        - listitem [ref=f97e25]:
+          - link "Compress" [ref=f97e26] [cursor=pointer]:
+            - /url: /compress-pdf
+        - listitem [ref=f97e27]:
+          - link "Convert" [ref=f97e28] [cursor=pointer]:
+            - /url: /pdf-converter
+        - listitem [ref=f97e29]:
+          - link "Merge" [ref=f97e30] [cursor=pointer]:
+            - /url: /merge-pdf
+        - listitem [ref=f97e31]:
+          - link "Edit" [ref=f97e32] [cursor=pointer]:
+            - /url: /edit-pdf
+        - listitem [ref=f97e33]:
+          - link "Sign" [ref=f97e34] [cursor=pointer]:
+            - /url: /sign-pdf
+        - listitem [ref=f97e35]:
+          - link "AI PDF" [ref=f97e36] [cursor=pointer]:
+            - /url: /ai-pdf
+    - list [ref=f97e39]:
+      - listitem [ref=f97e40]:
+        - link "Pricing" [ref=f97e41] [cursor=pointer]:
+          - /url: /pricing
+    - generic [ref=f97e43]:
+      - button "Log In" [ref=f97e45] [cursor=pointer]
+      - button "Get Pro" [ref=f97e49] [cursor=pointer]
+  - banner [ref=f97e52]:
+    - heading "PDF Software That Fits Your Budget" [level=1] [ref=f97e53]
+    - paragraph [ref=f97e54]: All the PDF tools you need. Built in Switzerland. Trusted by 1.7 billion people since 2013.
+  - generic [ref=f97e55]:
+    - generic [ref=f97e56]:
+      - generic [ref=f97e58]:
+        - button "Yearly -30%" [ref=f97e59] [cursor=pointer]:
+          - text: Yearly
+          - generic [ref=f97e60]: "-30%"
+        - button "Monthly" [ref=f97e61] [cursor=pointer]
+      - generic [ref=f97e63]:
+        - generic [ref=f97e64]:
+          - img "Smallpdf" [ref=f97e66]
+          - strong [ref=f97e72]: +
+        - generic [ref=f97e84]:
+          - text: Get both
+          - strong [ref=f97e85]: Smallpdf
+          - text: and
+          - strong [ref=f97e86]: Sign.com
+          - text: with one subscription.
+    - generic [ref=f97e87]:
+      - generic [ref=f97e89]:
+        - generic [ref=f97e91]:
+          - heading "Free" [level=2] [ref=f97e93]
+          - generic [ref=f97e94]: "1"
+        - generic [ref=f97e99]:
+          - generic [ref=f97e100]:
+            - generic [ref=f97e101]: ₹0.00
+            - generic [ref=f97e103]: /month
+          - button "Get started" [ref=f97e106] [cursor=pointer]
+          - generic [ref=f97e109]:
+            - heading "You get:" [level=3] [ref=f97e110]
+            - list [ref=f97e111]:
+              - listitem [ref=f97e112]: 30+ document management tools
+              - listitem [ref=f97e117]: Limited document downloads
+              - listitem [ref=f97e122]: Limited mobile app access
+          - generic [ref=f97e127]:
+            - generic [ref=f97e128]: Limited access
+            - generic [ref=f97e140]: Sign.com free account limited to 2 documents a month
+      - generic [ref=f97e142]:
+        - generic [ref=f97e143]: Most popular
+        - generic [ref=f97e145]:
+          - heading "Pro" [level=2] [ref=f97e147]
+          - generic [ref=f97e152]: "1"
+        - generic [ref=f97e157]:
+          - generic [ref=f97e158]:
+            - generic [ref=f97e159]: ₹979.00
+            - generic [ref=f97e161]: /month
+          - button "Get Pro" [ref=f97e164] [cursor=pointer]
+          - generic [ref=f97e167]:
+            - heading "Everything in Free, plus:" [level=3] [ref=f97e168]
+            - list [ref=f97e169]:
+              - listitem [ref=f97e170]: Unlimited access to all 30+ tools
+              - listitem [ref=f97e175]: Unlimited document downloads
+              - listitem [ref=f97e180]: Edit Text, OCR, and more...
+              - listitem [ref=f97e185]: Strong Compression
+              - listitem [ref=f97e190]: Unlimited access to AI-powered tools
+              - listitem [ref=f97e195]: Unlimited mobile app access
+          - generic [ref=f97e200]:
+            - generic [ref=f97e201]: Full access
+            - generic [ref=f97e213]: Unlimited Sign.com Premium subscription
+      - generic [ref=f97e215]:
+        - generic [ref=f97e217]:
+          - heading "Business" [level=2] [ref=f97e219]
+          - generic [ref=f97e224]: 20+
+        - generic [ref=f97e229]:
+          - generic [ref=f97e231]:
+            - generic [ref=f97e232]: Custom
+            - generic [ref=f97e234]: Talk to our team to get a custom offer.
+          - button "Contact Sales" [ref=f97e236] [cursor=pointer]
+          - generic [ref=f97e239]:
+            - heading "Everything in Pro for Teams, plus:" [level=3] [ref=f97e240]
+            - list [ref=f97e241]:
+              - listitem [ref=f97e242]: Custom pricing
+              - listitem [ref=f97e247]: Flexible payment options
+              - listitem [ref=f97e252]: Dedicated customer support
+          - generic [ref=f97e257]:
+            - generic [ref=f97e258]: Full access
+            - generic [ref=f97e270]: Unlimited Sign.com Premium subscription for each team member
+  - generic [ref=f97e272]:
+    - generic [ref=f97e273]:
+      - heading [level=2]
+    - table [ref=f97e274]:
+      - row [ref=f97e275]:
+        - columnheader [ref=f97e277]:
+          - img "Smallpdf" [ref=f97e279]
+        - columnheader "Free" [ref=f97e285]
+        - columnheader "Pro" [ref=f97e286]
+        - columnheader "Team" [ref=f97e293]
+        - columnheader "Business" [ref=f97e300]
+      - rowgroup [ref=f97e307]:
+        - rowgroup [ref=f97e308]:
+          - row [ref=f97e309]:
+            - cell "Compress" [ref=f97e310]
+          - row [ref=f97e311]:
+            - rowheader "Basic Compression" [ref=f97e313]
+            - cell "Daily download limit" [ref=f97e314]
+            - cell [ref=f97e316]
+            - cell [ref=f97e320]
+            - cell [ref=f97e324]
+          - row [ref=f97e328]:
+            - rowheader "Strong Compression" [ref=f97e330]
+            - cell [ref=f97e331]
+            - cell [ref=f97e335]
+            - cell [ref=f97e339]
+            - cell [ref=f97e343]
+          - row [ref=f97e347]:
+            - rowheader "Batch Compress" [ref=f97e349]
+            - cell [ref=f97e350]
+            - cell [ref=f97e354]
+            - cell [ref=f97e358]
+            - cell [ref=f97e362]
+        - rowgroup [ref=f97e366]:
+          - row [ref=f97e367]:
+            - cell "Convert" [ref=f97e368]
+          - row [ref=f97e369]:
+            - rowheader "Convert PDF to/from Word" [ref=f97e371]
+            - cell "Daily download limit" [ref=f97e372]
+            - cell [ref=f97e374]
+            - cell [ref=f97e378]
+            - cell [ref=f97e382]
+          - row [ref=f97e386]:
+            - rowheader "Convert PDF to/from Excel" [ref=f97e388]
+            - cell "Daily download limit" [ref=f97e389]
+            - cell [ref=f97e391]
+            - cell [ref=f97e395]
+            - cell [ref=f97e399]
+          - row [ref=f97e403]:
+            - rowheader "Convert PDF to/from PowerPoint" [ref=f97e405]
+            - cell "Daily download limit" [ref=f97e406]
+            - cell [ref=f97e408]
+            - cell [ref=f97e412]
+            - cell [ref=f97e416]
+          - row [ref=f97e420]:
+            - rowheader "Convert PDF to/from Image" [ref=f97e422]
+            - cell "Daily download limit" [ref=f97e423]
+            - cell [ref=f97e425]
+            - cell [ref=f97e429]
+            - cell [ref=f97e433]
+          - row [ref=f97e437]:
+            - rowheader "PDF OCR" [ref=f97e439]
+            - cell "Daily download limit" [ref=f97e440]
+            - cell [ref=f97e442]
+            - cell [ref=f97e446]
+            - cell [ref=f97e450]
+          - row [ref=f97e454]:
+            - rowheader "Extracting Images (JPG to PDF)" [ref=f97e456]
+            - cell [ref=f97e457]
+            - cell [ref=f97e461]
+            - cell [ref=f97e465]
+            - cell [ref=f97e469]
+          - row [ref=f97e473]:
+            - rowheader "Adjust Margins (PDF to JPG)" [ref=f97e475]
+            - cell [ref=f97e476]
+            - cell [ref=f97e480]
+            - cell [ref=f97e484]
+            - cell [ref=f97e488]
+          - row [ref=f97e492]:
+            - rowheader "OCR (PDF to Word, PDF to Excel, PDF to PPT)" [ref=f97e494]
+            - cell [ref=f97e495]
+            - cell [ref=f97e499]
+            - cell [ref=f97e503]
+            - cell [ref=f97e507]
+          - row [ref=f97e511]:
+            - rowheader "Batch Convert" [ref=f97e513]
+            - cell [ref=f97e514]
+            - cell [ref=f97e518]
+            - cell [ref=f97e522]
+            - cell [ref=f97e526]
+        - rowgroup [ref=f97e530]:
+          - row [ref=f97e531]:
+            - cell "Organize" [ref=f97e532]
+          - row [ref=f97e533]:
+            - rowheader "Merge" [ref=f97e535]
+            - cell "Daily download limit" [ref=f97e536]
+            - cell [ref=f97e538]
+            - cell [ref=f97e542]
+            - cell [ref=f97e546]
+          - row [ref=f97e550]:
+            - rowheader "Split" [ref=f97e552]
+            - cell "Daily download limit" [ref=f97e553]
+            - cell [ref=f97e555]
+            - cell [ref=f97e559]
+            - cell [ref=f97e563]
+          - row [ref=f97e567]:
+            - rowheader "Rotate Pages" [ref=f97e569]
+            - cell "Daily download limit" [ref=f97e570]
+            - cell [ref=f97e572]
+            - cell [ref=f97e576]
+            - cell [ref=f97e580]
+          - row [ref=f97e584]:
+            - rowheader "Delete Pages" [ref=f97e586]
+            - cell "Daily download limit" [ref=f97e587]
+            - cell [ref=f97e589]
+            - cell [ref=f97e593]
+            - cell [ref=f97e597]
+          - row [ref=f97e601]:
+            - rowheader "Extract Pages" [ref=f97e603]
+            - cell "Daily download limit" [ref=f97e604]
+            - cell [ref=f97e606]
+            - cell [ref=f97e610]
+            - cell [ref=f97e614]
+          - row [ref=f97e618]:
+            - rowheader "Show Pages (Merge)" [ref=f97e620]
+            - cell [ref=f97e621]
+            - cell [ref=f97e625]
+            - cell [ref=f97e629]
+            - cell [ref=f97e633]
+        - rowgroup [ref=f97e637]:
+          - row [ref=f97e638]:
+            - cell "View & Edit" [ref=f97e639]
+          - row [ref=f97e640]:
+            - rowheader "Edit Text" [ref=f97e642]
+            - cell [ref=f97e643]
+            - cell [ref=f97e647]
+            - cell [ref=f97e651]
+            - cell [ref=f97e655]
+          - row [ref=f97e659]:
+            - rowheader "PDF Annotator" [ref=f97e661]
+            - cell "Daily download limit" [ref=f97e662]
+            - cell [ref=f97e664]
+            - cell [ref=f97e668]
+            - cell [ref=f97e672]
+          - row [ref=f97e676]:
+            - rowheader "PDF Reader" [ref=f97e678]
+            - cell "Daily download limit" [ref=f97e679]
+            - cell [ref=f97e681]
+            - cell [ref=f97e685]
+            - cell [ref=f97e689]
+          - row [ref=f97e693]:
+            - rowheader "Number Pages" [ref=f97e695]
+            - cell "Daily download limit" [ref=f97e696]
+            - cell [ref=f97e698]
+            - cell [ref=f97e702]
+            - cell [ref=f97e706]
+          - row [ref=f97e710]:
+            - rowheader "Crop" [ref=f97e712]
+            - cell "Daily download limit" [ref=f97e713]
+            - cell [ref=f97e715]
+            - cell [ref=f97e719]
+            - cell [ref=f97e723]
+          - row [ref=f97e727]:
+            - rowheader "Redact" [ref=f97e729]
+            - cell "Daily download limit" [ref=f97e730]
+            - cell [ref=f97e732]
+            - cell [ref=f97e736]
+            - cell [ref=f97e740]
+          - row [ref=f97e744]:
+            - rowheader "Watermark" [ref=f97e746]
+            - cell "Daily download limit" [ref=f97e747]
+            - cell [ref=f97e749]
+            - cell [ref=f97e753]
+            - cell [ref=f97e757]
+          - row [ref=f97e761]:
+            - rowheader "Share" [ref=f97e763]
+            - cell "Free with an account" [ref=f97e764]
+            - cell [ref=f97e766]
+            - cell [ref=f97e770]
+            - cell [ref=f97e774]
+        - rowgroup [ref=f97e778]:
+          - row [ref=f97e779]:
+            - cell "Sign (Smallpdf)" [ref=f97e780]
+          - row [ref=f97e781]:
+            - rowheader "Sign" [ref=f97e783]
+            - cell "Daily download limit" [ref=f97e784]
+            - cell [ref=f97e786]
+            - cell [ref=f97e790]
+            - cell [ref=f97e794]
+        - rowgroup [ref=f97e798]:
+          - row [ref=f97e799]:
+            - cell "AI-Powered Tools" [ref=f97e800]
+          - row [ref=f97e801]:
+            - rowheader "Chat with PDF" [ref=f97e803]
+            - cell "Limited" [ref=f97e804]:
+              - generic [ref=f97e806] [cursor=pointer]
+            - cell [ref=f97e810]
+            - cell [ref=f97e814]
+            - cell [ref=f97e818]
+          - row [ref=f97e822]:
+            - rowheader "AI PDF Summarizer" [ref=f97e824]
+            - cell "Limited" [ref=f97e825]:
+              - generic [ref=f97e827] [cursor=pointer]
+            - cell [ref=f97e831]
+            - cell [ref=f97e835]
+            - cell [ref=f97e839]
+          - row [ref=f97e843]:
+            - rowheader "Translate PDF" [ref=f97e845]
+            - cell "Limited" [ref=f97e846]:
+              - generic [ref=f97e848] [cursor=pointer]
+            - cell [ref=f97e852]
+            - cell [ref=f97e856]
+            - cell [ref=f97e860]
+          - row [ref=f97e864]:
+            - rowheader "AI Question Generator" [ref=f97e866]
+            - cell "Limited" [ref=f97e867]:
+              - generic [ref=f97e869] [cursor=pointer]
+            - cell [ref=f97e873]
+            - cell [ref=f97e877]
+            - cell [ref=f97e881]
+          - row [ref=f97e885]:
+            - rowheader "AI-tool file size limit" [ref=f97e887]
+            - cell "50 MB" [ref=f97e888]
+            - cell "50 MB" [ref=f97e890]
+            - cell "50 MB" [ref=f97e892]
+            - cell "50 MB" [ref=f97e894]
+          - row [ref=f97e896]:
+            - rowheader "AI-tool document word limit" [ref=f97e898]
+            - cell "25–35k" [ref=f97e899]
+            - cell "100k" [ref=f97e901]
+            - cell "100k" [ref=f97e903]
+            - cell "100k" [ref=f97e905]
+        - rowgroup [ref=f97e907]:
+          - row [ref=f97e908]:
+            - cell "Secure" [ref=f97e909]
+          - row [ref=f97e910]:
+            - rowheader "Protect" [ref=f97e912]
+            - cell "Daily download limit" [ref=f97e913]
+            - cell [ref=f97e915]
+            - cell [ref=f97e919]
+            - cell [ref=f97e923]
+          - row [ref=f97e927]:
+            - rowheader "Unlock" [ref=f97e929]
+            - cell "Daily download limit" [ref=f97e930]
+            - cell [ref=f97e932]
+            - cell [ref=f97e936]
+            - cell [ref=f97e940]
+          - row [ref=f97e944]:
+            - rowheader "Flatten" [ref=f97e946]
+            - cell "Daily download limit" [ref=f97e947]
+            - cell [ref=f97e949]
+            - cell [ref=f97e953]
+            - cell [ref=f97e957]
+        - rowgroup [ref=f97e961]:
+          - row [ref=f97e962]:
+            - cell "Additional Features" [ref=f97e963]
+          - row [ref=f97e964]:
+            - rowheader "Smallpdf Mobile App access" [ref=f97e966]
+            - cell "Daily task limit" [ref=f97e967]
+            - cell [ref=f97e969]
+            - cell [ref=f97e973]
+            - cell [ref=f97e977]
+          - row [ref=f97e981]:
+            - rowheader "Scan (mobile app)" [ref=f97e983]
+            - cell "Daily task limit" [ref=f97e984]
+            - cell [ref=f97e986]
+            - cell [ref=f97e990]
+            - cell [ref=f97e994]
+          - row [ref=f97e998]:
+            - rowheader "Cloud storage" [ref=f97e1000]
+            - cell [ref=f97e1001]
+            - cell [ref=f97e1005]
+            - cell [ref=f97e1009]
+            - cell [ref=f97e1013]
+          - row [ref=f97e1017]:
+            - rowheader "File size limit" [ref=f97e1019]
+            - cell "Limited" [ref=f97e1020]
+            - cell "Unlimited" [ref=f97e1022]
+            - cell "Unlimited" [ref=f97e1024]
+            - cell "Unlimited" [ref=f97e1026]
+          - row [ref=f97e1028]:
+            - rowheader "Priority customer support" [ref=f97e1030]
+            - cell [ref=f97e1031]
+            - cell [ref=f97e1035]
+            - cell [ref=f97e1039]
+            - cell [ref=f97e1043]
+          - row [ref=f97e1047]:
+            - rowheader "Dedicated customer support" [ref=f97e1049]
+            - cell [ref=f97e1050]
+            - cell [ref=f97e1054]
+            - cell [ref=f97e1058]
+            - cell [ref=f97e1062]
+          - row [ref=f97e1066]:
+            - rowheader "Centralized billing" [ref=f97e1068]
+            - cell [ref=f97e1069]
+            - cell [ref=f97e1073]
+            - cell [ref=f97e1077]
+            - cell [ref=f97e1081]
+          - row [ref=f97e1085]:
+            - rowheader "Flexible payment options" [ref=f97e1087]
+            - cell [ref=f97e1088]
+            - cell [ref=f97e1092]
+            - cell [ref=f97e1096]
+            - cell [ref=f97e1100]
+          - row [ref=f97e1104]:
+            - rowheader "Custom pricing" [ref=f97e1106]
+            - cell [ref=f97e1107]
+            - cell [ref=f97e1111]
+            - cell [ref=f97e1115]
+            - cell [ref=f97e1119]
+          - row [ref=f97e1123]:
+            - rowheader "Team access management" [ref=f97e1125]
+            - cell [ref=f97e1126]
+            - cell [ref=f97e1130]
+            - cell [ref=f97e1134]
+            - cell [ref=f97e1138]
+  - table [ref=f97e1144]:
+    - row [ref=f97e1145]:
+      - columnheader [ref=f97e1147]
+      - columnheader "Free" [ref=f97e1158]
+      - columnheader "Premium" [ref=f97e1159]
+    - rowgroup [ref=f97e1166]:
+      - rowgroup [ref=f97e1167]:
+        - row [ref=f97e1168]:
+          - cell "Features" [ref=f97e1169]
+        - row [ref=f97e1170]:
+          - rowheader "Sign documents" [ref=f97e1172]
+          - cell "Limited" [ref=f97e1173]:
+            - generic [ref=f97e1175] [cursor=pointer]
+          - cell "Unlimited" [ref=f97e1179]
+        - row [ref=f97e1181]:
+          - rowheader "Request signatures" [ref=f97e1183]
+          - cell "Limited" [ref=f97e1184]:
+            - generic [ref=f97e1186] [cursor=pointer]
+          - cell "Unlimited" [ref=f97e1190]
+        - row [ref=f97e1192]:
+          - rowheader "Unlimited signees" [ref=f97e1194]
+          - cell [ref=f97e1195]
+          - cell [ref=f97e1199]
+        - row [ref=f97e1203]:
+          - rowheader "Basic signing" [ref=f97e1205]
+          - cell [ref=f97e1206]
+          - cell [ref=f97e1210]
+        - row [ref=f97e1214]:
+          - rowheader "Digital sealing" [ref=f97e1216]
+          - cell [ref=f97e1217]
+          - cell [ref=f97e1221]
+        - row [ref=f97e1225]:
+          - rowheader "Activity timeline" [ref=f97e1227]
+          - cell [ref=f97e1228]
+          - cell [ref=f97e1232]
+        - row [ref=f97e1236]:
+          - rowheader "Templates" [ref=f97e1238]
+          - cell [ref=f97e1239]
+          - cell [ref=f97e1243]
+        - row [ref=f97e1247]:
+          - rowheader "Sign IDs" [ref=f97e1249]
+          - cell [ref=f97e1250]
+          - cell [ref=f97e1254]
+        - row [ref=f97e1258]:
+          - rowheader "Document IDs" [ref=f97e1260]
+          - cell [ref=f97e1261]
+          - cell [ref=f97e1265]
+        - row [ref=f97e1269]:
+          - rowheader "Certificate of Completion" [ref=f97e1271]
+          - cell [ref=f97e1272]
+          - cell [ref=f97e1276]
+        - row [ref=f97e1280]:
+          - rowheader "Document access codes" [ref=f97e1282]
+          - cell [ref=f97e1283]
+          - cell [ref=f97e1287]
+        - row [ref=f97e1291]:
+          - rowheader "Signing on mobile" [ref=f97e1293]
+          - cell [ref=f97e1294]
+          - cell [ref=f97e1298]
+  - generic [ref=f97e1303]:
+    - heading "Certified for Your Security" [level=2] [ref=f97e1304]
+    - paragraph [ref=f97e1305]: Smallpdf is ISO/IEC 27001 certified, GDPR, CCPA, and nFADP compliant. Thanks to our TLS encryption technology, your documents are always processed with an added layer of security.
+  - generic [ref=f97e1309]:
+    - heading "FAQs" [level=2] [ref=f97e1311]
+    - list [ref=f97e1312]:
+      - listitem [ref=f97e1313]:
+        - group [ref=f97e1314]:
+          - heading "Can I cancel the free trial easily?" [level=3] [ref=f97e1316] [cursor=pointer]
+          - paragraph [ref=f97e1321]: Yes. You can cancel the trial anytime and rest assured we won’t charge you anything. If you cancel the free trial, your account will be automatically downgraded to the free plan when the 7-day period expires.
+      - listitem [ref=f97e1322]:
+        - group [ref=f97e1323]:
+          - heading "How can I purchase one of the paid plans?" [level=3] [ref=f97e1325] [cursor=pointer]
+      - listitem [ref=f97e1330]:
+        - group [ref=f97e1331]:
+          - heading "If I sign up today, will I get future product updates?" [level=3] [ref=f97e1333] [cursor=pointer]
+    - button "Get Pro" [ref=f97e1342] [cursor=pointer]
+  - generic [ref=f97e1345]:
+    - heading "What People Are Saying About Us" [level=2] [ref=f97e1347]
+    - list [ref=f97e1348]:
+      - link "Smallpdf is 20 stars, not just 5. \"Have been using Smallpdf for several years. The program is extremely easy to use, well designed, and includes everything needed to work with pdf files. I've contacted support twice and both times they responded within several hours (even on a weekend) with excellent suggestions and follow-up. This company is doing everything right. Don't hesitate to use Smallpdf.\" Sue USA" [ref=f97e1349] [cursor=pointer]:
+        - /url: https://www.trustpilot.com/reviews/66c3139f491b8fd650aea22d
+        - generic [ref=f97e1366]: Smallpdf is 20 stars, not just 5.
+        - generic [ref=f97e1367]: "\"Have been using Smallpdf for several years. The program is extremely easy to use, well designed, and includes everything needed to work with pdf files. I've contacted support twice and both times they responded within several hours (even on a weekend) with excellent suggestions and follow-up. This company is doing everything right. Don't hesitate to use Smallpdf.\""
+        - generic [ref=f97e1369]:
+          - paragraph [ref=f97e1370]: Sue
+          - paragraph [ref=f97e1371]: USA
+      - link "Quick and easy way to convert all kinds of digital documents/files \"We have been using Smallpdf for a few years and it's a very quick and easy way to convert all kinds of digital documents/files and allows you to do so much more Have had issues an odd time but they always give a prompt response and were keen to resolve it. For the annual cost, I wouldn't have any problem recommending it to others.\" Pat USA" [ref=f97e1372] [cursor=pointer]:
+        - /url: https://www.trustpilot.com/reviews/670e660320e27683c0a5975c
+        - generic [ref=f97e1389]: Quick and easy way to convert all kinds of digital documents/files
+        - generic [ref=f97e1390]: "\"We have been using Smallpdf for a few years and it's a very quick and easy way to convert all kinds of digital documents/files and allows you to do so much more Have had issues an odd time but they always give a prompt response and were keen to resolve it. For the annual cost, I wouldn't have any problem recommending it to others.\""
+        - generic [ref=f97e1392]:
+          - paragraph [ref=f97e1393]: Pat
+          - paragraph [ref=f97e1394]: USA
+      - link "Been using Smallpdf since 2017!! \"Been using Smallpdf since 2017, never had a single problem! I started using this service to merge and shrink large presentations for my business. Now I use it for personal as well. Consolidated photo albums, and compressed. It's fantastic!\" John Ireland" [ref=f97e1395] [cursor=pointer]:
+        - /url: https://www.trustpilot.com/reviews/66d6ead40e93b772587e3171
+        - generic [ref=f97e1412]: Been using Smallpdf since 2017!!
+        - generic [ref=f97e1413]: "\"Been using Smallpdf since 2017, never had a single problem! I started using this service to merge and shrink large presentations for my business. Now I use it for personal as well. Consolidated photo albums, and compressed. It's fantastic!\""
+        - generic [ref=f97e1415]:
+          - paragraph [ref=f97e1416]: John
+          - paragraph [ref=f97e1417]: Ireland
+    - link "Reviews from" [ref=f97e1419] [cursor=pointer]:
+      - /url: https://www.trustpilot.com/review/smallpdf.com
+  - contentinfo [ref=f97e1422]:
+    - generic [ref=f97e1423]:
+      - navigation [ref=f97e1429]:
+        - region "Compress" [ref=f97e1430]:
+          - list [ref=f97e1432]:
+            - listitem [ref=f97e1433]:
+              - link "Compress PDF" [ref=f97e1434] [cursor=pointer]:
+                - /url: /compress-pdf
+        - region "Convert" [ref=f97e1439]:
+          - list [ref=f97e1441]:
+            - listitem [ref=f97e1442]:
+              - link "PDF Converter" [ref=f97e1443] [cursor=pointer]:
+                - /url: /pdf-converter
+            - listitem [ref=f97e1448]:
+              - link "PDF OCR" [ref=f97e1449] [cursor=pointer]:
+                - /url: /pdf-ocr
+            - listitem [ref=f97e1454]:
+              - link "PDF to PDF/A" [ref=f97e1455] [cursor=pointer]:
+                - /url: /pdf-to-pdfa
+        - region "PDF to Image" [ref=f97e1460]:
+          - list [ref=f97e1462]:
+            - listitem [ref=f97e1463]:
+              - link "PDF to JPG" [ref=f97e1464] [cursor=pointer]:
+                - /url: /pdf-to-jpg
+        - region "Image to PDF" [ref=f97e1470]:
+          - list [ref=f97e1472]:
+            - listitem [ref=f97e1473]:
+              - link "JPG to PDF" [ref=f97e1474] [cursor=pointer]:
+                - /url: /jpg-to-pdf
+        - region "PDF to Office" [ref=f97e1480]:
+          - list [ref=f97e1482]:
+            - listitem [ref=f97e1483]:
+              - link "PDF to Word" [ref=f97e1484] [cursor=pointer]:
+                - /url: /pdf-to-word
+            - listitem [ref=f97e1489]:
+              - link "PDF to Excel" [ref=f97e1490] [cursor=pointer]:
+                - /url: /pdf-to-excel
+            - listitem [ref=f97e1495]:
+              - link "PDF to PPT" [ref=f97e1496] [cursor=pointer]:
+                - /url: /pdf-to-ppt
+        - region "Office to PDF" [ref=f97e1501]:
+          - list [ref=f97e1503]:
+            - listitem [ref=f97e1504]:
+              - link "Word to PDF" [ref=f97e1505] [cursor=pointer]:
+                - /url: /word-to-pdf
+            - listitem [ref=f97e1510]:
+              - link "Excel to PDF" [ref=f97e1511] [cursor=pointer]:
+                - /url: /excel-to-pdf
+            - listitem [ref=f97e1516]:
+              - link "PPT to PDF" [ref=f97e1517] [cursor=pointer]:
+                - /url: /ppt-to-pdf
+        - region "OpenOffice to PDF" [ref=f97e1522]:
+          - list [ref=f97e1524]:
+            - listitem [ref=f97e1525]:
+              - link "ODT to PDF" [ref=f97e1526] [cursor=pointer]:
+                - /url: /odt-to-pdf
+            - listitem [ref=f97e1531]:
+              - link "ODS to PDF" [ref=f97e1532] [cursor=pointer]:
+                - /url: /ods-to-pdf
+            - listitem [ref=f97e1537]:
+              - link "ODP to PDF" [ref=f97e1538] [cursor=pointer]:
+                - /url: /odp-to-pdf
+        - region "Convert to PDF" [ref=f97e1543]:
+          - list [ref=f97e1545]:
+            - listitem [ref=f97e1546]:
+              - link "TXT to PDF" [ref=f97e1547] [cursor=pointer]:
+                - /url: /txt-to-pdf
+            - listitem [ref=f97e1552]:
+              - link "RTF to PDF" [ref=f97e1553] [cursor=pointer]:
+                - /url: /rtf-to-pdf
+            - listitem [ref=f97e1558]:
+              - link "HWP to PDF" [ref=f97e1559] [cursor=pointer]:
+                - /url: /hwp-to-pdf
+            - listitem [ref=f97e1564]:
+              - link "HTML to PDF" [ref=f97e1565] [cursor=pointer]:
+                - /url: /html-to-pdf
+            - listitem [ref=f97e1570]:
+              - link "EPUB to PDF" [ref=f97e1571] [cursor=pointer]:
+                - /url: /epub-to-pdf
+            - listitem [ref=f97e1576]:
+              - link "ZIP to PDF" [ref=f97e1577] [cursor=pointer]:
+                - /url: /zip-to-pdf
+            - listitem [ref=f97e1582]:
+              - link "CSV to PDF" [ref=f97e1583] [cursor=pointer]:
+                - /url: /csv-to-pdf
+        - region "iWork to PDF" [ref=f97e1588]:
+          - list [ref=f97e1590]:
+            - listitem [ref=f97e1591]:
+              - link "Pages to PDF" [ref=f97e1592] [cursor=pointer]:
+                - /url: /pages-to-pdf
+        - region "Organize" [ref=f97e1597]:
+          - list [ref=f97e1599]:
+            - listitem [ref=f97e1600]:
+              - link "Merge PDF" [ref=f97e1601] [cursor=pointer]:
+                - /url: /merge-pdf
+            - listitem [ref=f97e1606]:
+              - link "Split PDF" [ref=f97e1607] [cursor=pointer]:
+                - /url: /split-pdf
+            - listitem [ref=f97e1612]:
+              - link "Rotate PDF" [ref=f97e1613] [cursor=pointer]:
+                - /url: /rotate-pdf
+            - listitem [ref=f97e1618]:
+              - link "Delete PDF Pages" [ref=f97e1619] [cursor=pointer]:
+                - /url: /delete-pages-from-pdf
+            - listitem [ref=f97e1624]:
+              - link "Extract PDF Pages" [ref=f97e1625] [cursor=pointer]:
+                - /url: /extract-pdf-pages
+            - listitem [ref=f97e1630]:
+              - link "Organize PDF" [ref=f97e1631] [cursor=pointer]:
+                - /url: /organize-pdf
+        - region "Edit" [ref=f97e1636]:
+          - list [ref=f97e1638]:
+            - listitem [ref=f97e1639]:
+              - link "Edit PDF" [ref=f97e1640] [cursor=pointer]:
+                - /url: /edit-pdf
+            - listitem [ref=f97e1645]:
+              - link "PDF Annotator" [ref=f97e1646] [cursor=pointer]:
+                - /url: /pdf-annotator
+            - listitem [ref=f97e1651]:
+              - link "PDF Reader" [ref=f97e1652] [cursor=pointer]:
+                - /url: /pdf-reader
+            - listitem [ref=f97e1657]:
+              - link "Number Pages" [ref=f97e1658] [cursor=pointer]:
+                - /url: /add-page-numbers-to-pdf
+            - listitem [ref=f97e1663]:
+              - link "Crop PDF" [ref=f97e1664] [cursor=pointer]:
+                - /url: /crop-pdf
+            - listitem [ref=f97e1669]:
+              - link "Redact PDF" [ref=f97e1670] [cursor=pointer]:
+                - /url: /redact-pdf
+            - listitem [ref=f97e1675]:
+              - link "Watermark PDF" [ref=f97e1676] [cursor=pointer]:
+                - /url: /watermark-pdf
+            - listitem [ref=f97e1681]:
+              - link "PDF Form Filler" [ref=f97e1682] [cursor=pointer]:
+                - /url: /pdf-form-filler
+            - listitem [ref=f97e1687]:
+              - link "Share PDF" [ref=f97e1688] [cursor=pointer]:
+                - /url: /share-document
+        - region "Fill & Sign" [ref=f97e1693]:
+          - list [ref=f97e1695]:
+            - listitem [ref=f97e1696]:
+              - link "Sign PDF" [ref=f97e1697] [cursor=pointer]:
+                - /url: /sign-pdf
+            - listitem [ref=f97e1702]:
+              - link "Request Signatures (Sign.com)" [ref=f97e1703] [cursor=pointer]:
+                - /url: https://sign.com/smallpdf?utm_source=smallpdf&utm_medium=nav&utm_content=tool-list
+        - region "Protect" [ref=f97e1710]:
+          - list [ref=f97e1712]:
+            - listitem [ref=f97e1713]:
+              - link "Unlock PDF" [ref=f97e1714] [cursor=pointer]:
+                - /url: /unlock-pdf
+            - listitem [ref=f97e1719]:
+              - link "Protect PDF" [ref=f97e1720] [cursor=pointer]:
+                - /url: /protect-pdf
+            - listitem [ref=f97e1725]:
+              - link "Flatten PDF" [ref=f97e1726] [cursor=pointer]:
+                - /url: /flatten-pdf
+        - region "AI PDF" [ref=f97e1731]:
+          - list [ref=f97e1733]:
+            - listitem [ref=f97e1734]:
+              - link "AI PDF Assistant" [ref=f97e1735] [cursor=pointer]:
+                - /url: /ai-pdf
+            - listitem [ref=f97e1740]:
+              - link "Chat with PDF" [ref=f97e1741] [cursor=pointer]:
+                - /url: /chat-pdf
+            - listitem [ref=f97e1748]:
+              - link "AI PDF Summarizer" [ref=f97e1749] [cursor=pointer]:
+                - /url: /pdf-summarizer
+            - listitem [ref=f97e1754]:
+              - link "Translate PDF" [ref=f97e1755] [cursor=pointer]:
+                - /url: /translate-pdf
+            - listitem [ref=f97e1761]:
+              - link "AI Question Generator" [ref=f97e1762] [cursor=pointer]:
+                - /url: /question-generator
+        - region "Scan" [ref=f97e1769]:
+          - list [ref=f97e1771]:
+            - listitem [ref=f97e1772]:
+              - link "PDF Scanner" [ref=f97e1773] [cursor=pointer]:
+                - /url: /pdf-scanner
+      - generic [ref=f97e1781]:
+        - generic [ref=f97e1782]:
+          - img "Smallpdf" [ref=f97e1784]
+          - generic [ref=f97e1790]: We make PDF easy.
+        - navigation [ref=f97e1791]:
+          - list [ref=f97e1792]:
+            - listitem [ref=f97e1793]:
+              - heading "Solutions" [level=2] [ref=f97e1794]
+            - listitem [ref=f97e1795]:
+              - link "Sales" [ref=f97e1796] [cursor=pointer]:
+                - /url: /teams/sales
+            - listitem [ref=f97e1797]:
+              - link "Finance" [ref=f97e1798] [cursor=pointer]:
+                - /url: /teams/finance
+            - listitem [ref=f97e1799]:
+              - link "Real Estate" [ref=f97e1800] [cursor=pointer]:
+                - /url: /teams/real-estate
+            - listitem [ref=f97e1801]:
+              - link "Education" [ref=f97e1802] [cursor=pointer]:
+                - /url: /education
+          - list [ref=f97e1803]:
+            - listitem [ref=f97e1804]:
+              - heading "Company" [level=2] [ref=f97e1805]
+            - listitem [ref=f97e1806]:
+              - link "About" [ref=f97e1807] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f97e1808]:
+              - link "Help" [ref=f97e1809] [cursor=pointer]:
+                - /url: /support
+            - listitem [ref=f97e1810]:
+              - link "Blog" [ref=f97e1811] [cursor=pointer]:
+                - /url: /blog
+            - listitem
+            - listitem [ref=f97e1812]:
+              - link "PDF Statistics" [ref=f97e1813] [cursor=pointer]:
+                - /url: /pdf-statistics
+          - list [ref=f97e1814]:
+            - listitem [ref=f97e1815]:
+              - heading "Product" [level=2] [ref=f97e1816]
+            - listitem [ref=f97e1817]:
+              - link "Pricing" [ref=f97e1819] [cursor=pointer]:
+                - /url: /pricing
+            - listitem
+            - listitem [ref=f97e1820]:
+              - link "Embed PDF" [ref=f97e1821] [cursor=pointer]:
+                - /url: /embed-pdf
+            - listitem [ref=f97e1822]:
+              - link "Developers" [ref=f97e1823] [cursor=pointer]:
+                - /url: /library-detail
+            - listitem [ref=f97e1824]:
+              - link "Sign.com" [ref=f97e1825] [cursor=pointer]:
+                - /url: https://sign.com/?utm_source=smallpdf&utm_medium=nav&utm_content=footer
+            - listitem [ref=f97e1826]:
+              - link "Compare" [ref=f97e1827] [cursor=pointer]:
+                - /url: /compare/adobe-vs-foxit-vs-smallpdf
+            - listitem [ref=f97e1828]:
+              - link "Accessible PDF" [ref=f97e1829] [cursor=pointer]:
+                - /url: /accessible-pdf
+          - list [ref=f97e1830]:
+            - listitem [ref=f97e1831]:
+              - heading "Apps" [level=2] [ref=f97e1832]
+            - listitem [ref=f97e1833]:
+              - link "Download Smallpdf" [ref=f97e1834] [cursor=pointer]:
+                - /url: /download
+            - listitem [ref=f97e1835]:
+              - link "PDF Scanner" [ref=f97e1836] [cursor=pointer]:
+                - /url: /pdf-scanner
+            - listitem [ref=f97e1837]:
+              - link "Windows App" [ref=f97e1838] [cursor=pointer]:
+                - /url: /download/windows#
+      - generic [ref=f97e1842]:
+        - list [ref=f97e1843]:
+          - listitem [ref=f97e1844]:
+            - link "LinkedIn" [ref=f97e1845] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/smallpdf
+          - listitem [ref=f97e1849]:
+            - link "Facebook" [ref=f97e1850] [cursor=pointer]:
+              - /url: https://www.facebook.com/smallpdf
+          - listitem [ref=f97e1854]:
+            - link "YouTube" [ref=f97e1855] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCnBx8Kzxocmk44G_fRPfcPg
+          - listitem [ref=f97e1859]:
+            - link "X" [ref=f97e1860] [cursor=pointer]:
+              - /url: https://x.com/smallpdf
+        - generic [ref=f97e1865]:
+          - link [ref=f97e1867] [cursor=pointer]:
+            - /url: /download/windows#sd=1&trigger=footer
+            - img "Download for Windows" [ref=f97e1868]
+          - link [ref=f97e1870] [cursor=pointer]:
+            - /url: https://smallpdf-mobile.onelink.me/LaDa?pid=footer&af_xp=custom&af_dp=smallpdf%253A%252F%252F&af_web_dp=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.smallpdf.app.android&local_token=c797b370a45ae8521d86f0a92c41a822&deep_link_value=c797b370a45ae8521d86f0a92c41a822
+            - img "Get it on Google Play" [ref=f97e1871]
+          - link [ref=f97e1873] [cursor=pointer]:
+            - /url: https://smallpdf-mobile.onelink.me/LaDa?pid=footer&af_xp=custom&af_dp=smallpdf%253A%252F%252F&af_web_dp=https%3A%2F%2Fapps.apple.com%2Fapp%2Fsmallpdf%2Fid1485259500&local_token=c797b370a45ae8521d86f0a92c41a822&deep_link_value=c797b370a45ae8521d86f0a92c41a822
+            - img "Download on the App Store" [ref=f97e1874]
+    - generic [ref=f97e1878]:
+      - generic [ref=f97e1879]:
+        - text: © 2026 Smallpdf AG —
+        - generic [ref=f97e1880]: Made with for the people of the internet.
+      - generic [ref=f97e1884]:
+        - link "Privacy Notice" [ref=f97e1886] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms & Conditions" [ref=f97e1888] [cursor=pointer]:
+          - /url: /terms
+        - link "Imprint" [ref=f97e1890] [cursor=pointer]:
+          - /url: /imprint
+        - button "Contact Us" [ref=f97e1892] [cursor=pointer]
+        - button "English" [ref=f97e1894] [cursor=pointer]

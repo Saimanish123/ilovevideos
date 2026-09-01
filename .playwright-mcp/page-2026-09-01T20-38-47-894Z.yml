@@ -1,0 +1,1262 @@
+- generic [active] [ref=f49e1]:
+  - link "Skip to main content" [ref=f49e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=f49e6]:
+    - generic:
+      - generic: "Online Video Editors Suggestions? : r/chromeos"
+      - banner [ref=f49e10]:
+        - navigation [ref=f49e11]:
+          - link "Home" [ref=f49e15] [cursor=pointer]:
+            - /url: https://www.reddit.com/
+          - search [ref=f49e34]:
+            - generic [ref=f49e36]:
+              - textbox [ref=f49e43]:
+                - /placeholder: Search Reddit
+              - generic [aria-hidden]: Search Reddit
+          - generic [ref=f49e44]:
+            - link "Sign Up" [ref=f49e50] [cursor=pointer]:
+              - /url: https://www.reddit.com/register/
+            - link "Log In" [ref=f49e56] [cursor=pointer]:
+              - /url: https://www.reddit.com/login/
+            - button "Expand user menu" [ref=f49e63] [cursor=pointer]
+      - generic [ref=f49e69]:
+        - generic [ref=f49e70]:
+          - generic [ref=f49e71]:
+            - generic:
+              - generic:
+                - link "Skip to Sign up" [ref=f49e72] [cursor=pointer]:
+                  - /url: "#left-sidebar-container"
+                - link "Skip to Right Sidebar" [ref=f49e73] [cursor=pointer]:
+                  - /url: "#right-sidebar-container"
+          - generic [ref=f49e74]:
+            - main [ref=f49e75]:
+              - 'generic "Online Video Editors Suggestions? : r/chromeos"'
+              - generic [ref=f49e76]:
+                - generic [ref=f49e77]:
+                  - generic [ref=f49e78]:
+                    - button "Back" [ref=f49e80] [cursor=pointer]
+                    - link "Go to chromeos" [ref=f49e88] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/chromeos/
+                    - group [ref=f49e93]:
+                      - generic [ref=f49e94]:
+                        - link "r/chromeos" [ref=f49e98] [cursor=pointer]:
+                          - /url: https://www.reddit.com/r/chromeos/
+                        - generic [aria-hidden] [ref=f49e99]: •
+                        - time [ref=f49e101]: 4y ago
+                      - 'link "Author: NinDiGu" [ref=f49e107] [cursor=pointer]':
+                        - /url: https://www.reddit.com/user/NinDiGu/
+                        - generic [ref=f49e108]: NinDiGu
+                  - generic [ref=f49e109]:
+                    - img "Archived post" [ref=f49e113]
+                    - button "Open user actions" [ref=f49e117] [cursor=pointer]
+                - generic [ref=f49e123]:
+                  - 'heading "Post Title: Online Video Editors Suggestions?" [level=1] [ref=f49e124]': Online Video Editors Suggestions?
+                  - 'link "Flair: Discussion" [ref=f49e127] [cursor=pointer]':
+                    - /url: /r/chromeos/?f=flair_name%3A%22Discussion%22
+                    - 'generic "Flair: Discussion" [ref=f49e129]': Discussion
+                - generic [ref=f49e132]:
+                  - generic [ref=f49e133]:
+                    - paragraph [ref=f49e134]: Now that I know I am stuck with the Chromebook only for the time being because of .... things, I need to do some online Video editing with said ChromeBook instead of just piling it all up waiting for my full OS computers to get back on line.
+                    - paragraph [ref=f49e135]: I have been playing around with Veed.io, and it seems decent enough, and if I had money to spare I'd just sign up, because it is simple enough, and seems to do enough. VEED.io definitely does a better job of giving full access to the editing suite in the trial, but I do not want to get to involved with recurring payments just yet.
+                    - paragraph [ref=f49e136]: But money is still tight, and I need to be able to do edit short videos without watermarking.
+                    - paragraph [ref=f49e137]: Does anyone have any go-to product they use? Really paid version or not, either is worth hearing about.
+                    - paragraph [ref=f49e138]: It seems like all the kids on TikTok are using Kapwing, but I will be editing on my ChromeBook and that may change things.
+                    - paragraph [ref=f49e139]: "EDIT: I have too little space to do Android or Linux"
+                    - paragraph [ref=f49e140]: "EDITING in suggestions:"
+                    - paragraph [ref=f49e141]:
+                      - link "https://VEED.io" [ref=f49e142] [cursor=pointer]:
+                        - /url: https://VEED.io
+                      - text: (Free version adds watermark)
+                    - paragraph [ref=f49e143]:
+                      - link "https://vidmix.app" [ref=f49e144] [cursor=pointer]:
+                        - /url: https://vidmix.app
+                      - text: (developer in on this sub!! No information website or subreddit currently, it is a PWA.)
+                    - paragraph [ref=f49e145]:
+                      - link "https://123apps.com/" [ref=f49e146] [cursor=pointer]:
+                        - /url: https://123apps.com/
+                    - paragraph [ref=f49e147]:
+                      - link "https://clipchamp.com/en/" [ref=f49e148] [cursor=pointer]:
+                        - /url: https://clipchamp.com/en/
+                    - paragraph [ref=f49e149]:
+                      - link "https://www.kapwing.com/" [ref=f49e150] [cursor=pointer]:
+                        - /url: https://www.kapwing.com/
+                  - button "Read more" [ref=f49e151] [cursor=pointer]
+                - generic: Archived post. New comments cannot be posted and votes cannot be cast.
+                - generic "Actions available for this post" [ref=f49e164]:
+                  - generic [ref=f49e167]:
+                    - button "Upvote" [disabled]
+                    - generic [ref=f49e168]: "20"
+                    - button "Downvote" [disabled]
+                  - button "75 Go to comments" [ref=f49e170] [cursor=pointer]:
+                    - generic [ref=f49e171]: "75"
+                    - generic [ref=f49e177]: Go to comments
+                  - button "Share" [ref=f49e181] [cursor=pointer]
+              - generic "Build faster, experiment more, & boost creativity with the Parallels AI package" [ref=f49e188]:
+                - generic [ref=f49e189]:
+                  - 'generic "Advertisement: Build faster, experiment more, & boost creativity with the Parallels AI package" [ref=f49e190]':
+                    - 'link "Advertisement: Build faster, experiment more, & boost creativity with the Parallels AI package" [ref=f49e191] [cursor=pointer]':
+                      - /url: https://alb.reddit.com/cr?za=IRiWRykBaOSU-GxbzkiGwCWkfLCDsbwVbQZWebFigSZrjjEMKX9wuTKozcusMrFTKiSd-VvZKaJtKBrbuIbr69ktIgRdcKbvbtM99Dgr2pzUf2eftKrFb_fHj3rkgvmhap7BgfaaJo9XcLbrLjLXmtTbKyFyWfPoukvfd4_oEyXN21e9W1jfMJwYCpdrWbKQN6t1rpsWXAoKnRAc7srPDGh1I4Ak00y4IhRR2UB7otKbgJjqOinDCoAxFy1n9XUa4Zu3tOKji7qBxGYJdBCjz8UmZemftsvWHEVJ6RuTlyCnZb123zbLyemtkAA0chbHhpNjb__1aTuYwjzqTpHMWHoam32MXtafiPWmD8XvjQ3jndgB4nEnork4Ldu2_K0Rj5RcNNV42EO8Xh7KzrRS-X19uuuQyIhkDW1lhXGoiVgBkZsljsa9QITE-362vqHS3sTSji0xvTywrL0rTJ3yQ2yPbeVJONvDXjaftOruNgBV06cU8TsiGZ_qqUyE9o2B36jYAnIIniQCeCNubs9xiDYHZiZj4vLKEWNjQjfVkfWawbGglDfiBF7flSb6lpqZN38PNFeghWuIeF5kzB8lrJMrFvcI1IaXIZS_8dW1VcmuYqVOSwqmYnWJnKL7r7-wUdfEJG4xKNx2DmHxaYZUunXoLu4Xmyeu-GImUFeWxjDA37ZQez6DTw8feXVQrslteBc&zp=aLMMQLgd-hZoa_G1JEnjKmAlWa2ITNu1jXfauRbKiiD6JCh8piHLKmrrGsuQqcJ8P4ee17n7BR9ilbkS7GjtSC0bmyGrMOQXHmAM-KSB9ThUeozrOaZUxlAok2Wl3O1Ifxnu-12r5MkUD9QFSA94M4AYPJ8cPlmo4nYdjI0QVyk_x5ntHaUMng3p4AUdja9Hs7bS3OpKizSahGCSD2dtiOqsrRvqxWAV4hbyeDhT_F7g5jfpic17_J5Nz1WD0l5aixft-ZS6mkE81tu9TvCPF0RnMfY_S0kNApBCpVPCdoaGHLpTEbz47ld7cUvoUrwRleMINVZ3aL3H0i8Z9kPVJRP-0dXVbEgXbu_X6BV2_C1He-dGIO3knMpvLaTLwSUKetaHMfU0Vi3frqJfH6lRgNpyKchBFeY2Dxy33YB5BitzADUVTNX2QnNIo3Vt3QQIAEMiZrNVzA
+                  - generic [ref=f49e192]:
+                    - generic [ref=f49e193]:
+                      - link "parallels-desktop" [ref=f49e196] [cursor=pointer]:
+                        - /url: /user/parallels-desktop/
+                        - img "u/parallels-desktop avatar" [ref=f49e199]
+                      - generic [ref=f49e201]: •
+                      - link "Ad" [ref=f49e203] [cursor=pointer]:
+                        - /url: /user/parallels-desktop/
+                      - link [ref=f49e206] [cursor=pointer]:
+                        - /url: https://alb.reddit.com/cr?za=IRiWRykBaOSU-GxbzkiGwCWkfLCDsbwVbQZWebFigSZrjjEMKX9wuTKozcusMrFTKiSd-VvZKaJtKBrbuIbr69ktIgRdcKbvbtM99Dgr2pzUf2eftKrFb_fHj3rkgvmhap7BgfaaJo9XcLbrLjLXmtTbKyFyWfPoukvfd4_oEyXN21e9W1jfMJwYCpdrWbKQN6t1rpsWXAoKnRAc7srPDGh1I4Ak00y4IhRR2UB7otKbgJjqOinDCoAxFy1n9XUa4Zu3tOKji7qBxGYJdBCjz8UmZemftsvWHEVJ6RuTlyCnZb123zbLyemtkAA0chbHhpNjb__1aTuYwjzqTpHMWHoam32MXtafiPWmD8XvjQ3jndgB4nEnork4Ldu2_K0Rj5RcNNV42EO8Xh7KzrRS-X19uuuQyIhkDW1lhXGoiVgBkZsljsa9QITE-362vqHS3sTSji0xvTywrL0rTJ3yQ2yPbeVJONvDXjaftOruNgBV06cU8TsiGZ_qqUyE9o2B36jYAnIIniQCeCNubs9xiDYHZiZj4vLKEWNjQjfVkfWawbGglDfiBF7flSb6lpqZN38PNFeghWuIeF5kzB8lrJMrFvcI1IaXIZS_8dW1VcmuYqVOSwqmYnWJnKL7r7-wUdfEJG4xKNx2DmHxaYZUunXoLu4Xmyeu-GImUFeWxjDA37ZQez6DTw8feXVQrslteBc&zp=aLMMQLgd-hZoa_G1JEnjKmAlWa2ITNu1jXfauRbKiiD6JCh8piHLKmrrGsuQqcJ8P4ee17n7BR9ilbkS7GjtSC0bmyGrMOQXHmAM-KSB9ThUeozrOaZUxlAok2Wl3O1Ifxnu-12r5MkUD9QFSA94M4AYPJ8cPlmo4nYdjI0QVyk_x5ntHaUMng3p4AUdja9Hs7bS3OpKizSahGCSD2dtiOqsrRvqxWAV4hbyeDhT_F7g5jfpic17_J5Nz1WD0l5aixft-ZS6mkE81tu9TvCPF0RnMfY_S0kNApBCpVPCdoaGHLpTEbz47ld7cUvoUrwRleMINVZ3aL3H0i8Z9kPVJRP-0dXVbEgXbu_X6BV2_C1He-dGIO3knMpvLaTLwSUKetaHMfU0Vi3frqJfH6lRgNpyKchBFeY2Dxy33YB5BitzADUVTNX2QnNIo3Vt3QQIAEMiZrNVzA
+                    - button "Open user actions" [ref=f49e212] [cursor=pointer]
+                  - generic [ref=f49e218]:
+                    - generic [ref=f49e219]:
+                      - link "Build faster, experiment more, & boost creativity with the Parallels AI package" [ref=f49e221] [cursor=pointer]:
+                        - /url: https://alb.reddit.com/cr?za=IRiWRykBaOSU-GxbzkiGwCWkfLCDsbwVbQZWebFigSZrjjEMKX9wuTKozcusMrFTKiSd-VvZKaJtKBrbuIbr69ktIgRdcKbvbtM99Dgr2pzUf2eftKrFb_fHj3rkgvmhap7BgfaaJo9XcLbrLjLXmtTbKyFyWfPoukvfd4_oEyXN21e9W1jfMJwYCpdrWbKQN6t1rpsWXAoKnRAc7srPDGh1I4Ak00y4IhRR2UB7otKbgJjqOinDCoAxFy1n9XUa4Zu3tOKji7qBxGYJdBCjz8UmZemftsvWHEVJ6RuTlyCnZb123zbLyemtkAA0chbHhpNjb__1aTuYwjzqTpHMWHoam32MXtafiPWmD8XvjQ3jndgB4nEnork4Ldu2_K0Rj5RcNNV42EO8Xh7KzrRS-X19uuuQyIhkDW1lhXGoiVgBkZsljsa9QITE-362vqHS3sTSji0xvTywrL0rTJ3yQ2yPbeVJONvDXjaftOruNgBV06cU8TsiGZ_qqUyE9o2B36jYAnIIniQCeCNubs9xiDYHZiZj4vLKEWNjQjfVkfWawbGglDfiBF7flSb6lpqZN38PNFeghWuIeF5kzB8lrJMrFvcI1IaXIZS_8dW1VcmuYqVOSwqmYnWJnKL7r7-wUdfEJG4xKNx2DmHxaYZUunXoLu4Xmyeu-GImUFeWxjDA37ZQez6DTw8feXVQrslteBc&zp=aLMMQLgd-hZoa_G1JEnjKmAlWa2ITNu1jXfauRbKiiD6JCh8piHLKmrrGsuQqcJ8P4ee17n7BR9ilbkS7GjtSC0bmyGrMOQXHmAM-KSB9ThUeozrOaZUxlAok2Wl3O1Ifxnu-12r5MkUD9QFSA94M4AYPJ8cPlmo4nYdjI0QVyk_x5ntHaUMng3p4AUdja9Hs7bS3OpKizSahGCSD2dtiOqsrRvqxWAV4hbyeDhT_F7g5jfpic17_J5Nz1WD0l5aixft-ZS6mkE81tu9TvCPF0RnMfY_S0kNApBCpVPCdoaGHLpTEbz47ld7cUvoUrwRleMINVZ3aL3H0i8Z9kPVJRP-0dXVbEgXbu_X6BV2_C1He-dGIO3knMpvLaTLwSUKetaHMfU0Vi3frqJfH6lRgNpyKchBFeY2Dxy33YB5BitzADUVTNX2QnNIo3Vt3QQIAEMiZrNVzA
+                      - generic [ref=f49e222]:
+                        - link [ref=f49e224] [cursor=pointer]:
+                          - /url: https://alb.reddit.com/cr?za=IRiWRykBaOSU-GxbzkiGwCWkfLCDsbwVbQZWebFigSZrjjEMKX9wuTKozcusMrFTKiSd-VvZKaJtKBrbuIbr69ktIgRdcKbvbtM99Dgr2pzUf2eftKrFb_fHj3rkgvmhap7BgfaaJo9XcLbrLjLXmtTbKyFyWfPoukvfd4_oEyXN21e9W1jfMJwYCpdrWbKQN6t1rpsWXAoKnRAc7srPDGh1I4Ak00y4IhRR2UB7otKbgJjqOinDCoAxFy1n9XUa4Zu3tOKji7qBxGYJdBCjz8UmZemftsvWHEVJ6RuTlyCnZb123zbLyemtkAA0chbHhpNjb__1aTuYwjzqTpHMWHoam32MXtafiPWmD8XvjQ3jndgB4nEnork4Ldu2_K0Rj5RcNNV42EO8Xh7KzrRS-X19uuuQyIhkDW1lhXGoiVgBkZsljsa9QITE-362vqHS3sTSji0xvTywrL0rTJ3yQ2yPbeVJONvDXjaftOruNgBV06cU8TsiGZ_qqUyE9o2B36jYAnIIniQCeCNubs9xiDYHZiZj4vLKEWNjQjfVkfWawbGglDfiBF7flSb6lpqZN38PNFeghWuIeF5kzB8lrJMrFvcI1IaXIZS_8dW1VcmuYqVOSwqmYnWJnKL7r7-wUdfEJG4xKNx2DmHxaYZUunXoLu4Xmyeu-GImUFeWxjDA37ZQez6DTw8feXVQrslteBc&zp=aLMMQLgd-hZoa_G1JEnjKmAlWa2ITNu1jXfauRbKiiD6JCh8piHLKmrrGsuQqcJ8P4ee17n7BR9ilbkS7GjtSC0bmyGrMOQXHmAM-KSB9ThUeozrOaZUxlAok2Wl3O1Ifxnu-12r5MkUD9QFSA94M4AYPJ8cPlmo4nYdjI0QVyk_x5ntHaUMng3p4AUdja9Hs7bS3OpKizSahGCSD2dtiOqsrRvqxWAV4hbyeDhT_F7g5jfpic17_J5Nz1WD0l5aixft-ZS6mkE81tu9TvCPF0RnMfY_S0kNApBCpVPCdoaGHLpTEbz47ld7cUvoUrwRleMINVZ3aL3H0i8Z9kPVJRP-0dXVbEgXbu_X6BV2_C1He-dGIO3knMpvLaTLwSUKetaHMfU0Vi3frqJfH6lRgNpyKchBFeY2Dxy33YB5BitzADUVTNX2QnNIo3Vt3QQIAEMiZrNVzA
+                        - generic [ref=f49e225]:
+                          - link "Download" [ref=f49e227] [cursor=pointer]:
+                            - /url: https://alb.reddit.com/cr?za=IRiWRykBaOSU-GxbzkiGwCWkfLCDsbwVbQZWebFigSZrjjEMKX9wuTKozcusMrFTKiSd-VvZKaJtKBrbuIbr69ktIgRdcKbvbtM99Dgr2pzUf2eftKrFb_fHj3rkgvmhap7BgfaaJo9XcLbrLjLXmtTbKyFyWfPoukvfd4_oEyXN21e9W1jfMJwYCpdrWbKQN6t1rpsWXAoKnRAc7srPDGh1I4Ak00y4IhRR2UB7otKbgJjqOinDCoAxFy1n9XUa4Zu3tOKji7qBxGYJdBCjz8UmZemftsvWHEVJ6RuTlyCnZb123zbLyemtkAA0chbHhpNjb__1aTuYwjzqTpHMWHoam32MXtafiPWmD8XvjQ3jndgB4nEnork4Ldu2_K0Rj5RcNNV42EO8Xh7KzrRS-X19uuuQyIhkDW1lhXGoiVgBkZsljsa9QITE-362vqHS3sTSji0xvTywrL0rTJ3yQ2yPbeVJONvDXjaftOruNgBV06cU8TsiGZ_qqUyE9o2B36jYAnIIniQCeCNubs9xiDYHZiZj4vLKEWNjQjfVkfWawbGglDfiBF7flSb6lpqZN38PNFeghWuIeF5kzB8lrJMrFvcI1IaXIZS_8dW1VcmuYqVOSwqmYnWJnKL7r7-wUdfEJG4xKNx2DmHxaYZUunXoLu4Xmyeu-GImUFeWxjDA37ZQez6DTw8feXVQrslteBc&zp=aLMMQLgd-hZoa_G1JEnjKmAlWa2ITNu1jXfauRbKiiD6JCh8piHLKmrrGsuQqcJ8P4ee17n7BR9ilbkS7GjtSC0bmyGrMOQXHmAM-KSB9ThUeozrOaZUxlAok2Wl3O1Ifxnu-12r5MkUD9QFSA94M4AYPJ8cPlmo4nYdjI0QVyk_x5ntHaUMng3p4AUdja9Hs7bS3OpKizSahGCSD2dtiOqsrRvqxWAV4hbyeDhT_F7g5jfpic17_J5Nz1WD0l5aixft-ZS6mkE81tu9TvCPF0RnMfY_S0kNApBCpVPCdoaGHLpTEbz47ld7cUvoUrwRleMINVZ3aL3H0i8Z9kPVJRP-0dXVbEgXbu_X6BV2_C1He-dGIO3knMpvLaTLwSUKetaHMfU0Vi3frqJfH6lRgNpyKchBFeY2Dxy33YB5BitzADUVTNX2QnNIo3Vt3QQIAEMiZrNVzA
+                          - link "parallels.com" [ref=f49e232] [cursor=pointer]:
+                            - /url: https://alb.reddit.com/cr?za=IRiWRykBaOSU-GxbzkiGwCWkfLCDsbwVbQZWebFigSZrjjEMKX9wuTKozcusMrFTKiSd-VvZKaJtKBrbuIbr69ktIgRdcKbvbtM99Dgr2pzUf2eftKrFb_fHj3rkgvmhap7BgfaaJo9XcLbrLjLXmtTbKyFyWfPoukvfd4_oEyXN21e9W1jfMJwYCpdrWbKQN6t1rpsWXAoKnRAc7srPDGh1I4Ak00y4IhRR2UB7otKbgJjqOinDCoAxFy1n9XUa4Zu3tOKji7qBxGYJdBCjz8UmZemftsvWHEVJ6RuTlyCnZb123zbLyemtkAA0chbHhpNjb__1aTuYwjzqTpHMWHoam32MXtafiPWmD8XvjQ3jndgB4nEnork4Ldu2_K0Rj5RcNNV42EO8Xh7KzrRS-X19uuuQyIhkDW1lhXGoiVgBkZsljsa9QITE-362vqHS3sTSji0xvTywrL0rTJ3yQ2yPbeVJONvDXjaftOruNgBV06cU8TsiGZ_qqUyE9o2B36jYAnIIniQCeCNubs9xiDYHZiZj4vLKEWNjQjfVkfWawbGglDfiBF7flSb6lpqZN38PNFeghWuIeF5kzB8lrJMrFvcI1IaXIZS_8dW1VcmuYqVOSwqmYnWJnKL7r7-wUdfEJG4xKNx2DmHxaYZUunXoLu4Xmyeu-GImUFeWxjDA37ZQez6DTw8feXVQrslteBc&zp=aLMMQLgd-hZoa_G1JEnjKmAlWa2ITNu1jXfauRbKiiD6JCh8piHLKmrrGsuQqcJ8P4ee17n7BR9ilbkS7GjtSC0bmyGrMOQXHmAM-KSB9ThUeozrOaZUxlAok2Wl3O1Ifxnu-12r5MkUD9QFSA94M4AYPJ8cPlmo4nYdjI0QVyk_x5ntHaUMng3p4AUdja9Hs7bS3OpKizSahGCSD2dtiOqsrRvqxWAV4hbyeDhT_F7g5jfpic17_J5Nz1WD0l5aixft-ZS6mkE81tu9TvCPF0RnMfY_S0kNApBCpVPCdoaGHLpTEbz47ld7cUvoUrwRleMINVZ3aL3H0i8Z9kPVJRP-0dXVbEgXbu_X6BV2_C1He-dGIO3knMpvLaTLwSUKetaHMfU0Vi3frqJfH6lRgNpyKchBFeY2Dxy33YB5BitzADUVTNX2QnNIo3Vt3QQIAEMiZrNVzA
+                    - link [ref=f49e235] [cursor=pointer]:
+                      - /url: https://alb.reddit.com/cr?za=IRiWRykBaOSU-GxbzkiGwCWkfLCDsbwVbQZWebFigSZrjjEMKX9wuTKozcusMrFTKiSd-VvZKaJtKBrbuIbr69ktIgRdcKbvbtM99Dgr2pzUf2eftKrFb_fHj3rkgvmhap7BgfaaJo9XcLbrLjLXmtTbKyFyWfPoukvfd4_oEyXN21e9W1jfMJwYCpdrWbKQN6t1rpsWXAoKnRAc7srPDGh1I4Ak00y4IhRR2UB7otKbgJjqOinDCoAxFy1n9XUa4Zu3tOKji7qBxGYJdBCjz8UmZemftsvWHEVJ6RuTlyCnZb123zbLyemtkAA0chbHhpNjb__1aTuYwjzqTpHMWHoam32MXtafiPWmD8XvjQ3jndgB4nEnork4Ldu2_K0Rj5RcNNV42EO8Xh7KzrRS-X19uuuQyIhkDW1lhXGoiVgBkZsljsa9QITE-362vqHS3sTSji0xvTywrL0rTJ3yQ2yPbeVJONvDXjaftOruNgBV06cU8TsiGZ_qqUyE9o2B36jYAnIIniQCeCNubs9xiDYHZiZj4vLKEWNjQjfVkfWawbGglDfiBF7flSb6lpqZN38PNFeghWuIeF5kzB8lrJMrFvcI1IaXIZS_8dW1VcmuYqVOSwqmYnWJnKL7r7-wUdfEJG4xKNx2DmHxaYZUunXoLu4Xmyeu-GImUFeWxjDA37ZQez6DTw8feXVQrslteBc&zp=aLMMQLgd-hZoa_G1JEnjKmAlWa2ITNu1jXfauRbKiiD6JCh8piHLKmrrGsuQqcJ8P4ee17n7BR9ilbkS7GjtSC0bmyGrMOQXHmAM-KSB9ThUeozrOaZUxlAok2Wl3O1Ifxnu-12r5MkUD9QFSA94M4AYPJ8cPlmo4nYdjI0QVyk_x5ntHaUMng3p4AUdja9Hs7bS3OpKizSahGCSD2dtiOqsrRvqxWAV4hbyeDhT_F7g5jfpic17_J5Nz1WD0l5aixft-ZS6mkE81tu9TvCPF0RnMfY_S0kNApBCpVPCdoaGHLpTEbz47ld7cUvoUrwRleMINVZ3aL3H0i8Z9kPVJRP-0dXVbEgXbu_X6BV2_C1He-dGIO3knMpvLaTLwSUKetaHMfU0Vi3frqJfH6lRgNpyKchBFeY2Dxy33YB5BitzADUVTNX2QnNIo3Vt3QQIAEMiZrNVzA
+                      - 'img "Thumbnail image: Build faster, experiment more, & boost creativity with the Parallels AI package" [ref=f49e236]'
+              - generic [ref=f49e243]:
+                - generic [ref=f49e245]:
+                  - generic [aria-hidden] [ref=f49e246]: "Sort by:"
+                  - button "Sort by Best" [ref=f49e251] [cursor=pointer]:
+                    - generic [ref=f49e252]: Best
+                - button "Search Comments Expand comment search" [ref=f49e260] [cursor=pointer]:
+                  - generic [ref=f49e261]: Search Comments
+                  - generic [ref=f49e268]: Expand comment search
+              - region "Comments" [ref=f49e271]:
+                - heading "Comments Section" [level=1] [ref=f49e272]
+                - article "Comment from voxeloid 4 years ago" [ref=f49e274]:
+                  - generic [ref=f49e275] [cursor=pointer]:
+                    - link "voxeloid's profile --- avatar" [ref=f49e281]:
+                      - /url: https://www.reddit.com/user/voxeloid/
+                      - img "u/voxeloid avatar" [ref=f49e284]
+                    - generic [ref=f49e288]:
+                      - link "voxeloid's profile" [ref=f49e292]:
+                        - /url: https://www.reddit.com/user/voxeloid/
+                        - text: voxeloid
+                      - generic [aria-hidden] [ref=f49e293]: •
+                      - link [ref=f49e295]:
+                        - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/ihq0wxf/
+                        - time [ref=f49e297]: 4y ago
+                  - generic [ref=f49e299]:
+                    - generic [ref=f49e302]:
+                      - paragraph [ref=f49e303]:
+                        - link "https://vidmix.app" [ref=f49e304] [cursor=pointer]:
+                          - /url: https://vidmix.app
+                        - text: is free, browser-based, without watermark.
+                      - paragraph [ref=f49e305]: (I am the creator of it, if something is broken please let me know. I personally never tried it on a chromebook but I know that plenty of people are using it on them)
+                    - generic [ref=f49e308]:
+                      - 'article "Comment thread level 1: Reply from NinDiGu 4 years ago" [ref=f49e310]':
+                        - generic [ref=f49e311] [cursor=pointer]:
+                          - link "NinDiGu's profile --- avatar" [ref=f49e317]:
+                            - /url: https://www.reddit.com/user/NinDiGu/
+                            - img "u/NinDiGu avatar" [ref=f49e320]
+                          - generic [ref=f49e324]:
+                            - link "NinDiGu's profile" [ref=f49e328]:
+                              - /url: https://www.reddit.com/user/NinDiGu/
+                              - text: NinDiGu
+                            - generic "Comment distinguished as the original poster" [ref=f49e331]: OP
+                            - generic [aria-hidden] [ref=f49e332]: •
+                            - link [ref=f49e334]:
+                              - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/iht91dd/
+                              - time [ref=f49e336]: 4y ago
+                        - generic [ref=f49e338]:
+                          - generic [ref=f49e341]:
+                            - paragraph [ref=f49e342]: Thanks for the suggestion. Is there a community or website for this? As you see below, there are questions.
+                            - paragraph [ref=f49e343]: Am I correct in labeling it a PWA, so it uses local storage instead of uploading the data and working on that data online? This is the deal breaker for me, currently, as my Chromebook is underpowered and lacks much free storage.
+                          - 'article "Comment thread level 2: Reply from voxeloid 4 years ago" [ref=f49e348]':
+                            - generic [ref=f49e349] [cursor=pointer]:
+                              - link "voxeloid's profile --- avatar" [ref=f49e355]:
+                                - /url: https://www.reddit.com/user/voxeloid/
+                                - img "u/voxeloid avatar" [ref=f49e358]
+                              - generic [ref=f49e362]:
+                                - link "voxeloid's profile" [ref=f49e366]:
+                                  - /url: https://www.reddit.com/user/voxeloid/
+                                  - text: voxeloid
+                                - generic [aria-hidden] [ref=f49e367]: •
+                                - link [ref=f49e369]:
+                                  - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/ihwt9sy/
+                                  - time [ref=f49e371]: 4y ago
+                                - generic [aria-hidden] [ref=f49e372]: •
+                                - generic [ref=f49e373]:
+                                  - text: Edited
+                                  - time [ref=f49e375]: 4y ago
+                            - generic [ref=f49e377]:
+                              - paragraph [ref=f49e381]: Yes it's a PWA, does not store anything on the server. I thought that network bandwidth is more often the bottleneck rather than local storage, but perhaps in the future I will add cloud rendering. Unfortunately that's something that would need to be a paid feature.
+                              - button "1 more reply" [ref=f49e388] [cursor=pointer]:
+                                - generic [ref=f49e393]:
+                                  - generic [ref=f49e394]: "1"
+                                  - text: more reply
+                      - 'article "Comment thread level 1: Reply from Grim-Sleeper 4 years ago" [ref=f49e396]':
+                        - generic [ref=f49e397] [cursor=pointer]:
+                          - link "Grim-Sleeper's profile --- avatar" [ref=f49e403]:
+                            - /url: https://www.reddit.com/user/Grim-Sleeper/
+                            - img "u/Grim-Sleeper avatar" [ref=f49e406]
+                          - generic [ref=f49e410]:
+                            - link "Grim-Sleeper's profile" [ref=f49e414]:
+                              - /url: https://www.reddit.com/user/Grim-Sleeper/
+                              - text: Grim-Sleeper
+                            - generic [aria-hidden] [ref=f49e415]: •
+                            - link [ref=f49e417]:
+                              - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/ihqa9n5/
+                              - time [ref=f49e419]: 4y ago
+                        - generic [ref=f49e421]:
+                          - generic [ref=f49e424]:
+                            - paragraph [ref=f49e425]: It looks really cool. I just accessed it from my Chromebook and while I didn't try a lot of the features, what little that I did try seemed to work. I'll definitely keep it in mind next time I want to edit video.
+                            - paragraph [ref=f49e426]: Is there are website for it? Is it open source or are you the only developer and keeping it closed? Sounds as if there is a premium version on Apple devices. Is that also available for the web version?
+                          - 'article "Comment thread level 2: Reply from voxeloid 4 years ago" [ref=f49e431]':
+                            - generic [ref=f49e432] [cursor=pointer]:
+                              - link "voxeloid's profile --- avatar" [ref=f49e438]:
+                                - /url: https://www.reddit.com/user/voxeloid/
+                                - img "u/voxeloid avatar" [ref=f49e441]
+                              - generic [ref=f49e445]:
+                                - link "voxeloid's profile" [ref=f49e449]:
+                                  - /url: https://www.reddit.com/user/voxeloid/
+                                  - text: voxeloid
+                                - generic [aria-hidden] [ref=f49e450]: •
+                                - link [ref=f49e452]:
+                                  - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/ihrorr6/
+                                  - time [ref=f49e454]: 4y ago
+                            - generic [ref=f49e456]:
+                              - paragraph [ref=f49e460]: There is no other website for it, just this webapp. It's not open source. There is a related native iOS app but it's quite outdated and buggy right now. Very soon it's going to be updated to match the functionality and UI of the webapp.
+                              - button "4 more replies" [ref=f49e467] [cursor=pointer]:
+                                - generic [ref=f49e472]:
+                                  - generic [ref=f49e473]: "4"
+                                  - text: more replies
+                      - 'article "Comment thread level 1: Reply from Consistent_Road1882 3 years ago" [ref=f49e475]':
+                        - generic [ref=f49e476] [cursor=pointer]:
+                          - link "Consistent_Road1882's profile --- avatar" [ref=f49e482]:
+                            - /url: https://www.reddit.com/user/Consistent_Road1882/
+                          - generic [ref=f49e492]:
+                            - link "Consistent_Road1882's profile" [ref=f49e496]:
+                              - /url: https://www.reddit.com/user/Consistent_Road1882/
+                              - text: Consistent_Road1882
+                            - generic [aria-hidden] [ref=f49e497]: •
+                            - link [ref=f49e499]:
+                              - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/kux74ai/
+                              - time [ref=f49e501]: 3y ago
+                        - paragraph [ref=f49e507]: ur a savior
+                      - 'article "Comment thread level 1: Reply from ExcuseNumerous 2 years ago" [ref=f49e511]':
+                        - generic [ref=f49e512] [cursor=pointer]:
+                          - link "ExcuseNumerous's profile --- avatar" [ref=f49e518]:
+                            - /url: https://www.reddit.com/user/ExcuseNumerous/
+                          - generic [ref=f49e528]:
+                            - link "ExcuseNumerous's profile" [ref=f49e532]:
+                              - /url: https://www.reddit.com/user/ExcuseNumerous/
+                              - text: ExcuseNumerous
+                            - generic [aria-hidden] [ref=f49e533]: •
+                            - link [ref=f49e535]:
+                              - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/kv6eveu/
+                              - time [ref=f49e537]: 2y ago
+                        - generic [ref=f49e539]:
+                          - paragraph [ref=f49e543]: The whole app is broken, there is no cache system and even when saving files the work gets damaged. I would request everyone to not waste time on this. It wasted so much of my time, that I have now decided to properly learn pro.Never trustinfg browser based editor now
+                          - button "2 more replies" [ref=f49e550] [cursor=pointer]:
+                            - generic [ref=f49e555]:
+                              - generic [ref=f49e556]: "2"
+                              - text: more replies
+                      - 'article "Comment thread level 1: Reply from [deleted] 2 years ago" [ref=f49e558]':
+                        - generic "[deleted] 2y ago" [ref=f49e559] [cursor=pointer]:
+                          - generic [ref=f49e573]:
+                            - generic [ref=f49e574]: "[deleted]"
+                            - generic [aria-hidden] [ref=f49e577]: •
+                            - link [ref=f49e579]:
+                              - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/l5gc93e/
+                              - time [ref=f49e581]: 2y ago
+                        - paragraph [ref=f49e587]: Thanks a lot for making it, I was trying many other editing tools and found yours to be very straightforward without needing a tutorial, thanks again!
+                      - 'article "Comment thread level 1: Reply from [deleted] 2 years ago" [ref=f49e591]':
+                        - generic "[deleted] 2y ago" [ref=f49e592] [cursor=pointer]:
+                          - generic [ref=f49e606]:
+                            - generic [ref=f49e607]: "[deleted]"
+                            - generic [aria-hidden] [ref=f49e610]: •
+                            - link [ref=f49e612]:
+                              - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/lb70hhj/
+                              - time [ref=f49e614]: 2y ago
+                        - paragraph [ref=f49e620]: Thank you so much man. Because of you I was able to hand in my uni assignment on time! All the other video editors failed me so yours was really coming in clutch. You really saved me there haha Keep up the nice work!
+                      - button "24 more replies" [ref=f49e626] [cursor=pointer]:
+                        - generic [ref=f49e631]:
+                          - generic [ref=f49e632]: "24"
+                          - text: more replies
+                - article "Comment from DueDetail9287 4 years ago" [ref=f49e634]:
+                  - generic [ref=f49e635] [cursor=pointer]:
+                    - link "DueDetail9287's profile --- avatar" [ref=f49e641]:
+                      - /url: https://www.reddit.com/user/DueDetail9287/
+                    - generic [ref=f49e657]:
+                      - link "DueDetail9287's profile" [ref=f49e661]:
+                        - /url: https://www.reddit.com/user/DueDetail9287/
+                        - text: DueDetail9287
+                      - generic [aria-hidden] [ref=f49e662]: •
+                      - link [ref=f49e664]:
+                        - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/ihpo09s/
+                        - time [ref=f49e666]: 4y ago
+                      - generic [aria-hidden] [ref=f49e667]: •
+                      - generic [ref=f49e668]:
+                        - text: Edited
+                        - time [ref=f49e670]: 4y ago
+                  - generic [ref=f49e672]:
+                    - generic [ref=f49e675]:
+                      - paragraph [ref=f49e676]: Waiting for your full OS computers? ☺️
+                      - paragraph [ref=f49e677]:
+                        - text: Not sure what are your needs, but I'd suggest checking VidMix or ClipChamp. You can also install any Android app (
+                        - link "https://www.androidauthority.com/best-video-editor-apps-android-716248/" [ref=f49e678] [cursor=pointer]:
+                          - /url: https://www.androidauthority.com/best-video-editor-apps-android-716248/
+                        - text: ) or run Linux software (
+                        - link "https://www.lifewire.com/best-linux-video-editors-4176979" [ref=f49e679] [cursor=pointer]:
+                          - /url: https://www.lifewire.com/best-linux-video-editors-4176979
+                        - text: )
+                    - 'article "Comment thread level 1: Reply from NinDiGu 4 years ago" [ref=f49e684]':
+                      - generic [ref=f49e685] [cursor=pointer]:
+                        - link "NinDiGu's profile --- avatar" [ref=f49e691]:
+                          - /url: https://www.reddit.com/user/NinDiGu/
+                          - img "u/NinDiGu avatar" [ref=f49e694]
+                        - generic [ref=f49e698]:
+                          - link "NinDiGu's profile" [ref=f49e702]:
+                            - /url: https://www.reddit.com/user/NinDiGu/
+                            - text: NinDiGu
+                          - generic "Comment distinguished as the original poster" [ref=f49e705]: OP
+                          - generic [aria-hidden] [ref=f49e706]: •
+                          - link [ref=f49e708]:
+                            - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/iht9oa2/
+                            - time [ref=f49e710]: 4y ago
+                      - paragraph [ref=f49e716]: I really need my full OS computers, as this Chromebook it too limited to do Android or Lunix very effectively as I lack horsepower for rendering and storage for well storage.
+                - article "Comment from Saeed40 4 years ago" [ref=f49e720]:
+                  - generic [ref=f49e721] [cursor=pointer]:
+                    - link "Saeed40's profile --- avatar" [ref=f49e727]:
+                      - /url: https://www.reddit.com/user/Saeed40/
+                    - generic [ref=f49e737]:
+                      - link "Saeed40's profile" [ref=f49e741]:
+                        - /url: https://www.reddit.com/user/Saeed40/
+                        - text: Saeed40
+                      - generic [aria-hidden] [ref=f49e742]: •
+                      - link [ref=f49e744]:
+                        - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/ihrpcgg/
+                        - time [ref=f49e746]: 4y ago
+                  - generic [ref=f49e748]:
+                    - paragraph [ref=f49e752]: Hopefully lumafusion comes soon. I know it's a long shot but if Google worked hard enough to get DaVinci resolve to function on a Chromebook.
+                    - 'article "Comment thread level 1: Reply from NinDiGu 4 years ago" [ref=f49e757]':
+                      - generic [ref=f49e758] [cursor=pointer]:
+                        - link "NinDiGu's profile --- avatar" [ref=f49e764]:
+                          - /url: https://www.reddit.com/user/NinDiGu/
+                          - img "u/NinDiGu avatar" [ref=f49e767]
+                        - generic [ref=f49e771]:
+                          - link "NinDiGu's profile" [ref=f49e775]:
+                            - /url: https://www.reddit.com/user/NinDiGu/
+                            - text: NinDiGu
+                          - generic "Comment distinguished as the original poster" [ref=f49e778]: OP
+                          - generic [aria-hidden] [ref=f49e779]: •
+                          - link [ref=f49e781]:
+                            - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/iht9w2w/
+                            - time [ref=f49e783]: 4y ago
+                      - generic [ref=f49e788]:
+                        - paragraph [ref=f49e789]: The lack of horsepower and storage on many Chromebooks makes local video editing a less than useful thing.
+                        - paragraph [ref=f49e790]: Isn't LumaFusion on iOS app?
+                - generic "Browser automation for AI agents, the kind that doesn't get stuck on a captcha and cry for help." [ref=f49e794]:
+                  - generic [ref=f49e795]:
+                    - 'generic "Advertisement: Browser automation for AI agents, the kind that doesn''t get stuck on a captcha and cry for help." [ref=f49e796]':
+                      - 'link "Advertisement: Browser automation for AI agents, the kind that doesn''t get stuck on a captcha and cry for help." [ref=f49e797] [cursor=pointer]':
+                        - /url: https://alb.reddit.com/cr?za=wdJjcTzrACMKkVw4i56a2l8tjvblr-6jtEqdp4UzbvyM0UPWHMPXIgPj-_yO7l178ZlKzv81OyKwmcQLkBLSVgduWLztYAw3xVqooZdAVeJRcxbLBO4K3n1PXql_JYCnB_RsMLuLBMjcPuYx9FqfIqOhNyQ6dEtVumK5ShA_Pmy7SoyaGwtvSBdc9xKEAKwHR-XtbBZfzeKQJGQhbhPyZrfegBYUXQ-nQyRMeDGKi4M0kM_zfthIabmxPomFnQucVoTEhaXnWLRLvLo8afTU5X41V-jUgegzG6Fn8e0jw5w6IwwQzuol14931zShUD9HCgCnDvIzB56X6-b6BZ0UVM3onpHxJVcsC-BJNy1tuP5dIxpX2kkKZ9bCt-LUCMLDJV3nijgSodWgPxx7Hdq6-w2UHuStGH8H9AvCdAvUW9fVGRtI9qrR0Vs-d9nCkgQ5WNQxviOy9r1nPX-10xy-s9HX5HNZfzl7KZ2nEPzBLSMLoSN42XLHCO7EXdAPOWznMgtQBs7nE4wNJw8PN1rmuzlfeip_MFpRZXIdNPhG21PJaTx53QdDkqNqswsOxLMIVD7sG22E2T0nVPeoItMNCMZITjN235VTMpWPajGvIYoaNchVF_bOD7GXCMV1BSceWkqKciDvuzazrF5PSCIhR12A0ZmdkdPy2Ty1Y3F1k1Pv_RjLolFkOdjzH_qo83RU9rx_5Is&zp=cNyeGV2tOPzvgWgIoB9kMi8RY21m5qw4uQQ53xBgW00MoT4xt996wc87duzG1KfAOkLJKgLim6Ty5_u3ckyAxN0TA-VqV_iiAzbiUsTpvNKeQ92JyMeTQenj6srNaxRZtbFwnp4grLGs21HgAkpMdDJaTlEaEbVPxloQodNjW1hCDFnyMLo8ADeBLuaZKjy9IgChjawMHwWxbUxrxqUxEv9bnXdpwGgY7QRtVh-z5KpHAWqeHOyBkGOLxy6snSFYJRwjCg6Z8Mt-y9c331Ip__lQy-C1uRTd6Vmh1HnTKGIhfza-jOY1Z9S81Jib51h-RnEvONbCrFZbAgiodU-CN2B9O0JoRddslD5eAikOUUffHIr-5mT4GJc
+                    - generic [ref=f49e798]:
+                      - generic [ref=f49e799]:
+                        - link "u/ego_lite" [ref=f49e802] [cursor=pointer]:
+                          - /url: /user/ego_lite/
+                          - img "u/ego_lite avatar" [ref=f49e805]
+                        - generic [ref=f49e807]: •
+                        - link "Ad" [ref=f49e809] [cursor=pointer]:
+                          - /url: /user/ego_lite/
+                        - link [ref=f49e812] [cursor=pointer]:
+                          - /url: https://alb.reddit.com/cr?za=wdJjcTzrACMKkVw4i56a2l8tjvblr-6jtEqdp4UzbvyM0UPWHMPXIgPj-_yO7l178ZlKzv81OyKwmcQLkBLSVgduWLztYAw3xVqooZdAVeJRcxbLBO4K3n1PXql_JYCnB_RsMLuLBMjcPuYx9FqfIqOhNyQ6dEtVumK5ShA_Pmy7SoyaGwtvSBdc9xKEAKwHR-XtbBZfzeKQJGQhbhPyZrfegBYUXQ-nQyRMeDGKi4M0kM_zfthIabmxPomFnQucVoTEhaXnWLRLvLo8afTU5X41V-jUgegzG6Fn8e0jw5w6IwwQzuol14931zShUD9HCgCnDvIzB56X6-b6BZ0UVM3onpHxJVcsC-BJNy1tuP5dIxpX2kkKZ9bCt-LUCMLDJV3nijgSodWgPxx7Hdq6-w2UHuStGH8H9AvCdAvUW9fVGRtI9qrR0Vs-d9nCkgQ5WNQxviOy9r1nPX-10xy-s9HX5HNZfzl7KZ2nEPzBLSMLoSN42XLHCO7EXdAPOWznMgtQBs7nE4wNJw8PN1rmuzlfeip_MFpRZXIdNPhG21PJaTx53QdDkqNqswsOxLMIVD7sG22E2T0nVPeoItMNCMZITjN235VTMpWPajGvIYoaNchVF_bOD7GXCMV1BSceWkqKciDvuzazrF5PSCIhR12A0ZmdkdPy2Ty1Y3F1k1Pv_RjLolFkOdjzH_qo83RU9rx_5Is&zp=cNyeGV2tOPzvgWgIoB9kMi8RY21m5qw4uQQ53xBgW00MoT4xt996wc87duzG1KfAOkLJKgLim6Ty5_u3ckyAxN0TA-VqV_iiAzbiUsTpvNKeQ92JyMeTQenj6srNaxRZtbFwnp4grLGs21HgAkpMdDJaTlEaEbVPxloQodNjW1hCDFnyMLo8ADeBLuaZKjy9IgChjawMHwWxbUxrxqUxEv9bnXdpwGgY7QRtVh-z5KpHAWqeHOyBkGOLxy6snSFYJRwjCg6Z8Mt-y9c331Ip__lQy-C1uRTd6Vmh1HnTKGIhfza-jOY1Z9S81Jib51h-RnEvONbCrFZbAgiodU-CN2B9O0JoRddslD5eAikOUUffHIr-5mT4GJc
+                      - button "Open user actions" [ref=f49e818] [cursor=pointer]
+                    - generic [ref=f49e824]:
+                      - generic [ref=f49e825]:
+                        - link "Browser automation for AI agents, the kind that doesn't get stuck on a captcha and cry for help." [ref=f49e827] [cursor=pointer]:
+                          - /url: https://alb.reddit.com/cr?za=wdJjcTzrACMKkVw4i56a2l8tjvblr-6jtEqdp4UzbvyM0UPWHMPXIgPj-_yO7l178ZlKzv81OyKwmcQLkBLSVgduWLztYAw3xVqooZdAVeJRcxbLBO4K3n1PXql_JYCnB_RsMLuLBMjcPuYx9FqfIqOhNyQ6dEtVumK5ShA_Pmy7SoyaGwtvSBdc9xKEAKwHR-XtbBZfzeKQJGQhbhPyZrfegBYUXQ-nQyRMeDGKi4M0kM_zfthIabmxPomFnQucVoTEhaXnWLRLvLo8afTU5X41V-jUgegzG6Fn8e0jw5w6IwwQzuol14931zShUD9HCgCnDvIzB56X6-b6BZ0UVM3onpHxJVcsC-BJNy1tuP5dIxpX2kkKZ9bCt-LUCMLDJV3nijgSodWgPxx7Hdq6-w2UHuStGH8H9AvCdAvUW9fVGRtI9qrR0Vs-d9nCkgQ5WNQxviOy9r1nPX-10xy-s9HX5HNZfzl7KZ2nEPzBLSMLoSN42XLHCO7EXdAPOWznMgtQBs7nE4wNJw8PN1rmuzlfeip_MFpRZXIdNPhG21PJaTx53QdDkqNqswsOxLMIVD7sG22E2T0nVPeoItMNCMZITjN235VTMpWPajGvIYoaNchVF_bOD7GXCMV1BSceWkqKciDvuzazrF5PSCIhR12A0ZmdkdPy2Ty1Y3F1k1Pv_RjLolFkOdjzH_qo83RU9rx_5Is&zp=cNyeGV2tOPzvgWgIoB9kMi8RY21m5qw4uQQ53xBgW00MoT4xt996wc87duzG1KfAOkLJKgLim6Ty5_u3ckyAxN0TA-VqV_iiAzbiUsTpvNKeQ92JyMeTQenj6srNaxRZtbFwnp4grLGs21HgAkpMdDJaTlEaEbVPxloQodNjW1hCDFnyMLo8ADeBLuaZKjy9IgChjawMHwWxbUxrxqUxEv9bnXdpwGgY7QRtVh-z5KpHAWqeHOyBkGOLxy6snSFYJRwjCg6Z8Mt-y9c331Ip__lQy-C1uRTd6Vmh1HnTKGIhfza-jOY1Z9S81Jib51h-RnEvONbCrFZbAgiodU-CN2B9O0JoRddslD5eAikOUUffHIr-5mT4GJc
+                        - generic [ref=f49e828]:
+                          - link [ref=f49e830] [cursor=pointer]:
+                            - /url: https://alb.reddit.com/cr?za=wdJjcTzrACMKkVw4i56a2l8tjvblr-6jtEqdp4UzbvyM0UPWHMPXIgPj-_yO7l178ZlKzv81OyKwmcQLkBLSVgduWLztYAw3xVqooZdAVeJRcxbLBO4K3n1PXql_JYCnB_RsMLuLBMjcPuYx9FqfIqOhNyQ6dEtVumK5ShA_Pmy7SoyaGwtvSBdc9xKEAKwHR-XtbBZfzeKQJGQhbhPyZrfegBYUXQ-nQyRMeDGKi4M0kM_zfthIabmxPomFnQucVoTEhaXnWLRLvLo8afTU5X41V-jUgegzG6Fn8e0jw5w6IwwQzuol14931zShUD9HCgCnDvIzB56X6-b6BZ0UVM3onpHxJVcsC-BJNy1tuP5dIxpX2kkKZ9bCt-LUCMLDJV3nijgSodWgPxx7Hdq6-w2UHuStGH8H9AvCdAvUW9fVGRtI9qrR0Vs-d9nCkgQ5WNQxviOy9r1nPX-10xy-s9HX5HNZfzl7KZ2nEPzBLSMLoSN42XLHCO7EXdAPOWznMgtQBs7nE4wNJw8PN1rmuzlfeip_MFpRZXIdNPhG21PJaTx53QdDkqNqswsOxLMIVD7sG22E2T0nVPeoItMNCMZITjN235VTMpWPajGvIYoaNchVF_bOD7GXCMV1BSceWkqKciDvuzazrF5PSCIhR12A0ZmdkdPy2Ty1Y3F1k1Pv_RjLolFkOdjzH_qo83RU9rx_5Is&zp=cNyeGV2tOPzvgWgIoB9kMi8RY21m5qw4uQQ53xBgW00MoT4xt996wc87duzG1KfAOkLJKgLim6Ty5_u3ckyAxN0TA-VqV_iiAzbiUsTpvNKeQ92JyMeTQenj6srNaxRZtbFwnp4grLGs21HgAkpMdDJaTlEaEbVPxloQodNjW1hCDFnyMLo8ADeBLuaZKjy9IgChjawMHwWxbUxrxqUxEv9bnXdpwGgY7QRtVh-z5KpHAWqeHOyBkGOLxy6snSFYJRwjCg6Z8Mt-y9c331Ip__lQy-C1uRTd6Vmh1HnTKGIhfza-jOY1Z9S81Jib51h-RnEvONbCrFZbAgiodU-CN2B9O0JoRddslD5eAikOUUffHIr-5mT4GJc
+                          - generic [ref=f49e831]:
+                            - link "Download" [ref=f49e833] [cursor=pointer]:
+                              - /url: https://alb.reddit.com/cr?za=wdJjcTzrACMKkVw4i56a2l8tjvblr-6jtEqdp4UzbvyM0UPWHMPXIgPj-_yO7l178ZlKzv81OyKwmcQLkBLSVgduWLztYAw3xVqooZdAVeJRcxbLBO4K3n1PXql_JYCnB_RsMLuLBMjcPuYx9FqfIqOhNyQ6dEtVumK5ShA_Pmy7SoyaGwtvSBdc9xKEAKwHR-XtbBZfzeKQJGQhbhPyZrfegBYUXQ-nQyRMeDGKi4M0kM_zfthIabmxPomFnQucVoTEhaXnWLRLvLo8afTU5X41V-jUgegzG6Fn8e0jw5w6IwwQzuol14931zShUD9HCgCnDvIzB56X6-b6BZ0UVM3onpHxJVcsC-BJNy1tuP5dIxpX2kkKZ9bCt-LUCMLDJV3nijgSodWgPxx7Hdq6-w2UHuStGH8H9AvCdAvUW9fVGRtI9qrR0Vs-d9nCkgQ5WNQxviOy9r1nPX-10xy-s9HX5HNZfzl7KZ2nEPzBLSMLoSN42XLHCO7EXdAPOWznMgtQBs7nE4wNJw8PN1rmuzlfeip_MFpRZXIdNPhG21PJaTx53QdDkqNqswsOxLMIVD7sG22E2T0nVPeoItMNCMZITjN235VTMpWPajGvIYoaNchVF_bOD7GXCMV1BSceWkqKciDvuzazrF5PSCIhR12A0ZmdkdPy2Ty1Y3F1k1Pv_RjLolFkOdjzH_qo83RU9rx_5Is&zp=cNyeGV2tOPzvgWgIoB9kMi8RY21m5qw4uQQ53xBgW00MoT4xt996wc87duzG1KfAOkLJKgLim6Ty5_u3ckyAxN0TA-VqV_iiAzbiUsTpvNKeQ92JyMeTQenj6srNaxRZtbFwnp4grLGs21HgAkpMdDJaTlEaEbVPxloQodNjW1hCDFnyMLo8ADeBLuaZKjy9IgChjawMHwWxbUxrxqUxEv9bnXdpwGgY7QRtVh-z5KpHAWqeHOyBkGOLxy6snSFYJRwjCg6Z8Mt-y9c331Ip__lQy-C1uRTd6Vmh1HnTKGIhfza-jOY1Z9S81Jib51h-RnEvONbCrFZbAgiodU-CN2B9O0JoRddslD5eAikOUUffHIr-5mT4GJc
+                            - link "lite.ego.app" [ref=f49e838] [cursor=pointer]:
+                              - /url: https://alb.reddit.com/cr?za=wdJjcTzrACMKkVw4i56a2l8tjvblr-6jtEqdp4UzbvyM0UPWHMPXIgPj-_yO7l178ZlKzv81OyKwmcQLkBLSVgduWLztYAw3xVqooZdAVeJRcxbLBO4K3n1PXql_JYCnB_RsMLuLBMjcPuYx9FqfIqOhNyQ6dEtVumK5ShA_Pmy7SoyaGwtvSBdc9xKEAKwHR-XtbBZfzeKQJGQhbhPyZrfegBYUXQ-nQyRMeDGKi4M0kM_zfthIabmxPomFnQucVoTEhaXnWLRLvLo8afTU5X41V-jUgegzG6Fn8e0jw5w6IwwQzuol14931zShUD9HCgCnDvIzB56X6-b6BZ0UVM3onpHxJVcsC-BJNy1tuP5dIxpX2kkKZ9bCt-LUCMLDJV3nijgSodWgPxx7Hdq6-w2UHuStGH8H9AvCdAvUW9fVGRtI9qrR0Vs-d9nCkgQ5WNQxviOy9r1nPX-10xy-s9HX5HNZfzl7KZ2nEPzBLSMLoSN42XLHCO7EXdAPOWznMgtQBs7nE4wNJw8PN1rmuzlfeip_MFpRZXIdNPhG21PJaTx53QdDkqNqswsOxLMIVD7sG22E2T0nVPeoItMNCMZITjN235VTMpWPajGvIYoaNchVF_bOD7GXCMV1BSceWkqKciDvuzazrF5PSCIhR12A0ZmdkdPy2Ty1Y3F1k1Pv_RjLolFkOdjzH_qo83RU9rx_5Is&zp=cNyeGV2tOPzvgWgIoB9kMi8RY21m5qw4uQQ53xBgW00MoT4xt996wc87duzG1KfAOkLJKgLim6Ty5_u3ckyAxN0TA-VqV_iiAzbiUsTpvNKeQ92JyMeTQenj6srNaxRZtbFwnp4grLGs21HgAkpMdDJaTlEaEbVPxloQodNjW1hCDFnyMLo8ADeBLuaZKjy9IgChjawMHwWxbUxrxqUxEv9bnXdpwGgY7QRtVh-z5KpHAWqeHOyBkGOLxy6snSFYJRwjCg6Z8Mt-y9c331Ip__lQy-C1uRTd6Vmh1HnTKGIhfza-jOY1Z9S81Jib51h-RnEvONbCrFZbAgiodU-CN2B9O0JoRddslD5eAikOUUffHIr-5mT4GJc
+                      - link [ref=f49e841] [cursor=pointer]:
+                        - /url: https://alb.reddit.com/cr?za=wdJjcTzrACMKkVw4i56a2l8tjvblr-6jtEqdp4UzbvyM0UPWHMPXIgPj-_yO7l178ZlKzv81OyKwmcQLkBLSVgduWLztYAw3xVqooZdAVeJRcxbLBO4K3n1PXql_JYCnB_RsMLuLBMjcPuYx9FqfIqOhNyQ6dEtVumK5ShA_Pmy7SoyaGwtvSBdc9xKEAKwHR-XtbBZfzeKQJGQhbhPyZrfegBYUXQ-nQyRMeDGKi4M0kM_zfthIabmxPomFnQucVoTEhaXnWLRLvLo8afTU5X41V-jUgegzG6Fn8e0jw5w6IwwQzuol14931zShUD9HCgCnDvIzB56X6-b6BZ0UVM3onpHxJVcsC-BJNy1tuP5dIxpX2kkKZ9bCt-LUCMLDJV3nijgSodWgPxx7Hdq6-w2UHuStGH8H9AvCdAvUW9fVGRtI9qrR0Vs-d9nCkgQ5WNQxviOy9r1nPX-10xy-s9HX5HNZfzl7KZ2nEPzBLSMLoSN42XLHCO7EXdAPOWznMgtQBs7nE4wNJw8PN1rmuzlfeip_MFpRZXIdNPhG21PJaTx53QdDkqNqswsOxLMIVD7sG22E2T0nVPeoItMNCMZITjN235VTMpWPajGvIYoaNchVF_bOD7GXCMV1BSceWkqKciDvuzazrF5PSCIhR12A0ZmdkdPy2Ty1Y3F1k1Pv_RjLolFkOdjzH_qo83RU9rx_5Is&zp=cNyeGV2tOPzvgWgIoB9kMi8RY21m5qw4uQQ53xBgW00MoT4xt996wc87duzG1KfAOkLJKgLim6Ty5_u3ckyAxN0TA-VqV_iiAzbiUsTpvNKeQ92JyMeTQenj6srNaxRZtbFwnp4grLGs21HgAkpMdDJaTlEaEbVPxloQodNjW1hCDFnyMLo8ADeBLuaZKjy9IgChjawMHwWxbUxrxqUxEv9bnXdpwGgY7QRtVh-z5KpHAWqeHOyBkGOLxy6snSFYJRwjCg6Z8Mt-y9c331Ip__lQy-C1uRTd6Vmh1HnTKGIhfza-jOY1Z9S81Jib51h-RnEvONbCrFZbAgiodU-CN2B9O0JoRddslD5eAikOUUffHIr-5mT4GJc
+                        - 'img "Thumbnail image: Browser automation for AI agents, the kind that doesn''t get stuck on a captcha and cry for help." [ref=f49e842]'
+                - article "Comment from BrandyCornelia 1 year ago" [ref=f49e844]:
+                  - generic [ref=f49e845] [cursor=pointer]:
+                    - link "BrandyCornelia's profile --- avatar" [ref=f49e851]:
+                      - /url: https://www.reddit.com/user/BrandyCornelia/
+                    - generic [ref=f49e861]:
+                      - link "BrandyCornelia's profile" [ref=f49e865]:
+                        - /url: https://www.reddit.com/user/BrandyCornelia/
+                        - text: BrandyCornelia
+                      - generic [aria-hidden] [ref=f49e866]: •
+                      - link [ref=f49e868]:
+                        - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/mk2y25e/
+                        - time [ref=f49e870]: 1y ago
+                  - paragraph [ref=f49e876]:
+                    - link [ref=f49e879] [cursor=pointer]:
+                      - /url: /search/?q=Butter+editor&cId=3c7aaf21-c267-4072-aea4-ff061cbb04c3&iId=0c14923b-867f-4dcd-8bbc-10b570863b91
+                    - text: is good, and it's completely browser based. They have a lot of animation presets that you can't really do with any of the other editors i've tried as of now.
+                - article "Comment from ramboton 4 years ago" [ref=f49e886]:
+                  - generic [ref=f49e887] [cursor=pointer]:
+                    - link "ramboton's profile --- avatar" [ref=f49e893]:
+                      - /url: https://www.reddit.com/user/ramboton/
+                      - img "u/ramboton avatar" [ref=f49e896]
+                    - generic [ref=f49e900]:
+                      - link "ramboton's profile" [ref=f49e904]:
+                        - /url: https://www.reddit.com/user/ramboton/
+                        - text: ramboton
+                      - generic [aria-hidden] [ref=f49e905]: •
+                      - link [ref=f49e907]:
+                        - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/ihq1xpi/
+                        - time [ref=f49e909]: 4y ago
+                  - generic [ref=f49e914]:
+                    - paragraph [ref=f49e915]:
+                      - link "https://123apps.com/" [ref=f49e916] [cursor=pointer]:
+                        - /url: https://123apps.com/
+                    - paragraph [ref=f49e917]: I have only used it once, but it worked well when I did. There seems to be lots of options.
+                - article "Comment from bufordt 4 years ago" [ref=f49e921]:
+                  - generic [ref=f49e922] [cursor=pointer]:
+                    - link "bufordt's profile --- avatar" [ref=f49e928]:
+                      - /url: https://www.reddit.com/user/bufordt/
+                      - img "u/bufordt avatar" [ref=f49e931]
+                    - generic [ref=f49e935]:
+                      - link "bufordt's profile" [ref=f49e939]:
+                        - /url: https://www.reddit.com/user/bufordt/
+                        - text: bufordt
+                      - generic [aria-hidden] [ref=f49e940]: •
+                      - link [ref=f49e942]:
+                        - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/ihrkxxc/
+                        - time [ref=f49e944]: 4y ago
+                  - paragraph [ref=f49e950]:
+                    - text: You can try
+                    - link "clipchamp" [ref=f49e951] [cursor=pointer]:
+                      - /url: https://clipchamp.com/en/
+                    - text: .
+                - article "Comment from [deleted] 3 years ago" [ref=f49e955]:
+                  - generic "[deleted] 3y ago" [ref=f49e956] [cursor=pointer]:
+                    - generic [ref=f49e970]:
+                      - generic [ref=f49e971]: "[deleted]"
+                      - generic [aria-hidden] [ref=f49e974]: •
+                      - link [ref=f49e976]:
+                        - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/kg0io5n/
+                        - time [ref=f49e978]: 3y ago
+                  - paragraph [ref=f49e984]: i am beginning my video editing practice for that i need some real content creators raw footage which i can better understand and edit it out !! so can anyone tell my the source where can i find such footages
+                - article "Comment from VideooTeam 3 years ago" [ref=f49e988]:
+                  - generic [ref=f49e989] [cursor=pointer]:
+                    - link "VideooTeam's profile --- avatar" [ref=f49e995]:
+                      - /url: https://www.reddit.com/user/VideooTeam/
+                      - img "u/VideooTeam avatar" [ref=f49e998]
+                    - generic [ref=f49e1002]:
+                      - link "VideooTeam's profile" [ref=f49e1006]:
+                        - /url: https://www.reddit.com/user/VideooTeam/
+                        - text: VideooTeam
+                      - generic [aria-hidden] [ref=f49e1007]: •
+                      - link [ref=f49e1009]:
+                        - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/ktiwvwn/
+                        - time [ref=f49e1011]: 3y ago
+                  - generic [ref=f49e1016]:
+                    - paragraph [ref=f49e1017]: VideooIO is also browser based cloud-based online video editor that offers a wide range of features for creating professional-looking videos. It offers an easy-to-use interface, making it suitable for beginners, while also providing advanced features for more experienced users.
+                    - paragraph [ref=f49e1018]: One of its standout features is the ability to collaborate with others in real-time.
+                - article "Comment from camkash11 2 years ago" [ref=f49e1022]:
+                  - generic [ref=f49e1023] [cursor=pointer]:
+                    - link "camkash11's profile --- avatar" [ref=f49e1029]:
+                      - /url: https://www.reddit.com/user/camkash11/
+                      - img "u/camkash11 avatar" [ref=f49e1032]
+                    - generic [ref=f49e1036]:
+                      - link "camkash11's profile" [ref=f49e1040]:
+                        - /url: https://www.reddit.com/user/camkash11/
+                        - text: camkash11
+                      - generic [aria-hidden] [ref=f49e1041]: •
+                      - link [ref=f49e1043]:
+                        - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/l29lp1g/
+                        - time [ref=f49e1045]: 2y ago
+                  - paragraph [ref=f49e1051]:
+                    - text: Hey,
+                    - link "obvid.io" [ref=f49e1052] [cursor=pointer]:
+                      - /url: http://obvid.io
+                    - text: has a free plan, and it lets people jumpcut and add clips in between what they're saying.
+                - article "Comment from [deleted] 2 years ago" [ref=f49e1056]:
+                  - generic "[deleted] 2y ago" [ref=f49e1057] [cursor=pointer]:
+                    - generic [ref=f49e1071]:
+                      - generic [ref=f49e1072]: "[deleted]"
+                      - generic [aria-hidden] [ref=f49e1075]: •
+                      - link [ref=f49e1077]:
+                        - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/lhdr7js/
+                        - time [ref=f49e1079]: 2y ago
+                  - paragraph [ref=f49e1085]: I do think that capcut is pretty good, a lot of presets which limits manual editing and transitions but overall i rlly like it :)
+                - generic "Tell HAEVN who you are and what you’re looking for. We’ll look for compatible people in your city. No swiping. No dating app grind." [ref=f49e1089]:
+                  - generic [ref=f49e1090]:
+                    - 'generic "Advertisement: Tell HAEVN who you are and what you’re looking for. We’ll look for compatible people in your city. No swiping. No dating app grind." [ref=f49e1091]':
+                      - 'link "Advertisement: Tell HAEVN who you are and what you’re looking for. We’ll look for compatible people in your city. No swiping. No dating app grind." [ref=f49e1092] [cursor=pointer]':
+                        - /url: https://alb.reddit.com/cr?za=roUvvB5oECYenu-OcD09EjFEjkSd9W28pJbEWgEwsNrINgYmaotGmtt9Fo5cp_Zluuvwxq2zMXVlYLh4grMkIonMat59O7RVMbrPFqrZEbo0HIpA42CevVWzQLtuQ9YuGu4e09V1Yss9qLrmCeEiUnSourtDd8BUn7PYE8Kw8cbIU7asJ8MLl9K_hAmzQuZLz40721t-kN4LYYDue5oD7-nLqvPWURrMaoHZqsS1yV7xz-Zkzz-GrujVp69dzn4h_lBf0rzpjLhzxmYbxbjPQzRG-MI_Ji2joMxrJqEhi20rpT5NsPFOuegstQlyP3fOztOe7wmCS6GFwFL7AqH1AS5vLS06fPYw95gd8m2jOnrStgsW-Iyp0jO4O4HdRMy1-WtMG0kJ2zhMNiX4SJWpvIf320YrOjJkFgLoMMM5PI-IUWYMsVZQoR2LrNEsEEjCVZY94GiiswDtRzS28bImOV97Ko7JKymaJmBsahxXr2TSh9QxNZx3qq1qqKfO3UO5KMK4hGxKb1WYav-xEwi6mT9FMdRYv8AXIyus8IQtehE3Ic3w5kRO6D4Kk4JoEbXFMlRnBjvi8u4vQCZSZzuxapfX0WD8KXSogkkzpsLR_OQ-jFirYHB8o3Vsmloi2qlKshLnNITETJn6mA3H3AfLW6_FUG1KZxbNrQG7WA66-cIXIoLwlq_wVMIJvDb55tlwFWjc1cY&zp=GoT42AAqhttfw2NxhHoyLIL6qZEZN_hVdf5Hqz65IGRQXf9_8kJJBir5deV9XcSGNUql58fuCfKqS-EPVp2ftipZQnxJ2wtXwzxOSpcYqkj_yKXm9sHJRcrCPzYaSgYr2PCUUjNCQ9ca2dV96EO0sXtbNw5gOmpt2zmh74OizhTEx3olcb2VkUZ2eI70ZM5YJNg76igImT6Yajbd5o_541HRurma7OeknGopb3nWFh9AzELifRBAnlTU_qKN9h2HONk1UvYy--j4zZXClgkRBDL1R57Bl9dVwOt1n3DLm-UVd1Q
+                    - generic [ref=f49e1093]:
+                      - generic [ref=f49e1094]:
+                        - link "u/Solid_Enthusiasm_604" [ref=f49e1097] [cursor=pointer]:
+                          - /url: /user/Solid_Enthusiasm_604/
+                          - img "u/Solid_Enthusiasm_604 avatar" [ref=f49e1100]
+                        - generic [ref=f49e1102]: •
+                        - link "Ad" [ref=f49e1104] [cursor=pointer]:
+                          - /url: /user/Solid_Enthusiasm_604/
+                        - link [ref=f49e1107] [cursor=pointer]:
+                          - /url: https://alb.reddit.com/cr?za=roUvvB5oECYenu-OcD09EjFEjkSd9W28pJbEWgEwsNrINgYmaotGmtt9Fo5cp_Zluuvwxq2zMXVlYLh4grMkIonMat59O7RVMbrPFqrZEbo0HIpA42CevVWzQLtuQ9YuGu4e09V1Yss9qLrmCeEiUnSourtDd8BUn7PYE8Kw8cbIU7asJ8MLl9K_hAmzQuZLz40721t-kN4LYYDue5oD7-nLqvPWURrMaoHZqsS1yV7xz-Zkzz-GrujVp69dzn4h_lBf0rzpjLhzxmYbxbjPQzRG-MI_Ji2joMxrJqEhi20rpT5NsPFOuegstQlyP3fOztOe7wmCS6GFwFL7AqH1AS5vLS06fPYw95gd8m2jOnrStgsW-Iyp0jO4O4HdRMy1-WtMG0kJ2zhMNiX4SJWpvIf320YrOjJkFgLoMMM5PI-IUWYMsVZQoR2LrNEsEEjCVZY94GiiswDtRzS28bImOV97Ko7JKymaJmBsahxXr2TSh9QxNZx3qq1qqKfO3UO5KMK4hGxKb1WYav-xEwi6mT9FMdRYv8AXIyus8IQtehE3Ic3w5kRO6D4Kk4JoEbXFMlRnBjvi8u4vQCZSZzuxapfX0WD8KXSogkkzpsLR_OQ-jFirYHB8o3Vsmloi2qlKshLnNITETJn6mA3H3AfLW6_FUG1KZxbNrQG7WA66-cIXIoLwlq_wVMIJvDb55tlwFWjc1cY&zp=GoT42AAqhttfw2NxhHoyLIL6qZEZN_hVdf5Hqz65IGRQXf9_8kJJBir5deV9XcSGNUql58fuCfKqS-EPVp2ftipZQnxJ2wtXwzxOSpcYqkj_yKXm9sHJRcrCPzYaSgYr2PCUUjNCQ9ca2dV96EO0sXtbNw5gOmpt2zmh74OizhTEx3olcb2VkUZ2eI70ZM5YJNg76igImT6Yajbd5o_541HRurma7OeknGopb3nWFh9AzELifRBAnlTU_qKN9h2HONk1UvYy--j4zZXClgkRBDL1R57Bl9dVwOt1n3DLm-UVd1Q
+                      - button "Open user actions" [ref=f49e1113] [cursor=pointer]
+                    - generic [ref=f49e1119]:
+                      - generic [ref=f49e1120]:
+                        - link "Tell HAEVN who you are and what you’re looking for. We’ll look for compatible people in your city. No swiping. No dating app grind." [ref=f49e1122] [cursor=pointer]:
+                          - /url: https://alb.reddit.com/cr?za=roUvvB5oECYenu-OcD09EjFEjkSd9W28pJbEWgEwsNrINgYmaotGmtt9Fo5cp_Zluuvwxq2zMXVlYLh4grMkIonMat59O7RVMbrPFqrZEbo0HIpA42CevVWzQLtuQ9YuGu4e09V1Yss9qLrmCeEiUnSourtDd8BUn7PYE8Kw8cbIU7asJ8MLl9K_hAmzQuZLz40721t-kN4LYYDue5oD7-nLqvPWURrMaoHZqsS1yV7xz-Zkzz-GrujVp69dzn4h_lBf0rzpjLhzxmYbxbjPQzRG-MI_Ji2joMxrJqEhi20rpT5NsPFOuegstQlyP3fOztOe7wmCS6GFwFL7AqH1AS5vLS06fPYw95gd8m2jOnrStgsW-Iyp0jO4O4HdRMy1-WtMG0kJ2zhMNiX4SJWpvIf320YrOjJkFgLoMMM5PI-IUWYMsVZQoR2LrNEsEEjCVZY94GiiswDtRzS28bImOV97Ko7JKymaJmBsahxXr2TSh9QxNZx3qq1qqKfO3UO5KMK4hGxKb1WYav-xEwi6mT9FMdRYv8AXIyus8IQtehE3Ic3w5kRO6D4Kk4JoEbXFMlRnBjvi8u4vQCZSZzuxapfX0WD8KXSogkkzpsLR_OQ-jFirYHB8o3Vsmloi2qlKshLnNITETJn6mA3H3AfLW6_FUG1KZxbNrQG7WA66-cIXIoLwlq_wVMIJvDb55tlwFWjc1cY&zp=GoT42AAqhttfw2NxhHoyLIL6qZEZN_hVdf5Hqz65IGRQXf9_8kJJBir5deV9XcSGNUql58fuCfKqS-EPVp2ftipZQnxJ2wtXwzxOSpcYqkj_yKXm9sHJRcrCPzYaSgYr2PCUUjNCQ9ca2dV96EO0sXtbNw5gOmpt2zmh74OizhTEx3olcb2VkUZ2eI70ZM5YJNg76igImT6Yajbd5o_541HRurma7OeknGopb3nWFh9AzELifRBAnlTU_qKN9h2HONk1UvYy--j4zZXClgkRBDL1R57Bl9dVwOt1n3DLm-UVd1Q
+                        - generic [ref=f49e1123]:
+                          - link [ref=f49e1125] [cursor=pointer]:
+                            - /url: https://alb.reddit.com/cr?za=roUvvB5oECYenu-OcD09EjFEjkSd9W28pJbEWgEwsNrINgYmaotGmtt9Fo5cp_Zluuvwxq2zMXVlYLh4grMkIonMat59O7RVMbrPFqrZEbo0HIpA42CevVWzQLtuQ9YuGu4e09V1Yss9qLrmCeEiUnSourtDd8BUn7PYE8Kw8cbIU7asJ8MLl9K_hAmzQuZLz40721t-kN4LYYDue5oD7-nLqvPWURrMaoHZqsS1yV7xz-Zkzz-GrujVp69dzn4h_lBf0rzpjLhzxmYbxbjPQzRG-MI_Ji2joMxrJqEhi20rpT5NsPFOuegstQlyP3fOztOe7wmCS6GFwFL7AqH1AS5vLS06fPYw95gd8m2jOnrStgsW-Iyp0jO4O4HdRMy1-WtMG0kJ2zhMNiX4SJWpvIf320YrOjJkFgLoMMM5PI-IUWYMsVZQoR2LrNEsEEjCVZY94GiiswDtRzS28bImOV97Ko7JKymaJmBsahxXr2TSh9QxNZx3qq1qqKfO3UO5KMK4hGxKb1WYav-xEwi6mT9FMdRYv8AXIyus8IQtehE3Ic3w5kRO6D4Kk4JoEbXFMlRnBjvi8u4vQCZSZzuxapfX0WD8KXSogkkzpsLR_OQ-jFirYHB8o3Vsmloi2qlKshLnNITETJn6mA3H3AfLW6_FUG1KZxbNrQG7WA66-cIXIoLwlq_wVMIJvDb55tlwFWjc1cY&zp=GoT42AAqhttfw2NxhHoyLIL6qZEZN_hVdf5Hqz65IGRQXf9_8kJJBir5deV9XcSGNUql58fuCfKqS-EPVp2ftipZQnxJ2wtXwzxOSpcYqkj_yKXm9sHJRcrCPzYaSgYr2PCUUjNCQ9ca2dV96EO0sXtbNw5gOmpt2zmh74OizhTEx3olcb2VkUZ2eI70ZM5YJNg76igImT6Yajbd5o_541HRurma7OeknGopb3nWFh9AzELifRBAnlTU_qKN9h2HONk1UvYy--j4zZXClgkRBDL1R57Bl9dVwOt1n3DLm-UVd1Q
+                          - link "survey.haevn.co" [ref=f49e1129] [cursor=pointer]:
+                            - /url: https://alb.reddit.com/cr?za=roUvvB5oECYenu-OcD09EjFEjkSd9W28pJbEWgEwsNrINgYmaotGmtt9Fo5cp_Zluuvwxq2zMXVlYLh4grMkIonMat59O7RVMbrPFqrZEbo0HIpA42CevVWzQLtuQ9YuGu4e09V1Yss9qLrmCeEiUnSourtDd8BUn7PYE8Kw8cbIU7asJ8MLl9K_hAmzQuZLz40721t-kN4LYYDue5oD7-nLqvPWURrMaoHZqsS1yV7xz-Zkzz-GrujVp69dzn4h_lBf0rzpjLhzxmYbxbjPQzRG-MI_Ji2joMxrJqEhi20rpT5NsPFOuegstQlyP3fOztOe7wmCS6GFwFL7AqH1AS5vLS06fPYw95gd8m2jOnrStgsW-Iyp0jO4O4HdRMy1-WtMG0kJ2zhMNiX4SJWpvIf320YrOjJkFgLoMMM5PI-IUWYMsVZQoR2LrNEsEEjCVZY94GiiswDtRzS28bImOV97Ko7JKymaJmBsahxXr2TSh9QxNZx3qq1qqKfO3UO5KMK4hGxKb1WYav-xEwi6mT9FMdRYv8AXIyus8IQtehE3Ic3w5kRO6D4Kk4JoEbXFMlRnBjvi8u4vQCZSZzuxapfX0WD8KXSogkkzpsLR_OQ-jFirYHB8o3Vsmloi2qlKshLnNITETJn6mA3H3AfLW6_FUG1KZxbNrQG7WA66-cIXIoLwlq_wVMIJvDb55tlwFWjc1cY&zp=GoT42AAqhttfw2NxhHoyLIL6qZEZN_hVdf5Hqz65IGRQXf9_8kJJBir5deV9XcSGNUql58fuCfKqS-EPVp2ftipZQnxJ2wtXwzxOSpcYqkj_yKXm9sHJRcrCPzYaSgYr2PCUUjNCQ9ca2dV96EO0sXtbNw5gOmpt2zmh74OizhTEx3olcb2VkUZ2eI70ZM5YJNg76igImT6Yajbd5o_541HRurma7OeknGopb3nWFh9AzELifRBAnlTU_qKN9h2HONk1UvYy--j4zZXClgkRBDL1R57Bl9dVwOt1n3DLm-UVd1Q
+                      - link [ref=f49e1132] [cursor=pointer]:
+                        - /url: https://alb.reddit.com/cr?za=roUvvB5oECYenu-OcD09EjFEjkSd9W28pJbEWgEwsNrINgYmaotGmtt9Fo5cp_Zluuvwxq2zMXVlYLh4grMkIonMat59O7RVMbrPFqrZEbo0HIpA42CevVWzQLtuQ9YuGu4e09V1Yss9qLrmCeEiUnSourtDd8BUn7PYE8Kw8cbIU7asJ8MLl9K_hAmzQuZLz40721t-kN4LYYDue5oD7-nLqvPWURrMaoHZqsS1yV7xz-Zkzz-GrujVp69dzn4h_lBf0rzpjLhzxmYbxbjPQzRG-MI_Ji2joMxrJqEhi20rpT5NsPFOuegstQlyP3fOztOe7wmCS6GFwFL7AqH1AS5vLS06fPYw95gd8m2jOnrStgsW-Iyp0jO4O4HdRMy1-WtMG0kJ2zhMNiX4SJWpvIf320YrOjJkFgLoMMM5PI-IUWYMsVZQoR2LrNEsEEjCVZY94GiiswDtRzS28bImOV97Ko7JKymaJmBsahxXr2TSh9QxNZx3qq1qqKfO3UO5KMK4hGxKb1WYav-xEwi6mT9FMdRYv8AXIyus8IQtehE3Ic3w5kRO6D4Kk4JoEbXFMlRnBjvi8u4vQCZSZzuxapfX0WD8KXSogkkzpsLR_OQ-jFirYHB8o3Vsmloi2qlKshLnNITETJn6mA3H3AfLW6_FUG1KZxbNrQG7WA66-cIXIoLwlq_wVMIJvDb55tlwFWjc1cY&zp=GoT42AAqhttfw2NxhHoyLIL6qZEZN_hVdf5Hqz65IGRQXf9_8kJJBir5deV9XcSGNUql58fuCfKqS-EPVp2ftipZQnxJ2wtXwzxOSpcYqkj_yKXm9sHJRcrCPzYaSgYr2PCUUjNCQ9ca2dV96EO0sXtbNw5gOmpt2zmh74OizhTEx3olcb2VkUZ2eI70ZM5YJNg76igImT6Yajbd5o_541HRurma7OeknGopb3nWFh9AzELifRBAnlTU_qKN9h2HONk1UvYy--j4zZXClgkRBDL1R57Bl9dVwOt1n3DLm-UVd1Q
+                        - 'img "Thumbnail image: Tell HAEVN who you are and what you’re looking for. We’ll look for compatible people in your city. No swiping. No dating app grind." [ref=f49e1133]'
+                - article "Comment from Beeemh 2 years ago" [ref=f49e1135]:
+                  - generic [ref=f49e1136] [cursor=pointer]:
+                    - link "Beeemh's profile --- avatar" [ref=f49e1142]:
+                      - /url: https://www.reddit.com/user/Beeemh/
+                    - generic [ref=f49e1152]:
+                      - link "Beeemh's profile" [ref=f49e1156]:
+                        - /url: https://www.reddit.com/user/Beeemh/
+                        - text: Beeemh
+                      - generic [aria-hidden] [ref=f49e1157]: •
+                      - link [ref=f49e1159]:
+                        - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/lrqbzi3/
+                        - time [ref=f49e1161]: 2y ago
+                  - paragraph [ref=f49e1167]: Any online video editor ?
+                - article "Comment from cugrad16 2 years ago" [ref=f49e1171]:
+                  - generic [ref=f49e1172] [cursor=pointer]:
+                    - link "cugrad16's profile --- avatar" [ref=f49e1178]:
+                      - /url: https://www.reddit.com/user/cugrad16/
+                    - generic [ref=f49e1188]:
+                      - link "cugrad16's profile" [ref=f49e1192]:
+                        - /url: https://www.reddit.com/user/cugrad16/
+                        - text: cugrad16
+                      - generic [aria-hidden] [ref=f49e1193]: •
+                      - link [ref=f49e1195]:
+                        - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/m87xhyg/
+                        - time [ref=f49e1197]: 2y ago
+                  - generic [ref=f49e1202]:
+                    - paragraph [ref=f49e1203]: "Veed io - PASS : total glitchfest of bugs with no support"
+                    - paragraph [ref=f49e1204]: "Clipchamp - PASS : glitchfest of no updates for Jan 2025 and zero support"
+                    - paragraph [ref=f49e1205]: Any others? I'd be pleased as peach to try!
+                - article "Comment from tincholari 3 years ago" [ref=f49e1209]:
+                  - generic [ref=f49e1210] [cursor=pointer]:
+                    - link "tincholari's profile --- avatar" [ref=f49e1216]:
+                      - /url: https://www.reddit.com/user/tincholari/
+                    - generic [ref=f49e1226]:
+                      - link "tincholari's profile" [ref=f49e1230]:
+                        - /url: https://www.reddit.com/user/tincholari/
+                        - text: tincholari
+                      - generic [aria-hidden] [ref=f49e1231]: •
+                      - link [ref=f49e1233]:
+                        - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/jmer6h9/
+                        - time [ref=f49e1235]: 3y ago
+                  - paragraph [ref=f49e1241]: Te pasaste loko. segui asi
+                - article "Comment from [deleted] 3 years ago" [ref=f49e1245]:
+                  - generic "[deleted] 3y ago Edited 3y ago" [ref=f49e1246] [cursor=pointer]:
+                    - generic [ref=f49e1260]:
+                      - generic [ref=f49e1261]: "[deleted]"
+                      - generic [aria-hidden] [ref=f49e1264]: •
+                      - link [ref=f49e1266]:
+                        - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/keaymfw/
+                        - time [ref=f49e1268]: 3y ago
+                      - generic [aria-hidden] [ref=f49e1269]: •
+                      - generic [ref=f49e1270]:
+                        - text: Edited
+                        - time [ref=f49e1272]: 3y ago
+                  - generic [ref=f49e1274]:
+                    - paragraph [ref=f49e1278]: Comment removed by moderator
+                    - 'article "Comment thread level 1: Reply from eNon-theVid-thatOk 3 years ago" [ref=f49e1283]':
+                      - generic [ref=f49e1284] [cursor=pointer]:
+                        - link "eNon-theVid-thatOk's profile --- avatar" [ref=f49e1290]:
+                          - /url: https://www.reddit.com/user/eNon-theVid-thatOk/
+                          - img "u/eNon-theVid-thatOk avatar" [ref=f49e1293]
+                        - generic [ref=f49e1297]:
+                          - link "eNon-theVid-thatOk's profile" [ref=f49e1301]:
+                            - /url: https://www.reddit.com/user/eNon-theVid-thatOk/
+                            - text: eNon-theVid-thatOk
+                          - generic [aria-hidden] [ref=f49e1302]: •
+                          - link [ref=f49e1304]:
+                            - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/comment/kkammv8/
+                            - time [ref=f49e1306]: 3y ago
+                      - paragraph [ref=f49e1312]: came back for the link and wanted to say thanks! youre like the photopea of videos. Only your project had the effect i needed of sliding pics aside
+            - generic [ref=f49e1315]:
+              - generic [ref=f49e1316]:
+                - complementary "People also ask about section" [ref=f49e1318]:
+                  - heading "People also ask about section" [level=1] [ref=f49e1319]
+                  - generic [ref=f49e1320]: People also ask about
+                  - generic [ref=f49e1325]:
+                    - link "Best free online video editors" [ref=f49e1327] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/2c296dee-68fc-4c49-8e36-a1e2530c11ea/?q=Best+free+online+video+editors&source=PDP&ep=pdp_unit&relatedPostId=t3_w8jm1s
+                    - link "Top video editing tools for ChromeOS" [ref=f49e1336] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/c7f56f5e-9d09-4fe6-b7ab-d5d665b5ac1b/?q=Top+video+editing+tools+for+ChromeOS&source=PDP&ep=pdp_unit&relatedPostId=t3_w8jm1s
+                    - link "Best browser-based video editing software" [ref=f49e1345] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/d80219bb-a32d-4211-a4f6-cf46336efb42/?q=Best+browser-based+video+editing+software&source=PDP&ep=pdp_unit&relatedPostId=t3_w8jm1s
+                    - link "Top Chromebook models for students" [ref=f49e1354] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/6b50abde-82bf-43b4-a0ee-b39656fe7420/?q=Top+Chromebook+models+for+students&source=PDP&ep=pdp_unit&relatedPostId=t3_w8jm1s
+                    - link "Best apps for productivity on ChromeOS" [ref=f49e1363] [cursor=pointer]:
+                      - /url: https://www.reddit.com/answers/fc978205-3cdd-4845-8fc9-5858fd50040d/?q=Best+apps+for+productivity+on+ChromeOS&source=PDP&ep=pdp_unit&relatedPostId=t3_w8jm1s
+                - complementary "Related Posts Section" [ref=f49e1371]:
+                  - heading "Related Posts Section" [level=1] [ref=f49e1372]: More posts you may like
+                  - generic [ref=f49e1373]: Related posts
+                  - list [ref=f49e1379]:
+                    - listitem [ref=f49e1380]:
+                      - generic [ref=f49e1381]:
+                        - generic [ref=f49e1382]:
+                          - link "Which video editor do most youtubers use for editing?" [ref=f49e1383] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/SmallYTChannel/comments/1f2fnbc/which_video_editor_do_most_youtubers_use_for/
+                          - generic [ref=f49e1386]:
+                            - generic [ref=f49e1389]:
+                              - link "r/SmallYTChannel" [ref=f49e1390] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/SmallYTChannel/
+                              - generic [aria-hidden] [ref=f49e1395]: •
+                              - time [ref=f49e1397]: 2y ago
+                            - link [ref=f49e1399] [cursor=pointer]:
+                              - /url: /r/SmallYTChannel/comments/1f2fnbc/which_video_editor_do_most_youtubers_use_for/
+                              - heading "List item post - Which video editor do most youtubers use for editing?" [level=3] [ref=f49e1402]: Which video editor do most youtubers use for editing?
+                          - generic [ref=f49e1404]:
+                            - generic [ref=f49e1405]: "28"
+                            - text: upvotes ·
+                            - generic [ref=f49e1406]: "125"
+                            - text: comments
+                        - separator [ref=f49e1407]
+                    - listitem [ref=f49e1408]:
+                      - generic [ref=f49e1410]:
+                        - generic:
+                          - 'generic "Advertisement: vet-made cat food + litter. no fillers, no fluff." [ref=f49e1411]':
+                            - 'link "Advertisement: vet-made cat food + litter. no fillers, no fluff." [ref=f49e1412] [cursor=pointer]':
+                              - /url: https://alb.reddit.com/cr?za=8pnamn4fc8Z1KpDbqAWtH2tLswRKYhMTQ2f2ZghFdGjVY79uWAHZ-3e-OngRRG16W5_FukK53t5q3cXF8IQ0SgisZHSERxtMwrTpT1USzfXIzwV-ItTqSgIHn5nA9sLoljaxhi01W7cSCqMvVIfi72wXIV3q1IE1BFMEKdNcMJGsSShFGac3CfrbHKMo6eZ8a1zAh0XldoWHFPgDMwwDCvO-Nci-psF8jBtcJ52qK68jlPhhk-_AigE5mtCoWZU5FAFzBceUiNIVHQ4qtZTe3BaWCPfz-phAkbHgxQRbggcCyAnVbFXNogScESM6a_pYz8sazQNnnEu17E3nsKO5wIaBjZLeA7rfrmH5CWlmkU6deION6D_WKKAZK3fSNp18_HZkmGGwFZ8HDIZXRIPG3EClgXKftDdB9ecmS_-tBwjh1AyGjUTcSQZ8f7R7dIh1vaM0dYpd97Ed55SCg0sdScdR0cCfWoo4xo7LaSZBSPI50lxfZy4GOhyEwjAxcrwnLKrTQ_qXYauJ9bEyIxMXVw00UYvgr7YKdmDCPi-G3bbwsEg6W6KIeYAqxr1C3r5Ap6iz0cqaQ5GfGODZGYxJu8-FiVwgJsvx31qEtUm08f4uawrw4i4fYAle9dHznPi9aDy8Qvyqe7IebyKpyQU9ZrH3iz2Yp6tbjM--nzY-_ewTuMUJV7CFFamV&zp=lCzrDowsgzyS9EQsIdTT44l-FdT9JwSuaNGkm1xrJVvotBLfGlhjOnRS6cy6mGaIh9NseUf7X7uo8mklMyWrLHEpjORzWT1u0H9fvR7TXBdul7kbuKiyXufcPY7UofOyiCIvPJMiiHwDe-IFZMvX8_N960ZpiXm-hOpz181w7FeWhi4O3Zlw3KbPj5Cz1w0MXo_mk99AgRh0PUsFe4r7PTix819Lvy3E-6mG_djzqAnpWNutedCtsachPG6hi9HbrIvN
+                          - generic [ref=f49e1413]:
+                            - generic [ref=f49e1414]:
+                              - generic [ref=f49e1415]:
+                                - generic [ref=f49e1416]:
+                                  - generic [ref=f49e1417]:
+                                    - link "u/drelseys avatar drelseys" [ref=f49e1420] [cursor=pointer]:
+                                      - /url: /user/drelseys/
+                                      - img "u/drelseys avatar" [ref=f49e1423]
+                                      - generic [ref=f49e1424]: drelseys
+                                    - generic [ref=f49e1425]: •
+                                    - link "Ad" [ref=f49e1427] [cursor=pointer]:
+                                      - /url: /user/drelseys/
+                                    - link [ref=f49e1430] [cursor=pointer]:
+                                      - /url: https://alb.reddit.com/cr?za=8pnamn4fc8Z1KpDbqAWtH2tLswRKYhMTQ2f2ZghFdGjVY79uWAHZ-3e-OngRRG16W5_FukK53t5q3cXF8IQ0SgisZHSERxtMwrTpT1USzfXIzwV-ItTqSgIHn5nA9sLoljaxhi01W7cSCqMvVIfi72wXIV3q1IE1BFMEKdNcMJGsSShFGac3CfrbHKMo6eZ8a1zAh0XldoWHFPgDMwwDCvO-Nci-psF8jBtcJ52qK68jlPhhk-_AigE5mtCoWZU5FAFzBceUiNIVHQ4qtZTe3BaWCPfz-phAkbHgxQRbggcCyAnVbFXNogScESM6a_pYz8sazQNnnEu17E3nsKO5wIaBjZLeA7rfrmH5CWlmkU6deION6D_WKKAZK3fSNp18_HZkmGGwFZ8HDIZXRIPG3EClgXKftDdB9ecmS_-tBwjh1AyGjUTcSQZ8f7R7dIh1vaM0dYpd97Ed55SCg0sdScdR0cCfWoo4xo7LaSZBSPI50lxfZy4GOhyEwjAxcrwnLKrTQ_qXYauJ9bEyIxMXVw00UYvgr7YKdmDCPi-G3bbwsEg6W6KIeYAqxr1C3r5Ap6iz0cqaQ5GfGODZGYxJu8-FiVwgJsvx31qEtUm08f4uawrw4i4fYAle9dHznPi9aDy8Qvyqe7IebyKpyQU9ZrH3iz2Yp6tbjM--nzY-_ewTuMUJV7CFFamV&zp=lCzrDowsgzyS9EQsIdTT44l-FdT9JwSuaNGkm1xrJVvotBLfGlhjOnRS6cy6mGaIh9NseUf7X7uo8mklMyWrLHEpjORzWT1u0H9fvR7TXBdul7kbuKiyXufcPY7UofOyiCIvPJMiiHwDe-IFZMvX8_N960ZpiXm-hOpz181w7FeWhi4O3Zlw3KbPj5Cz1w0MXo_mk99AgRh0PUsFe4r7PTix819Lvy3E-6mG_djzqAnpWNutedCtsachPG6hi9HbrIvN
+                                  - button "Open user actions" [ref=f49e1436] [cursor=pointer]
+                                - link "vet-made cat food + litter. no fillers, no fluff." [ref=f49e1443] [cursor=pointer]:
+                                  - /url: https://alb.reddit.com/cr?za=8pnamn4fc8Z1KpDbqAWtH2tLswRKYhMTQ2f2ZghFdGjVY79uWAHZ-3e-OngRRG16W5_FukK53t5q3cXF8IQ0SgisZHSERxtMwrTpT1USzfXIzwV-ItTqSgIHn5nA9sLoljaxhi01W7cSCqMvVIfi72wXIV3q1IE1BFMEKdNcMJGsSShFGac3CfrbHKMo6eZ8a1zAh0XldoWHFPgDMwwDCvO-Nci-psF8jBtcJ52qK68jlPhhk-_AigE5mtCoWZU5FAFzBceUiNIVHQ4qtZTe3BaWCPfz-phAkbHgxQRbggcCyAnVbFXNogScESM6a_pYz8sazQNnnEu17E3nsKO5wIaBjZLeA7rfrmH5CWlmkU6deION6D_WKKAZK3fSNp18_HZkmGGwFZ8HDIZXRIPG3EClgXKftDdB9ecmS_-tBwjh1AyGjUTcSQZ8f7R7dIh1vaM0dYpd97Ed55SCg0sdScdR0cCfWoo4xo7LaSZBSPI50lxfZy4GOhyEwjAxcrwnLKrTQ_qXYauJ9bEyIxMXVw00UYvgr7YKdmDCPi-G3bbwsEg6W6KIeYAqxr1C3r5Ap6iz0cqaQ5GfGODZGYxJu8-FiVwgJsvx31qEtUm08f4uawrw4i4fYAle9dHznPi9aDy8Qvyqe7IebyKpyQU9ZrH3iz2Yp6tbjM--nzY-_ewTuMUJV7CFFamV&zp=lCzrDowsgzyS9EQsIdTT44l-FdT9JwSuaNGkm1xrJVvotBLfGlhjOnRS6cy6mGaIh9NseUf7X7uo8mklMyWrLHEpjORzWT1u0H9fvR7TXBdul7kbuKiyXufcPY7UofOyiCIvPJMiiHwDe-IFZMvX8_N960ZpiXm-hOpz181w7FeWhi4O3Zlw3KbPj5Cz1w0MXo_mk99AgRh0PUsFe4r7PTix819Lvy3E-6mG_djzqAnpWNutedCtsachPG6hi9HbrIvN
+                                  - generic "vet-made cat food + litter. no fillers, no fluff." [ref=f49e1444]
+                              - link [ref=f49e1447] [cursor=pointer]:
+                                - /url: /user/drelseys/comments/1t174y1/vetmade_cat_food_litter_no_fillers_no_fluff/?p=1&impressionid=5514119386761281548
+                                - 'img "Thumbnail image: vet-made cat food + litter. no fillers, no fluff." [ref=f49e1448]'
+                                - generic "Play video"
+                            - generic [ref=f49e1449]:
+                              - link [ref=f49e1451] [cursor=pointer]:
+                                - /url: https://alb.reddit.com/cr?za=8pnamn4fc8Z1KpDbqAWtH2tLswRKYhMTQ2f2ZghFdGjVY79uWAHZ-3e-OngRRG16W5_FukK53t5q3cXF8IQ0SgisZHSERxtMwrTpT1USzfXIzwV-ItTqSgIHn5nA9sLoljaxhi01W7cSCqMvVIfi72wXIV3q1IE1BFMEKdNcMJGsSShFGac3CfrbHKMo6eZ8a1zAh0XldoWHFPgDMwwDCvO-Nci-psF8jBtcJ52qK68jlPhhk-_AigE5mtCoWZU5FAFzBceUiNIVHQ4qtZTe3BaWCPfz-phAkbHgxQRbggcCyAnVbFXNogScESM6a_pYz8sazQNnnEu17E3nsKO5wIaBjZLeA7rfrmH5CWlmkU6deION6D_WKKAZK3fSNp18_HZkmGGwFZ8HDIZXRIPG3EClgXKftDdB9ecmS_-tBwjh1AyGjUTcSQZ8f7R7dIh1vaM0dYpd97Ed55SCg0sdScdR0cCfWoo4xo7LaSZBSPI50lxfZy4GOhyEwjAxcrwnLKrTQ_qXYauJ9bEyIxMXVw00UYvgr7YKdmDCPi-G3bbwsEg6W6KIeYAqxr1C3r5Ap6iz0cqaQ5GfGODZGYxJu8-FiVwgJsvx31qEtUm08f4uawrw4i4fYAle9dHznPi9aDy8Qvyqe7IebyKpyQU9ZrH3iz2Yp6tbjM--nzY-_ewTuMUJV7CFFamV&zp=lCzrDowsgzyS9EQsIdTT44l-FdT9JwSuaNGkm1xrJVvotBLfGlhjOnRS6cy6mGaIh9NseUf7X7uo8mklMyWrLHEpjORzWT1u0H9fvR7TXBdul7kbuKiyXufcPY7UofOyiCIvPJMiiHwDe-IFZMvX8_N960ZpiXm-hOpz181w7FeWhi4O3Zlw3KbPj5Cz1w0MXo_mk99AgRh0PUsFe4r7PTix819Lvy3E-6mG_djzqAnpWNutedCtsachPG6hi9HbrIvN
+                              - generic [ref=f49e1452]:
+                                - link "drelseys.com" [ref=f49e1455] [cursor=pointer]:
+                                  - /url: https://alb.reddit.com/cr?za=8pnamn4fc8Z1KpDbqAWtH2tLswRKYhMTQ2f2ZghFdGjVY79uWAHZ-3e-OngRRG16W5_FukK53t5q3cXF8IQ0SgisZHSERxtMwrTpT1USzfXIzwV-ItTqSgIHn5nA9sLoljaxhi01W7cSCqMvVIfi72wXIV3q1IE1BFMEKdNcMJGsSShFGac3CfrbHKMo6eZ8a1zAh0XldoWHFPgDMwwDCvO-Nci-psF8jBtcJ52qK68jlPhhk-_AigE5mtCoWZU5FAFzBceUiNIVHQ4qtZTe3BaWCPfz-phAkbHgxQRbggcCyAnVbFXNogScESM6a_pYz8sazQNnnEu17E3nsKO5wIaBjZLeA7rfrmH5CWlmkU6deION6D_WKKAZK3fSNp18_HZkmGGwFZ8HDIZXRIPG3EClgXKftDdB9ecmS_-tBwjh1AyGjUTcSQZ8f7R7dIh1vaM0dYpd97Ed55SCg0sdScdR0cCfWoo4xo7LaSZBSPI50lxfZy4GOhyEwjAxcrwnLKrTQ_qXYauJ9bEyIxMXVw00UYvgr7YKdmDCPi-G3bbwsEg6W6KIeYAqxr1C3r5Ap6iz0cqaQ5GfGODZGYxJu8-FiVwgJsvx31qEtUm08f4uawrw4i4fYAle9dHznPi9aDy8Qvyqe7IebyKpyQU9ZrH3iz2Yp6tbjM--nzY-_ewTuMUJV7CFFamV&zp=lCzrDowsgzyS9EQsIdTT44l-FdT9JwSuaNGkm1xrJVvotBLfGlhjOnRS6cy6mGaIh9NseUf7X7uo8mklMyWrLHEpjORzWT1u0H9fvR7TXBdul7kbuKiyXufcPY7UofOyiCIvPJMiiHwDe-IFZMvX8_N960ZpiXm-hOpz181w7FeWhi4O3Zlw3KbPj5Cz1w0MXo_mk99AgRh0PUsFe4r7PTix819Lvy3E-6mG_djzqAnpWNutedCtsachPG6hi9HbrIvN
+                                - link "Learn More" [ref=f49e1457] [cursor=pointer]:
+                                  - /url: https://alb.reddit.com/cr?za=8pnamn4fc8Z1KpDbqAWtH2tLswRKYhMTQ2f2ZghFdGjVY79uWAHZ-3e-OngRRG16W5_FukK53t5q3cXF8IQ0SgisZHSERxtMwrTpT1USzfXIzwV-ItTqSgIHn5nA9sLoljaxhi01W7cSCqMvVIfi72wXIV3q1IE1BFMEKdNcMJGsSShFGac3CfrbHKMo6eZ8a1zAh0XldoWHFPgDMwwDCvO-Nci-psF8jBtcJ52qK68jlPhhk-_AigE5mtCoWZU5FAFzBceUiNIVHQ4qtZTe3BaWCPfz-phAkbHgxQRbggcCyAnVbFXNogScESM6a_pYz8sazQNnnEu17E3nsKO5wIaBjZLeA7rfrmH5CWlmkU6deION6D_WKKAZK3fSNp18_HZkmGGwFZ8HDIZXRIPG3EClgXKftDdB9ecmS_-tBwjh1AyGjUTcSQZ8f7R7dIh1vaM0dYpd97Ed55SCg0sdScdR0cCfWoo4xo7LaSZBSPI50lxfZy4GOhyEwjAxcrwnLKrTQ_qXYauJ9bEyIxMXVw00UYvgr7YKdmDCPi-G3bbwsEg6W6KIeYAqxr1C3r5Ap6iz0cqaQ5GfGODZGYxJu8-FiVwgJsvx31qEtUm08f4uawrw4i4fYAle9dHznPi9aDy8Qvyqe7IebyKpyQU9ZrH3iz2Yp6tbjM--nzY-_ewTuMUJV7CFFamV&zp=lCzrDowsgzyS9EQsIdTT44l-FdT9JwSuaNGkm1xrJVvotBLfGlhjOnRS6cy6mGaIh9NseUf7X7uo8mklMyWrLHEpjORzWT1u0H9fvR7TXBdul7kbuKiyXufcPY7UofOyiCIvPJMiiHwDe-IFZMvX8_N960ZpiXm-hOpz181w7FeWhi4O3Zlw3KbPj5Cz1w0MXo_mk99AgRh0PUsFe4r7PTix819Lvy3E-6mG_djzqAnpWNutedCtsachPG6hi9HbrIvN
+                      - separator [ref=f49e1460]
+                    - listitem [ref=f49e1461]:
+                      - generic [ref=f49e1462]:
+                        - generic [ref=f49e1463]:
+                          - link "Favorite Free Alternatives to Adobe?" [ref=f49e1464] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/videography/comments/tjfa60/favorite_free_alternatives_to_adobe/
+                          - generic [ref=f49e1467]:
+                            - generic [ref=f49e1470]:
+                              - link "r/videography" [ref=f49e1471] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/videography/
+                              - generic [aria-hidden] [ref=f49e1476]: •
+                              - time [ref=f49e1478]: 5y ago
+                            - link [ref=f49e1480] [cursor=pointer]:
+                              - /url: /r/videography/comments/tjfa60/favorite_free_alternatives_to_adobe/
+                              - heading "List item post - Favorite Free Alternatives to Adobe?" [level=3] [ref=f49e1483]: Favorite Free Alternatives to Adobe?
+                          - generic [ref=f49e1485]:
+                            - generic [ref=f49e1486]: "83"
+                            - text: upvotes ·
+                            - generic [ref=f49e1487]: "71"
+                            - text: comments
+                        - separator [ref=f49e1488]
+                    - listitem [ref=f49e1489]:
+                      - generic [ref=f49e1490]:
+                        - generic [ref=f49e1491]:
+                          - link "Im looking for a simple editing software, is Davinci the right choice?" [ref=f49e1492] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/davinciresolve/comments/1d5tpz9/im_looking_for_a_simple_editing_software_is/
+                          - generic [ref=f49e1495]:
+                            - generic [ref=f49e1498]:
+                              - link "r/davinciresolve" [ref=f49e1499] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/davinciresolve/
+                              - generic [aria-hidden] [ref=f49e1504]: •
+                              - time [ref=f49e1506]: 2y ago
+                            - link [ref=f49e1508] [cursor=pointer]:
+                              - /url: /r/davinciresolve/comments/1d5tpz9/im_looking_for_a_simple_editing_software_is/
+                              - heading "List item post - Im looking for a simple editing software, is Davinci the ri..." [level=3] [ref=f49e1511]: Im looking for a simple editing software, is Davinci the right choice?
+                          - generic [ref=f49e1513]:
+                            - generic [ref=f49e1514]: "56"
+                            - text: upvotes ·
+                            - generic [ref=f49e1515]: "68"
+                            - text: comments
+                        - separator [ref=f49e1516]
+                    - listitem
+                    - listitem [ref=f49e1517]:
+                      - generic [ref=f49e1518]:
+                        - generic [ref=f49e1519]:
+                          - link "Does anyone know of a good free editing software for long form videos without a watermark?" [ref=f49e1520] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/SmallYoutubers/comments/1lqhtss/does_anyone_know_of_a_good_free_editing_software/
+                          - generic [ref=f49e1522]:
+                            - generic [ref=f49e1523]:
+                              - generic [ref=f49e1526]:
+                                - link "r/SmallYoutubers" [ref=f49e1527] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/SmallYoutubers/
+                                - generic [aria-hidden] [ref=f49e1532]: •
+                                - time [ref=f49e1534]: 1y ago
+                              - link [ref=f49e1536] [cursor=pointer]:
+                                - /url: /r/SmallYoutubers/comments/1lqhtss/does_anyone_know_of_a_good_free_editing_software/
+                                - heading "List item post - Does anyone know of a good free editing software for long f..." [level=3] [ref=f49e1539]: Does anyone know of a good free editing software for long form videos without a watermark?
+                            - link "r/SmallYoutubers - Does anyone know of a good free editing software for long form videos without a watermark?" [ref=f49e1542] [cursor=pointer]:
+                              - /url: https://www.reddit.com/r/SmallYoutubers/comments/1lqhtss/does_anyone_know_of_a_good_free_editing_software/
+                              - img "r/SmallYoutubers - Does anyone know of a good free editing software for long form videos without a watermark?" [ref=f49e1543]
+                          - generic [ref=f49e1545]:
+                            - generic [ref=f49e1546]: "16"
+                            - text: upvotes ·
+                            - generic [ref=f49e1547]: "61"
+                            - text: comments
+                        - separator [ref=f49e1548]
+                    - listitem [ref=f49e1549]:
+                      - generic [ref=f49e1550]:
+                        - generic [ref=f49e1551]:
+                          - link "Is DaVinci Resolve (the free version) a good choice for semi-basic video production?" [ref=f49e1552] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/davinciresolve/comments/1vonlnj/is_davinci_resolve_the_free_version_a_good_choice/
+                          - generic [ref=f49e1555]:
+                            - generic [ref=f49e1558]:
+                              - link "r/davinciresolve" [ref=f49e1559] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/davinciresolve/
+                              - generic [aria-hidden] [ref=f49e1564]: •
+                              - time [ref=f49e1566]: 18d ago
+                            - link [ref=f49e1568] [cursor=pointer]:
+                              - /url: /r/davinciresolve/comments/1vonlnj/is_davinci_resolve_the_free_version_a_good_choice/
+                              - heading "List item post - Is DaVinci Resolve (the free version) a good choice for sem..." [level=3] [ref=f49e1571]: Is DaVinci Resolve (the free version) a good choice for semi-basic video production?
+                          - generic [ref=f49e1573]:
+                            - generic [ref=f49e1574]: "75"
+                            - text: upvotes ·
+                            - generic [ref=f49e1575]: "61"
+                            - text: comments
+                        - separator [ref=f49e1576]
+                    - listitem [ref=f49e1577]:
+                      - generic [ref=f49e1578]:
+                        - generic [ref=f49e1579]:
+                          - link "Is there a free video editor for windows?" [ref=f49e1580] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/software/comments/16ggedi/is_there_a_free_video_editor_for_windows/
+                          - generic [ref=f49e1583]:
+                            - generic [ref=f49e1586]:
+                              - link "r/software" [ref=f49e1587] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/software/
+                              - generic [aria-hidden] [ref=f49e1592]: •
+                              - time [ref=f49e1594]: 3y ago
+                            - link [ref=f49e1596] [cursor=pointer]:
+                              - /url: /r/software/comments/16ggedi/is_there_a_free_video_editor_for_windows/
+                              - heading "List item post - Is there a free video editor for windows?" [level=3] [ref=f49e1599]: Is there a free video editor for windows?
+                          - generic [ref=f49e1601]:
+                            - generic [ref=f49e1602]: "19"
+                            - text: upvotes ·
+                            - generic [ref=f49e1603]: "50"
+                            - text: comments
+                        - separator [ref=f49e1604]
+                    - listitem [ref=f49e1605]:
+                      - generic [ref=f49e1606]:
+                        - generic [ref=f49e1607]:
+                          - link "Online Video Editor" [ref=f49e1608] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/CapCut/comments/1kcnbeu/online_video_editor/
+                          - generic [ref=f49e1611]:
+                            - generic [ref=f49e1614]:
+                              - link "r/CapCut" [ref=f49e1615] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/CapCut/
+                              - generic [aria-hidden] [ref=f49e1620]: •
+                              - time [ref=f49e1622]: 1y ago
+                            - link [ref=f49e1624] [cursor=pointer]:
+                              - /url: /r/CapCut/comments/1kcnbeu/online_video_editor/
+                              - heading "List item post - Online Video Editor" [level=3] [ref=f49e1627]: Online Video Editor
+                          - generic [ref=f49e1629]:
+                            - generic [ref=f49e1630]: "20"
+                            - text: upvotes ·
+                            - generic [ref=f49e1631]: "18"
+                            - text: comments
+                        - separator [ref=f49e1632]
+                    - listitem [ref=f49e1633]:
+                      - generic [ref=f49e1634]:
+                        - generic [ref=f49e1635]:
+                          - link "Any good free video editing software without watermarks?" [ref=f49e1636] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/videography/comments/v8yuwb/any_good_free_video_editing_software_without/
+                          - generic [ref=f49e1639]:
+                            - generic [ref=f49e1642]:
+                              - link "r/videography" [ref=f49e1643] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/videography/
+                              - generic [aria-hidden] [ref=f49e1648]: •
+                              - time [ref=f49e1650]: 4y ago
+                            - link [ref=f49e1652] [cursor=pointer]:
+                              - /url: /r/videography/comments/v8yuwb/any_good_free_video_editing_software_without/
+                              - heading "List item post - Any good free video editing software without watermarks?" [level=3] [ref=f49e1655]: Any good free video editing software without watermarks?
+                          - generic [ref=f49e1657]:
+                            - generic [ref=f49e1658]: "187"
+                            - text: upvotes ·
+                            - generic [ref=f49e1659]: "296"
+                            - text: comments
+                        - separator [ref=f49e1660]
+                    - listitem
+                    - listitem [ref=f49e1661]:
+                      - generic [ref=f49e1662]:
+                        - generic [ref=f49e1663]:
+                          - link "How can I get started on video editing?" [ref=f49e1664] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/VideoEditing/comments/au1e3z/how_can_i_get_started_on_video_editing/
+                          - generic [ref=f49e1667]:
+                            - generic [ref=f49e1670]:
+                              - link "r/VideoEditing" [ref=f49e1671] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/VideoEditing/
+                              - generic [aria-hidden] [ref=f49e1676]: •
+                              - time [ref=f49e1678]: 8y ago
+                            - link [ref=f49e1680] [cursor=pointer]:
+                              - /url: /r/VideoEditing/comments/au1e3z/how_can_i_get_started_on_video_editing/
+                              - heading "List item post - How can I get started on video editing?" [level=3] [ref=f49e1683]: How can I get started on video editing?
+                          - generic [ref=f49e1685]:
+                            - generic [ref=f49e1686]: "204"
+                            - text: upvotes ·
+                            - generic [ref=f49e1687]: "120"
+                            - text: comments
+                        - separator [ref=f49e1688]
+                    - listitem [ref=f49e1689]:
+                      - generic [ref=f49e1690]:
+                        - generic [ref=f49e1691]:
+                          - link "I created a browser-based video editor. 100% Free!" [ref=f49e1692] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/webdev/comments/nt6gus/i_created_a_browserbased_video_editor_100_free/
+                          - generic [ref=f49e1695]:
+                            - generic [ref=f49e1698]:
+                              - link "r/webdev" [ref=f49e1699] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/webdev/
+                              - generic [aria-hidden] [ref=f49e1704]: •
+                              - time [ref=f49e1706]: 5y ago
+                            - link [ref=f49e1708] [cursor=pointer]:
+                              - /url: /r/webdev/comments/nt6gus/i_created_a_browserbased_video_editor_100_free/
+                              - heading "List item post - I created a browser-based video editor. 100% Free!" [level=3] [ref=f49e1711]: I created a browser-based video editor. 100% Free!
+                          - generic [ref=f49e1713]:
+                            - generic [ref=f49e1714]: 2K
+                            - text: upvotes ·
+                            - generic [ref=f49e1715]: "427"
+                            - text: comments
+                        - separator [ref=f49e1716]
+                    - listitem [ref=f49e1717]:
+                      - generic [ref=f49e1718]:
+                        - generic [ref=f49e1719]:
+                          - link "I made a browser-based, free video editor" [ref=f49e1720] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/VideoEditing/comments/r832c4/i_made_a_browserbased_free_video_editor/
+                          - generic [ref=f49e1723]:
+                            - generic [ref=f49e1726]:
+                              - link "r/VideoEditing" [ref=f49e1727] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/VideoEditing/
+                              - generic [aria-hidden] [ref=f49e1732]: •
+                              - time [ref=f49e1734]: 5y ago
+                            - link [ref=f49e1736] [cursor=pointer]:
+                              - /url: /r/VideoEditing/comments/r832c4/i_made_a_browserbased_free_video_editor/
+                              - heading "List item post - I made a browser-based, free video editor" [level=3] [ref=f49e1739]: I made a browser-based, free video editor
+                          - generic [ref=f49e1741]:
+                            - generic [ref=f49e1742]: "516"
+                            - text: upvotes ·
+                            - generic [ref=f49e1743]: "175"
+                            - text: comments
+                        - separator [ref=f49e1744]
+                    - listitem [ref=f49e1745]:
+                      - generic [ref=f49e1746]:
+                        - generic [ref=f49e1747]:
+                          - link "How did YOU get your start in video editing?" [ref=f49e1748] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/editors/comments/173si8m/how_did_you_get_your_start_in_video_editing/
+                          - generic [ref=f49e1751]:
+                            - generic [ref=f49e1754]:
+                              - link "r/editors" [ref=f49e1755] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/editors/
+                              - generic [aria-hidden] [ref=f49e1760]: •
+                              - time [ref=f49e1762]: 3y ago
+                            - link [ref=f49e1764] [cursor=pointer]:
+                              - /url: /r/editors/comments/173si8m/how_did_you_get_your_start_in_video_editing/
+                              - heading "List item post - How did YOU get your start in video editing?" [level=3] [ref=f49e1767]: How did YOU get your start in video editing?
+                          - generic [ref=f49e1769]:
+                            - generic [ref=f49e1770]: "27"
+                            - text: upvotes ·
+                            - generic [ref=f49e1771]: "72"
+                            - text: comments
+                        - separator [ref=f49e1772]
+                    - listitem [ref=f49e1773]:
+                      - generic [ref=f49e1774]:
+                        - generic [ref=f49e1775]:
+                          - link "Websites of freelance editors you liked?" [ref=f49e1776] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/editors/comments/ij9g3v/websites_of_freelance_editors_you_liked/
+                          - generic [ref=f49e1779]:
+                            - generic [ref=f49e1782]:
+                              - link "r/editors" [ref=f49e1783] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/editors/
+                              - generic [aria-hidden] [ref=f49e1788]: •
+                              - time [ref=f49e1790]: 6y ago
+                            - link [ref=f49e1792] [cursor=pointer]:
+                              - /url: /r/editors/comments/ij9g3v/websites_of_freelance_editors_you_liked/
+                              - heading "List item post - Websites of freelance editors you liked?" [level=3] [ref=f49e1795]: Websites of freelance editors you liked?
+                          - generic [ref=f49e1797]:
+                            - generic [ref=f49e1798]: "59"
+                            - text: upvotes ·
+                            - generic [ref=f49e1799]: "16"
+                            - text: comments
+                        - separator [ref=f49e1800]
+                    - listitem [ref=f49e1801]:
+                      - generic [ref=f49e1802]:
+                        - generic [ref=f49e1803]:
+                          - link "Most powerful free browser-based editor?" [ref=f49e1804] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/VideoEditing/comments/uvw198/most_powerful_free_browserbased_editor/
+                          - generic [ref=f49e1807]:
+                            - generic [ref=f49e1810]:
+                              - link "r/VideoEditing" [ref=f49e1811] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/VideoEditing/
+                              - generic [aria-hidden] [ref=f49e1816]: •
+                              - time [ref=f49e1818]: 4y ago
+                            - link [ref=f49e1820] [cursor=pointer]:
+                              - /url: /r/VideoEditing/comments/uvw198/most_powerful_free_browserbased_editor/
+                              - heading "List item post - Most powerful free browser-based editor?" [level=3] [ref=f49e1823]: Most powerful free browser-based editor?
+                          - generic [ref=f49e1825]:
+                            - generic [ref=f49e1826]: "4"
+                            - text: upvotes ·
+                            - generic [ref=f49e1827]: "6"
+                            - text: comments
+                        - separator [ref=f49e1828]
+                    - listitem [ref=f49e1829]:
+                      - generic [ref=f49e1830]:
+                        - generic [ref=f49e1831]:
+                          - link "Online alternatives for anki?" [ref=f49e1832] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/LearnJapanese/comments/sjl5aj/online_alternatives_for_anki/
+                          - generic [ref=f49e1835]:
+                            - generic [ref=f49e1838]:
+                              - link "r/LearnJapanese" [ref=f49e1839] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/LearnJapanese/
+                              - generic [aria-hidden] [ref=f49e1844]: •
+                              - time [ref=f49e1846]: 5y ago
+                            - link [ref=f49e1848] [cursor=pointer]:
+                              - /url: /r/LearnJapanese/comments/sjl5aj/online_alternatives_for_anki/
+                              - heading "List item post - Online alternatives for anki?" [level=3] [ref=f49e1851]: Online alternatives for anki?
+                          - generic [ref=f49e1853]:
+                            - generic [ref=f49e1854]: "12"
+                            - text: comments
+                        - separator [ref=f49e1855]
+                    - listitem [ref=f49e1856]:
+                      - generic [ref=f49e1857]:
+                        - generic [ref=f49e1858]:
+                          - link "Best free video editing app/software?" [ref=f49e1859] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/SmallYoutubers/comments/1ez6jbq/best_free_video_editing_appsoftware/
+                          - generic [ref=f49e1861]:
+                            - generic [ref=f49e1862]:
+                              - generic [ref=f49e1865]:
+                                - link "r/SmallYoutubers" [ref=f49e1866] [cursor=pointer]:
+                                  - /url: https://www.reddit.com/r/SmallYoutubers/
+                                - generic [aria-hidden] [ref=f49e1871]: •
+                                - time [ref=f49e1873]: 2y ago
+                              - link [ref=f49e1875] [cursor=pointer]:
+                                - /url: /r/SmallYoutubers/comments/1ez6jbq/best_free_video_editing_appsoftware/
+                                - heading "List item post - Best free video editing app/software?" [level=3] [ref=f49e1878]: Best free video editing app/software?
+                            - link "r/SmallYoutubers - Best free video editing app/software?" [ref=f49e1881] [cursor=pointer]:
+                              - /url: https://www.reddit.com/r/SmallYoutubers/comments/1ez6jbq/best_free_video_editing_appsoftware/
+                              - img "r/SmallYoutubers - Best free video editing app/software?" [ref=f49e1882]
+                          - generic [ref=f49e1884]:
+                            - generic [ref=f49e1885]: "72"
+                            - text: upvotes ·
+                            - generic [ref=f49e1886]: "49"
+                            - text: comments
+                        - separator [ref=f49e1887]
+                    - listitem [ref=f49e1888]:
+                      - generic [ref=f49e1889]:
+                        - generic [ref=f49e1890]:
+                          - link "How much do you guys make as video editors?" [ref=f49e1891] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/VideoEditors/comments/1owaojw/how_much_do_you_guys_make_as_video_editors/
+                          - generic [ref=f49e1894]:
+                            - generic [ref=f49e1897]:
+                              - link "r/VideoEditors" [ref=f49e1898] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/VideoEditors/
+                              - generic [aria-hidden] [ref=f49e1903]: •
+                              - time [ref=f49e1905]: 10mo ago
+                            - link [ref=f49e1907] [cursor=pointer]:
+                              - /url: /r/VideoEditors/comments/1owaojw/how_much_do_you_guys_make_as_video_editors/
+                              - heading "List item post - How much do you guys make as video editors?" [level=3] [ref=f49e1910]: How much do you guys make as video editors?
+                          - generic [ref=f49e1912]:
+                            - generic [ref=f49e1913]: "35"
+                            - text: upvotes ·
+                            - generic [ref=f49e1914]: "113"
+                            - text: comments
+                        - separator [ref=f49e1915]
+                    - listitem [ref=f49e1916]:
+                      - generic [ref=f49e1917]:
+                        - generic [ref=f49e1918]:
+                          - link "What is a good free video editor" [ref=f49e1919] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/SmallYoutubers/comments/1idy7gr/what_is_a_good_free_video_editor/
+                          - generic [ref=f49e1922]:
+                            - generic [ref=f49e1925]:
+                              - link "r/SmallYoutubers" [ref=f49e1926] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/SmallYoutubers/
+                              - generic [aria-hidden] [ref=f49e1931]: •
+                              - time [ref=f49e1933]: 2y ago
+                            - link [ref=f49e1935] [cursor=pointer]:
+                              - /url: /r/SmallYoutubers/comments/1idy7gr/what_is_a_good_free_video_editor/
+                              - heading "List item post - What is a good free video editor" [level=3] [ref=f49e1938]: What is a good free video editor
+                          - generic [ref=f49e1940]:
+                            - generic [ref=f49e1941]: "4"
+                            - text: upvotes ·
+                            - generic [ref=f49e1942]: "20"
+                            - text: comments
+                        - separator [ref=f49e1943]
+                    - listitem [ref=f49e1944]:
+                      - generic [ref=f49e1945]:
+                        - generic [ref=f49e1946]:
+                          - link "Hello looking for a long term video editor for a cooking channel on YouTube." [ref=f49e1947] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/FindVideoEditors/comments/1veqboq/hello_looking_for_a_long_term_video_editor_for_a/
+                          - generic [ref=f49e1950]:
+                            - generic [ref=f49e1953]:
+                              - link "r/FindVideoEditors" [ref=f49e1954] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/FindVideoEditors/
+                              - generic [aria-hidden] [ref=f49e1959]: •
+                              - time [ref=f49e1961]: 1mo ago
+                            - link [ref=f49e1963] [cursor=pointer]:
+                              - /url: /r/FindVideoEditors/comments/1veqboq/hello_looking_for_a_long_term_video_editor_for_a/
+                              - heading "List item post - Hello looking for a long term video editor for a cooking ch..." [level=3] [ref=f49e1966]: Hello looking for a long term video editor for a cooking channel on YouTube.
+                          - generic [ref=f49e1968]:
+                            - generic [ref=f49e1969]: "34"
+                            - text: upvotes ·
+                            - generic [ref=f49e1970]: "80"
+                            - text: comments
+                        - separator [ref=f49e1971]
+                    - listitem [ref=f49e1972]:
+                      - generic [ref=f49e1973]:
+                        - generic [ref=f49e1974]:
+                          - link "What are some NotePlan alternatives?" [ref=f49e1975] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/macapps/comments/w8jj94/what_are_some_noteplan_alternatives/
+                          - generic [ref=f49e1978]:
+                            - generic [ref=f49e1981]:
+                              - link "r/macapps" [ref=f49e1982] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/macapps/
+                              - generic [aria-hidden] [ref=f49e1987]: •
+                              - time [ref=f49e1989]: 4y ago
+                            - link [ref=f49e1991] [cursor=pointer]:
+                              - /url: /r/macapps/comments/w8jj94/what_are_some_noteplan_alternatives/
+                              - heading "List item post - What are some NotePlan alternatives?" [level=3] [ref=f49e1994]: What are some NotePlan alternatives?
+                          - generic [ref=f49e1996]:
+                            - generic [ref=f49e1997]: "19"
+                            - text: upvotes ·
+                            - generic [ref=f49e1998]: "22"
+                            - text: comments
+                        - separator [ref=f49e1999]
+                    - listitem [ref=f49e2000]:
+                      - generic [ref=f49e2001]:
+                        - generic [ref=f49e2002]:
+                          - link "Best browser video editor with local processing?" [ref=f49e2003] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/chromeos/comments/1qlu0uy/best_browser_video_editor_with_local_processing/
+                          - generic [ref=f49e2006]:
+                            - generic [ref=f49e2009]:
+                              - link "r/chromeos" [ref=f49e2010] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/chromeos/
+                              - generic [aria-hidden] [ref=f49e2015]: •
+                              - time [ref=f49e2017]: 7mo ago
+                            - link [ref=f49e2019] [cursor=pointer]:
+                              - /url: /r/chromeos/comments/1qlu0uy/best_browser_video_editor_with_local_processing/
+                              - heading "List item post - Best browser video editor with local processing?" [level=3] [ref=f49e2022]: Best browser video editor with local processing?
+                          - generic [ref=f49e2024]:
+                            - generic [ref=f49e2025]: "8"
+                            - text: upvotes ·
+                            - generic [ref=f49e2026]: "12"
+                            - text: comments
+                        - separator [ref=f49e2027]
+                    - listitem [ref=f49e2028]:
+                      - generic [ref=f49e2029]:
+                        - generic [ref=f49e2030]:
+                          - link "What’s the best way to learn video editing?" [ref=f49e2031] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/VideoEditing/comments/uhrgqz/whats_the_best_way_to_learn_video_editing/
+                          - generic [ref=f49e2034]:
+                            - generic [ref=f49e2037]:
+                              - link "r/VideoEditing" [ref=f49e2038] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/VideoEditing/
+                              - generic [aria-hidden] [ref=f49e2043]: •
+                              - time [ref=f49e2045]: 4y ago
+                            - link [ref=f49e2047] [cursor=pointer]:
+                              - /url: /r/VideoEditing/comments/uhrgqz/whats_the_best_way_to_learn_video_editing/
+                              - heading "List item post - What’s the best way to learn video editing?" [level=3] [ref=f49e2050]: What’s the best way to learn video editing?
+                          - generic [ref=f49e2052]:
+                            - generic [ref=f49e2053]: "143"
+                            - text: upvotes ·
+                            - generic [ref=f49e2054]: "87"
+                            - text: comments
+                        - separator [ref=f49e2055]
+                    - listitem [ref=f49e2056]:
+                      - generic [ref=f49e2057]:
+                        - generic [ref=f49e2058]:
+                          - link "Best online video editor?" [ref=f49e2059] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/socialmedia/comments/j6t915/best_online_video_editor/
+                          - generic [ref=f49e2062]:
+                            - generic [ref=f49e2065]:
+                              - link "r/socialmedia" [ref=f49e2066] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/socialmedia/
+                              - generic [aria-hidden] [ref=f49e2071]: •
+                              - time [ref=f49e2073]: 6y ago
+                            - link [ref=f49e2075] [cursor=pointer]:
+                              - /url: /r/socialmedia/comments/j6t915/best_online_video_editor/
+                              - heading "List item post - Best online video editor?" [level=3] [ref=f49e2078]: Best online video editor?
+                          - generic [ref=f49e2080]:
+                            - generic [ref=f49e2081]: "8"
+                            - text: upvotes ·
+                            - generic [ref=f49e2082]: "7"
+                            - text: comments
+                        - separator [ref=f49e2083]
+                    - listitem [ref=f49e2084]:
+                      - generic [ref=f49e2085]:
+                        - generic [ref=f49e2086]:
+                          - link "Can video editors make a living working with YouTubers/streamers?" [ref=f49e2087] [cursor=pointer]:
+                            - /url: https://www.reddit.com/r/editors/comments/1sjrl2g/can_video_editors_make_a_living_working_with/
+                          - generic [ref=f49e2090]:
+                            - generic [ref=f49e2093]:
+                              - link "r/editors" [ref=f49e2094] [cursor=pointer]:
+                                - /url: https://www.reddit.com/r/editors/
+                              - generic [aria-hidden] [ref=f49e2099]: •
+                              - time [ref=f49e2101]: 5mo ago
+                            - link [ref=f49e2103] [cursor=pointer]:
+                              - /url: /r/editors/comments/1sjrl2g/can_video_editors_make_a_living_working_with/
+                              - heading "List item post - Can video editors make a living working with YouTubers/stre..." [level=3] [ref=f49e2106]: Can video editors make a living working with YouTubers/streamers?
+                          - generic [ref=f49e2108]:
+                            - generic [ref=f49e2109]: "27"
+                            - text: upvotes ·
+                            - generic [ref=f49e2110]: "59"
+                            - text: comments
+                        - separator [ref=f49e2111]
+                    - listitem [ref=f49e2112]:
+                      - generic [ref=f49e2114]:
+                        - link "Hello, what websites do you use to search for free resources when editing videos? Resources such as videos, transitions, LUTs, etc." [ref=f49e2115] [cursor=pointer]:
+                          - /url: https://www.reddit.com/r/VideoEditing/comments/16buw3u/hello_what_websites_do_you_use_to_search_for_free/
+                        - generic [ref=f49e2118]:
+                          - generic [ref=f49e2121]:
+                            - link "r/VideoEditing" [ref=f49e2122] [cursor=pointer]:
+                              - /url: https://www.reddit.com/r/VideoEditing/
+                            - generic [aria-hidden] [ref=f49e2127]: •
+                            - time [ref=f49e2129]: 3y ago
+                          - link [ref=f49e2131] [cursor=pointer]:
+                            - /url: /r/VideoEditing/comments/16buw3u/hello_what_websites_do_you_use_to_search_for_free/
+                            - heading "List item post - Hello, what websites do you use to search for free resource..." [level=3] [ref=f49e2134]: Hello, what websites do you use to search for free resources when editing videos? Resources such as videos, transitions, LUTs, etc.
+                        - generic [ref=f49e2136]:
+                          - generic [ref=f49e2137]: "9"
+                          - text: upvotes ·
+                          - generic [ref=f49e2138]: "9"
+                          - text: comments
+                - generic [ref=f49e2139]:
+                  - heading "View Post in" [level=2] [ref=f49e2141]
+                  - generic [ref=f49e2143]:
+                    - link "Português (Brasil)" [ref=f49e2145] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/online_video_editors_suggestions/?tl=pt-br
+                    - link "繁體中文" [ref=f49e2147] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/online_video_editors_suggestions/?tl=zh-hant
+                    - link "日本語" [ref=f49e2149] [cursor=pointer]:
+                      - /url: https://www.reddit.com/r/chromeos/comments/w8jm1s/online_video_editors_suggestions/?tl=ja
+                    - group [ref=f49e2150]:
+                      - generic "See more" [ref=f49e2151] [cursor=pointer]
+                - complementary "Community information" [ref=f49e2156]:
+                  - generic [ref=f49e2158]:
+                    - heading "Community Info Section" [level=1] [ref=f49e2159]
+                    - generic [ref=f49e2160]:
+                      - link "r/chromeos" [ref=f49e2162] [cursor=pointer]:
+                        - /url: /r/chromeos/
+                      - button "Join" [ref=f49e2167] [cursor=pointer]
+                    - generic [ref=f49e2168]:
+                      - generic [ref=f49e2169]: ChromeOS
+                      - generic [ref=f49e2170]: The largest independent, community-run forum for discussions related to Chromebooks and everything else ChromeOS.
+                      - button "Show more" [ref=f49e2171] [cursor=pointer]
+                      - generic: Public
+                - generic [ref=f49e2179]:
+                  - heading "Top Posts" [level=2] [ref=f49e2180]
+                  - list [ref=f49e2181]:
+                    - listitem [ref=f49e2182]:
+                      - 'link "Reddit reReddit: Top posts of July 26, 2022" [ref=f49e2183] [cursor=pointer]':
+                        - /url: https://www.reddit.com/posts/2022/july-26-1/global/
+                        - generic [ref=f49e2184]: Reddit
+                        - generic [ref=f49e2199]: "reReddit: Top posts of July 26, 2022"
+                        - separator [ref=f49e2200]
+                    - listitem [ref=f49e2201]:
+                      - 'link "Reddit reReddit: Top posts of July 2022" [ref=f49e2202] [cursor=pointer]':
+                        - /url: https://www.reddit.com/posts/2022/july/global/
+                        - generic [ref=f49e2203]: Reddit
+                        - generic [ref=f49e2218]: "reReddit: Top posts of July 2022"
+                        - separator [ref=f49e2219]
+                    - listitem [ref=f49e2220]:
+                      - 'link "Reddit reReddit: Top posts of 2022" [ref=f49e2221] [cursor=pointer]':
+                        - /url: https://www.reddit.com/posts/2022/global/
+                        - generic [ref=f49e2222]: Reddit
+                        - generic [ref=f49e2237]: "reReddit: Top posts of 2022"
+                        - separator [ref=f49e2238]
+              - list [ref=f49e2240]:
+                - listitem [ref=f49e2241]:
+                  - link "Home" [ref=f49e2243] [cursor=pointer]:
+                    - /url: /?feed=home
+                - listitem [ref=f49e2244]:
+                  - link "Popular" [ref=f49e2246] [cursor=pointer]:
+                    - /url: /r/popular/
+                - listitem [ref=f49e2247]:
+                  - link "News" [ref=f49e2249] [cursor=pointer]:
+                    - /url: /news/
+                - listitem [ref=f49e2250]:
+                  - link "Explore" [ref=f49e2252] [cursor=pointer]:
+                    - /url: /explore/
+                - listitem [ref=f49e2253]:
+                  - link "Best of Reddit" [ref=f49e2255] [cursor=pointer]:
+                    - /url: https://www.reddit.com/posts/2026/global/
+                - listitem [ref=f49e2256]:
+                  - link "Best of Reddit in Portuguese" [ref=f49e2258] [cursor=pointer]:
+                    - /url: https://www.reddit.com/posts/2026/tl-pt-BR/
+                - listitem [ref=f49e2259]:
+                  - link "Best of Reddit in German" [ref=f49e2261] [cursor=pointer]:
+                    - /url: https://www.reddit.com/posts/2026/tl-de/
+                - listitem [ref=f49e2262]:
+                  - link "Reddit Rules" [ref=f49e2264] [cursor=pointer]:
+                    - /url: https://www.redditinc.com/policies/content-policy
+                - listitem [ref=f49e2265]:
+                  - link "Privacy Policy" [ref=f49e2267] [cursor=pointer]:
+                    - /url: https://www.reddit.com/policies/privacy-policy
+                - listitem [ref=f49e2268]:
+                  - link "User Agreement" [ref=f49e2270] [cursor=pointer]:
+                    - /url: https://www.redditinc.com/policies/user-agreement
+                - listitem [ref=f49e2271]:
+                  - link "Accessibility" [ref=f49e2273] [cursor=pointer]:
+                    - /url: https://support.reddithelp.com/hc/sections/38303584022676-Accessibility
+                - listitem [ref=f49e2274]:
+                  - link "Reddit, Inc. © 2026. All rights reserved." [ref=f49e2275] [cursor=pointer]:
+                    - /url: https://redditinc.com
+        - generic [ref=f49e2278]:
+          - paragraph [ref=f49e2279]: Join the most real place on the internet
+          - generic [ref=f49e2281]:
+            - generic [ref=f49e2284]:
+              - iframe [ref=f49e2289]:
+                - button "Continue with Google. Opens in new tab" [ref=f50e3] [cursor=pointer]:
+                  - generic [ref=f50e5]: Continue with Google
+              - generic [ref=f49e2291] [cursor=pointer]:
+                - generic [ref=f49e2292]: Continue with Apple
+                - button "Sign in with Apple" [ref=f49e2298]:
+                  - generic [ref=f49e2299]:
+                    - img:
+                      - generic:
+                        - img:
+                          - generic:  Sign in with Apple
+            - link "Continue with Phone Number" [ref=f49e2304] [cursor=pointer]:
+              - /url: https://www.reddit.com/login/
+            - link "Continue with Email" [ref=f49e2313] [cursor=pointer]:
+              - /url: https://www.reddit.com/register/
+          - paragraph [ref=f49e2320]:
+            - text: By continuing, you agree to our
+            - link "User Agreement" [ref=f49e2321] [cursor=pointer]:
+              - /url: https://www.redditinc.com/policies/user-agreement
+            - text: and acknowledge that you understand the
+            - link "Privacy Policy" [ref=f49e2322] [cursor=pointer]:
+              - /url: https://www.redditinc.com/policies/privacy-policy
+            - text: .

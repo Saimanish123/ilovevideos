@@ -1,0 +1,238 @@
+- generic [active] [ref=e1]:
+  - paragraph [ref=e2]
+  - generic [ref=e3]: DuckDuckGo
+  - paragraph [ref=e4]
+  - generic [ref=e5]:
+    - textbox [ref=e6]: site:reddit.com online converter cookie consent banner annoying europe
+    - button "Search" [ref=e7] [cursor=pointer]
+    - generic [ref=e8]:
+      - combobox [ref=e9] [cursor=pointer]:
+        - option "All Regions" [selected]
+        - option "Argentina"
+        - option "Australia"
+        - option "Austria"
+        - option "Belgium (fr)"
+        - option "Belgium (nl)"
+        - option "Brazil"
+        - option "Bulgaria"
+        - option "Canada (en)"
+        - option "Canada (fr)"
+        - option "Catalonia"
+        - option "Chile"
+        - option "China"
+        - option "Colombia"
+        - option "Croatia"
+        - option "Czech Republic"
+        - option "Denmark"
+        - option "Estonia"
+        - option "Finland"
+        - option "France"
+        - option "Germany"
+        - option "Greece"
+        - option "Hong Kong"
+        - option "Hungary"
+        - option "Iceland"
+        - option "India (en)"
+        - option "Indonesia (en)"
+        - option "Ireland"
+        - option "Israel (en)"
+        - option "Italy"
+        - option "Japan"
+        - option "Korea"
+        - option "Latvia"
+        - option "Lithuania"
+        - option "Malaysia (en)"
+        - option "Mexico"
+        - option "Netherlands"
+        - option "New Zealand"
+        - option "Norway"
+        - option "Pakistan (en)"
+        - option "Peru"
+        - option "Philippines (en)"
+        - option "Poland"
+        - option "Portugal"
+        - option "Romania"
+        - option "Russia"
+        - option "Saudi Arabia"
+        - option "Singapore"
+        - option "Slovakia"
+        - option "Slovenia"
+        - option "South Africa"
+        - option "Spain (ca)"
+        - option "Spain (es)"
+        - option "Sweden"
+        - option "Switzerland (de)"
+        - option "Switzerland (fr)"
+        - option "Taiwan"
+        - option "Thailand (en)"
+        - option "Turkey"
+        - option "US (English)"
+        - option "US (Spanish)"
+        - option "Ukraine"
+        - option "United Kingdom"
+        - option "Vietnam (en)"
+      - combobox [ref=e10] [cursor=pointer]:
+        - option "Any Time" [selected]
+        - option "Past Day"
+        - option "Past Week"
+        - option "Past Month"
+        - option "Past Year"
+  - paragraph [ref=e11]
+  - table [ref=e12]:
+    - rowgroup [ref=e13]:
+      - row [ref=e14]:
+        - cell
+        - cell [ref=e15]:
+          - button "Next Page >" [ref=e17] [cursor=pointer]
+  - paragraph [ref=e18]
+  - table
+  - table [ref=e19]:
+    - rowgroup [ref=e20]:
+      - row [ref=e21]:
+        - cell "1." [ref=e22]
+        - cell [ref=e23]:
+          - link "European Union set to revise cookie law, admits cookie banners are annoying" [ref=e24] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2Feurope%2Fcomments%2F190xqrj%2Feuropean_union_set_to_revise_cookie_law_admits%2F&rut=b01257eed82ac4dfb25b745c11b1be5335bf7fda491c951c1e65edfe6d013f26
+      - row [ref=e25]:
+        - cell [ref=e26]
+        - cell "A cookie does not inherently contain any personal information, or even non-personal identifying information. It's just some text you sent to the server on each request. If the cookie doesn't contain PII, it's fair game permission or not. The banners aren't for permitting cookies, they're for permitting them to use cookies and other measures to track you, which is a completely orthogonal issue." [ref=e27]
+      - row [ref=e28]:
+        - cell [ref=e29]
+        - cell "www.reddit.com/r/europe/comments/190xqrj/european_union_set_to_revise_cookie_law_admits/" [ref=e30]
+      - row [ref=e31]:
+        - cell [ref=e32]
+        - cell [ref=e33]
+      - row [ref=e34]:
+        - cell "2." [ref=e35]
+        - cell [ref=e36]:
+          - link "European Union set to revise cookie law, admits cookie banners are annoying" [ref=e37] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2Ftechnology%2Fcomments%2F199zpry%2Feuropean_union_set_to_revise_cookie_law_admits%2F&rut=14a50b41e39a5f06eec8c8e3b52025b47394baca4c2c845d4afe68c8e6b9262f
+      - row [ref=e38]:
+        - cell [ref=e39]
+        - cell "This kind of cookie is not concerned by the \"cookie law\", it's a common misconception. The intent of the law is to ask consent for tracking cookies, not all cookies (functional cookies and login cookies are exempt)" [ref=e40]
+      - row [ref=e41]:
+        - cell [ref=e42]
+        - cell "www.reddit.com/r/technology/comments/199zpry/european_union_set_to_revise_cookie_law_admits/" [ref=e43]
+      - row [ref=e44]:
+        - cell [ref=e45]
+        - cell [ref=e46]
+      - row [ref=e47]:
+        - cell "3." [ref=e48]
+        - cell [ref=e49]:
+          - link "European Union set to revise cookie law, admits cookie banners are annoying" [ref=e50] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2Fneoliberal%2Fcomments%2F191i331%2Feuropean_union_set_to_revise_cookie_law_admits%2F&rut=7577ae7633a284ec35359f541ea9653727f0dbc6677630d548472ab2a6437a6b
+      - row [ref=e51]:
+        - cell [ref=e52]
+        - cell "The requirement for websites to gain visitors' consent to use cookies has given users more control over their data when surfing. However, it's led to endless annoying \"cookie permission\" banners seen on most websites. Recognizing this issue, EU authorities are considering revising these requirements, although the outcome may hinge on the compliance of major platforms." [ref=e53]
+      - row [ref=e54]:
+        - cell [ref=e55]
+        - cell "www.reddit.com/r/neoliberal/comments/191i331/european_union_set_to_revise_cookie_law_admits/" [ref=e56]
+      - row [ref=e57]:
+        - cell [ref=e58]
+        - cell [ref=e59]
+      - row [ref=e60]:
+        - cell "4." [ref=e61]
+        - cell [ref=e62]:
+          - link "Most cookie banners are annoying and deceptive. This is not consent ..." [ref=e63] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2FPrivacyGuides%2Fcomments%2Fr1a566%2Fmost_cookie_banners_are_annoying_and_deceptive%2F&rut=d613816b6e67202e7a32cd8aa642262065263cf0af9a38304125114729516494
+      - row [ref=e64]:
+        - cell [ref=e65]
+        - cell "Plenty of people these days talking about how cookie banners and all that consent crap is inconvenient, and I hope it stays around until the vast majority starts questioning what all theses companies are actually doing and why they need to collect any data in the first place." [ref=e66]
+      - row [ref=e67]:
+        - cell [ref=e68]
+        - cell "www.reddit.com/r/PrivacyGuides/comments/r1a566/most_cookie_banners_are_annoying_and_deceptive/" [ref=e69]
+      - row [ref=e70]:
+        - cell [ref=e71]
+        - cell [ref=e72]
+      - row [ref=e73]:
+        - cell "5." [ref=e74]
+        - cell [ref=e75]:
+          - 'link "Cookie banners are annoying : r/webdev - Reddit" [ref=e76] [cursor=pointer]':
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2Fwebdev%2Fcomments%2F1c45io8%2Fcookie_banners_are_annoying%2F&rut=c52a7abdc1718011f85d292807aeb66e976e4735a92a2bea4326d14444f67550
+      - row [ref=e77]:
+        - cell [ref=e78]
+        - cell "Every site has an annoying pop up banner that says something along the lines of— \"Can place cookie 🍪 👉👈🥹\" What's even the point of this? Why is this even a thing?" [ref=e79]
+      - row [ref=e80]:
+        - cell [ref=e81]
+        - cell "www.reddit.com/r/webdev/comments/1c45io8/cookie_banners_are_annoying/" [ref=e82]
+      - row [ref=e83]:
+        - cell [ref=e84]
+        - cell [ref=e85]
+      - row [ref=e86]:
+        - cell "6." [ref=e87]
+        - cell [ref=e88]:
+          - link "Anyone else feel like the Cookie Law was badly implemented?" [ref=e89] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2Fprivacy%2Fcomments%2F10zxc6r%2Fanyone_else_feel_like_the_cookie_law_was_badly%2F&rut=9ed24ccff3ba008c84953a09321421b169b2f038e07376a2067c10aabd900d62
+      - row [ref=e90]:
+        - cell [ref=e91]
+        - cell "Unfortunately the law is written so the first cookie is allowed without consent, the second cookie requires consent in most regions and the last cookie should always require consent." [ref=e92]
+      - row [ref=e93]:
+        - cell [ref=e94]
+        - cell "www.reddit.com/r/privacy/comments/10zxc6r/anyone_else_feel_like_the_cookie_law_was_badly/" [ref=e95]
+      - row [ref=e96]:
+        - cell [ref=e97]
+        - cell [ref=e98]
+      - row [ref=e99]:
+        - cell "7." [ref=e100]
+        - cell [ref=e101]:
+          - link "The annoying cookie law. Why does it still exist? I think this ... - Reddit" [ref=e102] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2Feurope%2Fcomments%2F4nwxpy%2Fthe_annoying_cookie_law_why_does_it_still_exist_i%2F&rut=00d47a23656fb03ee54c6978f569ef2c09333b74de2290925fa5533368fe90c8
+      - row [ref=e103]:
+        - cell [ref=e104]
+        - cell "The commonly seen method of using a checkbox and a simple information note such as \"remember me (uses cookies)\" next to the submit form would be an appropriate means of gaining consent therefore negating the need to apply an exemption in this case. So even a \"remember my login\" checkbox cookie would not require the annoying cookie warning." [ref=e105]
+      - row [ref=e106]:
+        - cell [ref=e107]
+        - cell "www.reddit.com/r/europe/comments/4nwxpy/the_annoying_cookie_law_why_does_it_still_exist_i/" [ref=e108]
+      - row [ref=e109]:
+        - cell [ref=e110]
+        - cell [ref=e111]
+      - row [ref=e112]:
+        - cell "8." [ref=e113]
+        - cell [ref=e114]:
+          - link "How to get rid of this annoying ACCEPT OUR COOKIE POLICY on ... - Reddit" [ref=e115] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2Fprivacy%2Fcomments%2Fmedm8o%2Fhow_to_get_rid_of_this_annoying_accept_our_cookie%2F&rut=99742aff5f3271a9b7170b12ac855a181c56e6ea527e124fa449908612b7700d
+      - row [ref=e116]:
+        - cell [ref=e117]
+        - cell "Most sites treat closing the banner as accepting cookies, and are clear about that." [ref=e118]
+      - row [ref=e119]:
+        - cell [ref=e120]
+        - cell "www.reddit.com/r/privacy/comments/medm8o/how_to_get_rid_of_this_annoying_accept_our_cookie/" [ref=e121]
+      - row [ref=e122]:
+        - cell [ref=e123]
+        - cell [ref=e124]
+      - row [ref=e125]:
+        - cell "9." [ref=e126]
+        - cell [ref=e127]:
+          - 'link "Annoying cookie collection banners : r/webdev - Reddit" [ref=e128] [cursor=pointer]':
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2Fwebdev%2Fcomments%2F18oq22l%2Fannoying_cookie_collection_banners%2F&rut=3f489429340ace72aac71a57a74e02ac1182d9fdd1bc8d121c522d43527c1f00
+      - row [ref=e129]:
+        - cell [ref=e130]
+        - cell "There are loads of other cookie consent services that do this for you also but they are all paid. Google \"cookie consent service\". \"Essential cookies\" for your site to even run are excluded from all this." [ref=e131]
+      - row [ref=e132]:
+        - cell [ref=e133]
+        - cell "www.reddit.com/r/webdev/comments/18oq22l/annoying_cookie_collection_banners/" [ref=e134]
+      - row [ref=e135]:
+        - cell [ref=e136]
+        - cell [ref=e137]
+      - row [ref=e138]:
+        - cell "10." [ref=e139]
+        - cell [ref=e140]:
+          - link "Which cookie consent/banner platform do you use? Is CookieYes ... - Reddit" [ref=e141] [cursor=pointer]:
+            - /url: //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2Fwebdev%2Fcomments%2F17lgw4n%2Fwhich_cookie_consentbanner_platform_do_you_use_is%2F&rut=0f0247c2d13f4b22a773a81755a0d79824a251cfc1adb8051cf0990b50e08234
+      - row [ref=e142]:
+        - cell [ref=e143]
+        - cell "If, however, you require cookie banner only for the 3rd party trackers like Google Analytics, I would recommend considering Wide Angle Analytics (my product) that supports cookieless web analytics with strict privacy rules that does not require cookie banner pop-up." [ref=e144]
+      - row [ref=e145]:
+        - cell [ref=e146]
+        - cell "www.reddit.com/r/webdev/comments/17lgw4n/which_cookie_consentbanner_platform_do_you_use_is/" [ref=e147]
+      - row [ref=e148]:
+        - cell [ref=e149]
+        - cell [ref=e150]
+      - row [ref=e151]:
+        - cell [ref=e152]:
+          - button "Next Page >" [ref=e154] [cursor=pointer]
+  - paragraph [ref=e155]
+  - generic [ref=e156]:
+    - textbox [ref=e157]: site:reddit.com online converter cookie consent banner annoying europe
+    - button "Search" [ref=e158] [cursor=pointer]
+  - paragraph [ref=e159]

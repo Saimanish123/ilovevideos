@@ -1,0 +1,490 @@
+- generic [active] [ref=f19e1]:
+  - navigation [ref=f19e5]:
+    - generic [ref=f19e6]:
+      - link "VEED.IO" [ref=f19e7] [cursor=pointer]:
+        - /url: https://www.veed.io/
+      - list [ref=f19e10]:
+        - listitem [ref=f19e11]:
+          - generic [ref=f19e12]: Product
+        - listitem [ref=f19e17]:
+          - generic [ref=f19e18]: Use Cases
+        - listitem [ref=f19e23]:
+          - generic [ref=f19e24]: AI
+        - listitem [ref=f19e30]:
+          - generic [ref=f19e31]: APIs
+        - listitem [ref=f19e36]:
+          - generic [ref=f19e37]: Resources
+        - listitem [ref=f19e42]
+    - list [ref=f19e49]:
+      - listitem [ref=f19e50]:
+        - link "Login" [ref=f19e51] [cursor=pointer]:
+          - /url: https://www.veed.io/login?locale=en&source=%2Fenterprise%2Fenterprise
+      - listitem [ref=f19e52]:
+        - link "Sign Up" [ref=f19e53] [cursor=pointer]:
+          - /url: https://www.veed.io/signup?locale=en&source=%2Fenterprise%2Fenterprise
+  - generic [ref=f19e55]:
+    - heading "Privacy Policy" [level=1] [ref=f19e57]
+    - paragraph [ref=f19e59]:
+      - text: Veed Limited (“
+      - strong [ref=f19e60]: Veed
+      - text: ”) respects your privacy and is committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website(s) (including subdomains of our website(s) and websites through which we make our services available) and/or our applications for mobile, tablet, desktop, browser and other smart device systems (“
+      - strong [ref=f19e61]: Applications
+      - text: "”) (regardless of where you visit it from) and use our services, and tell you about your privacy rights and how the law protects you.By using the Applications or our services, you agree to be bound by this privacy policy and that we proceed to the processing of personal data on the terms outlined below.The Privacy Policy last updated on: 6"
+      - superscript [ref=f19e62]: th
+      - text: of January, 2025
+    - generic [ref=f19e63]:
+      - paragraph [ref=f19e64]: Please use the Glossary to understand the meaning of some of the terms used in this privacy policy.
+      - generic [ref=f19e65]:
+        - heading "1. Important information and who we are" [level=2] [ref=f19e67]
+        - generic [ref=f19e68]:
+          - heading "Purpose of this privacy policy" [level=4] [ref=f19e69]
+          - paragraph [ref=f19e70]:
+            - text: This privacy policy aims to give you information on how Veed collects and processes your personal data through your use of the Applications and our services, including any data you may provide through the Applications (for example, when you chat with us on our “support chat” function available through our website (
+            - link [ref=f19e71] [cursor=pointer]:
+              - /url: https://www.veed.io
+              - emphasis [ref=f19e72]: www.veed.io
+            - text: )), create an account with us, purchase a service or upload and edit audio or video files. The Applications are not intended for children and we do not knowingly collect data relating to children.It is important that you read this privacy policy together with any other privacy policy or fair processing policy we may provide on specific occasions when we are collecting or processing personal data about you so that you are fully aware of how and why we are using your data. This privacy policy supplements other notices and privacy policies and is not intended to override them.
+        - generic [ref=f19e73]:
+          - heading "Controller" [level=4] [ref=f19e74]
+          - paragraph [ref=f19e75]: Veed Limited (collectively referred to as “Veed”, "we", "us" or "our" in this privacy policy) is the controller and responsible for your personal data, except where we process your personal data because you use our services as a result of your relationship with a customer who we supply our services to (for example, if you use our services as a result of your being our customer’s employee or client). We have appointed a data privacy manager who is responsible for overseeing questions in relation to this privacy policy. If you have any questions about this privacy policy, including any requests to exercise your legal rights, please contact the data privacy manager using the details set out below. Where we process your personal data because you use our services as a result of your relationship with a customer who we supply our services to, we are not the data controller as we would be processing personal data on behalf of our customer as a data processor. Where we are processing your personal data on behalf of our customer, the privacy policy that you should be referring to would be our customer’s privacy policy. Our customer’s privacy policy should inform you as to how your personal data will be processed.
+        - generic [ref=f19e76]:
+          - heading "Contact details" [level=4] [ref=f19e77]
+          - paragraph [ref=f19e78]:
+            - text: "If you have any questions about this privacy policy or our privacy practices, please contact our data privacy manager in the following ways:Full name of legal entity: Veed LimitedEmail address: hello@veed.ioPostal address: 17-18 Clere Street, Shoreditch, London EC2A 4LJYou have the right to make a complaint at any time to the Information Commissioner's Office (ICO), the UK regulator for data protection issues ("
+            - emphasis [ref=f19e79]: www.ico.org.uk
+            - text: ). We would, however, appreciate the chance to deal with your concerns before you approach the ICO so please contact us in the first instance.
+        - generic [ref=f19e80]:
+          - heading "Changes to the privacy policy and your duty to inform us of changes" [level=4] [ref=f19e81]
+          - paragraph [ref=f19e82]: We keep our privacy policy under regular review. Historic versions can be obtained by contacting us.It is important that the personal data we hold about you is accurate and current. Please keep us informed if your personal data changes during your relationship with us.
+        - generic [ref=f19e83]:
+          - heading "Third-party links" [level=4] [ref=f19e84]
+          - paragraph [ref=f19e85]: The Applications may include links to third-party websites, plug-ins and applications. Clicking on those links or enabling those connections may allow third parties to collect or share data about you. We do not control these third-party websites and are not responsible for their privacy statements. When you leave the Applications, we encourage you to read the privacy policy of every website you visit.
+      - generic [ref=f19e86]:
+        - heading "2. The personal data we collect about you" [level=2] [ref=f19e88]
+        - generic [ref=f19e89]:
+          - paragraph [ref=f19e90]: "Personal data, or personal information, means any information about an individual from which that person can be identified. It does not include data where the identity has been removed (anonymous data).We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:"
+          - list [ref=f19e92]:
+            - listitem [ref=f19e93]:
+              - paragraph [ref=f19e94]:
+                - strong [ref=f19e95]: Identity Data
+                - text: includes first name, maiden name, last name, username or similar identifier, marital status, title, date of birth, gender and, if you are in a video or audio file that is uploaded to the Applications, visual and/or audio identifiers.
+            - listitem [ref=f19e96]:
+              - paragraph [ref=f19e97]:
+                - strong [ref=f19e98]: Contact Data
+                - text: includes billing address, email address and telephone numbers.
+            - listitem [ref=f19e99]:
+              - paragraph [ref=f19e100]:
+                - strong [ref=f19e101]: Financial Data
+                - text: includes bank account and payment card details.
+            - listitem [ref=f19e102]:
+              - paragraph [ref=f19e103]:
+                - strong [ref=f19e104]: Transaction Data
+                - text: includes details about payments to and from you and other details of services you have purchased from us.
+            - listitem [ref=f19e105]:
+              - paragraph [ref=f19e106]:
+                - strong [ref=f19e107]: Technical Data
+                - text: includes internet protocol (IP) address, your login data, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, other technology on the devices you use to access the Applications, and information in or about the audio or video files you provide (including metadata), such as the location of a video or the date it was created.
+            - listitem [ref=f19e108]:
+              - paragraph [ref=f19e109]:
+                - strong [ref=f19e110]: Profile Data
+                - text: includes your username and password, purchases or orders made by you, your interests, preferences, feedback and survey responses.
+            - listitem [ref=f19e111]:
+              - paragraph [ref=f19e112]:
+                - strong [ref=f19e113]: Usage Data
+                - text: includes information about how you use the Applications and services.
+            - listitem [ref=f19e114]:
+              - paragraph [ref=f19e115]:
+                - strong [ref=f19e116]: Marketing and Communications Data
+                - text: includes your preferences in receiving marketing from us and our third parties and your communication preferences.
+          - paragraph [ref=f19e117]:
+            - text: We also collect, use and share
+            - strong [ref=f19e118]: Aggregated Data
+            - text: such as statistical or demographic data for any purpose. Aggregated Data could be derived from your personal data but is not considered personal data in law as this data will
+            - strong [ref=f19e119]: not
+            - text: directly or indirectly reveal your identity. For example, we may aggregate your Usage Data to calculate the percentage of users accessing a specific website feature. However, if we combine or connect Aggregated Data with your personal data so that it can directly or indirectly identify you, we treat the combined data as personal data which will be used in accordance with this privacy policy.We do not ask you for any
+            - strong [ref=f19e120]: Special Categories of Personal Data
+            - text: about you (this includes details about your race or ethnicity, religious or philosophical beliefs, sex life, sexual orientation, political opinions, trade union membership, information about your health, and genetic and biometric data). Nor do we ask you for any information about criminal convictions and offences. You may choose to provide us with Special Categories of Personal Data through your uploading of video or audio files or other data on to the Applications. Where you provide us with such Special Categories of Personal Data, you are giving us your explicit consent to process such data about you to the extent permitted by the UK and/or EU data protection regime (as applicable). Where you provide us with such Special Categories of Personal Data about persons other than yourself, you must obtain each of their explicit written consent for us to process their Special Categories of Personal Data to the extent permitted by the UK and/or EU data protection regime (as applicable) and in accordance with this privacy policy. Their explicit written consent which you obtain must be supplied to us on our request. If a person does not give explicit written consent to our processing their Special Categories of Personal Data, then their Special Categories of Personal Data must not be supplied to us. That is to say, you must not upload video or audio files containing Special Categories of Personal Data of anyone who you have not obtained explicit written consent from. Special Categories of Personal Data are subject to special protections under the UK and/or the EU data protection regime (as applicable).
+        - generic [ref=f19e121]:
+          - heading "If you fail to provide personal data" [level=4] [ref=f19e122]
+          - paragraph [ref=f19e123]: Where we need to collect personal data by law, or under the terms of a contract we have with you, and you fail to provide that data when requested, we may not be able to perform the contract we have or are trying to enter into with you (for example, to provide you with services). In this case, we may have to cancel a service you have with us but we will notify you if this is the case at the time.
+      - generic [ref=f19e124]:
+        - heading "3. How is your personal data collected?" [level=2] [ref=f19e126]
+        - generic [ref=f19e127]:
+          - paragraph [ref=f19e128]: "We use different methods to collect data from and about you including through:"
+          - list [ref=f19e130]:
+            - listitem [ref=f19e131]:
+              - paragraph [ref=f19e132]:
+                - strong [ref=f19e133]: Direct interactions.
+                - text: "You may give us Identity, Contact and Financial Data by filling in forms or by corresponding with us by post, phone, email or otherwise. This includes personal data you provide when you:"
+              - list [ref=f19e135]:
+                - listitem [ref=f19e136]:
+                  - paragraph [ref=f19e137]: apply for our services;
+                - listitem [ref=f19e138]:
+                  - paragraph [ref=f19e139]: upload audio or video files on the Applications;
+                - listitem [ref=f19e140]:
+                  - paragraph [ref=f19e141]: create an account on the Applications;
+                - listitem [ref=f19e142]:
+                  - paragraph [ref=f19e143]: subscribe to our service or publications;
+                - listitem [ref=f19e144]:
+                  - paragraph [ref=f19e145]: request marketing to be sent to you;
+                - listitem [ref=f19e146]:
+                  - paragraph [ref=f19e147]: enter a survey;
+                - listitem [ref=f19e148]:
+                  - paragraph [ref=f19e149]: give us feedback or contact us; or
+                - listitem [ref=f19e150]:
+                  - paragraph [ref=f19e151]: participate in programs, forums or groups we may invite you to join.
+            - listitem [ref=f19e152]:
+              - paragraph [ref=f19e153]:
+                - strong [ref=f19e154]: Automated technologies or interactions.
+                - text: As you interact with the Applications, we will automatically collect Technical Data about your equipment, browsing actions and patterns. We collect this personal data by using cookies, server logs and other similar technologies. We may also receive Technical Data about you if you visit other websites employing our cookies. Please see our
+                - link "cookie policy" [ref=f19e155] [cursor=pointer]:
+                  - /url: /cookie-policy
+                - text: for further details.
+            - listitem [ref=f19e156]:
+              - paragraph [ref=f19e157]:
+                - strong [ref=f19e158]: Third parties or publicly available sources.
+                - text: "We will receive personal data about you from various third parties and public sources as set out below:"
+              - list [ref=f19e160]:
+                - listitem [ref=f19e161]:
+                  - paragraph [ref=f19e162]: "Technical Data from the following parties:"
+                  - list [ref=f19e164]:
+                    - listitem [ref=f19e165]:
+                      - paragraph [ref=f19e166]: analytics providers;
+                    - listitem [ref=f19e167]:
+                      - paragraph [ref=f19e168]: advertising networks; and
+                    - listitem [ref=f19e169]:
+                      - paragraph [ref=f19e170]: search information providers.
+                - listitem [ref=f19e171]:
+                  - paragraph [ref=f19e172]: Contact, Financial and Transaction Data from providers of technical and payment services.
+                - listitem [ref=f19e173]:
+                  - paragraph [ref=f19e174]: Identity and Contact Data from data brokers or aggregators.
+                - listitem [ref=f19e175]:
+                  - paragraph [ref=f19e176]: Identity and Contact Data from publicly available sources such as Companies House and the Electoral Register based inside the UK.
+      - generic [ref=f19e177]:
+        - heading "4. How we use your personal data" [level=2] [ref=f19e179]
+        - generic [ref=f19e180]:
+          - paragraph [ref=f19e181]: "We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:"
+          - list [ref=f19e183]:
+            - listitem [ref=f19e184]:
+              - paragraph [ref=f19e185]: Where we need to perform the contract we are about to enter into or have entered into with you.
+            - listitem [ref=f19e186]:
+              - paragraph [ref=f19e187]: Where it is necessary for our legitimate interests (or those of a third party) and your interests and fundamental rights do not override those interests.
+            - listitem [ref=f19e188]:
+              - paragraph [ref=f19e189]: Where we need to comply with a legal obligation.
+          - paragraph [ref=f19e190]: The types of lawful bases that we will rely on to process your personal data is set out in the Glossary.Generally, we do not rely on consent as a legal basis for processing your personal data, save for the processing of Special Categories of Personal Data (where applicable) and our making automated decisions (where applicable), although we will get your consent before sending third party direct marketing communications to you via email or text message. You have the right to withdraw consent to marketing at any time by contacting us. We do not sell your personal data to third parties.
+          - generic [ref=f19e191]:
+            - heading "Purposes for which we will use your personal data" [level=4] [ref=f19e192]
+            - paragraph [ref=f19e193]: We have set out below, in a table format, a description of all the ways we plan to use your personal data, and which of the legal bases we rely on to do so. We have also identified what our legitimate interests are where appropriate.Note that we may process your personal data for more than one lawful ground depending on the specific purpose for which we are using your data. Please contact us if you need details about the specific legal ground we are relying on to process your personal data where more than one ground has been set out in the table below.
+    - generic [ref=f19e196]:
+      - paragraph [ref=f19e198]:
+        - strong [ref=f19e199]: Purpose/Activity
+      - paragraph [ref=f19e201]:
+        - strong [ref=f19e202]: Type of data
+      - paragraph [ref=f19e204]:
+        - strong [ref=f19e205]: Lawful basis for processing including basis of legitimate interest
+      - paragraph [ref=f19e207]: To register you as a new customer
+      - paragraph [ref=f19e209]: (a) Identity (b) Contact
+      - paragraph [ref=f19e211]: Performance of a contract with you
+      - paragraph [ref=f19e213]: To process and deliver your order including:(a) Managing payments, fees and charges(b) Collecting and recover money owed to us
+      - paragraph [ref=f19e215]: (a) Identity (b) Contact (c) Financial (d) Transaction (e) Marketing and Communications
+      - paragraph [ref=f19e217]: (a) Performance of a contract with you (b) Necessary for our legitimate interests (to recover debts due to us)
+      - paragraph [ref=f19e219]: To evidence our claims or charges when there is a dispute
+      - paragraph [ref=f19e221]: (a) Identity (b) Contact (c) Financial (d) Transaction (e) Marketing and Communications
+      - paragraph [ref=f19e223]: (a) Performance of a contract with you (b) Necessary for our legitimate interests (to recover debts due to us)
+      - paragraph [ref=f19e225]: To enable you to upload and/or edit your video or audio files on the Applications
+      - paragraph [ref=f19e227]: (a) Identity (b) Profile (c) Special Categories of Personal Data
+      - paragraph [ref=f19e229]: (a) Performance of a contract with you(b) Consent (only in relation to Special Categories of Personal Data)
+      - paragraph [ref=f19e231]: To manage our relationship with you which will include:(a) Notifying you about changes to our terms or privacy policy(b) Asking you to leave a review or take a survey
+      - paragraph [ref=f19e233]: (a) Identity (b) Contact (c) Profile (d) Marketing and Communications
+      - paragraph [ref=f19e235]: (a) Performance of a contract with you (b) Necessary to comply with a legal obligation(c) Necessary for our legitimate interests (to keep our records updated and to study how customers use our services)
+      - paragraph [ref=f19e237]: To enable you to partake in say a prize draw, competition or complete a survey or participate in a Veed program, forum or group.
+      - paragraph [ref=f19e239]: (a) Identity (b) Contact (c) Profile (d) Usage (e) Marketing and Communications
+      - paragraph [ref=f19e241]: (a) Performance of a contract with you (b) Necessary for our legitimate interests (to study how customers use our services, to develop them and grow our business)
+      - paragraph [ref=f19e243]: To administer and protect our business and the Applications (including troubleshooting, data analysis, testing, system maintenance, support, reporting and hosting of data)
+      - paragraph [ref=f19e245]: (a) Identity(b) Contact(c) Technical
+      - paragraph [ref=f19e247]: (a) Necessary for our legitimate interests (for running our business, provision of administration and IT services, network security, to prevent fraud and in the context of a business reorganisation or group restructuring exercise)(b) Necessary to comply with a legal obligation
+      - paragraph [ref=f19e249]: To deliver relevant content and advertisements and measure or understand the effectiveness of our advertising and marketing activities
+      - paragraph [ref=f19e251]: (a) Identity (b) Contact (c) Profile (d) Usage (e) Marketing and Communications (f) Technical
+      - paragraph [ref=f19e253]: Necessary for our legitimate interests (to study how customers use our services, to develop them, to grow our business and to inform our marketing strategy)
+      - paragraph [ref=f19e255]: To use data analytics to improve the Applications, services, marketing, customer relationships and experiences
+      - paragraph [ref=f19e257]: (a) Technical (b) Usage
+      - paragraph [ref=f19e259]: Necessary for our legitimate interests (to define types of customers for our services, to keep the Applications updated and relevant, to develop our business and to inform our marketing strategy)
+      - paragraph [ref=f19e261]:
+        - text: To develop or improve our Applications and any of our related products and services using relevant personal data included in content submitted or uploaded to our Applications by users under a ‘Free’ subscription. For the avoidance of doubt, this does not include any content submitted or uploaded via our mobile applications. This processing activity includes training and developing any relevant artificial intelligence models (including associated pre-training, testing, benchmarking, adaptation and refinement), as well as creating, training and developing (as described above) new, improved or augmented algorithms and models. We call this processing activity “
+        - strong [ref=f19e262]: Development and Improvement Processing
+        - text: ”
+      - paragraph [ref=f19e264]: (a) Identity
+      - paragraph [ref=f19e266]: Necessary for our legitimate interests (to allow us to build better products and services and to develop new products and services (including to improve and enhance the features and functionality of our Applications); as well as to ensure that our products and services (including our Applications) continue to be state-of-the-art and function to the levels we and our customers expect)
+      - paragraph [ref=f19e268]: To make suggestions and recommendations to you about services that may be of interest to you
+      - paragraph [ref=f19e270]: (a) Identity (b) Contact (c) Technical (d) Usage (e) Profile (f) Marketing and Communications
+      - paragraph [ref=f19e272]: Necessary for our legitimate interests (to develop our services and grow our business)
+    - heading "Marketing" [level=4] [ref=f19e274]
+    - paragraph [ref=f19e276]: We may use your Identity, Contact, Technical, Usage and Profile Data to form a view on what we think you may want or need, or what may be of interest to you. This is how we decide which services and offers may be relevant for you (we call this marketing). You will receive marketing communications from us if you have requested information from us or purchased from us and you have not opted out of receiving marketing.
+    - generic [ref=f19e277]:
+      - heading "Third-party marketing" [level=4] [ref=f19e278]
+      - paragraph [ref=f19e279]: We will get your express consent before we share your personal data with any third party for their own marketing purposes.
+    - generic [ref=f19e280]:
+      - heading "Opting out" [level=4] [ref=f19e281]
+      - paragraph [ref=f19e282]: You can ask us or third parties to stop sending you marketing messages at any time by following the opt-out links on any marketing message sent to you (where such links are available) or by contacting us at any time. Where you opt out of receiving these marketing messages, this will not apply to personal data provided to us as a result of a service purchase, service experience or other transactions.
+    - generic [ref=f19e283]:
+      - heading "Cookies" [level=4] [ref=f19e284]
+      - paragraph [ref=f19e285]:
+        - text: You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies. If you disable or refuse cookies, please note that some parts of the Applications may become inaccessible or not function properly. For more information about the cookies we use, please see
+        - link [ref=f19e286] [cursor=pointer]:
+          - /url: /cookie-policy
+          - emphasis [ref=f19e287]: Cookie Policy.
+    - generic [ref=f19e288]:
+      - heading "Change of purpose" [level=4] [ref=f19e289]
+      - paragraph [ref=f19e290]: We will only use your personal data for the purposes for which we collected it, unless we reasonably consider that we need to use it for another reason and that reason is compatible with the original purpose. If you wish to get an explanation as to how the processing for the new purpose is compatible with the original purpose, please contact us. If we need to use your personal data for an unrelated purpose, we will notify you and we will explain the legal basis which allows us to do so.Please note that we may process your personal data without your knowledge or consent, in compliance with the above rules, where this is required or permitted by law.
+    - generic [ref=f19e291]:
+      - heading "Automated decision-making" [level=4] [ref=f19e292]
+      - paragraph [ref=f19e293]: Automated decisions are made by technological means, mostly based on algorithms subject to predefined criteria. Such automated decision-making, taken solely by technological means without any human intervention, may have legal effects or similarly significant effects on you. By using the Applications and/or our services, you are giving us your explicit consent to make automated decisions. If you do not consent to our making automated decisions, you must not use our Applications or services. The Applications may use your personal data decisions entirely or partially based on automated processes according to the purposes outlined in this privacy policy. The Applications adopt automated decision-making processes as far as necessary to enter into or perform a contract between you and us, or on the basis of your consent where consent is required by the law.
+      - generic [ref=f19e294]:
+        - paragraph [ref=f19e295]: "The rationale behind the automated decision-making is:"
+        - list [ref=f19e296]:
+          - listitem [ref=f19e297]:
+            - paragraph [ref=f19e298]: so that we can suggest certain settings or tips when you use our services;
+          - listitem [ref=f19e299]:
+            - paragraph [ref=f19e300]: to enable or otherwise improve the decision-making process;
+          - listitem [ref=f19e301]:
+            - paragraph [ref=f19e302]: to grant you fair and unbiased treatment based on consistent and uniform criteria;
+          - listitem [ref=f19e303]:
+            - paragraph [ref=f19e304]: to reduce the potential harm derived from human error, personal bias and the like which may potentially lead to discrimination or imbalance in the treatment of individuals etc.; or
+          - listitem [ref=f19e305]:
+            - paragraph [ref=f19e306]: to reduce the risk of your failure to meet your obligation under your contract with us.
+    - generic [ref=f19e307]:
+      - heading "Your rights as a result of automated decision-making" [level=4] [ref=f19e308]
+      - paragraph [ref=f19e309]: Where you are subject to automated decision-making processes, you are entitled to exercise specific rights aimed at preventing or otherwise limiting the potential effects of the automated decisions taken.
+      - generic [ref=f19e310]:
+        - paragraph [ref=f19e311]: "In particular, you would have the right to:"
+        - list [ref=f19e312]:
+          - listitem [ref=f19e313]:
+            - paragraph [ref=f19e314]: obtain an explanation about any decision taken as a result of automated decision-making and express your point of view regarding such decision;
+          - listitem [ref=f19e315]:
+            - paragraph [ref=f19e316]: challenge such a decision by asking us to reconsider a decision or take a new decision on a different basis; or
+          - listitem [ref=f19e317]:
+            - paragraph [ref=f19e318]: request and obtain human intervention on such processing.
+      - paragraph [ref=f19e319]: Please contact us if you want to find out more about the purposes, the third-party services we use which makes automated decisions (if any), and any specific rationale for automated decisions used within the Applications.
+    - generic [ref=f19e320]:
+      - heading "Push notifications and email notifications" [level=4] [ref=f19e321]
+      - paragraph [ref=f19e322]: The Applications may send you push notifications and we may send you email notifications to achieve the purposes outlined in this privacy policy. You may, in most cases, opt-out of receiving push notifications by visiting your device settings (such as the notification settings for mobile phones and then change those settings for the Applications).Note that disabling push notifications may negatively affect your use of the Applications.You may also, in most cases (except where we send you email notifications for the purposes set out in the table in section 4 above), opt-out of the email notifications we send by contacting us, clicking the “Unsubscribe” button at the end of our emails or by managing your communication preferences on the Applications.
+    - generic [ref=f19e323]:
+      - heading "5. Disclosures of your personal data" [level=2] [ref=f19e325]
+      - generic [ref=f19e326]:
+        - paragraph [ref=f19e327]: We may share your personal data with the parties set out below for the purposes set out in the table under the “purposes for which we will use your personal data” section above.
+        - list [ref=f19e329]:
+          - listitem [ref=f19e330]:
+            - paragraph [ref=f19e331]: Third Parties as set out in the Glossary.
+          - listitem [ref=f19e332]:
+            - paragraph [ref=f19e333]: Third parties to whom we may choose to sell, transfer or merge parts of our business or our assets. Alternatively, we may seek to acquire other businesses or merge with them. If a change happens to our business, then the new owners may use your personal data in the same way as set out in this privacy policy.
+        - paragraph [ref=f19e334]: We require all third parties to respect the security of your personal data and to treat it in accordance with the law. We do not allow our third-party service providers to use your personal data for their own purposes and only permit them to process your personal data for specified purposes and in accordance with our instructions.
+    - generic [ref=f19e335]:
+      - heading "6. International transfers" [level=2] [ref=f19e337]
+      - generic [ref=f19e338]:
+        - paragraph [ref=f19e339]:
+          - text: Many of our external third parties are based outside the UK and/or the European Economic Area (“
+          - strong [ref=f19e340]: EEA
+          - text: "”) so their processing of your personal data will involve a transfer of data outside the UK and/or the EEA.Whenever we transfer your personal data out of the UK and/or the EEA, we ensure a similar degree of protection is afforded to it by ensuring at least one of the following safeguards is implemented:"
+        - list [ref=f19e342]:
+          - listitem [ref=f19e343]:
+            - paragraph [ref=f19e344]: We will only transfer your personal data to countries that have been deemed to provide an adequate level of protection for personal data by the UK or the European Commission (as applicable).
+          - listitem [ref=f19e345]:
+            - paragraph [ref=f19e346]: If we transfer your personal data to any other country which is not subject to an adequacy decision of the UK or the European Commission (as applicable) regarding an adequate level of protection of personal data, we will ensure that there is a legal basis and, if required, a relevant safeguard method for such data transfer so that your personal data are treated in a manner that is consistent with, and respects the applicable laws and regulations on data protection in the UK or the EEA (as applicable).
+          - listitem [ref=f19e347]:
+            - paragraph [ref=f19e348]: Where we use certain service providers, we may use specific contracts approved by the UK or the European Commission (as applicable) which give personal data the same protection it has in the UK or the EEA (as applicable).
+        - paragraph [ref=f19e349]: Please contact us if you want further information on the specific mechanism used by us when transferring your personal data out of the UK or the EEA.
+    - generic [ref=f19e350]:
+      - heading "7. Data security" [level=2] [ref=f19e352]
+      - paragraph [ref=f19e354]: We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorised way, altered or disclosed. In addition, we limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know. They will only process your personal data on our instructions and they are subject to a duty of confidentiality. We have put in place procedures to deal with any suspected personal data breach and will notify you and any applicable regulator of a breach where we are legally required to do so.
+    - generic [ref=f19e355]:
+      - heading "8. Data retention" [level=2] [ref=f19e357]
+      - generic [ref=f19e358]:
+        - heading "How long will you use my personal data for?" [level=4] [ref=f19e359]
+        - paragraph [ref=f19e360]:
+          - text: We will only retain your personal data for as long as reasonably necessary to fulfil the purposes we collected it for, including for the purposes of satisfying any legal, regulatory, tax, accounting or reporting requirements. We may retain your personal data for a longer period in the event of a complaint or if we reasonably believe there is a prospect of litigation in respect to our relationship with you.‍To determine the appropriate retention period for personal data, we consider the amount, nature and sensitivity of the personal data, the potential risk of harm from unauthorised use or disclosure of your personal data, the purposes for which we process your personal data and whether we can achieve those purposes through other means, and the applicable legal, regulatory, tax, accounting or other requirements.You can request details of our retention periods for different aspects of your personal data by contacting us. In some circumstances you can ask us to delete your data; see “your legal rights” section below for further information. Where we use universally unique identifiers (“
+          - strong [ref=f19e361]: UUID
+          - text: ”) for analytics purposes or for storing your preferences, a UUID is generated upon your installation of our programme(s). The UUID persists between our programme’s launches and updates, but it is lost when you delete our programme. A new UUID will be generated when you reinstall our programme.In some circumstances we will anonymise your personal data (so that it can no longer be associated with you) for research or statistical purposes, in which case we may use this information indefinitely without further notice to you. Where you are or have been a free-tier user and you have exercised your right to request erasure of your personal data used for the purposes of Development and Improvement Processing (e.g., after having deleted your account or upgraded to a paid-for subscription), where there is no other valid reason for us to retain it (e.g., to comply with law), we will delete any personal data used for that purpose. However, we may continue to use any information derived through the Development and Improvement Processing provided that it is deidentified, anonymised, and/or aggregated in such a manner that such information no longer identifies you, your content or any other person(s)
+    - generic [ref=f19e362]:
+      - heading "9. Your legal rights" [level=2] [ref=f19e364]
+      - generic [ref=f19e365]:
+        - paragraph [ref=f19e366]: "Under certain circumstances, you have rights under data protection laws in relation to your personal data.‍Broadly, you have the right to:"
+        - list [ref=f19e368]:
+          - listitem [ref=f19e369]:
+            - paragraph [ref=f19e370]:
+              - strong [ref=f19e371]: Request access
+              - text: to your personal data (commonly known as a "data subject access request"). This enables you to receive a copy of the personal data we hold about you and to check that we are lawfully processing it.
+          - listitem [ref=f19e372]:
+            - paragraph [ref=f19e373]:
+              - strong [ref=f19e374]: Request correction
+              - text: of the personal data that we hold about you. This enables you to have any incomplete or inaccurate data we hold about you corrected, though we may need to verify the accuracy of the new data you provide to us.
+          - listitem [ref=f19e375]:
+            - paragraph [ref=f19e376]:
+              - strong [ref=f19e377]: Request erasure
+              - text: of your personal data. This enables you to ask us to delete or remove personal data where there is no good reason for us continuing to process it. You also have the right to ask us to delete or remove your personal data where you have successfully exercised your right to object to processing (see below), where we may have processed your information unlawfully or where we are required to erase your personal data to comply with local law. Note, however, that we may not always be able to comply with your request of erasure for specific legal reasons which will be notified to you, if applicable, at the time of your request.
+          - listitem [ref=f19e378]:
+            - paragraph [ref=f19e379]:
+              - strong [ref=f19e380]: Object to processing
+              - text: of your personal data where we are relying on a legitimate interest (or those of a third party) and there is something about your particular situation which makes you want to object to processing on this ground as you feel it impacts on your fundamental rights and freedoms. You also have the right to object where we are processing your personal data for direct marketing purposes. In some cases, we may demonstrate that we have compelling legitimate grounds to process your information which override your rights and freedoms.
+          - listitem [ref=f19e381]:
+            - paragraph [ref=f19e382]:
+              - strong [ref=f19e383]: Request restriction of processing
+              - text: "of your personal data. This enables you to ask us to suspend the processing of your personal data in the following scenarios:"
+            - list [ref=f19e385]:
+              - listitem [ref=f19e386]:
+                - paragraph [ref=f19e387]: If you want us to establish the data's accuracy.
+              - listitem [ref=f19e388]:
+                - paragraph [ref=f19e389]: Where our use of the data is unlawful but you do not want us to erase it.
+              - listitem [ref=f19e390]:
+                - paragraph [ref=f19e391]: Where you need us to hold the data even if we no longer require it as you need it to establish, exercise or defend legal claims.
+              - listitem [ref=f19e392]:
+                - paragraph [ref=f19e393]: You have objected to our use of your data but we need to verify whether we have overriding legitimate grounds to use it.
+          - listitem [ref=f19e394]:
+            - paragraph [ref=f19e395]:
+              - strong [ref=f19e396]: Request the transfer
+              - text: of your personal data to you or to a third party. We will provide to you, or a third party you have chosen, your personal data in a structured, commonly used, machine-readable format. Note that this right only applies to automated information which you initially provided consent for us to use or where we used the information to perform a contract with you.
+          - listitem [ref=f19e397]:
+            - paragraph [ref=f19e398]:
+              - strong [ref=f19e399]: Withdraw consent at any time
+              - text: where we are relying on consent to process your personal data. However, this will not affect the lawfulness of any processing carried out before you withdraw your consent. If you withdraw your consent, we may not be able to provide certain services to you. We will advise you if this is the case at the time you withdraw your consent.
+        - paragraph [ref=f19e400]: If you wish to exercise any of the rights set out above, please contact us.
+        - paragraph [ref=f19e401]: If you are or have been a free-tier user and you wish to object and opt-out of the Development and Improvement Processing and associated use of your personal data contained in content uploaded to our Applications under your ‘Free’ subscription, you may do so at any time. However, if you do object and opt-out of the Development and Improvement Processing during the term of your ‘Free’ subscription, please note that you cannot continue to use our Applications under that ‘Free’ tier, and must either delete your account or upgrade to a paid-for subscription.
+      - generic [ref=f19e402]:
+        - heading "No fee usually required" [level=4] [ref=f19e403]
+        - paragraph [ref=f19e404]: You will not have to pay a fee to access your personal data (or to exercise any of the other rights). However, we may charge a reasonable fee if your request is clearly unfounded, repetitive or excessive. Alternatively, we could refuse to comply with your request in these circumstances.
+      - generic [ref=f19e405]:
+        - heading "What we may need from you" [level=4] [ref=f19e406]
+        - paragraph [ref=f19e407]: We may need to request specific information from you to help us confirm your identity and ensure your right to access your personal data (or to exercise any of your other rights). This is a security measure to ensure that personal data is not disclosed to any person who has no right to receive it. We may also contact you to ask you for further information in relation to your request to speed up our response.
+      - generic [ref=f19e408]:
+        - heading "Time limit to respond" [level=4] [ref=f19e409]
+        - paragraph [ref=f19e410]: We try to respond to all legitimate requests within one month. Occasionally it could take us longer than a month if your request is particularly complex or you have made a number of requests. In this case, we will notify you and keep you updated.
+    - generic [ref=f19e411]:
+      - heading "10. Glossary" [level=2] [ref=f19e413]
+      - generic [ref=f19e414]:
+        - heading "LAWFUL BASIS" [level=4] [ref=f19e415]
+        - paragraph [ref=f19e416]:
+          - strong [ref=f19e417]: Legitimate Interest
+          - text: means the interest of our business in conducting and managing our business to enable us to give you the best service and the best and most secure experience. We make sure we consider and balance any potential impact on you (both positive and negative) and your rights before we process your personal data for our legitimate interests. We do not use your personal data for activities where our interests are overridden by the impact on you (unless we have your consent or are otherwise required or permitted to by law). You can obtain further information about how we assess our legitimate interests against any potential impact on you in respect of specific activities by contacting us.
+      - paragraph [ref=f19e419]:
+        - strong [ref=f19e420]: Performance of Contract
+        - text: means processing your data where it is necessary for the performance of a contract to which you are a party or to take steps at your request before entering into such a contract.
+      - paragraph [ref=f19e422]:
+        - strong [ref=f19e423]: Comply with a legal obligation
+        - text: means processing your personal data where it is necessary for compliance with a legal obligation that we are subject to.
+      - generic [ref=f19e424]:
+        - heading "THIRD PARTIES" [level=4] [ref=f19e425]
+        - paragraph [ref=f19e426]:
+          - text: "The service providers and subcontractors/sub-processors which we use from time to time listed at:"
+          - link [ref=f19e427] [cursor=pointer]:
+            - /url: /data-subprocessors
+            - text: Data Subprocessors
+            - strong [ref=f19e428]: Personal Information Collected from Connected Third Party Accounts
+          - text: VEED may collect and store certain information if you link a VEED account to a third-party account or service. Please carefully read the privacy policy of the connected third party account and the terms relating to setting up a connection.If you wish to disconnect a Connected Third Party Account, VEED will delete the stored data associated with that account. You may also be able to revoke access via the third party account.For example, if you connect VEED to a YouTube channel, we will access certain information about your channel using YouTube API Services. This might be the channel thumbnail, title, username ID, email, live broadcasts, and access tokens. Which includes information about your live videos (viewer counts, comments, stream name).If you decide to connect a YouTube channel to your VEED account, you should read
+          - link "Google’s privacy policy" [ref=f19e429] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy
+          - text: . You can also revoke access via
+          - link "Google’s security settings page" [ref=f19e430] [cursor=pointer]:
+            - /url: https://security.google.com/settings/security/permissions
+          - text: .
+          - strong [ref=f19e431]: This at the end of “Your account” section in VEED ToS‍
+          - text: If you connect VEED account to your YouTube account you are bound by YouTube Terms of Service.
+          - strong [ref=f19e432]
+          - text: For more information about the terms of service of YouTube please visit
+          - link "YouTube Terms of Service page" [ref=f19e433] [cursor=pointer]:
+            - /url: https://www.youtube.com/static?template=terms
+          - text: .
+  - contentinfo [ref=f19e434]:
+    - generic [ref=f19e437]:
+      - generic [ref=f19e438]:
+        - link [ref=f19e439] [cursor=pointer]:
+          - /url: /
+        - paragraph [ref=f19e440]: The easy way to create stunning videos, add subtitles and grow your audience.
+        - generic [ref=f19e441]:
+          - generic [ref=f19e442]:
+            - link [ref=f19e443] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCuGhmBK1jZTDcsw_5ZkliTQ
+            - link [ref=f19e444] [cursor=pointer]:
+              - /url: https://www.instagram.com/veedstudio/
+            - link [ref=f19e445] [cursor=pointer]:
+              - /url: https://twitter.com/veedstudio
+            - link [ref=f19e446] [cursor=pointer]:
+              - /url: mailto:hello@veed.io
+          - generic [ref=f19e447]: ©Copyright 2024 VEED
+      - generic [ref=f19e448]:
+        - generic: 
+        - heading "Video Editor" [level=4] [ref=f19e449]
+        - link "Add Music to Video" [ref=f19e450] [cursor=pointer]:
+          - /url: /tools/add-audio-to-video
+        - link "Add Subtitles to Video" [ref=f19e451] [cursor=pointer]:
+          - /url: /tools/add-subtitles
+        - link "Add Text to Video" [ref=f19e452] [cursor=pointer]:
+          - /url: /tools/add-text-to-video
+        - link "Audio to Text" [ref=f19e453] [cursor=pointer]:
+          - /url: /tools/audio-to-text
+        - link "Auto Subtitle Generator" [ref=f19e454] [cursor=pointer]:
+          - /url: /tools/auto-subtitle-generator-online
+        - link "Video Caption Generator" [ref=f19e455] [cursor=pointer]:
+          - /url: /tools/auto-subtitle-generator-online/video-caption-generator
+        - link "Video Compressor" [ref=f19e456] [cursor=pointer]:
+          - /url: /tools/video-compressor
+        - link "Video Converter" [ref=f19e457] [cursor=pointer]:
+          - /url: /convert/video-converter
+        - link "Video to text" [ref=f19e458] [cursor=pointer]:
+          - /url: /tools/video-to-text
+        - link "Video Translator" [ref=f19e459] [cursor=pointer]:
+          - /url: /tools/video-translator
+      - generic [ref=f19e460]:
+        - heading "AI Tools" [level=4] [ref=f19e461]
+        - link "AI Avatar" [ref=f19e462] [cursor=pointer]:
+          - /url: /tools/ai-avatar
+        - link "AI Image Generator" [ref=f19e463] [cursor=pointer]:
+          - /url: /tools/ai-image-generator
+        - link "AI Video" [ref=f19e464] [cursor=pointer]:
+          - /url: /tools/ai-video
+        - link "AI Voice Generator" [ref=f19e465] [cursor=pointer]:
+          - /url: /tools/text-to-speech-video/ai-voice-generator
+        - link "Eye Contact AI" [ref=f19e466] [cursor=pointer]:
+          - /url: /tools/eye-tracking-software/eye-contact-ai
+        - link "Remove background noise from audio" [ref=f19e467] [cursor=pointer]:
+          - /url: /tools/remove-background-noise-from-audio
+        - link "remove background noise from video" [ref=f19e468] [cursor=pointer]:
+          - /url: /tools/remove-background-noise-from-video
+        - link "text to speech" [ref=f19e469] [cursor=pointer]:
+          - /url: /tools/text-to-speech-video
+        - link "video background remover" [ref=f19e470] [cursor=pointer]:
+          - /url: /tools/video-background-remover
+        - link "Voice dubber" [ref=f19e471] [cursor=pointer]:
+          - /url: /tools/voice-dubber
+      - generic [ref=f19e472]:
+        - heading "Product" [level=4] [ref=f19e473]
+        - link "Pricing" [ref=f19e474] [cursor=pointer]:
+          - /url: /pricing/
+        - link "Enterprise" [ref=f19e475] [cursor=pointer]:
+          - /url: /enterprise
+      - generic [ref=f19e476]:
+        - heading "Resources" [level=4] [ref=f19e477]
+        - link "VEED Blog" [ref=f19e478] [cursor=pointer]:
+          - /url: /blog
+        - link "Articles" [ref=f19e479] [cursor=pointer]:
+          - /url: /learn
+        - link "Webinars" [ref=f19e480] [cursor=pointer]:
+          - /url: /webinars
+        - link "Video Guides" [ref=f19e481] [cursor=pointer]:
+          - /url: https://www.youtube.com/channel/UCuGhmBK1jZTDcsw_5ZkliTQ
+      - generic [ref=f19e482]:
+        - heading "Company" [level=4] [ref=f19e483]
+        - link "Jobs" [ref=f19e484] [cursor=pointer]:
+          - /url: /careers
+        - link "Contact us" [ref=f19e485] [cursor=pointer]:
+          - /url: https://help.veed.io/
+        - link "Affiliate" [ref=f19e486] [cursor=pointer]:
+          - /url: /affiliate
+        - link "Privacy" [ref=f19e487] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms" [ref=f19e488] [cursor=pointer]:
+          - /url: /terms-of-use
+        - link "Security" [ref=f19e489] [cursor=pointer]:
+          - /url: /security
+        - link "Cookies" [ref=f19e490] [cursor=pointer]:
+          - /url: /cookie-policy
+        - text: 
+  - button "Cookies Settings" [ref=f19e491] [cursor=pointer]
