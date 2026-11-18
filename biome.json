@@ -9,11 +9,13 @@
     "includes": [
       "**",
       "!**/.next",
+      "!**/.next-*",
       "!**/node_modules",
       "!**/public/wasm",
       "!**/playwright-report",
       "!**/test-results",
-      "!src/styles/tokens.css"
+      "!src/styles/tokens.css",
+      "!tsconfig.json"
     ]
   },
   "formatter": {

@@ -19,10 +19,12 @@ export const compressVideo: ToolInput = {
   related: [
     "compress-video-for-discord",
     "compress-video-for-whatsapp",
-    "resize-video",
+    "compress-video-for-email",
+    "compress-video-under-25mb",
+    "trim-video",
     "mov-to-mp4",
   ],
-  updatedAt: "2026-09-02",
+  updatedAt: "2026-09-30",
   icon: "minimize-2",
   content: {
     en: {
@@ -35,15 +37,15 @@ export const compressVideo: ToolInput = {
       steps: [
         "Drop a video file onto the page or choose one from your device.",
         "Pick a preset (Smaller, Balanced, Best quality) or set a target file size.",
-        "Optionally cap the resolution, for example to 1080p or 720p.",
+        "Optionally cap the resolution, for example 4K to 1080p; the width follows to keep the aspect ratio.",
         "Press Compress and watch the real progress.",
         "Download the result. The original is untouched.",
       ],
       goodToKnow: [
         "Most of a video's size comes from bitrate, not resolution. Halving the bitrate roughly halves the file; going from 4K to 1080p on a phone clip often saves 60–75% with no visible change on a phone screen.",
-        "Target-size mode estimates the bitrate needed for your duration and encodes to hit it. Because encoders are not perfectly predictable, the result may land within a few percent of the target; we leave a small margin so a 25 MB email limit is not missed by 0.3 MB.",
+        "Size mode works backwards from a number: it divides the size by the duration, lowers the audio bitrate and then the resolution when the budget is tight, and measures the finished file. Encoders are not perfectly predictable, so when the first attempt comes out over, it encodes once more at a corrected bitrate. For a known limit there are ready pages: [Discord](/compress-video-for-discord), [WhatsApp](/compress-video-for-whatsapp), [email](/compress-video-for-email), and sizes from [under 8 MB](/compress-video-under-8mb) to [under 100 MB](/compress-video-under-100mb).",
         "H.264 (AVC) is the safest output: it plays everywhere. HEVC and AV1 are 30–50% smaller at the same quality but older devices and some chat apps will not play them. This tool defaults to H.264 for that reason.",
-        "Audio is usually a small part of the file. We keep it at 128 kbps AAC by default, which is transparent for speech and most music. If your video is silent, use Remove audio first for a few extra percent.",
+        "Audio is usually a small part of the file. We keep it at 128 kbps AAC by default, which is transparent for speech and most music. If your video is silent, [remove the audio track](/remove-audio-from-video) first for a few extra percent. To set an exact number in kb/s instead, use [change video bitrate](/change-video-bitrate).",
         "Compressing an already heavily compressed video (for example one downloaded from a chat app) will show artifacts sooner. Start from the highest-quality copy you have.",
       ],
       faq: [

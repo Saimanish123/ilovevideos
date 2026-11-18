@@ -1,0 +1,9 @@
+0:00:00.599,0:00:04.160
+>> ALICE: Hi, my name is Alice
+and this is a caption.
+
+0:00:04.160,0:00:06.770
+Second caption.
+
+0:00:06.770,0:00:10.000
+Third one, no final newline

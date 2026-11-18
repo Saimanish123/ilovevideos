@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 import type { CategoryDefinition, ToolDefinition } from "@/tools/registry/schema";
 
 /**
- * Structured data policy (docs/research/02-seo-technical-research.md §3):
+ * Structured data policy (README.md#appendix-b-technical-seo-research §3):
  *  - BreadcrumbList on every page (live rich result; proves browseable hierarchy)
  *  - Organization + WebSite once, sitewide (no SearchAction: retired 2024)
  *  - NO FAQPage (rich result retired May 2026), NO HowTo (retired 2023),
@@ -40,6 +40,26 @@ export function breadcrumbs(
         item: `${site.url}${localePath}/${tool.slug}`,
       },
     ],
+  };
+}
+
+/**
+ * BreadcrumbList for pages that are not tools: a hub (Home › Category) or a legal page (Home › Privacy).
+ * `trail` excludes Home, which is always first; each entry's `path` is locale-relative ("/tools/edit").
+ */
+export function pageBreadcrumbs(
+  trail: { name: string; path: string }[],
+  localePath: string,
+): WithContext<BreadcrumbList> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [{ name: site.name, path: "" }, ...trail].map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: `${site.url}${localePath}${item.path || (localePath ? "" : "/")}`,
+    })),
   };
 }
 

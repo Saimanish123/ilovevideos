@@ -1,0 +1,30 @@
+WEBVTT
+Kind: captions
+Language: en
+
+STYLE
+::cue(.loud) { color: yellow; }
+
+NOTE This file was exported by a caption editor
+and has a two-line note.
+
+intro
+00:00:00.000 --> 00:00:01.500 align:start position:10%
+<v Anna>Hi, I&apos;m Anna &amp; this is <c.loud>loud</c>.</v>
+
+00:00:01.500 --> 00:00:03.000 line:0
+<i.narrator>Top of the screen</i>
+
+00:00:03.000 --> 00:00:04.000
+rolling line one
+
+00:00:04.000 --> 00:00:05.000
+rolling line one
+rolling line two
+
+NOTE between cues
+
+00:05.000 --> 00:06.250
+<00:00:05.200><c> word</c><00:00:05.600><c> timed</c> &lt;tag&gt; <ruby>漢<rt>kan</rt></ruby>
+00:00:06.500 --> 00:00:07.000
+no blank line before this cue

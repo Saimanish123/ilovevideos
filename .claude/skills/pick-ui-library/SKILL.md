@@ -1,7 +1,6 @@
 ---
 name: pick-ui-library
-description: Pick the right library for a given frontend task from a curated, opinionated list — numbers, OTP inputs, charts, command menus, virtualization, drag and drop, toasts, state, styling, and more. Only runs when explicitly invoked; it does not trigger on its own.
-disable-model-invocation: true
+description: Pick the right library for a given frontend task from a curated, opinionated list — numbers, OTP inputs, charts, command menus, virtualization, drag and drop, toasts, state, styling, and more. Use before adding any frontend dependency to this repo, or when asked which library to use for a UI need.
 ---
 
 # Picking The Right Library
@@ -76,7 +75,7 @@ These rows are not in the upstream skill; they cover gaps for this codebase. Che
 | --- | --- |
 | File drop zone / picker | Hand-rolled on native `<input type="file">` + `dragover`/`drop` events + `paste` (see `src/components/dropzone`). Do not add react-dropzone; the surface is small and we need exact control of states. |
 | Video preview player | Native `<video>` element with custom controls in `src/components/player`. No player library. HLS is out of scope. |
-| Browser video decode/encode/mux | [mediabunny](https://mediabunny.dev) (WebCodecs-based, MP4/WebM/MKV/MOV/MP3/WAV/OGG/etc.) as the primary engine; [`@ffmpeg/ffmpeg`](https://ffmpegwasm.netlify.app) multithread core as the fallback engine for codecs/filters WebCodecs cannot do. See `docs/03-architecture.md`. |
+| Browser video decode/encode/mux | [mediabunny](https://mediabunny.dev) (WebCodecs-based, MP4/WebM/MKV/MOV/MP3/WAV/OGG/etc.) as the primary engine; [`@ffmpeg/ffmpeg`](https://ffmpegwasm.netlify.app) multithread core as the fallback engine for codecs/filters WebCodecs cannot do. See `README.md#architecture`. |
 | GIF encoding | [gifenc](https://github.com/mattdesl/gifenc) (fast, small) |
 | Speech-to-text in browser (auto subtitles) | [`@huggingface/transformers`](https://huggingface.co/docs/transformers.js) with a Whisper model, running in a Web Worker with WebGPU when available |
 | Large file scratch storage | Origin Private File System (OPFS) via `navigator.storage.getDirectory()`; no library |

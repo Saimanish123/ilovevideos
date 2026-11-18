@@ -10,7 +10,12 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       { userAgent: "*", allow: "/", disallow: ["/api/", "/dev/", "/*?*"] },
-      { userAgent: ["OAI-SearchBot", "Claude-SearchBot", "PerplexityBot"], allow: "/" },
+      // A named group replaces "*" for that bot, so the disallows are repeated here.
+      {
+        userAgent: ["OAI-SearchBot", "Claude-SearchBot", "PerplexityBot"],
+        allow: "/",
+        disallow: ["/api/", "/dev/", "/*?*"],
+      },
       { userAgent: ["Google-Extended", "GPTBot", "ClaudeBot", "CCBot"], disallow: "/" },
     ],
     sitemap: `${site.url}/sitemap.xml`,

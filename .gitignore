@@ -5,6 +5,7 @@ node_modules/
 
 # builds
 .next/
+.next-*/
 out/
 dist/
 build/
@@ -17,6 +18,7 @@ coverage/
 playwright-report/
 test-results/
 blob-report/
+.lighthouseci/
 
 # env
 .env
@@ -36,8 +38,13 @@ Thumbs.db
 npm-debug.log*
 pnpm-debug.log*
 
-# local claude state
+# local agent state (never versioned)
 .claude/settings.local.json
+.claude/state/
+.playwright-mcp/
 
 # scratch
 /scratch/
+
+# ffmpeg.wasm core, copied from node_modules by scripts/copy-wasm.mjs
+public/wasm/

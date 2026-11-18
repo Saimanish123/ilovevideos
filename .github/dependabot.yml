@@ -1,0 +1,21 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      next:
+        patterns: ["next", "react", "react-dom", "@types/react*", "next-intl", "next-themes"]
+      media:
+        patterns: ["mediabunny", "@ffmpeg/*", "gifenc"]
+      tooling:
+        patterns: ["@biomejs/*", "vitest", "@playwright/*", "@axe-core/*", "typescript", "tsx", "@types/node"]
+      styling:
+        patterns: ["tailwindcss", "@tailwindcss/*", "motion", "@base-ui/*", "lucide-react", "geist", "cva", "clsx"]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

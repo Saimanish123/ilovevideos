@@ -1,4 +1,4 @@
-/** Enforces docs/11-content-guidelines.md banned words in registry content and messages. */
+/** Enforces README.md#content-guidelines banned words in registry content and messages. */
 import { globSync, readFileSync } from "node:fs";
 
 const banned = [
@@ -38,6 +38,8 @@ const banned = [
 const files = [
   ...globSync("src/tools/registry/tools/**/*.ts"),
   ...globSync("src/messages/*.json"),
+  // Prose only: profile text lives in index.ts files; capability tables are code.
+  ...globSync("src/content/**/index.ts"),
   ...globSync("src/content/**/*.{md,mdx}"),
 ];
 let failed = false;

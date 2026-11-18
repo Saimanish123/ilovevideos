@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
+import { JsonLd } from "@/components/layout/json-ld";
 import { ToolPage } from "@/components/tool/tool-page";
 import { routing } from "@/lib/i18n/routing";
+import { ogImages } from "@/lib/og/images";
 import { breadcrumbs } from "@/lib/seo/jsonld";
 import { site } from "@/lib/site";
-import { getCategory, getRelatedTools, getTool, tools } from "@/tools/registry";
+import { getCategory, getHubPages, getRelatedTools, getTool, tools } from "@/tools/registry";
 
 type Params = { locale: string; slug: string };
 
@@ -21,24 +23,20 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   if (!tool) return {};
   const c = tool.content[locale] ?? tool.content.en;
   const path = locale === routing.defaultLocale ? `/${slug}` : `/${locale}/${slug}`;
+  const og = ogImages(slug, `${c.title}: ${c.subtitle}`);
   return {
     title: c.metaTitle,
     description: c.metaDescription,
-    alternates: {
-      canonical: `${site.url}${path}`,
-      languages: Object.fromEntries(
-        routing.locales.map((l) => [
-          l,
-          `${site.url}${l === routing.defaultLocale ? "" : `/${l}`}/${slug}`,
-        ]),
-      ),
-    },
+    // hreflang is emitted in the sitemap only (README.md#seo-strategy §4); the head carries the canonical.
+    alternates: { canonical: `${site.url}${path}` },
     openGraph: {
       title: c.metaTitle,
       description: c.metaDescription,
       url: `${site.url}${path}`,
       type: "website",
+      images: og.images,
     },
+    twitter: og.twitter,
   };
 }
 
@@ -53,14 +51,14 @@ export default async function Page({ params }: { params: Promise<Params> }) {
 
   return (
     <>
-      {jsonLd.map((obj) => (
-        <script
-          key={obj["@type"]}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(obj) }}
-        />
-      ))}
-      <ToolPage tool={tool} related={related} locale={locale} />
+      <JsonLd data={jsonLd} />
+      <ToolPage
+        tool={tool}
+        category={getCategory(tool.category)}
+        related={related}
+        hubPages={getHubPages(tool)}
+        locale={locale}
+      />
     </>
   );
 }

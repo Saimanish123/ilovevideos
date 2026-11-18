@@ -1,0 +1,25 @@
+﻿1
+00:00:00,500 --> 00:00:02,000
+<i>Previously on the show</i>
+
+2
+00:00:02.250 --> 00:00:04,000
+<font color="#ffff00">Yellow warning</font>
+second line
+
+00:00:04,500 --> 00:00:06,000
+{\an8}Sign at the top
+
+4
+0:00:06,100 --> 0:00:08,00
+<b>Bold</b> and <u>under</u>
+
+after a blank line
+
+5
+00:00:08,500 --> 00:00:0x,000
+This cue has a broken time
+
+6
+00:00:09,000 --> 00:00:10,000 X1:100 X2:500 Y1:10 Y2:50
+Positioned & <3 hearts

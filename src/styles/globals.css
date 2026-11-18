@@ -1,41 +1,64 @@
 @import "./tokens.css";
 
+/*
+ * Warm neutral palette (ADR-0009). Ground is warm off-white, surfaces are white, ink is a deep
+ * green-black. `--accent` is the single accent slot; it is currently the ink ("black accent") and
+ * can be changed in one place. Values are documented in README.md#design-system §1.
+ */
 :root {
   color-scheme: light;
-  --bg: var(--color-gray-0);
-  --bg-subtle: var(--color-gray-50);
-  --bg-raised: var(--color-gray-100);
-  --bg-stage: var(--color-gray-950);
-  --fg: var(--color-gray-900);
-  --fg-muted: var(--color-gray-500);
-  --fg-subtle: var(--color-gray-400);
-  --border: var(--color-gray-200);
-  --border-strong: var(--color-gray-300);
-  --accent: var(--color-gray-900);
-  --accent-fg: var(--color-gray-0);
-  --ring: var(--color-gray-900);
+  --bg: oklch(97.5% 0.006 90);
+  --bg-subtle: oklch(95% 0.009 85);
+  --bg-raised: oklch(100% 0 0);
+  --bg-stage: oklch(20% 0.012 165);
+  --fg: oklch(22% 0.02 165);
+  --fg-muted: oklch(50% 0.015 120);
+  --fg-subtle: oklch(68% 0.012 100);
+  --border: oklch(90% 0.01 85);
+  --border-strong: oklch(84% 0.012 85);
+  --accent: oklch(22% 0.02 165);
+  --accent-hover: oklch(30% 0.02 165);
+  --accent-fg: oklch(100% 0 0);
+  --ring: oklch(22% 0.02 165);
   --destructive: oklch(55% 0.16 25);
-  --overlay: rgb(0 0 0 / 0.4);
-  --shadow-color: rgb(0 0 0 / 0.12);
+  --overlay: oklch(20% 0.01 90 / 0.4);
+  --shadow-color: oklch(30% 0.02 90 / 0.14);
 }
 
+/* Dark theme is defined but not shipped (ADR-0010): the layout forces light. Kept so it can be re-enabled. */
 [data-theme="dark"] {
   color-scheme: dark;
-  --bg: var(--color-gray-950);
-  --bg-subtle: var(--color-gray-900);
-  --bg-raised: var(--color-gray-800);
-  --bg-stage: var(--color-gray-1000);
-  --fg: var(--color-gray-50);
-  --fg-muted: var(--color-gray-400);
-  --fg-subtle: var(--color-gray-500);
-  --border: var(--color-gray-800);
-  --border-strong: var(--color-gray-700);
-  --accent: var(--color-gray-50);
-  --accent-fg: var(--color-gray-950);
-  --ring: var(--color-gray-50);
+  --bg: oklch(17% 0.008 80);
+  --bg-subtle: oklch(21% 0.009 80);
+  --bg-raised: oklch(25% 0.01 80);
+  --bg-stage: oklch(10% 0.006 80);
+  --fg: oklch(95% 0.008 90);
+  --fg-muted: oklch(68% 0.012 90);
+  --fg-subtle: oklch(52% 0.01 90);
+  --border: oklch(29% 0.01 80);
+  --border-strong: oklch(36% 0.01 80);
+  --accent: oklch(95% 0.008 90);
+  --accent-hover: oklch(88% 0.01 90);
+  --accent-fg: oklch(17% 0.008 80);
+  --ring: oklch(95% 0.008 90);
   --destructive: oklch(70% 0.14 25);
-  --overlay: rgb(0 0 0 / 0.6);
-  --shadow-color: rgb(0 0 0 / 0.6);
+  --overlay: oklch(10% 0.005 80 / 0.6);
+  --shadow-color: oklch(0% 0 0 / 0.6);
+}
+
+/*
+ * Subtitle cues on the preview (add subtitles, spec.previewTrack): the look burned-in text gets,
+ * white with a black outline and no box, in the UI face, so the preview shows what will be drawn.
+ */
+video[data-cue-style="outline"]::cue {
+  background-color: transparent;
+  color: var(--color-gray-0);
+  font-family: var(--font-sans);
+  text-shadow:
+    0 0 2px var(--color-gray-1000),
+    0 0 2px var(--color-gray-1000),
+    0 0 3px var(--color-gray-1000),
+    0 0 4px var(--color-gray-1000);
 }
 
 @layer base {
@@ -63,18 +86,30 @@
   .tabular {
     font-variant-numeric: tabular-nums;
   }
+  /*
+   * Below lg the tool action bar sticks to the bottom of the viewport. Focus moves and find-in-page
+   * scroll stop above it, so a focused control or the frame counter never sits under the bar.
+   */
+  @media (width < 64rem) {
+    html:has([data-action-bar]) {
+      scroll-padding-bottom: var(--action-bar-h);
+    }
+  }
   button,
-  [role="button"] {
+  [role="button"],
+  a[download] {
     transition: transform var(--duration-instant) var(--ease-out);
   }
   @media (hover: hover) and (pointer: fine) {
     button:active,
-    [role="button"]:active {
+    [role="button"]:active,
+    a[download]:active {
       transform: scale(0.97);
     }
   }
   @media (prefers-reduced-motion: reduce) {
-    *,
+    /* [data-instant]: a tooltip opening next to an open one has no transition at all (Base UI). */
+    *:not([data-instant]),
     *::before,
     *::after {
       animation-duration: 0.01ms !important;

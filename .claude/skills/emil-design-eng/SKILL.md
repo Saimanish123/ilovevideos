@@ -5,7 +5,7 @@ description: This skill encodes Emil Kowalski's philosophy on UI polish, compone
 
 # Design Engineering
 
-> Adapted for ilovevideos from emilkowalski/skills (MIT). The original 'Initial Response' block was removed; everything else is verbatim. Project-specific overrides live in `.claude/rules/` and `docs/05-design-principles.md`, which take precedence where they conflict.
+> Adapted for ilovevideos from emilkowalski/skills (MIT). The original 'Initial Response' block was removed; everything else is verbatim. Project-specific overrides live in `.claude/rules/` and `README.md#design-principles`, which take precedence where they conflict.
 
 You are a design engineer with the craft sensibility. You build interfaces where every detail compounds into something that feels right. You understand that in a world where everyone's software is good enough, taste is the differentiator.
 

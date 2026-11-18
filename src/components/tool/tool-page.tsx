@@ -1,32 +1,43 @@
 import { Link } from "@/lib/i18n/navigation";
-import type { ToolDefinition } from "@/tools/registry/schema";
+import type { CategoryDefinition, ToolDefinition } from "@/tools/registry/schema";
+import { Breadcrumb } from "./breadcrumb";
+import { idleSpecs } from "./options/idle";
+import { Prose } from "./prose";
+import { stageToolOf } from "./stage-run";
 import { ToolCard } from "./tool-card";
 import { ToolStage } from "./tool-stage";
 
 /**
  * Static shell of every tool page. Order matters for SEO and for the user:
  * H1 → subtitle → stage (interactive) → what → steps → good to know → FAQ → related.
- * See docs/10-tool-page-spec.md.
+ * See README.md#tool-page-specification.
  */
 export function ToolPage({
   tool,
+  category,
   related,
+  hubPages = [],
   locale,
 }: {
   tool: ToolDefinition;
+  category: CategoryDefinition;
   related: ToolDefinition[];
+  /** Converter hubs: every pair page below them (registry.getHubPages). Empty elsewhere. */
+  hubPages?: ToolDefinition[];
   locale: string;
 }) {
   const c = tool.content[locale] ?? tool.content.en;
   return (
     <article className="mx-auto w-full max-w-(--container-stage) px-4 py-12 md:px-8 md:py-16">
       <header className="mx-auto max-w-(--container-content)">
-        <h1 className="text-h1 text-balance">{c.title}</h1>
-        <p className="mt-3 max-w-[60ch] text-body-lg text-fg-muted">{c.subtitle}</p>
+        <Breadcrumb tool={tool} category={category} locale={locale} />
+        <h1 className="mt-4 text-h1 text-balance">{c.title}</h1>
+        <p className="mt-3 max-w-(--container-prose) text-body-lg text-fg-muted">{c.subtitle}</p>
       </header>
 
       <div className="mt-10">
-        <ToolStage tool={tool} />
+        {/* Only the stage's own fields and this engine's idle module reach the browser. */}
+        <ToolStage tool={stageToolOf(tool)} idle={idleSpecs[tool.engine]} />
       </div>
 
       <div className="mx-auto mt-24 grid max-w-(--container-content) gap-16 md:grid-cols-[minmax(0,65ch)]">
@@ -54,9 +65,29 @@ export function ToolPage({
           </h2>
           <div className="mt-4 space-y-4 text-body text-fg-muted">
             {c.goodToKnow.map((p) => (
-              <p key={p.slice(0, 40)}>{p}</p>
+              <p key={p.slice(0, 40)}>
+                <Prose text={p} />
+              </p>
             ))}
           </div>
+          {tool.sources.length > 0 && (
+            <div className="mt-6 text-fg-muted text-sm">
+              <p>Sources, checked {[...new Set(tool.sources.map((x) => x.checked))].join(", ")}:</p>
+              <ul className="mt-2 space-y-1">
+                {tool.sources.map((x) => (
+                  <li key={x.url}>
+                    <a
+                      href={x.url}
+                      rel="noopener"
+                      className="inline-flex min-h-11 items-center text-fg underline decoration-1 underline-offset-3 hover:decoration-fg-muted"
+                    >
+                      {x.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </section>
 
         <section aria-labelledby="faq">
@@ -67,19 +98,41 @@ export function ToolPage({
             {c.faq.map((f) => (
               <div key={f.q} className="py-4">
                 <dt className="text-body font-medium">{f.q}</dt>
-                <dd className="mt-1 text-body text-fg-muted">{f.a}</dd>
+                <dd className="mt-1 text-body text-fg-muted">
+                  <Prose text={f.a} />
+                </dd>
               </div>
             ))}
           </dl>
         </section>
       </div>
 
+      {hubPages.length > 0 && (
+        <section aria-labelledby="pairs" className="mx-auto mt-24 max-w-(--container-content)">
+          <h2 id="pairs" className="text-h2">
+            Pages for common conversions
+          </h2>
+          <ul className="mt-6 grid grid-cols-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-3">
+            {hubPages.map((t) => (
+              <li key={t.slug}>
+                <Link
+                  href={`/${t.slug}`}
+                  className="inline-flex min-h-11 items-center rounded-sm text-body text-fg underline decoration-1 underline-offset-3 hover:decoration-fg-muted focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2"
+                >
+                  {(t.content[locale] ?? t.content.en).title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {related.length > 0 && (
         <section aria-labelledby="related" className="mx-auto mt-24 max-w-(--container-content)">
           <h2 id="related" className="text-h2">
             Related tools
           </h2>
-          <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {related.map((t) => (
               <li key={t.slug}>
                 <ToolCard tool={t} locale={locale} />
@@ -88,8 +141,8 @@ export function ToolPage({
           </ul>
           <p className="mt-6 text-sm text-fg-muted">
             <Link
-              href="/"
-              className="underline underline-offset-[3px] decoration-1 hover:decoration-fg-muted"
+              href="/#tools"
+              className="underline underline-offset-3 decoration-1 hover:decoration-fg-muted"
             >
               All tools
             </Link>

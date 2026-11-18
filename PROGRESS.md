@@ -1,0 +1,166 @@
+# Progress
+
+Living state of the project. Read "Current state" and "Next up" at the start of every session; update them and add a session log entry before the session ends (the `handoff` skill does this; the stop gate enforces it once per session). Keep "Current state" under about 15 bullets: this file is injected into every agent session, so brevity is a feature. Roadmap phases are scoped by engines; page counts follow from the registry.
+
+## Current state
+
+- **Phase 1 is complete** except the launch steps that need a name and domain (ADR-0001). 87 pages valid, all on-device, completely free (ADR-0012), no server path (ADR-0024).
+- Verified 2026-10-08 on one fresh build: `pnpm check` green (413 unit tests, every lint); Playwright on chromium, mobile-chrome, mobile-safari 542 passed, 0 failed (250 skipped are WebCodecs-encode tests WebKit cannot run); Lighthouse CI green on home, a hub and three tool pages (LCP 1.57 to 1.60 s, CLS 0, performance 0.99, script 160.9 kB home and hubs of a 163.8 kB budget, 194.2 kB tool pages of 204.8 kB).
+- Site: real home, category hubs (two or more tools each) with intros and breadcrumbs, footer, /privacy, /about, /licences, OG cards as static files at `/og/<name>.png`, UI kit (Dialog, Sheet, Tooltip, Slider, Input) with `/dev/ui` and visual baselines, ⌘K palette on a static index, batch queue on every single-file tool, keyboard shortcuts scoped to the workspace.
+- Stage: one state machine; per-page tuning through `OptionsSpec` hooks documented by state in `src/components/tool/options/types.ts` (ADR-0016); engine UI loads with the first file (ADR-0030) in one step (ADR-0034); idle state server-rendered from `options/idle/<engine>.tsx`. On phones the drop zone and the stage share `--stage-min-h` (80svh) and file lists hold a row per file being read, so a picked or dropped file shifts nothing (CLS 0.000 at 390, `stage-flash.spec.ts`).
+- Media: packet copies for every stream copy (ADR-0021); `containers.ts` decides what a container holds (ADR-0023); mediabunny gaps corrected in our layer, never patched (ADR-0018, ADR-0032).
+- Security: strict CSP from `next.config.ts` plus per-page script hashes written after build (ADR-0027); `src/proxy.ts`; no eval anywhere (ffmpeg runtime import is bundler-ignored, zod jitless).
+- Fonts: Geist Sans Latin subset (33 KB, `scripts/subset-geist.sh`), Geist Mono not preloaded (ADR-0033).
+- Parallel work: `NEXT_DIST_DIR` and `E2E_PORT` isolate builds; remove any `.next-*` lines a build adds to `tsconfig.json`. Port 3000 is sometimes another project's server.
+- Owner directions: mobile side by side with desktop; every page tuned to its job as a product designer would.
+- Git: two commits on `main` (initial setup; Phase 1, Phase 2 and round 3). No remote configured.
+- **Phase 2 (first batch) is built and verified** (2026-10-08): video edits, audio tools, frames and text pages, plus the QA fix round above; 121 tools, 133 indexable pages.
+- **Round 3 is built, reviewed and verified (2026-11-19).** 152 tools (31 new): blur, add image, green screen, freeze frame, picture in picture, side by side, zoom, Shorts clips, progress bar, timer, intro/outro, styled burn-in, stabilize, sharpen, denoise, remove black bars, change bitrate, merge audio, ringtone, pitch, key/BPM, animated WebP/APNG/AVIF, sharpest frame, thumbnail maker, video cover, creation date, repair, screen/webcam/voice recorders, plus the PWA (manifest, service worker, share target). Every page passed design and SEO review; quality measured against local FFmpeg where an equivalent exists (ADR-0062). Verified on one fresh build: `pnpm check` green (613 unit tests, every lint, 152 tools valid); Playwright on chromium, mobile-chrome, mobile-safari 820 passed, 8 failed, all resolved (palette list now capped at 8 typed results for axe `scrollable-region-focusable`; 6 visual baselines updated because the footer lists the new tools; `capture-sync` on mobile-chrome 72.6 ms against 50 under full parallel load, 3 of 3 passing alone); Lighthouse CI green on home, a hub and three tool pages at the ADR-0107 budget. Pre-round snapshot `~/ilovevideos-snapshots/pre-round3-2026-11-18.tgz`.
+- Stage additions this round: status line inside the phone action bar with measured scroll padding (`action-bar.ts`), "Change settings" on every result, stacked result actions, file card after the panel below lg, `OptionsSpec.verbFor`, `UnitField` commits only on an edit, `multiple.unordered` and selectable list rows, worker ready handshake (ADR-0092).
+- Paths under `~/ilovevideos-snapshots/` (pre-round snapshot, builder briefs, review checklist, round 4 and navigation research) are local notes on the owner's machine, not in the repo; the facts needed to act are copied into Next up.
+- Decisions 2026-11-19: no large ML models (ADR-0105); small on-device models under 2 MB for four jobs (ADR-0106); first-load script budget 300 KB home and hubs, 350 KB tool pages (ADR-0107).
+
+## Next up
+
+1. **Round 3 committed (2026-11-19)** on branch `round-3`, fast-forwarded into `main`; the initial commit's message was rewritten without its attribution trailer (owner rule: no AI attribution anywhere). Fixtures (43 MB, all used; 14 hand-made, cannot be regenerated) are committed as plain files.
+2. **Round 4: small on-device models (ADR-0106).** Research in `~/ilovevideos-snapshots/round4-model-research.md`. Builders:
+   - Audio: RNNoise built with Emscripten (`-Os -msimd128`, weights as a self-hosted file; compare v0.2 1.42 MB, the 90 KB older model and GTCRN 197 KB on fixtures) as a speech noise removal page; Silero VAD v6 16 kHz with a hand-written forward pass on the 1.24 MB safetensors (parity test against the official ONNX offline) to upgrade remove-silence and the Shorts clip boundaries.
+   - Face: YuNet 2026may (230 KB, MIT) on our own WebGL 2 inference (~6 shader kinds), detections become key-framed regions on `blur-video` for the user to review; BlazeFace full-range as fallback.
+   - Background: selfie segmenter landscape/general (250 KB, Apache-2.0) through the TF.js graph model (~190 KB br) first, then our own WebGL 2 runner; guided-filter upsampling and uncertainty-weighted temporal smoothing; new page plus maybe a webcam-recorder option.
+   - Never use MediaPipe tasks-vision (usage logger to Google) or onnxruntime-web on a page (2.4 MB br).
+3. **Navigation and discovery redesign** (owner request 2026-11-19; research in `~/ilovevideos-snapshots/navigation-research.md`): intent table and best-coverage search ranking, recents in the empty palette (localStorage only), task groups on hubs with families behind disclosures, a "Then" row of chained next steps on results, file-aware suggestions after a drop, related tools with a stated reason, a mobile search sheet; no popularity rows. Write the flow brief and show the owner before building. Consider trimming next-intl's client cost (14.8 KB) and the footer, which lists every standalone tool on every page.
+4. Model-free tools still open: compare two videos, mains hum removal (50/60 Hz), saved presets, a karaoke vocal reducer only if it measures well.
+5. Owner: run the suite in Firefox and check on real Safari/iOS/Android (not possible here); Firefox display of animated WebP/APNG/AVIF output is unverified; recorders untested on real devices.
+6. Hosting: proposed Cloudflare (static assets, the 32.7 MB ffmpeg wasm in R2 because of the 25 MiB per-file limit). Awaiting owner confirmation before an ADR and deploy config.
+7. Owner decisions: product name and domain (ADR-0001, launch blocker); repository licence (GPL-compatible for the ffmpeg module, ADR-0004); hosting the exact ffmpeg source or a written offer; terms of use; confirm ADR-0024; deinterlacing (ADR-0023).
+8. Launch steps once the domain exists: set `NEXT_PUBLIC_SITE_URL` (ADR-0028), Search Console, sitemap submission.
+9. Facts needing dated primary sources: TikTok and Reels clip lengths, YouTube thumbnail size and file limit, iPhone ringtone length cap and install steps (none stated on the pages today).
+10. Small follow-ups: `src/lib/capabilities/` is unused scaffold from the initial commit (engines probe with `supports()`); remove it with its mentions in CLAUDE.md and README, or wire it in; `site-header.tsx:7` uses `backdrop-blur-sm` (design review: the §2 blur tell); a `block` flag (`fixable: false`) to drop a dead primary when no option can clear the block; `key-preview.tsx` fade timers duplicate the fast token; `options/rotate.tsx:59` uses Tailwind's built-in `ease-out`; `capture-sync` mobile-chrome flake under full parallel load; C's clips retry workaround can go now that the worker stall is fixed (ADR-0092); dialogs are centred on phones, not the §8.8 bottom sheet.
+
+## Open questions
+
+- Licence for the repository and for the engine layer (ADR-0004 requires GPL-compatible for the ffmpeg-linked module).
+- Content Security Policy with nonces: inline JSON-LD needs a nonce strategy before Phase 1 exit.
+- Interlaced sources (AVCHD 1080i, DV, VOB): deinterlace on re-encode (e.g. bwdif in the ffmpeg path, which WebCodecs cannot do natively) or keep writing woven progressive frames. Today both paths weave (ADR-0023).
+
+## Roadmap
+
+Phases are scoped by engines; page count follows from the registry. Dates are targets from 2026-09-02.
+
+### Phase 0: Foundation (weeks 1–3)
+
+- [x] Docs, design system, tokens, registry schema, Next.js scaffold, CI checks.
+- [x] Handbook consolidation, session memory files, agent hooks (2026-09-02).
+- [ ] Decide product name and domain (ADR-0001). Launch blocker.
+- [x] UI kit in `src/components/ui`; kitchen-sink route `/dev/ui`; visual regression baseline (2026-09-30).
+- [x] Visual-first tool card (Panel) with the first six illustrations (2026-09-02). Remaining engines get illustrations as they ship.
+- [x] Stage v1 (drop zone, file card, options, progress, result) driving real engines (2026-09-02).
+- [x] Worker runner and mediabunny inspector (2026-09-02). Capability probing is per engine via `supports()`.
+- [x] Format-profile library in `src/content/formats/` (video, audio and subtitle profiles, 2026-09-30).
+- [x] Home, category hubs, tool page shell, footer, command palette (2026-09-30).
+
+### Phase 1: Launch set (weeks 4–10): ~20 engines, ~120 pages
+
+Engines: compress, resize, remux, convert-video, video-to-audio, convert-audio, video-to-gif, gif-to-video, trim, split, merge, speed, crop, aspect-ratio, rotate, flip, mute, add-audio, subtitles-add (soft), subtitles-convert, watermark, frame-extract, inspect, strip-metadata. Batch queue on every tool. "Show ffmpeg command."
+
+Pages: core tool pages (~25), compress-for-platform (15), under-N-MB (7), top format pairs (~40 video, ~15 audio), resize-for-platform (~12), subtitle utilities (~8).
+
+Exit criteria: Lighthouse budgets met on every page; E2E green on Chromium and Mobile Safari; registry validation green; privacy checks green; CSP with nonces; Search Console verified; sitemap submitted.
+
+Status 2026-09-30: every engine above is built (resize is compress presets and the aspect-ratio platform family, ADR-0011/0019); batch on every single-file tool (ADR-0025); 87 pages. Exit criteria met except the two that need the domain: Lighthouse CI green on the five audited pages (ADR-0029/0031/0033), E2E green on all three projects, registry and privacy checks green, strict CSP with build-time hashes instead of nonces (ADR-0027). Open: Search Console and sitemap submission (ADR-0001), platform families smaller than planned (only platforms with readable primary sources, ADR-0013/0019).
+
+### Phase 2: Depth (months 3–6): +15 engines, ~350 pages total
+
+Engines: framerate, codec (HEVC/AV1 where supported), faststart, loop, reverse, remove-silence, pad, volume/normalise, audio-fade, audio-sync, audio-tracks, subtitles-burn, subtitles-extract, text-overlay, blur-region, color-adjust, filter, image-overlay, thumbnail-grid, edit-metadata, video-to-frames, images-to-video, screen/webcam/audio recorders.
+
+Platform: PWA with share-target and offline; tool chaining; presets; opt-in server fallback (separate origin, consent gate, reaper); first 3–5 locales via translated format profiles; editorial guides (20).
+
+### Phase 3: Breadth and differentiation (months 6–12): ~500 pages
+
+Engines: stabilise, denoise/sharpen, noise reduction, vocal isolation (spike first), chroma key, PiP, intro/outro, best-frame, compare, repair. More locales (to ~8). Consider open-sourcing the engine layer.
+
+### Always
+
+- Quarterly refresh of platform limits and codec-support tables in content.
+- Weekly Search Console review; rewrite titles and descriptions for pages with impressions and CTR under 2%.
+- Every PR: `pnpm check`, Playwright, Lighthouse CI, design review against the anti-pattern table.
+
+## Session log
+
+Newest first. One entry per session. Format: what changed, how it was verified, decisions made, what is next. Keep each entry under about 12 lines.
+
+### 2026-11-19: Round 3 finished, reviewed and verified
+
+- Changed: resumed builders B to G with context; every page went through design and SEO review, blocks fixed and re-reviewed (D: clarity renderer thrown away each render, no play, stale option writes; E: ringtone length, `UnitField` blur commits, key/BPM list; G: instant Discard, live-region chatter, reduced motion, mic picker showing "No microphone" while recording, prose claims). Sound-analysis stall root-caused to the service worker serving a cached Turbopack worker bootstrap (ADR-0092). Main-session stage changes listed in Current state. Owner decisions: ADR-0105 (no large models), ADR-0106 (small models under 2 MB, four jobs), ADR-0107 (budget 300/350 KB). Research for round 4 and for navigation saved under `~/ilovevideos-snapshots/`. Biome now skips `tsconfig.json` (Next rewrites it); `.next-*` excluded from type-checking.
+- Verified: `pnpm check` green (613 unit); Playwright 820 passed and 8 failed on the fresh build, all resolved and re-run; Lighthouse CI green; animation review approved (two nits in Next up 10).
+- Next: owner runs the commit commands, then round 4 (small models) and the navigation redesign.
+
+### 2026-11-18 (later): Round 3 resumed
+
+- Changed: B, C, D, E, G resumed with context; F's design re-review returned Block (13 items: animated-image duplicate estimate, thumbnail default size and late suggestion strip, stale cover on scrub, cover page batch dead end, drop-zone format lists, meta "1 tag changed"), sent to F. C finished its 7 re-review items (38 passed, 0 failed, 13 WebKit skips). Main-session stage fixes: phone status line now inside the sticky action bar (`data-action-bar`) with `scroll-padding-bottom: var(--action-bar-h)` below lg; "Change settings" on every result (same file, same options, outputs released; not on recordings), which replaces the "Start over keeps settings" ask; composite `what` optional, dropped where it repeated the result title (blur, add image, green screen); `-map '0:a?'`/`'0:s?'` quoted in seven shown ffmpeg commands.
+- Verified: tsc clean, Biome clean on the edited files, watermark and subtitles-add unit tests pass; new e2e in `edit-tools.spec.ts` (Change settings rerun, status line in the phone bar) running with the stage and overlay specs.
+- Next: collect B, D, E, F, G reports; design and SEO reviews for D, E, G; `review-animations`; design-reviewer on the stage diff; `pnpm lint:fix`; fresh build, full suite on three projects, Lighthouse CI; then the commit protocol.
+
+### 2026-11-18: Round 3 build (paused by the owner mid-round)
+
+- Changed: owner goal restated (free, no-account, browser-run Swiss army knife; every tool genuinely good); ADR-0062 quality bar, model-free round, watermark removal dropped, vocal and speech-noise removal to a proposed model wave. Seven `tool-builder` agents with disjoint scopes (briefs and review checklist in the session scratchpad, summarised in Next up 1). Shipped and reviewed: A (blur-video, add-image-to-video, remove-green-screen-from-video), C (freeze-frame-video, picture-in-picture-video, side-by-side-video, zoom-video, cut-video-into-shorts, shared writer `engines/compose/`), F (video-to-webp/apng/avif, sharpest-frame-from-video, video-thumbnail-maker, change-video-thumbnail, change-video-creation-date, repair-video), B (add-progress-bar-to-video, add-timer-to-video, add-intro-to-video, styled burn-in on add-subtitles-to-video). Composite layer runs now honour Cancel. Main session fixed A's last review items and applied F's second SEO pass (avif, repair, thumbnail copy; ADR-0093 amended).
+- Verified: per builder only (A 72 passed/0 failed; C 38+37 passed, 1 flaky mobile-safari double-tap on compress; F 113 passed/0 failed; B 112 passed/0 failed; G 74 passed/0 failed at stop). At stop: `tsc` clean; `lint:registry` 147 tools valid; `lint:copy`, `lint:docs` green; Biome fails on formatting in 8 files (repair, cover-frame, sound/ffmpeg, make-pwa-icons, three specs, sound-pitch test) because builders were stopped mid-edit. No full-suite run, no Lighthouse this round.
+- Decisions: ADR-0062 to 0066, 0069 to 0071, 0075 to 0078, 0087 to 0091, 0093 to 0104 (builders), ADR-0093 amended by the main session.
+- Next: Next up 1.
+
+### 2026-10-08: Defect fixes, full QA, keyboard and gestures
+
+- Changed: six QA agents (video, audio, conversion, site, SEO, large files) and four media engineers with disjoint ownership fixed every reproduced defect. Engines: ADR-0050 (AAC pre-roll, Opus delay, FLAC tail), 0054 (probe capabilities; promised tracks present; ProRes/HEVC routed or refused), 0055 (Matroska timing, `startSec`, cut MKV), 0056 (ffmpeg path tracks, failures, speed), 0057 (BS.775 downmix, encoder limits, LAME level, Baseline fallback, paced workers), 0058 (OPFS output streaming), 0059 (WORKERFS inputs, 1.5 GB ffmpeg cap, MKV delay), 0060 (odd sizes cut to even, colour tags, bitrate cap, frame-rate hint), 0061 (WebKit AAC lead, MP3 gapless on MKV copies). UI: phone CLS 0, real 404 and one-hop redirects (0053), COEP require-corp, custom playback bar, keyboard and gestures (0051), codec pairs (0052), `quiet` button variant, shortcuts dialog/sheet, two new audio illustrations, footer and home fixes, many page fixes from QA and five design-review rounds.
+- Verified on one fresh build: `pnpm check` green (413 unit tests, every lint); full Playwright on chromium, mobile-chrome, mobile-safari 542 passed, 0 failed, 250 skipped (WebKit encode); Lighthouse CI green on five pages (LCP 1.57–1.60 s, CLS 0, performance 0.99, script 160.9 kB of 163.8 kB home, 194.2 kB of 204.8 kB tools); home and `/dev/ui` visual baselines re-recorded after design approval. Large files (Chromium): 2.28 GB merge/remux/trim/extract and 4K reverse complete, cancel ~20 ms, peaks ~1–2 GB. Not verified: Firefox (Playwright Firefox sandbox blocked here), real Safari/iOS/Android devices.
+- Decisions: ADR-0050 to 0061; ADR-0005, 0018, 0032, 0034, 0060 amended.
+- Next: Next up items 1 to 3.
+
+### 2026-10-01: Phase 2 started with three builders
+
+- Changed: main session answered the running-costs question (no API costs; domain, and Cloudflare with R2 for the ffmpeg wasm, proposed) and launched three `tool-builder` agents for Phase 2 with disjoint ownership, separate dist dirs, ports and ADR ranges (see Current state). Builders have begun writing engines (for example `faststart`, `audio-fade`) and touched `mediabunny/packet-copy.ts` and `movie-header.ts`.
+- Verified: nothing yet for Phase 2; the builders' reports and the main-session gates are pending. The Phase 1 server on :3200 stopped at the background time limit and was not restarted.
+- Decisions: none by the main session (builders may add ADR-0035 to 0049).
+- Next: Next up items 1 to 3.
+
+### 2026-09-30 (evening): Phase 1 finished
+
+- Changed: three agents finished Phase 1. Pages agent redesigned the 13 older pages and added workspace-scoped keyboard shortcuts (ADR-0026). Platform agent built the batch queue and ⌘K palette (ADR-0025), switched to decimal sizes (ADR-0024), split engine UI out of first load (574 → 180 kB gz, ADR-0030) and fixed the stage flash and phone layout shift (ADR-0034). Site agent built the home, hubs, footer, legal pages, illustrations, OG cards, UI kit, strict CSP with hashes and `proxy.ts` (ADR-0027), the site-URL guard (ADR-0028) and Lighthouse CI (ADR-0029). Media engineer closed the PCM, MP3, AAC pre-roll, merge-join, interlaced-height and recording-time gaps (ADR-0032). Main session: script budget restated (ADR-0031), fonts subset and Lighthouse applied throttling (ADR-0033), OG images as static files, SEO fixes (batch copy, Frames hub folded into GIF, hub meta descriptions, validator rules for site titles, hub size and hub-intro reuse).
+- Verified: `pnpm check` green; Playwright 316 passed, 0 failed on all three projects; Lighthouse CI green. Design review 4 blocked on 7 items, all fixed and verified by review 5; review 5 found two error-state items (40 px recovery buttons on touch, "Reading the file" on an unreadable card), fixed by the main session with an e2e assertion (not re-reviewed). SEO audit 3: no P0; P1/P2 fixed. Final run: `pnpm check` green, Playwright 316 passed / 0 failed, Lighthouse CI green.
+- Decisions: ADR-0024 to ADR-0034.
+- Next: Next up items 1 and 2, then Phase 2.
+
+### 2026-09-30: Phase 1 build-out with parallel agents
+
+- Changed: two waves of parallel builders. Wave 1: crop + aspect ratio, split + merge (multi-file stage), compress families. Wave 2: audio converter/pairs + add/replace audio, subtitles + watermark, gif-to-mp4 + 16 video pairs + resize-for-platform. Media engineer fixed lossless trim (was re-encoding), AAC priming delay, and hidden AAC re-encodes on every remux path. Main session: next-step handoff, stage focus ring, sticky mobile action bar, verdicts on multi-output, `blocked` → `{reason, settled, action}`, outcome-aware `verdict.next`, Select popup overflow, movie-header capture time and `loci` location on remove-metadata, configurable E2E port, README vocabulary. Owner decided the product is completely free (ADR-0012).
+- Later the same day: design review 2 (13 must-fix) and SEO audit 2 (P0: native convert copied sound it promised to encode) fixed by the owning agents and the main session; stage hooks extended (settled/action, verdict next/change, hero showing, input roles, accept-checked handoff); per-build `NEXT_DIST_DIR`; validator rules for titles, inbound links and duplicate related sets.
+- Verified: `pnpm check` green (87 tools, 203 unit tests). Full Playwright on all three projects green after fixes (202 passed, 6 settled-state tests fixed and re-run, 92 WebKit skips). Design gate 3 approved; SEO pass 3 findings fixed.
+- Decisions: ADR-0012 to ADR-0023.
+- Next: Next up items 1 and 2.
+
+### 2026-09-02: Handbook consolidation, session memory, agent guard rails
+
+- Changed: merged 21 files under `docs/` into `README.md` (with new Getting started, Repository layout, System design and Engineering workflow sections), `DECISIONS.md` and `PROGRESS.md`; rewrote `CLAUDE.md` around a routing table and session protocol; added hooks (`session-start`, `route-prompt`, `route-context`, `format`, `stop-gate`) and a `handoff` skill; enabled model invocation for `review-animations` and `pick-ui-library`; added `lint:privacy` and `lint:docs` to `pnpm check`; added CI workflow, PR template, Dependabot, `.editorconfig`, VS Code settings; removed 78 committed `.playwright-mcp/` artifacts and ignored the directory; fixed Biome drift in `tsconfig.json`.
+- Verified: `pnpm check` green; hook scripts exercised with sample payloads.
+- Later the same day: recorded the owner's direction for visual-first tool cards with monochrome vector illustrations (ADR-0008); design system §7.1 and §8.7 updated; illustration system added to Phase 0.
+- Evening: built the card prototype gallery at `/dev/cards` with six variants and four draft monochrome illustrations; verified light, dark and 375px renders via Playwright screenshots; stopped an unrelated project's dev server that held port 3000 at the owner's request.
+- Late evening: owner shared a warm off-white reference (Stackwise-style: beige ground, white cards, dark ink, one accent). Built `/dev/home` as a full home-page prototype in that language with a live accent switcher; verified at 1440 and 390.
+- Owner approved the warm palette with the ink (black) accent. Moved it into `globals.css` as the real light theme with a matching warm dark theme; added `accent-hover` token; Button primary hover uses it; rewrote design principles §1.1 and design system §1; updated CLAUDE.md and the design-tokens rule; removed the dev palette override; enabled model invocation for the `prototype` skill.
+- Night: light-only theme (ADR-0010). Built the processing pipeline: `lib/format`, engine errors with failure classes, mediabunny runner (`engines/mediabunny/shared.ts`) with inspection, real progress and cancellation; engines compress, convert-video, trim, mute, resize; engine worker and page client; UI primitives (Field, Segmented, Select, NumberInput, Checkbox, ProgressLine); FileCard, ResultCard (before → after, Download, ffmpeg command), VideoPreview; the ToolStage state machine. Registry entries for trim-video, remove-audio-from-video, resize-video. Fixtures via `pnpm fixtures` (ffmpeg). Unit tests for compress math. `engines.spec.ts` runs all five tools in Chromium.
+- Verified: `pnpm check` green; `engines.spec.ts` 5/5 pass in Chromium (each tool produces a live blob Download over 1 KB with no network upload); outputs downloaded through the browser and checked with ffprobe: compress lands on the computed bitrate (522 kbps for 640×360 balanced), convert/trim/mute copy the video stream byte-identical, resize re-encodes at the chosen height; `tool-page.spec.ts` asserts BreadcrumbList and no FAQPage/SoftwareApplication, passes on Chromium and Mobile Safari.
+- Design review (design-reviewer agent) blocked the first stage UI on 16 items; all fixed: focus ring on the drop-zone action, no nested cards, button radius by size (lg pill, sm/md md; design system §8.1 updated), token easing default, 44px segments, transform-based progress, one stroke weight, Download uses buttonVariants, side-by-side only from lg, no duplicate Remove in done. Owner picked card variant A (Panel); promoted to `ToolCard`, `/dev/cards` removed.
+- 2026-09-03 (later): owner asked for the next features with flows that beat competitors, built by 1–2 agents. Two general-purpose agents built video-to-gif and video-to-audio in parallel (bounded web research: ezgif, Kapwing; CloudConvert, FreeConvert, Convertio, 123apps), each with a flow brief, unit tests, e2e, ffprobe checks and screenshots at 1280/390. Both were cut off once by the usage limit and resumed with context intact. New findings: ffmpeg's **filter** threads also deadlock the WASM pool (`-filter_threads 1 -filter_complex_threads 1`); gifenc stores delays in centiseconds so 12 fps plays at 12.5; gifenc `repeat: -1` omits the loop block. The audio agent fixed a pre-existing 390px stage overflow (nowrap file-card meta). Lead ran `pnpm check` (11 tools, 29 unit) and the full suite (43 passed on chromium, mobile-chrome, mobile-safari), then design-reviewer and seo-auditor over both features. Design review blocked on 2 must-fix items + nits (all fixed: `blocked` hook disables the primary with a reason, file-card meta wraps at 375, NBSP units via `withUnit`, result line carries real output facts via `EngineResult.meta`, one-line hints, 4px-grid illustration, `--container-panel` token). SEO audit: P0 WebM→MP4 contradiction fixed in the generator (forced H.264 + honest `what`), unmeasured speed claims and invented numbers removed from pairs and converter, phantom tool references removed, visible breadcrumb and prose links added, validator link rule added, mp4-to-mp3 button verb matches its H1, related module fills to six.
+- 2026-09-03: owner asked for every format, industry grade. Built the ffmpeg.wasm engine and the container capability table (13 writable containers, 16 readable); converter select lists them all; e2e `convert-ffmpeg.spec.ts` covers AVI→MP4 (inspect fallback + transcode) and MP4→AVI. Limits stated in the page copy: ffmpeg path holds the file in memory (≈2 GB), always re-encodes. Measured in-browser: ffmpeg's automatic thread count deadlocks the WASM pthread pool (auto/8 hang at frame 1; 1/2/4 finish, 4 fastest) so runs are pinned to ≤ 4 threads; libvpx-vp9 fails to allocate frame buffers in WASM so ffmpeg WebM uses VP8; the MXF muxer rejects defaults so MXF is read-only. Argument order matters: `-threads` before `-i` is a decoder option and frame-threaded H.264 decoding deadlocks at any count above 1, so the engine passes `-threads 1` before `-i` and `-threads 4` after. The @ffmpeg/ffmpeg class library is served from `/wasm/ffmpeg/lib/<v>/` and imported at runtime because Turbopack rejects its `new Worker(new URL(...))` as too dynamic.
+- 2026-09-03: second design-review round on the timeline blocked on 12 items, all fixed: handles no longer clipped by the track (full 44px at the edges), stage controls drawn in the light gray ramp for contrast, fractional timecodes (`formatTimecode`, m:ss.ff) in readouts and aria-valuetext, time inputs commit on blur/Enter and snap to frames, filmstrip renders 12 fixed slots (no reflow), timeline moved under the preview at full width via a new `OptionsSpec.Below` slot, playhead on rAF + transform, Select targets by pointer type, card per §8.7 (no padding, no divider, 24px fallback glyph), 24px control gaps, unqualified "fast" removed.
+- 2026-09-03 early: shipped the fixes for the owner's review. Trim: `TrimTimeline` (filmstrip via hidden video + canvas, two 44px drag handles snapping to frames, draggable selection body, playhead following the preview, playback clamped to the range, arrow keys = one frame, Shift = one second) with number inputs as companions. Converter: `src/content/formats/` (mp4, mov, webm, mkv profiles), `registry/pairs.ts` generator, four pair pages + `/video-converter`; pair pages lock the target and note a mismatched source. Validator: duplicate-page rule, shared-profile exemption, 150 unique-word floor, reports the failing slug. Tests: 8 tools valid; e2e 19 passed on Chromium, mobile Chrome, Mobile Safari; new `trim-timeline.spec.ts`. Fixtures now include mkv and webm.
+- Owner review (late night 2026-09-02) found engine-first mistakes; ADR-0011 records the fix: flow brief before any page, vocabulary table, duplicate-page validator rule, timeline for trim, generated format pairs with a profile library and a generic converter. Owner's words to keep in mind: every card and flow must be well thought out, unique and user friendly.
+- Earlier that evening the owner flagged the resize/compress duplicate: the `resize` engine and panel are deleted; `resize-video` is now a preset page of the compress engine (`preset: best`, `maxHeight: step-down`, button label `action: "Resize"`, illustration override). Rule going forward: a new page must reuse an engine unless the processing genuinely differs.
+- Owner feedback after testing: native macOS select replaced with a Base UI Select (`src/components/ui/select.tsx`, tokens, 44px items on touch, scale+fade enter/exit on token curves); tool cards made identical in height (stretch to row, one-line title, two-line clamped subtitle; subtitle capped at 100 chars in the schema).
+- Bugs fixed on the way: mediabunny `new Quality(number)` is a 0–1 level, not a bitrate (now `{ bitrate }`); object URLs created in `useMemo` were revoked by StrictMode's double effect (now created in the effect); `dev` on 3000 hot-reloads mid-test can 404 new registry pages once.
+- Decisions: ADR-0007 to ADR-0010.
+- Next: owner tests the five tools with real footage (item 3), then Panel card promotion (item 4) and the real home page (item 5).
+
+### 2026-09-02: Initial setup (commit 08606ce)
+
+- Changed: docs, design system, tool registry schema and two tool entries, Next.js 16 scaffold, Biome/Vitest/Playwright config, agents and imported motion skills.
+- Verified: `pnpm check` at the time; dev server rendered the two tool pages.
+- Decisions: ADR-0001 to ADR-0006.
