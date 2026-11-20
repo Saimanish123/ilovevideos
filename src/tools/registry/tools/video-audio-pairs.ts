@@ -15,7 +15,7 @@ const specs: VideoAudioPairSpec[] = [
     related: ["mp4-to-mp3", "mov-to-mp4"],
     updatedAt: "2026-09-30",
     story: [
-      "MOV files are almost always iPhone videos, Mac screen recordings or camera clips. iPhone and Mac recordings carry AAC sound; camera MOVs from makers such as Canon and Nikon often carry uncompressed PCM instead. Whichever is inside, this page decodes it and encodes MP3 with the LAME encoder in your browser, and the picture is never decoded at all, so even a ProRes camera file works as long as the browser can read the container.",
+      "MOV files are almost always iPhone videos, Mac screen recordings or camera clips. iPhone and Mac recordings carry AAC sound; camera MOVs from makers such as Canon and Nikon often carry uncompressed PCM instead. Whichever is inside, this page decodes it and encodes MP3 with a standard MP3 encoder, and the picture is never decoded at all, so even a ProRes camera file works as long as the browser can read the container.",
       "Because the picture is thrown away, the MP3 depends only on the length of the video and the bitrate: a ten-minute iPhone clip becomes about 14 MB at 192 kbps whether it was filmed in 4K or 720p. For a talk, a lesson or a voice memo filmed on the phone, 128 kbps is enough.",
       "When the MOV has several audio tracks, as some camera and screen recordings do, only the first becomes the MP3.",
     ],
@@ -78,7 +78,7 @@ const specs: VideoAudioPairSpec[] = [
     updatedAt: "2026-09-30",
     story: [
       "WAV is what audio editors, DAWs, transcription and subtitling tools and speech-analysis software most reliably accept, so this page turns the sound of an MP4 into 16-bit PCM at the video's own sample rate and channel count. The AAC in the MP4 is decoded once; from there nothing more is lost, but nothing the AAC encoder removed comes back.",
-      "The conversion runs on the browser's own media engine, streaming through the MP4 without loading the ffmpeg download. The WAV is large: about 11.5 MB per minute for 48 kHz stereo, which is what most phones and cameras record, so an hour-long meeting recording becomes about 690 MB, held in memory until you download it.",
+      "The browser converts it itself, streaming through the MP4 with no extra download. The WAV is large: about 11.5 MB per minute for 48 kHz stereo, which is what most phones and cameras record, so an hour-long meeting recording becomes about 690 MB, held in memory until you download it.",
       "Use the range option to keep only the part you need: the timeline under the preview shows the frames, and only the section between the handles is written.",
     ],
     faq: [
@@ -108,7 +108,7 @@ const specs: VideoAudioPairSpec[] = [
     related: ["webm-to-mp4", "opus-to-mp3"],
     updatedAt: "2026-09-30",
     story: [
-      "WebM files come from browsers: screen and camera recordings made with web-based recorders, meeting and call recordings from web apps, and clips saved by some Chrome extensions. Their sound is almost always Opus, sometimes Vorbis. This page decodes it and encodes an MP3 with the LAME encoder, so the result opens in anything, including players and editors that have never heard of WebM.",
+      "WebM files come from browsers: screen and camera recordings made with web-based recorders, meeting and call recordings from web apps, and clips saved by some Chrome extensions. Their sound is almost always Opus, sometimes Vorbis. This page decodes it and encodes an MP3 with a standard MP3 encoder, so the result opens in anything, including players and editors that have never heard of WebM.",
       "Browser recordings often have a missing or wrong duration in the header, because the recorder never goes back to write it. The conversion reads through the whole file, so the MP3 carries the real length. Opus always decodes at 48 kHz, so the MP3 is 48 kHz too, with the recording's own channel count.",
       "For listening back to a meeting or for transcription, 128 kbps is plenty.",
       "A meeting recording usually holds one mixed track of everyone on the call, and the MP3 keeps that single mix; speakers cannot be separated afterwards. Silent stretches stay at full length unless you tick the range box and keep only a section. Without the picture the file shrinks to what the sound needs: a two-hour recording at 128 kbps is about 115 MB as MP3, whatever size the WebM was.",
@@ -144,7 +144,7 @@ const specs: VideoAudioPairSpec[] = [
     related: ["mkv-to-mp4", "mp4-to-mp3"],
     updatedAt: "2026-09-30",
     story: [
-      "MKV files are usually OBS recordings, TV and disc rips, or downloads with several language tracks. OBS stores the sound as AAC by default; rips often carry AC-3, E-AC-3, DTS or FLAC. The page decodes whichever it finds with ffmpeg and encodes MP3 with LAME, so formats the browser itself cannot play, such as AC-3 and DTS, still work.",
+      "MKV files are usually OBS recordings, TV and disc rips, or downloads with several language tracks. OBS stores the sound as AAC by default; rips often carry AC-3, E-AC-3, DTS or FLAC. The page decodes whichever it finds, after a one-time download, and encodes MP3 with a standard MP3 encoder, so formats the browser itself cannot play, such as AC-3 and DTS, still work.",
       "Only the first audio track becomes the MP3. OBS can record up to six tracks (game, microphone and music separately, for example), and track 1 is normally the full mix; for a disc rip it is usually the main language. Choosing another track is not possible yet.",
       "Surround sound, 5.1 from AC-3 or DTS, is mixed down to stereo, because MP3 holds two channels at most.",
       "Disc rips carry far more audio data than an MP3 needs: AC-3 on a DVD is typically 448 kbps and full-rate DTS about 1,509 kbps, for six channels. After the stereo downmix, 192 kbps MP3 is enough for films and TV; choose 320 kbps for concert recordings. In a downmix, dialogue sometimes sounds quieter than in the surround mix, because the centre channel is blended into left and right. If an OBS recording's MP3 has no microphone, check which tracks OBS was set to record: track 1 may hold only the game.",
@@ -156,7 +156,7 @@ const specs: VideoAudioPairSpec[] = [
       },
       {
         q: "Does it work with AC-3 and DTS sound?",
-        a: "Yes. ffmpeg decodes AC-3, E-AC-3 and DTS even though browsers cannot play them, and the MP3 plays everywhere.",
+        a: "Yes. AC-3, E-AC-3 and DTS are decoded here even though browsers cannot play them, and the MP3 plays everywhere.",
       },
       {
         q: "What happens to 5.1 surround?",
@@ -164,7 +164,7 @@ const specs: VideoAudioPairSpec[] = [
       },
       {
         q: "Can it handle a large MKV?",
-        a: "The ffmpeg engine holds the whole file in memory, so MKVs up to roughly 2 GB work in a desktop browser. For bigger files, [trim the video](/trim-video) first.",
+        a: "The whole file is held in memory, so MKVs up to roughly 2 GB work in a desktop browser. For bigger files, [trim the video](/trim-video) first.",
       },
     ],
   },

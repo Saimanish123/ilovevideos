@@ -17,22 +17,14 @@ export const optimizeVideoForWeb: ToolInput = {
     "qt-faststart online",
   ],
   aliases: ["faststart", "moov atom", "progressive download", "streaming", "web optimized"],
-  related: [
-    "video-info",
-    "compress-video",
-    "mov-to-mp4",
-    "video-converter",
-    "hevc-to-h264",
-    "repair-video",
-  ],
+  related: ["video-info", "compress-video", "video-converter", "repair-video"],
   updatedAt: "2026-10-08",
   icon: "globe",
   illustration: "faststart",
   content: {
     en: {
       title: "Optimize video for the web",
-      subtitle:
-        "Move an MP4 or MOV's index to the front so it starts playing while it downloads. Nothing re-encoded.",
+      subtitle: "Make a video start playing sooner on a web page.",
       metaTitle: "Optimize MP4 for web (fast start), free",
       metaDescription:
         "Move the moov atom of an MP4 or MOV to the front so it streams as it downloads. Every packet stays as it is. Free, no upload, runs on your device.",
@@ -49,7 +41,7 @@ export const optimizeVideoForWeb: ToolInput = {
         "This is what ffmpeg's -movflags +faststart and the old qt-faststart program do, and what HandBrake calls Web Optimized. The copy has exactly the same packets in the same order: every video, sound, subtitle and chapter track, every tag and the capture date survive, and the size stays the same, except when a file over 4 GB needs wider offsets: then the index grows by 4 bytes per index entry, usually well under a megabyte.",
         "It is fast because nothing is decoded. The tool reads a few box headers and the index, which is small next to the media, and builds the output from slices of your original file, so even a multi-gigabyte recording is ready in moments and never loaded whole into memory.",
         "Files that already have the index in front are left alone, and the page says so. Fragmented MP4, as written by some screen recorders and streaming tools, carries a small index per fragment and already streams; it is left as it is too. MP4s written by [compress video](/compress-video) and the [video converter](/video-converter) already have their index in front.",
-        "WebM and MKV keep their index differently and are not changed here. For a WebM that has to stream on a web page, converting it to MP4 gives a file with the index at the front. To see a file's container and codecs before uploading, use [video info](/video-info).",
+        "WebM and MKV keep their index differently and are not changed here. For a WebM that has to stream on a web page, converting it to MP4 gives a file with the index at the front. An HEVC video that starts quickly but does not play in some browsers needs [HEVC to H.264](/hevc-to-h264), not a moved index. To see a file's container and codecs before uploading, use [video info](/video-info).",
       ],
       faq: [
         {

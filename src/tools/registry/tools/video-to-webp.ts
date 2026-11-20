@@ -27,11 +27,11 @@ export const videoToWebp: ToolInput = {
   ],
   updatedAt: "2026-11-18",
   icon: "image-play",
+  illustration: "webp",
   content: {
     en: {
       title: "Make an animated WebP from video",
-      subtitle:
-        "Turn part of a video into a looping WebP, far smaller than a GIF, in your browser.",
+      subtitle: "Turn a clip into an animated WebP, smaller than a GIF.",
       metaTitle: "Video to animated WebP online, free, no upload",
       metaDescription:
         "Make an animated WebP from MP4, MOV or WebM in your browser. Pick the range on a timeline, set width, frame rate and quality. No upload.",
@@ -44,12 +44,12 @@ export const videoToWebp: ToolInput = {
         "Press Make WebP, then check the animation playing on the page and download it.",
       ],
       goodToKnow: [
-        "A GIF can hold only 256 colours per frame and compresses with a method from the 1980s, so skies band, skin turns blotchy and files grow fast. A WebP frame keeps full colour and is compressed like a photo. On six test clips at 480 px and 15 fps, the WebP from this page was between 2 and 20 times smaller than a GIF of the same frames, with the largest savings on camera footage and the smallest on flat screen recordings.",
+        "A GIF can hold only 256 colours per frame and compresses with a method from the 1980s, so skies band, skin turns blotchy and files grow fast. A WebP frame keeps full colour and is compressed like a photo. A WebP from this page is a fraction of the size of a GIF of the same frames, with the largest savings on camera footage and the smallest on flat screen recordings. An existing GIF becomes a video with [GIF to MP4](/gif-to-mp4).",
         "WebP compression works on the brightness of each pixel at full resolution and on colour at half resolution in each direction, the same trade every video codec makes. Fine coloured detail such as small red text on blue can soften. If the clip is a screen recording with crisp coloured lettering, look at the result closely, or use [the APNG maker](/video-to-apng), which keeps every pixel exactly.",
         "Only what changes is written again. When a frame differs from the one on screen by no more than a few levels in any colour, it is not stored at all and the previous frame simply stays longer, and when only a cursor moves, only the rectangle around it is stored. A screen recording with a still background can therefore come out tiny, while handheld camera footage, where every pixel moves, stores whole frames. In Safari every frame is stored whole, so this saving does not apply there.",
-        "The quality choice sets how hard each frame is compressed. Balanced kept 40 dB or more of brightness accuracy against the uncompressed frames on five of six test clips, close enough that it is hard to tell apart at normal viewing size. Smaller was 5 to 20% lighter and softens grain and fine texture. Sharper keeps grain and small text and came out 1.5 to 3.5 times the size of Balanced, so use it for short clips or for an image that will be viewed large.",
+        "The quality choice sets how hard each frame is compressed. Balanced stays close enough to the original frames that it is hard to tell apart at normal viewing size. Smaller was 5 to 20% lighter and softens grain and fine texture. Sharper keeps grain and small text and came out 1.5 to 3.5 times the size of Balanced, so use it for short clips or for an image that will be viewed large.",
         "Frame timing is stored in milliseconds, so 24 and 25 fps play at their real speed, which a GIF cannot do, and the animation lasts exactly as long as the range you picked; it carries no sound.",
-        "Where the browser can write WebP images, as Chrome and Edge do, the frames are compressed by its own WebP encoder. Safari's engine cannot, so there each frame is encoded whole with the browser's VP8 video encoder, the codec inside a lossy WebP, at a fixed bitrate. In WebKit, the engine Safari is built on, those files were valid and played the same; on our camera-like test clip they were about 1.1 times the size Chrome gave at the same accuracy, and larger where Chrome stores only the changed parts.",
+        "Where the browser can write WebP images, as Chrome and Edge do, the frames are compressed by its own WebP encoder. Safari's engine cannot, so there each frame is encoded whole with the browser's VP8 video encoder, the codec inside a lossy WebP, at a fixed bitrate. Those files play the same, a little larger than Chrome's at the same quality, and larger still where Chrome stores only the changed parts.",
       ],
       faq: [
         {

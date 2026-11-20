@@ -15,6 +15,7 @@ import {
 import type { MediaInfo } from "@/tools/engines/types";
 import { PLAY_SHORTCUT } from "../shortcuts";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 type Direction = "late" | "early";
 const SLIDER_MAX = 2000;
@@ -109,14 +110,19 @@ export const audioSyncSpec: OptionsSpec<AudioSyncOptions> = {
   verb: "Fix sync",
   Panel: SyncPanel,
   previewResult: true,
+  // Copied streams, moved in time: the timelines differ by design (ADR-0134).
+  compare: false,
   shortcuts: [PLAY_SHORTCUT],
   defaults: (_info, preset) => ({
     offsetMs: typeof preset.offsetMs === "number" ? Math.round(preset.offsetMs) : -200,
   }),
   blocked: (o, info) => {
     if (!info.video)
-      return "This file has no picture, so there is nothing to line the sound up with.";
-    if (!info.audio?.length) return "This video has no sound track to move.";
+      return unfixable(
+        "This file has no picture, so there is nothing to line the sound up with. Choose a video file.",
+      );
+    if (!info.audio?.length)
+      return unfixable("This video has no sound track to move. Choose a video with sound.");
     if (o.offsetMs === 0) return "0 ms leaves the sound where it is. Choose how far to move it.";
     return undefined;
   },

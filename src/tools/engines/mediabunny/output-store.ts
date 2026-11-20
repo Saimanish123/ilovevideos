@@ -143,7 +143,7 @@ export async function openOutputStore(expectedBytes: number): Promise<OutputStor
       finish: async () => {
         const buffer = target.buffer;
         if (!buffer)
-          throw new EngineError("internal", "The encoder produced no output.", "Try again.");
+          throw new EngineError("internal", "The result could not be written.", "Try again.");
         return buffer;
       },
       discard: async () => undefined,

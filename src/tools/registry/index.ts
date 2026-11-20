@@ -1,8 +1,8 @@
+import { thenSteps } from "@/content/site/discovery";
 import { categories } from "./categories";
 import {
   type CategoryDefinition,
   type CategoryId,
-  type EngineId,
   type ToolDefinition as Tool,
   ToolDefinition,
 } from "./schema";
@@ -43,6 +43,14 @@ export function getActiveCategories(): CategoryDefinition[] {
   );
 }
 
+/**
+ * Generated pages (ADR-0154): a registry family (sizes, platform presets) or a locked-target format
+ * pair. They exist for search engines and are reached from search, their hub's closed disclosure
+ * and their siblings, never from browsing surfaces (home directory, standalone related rows).
+ */
+export const isGenerated = (t: Pick<Tool, "family" | "presetOptions">): boolean =>
+  !!t.family || t.presetOptions.lockTarget === true;
+
 /** "mov-to-mp4" → ["mov", "mp4"]; undefined for pages that are not a pair. */
 const pairParts = (slug: string): [string, string] | undefined => {
   const m = /^([a-z0-9]+)-to-([a-z0-9]+)$/.exec(slug);
@@ -55,6 +63,9 @@ const pairParts = (slug: string): [string, string] | undefined => {
  * step the page linked from the fewest other modules so far goes first (then pairs sharing a format, then
  * the nearest in registry order), so every page is reachable from several others and no two pages show
  * an identical set. Computed once for the whole registry, in registry order; deterministic.
+ *
+ * A standalone page shows standalone pages only (ADR-0154); a generated page may show its siblings and
+ * standalone pages, so generated pages are linked from each other and from their hub's disclosure.
  */
 export function getRelatedTools(tool: Tool, limit = 6): Tool[] {
   return (relatedMap(limit).get(tool.slug) ?? []).slice(0, limit);
@@ -68,6 +79,7 @@ function relatedMap(limit: number): Map<string, Tool[]> {
   const inbound = new Map<string, number>();
   const bump = (slug: string) => inbound.set(slug, (inbound.get(slug) ?? 0) + 1);
   const explicit = new Map<string, Tool[]>();
+  const shows = (tool: Tool, t: Tool) => isGenerated(tool) || !isGenerated(t);
   for (const tool of parsed) {
     const seen = new Set<string>([tool.slug]);
     const out: Tool[] = [];
@@ -75,7 +87,7 @@ function relatedMap(limit: number): Map<string, Tool[]> {
     const reverse = parts ? [`${parts[1]}-to-${parts[0]}`] : [];
     for (const slug of [...tool.related, ...reverse]) {
       const t = bySlug.get(slug);
-      if (t && out.length < limit && !seen.has(t.slug)) {
+      if (t && shows(tool, t) && out.length < limit && !seen.has(t.slug)) {
         out.push(t);
         seen.add(t.slug);
         bump(t.slug);
@@ -98,7 +110,7 @@ function relatedMap(limit: number): Map<string, Tool[]> {
     };
     const fill = (pool: Tool[]) => {
       const ranked = pool
-        .filter((t) => !seen.has(t.slug))
+        .filter((t) => !seen.has(t.slug) && shows(tool, t))
         .sort(
           (a, b) =>
             (inbound.get(a.slug) ?? 0) - (inbound.get(b.slug) ?? 0) ||
@@ -123,23 +135,28 @@ function relatedMap(limit: number): Map<string, Tool[]> {
 }
 
 /**
- * Converter hubs and the engines whose locked-target pages they list ("Pages for common conversions"),
- * so every pair page is one link below its hub (README.md#seo-strategy §1). The audio converter also
- * lists the video → audio pages.
+ * The "Then" row under a result (ADR-0126): up to `limit` pages that take what this page makes, from
+ * the hand-written list for that kind of file, minus this page and pages on the same engine. The
+ * page's own `nextStep` is put first in the browser, so this returns a few spare.
  */
-const hubEngines: Record<string, EngineId[]> = {
-  "video-converter": ["convert-video"],
-  "audio-converter": ["convert-audio", "video-to-audio"],
-  "subtitle-converter": ["subtitles-convert"],
-  "change-video-codec": ["codec"],
-};
-
-/** The pair pages a converter hub links down to, in registry order; empty for every other page. */
-export function getHubPages(tool: Tool): Tool[] {
-  const engines = hubEngines[tool.slug];
-  if (!engines) return [];
-  return parsed.filter(
-    (t) =>
-      t.slug !== tool.slug && engines.includes(t.engine) && t.presetOptions.lockTarget === true,
-  );
+export function getThenSteps(
+  tool: Tool,
+  limit = 4,
+): { slug: string; label: string; title: string }[] {
+  return (thenSteps[tool.produces] ?? [])
+    .filter((s) => {
+      const t = bySlug.get(s.slug);
+      return (
+        t !== undefined &&
+        t.slug !== tool.slug &&
+        // Pages on this engine for this kind of file repeat the job ("compress" after "compress").
+        !(t.engine === tool.engine && t.accepts[0] === tool.accepts[0]) &&
+        t.accepts.includes(tool.produces)
+      );
+    })
+    .slice(0, limit)
+    .map((s) => ({ ...s, title: bySlug.get(s.slug)?.content.en.title ?? s.slug }));
 }
+
+/** A hub's title, the same wherever the hub is named: its H1, metadata and the footer (ADR-0127). */
+export const hubTitleOf = (c: CategoryDefinition): string => c.hubTitle ?? `${c.title} video tools`;

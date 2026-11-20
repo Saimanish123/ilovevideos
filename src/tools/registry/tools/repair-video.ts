@@ -23,15 +23,13 @@ export const repairVideo: ToolInput = {
     "optimize-video-for-web",
     "change-video-creation-date",
     "trim-video",
-    "mkv-to-mp4",
   ],
   updatedAt: "2026-11-18",
   icon: "wrench",
   content: {
     en: {
       title: "Repair a video file",
-      subtitle:
-        "Find out why a video will not play, and save what a cut-off file still holds, in your browser.",
+      subtitle: "Find out why a video will not play and save what you can.",
       metaTitle: "Repair a cut-off video online, free, no upload",
       metaDescription:
         "Find out why an MP4, MOV, MKV or WebM will not play, and copy every complete frame of a cut-off file into one that does. No re-encoding, no upload.",
@@ -44,7 +42,7 @@ export const repairVideo: ToolInput = {
         "Play the repaired copy on the page, then download it.",
       ],
       goodToKnow: [
-        "An MP4 or MOV keeps an index, the moov box, that lists where every frame and sound packet sits. A file cut off after the index was written, for example a download that stopped early when the index is at the front, still knows where everything was meant to be. The page checks each listed packet against the file's real length, keeps every one that is complete, and ends picture and sound together at the earliest gap so they stay in sync. On a test file cut at 60%, 2.4 s of its 4.0 s came back, and FFmpeg decoded the result without a single error.",
+        "An MP4 or MOV keeps an index, the moov box, that lists where every frame and sound packet sits. A file cut off after the index was written, for example a download that stopped early when the index is at the front, still knows where everything was meant to be. The page checks each listed packet against the file's real length, keeps every one that is complete, and ends picture and sound together at the earliest gap so they stay in sync.",
         "Phones and cameras usually write the index last, when you press stop. If the battery died, the app crashed or the card filled up, the picture and sound are in the file but nothing says where each frame starts. Rebuilding that index needs the exact settings of the recording, taken from another recording made the same way, and boundaries the sound data does not mark on its own; this page does not attempt it, because a guessed index gives a file that plays wrongly. The open-source program untrunc does this on a computer with a reference file from the same device.",
         "Recordings written in fragments, as browsers, screen recorders and some cameras do, carry a small index in every few seconds of video. When such a file is cut off, every fragment before the cut is whole and the last one is partial; the repaired copy keeps the whole fragments and leaves out the partial one.",
         "MKV and WebM recordings, the formats OBS and browser recorders often use, can stop without their total size, duration or seek index. Players then show no length or cannot jump. The repair reads every block that is still there and writes a finished file with its duration and index, again copying the data as it is; [convert it to MP4](/mkv-to-mp4) afterwards if a device needs MP4.",

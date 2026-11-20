@@ -29,8 +29,7 @@ export const imagesToVideo: ToolInput = {
   content: {
     en: {
       title: "Make a video from images",
-      subtitle:
-        "Turn photos into a slideshow video with crossfades, a slow zoom and music, as an MP4.",
+      subtitle: "Turn photos into a slideshow video with music.",
       metaTitle: "Images to video: photo slideshow maker, free",
       metaDescription:
         "Turn photos into an MP4 slideshow: set the order, the time per image, crossfades, a slow zoom and music. Runs in your browser; nothing is uploaded.",

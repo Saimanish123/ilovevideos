@@ -23,7 +23,7 @@ export const pictureInPictureVideo: ToolInput = {
     "add-watermark-to-video",
     "merge-videos",
     "fix-audio-sync",
-    "compress-video",
+    "remove-background-from-video",
   ],
   updatedAt: "2026-11-18",
   icon: "picture-in-picture-2",
@@ -31,8 +31,7 @@ export const pictureInPictureVideo: ToolInput = {
   content: {
     en: {
       title: "Make a picture in picture video",
-      subtitle:
-        "A second video in a corner, sized, placed and synced, with the sound you choose. In your browser.",
+      subtitle: "Put a second video in a corner of the first.",
       metaTitle: "Picture in picture video, free, no upload",
       metaDescription:
         "Overlay one video in a corner of another: drag the inset, choose its size and corners, line the two up, keep either sound or both. Free, no upload.",
@@ -48,7 +47,7 @@ export const pictureInPictureVideo: ToolInput = {
         "The result is as long as the main video. If the inset is shorter, its last frame stays on screen when it ends, or it disappears if you choose Hide it under More options; the same applies before an inset that starts late. With Auto the output has the main video's shape and size, at most 1920 pixels on its long side; 16:9, 9:16 and 1:1 make a frame of that shape and cut the main picture to fill it.",
         "Two recordings of the same moment rarely start on the same frame. Play the preview, find a clap, a cut or a word both pick up, and nudge the inset's start until they match; positive values start it later, negative values skip its first seconds. If the sound alone is out of step within one file, [fix audio sync](/fix-audio-sync) is the right tool instead.",
         "With Both, the two soundtracks are added together and a limiter keeps the peaks under −1 dB, so loud passages do not clip; quiet passages are untouched. For a reaction video, keep the main video's sound and the inset's voice both; for a webcam over a screen recording, the screen recording's sound is usually the one with the microphone.",
-        "Everything is drawn into one new picture, so both videos are decoded and the result is encoded once to H.264, with AAC sound (Opus where the browser has no AAC encoder). That is the heaviest kind of job a browser does: two 10-second 4K clips took 2.9 s on an Apple silicon desktop in Chromium; phones were not measured, and two 4K inputs may be slow or run out of memory there. The output's long side stops at 1920 pixels. For a logo instead of a second video, [add a watermark](/add-watermark-to-video) is lighter and copies the sound when the file allows; for a still picture or a sticker, [add an image](/add-image-to-video).",
+        "Everything is drawn into one new picture, so both videos are decoded and the result is encoded once to H.264, with AAC sound (Opus where the browser has no AAC encoder). That is the heaviest kind of job a browser does: on a phone, two 4K inputs may be slow or run out of memory. The output's long side stops at 1920 pixels. For a logo instead of a second video, [add a watermark](/add-watermark-to-video) is lighter and copies the sound when the file allows; for a still picture or a sticker, [add an image](/add-image-to-video).",
       ],
       faq: [
         {

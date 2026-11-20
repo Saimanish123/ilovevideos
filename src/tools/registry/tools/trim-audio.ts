@@ -24,8 +24,7 @@ export const trimAudio: ToolInput = {
   content: {
     en: {
       title: "Trim audio",
-      subtitle:
-        "Cut an MP3, M4A, WAV or other audio file down to the part you want, in your browser.",
+      subtitle: "Cut an audio file down to the part you want.",
       metaTitle: "Trim audio and cut MP3 online, free, no upload",
       metaDescription:
         "Drag the handles on the waveform to keep part of an MP3, M4A, WAV, FLAC or OGG file. Copied without re-encoding when it can be. On your device. Free.",
@@ -58,7 +57,7 @@ export const trimAudio: ToolInput = {
         },
         {
           q: "Which formats work?",
-          a: "MP3, M4A, AAC, WAV, FLAC, OGG and Opus are read in the browser; WMA and AIFF are read by the ffmpeg engine on this device.",
+          a: "MP3, M4A, AAC, WAV, FLAC, OGG and Opus are read in the browser; WMA and AIFF need a one-time download first.",
         },
         {
           q: "Is my audio uploaded?",

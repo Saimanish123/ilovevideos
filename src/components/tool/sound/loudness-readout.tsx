@@ -82,7 +82,7 @@ export function LoudnessReadout({
       </span>
       {measuring ? (
         <p className="tabular text-fg-muted text-sm">
-          Measuring the loudness on this device, {Math.round(analysis.ratio * 100)}%
+          Measuring the loudness, {Math.round(analysis.ratio * 100)}%
         </p>
       ) : (
         <>

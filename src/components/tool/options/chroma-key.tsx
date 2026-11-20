@@ -26,6 +26,7 @@ import { audioCopied, needsFfmpeg, sourceName } from "@/tools/engines/crop/plan"
 import { compositeContainer } from "@/tools/engines/overlay/composite";
 import type { MediaInfo } from "@/tools/engines/types";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 type O = ChromaKeyOptions;
 
@@ -37,12 +38,12 @@ function soundWords(o: O, info: MediaInfo, fileName: string) {
 function backgroundWords(o: O) {
   const b = o.background;
   if (b.kind === "color") return `on ${hex(o.color).toUpperCase()}`;
-  if (b.kind === "image") return `on ${b.name}`;
-  return `on ${b.name}, ${o.bgEnd === "loop" ? "looping" : "last frame held"}`;
+  // The file's name and the loop choice show in the panel; the line does not repeat them.
+  return b.kind === "image" ? "on a picture" : "on a video";
 }
 
 /** "Click" with a mouse or trackpad, "Tap" on a touch screen. */
-const pointWord = () =>
+export const pointWord = () =>
   typeof window !== "undefined" && window.matchMedia?.("(pointer: fine)").matches ? "Click" : "Tap";
 
 /** The size the file is written at (H.264 drops an odd last column or row). */
@@ -69,14 +70,15 @@ export const chromaKeySpec: OptionsSpec<O> = {
   batch: false,
   nextStep: { slug: "compress-video", label: "Compress video" },
   blocked: (o, info, _inputs, file) => {
-    if (!info.video) return "This file has no video track to key.";
+    if (!info.video) return unfixable("This file has no video track to key. Choose a video file.");
     if (needsFfmpeg(info, file?.name ?? sourceName(info)))
       return {
         reason:
           info.video.decodable === false
             ? "This browser cannot decode this video's picture, so it cannot be keyed here."
-            : "This format is read only by the fallback engine, which cannot key it. Convert it to MP4 first.",
+            : "This tool cannot open this format. Convert it to MP4 first, then come back.",
         action: { slug: "video-converter", label: "Convert to MP4" },
+        fixable: false,
       };
     if (o.keyFrom === "default") return "Finding the screen colour";
     if (o.keyFrom === "none")
@@ -89,7 +91,7 @@ export const chromaKeySpec: OptionsSpec<O> = {
   },
   summary: (o, info) => {
     const s = screenName(o.key);
-    return `${s[0]?.toUpperCase()}${s.slice(1)} keyed out, ${backgroundWords(o)} · H.264 ${outSize(info)} · ${soundWords(o, info, sourceName(info))} · on this device`;
+    return `${s[0]?.toUpperCase()}${s.slice(1)} keyed out, ${backgroundWords(o)} · H.264 ${outSize(info)} · ${soundWords(o, info, sourceName(info))}`;
   },
   result: (_o, info) => {
     if (!info.video) return undefined;
@@ -126,10 +128,11 @@ function KeyOverlay({ value, onChange, info, media, disabled }: OptionsPanelProp
   );
 }
 
-const BG_ACCEPT_IMAGE = "image/png,image/jpeg,image/webp,image/avif,.png,.jpg,.jpeg,.webp,.avif";
-const BG_ACCEPT_VIDEO = "video/mp4,video/webm,video/quicktime,.mp4,.webm,.mov,.m4v,.mkv";
+export const BG_ACCEPT_IMAGE =
+  "image/png,image/jpeg,image/webp,image/avif,.png,.jpg,.jpeg,.webp,.avif";
+export const BG_ACCEPT_VIDEO = "video/mp4,video/webm,video/quicktime,.mp4,.webm,.mov,.m4v,.mkv";
 
-async function readBackground(file: File, kind: "image" | "video"): Promise<Background> {
+export async function readBackground(file: File, kind: "image" | "video"): Promise<Background> {
   const url = URL.createObjectURL(file);
   try {
     if (kind === "image") {
@@ -167,7 +170,7 @@ async function readBackground(file: File, kind: "image" | "video"): Promise<Back
 }
 
 /** A slider with its exact value beside it (design system §8.4), as on the volume page. */
-function SliderField({
+export function SliderField({
   label,
   hint,
   value,
@@ -213,7 +216,7 @@ function SliderField({
 }
 
 /** A colour swatch that opens the system colour picker; the whole row is the target. */
-function ColorField({
+export function ColorField({
   value,
   label,
   labelledBy,

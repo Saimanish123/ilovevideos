@@ -352,7 +352,7 @@ test.describe("encoders and decoders the browser lacks", () => {
     await expect(
       page
         .getByRole("link", { name: "Download", exact: true })
-        .or(page.getByText(/H\.264 encoder accepted a test video but returned no frames/)),
+        .or(page.getByText(/could not write a short test video/)),
     ).toBeVisible({ timeout: 30_000 });
   });
 

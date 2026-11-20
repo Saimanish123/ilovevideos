@@ -14,7 +14,8 @@
  *  - format-pair pages (a locked target) carry >= MIN_PAIR_OWN_WORDS hand-written words
  *  - the rendered <title> ("{metaTitle} · {site}") fits MAX_TITLE characters
  *  - every page is in the computed related module of >= MIN_INBOUND_RELATED other pages
- *  - related slugs exist (warn only, so pages can be authored before their neighbours)
+ *  - related slugs exist (warn only, so pages can be authored before their neighbours), and a
+ *    standalone page's related slug is not a generated page, which would never show (warn only)
  */
 import { sharedParagraphs } from "../src/content/formats";
 import { getPlatform } from "../src/content/platforms";
@@ -22,7 +23,7 @@ import { about, hubIntros, licences, privacy } from "../src/content/site";
 import { subtitleSharedParagraphs } from "../src/content/subtitles";
 import { site } from "../src/lib/site";
 import { loadEngine } from "../src/tools/engines";
-import { getActiveCategories, getRelatedTools } from "../src/tools/registry";
+import { getActiveCategories, getRelatedTools, isGenerated } from "../src/tools/registry";
 import {
   familyGeneratedText,
   familySharedParagraphs,
@@ -149,14 +150,29 @@ for (const t of tools) {
     if (!slugs.has(l)) fail(`${t.slug}: links to /${l}, which is not a registered tool`);
 }
 // Internal linking: the computed related module (explicit list plus fill) must reach every page.
-const inbound = new Map<string, number>();
-for (const t of tools)
-  for (const r of getRelatedTools(t)) inbound.set(r.slug, (inbound.get(r.slug) ?? 0) + 1);
+// Generated pages (ADR-0154) are kept out of standalone pages' related rows, so they are counted by
+// the pages that link to them at all: siblings' related rows, in-text links from other tools' prose,
+// and their hub's "All format pages" disclosure, which lists every one of them.
+const inbound = new Map<string, Set<string>>();
+const link = (to: string, from: string) => {
+  if (to === from) return;
+  inbound.set(to, (inbound.get(to) ?? new Set()).add(from));
+};
+for (const t of tools) for (const r of getRelatedTools(t)) link(r.slug, t.slug);
+const proseLinks = /\]\(\/([a-z0-9-]+)\)/g;
 for (const t of tools) {
-  const n = inbound.get(t.slug) ?? 0;
+  const c = t.content.en;
+  for (const m of [...c.goodToKnow, ...c.faq.map((f) => f.a)].join("\n").matchAll(proseLinks))
+    if (isGenerated(tools.find((x) => x.slug === m[1]) ?? t)) link(m[1] ?? "", t.slug);
+}
+for (const t of tools) {
+  const generated = isGenerated(t);
+  const n = (inbound.get(t.slug)?.size ?? 0) + (generated ? 1 : 0);
   if (n < MIN_INBOUND_RELATED)
     fail(
-      `${t.slug}: appears in the related tools of ${n} other pages, minimum ${MIN_INBOUND_RELATED}; add it to the \`related\` list of close siblings`,
+      generated
+        ? `${t.slug}: linked from ${n - 1} other pages plus its hub, minimum ${MIN_INBOUND_RELATED}; link it from a sibling's related list or prose`
+        : `${t.slug}: appears in the related tools of ${n} other pages, minimum ${MIN_INBOUND_RELATED}; add it to the \`related\` list of close siblings`,
     );
 }
 // No two pages may show the same related set, in any order (SEO audit 2026-09-30).
@@ -173,6 +189,12 @@ for (const t of tools) {
 for (const t of tools) {
   for (const r of t.related) {
     if (!slugs.has(r)) console.warn(`  ${t.slug}: related slug "${r}" does not exist yet`);
+    // A standalone page never shows a generated page in its related row (ADR-0154): the entry is dead.
+    const target = tools.find((x) => x.slug === r);
+    if (target && !isGenerated(t) && isGenerated(target))
+      console.warn(
+        `  related slug ${r} on ${t.slug} is generated and will not show; link it in prose instead`,
+      );
   }
 }
 // Site pages and hubs: the same <title> limit as tools (SEO audit 2026-09-30).

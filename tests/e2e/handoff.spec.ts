@@ -22,7 +22,10 @@ test.describe("next step hands the result on", () => {
     // smaller than Balanced would make it, so compress settles instead of offering a button.
     const workspace = page.getByRole("region", { name: "Workspace" });
     await expect(workspace).toContainText("sample-part-01", { timeout: 30_000 });
-    await expect(workspace.getByRole("status")).toContainText("Already smaller than this setting");
+    // The stage keeps one more (empty) status region for unfixable reasons (ADR-0141).
+    await expect(
+      workspace.getByRole("status").filter({ hasText: "Already smaller than this setting" }),
+    ).toHaveCount(1);
     await expect(workspace.getByText(/Drop a video/)).toHaveCount(0);
   });
 

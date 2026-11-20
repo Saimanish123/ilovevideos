@@ -20,12 +20,11 @@ export const h264ToHevc: ToolInput = {
   related: ["hevc-to-h264", "change-video-codec", "compress-video", "video-info", "mov-to-mp4"],
   updatedAt: "2026-10-08",
   icon: "binary",
-  illustration: "codec",
+  illustration: "codec-pair:h264:hevc",
   content: {
     en: {
       title: "Convert H.264 to HEVC",
-      subtitle:
-        "Re-encode an H.264 video as HEVC (H.265) for a smaller file, where this browser can encode it.",
+      subtitle: "Make an H.264 video smaller by saving it as HEVC.",
       metaTitle: "H.264 to HEVC converter, free, no upload",
       metaDescription:
         "Re-encode H.264 video as HEVC (H.265) in your browser, if its encoder supports HEVC. The page checks first and copies the sound. Free, no account.",
@@ -38,7 +37,7 @@ export const h264ToHevc: ToolInput = {
         "Download the HEVC file and check that it plays where you need it before removing the original.",
       ],
       goodToKnow: [
-        "HEVC encoding in a browser comes from the platform: usually the hardware encoder of the device, exposed through WebCodecs. Some browsers and systems have one and some do not, and there is no software HEVC encoder built into this site, so on a system without one the page cannot convert and says so. The [change video codec](/change-video-codec) page shows every codec this browser can write, which may offer AV1 or VP9 instead.",
+        "HEVC encoding in a browser comes from the platform: usually the device's hardware encoder. Some browsers and systems have one and some do not, and there is no software HEVC encoder built into this site, so on a system without one the page cannot convert and says so. The [change video codec](/change-video-codec) page shows every codec this browser can write, which may offer AV1 or VP9 instead.",
         "How much smaller the result is depends on the source. A camera file recorded at a high bitrate shrinks a lot; a clip that was already compressed hard, such as a download from a streaming site, has little left to give, because a re-encode cannot recover detail that was thrown away. The bitrate here is capped by what the source itself spends, so the HEVC file is not made larger than the H.264 one by mistake, and the result states the real size.",
         "Re-encoding costs a little quality every time. Keep the H.264 original if you may edit the clip again, and use HEVC as the final copy. For a smaller file that still plays everywhere, [compress video](/compress-video) keeps H.264 and lowers its bitrate instead.",
         "Before deleting anything, check where the HEVC copy has to play. Apple devices from recent years decode it in hardware, and the MP4 is tagged hvc1, the form Apple's players expect. Windows usually needs an extension from the Microsoft Store, and some editors, televisions and upload forms do not read HEVC at all; for those, [HEVC to H.264](/hevc-to-h264) is the way back.",

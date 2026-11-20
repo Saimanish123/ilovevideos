@@ -255,20 +255,17 @@ export function KeyPreview({
   // A pick is a tap or click: the primary pointer, lifted within 8 px of where it went down. A
   // scroll that starts on the picture moves further (or is cancelled) and picks nothing.
   const down = useRef<{ id: number; x: number; y: number } | null>(null);
-  // The mark appears at once and fades out over the fast duration token (design system §6.3).
+  // The mark appears at once, holds, then fades out over the fast duration token (design system
+  // §6.3) and is removed when that transition ends. Reduced motion has no fade: it goes at once.
   const [mark, setMark] = useState<{ x: number; y: number; n: number; out?: boolean }>();
   const markN = mark?.n;
   useEffect(() => {
     if (markN === undefined) return;
-    const fade = setTimeout(
-      () => setMark((m) => (m && m.n === markN ? { ...m, out: true } : m)),
-      550,
-    );
-    const gone = setTimeout(() => setMark((m) => (m && m.n === markN ? undefined : m)), 700);
-    return () => {
-      clearTimeout(fade);
-      clearTimeout(gone);
-    };
+    const hold = setTimeout(() => {
+      const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      setMark((m) => (m && m.n === markN ? (still ? undefined : { ...m, out: true }) : m));
+    }, 550);
+    return () => clearTimeout(hold);
   }, [markN]);
   const onDown = (e: React.PointerEvent) => {
     down.current =
@@ -323,6 +320,10 @@ export function KeyPreview({
             mark.out && "opacity-0",
           )}
           style={{ left: mark.x, top: mark.y }}
+          onTransitionEnd={() => {
+            const n = mark.n;
+            setMark((m) => (m?.out && m.n === n ? undefined : m));
+          }}
         />
       )}
     </div>

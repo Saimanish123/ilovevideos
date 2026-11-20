@@ -181,6 +181,13 @@ export interface OptionsSpec<O> {
    * (it reaches `defaults` and `Idle` like an idle choice), or undefined to drop it.
    */
   acceptHandoff?: (file: File) => Promise<Record<string, unknown> | undefined>;
+  /**
+   * Settings this page keeps for the next file (ADR-0129): the ones that do not depend on the file
+   * (a quality preset, an output format, a look, sound on or off), never ranges, frames, regions or
+   * anything measured from the file. Default: nothing is kept. The same subset is what a saved
+   * preset holds. Keys the page's preset sets are never restored over it.
+   */
+  remember?: RememberSpec<O>;
   /** Done state: the verdict line, from the options used and the real output size (next steps: `nextStep`). */
   result?: (
     value: O,
@@ -193,6 +200,44 @@ export interface OptionsSpec<O> {
       inputs?: StageInput[];
     },
   ) => ResultVerdict | undefined;
+  /**
+   * Done, with `previewResult`: how the result is compared with the source (components/tool/compare,
+   * ADR-0134). Default: a picture result of a video gets a wipe (side by side when the frame changes
+   * shape), a sound result gets a Before/After switch. `false` for pages where a compare makes no
+   * sense: stream copies (identical), results whose timeline differs from the source (trim, loop,
+   * reverse, joins), and results with no source picture or sound to compare against. A function
+   * decides per run (convert: only when it re-encodes).
+   */
+  compare?: false | ((value: O, info: MediaInfo) => CompareSpec | false);
+}
+
+/** How a done state compares the result with the source (`OptionsSpec.compare`). */
+export interface CompareSpec {
+  /** What the job changed: the picture (wipe or side by side) or the sound (Before/After switch). */
+  what: "picture" | "sound";
+  /** The frame changes shape or orientation (crop, rotate, flip, pad): side by side, never a wipe. */
+  layout?: "side-by-side";
+  /** Sound: loudness is the job (volume, fades), so the switch keeps the difference audible. */
+  keepLoudness?: true;
+  /** Source seconds per result second (a 2× speed-up shows source second 4 at its second 2). */
+  timeScale?: number;
+}
+
+/** One key's validator: a zod (mini) schema, typed structurally so this file needs no zod import. */
+export interface RememberField {
+  safeParse(value: unknown): { success: boolean; data?: unknown };
+}
+
+/**
+ * What a page remembers (`OptionsSpec.remember`): a zod object of the kept settings, built with
+ * `./remember-schema`. A stored value is checked key by key, so a stale or edited one is dropped and
+ * the page's default stands. `pick` and `apply` map options to the stored subset and back when the
+ * settings are nested; by default they are the schema's keys at the top level of the options.
+ */
+export interface RememberSpec<O> {
+  schema: { shape: Record<string, RememberField> };
+  pick?: (value: O) => Record<string, unknown>;
+  apply?: (value: O, kept: Record<string, unknown>) => O;
 }
 
 export interface HeroProps<O> {
@@ -325,8 +370,25 @@ export interface Blocked {
   settled?: true;
   /** One link that solves it elsewhere, with the file handed on. */
   action?: NextStepLink;
+  /**
+   * `false` when no option on this page can clear the block (the file's format, a missing track,
+   * what this browser can decode or encode): the stage then shows the reason, and `action` if any,
+   * in place of the primary button instead of a disabled one (ADR-0141). Omit it when changing an
+   * option can clear the block.
+   */
+  fixable?: false;
+  /**
+   * With `fixable: false`: the way out is reloading the page, not another file (the page did not
+   * load in the mode the tool needs). The stage shows "Reload the page" in place of "Choose another
+   * file" (ADR-0147).
+   */
+  reload?: true;
 }
 
 /** Normalises a `blocked` answer. */
 export const blockOf = (b: string | Blocked | undefined): Blocked | undefined =>
   typeof b === "string" ? { reason: b } : b;
+
+/** A block no option on the page can clear (`Blocked.fixable`): a missing track, the format. */
+export const unfixable = (reason: string, action?: NextStepLink): Blocked =>
+  action ? { reason, action, fixable: false } : { reason, fixable: false };

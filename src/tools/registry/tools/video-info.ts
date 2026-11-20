@@ -31,12 +31,11 @@ export const videoInfo: ToolInput = {
   content: {
     en: {
       title: "Check video info",
-      subtitle:
-        "See the container, codecs, resolution, frame rate, bitrates and tags of a file, in your browser.",
+      subtitle: "See what is inside a video file.",
       metaTitle: "Video info: codec, bitrate, resolution",
       metaDescription:
         "See what is inside a video or audio file: container, codecs, resolution, frame rate, bitrate, channels and tags. Read in your browser, no upload.",
-      what: "This tool reads the structure of a video or audio file and lists what it finds: the container, the duration and size, the video codec with its exact codec string, resolution, frame rate and bitrate, every audio track with its codec, channels and sample rate, and any title, artist or date tags. Nothing is converted and nothing is uploaded; the file is parsed on your device and the report appears as soon as it has been read. A Copy as text button gives you the whole report to paste into a support ticket, a forum post or a note.",
+      what: "This tool reads the structure of a video or audio file and lists what it finds: the container, the duration and size, the video codec with its exact codec string, resolution, frame rate and bitrate, every audio track with its codec, channels and sample rate, and any title, artist or date tags. Nothing is converted; the report appears as soon as the file has been read. A Copy as text button gives you the whole report to paste into a support ticket, a forum post or a note.",
       steps: [
         "Drop a video or audio file onto the page or choose one from your device.",
         "Read the overview at the top of the report in plain words, then the file, video, audio and tags in detail.",
@@ -49,12 +48,12 @@ export const videoInfo: ToolInput = {
         "Frame rate and bitrate here are measured from the file's own packets rather than copied from a header, so a variable frame rate recording from a phone shows its real average, and the bitrate reflects the whole file. The overall bitrate is simply the size divided by the duration; the video and audio bitrates are measured per stream. If the numbers seem high for the picture quality, the file was probably encoded with a generous bitrate and [compress video](/compress-video) can bring it down without a visible change.",
         "Rotation is reported when a file carries a rotation flag, which is how phones store portrait video: the frames are landscape and the flag tells players to turn them. Some players and web pages ignore the flag, which is why a clip that looks right on your phone can appear sideways elsewhere. Seeing 90° or 270° here explains that.",
         "Audio tracks are listed one by one with channels, sample rate and bitrate. Mono is one channel, stereo two, 5.1 six. A sample rate of 48 kHz is the video standard; 44.1 kHz is the CD and music standard. Both play everywhere, but some editing software resamples one to match the other, and knowing which you have saves guessing.",
-        "Tags are the descriptive fields the container carries, such as title, artist, album, date or a comment. Cameras and editing software write them; screen recorders often leave them empty. The raw tag keys line lists every tag name the file contains, including ones this page does not display, so you can tell whether a file carries more metadata than its title suggests.",
+        "Tags are the descriptive fields the container carries, such as title, artist, album, date or a comment. Cameras and editing software write them; screen recorders often leave them empty. The raw tag keys line lists every tag name the file contains, including ones this page does not display, so you can tell whether a file carries more metadata than its title suggests. Subtitle tracks are listed with their format; [extract subtitles from video](/extract-subtitles-from-video) saves the text ones as files.",
       ],
       faq: [
         {
           q: "Which file types can it read?",
-          a: "MP4, M4V, MOV, MKV, WebM, MP3, WAV, OGG and FLAC are read directly. AVI, WMV, FLV, MPEG, TS, 3GP and other older containers are read with a bundled ffmpeg engine that loads on first use, which shows codecs and dimensions but not codec strings.",
+          a: "MP4, M4V, MOV, MKV, WebM, MP3, WAV, OGG and FLAC are read directly. AVI, WMV, FLV, MPEG, TS, 3GP and other older containers are read after a one-time download, which shows codecs and dimensions but not codec strings.",
         },
         {
           q: "Does it show the H.264 profile and level?",

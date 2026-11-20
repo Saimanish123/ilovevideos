@@ -24,8 +24,7 @@ export const changeAudioSpeed: ToolInput = {
   content: {
     en: {
       title: "Change audio speed",
-      subtitle:
-        "Speed up or slow down an MP3 or other audio file, keeping its pitch or not, in your browser.",
+      subtitle: "Speed up or slow down an audio file.",
       metaTitle: "Speed up or slow down audio online, free",
       metaDescription:
         "Make an MP3, M4A, WAV or other audio file faster or slower, from 0.25× to 4× and beyond, with the pitch kept or shifted. On your device. Free.",
@@ -38,9 +37,9 @@ export const changeAudioSpeed: ToolInput = {
         "Press Change speed and download the file.",
       ],
       goodToKnow: [
-        "Keep pitch uses ffmpeg's atempo filter, which works in steps of 0.5× to 2× and chains itself for anything beyond, so 4× is two passes of 2×. Speech usually stays clear to about 2×; music tends to smear sooner, because the stretch repeats or drops short overlapping pieces of the sound to change its length.",
+        "Keep pitch works in steps of 0.5× to 2× and chains itself for anything beyond, so 4× is two passes of 2×. Speech usually stays clear to about 2×; music tends to smear sooner, because the stretch repeats or drops short overlapping pieces of the sound to change its length.",
         "Shift pitch resamples: every sample is played at a new rate, so 2× is an octave higher and 0.5× an octave lower, with no processing artefacts at all. It is the sound of speeding up a tape, useful for effects and for slowed-down versions of songs.",
-        "The new length is shown before you save: a 45-minute lecture at 1.5× becomes 30 minutes. Speed changes run in the ffmpeg engine on this device, which downloads once, and the file is encoded again at no less than its own bitrate; WAV and FLAC stay lossless.",
+        "The new length is shown before you save: a 45-minute lecture at 1.5× becomes 30 minutes. Speed changes need a one-time download, and the file is encoded again at no less than its own bitrate; WAV and FLAC stay lossless.",
         "For the sound of a video together with its picture, use [change video speed](/change-video-speed). To shorten a recording without changing how it sounds, cut its pauses with [remove silence](/remove-silence-from-audio) instead. To change the key without changing the speed, use [change audio pitch](/change-audio-pitch).",
       ],
       faq: [
@@ -58,7 +57,7 @@ export const changeAudioSpeed: ToolInput = {
         },
         {
           q: "Why does it download something first?",
-          a: "Speed changes run in the ffmpeg engine, which your browser loads once from this site and keeps. The file itself stays on your device.",
+          a: "Speed changes need a one-time download from this site, which your browser keeps.",
         },
         {
           q: "Is my audio uploaded?",

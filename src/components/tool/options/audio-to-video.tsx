@@ -18,7 +18,9 @@ import {
 } from "@/tools/engines/audio-to-video/options";
 import { renderStill } from "@/tools/engines/audio-to-video/still";
 import type { MediaInfo } from "@/tools/engines/types";
+import { z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 type O = AudioToVideoOptions;
 
@@ -36,6 +38,13 @@ const soundWords = (info: MediaInfo) =>
 
 export const audioToVideoSpec: OptionsSpec<O> = {
   verb: "Make video",
+  remember: {
+    schema: z.object({
+      theme: z.enum(["dark", "light"]),
+      shape: z.enum(["16:9", "1:1", "9:16", "image"]),
+      fit: z.enum(["blur", "black", "fill"]),
+    }),
+  },
   defaults: (_info, preset) => ({
     picture: preset.picture === "image" ? "image" : "card",
     theme: "dark",
@@ -46,15 +55,18 @@ export const audioToVideoSpec: OptionsSpec<O> = {
   route: () => "page",
   Hero: StillHero,
   previewResult: true,
+  // A new picture from a sound: nothing to set it against (ADR-0134).
+  compare: false,
   nextStep: { slug: "add-subtitles-to-video", label: "Add lyrics or a transcript as subtitles" },
   blocked: (o, info) => {
-    if (!info.audio?.length) return "This file has no sound to put under a picture.";
+    if (!info.audio?.length)
+      return unfixable("This file has no sound to put under a picture. Choose a file with sound.");
     if (o.picture === "image" && !o.image) return "Choose an image first, or use a title card.";
     return undefined;
   },
   summary: (o, info) => {
     const s = sizeOf(o);
-    return `A ${formatDimensions(s.width, s.height)} MP4, ${formatDuration(info.durationSec)} long, with the picture written once a second because it does not move. ${soundWords(info)} Runs on this device.`;
+    return `A ${formatDimensions(s.width, s.height)} MP4, ${formatDuration(info.durationSec)} long, with the picture written once a second because it does not move. ${soundWords(info)}`;
   },
   result: (o, info) => {
     const s = sizeOf(o);

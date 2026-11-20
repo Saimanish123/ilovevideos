@@ -19,19 +19,19 @@ export const removeGreenScreenFromVideo: ToolInput = {
   ],
   aliases: ["chroma key", "keying", "blue screen"],
   related: [
+    "remove-background-from-video",
     "add-image-to-video",
     "blur-video",
     "trim-video",
     "change-video-aspect-ratio",
     "compress-video",
   ],
-  updatedAt: "2026-11-18",
+  updatedAt: "2026-11-19",
   icon: "layers",
   content: {
     en: {
       title: "Remove the green screen from a video",
-      subtitle:
-        "Swap a green or blue screen for a colour, a picture or another video. Runs in your browser.",
+      subtitle: "Put a colour, a picture or another video behind you.",
       metaTitle: "Remove green screen from video online, free",
       metaDescription:
         "Key out a green or blue screen and put a colour, an image or a video behind the subject. Live preview, soft edges, spill removal. Nothing is uploaded.",
@@ -74,7 +74,7 @@ export const removeGreenScreenFromVideo: ToolInput = {
         },
         {
           q: "Can it remove the background from a video without a green screen?",
-          a: "No. The keyer needs an evenly coloured green or blue screen behind the subject. Removing the background from ordinary footage needs a person-detection model, which is not offered here.",
+          a: "This keyer needs an evenly coloured green or blue screen behind the subject. For ordinary footage of a person, [remove the background from a video](/remove-background-from-video) finds the person with a small model instead; its edges are softer than a good key.",
         },
         {
           q: "Is my video uploaded?",

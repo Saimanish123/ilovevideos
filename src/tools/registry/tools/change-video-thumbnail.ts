@@ -27,11 +27,11 @@ export const changeVideoThumbnail: ToolInput = {
   ],
   updatedAt: "2026-11-18",
   icon: "image-up",
-  illustration: "thumbnail",
+  illustration: "cover",
   content: {
     en: {
       title: "Change a video file's thumbnail",
-      subtitle: "Choose the frame an MP4 or MOV shows as its thumbnail. Nothing is re-encoded.",
+      subtitle: "Pick the frame file browsers and players show.",
       metaTitle: "Change a video file's thumbnail, free",
       metaDescription:
         "Store any frame of an MP4 or MOV in the file as its thumbnail (cover art), shown in macOS Quick Look and Finder. Runs in your browser, no re-encoding.",
@@ -43,7 +43,7 @@ export const changeVideoThumbnail: ToolInput = {
         "Press Set thumbnail and download the copy.",
       ],
       goodToKnow: [
-        "Where it shows: we checked the macOS Quick Look thumbnailer, which also draws Finder's icons. A test MP4 whose first frame is blue showed blue; with a red cover stored by this page it showed red. The same held for a portrait MP4 and for a MOV. Windows Explorer, phone galleries and media players were not tested, and some of them ignore covers in video files and keep showing the first frame.",
+        "Where it shows: macOS Finder and Quick Look show the stored cover, for MP4 and MOV, upright or portrait. Other file browsers, phone galleries and media players may ignore covers in video files and keep showing the first frame.",
         "The cover is a JPEG of the chosen frame at the video's own size, up to 1920 pixels on the long side, stored as cover art in the file's item list. Nothing else changes: titles, dates, location and every frame and sound sample stay as they were. A file that already has a cover gets the new one in its place.",
         "This changes what a file browser shows for the file on your own computer. Video sites and social apps choose their thumbnails themselves, or let you upload one in their editor; for that, [make a thumbnail image](/video-thumbnail-maker) at the shape they ask for and upload it there.",
         "MKV and WebM keep a cover, if at all, as an attachment Finder does not read, so the page offers to convert them to MP4 first. A MOV written by FFmpeg with its tags as numbered metadata keys has no place a cover can go without rebuilding those tags; the page says so rather than writing a file that some players would misread.",

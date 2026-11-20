@@ -56,6 +56,14 @@ export interface PairSpec {
   updatedAt: string;
 }
 
+/** What a target is for, in plain words, for the subtitle of a pair that re-encodes. */
+const pairPurpose: Partial<Record<FormatId, string>> = {
+  mp4: "that play almost anywhere",
+  webm: "for web pages",
+  mov: "for Apple apps and editors",
+  avi: "for older players and editors",
+};
+
 export function pairTool(spec: PairSpec): ToolInput {
   const from = formats[spec.from];
   const to = formats[spec.to];
@@ -81,8 +89,8 @@ export function pairTool(spec: PairSpec): ToolInput {
   // "Lossless" wording only when both the usual picture and the usual sound are copied (an MTS's AC-3 is not).
   const fullyCopies = usuallyCopies && audioCopies;
   const ffmpegSide = needsFfmpeg
-    ? ` It runs in your browser with the ffmpeg engine, a download of about ${ffmpegDownloadSize()} the first time.`
-    : " It runs in your browser with the hardware encoder where available.";
+    ? ` It needs a one-time download of about ${ffmpegDownloadSize()} the first time.`
+    : " It uses the browser's own video encoder, on the device's hardware where available.";
   const copyNote =
     "nothing is encoded, so it is limited by how fast your device reads and writes the file";
   const what = usuallyCopies
@@ -92,7 +100,7 @@ export function pairTool(spec: PairSpec): ToolInput {
     : lossless
       ? `Most ${from.name} files carry ${list(names(from.videoCodecs.filter((c) => !copy.video.includes(c))), "or")} video, which ${to.name} cannot hold, so this tool usually re-encodes the video to ${enc.video}${audioCopies ? ` and copies the ${usualSound} sound as it is` : ` and the sound to ${enc.audio}`}. When your ${from.name} already holds ${list(names(copy.video), "or")}, it copies that stream instead with no quality loss, and it says which case you are in before you press Convert.${ffmpegSide}`
       : forced
-        ? `${from.name} usually carries ${list(names(from.videoCodecs))} video. ${to.name} can technically hold ${list(names(copy.video))}, but most players outside Chrome will not play it there, so this page re-encodes the video to H.264 and the audio to AAC by default for a file that plays everywhere. Choose Keep in the options to copy the streams unchanged instead. It runs in your browser with the hardware encoder where available.`
+        ? `${from.name} usually carries ${list(names(from.videoCodecs))} video. ${to.name} can technically hold ${list(names(copy.video))}, but most players outside Chrome will not play it there, so this page re-encodes the video to H.264 and the audio to AAC by default for a file that plays everywhere. Choose Keep in the options to copy the streams unchanged instead. It uses the browser's own video encoder, on the device's hardware where available.`
         : `${from.name} and ${to.name} do not share a video codec (${from.name} carries ${list(names(from.videoCodecs))}, ${to.name} is written with ${enc.video}), so this conversion re-encodes the video to ${enc.video} and the sound to ${enc.audio}, and the tool says so before you press Convert.${ffmpegSide}`;
 
   return {
@@ -119,16 +127,16 @@ export function pairTool(spec: PairSpec): ToolInput {
     related: [...new Set([...(spec.related ?? []), "video-converter"])],
     updatedAt: spec.updatedAt,
     icon: "repeat",
-    illustration: "remux",
+    illustration: `video-pair:${from.id}:${to.id}`,
     content: {
       en: {
         title: `Convert ${from.name} to ${to.name}`,
         subtitle: gen(
           fullyCopies
-            ? `Turn ${from.name} files into ${to.name} in your browser. Usually a lossless copy, nothing uploaded.`
+            ? `Turn ${from.name} videos into ${to.name}, usually with no quality loss.`
             : usuallyCopies
-              ? `Picture usually copied; ${usualSound} sound re-encoded to ${enc.audio}. Runs in your browser.`
-              : `Re-encode ${from.name} files as ${to.name} in your browser. Nothing is uploaded.`,
+              ? `Turn ${from.name} videos into ${to.name}, with the picture kept as it is.`
+              : `Turn ${from.name} videos into ${to.name} ${pairPurpose[to.id] ?? "files"}.`,
         ),
         metaTitle: `${from.name} to ${to.name} converter online, free, no upload`,
         metaDescription: fullyCopies

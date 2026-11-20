@@ -1,9 +1,8 @@
 {
   "common": {
     "siteName": "ilovevideos",
-    "tagline": "Video tools that run on your device. Free.",
+    "tagline": "Free video tools.",
     "allTools": "All tools",
-    "privacyLine": "Your file stays on this device.",
     "chooseFile": "choose a file",
     "dropHere": "Drop a video here or",
     "download": "Download",

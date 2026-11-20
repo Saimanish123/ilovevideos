@@ -8,6 +8,7 @@ import { formatDimensions, formatDuration } from "@/lib/format";
 import type { MergeOptions } from "@/tools/engines/merge";
 import { MAX_CLIPS, type MergeClip, planMerge, unusableClip } from "@/tools/engines/merge/plan";
 import { undecodablePicture } from "./decodable";
+import { z } from "./remember-schema";
 import type { OptionsSpec, StageInput } from "./types";
 
 const clipsOf = (inputs: StageInput[] = []): MergeClip[] =>
@@ -17,7 +18,10 @@ export const mergeSpec: OptionsSpec<MergeOptions> = {
   verb: "Merge",
   multiple: { min: 2, max: MAX_CLIPS },
   previewResult: true,
+  // Several sources joined: no one source to compare with (ADR-0134).
+  compare: false,
   nextStep: { slug: "compress-video", label: "Compress the merged video" },
+  remember: { schema: z.object({ reencode: z.boolean(), fit: z.enum(["contain", "cover"]) }) },
   defaults: () => ({ reencode: false, fit: "contain" }),
   result: (o, _info, { inputs }) => {
     const clips = clipsOf(inputs);

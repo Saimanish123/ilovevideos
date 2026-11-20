@@ -1,6 +1,6 @@
 import { execFileSync } from "node:child_process";
-import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
+import AxeBuilder from "./axe-builder";
 import { type Box, probe, rms, saveDownload, shootWidths, trackUploads } from "./overlay-helpers";
 
 /**
@@ -102,9 +102,9 @@ test.describe("add a progress bar: the page", () => {
     await tabTo(page, /^Add progress bar$/);
   });
 
-  test("a file only the fallback engine reads is sent to the converter", async ({ page }) => {
+  test("a format the page cannot open is sent to the converter", async ({ page }) => {
     await open(page, "add-progress-bar-to-video", "tests/fixtures/sample.avi");
-    await expect(page.getByText(/read only by the fallback engine/)).toBeVisible({
+    await expect(page.getByText(/This tool cannot open this format/)).toBeVisible({
       timeout: 30_000,
     });
     await expect(page.getByRole("link", { name: "Convert to MP4" })).toBeVisible();

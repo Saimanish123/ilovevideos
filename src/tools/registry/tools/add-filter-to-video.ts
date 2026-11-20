@@ -30,8 +30,7 @@ export const addFilterToVideo: ToolInput = {
   content: {
     en: {
       title: "Add a filter to a video",
-      subtitle:
-        "Give a video a sepia, warm, cool, vivid or faded look, previewed live. Runs in your browser.",
+      subtitle: "Give a video a sepia, warm, cool or faded look.",
       metaTitle: "Add filter to video online, free, no upload",
       metaDescription:
         "Apply a sepia, warm, cool, vivid, faded or black-and-white look to a video, at the strength you choose. Live preview, sound copied. Free, no upload.",

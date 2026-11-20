@@ -235,6 +235,7 @@ async function viaFfmpeg(
       picture: false,
       otherTracks: facts.otherTracks,
       describe: facts.describe,
+      kept: facts.kept,
     }),
   };
 }

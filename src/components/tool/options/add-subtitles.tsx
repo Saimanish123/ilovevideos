@@ -57,6 +57,7 @@ import {
 } from "@/tools/engines/subtitles-extract/tracks";
 import type { MediaInfo } from "@/tools/engines/types";
 import { handedSubtitle } from "./idle/subtitles-add";
+import { z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
 
 type O = AddSubtitlesOptions;
@@ -187,6 +188,15 @@ export const addSubtitlesSpec: OptionsSpec<O> = {
   batch: false,
   acceptHandoff: async (file) =>
     /\.(srt|vtt|ass|ssa|sbv)$/i.test(file.name) ? readSubtitleFile(file) : undefined,
+  remember: {
+    schema: z.object({
+      mode: z.enum(["soft", "burn"]),
+      showByDefault: z.boolean(),
+      size: z.enum(["small", "medium", "large"]),
+      keepStyling: z.boolean(),
+      look: z.enum(["classic", "boxed", "social"]),
+    }),
+  },
   defaults: (_info, preset) => ({
     mode: preset.mode === "burn" ? "burn" : "soft",
     subtitle: handedSubtitle(preset),
@@ -203,6 +213,8 @@ export const addSubtitlesSpec: OptionsSpec<O> = {
     return p ? planRoute(p) : "worker";
   },
   previewResult: true,
+  // Burned in: the picture changed, so a wipe. A soft track leaves the picture as it was (ADR-0134).
+  compare: (o) => (o.mode === "burn" ? { what: "picture" } : false),
   nextStep: { slug: "compress-video", label: "Compress video" },
   previewTrack: (o, info, phase) => {
     const { track } = trackOf(o, info.durationSec);
@@ -231,12 +243,12 @@ export const addSubtitlesSpec: OptionsSpec<O> = {
     const p = planOf(o, info, nameFor(info));
     const { track } = trackOf(o, info.durationSec);
     if (!p || !track) return undefined;
-    const tool = planRoute(p) === "page" ? ` · ffmpeg engine, ${ffmpegDownloadSize()} once` : "";
+    const tool = planRoute(p) === "page" ? ` · ${ffmpegDownloadSize()} download, once` : "";
     const lang = languageName(o.language);
     if (p.mode === "soft")
-      return `${lang[0]?.toUpperCase()}${lang.slice(1)} · ${softShort(p)} · nothing re-encoded${tool} · on this device`;
+      return `${lang[0]?.toUpperCase()}${lang.slice(1)} · ${softShort(p)} · nothing re-encoded${tool}`;
     const look = styledBurn(o, track, p) ? lookWords(o) : "ASS styling kept";
-    return `Burned in · ${look} · H.264 · ${burnSound(info, p)}${tool} · on this device`;
+    return `Burned in · ${look} · H.264 · ${burnSound(info, p)}${tool}`;
   },
   result: (o, info) => {
     const p = planOf(o, info, nameFor(info));
@@ -354,7 +366,7 @@ export const addSubtitlesSpec: OptionsSpec<O> = {
                 hint={
                   missing !== undefined
                     ? `The bundled font has no “${missing}”, so the script's styling cannot be kept; the text is drawn in the look below.`
-                    : "Colours, positions and sizes from the script, drawn by libass in the ffmpeg engine (slower) with the Geist font, which covers Latin and Cyrillic letters."
+                    : "Colours, positions and sizes from the script, with the Geist font, which covers Latin and Cyrillic letters. Slower than the other looks."
                 }
                 checked={value.keepStyling && missing === undefined}
                 onChange={(e) => onChange({ ...value, keepStyling: e.target.checked })}

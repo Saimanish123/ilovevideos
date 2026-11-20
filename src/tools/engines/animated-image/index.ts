@@ -65,7 +65,7 @@ const cannotEncode = (format: AnimatedFormat) =>
   new EngineError(
     "unsupported-output",
     format === "avif"
-      ? "This browser has no AV1 encoder, which an animated AVIF needs."
+      ? "This browser cannot make animated AVIF."
       : `This browser cannot encode ${FORMAT_NAME[format]} frames.`,
     format === "avif"
       ? "Use current Chrome or Edge on a computer, or make an animated WebP instead."
@@ -318,7 +318,11 @@ export const animatedImageEngine: Engine<AnimatedImageOptions> = {
       if (webp && vp8) {
         await vp8.flush();
         if (vp8.chunks.length !== written)
-          throw new EngineError("internal", "The VP8 encoder dropped frames.", "Try again.");
+          throw new EngineError(
+            "internal",
+            "The animated WebP could not be written.",
+            "Try again.",
+          );
         for (const c of vp8.chunks)
           webp.add({ chunks: vp8Chunk(c.data), x: 0, y: 0, width, height, hasAlpha: false });
       }
@@ -358,14 +362,10 @@ function avifFrom(
 ): Blob {
   const first = chunks[0];
   if (!first?.key)
-    throw new EngineError(
-      "internal",
-      "The AV1 encoder did not start with a key frame.",
-      "Try again.",
-    );
+    throw new EngineError("internal", "The animated AVIF could not be written.", "Try again.");
   const seqObu = sequenceHeaderObu(first.data);
   if (!seqObu)
-    throw new EngineError("internal", "The AV1 encoder wrote no sequence header.", "Try again.");
+    throw new EngineError("internal", "The animated AVIF could not be written.", "Try again.");
   const seq = parseSequenceHeader(seqObu);
   const samples: AvisSample[] = chunks.map((c) => ({ data: stripForSample(c.data), key: c.key }));
   // The planes are ours, so their colour is known whatever the encoder wrote into the stream.
@@ -385,7 +385,7 @@ function avifFrom(
     // Every frame sent is one chunk out; anything else would shift the timing.
     throw new EngineError(
       "internal",
-      `The AV1 encoder returned ${samples.length} of ${frames} frames.`,
+      `Only ${samples.length} of ${frames} frames of the animated AVIF were written.`,
       "Try again.",
     );
   }

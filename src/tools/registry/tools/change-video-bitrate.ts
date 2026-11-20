@@ -29,8 +29,7 @@ export const changeVideoBitrate: ToolInput = {
   content: {
     en: {
       title: "Change video bitrate",
-      subtitle:
-        "Re-encode a video at the exact video and audio bitrate you set. Runs in your browser.",
+      subtitle: "Save a video at the exact bitrate you set.",
       metaTitle: "Change video bitrate online, free, no upload",
       metaDescription:
         "Set a video's bitrate in kb/s, variable or constant, and its audio bitrate or a copy. Size estimated before you start. Runs in your browser. Free.",

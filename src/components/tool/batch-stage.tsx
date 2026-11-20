@@ -9,6 +9,7 @@ import type { EngineClient, RunResult, RunResultFile } from "@/tools/workers/cli
 import { FileList, type ListInput, type QueueStatus } from "./file-list";
 import { type Blocked, blockOf, type OptionsSpec, type StageInput } from "./options/types";
 import { withoutFirst } from "./reading";
+import { persistSettings, startOptions } from "./remember";
 import { ResultFiles } from "./result-files";
 import {
   acceptFor,
@@ -96,7 +97,9 @@ export function BatchStage({
         try {
           const info = await inspectFile(spec, client, file, tool.accepts);
           setRows((r) => [...r, { id, file, info }]);
-          setOptions((o: unknown) => (o === undefined ? spec.defaults(info, preset) : o));
+          // The page's remembered settings apply to a batch as to one file (ADR-0129).
+          const start = startOptions(spec, tool.slug, info, preset).options as unknown;
+          setOptions((o: unknown) => (o === undefined ? start : o));
         } catch (e) {
           const err = toFailure(e);
           // The reader's own sentence says what is wrong; the hint says what it takes instead.
@@ -109,8 +112,21 @@ export function BatchStage({
         }
       }
     },
-    [getClient, spec, preset],
+    [getClient, spec, preset, tool.slug],
   );
+
+  // Changes made for a batch are kept for the page's next file too (ADR-0129).
+  useEffect(() => {
+    if (options === undefined || !first || !spec.remember) return;
+    const t = setTimeout(() => {
+      try {
+        persistSettings(spec, tool.slug, options, spec.defaults(first.info, preset), preset);
+      } catch {
+        // Defaults that cannot be worked out for this file: nothing is kept.
+      }
+    }, 300);
+    return () => clearTimeout(t);
+  }, [options, first, spec, tool.slug, preset]);
 
   const started = useRef(false);
   useEffect(() => {
@@ -259,8 +275,6 @@ export function BatchStage({
     (s, [id]) => s + (rows.find((r) => r.id === id)?.file.size ?? 0),
     0,
   );
-  const firstDone = done[0];
-  const firstDoneName = firstDone && rows.find((r) => r.id === firstDone[0])?.file.name;
   const count = (kind: QueueStatus["kind"]) => queue.filter((q) => q?.kind === kind).length;
   const missed = [...outcomes.values()].filter(
     (o) => o.status.kind === "done" && o.status.missed,
@@ -319,9 +333,9 @@ export function BatchStage({
       : runnable.length === 0
         ? `Nothing to run: every ${noun} is skipped or could not be read. Each row says why.`
         : runnable.length === readable.length
-          ? `${plural(runnable.length)} with these settings, one after another. Runs on this device.`
+          ? `${plural(runnable.length)} with these settings, one after another.`
           : // Counted among what can be read: a file that cannot be read is not one of the videos.
-            `${runnable.length.toLocaleString("en")} of ${plural(readable.length)} will run, one after another; each row says why the others will not. Runs on this device.`;
+            `${runnable.length.toLocaleString("en")} of ${plural(readable.length)} will run, one after another; each row says why the others will not.`;
 
   const summaryDetail = [
     count("skipped") && `${count("skipped")} skipped`,
@@ -415,12 +429,6 @@ export function BatchStage({
                 beforeBytes={processedBytes}
                 list={false}
                 zipName={`${tool.slug}-${outputs.length}-files.zip`}
-                ffmpegCommand={firstDone?.[1].ffmpegCommand}
-                ffmpegLabel={
-                  firstDoneName
-                    ? `The same operation with ffmpeg, for ${firstDoneName}`
-                    : "The same operation with ffmpeg"
-                }
                 verdict={{
                   title:
                     outputs.length === readable.length

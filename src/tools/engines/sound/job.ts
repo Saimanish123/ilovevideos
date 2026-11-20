@@ -6,7 +6,7 @@
  * Runs in the engine worker. No network access (README.md#privacy-and-processing §2).
  */
 import { canEncodeAudio } from "mediabunny";
-import { withUnit } from "@/lib/format";
+import { formatDuration, withUnit } from "@/lib/format";
 import { EngineError } from "../errors";
 import type { EngineContext, EngineResult, MediaInput } from "../types";
 import { analyzeSound } from "./analyze";
@@ -24,8 +24,35 @@ export interface SoundJobSpec {
   label: string;
   /** Measure the source first (normalise needs it); progress covers it. */
   measureFirst: boolean;
-  /** The chain for this file, given the source measurement when there is one. */
-  chain: (before: LoudnessResult | undefined) => ChainSpec & { gainDb?: number };
+  /**
+   * The chain for this file, given the source measurement when there is one, and with
+   * `measureThrough`, the loudness of the processed sound before any gain.
+   */
+  chain: (
+    before: LoudnessResult | undefined,
+    processed?: LoudnessResult,
+  ) => ChainSpec & { gainDb?: number };
+  /**
+   * With `measureFirst`: the measuring pass also runs the sound through this processor (a fresh one;
+   * the render makes its own), so `chain` can set a gain from what the processor will write (noise
+   * removal keeping the original's loudness). Optional; the measuring pass is the source alone
+   * without it.
+   */
+  measureThrough?: (facts: ChainFacts) => SoundProcessor;
+  /** Progress wording of the measuring pass ("Measuring the loudness" by default). */
+  measureLabel?: string;
+  /**
+   * Optional progress shape for a job whose measuring pass is as long as its render (noise removal):
+   * the job starts at `from` (after a model download the engine reported), the two passes split
+   * the rest evenly and are named "Pass 1 of 2 · <measureLabel>" and "Pass 2 of 2 · <label>", each
+   * with the time done instead of a percentage. Without it, progress is as before.
+   */
+  passes?: { from: number };
+  /**
+   * The gain chosen brings the result back to the source's loudness: the result line says
+   * "loudness kept at −21.8 LUFS" when the output measures within 0.5 dB of the source.
+   */
+  keepsLoudness?: { maxGainDb: number };
   /** The ffmpeg `-af` filter for the shown command. */
   filter: (chain: ChainSpec, seconds: number) => string;
   output: "auto" | "wav";
@@ -51,24 +78,34 @@ export async function runSoundJob(
   const outputName = soundOutputName(file.name, spec.suffix, target);
 
   let before: LoudnessResult | undefined;
+  let processed: LoudnessResult | undefined;
+  const from = spec.passes?.from ?? 0;
+  const end = spec.output === "wav" ? 1 : 0.9;
+  // With named passes, the measuring pass and the render each take half of what is left.
+  const split = spec.passes && spec.measureFirst ? from + (end - from) / 2 : 0.3;
   if (spec.measureFirst) {
-    ctx.onProgress({ phase: "analyzing", ratio: 0, detail: "Measuring the loudness" });
-    before = (
-      await analyzeSound(file, file.name, {
-        signal: ctx.signal,
-        onProgress: (r) =>
-          ctx.onProgress({
-            phase: "analyzing",
-            ratio: r * 0.3,
-            detail: `Measuring the loudness · ${Math.round(r * 100)}%`,
-          }),
-      })
-    ).loudness;
+    const label = spec.measureLabel ?? "Measuring the loudness";
+    const seconds = Math.max(0, info.durationSec);
+    const detail = (r: number) =>
+      spec.passes
+        ? `Pass 1 of 2 · ${label} · ${formatDuration(r * seconds)} of ${formatDuration(seconds)}`
+        : `${label} · ${Math.round(r * 100)}%`;
+    ctx.onProgress({ phase: "analyzing", ratio: from, detail: detail(0) });
+    const measured = await analyzeSound(file, file.name, {
+      signal: ctx.signal,
+      through: spec.measureThrough,
+      onProgress: (r) =>
+        ctx.onProgress({
+          phase: "analyzing",
+          ratio: spec.passes ? from + r * (split - from) : r * 0.3,
+          detail: detail(r),
+        }),
+    });
+    before = measured.loudness;
+    processed = measured.processed;
   }
-  const chainSpec = spec.chain(before);
-  const renderSpan: [number, number] = spec.measureFirst
-    ? [0.3, spec.output === "wav" ? 1 : 0.9]
-    : [0, spec.output === "wav" ? 1 : 0.9];
+  const chainSpec = spec.chain(before, processed);
+  const renderSpan: [number, number] = spec.measureFirst ? [split, end] : [from, end];
   // Without a measuring pass, the source is measured on its way into the chain (same samples).
   let tap: LoudnessMeter | undefined;
   const rendered = await renderSound({
@@ -90,7 +127,7 @@ export async function runSoundJob(
     outputName,
     ctx,
     span: renderSpan,
-    label: spec.label,
+    label: spec.passes && spec.measureFirst ? `Pass 2 of 2 · ${spec.label}` : spec.label,
   });
   before ??= tap?.result();
   const filter = spec.filter(chainSpec, rendered.seconds);
@@ -108,6 +145,9 @@ export async function runSoundJob(
       filter,
       suffix: spec.suffix,
       describe: spec.describe,
+      ...(spec.keepsLoudness
+        ? { kept: { gainDb: chainSpec.gainDb ?? 0, maxGainDb: spec.keepsLoudness.maxGainDb } }
+        : {}),
     };
     return {
       blob: rendered.blob,
@@ -142,6 +182,10 @@ export async function runSoundJob(
       picture: target.kind === "video",
       otherTracks: rendered.otherTracks,
       describe: spec.describe,
+      kept: spec.keepsLoudness && {
+        gainDb: chainSpec.gainDb ?? 0,
+        maxGainDb: spec.keepsLoudness.maxGainDb,
+      },
     }),
   };
 }

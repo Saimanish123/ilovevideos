@@ -37,8 +37,7 @@ export const fadeVideo: ToolInput = {
   content: {
     en: {
       title: "Fade a video in and out",
-      subtitle:
-        "Fade the start in from black and the end out to black or white, sound included. In your browser.",
+      subtitle: "From black at the start, to black or white at the end.",
       metaTitle: "Fade video in and out, free, no upload",
       metaDescription:
         "Add a fade in and a fade out to a video: drag the lengths on a timeline, choose black or white, and fade the sound with the picture. Free, no upload.",
@@ -51,8 +50,8 @@ export const fadeVideo: ToolInput = {
         "Press Add fade and download the result.",
       ],
       goodToKnow: [
-        "A fade is a straight ramp: over the fade in, the picture goes from the fade colour to full brightness at an even rate, and the fade out mirrors it, reaching the colour as the clip ends. It is the same ramp as ffmpeg's fade filter, which the result's command uses, and the sound ramp matches ffmpeg's afade default.",
-        "Fading the sound with the picture avoids the jolt of audio that starts or stops at full volume, and it is on by default. It means the sound is encoded once to AAC; with it off, the sound is copied untouched and only the picture fades, which suits a clip that will be joined to music later.",
+        "A fade is a straight ramp: over the fade in, the picture goes from the fade colour to full brightness at an even rate, and the fade out mirrors it, reaching the colour as the clip ends. It is the same ramp as FFmpeg's fade filter, and the sound ramp matches FFmpeg's afade default.",
+        "Fading the sound with the picture avoids the jolt of audio that starts or stops at full volume, and it is on by default. It means the sound is encoded once to AAC; with it off, the sound is copied untouched and only the picture fades, which suits a clip that will be joined to music later. For a colour look across the whole clip rather than at its ends, [add a filter](/add-filter-to-video).",
         "Each fade can be up to ten seconds, and the two never overlap: on a short clip they are held apart so that at least a moment plays at full brightness. For a dip to black between two clips, fade out the first, fade in the second, and join them with [merge videos](/merge-videos); the join is then an invisible cut between two frames that are nearly black.",
         "White suits bright, airy footage and wedding or holiday clips; black is the usual beginning and end of anything that looks like film. The fade colour is flat: to open on a title card or a logo and crossfade into the video instead, [add an intro and outro](/add-intro-to-video).",
         "The whole picture is re-encoded to H.264 because every frame near the ends changes, and it is simpler and safer to write one consistent file than to splice encoded and copied parts. Trim the clip first with [trim video](/trim-video) if the fade should land at a particular moment rather than the file's own start and end.",

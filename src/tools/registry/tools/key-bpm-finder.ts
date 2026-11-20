@@ -23,8 +23,7 @@ export const keyBpmFinder: ToolInput = {
   content: {
     en: {
       title: "Find a song's key and BPM",
-      subtitle:
-        "Read the tempo, key and Camelot code of songs on your device, one or fifty at a time.",
+      subtitle: "One song or fifty, with the Camelot code for mixing.",
       metaTitle: "Key and BPM finder online, free, no upload",
       metaDescription:
         "Find the BPM and musical key of an MP3, WAV or video, with half and double tempo, the relative key and the Camelot code. On your device. Free.",
@@ -40,7 +39,7 @@ export const keyBpmFinder: ToolInput = {
         "When a song speeds up or slows down, as live recordings and older records do, the tempo shown is the average over the whole song and the panel says between which values it moves. A small drift is ignored: the range is shown only when the tempo moves by more than 2% across the song.",
         "Every major key shares its notes with a minor key, its relative: C major and A minor, E-flat major and C minor. Songs often sit between the two, so the relative key is listed with the result. The Camelot code puts the 24 keys on a wheel of 12 numbers with A for minor and B for major: neighbouring numbers and the same number with the other letter mix without clashing.",
         "Confidence says how clearly one key stands out. It tends to be lower for songs that change key halfway, use modes such as Dorian or Mixolydian, or are mostly drums or speech; the next most likely key is then shown too. Recordings tuned away from A = 440 Hz are measured as they are, and the panel reports the offset in cents when it is 10 or more.",
-        "The analysis is signal processing, not a trained model or a database lookup: it measures rhythm from changes in the spectrum and pitch from the notes it finds, so an unreleased demo or a rehearsal is read the same way as a released song. It has been tested on generated tracks of drums, bass and chords, where it named all 24 keys and read steady tempos from 75 to 174 BPM to 0.1 BPM, not yet on a library of real recordings, so check a close call by ear. To move a song into another key at the same tempo, use [change audio pitch](/change-audio-pitch).",
+        "The analysis is signal processing, not a trained model or a database lookup: it measures rhythm from changes in the spectrum and pitch from the notes it finds, so an unreleased demo or a rehearsal is read the same way as a released song. Tempo is read to 0.1 BPM. The key is an estimate, so check a close call by ear. To move a song into another key at the same tempo, use [change audio pitch](/change-audio-pitch).",
       ],
       faq: [
         {

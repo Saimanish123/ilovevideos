@@ -20,7 +20,6 @@ export const removeMetadataFromVideo: ToolInput = {
     "blur-video",
     "remove-audio-from-video",
     "compress-video",
-    "mov-to-mp4",
     "trim-video",
     "edit-video-metadata",
     "change-video-creation-date",
@@ -30,12 +29,11 @@ export const removeMetadataFromVideo: ToolInput = {
   content: {
     en: {
       title: "Remove metadata from video",
-      subtitle:
-        "See the location, date, device and title tags a video carries and write a copy without them.",
+      subtitle: "See the hidden details in a video and remove them.",
       metaTitle: "Remove metadata from video, free, no upload",
       metaDescription:
         "Strip GPS location, creation date, device and title tags from MP4, MOV, WebM and MKV. Lists what is found; streams are copied losslessly on your device.",
-      what: "This tool reads the descriptive tags stored in a video's container, lists them so you can see what the file gives away, and writes a copy that carries none of them. The video and audio streams themselves are copied bit for bit, so the picture and the sound are identical to the original. Everything happens in your browser, which matters for a privacy tool: the file you want to scrub is never sent anywhere.",
+      what: "This tool reads the descriptive tags stored in a video's container, lists them so you can see what the file gives away, and writes a copy that carries none of them. The video and audio streams themselves are copied bit for bit, so the picture and the sound are identical to the original.",
       steps: [
         "Drop a video onto the page or choose one from your device.",
         "Read the list that takes the preview's place: location first, with its coordinates, then device, dates, software and other tags.",

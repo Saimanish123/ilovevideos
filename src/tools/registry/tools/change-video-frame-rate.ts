@@ -21,7 +21,6 @@ export const changeVideoFrameRate: ToolInput = {
     "compress-video",
     "change-video-codec",
     "video-info",
-    "hevc-to-h264",
     "change-video-bitrate",
   ],
   updatedAt: "2026-10-01",
@@ -30,8 +29,7 @@ export const changeVideoFrameRate: ToolInput = {
   content: {
     en: {
       title: "Change video frame rate",
-      subtitle:
-        "Lower a video's frame rate to 30, 25, 24 or 15 fps by dropping frames. Runs in your browser.",
+      subtitle: "Lower a video's frame rate, such as 60 to 30 fps.",
       metaTitle: "Change video frame rate, free, no upload",
       metaDescription:
         "Convert 60 fps to 30, 30 to 24 or any rate below the source. Frames are dropped, never blended; the sound is copied. Free, runs on your device.",
@@ -46,7 +44,7 @@ export const changeVideoFrameRate: ToolInput = {
         "Halving is the clean case. 60 fps to 30 keeps every second frame, 50 to 25 the same, so motion stays exactly as even as it was, only coarser. Rates that do not divide the source are uneven: 30 fps to 24 drops one frame in every five, and a slow pan or scrolling text then advances in a repeating short-short-short-long rhythm. For footage that has to look like film, shooting at 24 in the first place avoids that.",
         "Frames are dropped, never blended or invented. Some tools offer frame blending (ffmpeg's framerate filter) or motion interpolation (its minterpolate filter); both smear or warp moving edges and are very slow in a browser, so this page does neither. For the same reason it only lowers the rate: raising 30 fps to 60 without interpolation would repeat every frame, doubling the work for nothing visible.",
         "The result is always constant frame rate at the lower rate you choose. Many phones and screen recorders write variable frame rate, where the gap between frames changes with the light or the load, and some editors handle that poorly; lowering such a clip also evens it out. A constant-rate copy at the same rate the file already averages is not offered here, because the page only lowers the rate; [video info](/video-info) shows the average this tool reads.",
-        "The picture is re-encoded to H.264 at a bitrate matched to the new rate, so fewer frames also means a smaller file; the panel's estimate shows how much. The sound is copied as it is whenever the container holds it, so it does not lose any quality. To make the file smaller still, [compress video](/compress-video) works on the result.",
+        "The picture is re-encoded to H.264 at a bitrate matched to the new rate, so fewer frames also means a smaller file; the panel's estimate shows how much. The sound is copied as it is whenever the container holds it, so it does not lose any quality. To make the file smaller still, [compress video](/compress-video) works on the result; a high-frame-rate iPhone clip that will not open at all usually needs [HEVC to H.264](/hevc-to-h264) rather than a lower rate.",
         "25 and 50 fps are the rates of television in countries with 50 Hz mains, 30 and 60 the rates of phones and most of the web, 24 the rate of cinema. Changing the rate does not change the speed: to slow a 60 fps clip down to half speed with every frame kept, use [change video speed](/change-video-speed) instead.",
       ],
       faq: [

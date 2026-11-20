@@ -2,8 +2,8 @@ import { execFileSync } from "node:child_process";
 import { mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import AxeBuilder from "@axe-core/playwright";
 import { expect, type Locator, type Page, test } from "@playwright/test";
+import AxeBuilder from "./axe-builder";
 
 /**
  * Frames, stills, slideshows, metadata and text, end to end in the browser: contact sheet, image
@@ -212,8 +212,10 @@ test.describe("frames and stills", () => {
     expect(p.streams[0]).toMatchObject({ codec_name: "mjpeg", width: 1920, height: 1195 });
     await expect(page.getByText(/^Contact sheet: 9 frames on 1920×1195/)).toBeVisible();
     await expect(page.getByRole("img", { name: "The contact sheet, 3 by 3 frames" })).toBeVisible();
-    await page.getByText("The same operation with ffmpeg").click();
-    await expect(page.locator("pre")).toContainText("tile=3x3");
+    await expect(page.locator("[data-ffmpeg-command]")).toHaveAttribute(
+      "data-ffmpeg-command",
+      /tile=3x3/,
+    );
     await shot(page, "contact-sheet-done");
     expect(uploads).toEqual([]);
   });
@@ -480,9 +482,10 @@ test.describe("metadata and subtitles", () => {
         "This video has no subtitle track. Subtitles drawn into the picture are part of the video and cannot be taken out as text.",
       ),
     ).toBeVisible({ timeout: 30_000 });
-    await expect(
-      page.getByRole("button", { name: "Extract subtitles", exact: true }),
-    ).toBeDisabled();
+    // Nothing on the page can add a subtitle track: no dead button (ADR-0141).
+    await expect(page.getByRole("button", { name: "Extract subtitles", exact: true })).toHaveCount(
+      0,
+    );
   });
 });
 

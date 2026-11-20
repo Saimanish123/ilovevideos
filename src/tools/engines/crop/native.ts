@@ -108,7 +108,7 @@ export async function runGeometry(
   if (!(await canEncodeAvc(size.width, size.height))) {
     throw new EngineError(
       "unsupported-output",
-      `This browser's H.264 encoder cannot make a ${formatDimensions(size.width, size.height)} video.`,
+      `This browser cannot write a ${formatDimensions(size.width, size.height)} H.264 video.`,
       labels?.tooBig ??
         (plan.kind === "pad"
           ? "Choose Crop to fill, or make the video smaller with compress video first."

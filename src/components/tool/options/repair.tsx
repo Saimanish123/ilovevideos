@@ -90,6 +90,8 @@ export const repairSpec: OptionsSpec<O> = {
     };
   },
   previewResult: true,
+  // A stream copy: identical picture and sound (ADR-0134).
+  compare: false,
   blocked: (o) => {
     const d = o.diag;
     if (!d) return "Reading the file";
@@ -97,8 +99,7 @@ export const repairSpec: OptionsSpec<O> = {
     if (d.kind === "no-index" || d.kind === "unknown") return "Not repairable in the browser.";
     return undefined;
   },
-  summary: () =>
-    "Complete frames and sound copied into a new file · nothing re-encoded · on this device",
+  summary: () => "Complete frames and sound copied into a new file · nothing re-encoded",
   result: () => ({ title: "Repaired", before: false }),
   nextStep: { slug: "video-info", label: "Check the repaired file" },
   Panel: DiagnosisPanel,

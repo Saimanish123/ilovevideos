@@ -16,14 +16,13 @@ export const rotateVideo: ToolInput = {
     "fix upside down video",
   ],
   aliases: ["turn", "sideways", "upside down", "orientation", "portrait to landscape"],
-  related: ["flip-video", "trim-video", "compress-video", "mov-to-mp4"],
+  related: ["flip-video", "trim-video", "compress-video"],
   updatedAt: "2026-09-30",
   icon: "rotate-cw",
   content: {
     en: {
       title: "Rotate video",
-      subtitle:
-        "Turn a sideways or upside-down video by 90, 180 or 270 degrees in your browser, without re-encoding.",
+      subtitle: "Turn a sideways or upside-down video the right way up.",
       metaTitle: "Rotate video online, free, no upload",
       metaDescription:
         "Rotate a video by 90, 180 or 270 degrees, or flip it. MP4 and MOV are fixed losslessly by rewriting one flag. Runs in your browser, nothing uploaded.",
@@ -37,7 +36,7 @@ export const rotateVideo: ToolInput = {
       ],
       goodToKnow: [
         "Sideways phone videos are almost always a metadata problem, not a pixel problem. The phone records the sensor as it lies and stores an orientation flag in the MP4 or MOV header; a player that ignores the flag shows the clip on its side. Setting the flag here fixes the clip everywhere the flag is honoured, which today means every current browser, phone, desktop player and social app.",
-        "Because the metadata path copies the video stream bit for bit, the output is the same size and quality as the input and works for any codec the file holds, including HEVC and ProRes that your browser could not decode for playback. The re-encode path, used for flips and for WebM or MKV, writes H.264 and follows the same rules as [compress video](/compress-video): a little quality is traded, and the result plays anywhere.",
+        "Because the metadata path copies the video stream bit for bit, the output is the same size and quality as the input and works for any codec the file holds, including HEVC and ProRes that your browser could not decode for playback. The re-encode path, used for [flips](/flip-video) and for WebM or MKV, writes H.264 and follows the same rules as [compress video](/compress-video): a little quality is traded, and the result plays anywhere.",
         "A quarter turn swaps width and height. A 1920×1080 landscape clip becomes 1080×1920 portrait, which is the shape TikTok, Reels and Shorts expect; the reverse turns a portrait recording into a landscape one for a presentation or a monitor. The panel shows the exact output dimensions before you run it.",
         "Some editors and older tools strip or ignore the rotation flag on export. If a video you already rotated comes back sideways after passing through another program, rotate it here again with a flip toggled and untoggled, which forces the re-encode path and writes the pixels in their final orientation.",
         "If the clip only needs to be shorter as well, [trim video](/trim-video) first and rotate the trimmed file; both steps copy the stream on MP4 and MOV, so running them in sequence costs nothing in quality.",

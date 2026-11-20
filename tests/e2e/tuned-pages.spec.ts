@@ -1,7 +1,7 @@
 import { mkdirSync } from "node:fs";
 import { join } from "node:path";
-import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
+import AxeBuilder from "./axe-builder";
 
 /**
  * The older pages tuned to their own job (ADR-0016): what dominates in ready, the shortcuts each page
@@ -161,7 +161,7 @@ test.describe("tuned pages", () => {
     const estimate = page.getByTestId("gif-estimate");
     await expect(estimate).toContainText(/^About .*B/);
     await expect(estimate).toContainText(/36\sframes, 3\.0\ss at 12\sfps, 480×270/);
-    await expect(page.getByText("Runs on this device.", { exact: true })).toBeVisible();
+    await expect(page.getByText(/on this device/)).toHaveCount(0);
     // Repeat: after the end it is back near the start and still playing.
     // Poll every 100 ms: at the default back-off the samples can fall into step with the 3 s loop
     // and never see its end.

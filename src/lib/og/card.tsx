@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { createElement } from "react";
-import { type IllustrationId, illustrations } from "@/components/illustrations/tools";
+import { type IllustrationId, illustrationComponent } from "@/components/illustrations/tools";
 import { illustrationToSvg } from "@/components/illustrations/tools/to-svg";
 import { ogPalette } from "@/lib/og/palette";
 import { site } from "@/lib/site";
@@ -28,11 +28,14 @@ export function ogCard({
 }): ImageResponse {
   const p = ogPalette();
   const svg = illustration
-    ? illustrationToSvg(createElement(illustrations[illustration], { width: 480, height: 320 }), {
-        subject: p.fg,
-        muted: p.fgMuted,
-        raised: p.bgRaised,
-      })
+    ? illustrationToSvg(
+        createElement(illustrationComponent(illustration), { width: 480, height: 320 }),
+        {
+          subject: p.fg,
+          muted: p.fgMuted,
+          raised: p.bgRaised,
+        },
+      )
     : undefined;
   return new ImageResponse(
     <div

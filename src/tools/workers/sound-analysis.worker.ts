@@ -6,7 +6,9 @@
  */
 import { classifyError } from "@/tools/engines/errors";
 import { analyzeSound, type SoundAnalysis } from "@/tools/engines/sound/analyze";
+import { readSafetensors, SileroVad } from "@/tools/engines/sound/dsp/silero-vad";
 import { announceReady } from "./ready";
+import { loadSpeechModel } from "./speech-models";
 
 export type ToAnalysis = {
   type: "analyze";
@@ -15,6 +17,8 @@ export type ToAnalysis = {
   name: string;
   levels: boolean;
   truePeak: boolean;
+  /** Also read where there is speech (Silero VAD; the model is our own file under /models). */
+  speech?: boolean;
 };
 export type FromAnalysis =
   | { type: "progress"; id: number; ratio: number }
@@ -32,9 +36,23 @@ self.onmessage = async (event: MessageEvent<ToAnalysis>) => {
   if (msg.type !== "analyze") return;
   let last = 0;
   try {
+    // Without the model (offline on a first visit), the analysis still runs; `speech` stays empty
+    // and the tools find pauses by level.
+    const vad = msg.speech
+      ? await loadSpeechModel("vad", () => {
+          // The download counts as progress, so a page's stall watchdog does not give up on it.
+          const now = performance.now();
+          if (now - last < 100) return;
+          last = now;
+          post({ type: "progress", id: msg.id, ratio: 0 });
+        })
+          .then((b) => new SileroVad(readSafetensors(new Uint8Array(b))))
+          .catch(() => undefined)
+      : undefined;
     const result = await analyzeSound(msg.file, msg.name, {
       levels: msg.levels,
       truePeak: msg.truePeak,
+      speech: vad,
       onProgress: (ratio) => {
         const now = performance.now();
         if (now - last < 100) return;
@@ -42,7 +60,10 @@ self.onmessage = async (event: MessageEvent<ToAnalysis>) => {
         post({ type: "progress", id: msg.id, ratio });
       },
     });
-    post({ type: "done", id: msg.id, result }, [result.levels.buffer]);
+    post(
+      { type: "done", id: msg.id, result },
+      [result.levels.buffer, result.speech?.buffer].filter((b): b is ArrayBuffer => !!b),
+    );
   } catch (e) {
     const err = classifyError(e);
     post({ type: "error", id: msg.id, code: err.code, message: err.message, hint: err.hint });

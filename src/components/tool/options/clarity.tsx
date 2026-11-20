@@ -27,7 +27,9 @@ import { audioCopied, sourceName } from "@/tools/engines/crop/plan";
 import type { MediaInfo } from "@/tools/engines/types";
 import { pictureContainer, pictureEstimate } from "@/tools/engines/video-filter/plan";
 import { nativeOnly } from "./native-only";
+import { between, z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 /** `measuring`: the page is reading the grain (denoise); the engine's schema drops it. */
 type O = ClarityOptions & { measuring?: boolean };
@@ -55,7 +57,7 @@ const outSize = (info: MediaInfo) => {
 const toPercent = (job: ClarityJob, s: number) => Math.round((s / defaultStrength(job)) * 100);
 const fromPercent = (job: ClarityJob, p: number) => (p / 100) * defaultStrength(job);
 
-/** "Medium noise reduction · grain 9.2 levels · H.264 640×360 · sound copied · about 232 kB · on this device". */
+/** "Medium noise reduction · grain 9.2 levels · H.264 640×360 · sound copied · about 232 kB". */
 function statusLine(o: O, info: MediaInfo): string {
   const grain =
     o.job !== "denoise"
@@ -66,11 +68,17 @@ function statusLine(o: O, info: MediaInfo): string {
           ? " · grain not measured"
           : ` · ${noiseWords(o.noise)}`;
   const est = pictureEstimate(info, sizeOf(info));
-  return `${capital(jobWords(o))}${grain} · H.264 ${outSize(info)} · ${soundWords(info)} · about ${formatBytes(est.bytes)} · on this device`;
+  return `${capital(jobWords(o))}${grain} · H.264 ${outSize(info)} · ${soundWords(info)} · about ${formatBytes(est.bytes)}`;
 }
 
 export const claritySpec: OptionsSpec<O> = {
   verb: "Apply",
+  remember: {
+    // Denoise measures its strength from the file; only sharpening keeps it.
+    schema: z.object({ strength: between(0.1, 3), radius: between(0.5, 4) }),
+    pick: (o) => (o.job === "denoise" ? {} : { strength: o.strength, radius: o.radius }),
+    apply: (o, kept) => (o.job === "denoise" ? o : { ...o, ...kept }),
+  },
   defaults: (_info, preset) => {
     const job = isJob(preset.job) ? preset.job : "denoise";
     return {
@@ -84,7 +92,7 @@ export const claritySpec: OptionsSpec<O> = {
   nextStep: { slug: "compress-video", label: "Compress video" },
   shortcuts: [{ keys: "← →", label: "Move the before and after divider" }],
   blocked: (o, info) => {
-    if (!info.video) return "This file has no video track.";
+    if (!info.video) return unfixable("This file has no video track. Choose a video file.");
     const native = nativeOnly(info, "this file");
     if (native) return native;
     // The status line keeps its shape while the grain is read; only the figure is missing.

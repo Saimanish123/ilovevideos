@@ -17,10 +17,6 @@ export const idle: IdleSpec = {
       return `Drop ${an(formatNames[preset.from])} file to convert it to ${formatNames[preset.to]}`;
     return "Drop a subtitle file to convert it";
   },
-  Idle: () => (
-    <p className="text-fg-muted text-sm">
-      SRT, WebVTT, ASS, SSA or SBV. Read as text on this device.
-    </p>
-  ),
+  Idle: () => <p className="text-fg-muted text-sm">SRT, WebVTT, ASS, SSA or SBV.</p>,
   several: "batch",
 };

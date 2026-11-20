@@ -11,6 +11,7 @@
  * stay on the native path. mediabunny has no AIFF muxer or demuxer, so AIFF is ffmpeg both ways.
  */
 
+import { audioFormatNames, audioSourceNames } from "./audio-names";
 import type { Engine } from "./containers";
 
 /** mediabunny muxer used for stream copies and native encodes (see `engines/mediabunny/shared.ts`). */
@@ -42,7 +43,7 @@ export interface AudioFormatSpec {
 export const audioFormats: AudioFormatSpec[] = [
   {
     id: "mp3",
-    name: "MP3",
+    name: audioFormatNames.mp3,
     extension: "mp3",
     mime: "audio/mpeg",
     write: "ffmpeg",
@@ -56,7 +57,7 @@ export const audioFormats: AudioFormatSpec[] = [
   },
   {
     id: "m4a",
-    name: "M4A",
+    name: audioFormatNames.m4a,
     extension: "m4a",
     mime: "audio/mp4",
     write: "native",
@@ -70,7 +71,7 @@ export const audioFormats: AudioFormatSpec[] = [
   },
   {
     id: "wav",
-    name: "WAV",
+    name: audioFormatNames.wav,
     extension: "wav",
     mime: "audio/wav",
     write: "native",
@@ -84,7 +85,7 @@ export const audioFormats: AudioFormatSpec[] = [
   },
   {
     id: "flac",
-    name: "FLAC",
+    name: audioFormatNames.flac,
     extension: "flac",
     mime: "audio/flac",
     write: "ffmpeg",
@@ -98,7 +99,7 @@ export const audioFormats: AudioFormatSpec[] = [
   },
   {
     id: "ogg",
-    name: "OGG (Vorbis)",
+    name: audioFormatNames.ogg,
     extension: "ogg",
     mime: "audio/ogg",
     write: "ffmpeg",
@@ -112,7 +113,7 @@ export const audioFormats: AudioFormatSpec[] = [
   },
   {
     id: "opus",
-    name: "Opus",
+    name: audioFormatNames.opus,
     extension: "opus",
     mime: "audio/ogg",
     write: "native",
@@ -126,7 +127,7 @@ export const audioFormats: AudioFormatSpec[] = [
   },
   {
     id: "aiff",
-    name: "AIFF",
+    name: audioFormatNames.aiff,
     extension: "aiff",
     mime: "audio/aiff",
     write: "ffmpeg",
@@ -160,15 +161,15 @@ export interface AudioSourceSpec {
 }
 
 export const audioSources: AudioSourceSpec[] = [
-  { id: "mp3", name: "MP3", extensions: ["mp3"], read: "native" },
-  { id: "m4a", name: "M4A", extensions: ["m4a", "m4b", "m4r"], read: "native" },
-  { id: "aac", name: "AAC", extensions: ["aac", "adts"], read: "native" },
-  { id: "wav", name: "WAV", extensions: ["wav", "wave"], read: "native" },
-  { id: "flac", name: "FLAC", extensions: ["flac"], read: "native" },
-  { id: "ogg", name: "OGG", extensions: ["ogg", "oga"], read: "native" },
-  { id: "opus", name: "Opus", extensions: ["opus"], read: "native" },
-  { id: "wma", name: "WMA", extensions: ["wma"], read: "ffmpeg" },
-  { id: "aiff", name: "AIFF", extensions: ["aiff", "aif", "aifc"], read: "ffmpeg" },
+  { id: "mp3", name: audioSourceNames.mp3, extensions: ["mp3"], read: "native" },
+  { id: "m4a", name: audioSourceNames.m4a, extensions: ["m4a", "m4b", "m4r"], read: "native" },
+  { id: "aac", name: audioSourceNames.aac, extensions: ["aac", "adts"], read: "native" },
+  { id: "wav", name: audioSourceNames.wav, extensions: ["wav", "wave"], read: "native" },
+  { id: "flac", name: audioSourceNames.flac, extensions: ["flac"], read: "native" },
+  { id: "ogg", name: audioSourceNames.ogg, extensions: ["ogg", "oga"], read: "native" },
+  { id: "opus", name: audioSourceNames.opus, extensions: ["opus"], read: "native" },
+  { id: "wma", name: audioSourceNames.wma, extensions: ["wma"], read: "ffmpeg" },
+  { id: "aiff", name: audioSourceNames.aiff, extensions: ["aiff", "aif", "aifc"], read: "ffmpeg" },
 ];
 
 /** Audio extensions only ffmpeg.wasm can open; the stage probes these with ffmpeg when mediabunny refuses them. */

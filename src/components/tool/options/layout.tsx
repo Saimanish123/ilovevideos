@@ -18,6 +18,7 @@ import {
 } from "@/tools/engines/layout/options";
 import type { MediaInfo } from "@/tools/engines/types";
 import { nativeOnly } from "./native-only";
+import { between, z } from "./remember-schema";
 import type { OptionsSpec, StageInput } from "./types";
 
 type Pair = { main: StageInput; second: StageInput };
@@ -67,6 +68,8 @@ function estimate(o: LayoutOptions, pair: Pair) {
 export const layoutSpec: OptionsSpec<LayoutOptions> = {
   verb: "Combine",
   previewResult: true,
+  // Several videos in one frame: no one source to compare with (ADR-0134).
+  compare: false,
   multiple: {
     min: 2,
     max: 2,
@@ -83,6 +86,16 @@ export const layoutSpec: OptionsSpec<LayoutOptions> = {
     { keys: "← → ↑ ↓", label: "Move the focused inset" },
     { keys: "Shift ← →", label: "Move it further" },
   ],
+  remember: {
+    schema: z.object({
+      fit: z.enum(["cover", "contain"]),
+      radius: between(0, 0.5),
+      border: between(0, 0.04),
+      borderColor: z.enum(["white", "black"]),
+      sound: z.enum(["main", "second", "both"]),
+      ended: z.enum(["hold", "hide"]),
+    }),
+  },
   defaults: (_info, preset) => ({
     layout: preset.layout === "side" || preset.layout === "stack" ? preset.layout : "pip",
     frame: "auto",

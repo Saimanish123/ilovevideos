@@ -1,6 +1,6 @@
 "use client";
 
-import { Pause, Play, Volume2, VolumeX } from "lucide-react";
+import { Pause, Play, SquareSplitHorizontal, Volume2, VolumeX, ZoomIn } from "lucide-react";
 import {
   type CSSProperties,
   type ReactNode,
@@ -11,8 +11,12 @@ import {
   useState,
 } from "react";
 import { Slider } from "@/components/ui/slider";
+import { cn } from "@/lib/cn";
 import { formatDuration } from "@/lib/format";
+import { useMediaQuery } from "@/lib/use-media-query";
 import type { MediaInfo } from "@/tools/engines/types";
+import { ABSwitch } from "./compare/ab-switch";
+import { useCompareFor } from "./compare/context";
 import type { PreviewTrack } from "./options/types";
 import { usePreviewGestures } from "./preview-gestures";
 import { togglePlayback, usePlayerKeys } from "./shortcuts";
@@ -23,6 +27,10 @@ import { togglePlayback, usePlayerKeys } from "./shortcuts";
  * per browser and added a run of tab stops before a page's own timeline). Space plays and pauses it
  * from anywhere in the workspace (components/tool/shortcuts). A page with an overlay (crop) has its
  * own scrubber and shows no bar. Nothing here animates: play, pause and seeking are 1:1 (§6.3).
+ *
+ * Playing a result the stage set up to compare (compare/context), the bar gets Compare: the source
+ * appears over the picture behind a divider, or beside it (compare/picture-compare), with a zoom to
+ * actual pixels on a mouse; a sound result gets a Before/After switch under the bar instead.
  */
 export function VideoPreview({
   file,
@@ -32,6 +40,7 @@ export function VideoPreview({
   overlay,
   track,
   bar = true,
+  jobRuns = true,
 }: {
   file: File;
   info?: MediaInfo;
@@ -47,6 +56,11 @@ export function VideoPreview({
   track?: PreviewTrack;
   /** False when the page has its own play control (spec.ownPlayback). */
   bar?: boolean;
+  /**
+   * False when the job cannot run either (the stage shows why): the line for a file this browser
+   * cannot play then says only that there is no preview.
+   */
+  jobRuns?: boolean;
 }) {
   const [url, setUrl] = useState<string>();
   const own = useRef<HTMLVideoElement | null>(null);
@@ -60,11 +74,61 @@ export function VideoPreview({
   const box = useRef<HTMLDivElement>(null);
   usePlayerKeys(own, { box, fps: info?.video?.fps });
   const gestures = usePreviewGestures(own, box);
+  const compare = useCompareFor(file);
+  const wipeable = compare?.spec.what === "picture" ? compare : undefined;
+  const [comparing, setComparing] = useState(false);
+  // Mounted from opening until its close fade ends (PictureCompare `onClosed`).
+  const [layerMounted, setLayerMounted] = useState(false);
+  const [layer, setLayer] = useState<CompareModule>();
+  const compareButton = useRef<HTMLButtonElement>(null);
+  const playButton = useRef<HTMLButtonElement>(null);
+  const [zoom, setZoom] = useState(false);
+  const [zoomable, setZoomable] = useState(false);
+  const [compareFailed, setCompareFailed] = useState(false);
+  // Zoom to actual pixels is for a mouse on a screen wide enough to keep the seek bar usable.
+  const finePointer = useMediaQuery("(pointer: fine) and (min-width: 40rem)");
+  const toggleCompare = () => {
+    if (comparing) {
+      setComparing(false);
+      setZoom(false);
+      return;
+    }
+    setComparing(true);
+    setLayerMounted(true);
+    // Loaded on the first press: the done state carries none of it until then.
+    if (!layer) void loadCompare().then((m) => setLayer(() => m));
+  };
+  const onCompareFail = useCallback(() => {
+    // The Compare button goes: focus it held moves to Play rather than falling to the page.
+    if (document.activeElement === compareButton.current) playButton.current?.focus();
+    setComparing(false);
+    setLayerMounted(false);
+    setZoom(false);
+    setCompareFailed(true);
+  }, []);
+  const onCompareClosed = useCallback(() => setLayerMounted(false), []);
+  const soundSwitch =
+    compare?.spec.what === "sound" ? (
+      <ABSwitch media={own} compare={compare} tone="page" />
+    ) : undefined;
+  // A source the browser's player cannot open (MKV in Safari, AVI and WMV everywhere) fires `error`
+  // at once (measured 2026-11-19); it gets one quiet line instead of a black frame and a dead bar.
+  const [unplayable, setUnplayable] = useState(false);
   useEffect(() => {
     const u = URL.createObjectURL(file);
     setUrl(u);
+    setUnplayable(false);
     return () => URL.revokeObjectURL(u);
   }, [file]);
+  // A picture the browser cannot decode (HEVC in Chrome without platform support) plays no better:
+  // Chrome fires no `error` there and shows a black frame with a working bar.
+  // `info` is the source's, also when a result plays here: it speaks for this file only when it is
+  // that file.
+  const noPicture =
+    unplayable || (info?.video?.decodable === false && info.sizeBytes === file.size);
+  const noPreview = jobRuns
+    ? "No preview in this browser. The file can still be processed."
+    : "No preview in this browser.";
   const [trackUrl, setTrackUrl] = useState<string>();
   const vtt = track?.vtt;
   useEffect(() => {
@@ -87,7 +151,11 @@ export function VideoPreview({
       data-cue-style={track ? "outline" : undefined}
       // Without native controls Chrome paints no first frame on "metadata"; the file is local, so "auto" costs no network.
       preload="auto"
-      className="h-full w-full transition-transform duration-(--duration-base) ease-(--ease-in-out) motion-reduce:transition-none"
+      onError={() => setUnplayable(true)}
+      className={cn(
+        "h-full w-full transition-transform duration-(--duration-base) ease-(--ease-in-out) motion-reduce:transition-none",
+        noPicture && "invisible",
+      )}
       style={videoStyle}
     >
       {track && trackUrl && (
@@ -106,6 +174,11 @@ export function VideoPreview({
     return (
       <div ref={box} className="relative w-full" style={{ aspectRatio: ratio, maxHeight: "60vh" }}>
         <div className="h-full w-full overflow-hidden rounded-lg bg-bg-stage">{picture}</div>
+        {noPicture && (
+          <p className="pointer-events-none absolute inset-0 flex items-center justify-center p-6 text-center text-gray-300 text-sm">
+            {noPreview}
+          </p>
+        )}
         {overlay}
       </div>
     );
@@ -118,20 +191,93 @@ export function VideoPreview({
         ref={box}
         className="relative w-full overflow-hidden rounded-lg bg-bg-stage"
         style={{ aspectRatio: ratio, maxHeight: "60vh" }}
-        onPointerDown={gestures.onPointerDown}
-        onPointerUp={gestures.onPointerUp}
-        onDoubleClick={gestures.onDoubleClick}
+        onPointerDown={noPicture ? undefined : gestures.onPointerDown}
+        onPointerUp={noPicture ? undefined : gestures.onPointerUp}
+        onDoubleClick={noPicture ? undefined : gestures.onDoubleClick}
       >
+        {/* No picture: the same box, so nothing moves, with one quiet line in it (the overlay
+            branch above does the same). */}
         {picture}
+        {noPicture && (
+          <p className="pointer-events-none absolute inset-0 flex items-center justify-center p-6 text-center text-gray-300 text-sm">
+            {noPreview}
+          </p>
+        )}
         {gestures.overlay}
+        {layerMounted && layer && compare && (
+          <layer.PictureCompare
+            master={own}
+            box={box}
+            compare={compare}
+            open={comparing}
+            zoom={zoom}
+            onZoomable={setZoomable}
+            onFail={onCompareFail}
+            onClosed={onCompareClosed}
+          />
+        )}
       </div>
-      {bar && <PlaybackBar video={own} src={url} />}
+      {bar && (
+        // No picture: the bar keeps its height but is not seen or reachable (nothing to play).
+        <div className={noPicture ? "invisible" : "contents"} aria-hidden={noPicture || undefined}>
+          <PlaybackBar
+            video={own}
+            src={url}
+            playRef={playButton}
+            extra={
+              wipeable && !compareFailed ? (
+                <>
+                  {comparing && finePointer && zoomable && (
+                    <button
+                      type="button"
+                      className={iconButton}
+                      aria-label="Actual pixels"
+                      aria-pressed={zoom}
+                      onClick={() => setZoom((z) => !z)}
+                    >
+                      <ZoomIn size={20} strokeWidth={1.5} aria-hidden />
+                    </button>
+                  )}
+                  <button
+                    ref={compareButton}
+                    type="button"
+                    className={cn(iconButton, "sm:w-auto sm:gap-2 sm:px-3")}
+                    aria-label="Compare with the original"
+                    aria-pressed={comparing}
+                    data-action="compare"
+                    onClick={toggleCompare}
+                  >
+                    <SquareSplitHorizontal size={20} strokeWidth={1.5} aria-hidden />
+                    <span aria-hidden className="hidden text-sm sm:inline">
+                      Compare
+                    </span>
+                  </button>
+                </>
+              ) : undefined
+            }
+            trailing={soundSwitch}
+          />
+        </div>
+      )}
+      {soundSwitch && !bar && <div className="mb-2 flex justify-end">{soundSwitch}</div>}
+      {/* Always present when a compare is offered, so its one line is announced when it appears;
+          empty, it takes back the column's gap. */}
+      {wipeable && (
+        <p aria-live="polite" className="text-fg-muted text-sm empty:-mt-2">
+          {compareFailed ? "The original does not play in this browser." : ""}
+        </p>
+      )}
     </div>
   );
 }
 
+const loadCompare = () => import("./compare/picture-compare");
+type CompareModule = Awaited<ReturnType<typeof loadCompare>>;
+
+// A pressed toggle (Mute, Compare, Actual pixels) keeps the hover fill: one step, so on or off reads
+// without a second icon.
 const iconButton =
-  "flex size-11 shrink-0 items-center justify-center rounded-md text-fg hover:bg-bg-subtle focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 disabled:opacity-50";
+  "flex size-11 shrink-0 items-center justify-center rounded-md text-fg hover:bg-bg-subtle aria-pressed:bg-bg-subtle aria-pressed:text-fg focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 disabled:opacity-50";
 
 /**
  * Play or pause, time, seek and mute for the preview. It is rendered with the picture from the first
@@ -140,9 +286,22 @@ const iconButton =
 function PlaybackBar({
   video,
   src,
+  extra,
+  trailing,
+  playRef,
 }: {
   video: RefObject<HTMLVideoElement | null>;
   src: string | undefined;
+  /** The Play button, for moving focus to it (a Compare button that goes away). */
+  playRef?: RefObject<HTMLButtonElement | null>;
+  /** Buttons before Mute (Compare and its zoom on a result). */
+  extra?: ReactNode;
+  /**
+   * After Mute: the sound switch. One element in one place, placed by CSS: its own right-aligned row
+   * under the bar below 640 px (the bar's gap above, more below), in the bar row from 640 px. A
+   * phone turned to landscape crosses 640 px mid-play; nothing remounts, so the side heard stays.
+   */
+  trailing?: ReactNode;
 }) {
   const [playing, setPlaying] = useState(false);
   const [time, setTime] = useState(0);
@@ -189,8 +348,9 @@ function PlaybackBar({
 
   const ready = duration > 0;
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-wrap items-center gap-2">
       <button
+        ref={playRef}
         type="button"
         className={iconButton}
         disabled={!ready}
@@ -248,6 +408,7 @@ function PlaybackBar({
           }}
         />
       </div>
+      {extra}
       <button
         type="button"
         className={iconButton}
@@ -265,6 +426,9 @@ function PlaybackBar({
           <Volume2 size={20} strokeWidth={1.5} aria-hidden />
         )}
       </button>
+      {trailing && (
+        <div className="mb-2 flex basis-full justify-end sm:mb-0 sm:basis-auto">{trailing}</div>
+      )}
     </div>
   );
 }

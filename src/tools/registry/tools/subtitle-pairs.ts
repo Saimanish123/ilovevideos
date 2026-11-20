@@ -115,7 +115,7 @@ const specs: SubtitlePairSpec[] = [
     what: "Turns an SRT file into an ASS script you can style: the result has a [Script Info] section, one Default style (Arial, 16 points on a 384×288 script, white text with a thin black outline, bottom centre) and one Dialogue line per cue. Italic, bold and underline tags become ASS override tags, line breaks become \\N, and a cue marked {\\an8} keeps its place at the top.",
     story: [
       "Convert to ASS when the subtitles need a look SRT cannot give them: a font of your choice, a box behind the text, a colour per speaker, or signs placed where they belong. Open the result in an editor such as Aegisub, change the Default style once, and every line follows.",
-      "ASS is also what libass draws when subtitles are burned into the picture, with the style's font, size and outline applied, so styling the file first decides exactly how burned text looks. [Add subtitles to a video](/add-subtitles-to-video) can burn it in or keep it as a track viewers switch on.",
+      "ASS is also the format drawn when subtitles are burned into the picture, with the style's font, size and outline applied, so styling the file first decides exactly how burned text looks. [Add subtitles to a video](/add-subtitles-to-video) can burn it in or keep it as a track viewers switch on.",
       "ASS keeps time in hundredths of a second, so SRT times are rounded to the nearest hundredth: 00:00:01,235 becomes 0:00:01.24. A cue that would round to no length at all keeps one hundredth, so no line disappears. Colour tags such as <font color> are not carried over; set colours in the style instead.",
     ],
     faq: [

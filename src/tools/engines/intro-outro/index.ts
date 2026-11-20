@@ -233,7 +233,7 @@ export const introOutroEngine: Engine<IntroOutroOptions> = {
     if (!(await canEncodeAvc(size.width, size.height)))
       throw new EngineError(
         "unsupported-output",
-        `This browser's H.264 encoder cannot make a ${formatDimensions(size.width, size.height)} video.`,
+        `This browser cannot write a ${formatDimensions(size.width, size.height)} H.264 video.`,
         "Make the video smaller with compress video first, or try desktop Chrome, Edge or Safari.",
       );
     const fps = v.fps > 0 && Number.isFinite(v.fps) ? v.fps : 30;

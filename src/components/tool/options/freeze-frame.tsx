@@ -34,6 +34,7 @@ import { PLAY_SHORTCUT } from "../shortcuts";
 import { nativeOnly } from "./native-only";
 import { pictureSize } from "./picture-size";
 import type { OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 const lengths = [
   { value: "1", label: "1 s" },
@@ -107,6 +108,8 @@ function selectedHold(holds: Hold[], here: number): number {
 export const freezeFrameSpec: OptionsSpec<FreezeOptions> = {
   verb: "Freeze",
   previewResult: true,
+  // A held frame shifts the rest of the timeline (ADR-0134).
+  compare: false,
   batch: false,
   nextStep: { slug: "trim-video", label: "Trim the result" },
   shortcuts: [
@@ -127,7 +130,7 @@ export const freezeFrameSpec: OptionsSpec<FreezeOptions> = {
     };
   },
   blocked: (o, info) => {
-    if (!info.video) return "This file has no picture to freeze.";
+    if (!info.video) return unfixable("This file has no picture to freeze. Choose a video file.");
     const native = nativeOnly(info);
     if (native) return native;
     if (o.holds.length === 0) return "Add a hold first: choose a frame and press Add hold.";

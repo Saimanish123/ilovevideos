@@ -20,12 +20,11 @@ export const hevcToH264: ToolInput = {
   related: ["mov-to-mp4", "change-video-codec", "h264-to-hevc", "video-info", "compress-video"],
   updatedAt: "2026-10-08",
   icon: "binary",
-  illustration: "codec",
+  illustration: "codec-pair:hevc:h264",
   content: {
     en: {
       title: "Convert HEVC to H.264",
-      subtitle:
-        "Re-encode an HEVC (H.265) video as H.264 so it plays and edits everywhere. Runs in your browser.",
+      subtitle: "Make an HEVC video play and edit everywhere.",
       metaTitle: "HEVC to H.264 converter, free, no upload",
       metaDescription:
         "Turn HEVC (H.265) video from an iPhone, a drone or a camera into H.264 that every player and editor opens. The sound is copied. Free, on your device.",

@@ -20,11 +20,11 @@ export const changeSubtitleFrameRate: ToolInput = {
   related: ["shift-subtitle-timing", "fix-subtitle-overlaps", "video-info"],
   updatedAt: "2026-09-30",
   icon: "gauge",
+  illustration: "subtitle-frame-rate",
   content: {
     en: {
       title: "Change subtitle frame rate",
-      subtitle:
-        "Re-time subtitles made for 23.976 fps to play with a 25 fps video, or back. Runs in your browser.",
+      subtitle: "For subtitles that drift further out of sync as it plays.",
       metaTitle: "Change subtitle frame rate: 23.976 to 25 fps",
       metaDescription:
         "Re-time subtitles that drift further out of sync as the video plays: SRT, WebVTT, ASS or SBV between 23.976, 24, 25, 29.97 and 30 fps. No upload.",

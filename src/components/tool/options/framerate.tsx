@@ -29,6 +29,7 @@ import {
 import { type Choice, Choices } from "./choices";
 import { pictureSize, sizeNote } from "./picture-size";
 import type { OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 const sourceFps = (info: MediaInfo) => info.video?.fps ?? 0;
 
@@ -54,7 +55,7 @@ export const framerateSpec: OptionsSpec<FramerateOptions> = {
   route: (_o, info, fileName) => (needsFfmpeg(info, fileName) ? "page" : "worker"),
   blocked: (o, info) => {
     const v = info.video;
-    if (!v) return "This file has no video track.";
+    if (!v) return unfixable("This file has no video track. Choose a video file.");
     if (presetsBelow(v.fps).length === 0 && !lowersRate(v.fps, o.fps))
       return {
         reason: `This video is ${formatFps(v.fps)}, already at or below the lowest rate this tool writes. Raising it would only repeat frames.`,
@@ -70,7 +71,7 @@ export const framerateSpec: OptionsSpec<FramerateOptions> = {
     const est = pictureEstimate(info, v, o.fps);
     const to = pictureContainer(sourceName(info));
     const out = pictureSize(info);
-    return `Output ${formatDimensions(out.width, out.height)} at ${formatFps(o.fps)}, ${est.label}.${sizeNote(info)} The picture is re-encoded to H.264; frames are dropped, never blended. ${soundLine(needsFfmpeg(info, sourceName(info)) ? "encode" : soundPlan(info, to))}${containerNote(info)} Runs on this device.`;
+    return `Output ${formatDimensions(out.width, out.height)} at ${formatFps(o.fps)}, ${est.label}.${sizeNote(info)} The picture is re-encoded to H.264; frames are dropped, never blended. ${soundLine(needsFfmpeg(info, sourceName(info)) ? "encode" : soundPlan(info, to))}${containerNote(info)}`;
   },
   result: (o, info) => {
     const v = info.video;

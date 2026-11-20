@@ -27,8 +27,10 @@ import {
   widthPresets,
 } from "@/tools/engines/video-to-gif/math";
 import { PLAY_SHORTCUT, useWorkspaceKeys } from "../shortcuts";
+import { z } from "./remember-schema";
 import { TimeInput } from "./trim";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 /**
  * UI-only fields (the engine's schema drops them): `sampled`, bytes per pixel of one frame of this
@@ -74,6 +76,20 @@ export const animatedImageSpec: OptionsSpec<Options> = {
     { keys: "← →", label: "Move a focused handle one frame" },
     { keys: "Shift ← →", label: "Move a focused handle one second" },
   ],
+  remember: {
+    schema: z.object({
+      fps: z.int().check(z.minimum(5), z.maximum(30)),
+      width: z.union([
+        z.literal("original"),
+        z.literal(720),
+        z.literal(480),
+        z.literal(360),
+        z.literal(240),
+      ]),
+      quality: z.enum(["small", "balanced", "high"]),
+      loop: z.boolean(),
+    }),
+  },
   defaults: (info, preset) => {
     const format = (preset.format as AnimatedFormat | undefined) ?? "webp";
     return {
@@ -87,25 +103,29 @@ export const animatedImageSpec: OptionsSpec<Options> = {
   },
   blocked: (o, info) => {
     const name = FORMAT_NAME[o.format];
-    if (!info.video) return `This file has no video track to turn into an animated ${name}.`;
+    if (!info.video)
+      return unfixable(
+        `This file has no video track to turn into an animated ${name}. Choose a video file.`,
+      );
     if (info.video.decodable === false)
       return {
         reason: `This browser cannot decode this video's ${info.video.codec.toUpperCase()} picture. Convert it to MP4 first.`,
         action: { slug: "video-converter", label: "Convert to MP4" },
+        fixable: false,
       };
     if (Math.round((o.end - o.start) * o.fps) < 1)
       return "The range is shorter than one frame at this frame rate. Widen it or raise the frame rate.";
     if (o.can === undefined) return `Checking whether this browser can make ${name}`;
     if (!o.can)
       return o.format === "avif"
-        ? "This browser has no AV1 encoder, which an animated AVIF needs. Try current Chrome, Edge or Safari on a Mac, or make an animated WebP."
+        ? "This browser cannot make animated AVIF. Try current Chrome, Edge or Safari on a Mac, or make an animated WebP."
         : `This browser cannot encode ${name} frames. Try current Chrome, Edge, Firefox or Safari.`;
     return undefined;
   },
   summary: (_o, info) => {
     if (!info.video) return undefined;
     // Size, frames and dimensions are the estimate block just above; this line adds only what it lacks.
-    return "No sound · on this device";
+    return "No sound";
   },
   result: (o) => ({ title: `Animated ${FORMAT_NAME[o.format]}`, before: false }),
   Below: AnimatedBelow,

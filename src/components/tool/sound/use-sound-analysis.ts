@@ -28,8 +28,9 @@ function subscribe(
   file: File,
   levels: boolean,
   listener: (s: SoundAnalysisState) => void,
+  speech = false,
 ): () => void {
-  const key = levels ? "levels" : "loudness";
+  const key = `${levels ? "levels" : "loudness"}${speech ? "+speech" : ""}`;
   let byKind = entries.get(file);
   if (!byKind) {
     byKind = new Map();
@@ -52,6 +53,7 @@ function subscribe(
       .then(({ analyzeInWorker }) =>
         analyzeInWorker(file, file.name, {
           levels,
+          speech,
           signal: created.controller.signal,
           onProgress: (ratio) => set({ status: "measuring", ratio }),
         }),
@@ -76,17 +78,18 @@ function subscribe(
 
 /**
  * Measures a file's sound in the analysis worker: loudness and true peak, plus the level every 10 ms
- * when `levels` is set. Measured once per file; stops when the file changes or nobody listens.
+ * when `levels` is set, and the speech probability every 32 ms when `speech` is set. Measured once per file; stops when the file changes or nobody listens.
  */
 export function useSoundAnalysis(
   file: File | undefined,
-  opts: { levels?: boolean } = {},
+  opts: { levels?: boolean; speech?: boolean } = {},
 ): SoundAnalysisState {
   const [state, setState] = useState<SoundAnalysisState>({ status: "measuring", ratio: 0 });
   const levels = opts.levels === true;
+  const speech = opts.speech === true;
   useEffect(() => {
     if (!file) return;
-    return subscribe(file, levels, setState);
-  }, [file, levels]);
+    return subscribe(file, levels, setState, speech);
+  }, [file, levels, speech]);
   return state;
 }

@@ -102,10 +102,24 @@ export function findPauses(levels: Float32Array, o: SilenceOptions): Span[] {
  */
 export function silenceCuts(levels: Float32Array, o: SilenceOptions, duration: number): Span[] {
   const end = Math.min(duration, levels.length * WINDOW_SEC);
-  return findPauses(levels, o)
+  return cutsFromPauses(findPauses(levels, o), o.padding, duration, end);
+}
+
+/**
+ * Pauses (from levels or from speech, ./speech) to cuts: each pause minus `padding` at both ends; a
+ * pause at the very start or end (reaching `end`, the end of the measured sound) keeps padding only
+ * on its inner side. Clamped to `duration`; cuts shorter than 50 ms are dropped.
+ */
+export function cutsFromPauses(
+  pauses: readonly Span[],
+  padding: number,
+  duration: number,
+  end = duration,
+): Span[] {
+  return pauses
     .map((p) => ({
-      start: p.start <= 1e-9 ? 0 : p.start + o.padding,
-      end: p.end >= end - 1e-9 ? duration : p.end - o.padding,
+      start: p.start <= 1e-9 ? 0 : p.start + padding,
+      end: p.end >= end - 1e-9 ? duration : p.end - padding,
     }))
     .map((c) => ({ start: Math.max(0, c.start), end: Math.min(duration, c.end) }))
     .filter((c) => c.end - c.start >= MIN_CUT_SEC);

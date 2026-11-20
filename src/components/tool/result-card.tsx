@@ -1,13 +1,14 @@
 "use client";
 
 import { ArrowRight, Check, Minus } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { formatBytes, formatPercentChange } from "@/lib/format";
 import { setHandoff } from "@/lib/handoff";
 import { Link } from "@/lib/i18n/navigation";
 import { FileName } from "./file-card";
 import type { NextStepLink, ResultVerdict } from "./options/types";
+import { thenStepsFor, useThenContext } from "./then-steps";
 
 /** Result with real before → after numbers (design system §8.6). Download is the only primary. */
 export function ResultCard({
@@ -28,6 +29,10 @@ export function ResultCard({
   filename: string;
   beforeBytes: number;
   meta?: string;
+  /**
+   * The equivalent ffmpeg command, kept as a record for tests and support: an attribute on the card,
+   * never shown (owner, 2026-11-19).
+   */
   ffmpegCommand?: string;
   onStartOver: () => void;
   /** The tool's own verdict (spec.result): replaces "Done" with the job's outcome. */
@@ -62,9 +67,10 @@ export function ResultCard({
       ? ""
       : formatPercentChange(beforeBytes, blob.size);
 
+  // The result arrives in parts, 30 ms apart (ADR-0157): verdict, file, actions, then "Then".
   return (
-    <div className="flex flex-col gap-5">
-      <div className="flex items-start gap-3">
+    <div className="flex flex-col gap-5" data-ffmpeg-command={ffmpegCommand}>
+      <div className="arrive flex items-start gap-3">
         <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-fg text-bg-raised">
           {verdict?.missed ? (
             <Minus size={16} strokeWidth={1.5} aria-hidden />
@@ -89,7 +95,7 @@ export function ResultCard({
           {verdict?.detail && <p className="mt-2 text-sm">{verdict.detail}</p>}
         </div>
       </div>
-      <div className="rounded-md bg-bg-subtle px-4 py-3 text-sm">
+      <div className="arrive arrive-1 rounded-md bg-bg-subtle px-4 py-3 text-sm">
         <FileName name={filename} />
       </div>
       {url && audioPreview && blob.type.startsWith("audio/") && (
@@ -99,12 +105,12 @@ export function ResultCard({
           preload="metadata"
           src={url}
           aria-label={`Preview of ${filename}`}
-          className="w-full"
+          className="arrive arrive-1 w-full"
         />
       )}
       {/* One column at every width: the primary keeps the full-width slot the run button had, and the
           two quiet ways back sit under it instead of wrapping into a ragged row. */}
-      <div className="flex flex-col gap-3">
+      <div className="arrive arrive-2 flex flex-col gap-3">
         {url ? (
           <a
             href={url}
@@ -133,28 +139,54 @@ export function ResultCard({
           Start over
         </Button>
       </div>
-      {nextStep && (
-        <NextStep
-          slug={nextStep.slug}
-          label={nextStep.label}
-          file={
-            nextStep.with === "source"
-              ? sourceFile
-              : new File([blob], filename, { type: blob.type })
-          }
-        />
-      )}
-      {ffmpegCommand && (
-        <details className="text-sm">
-          <summary className="flex min-h-11 cursor-pointer items-center text-fg-muted hover:text-fg">
-            The same operation with ffmpeg
-          </summary>
-          <pre className="mt-2 overflow-x-auto rounded-md bg-bg-subtle p-3 font-mono text-xs">
-            {ffmpegCommand}
-          </pre>
-        </details>
-      )}
+      <ThenRow
+        nextStep={nextStep}
+        missed={verdict?.missed === true}
+        result={() => new File([blob], filename, { type: blob.type })}
+        source={sourceFile}
+      />
     </div>
+  );
+}
+
+/**
+ * "Then" under a result (ADR-0126): the page's own next step (spec.nextStep) and up to two more from
+ * the registry for this kind of file, each handing the file on. One quiet list of links; Download
+ * stays the only primary. Shared with the multi-file result. `result` is made only when a link is
+ * followed, so the row costs nothing until then.
+ */
+export function ThenRow({
+  nextStep,
+  missed,
+  result,
+  source,
+}: {
+  nextStep?: NextStepLink;
+  missed: boolean;
+  result: () => File | undefined;
+  source?: File;
+}) {
+  const steps = thenStepsFor(nextStep, useThenContext(), missed);
+  const label = useId();
+  if (steps.length === 0) return null;
+  return (
+    // Arrives last, after the result it follows from (ADR-0157).
+    <nav aria-labelledby={label} className="arrive arrive-4 flex flex-col">
+      <p id={label} className="text-fg-muted text-sm">
+        Then
+      </p>
+      <ul className="flex flex-col">
+        {steps.map((s) => (
+          <li key={s.slug}>
+            <NextStep
+              slug={s.slug}
+              label={s.label}
+              file={s.with === "source" ? () => source : result}
+            />
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }
 
@@ -162,11 +194,27 @@ export function ResultCard({
  * One link to the tool most people use next (spec.nextStep). Shared with the multi-file result.
  * With `file`, the link hands that output to the next tool, which opens with it already loaded.
  */
-export function NextStep({ slug, label, file }: { slug: string; label: string; file?: File }) {
+export function NextStep({
+  slug,
+  label,
+  file,
+}: {
+  slug: string;
+  label: string;
+  /** The file to hand on, or a function that makes it when the link is followed. */
+  file?: File | (() => File | undefined);
+}) {
   return (
     <Link
       href={`/${slug}`}
-      onClick={file ? () => setHandoff(file) : undefined}
+      onClick={
+        file
+          ? () => {
+              const f = typeof file === "function" ? file() : file;
+              if (f) setHandoff(f);
+            }
+          : undefined
+      }
       className="inline-flex min-h-11 items-center gap-2 self-start rounded-sm text-sm underline decoration-1 underline-offset-3 focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2"
     >
       {label}

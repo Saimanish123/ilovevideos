@@ -35,12 +35,11 @@ export const adjustVideoBrightness: ToolInput = {
   ],
   updatedAt: "2026-10-01",
   icon: "sun",
-  illustration: "filter",
+  illustration: "brightness",
   content: {
     en: {
       title: "Adjust video brightness",
-      subtitle:
-        "Brighten a dark video and set contrast and saturation, previewed live. Runs in your browser.",
+      subtitle: "Brighten a dark video and adjust its colours.",
       metaTitle: "Brighten video online, free, no upload",
       metaDescription:
         "Fix a video that is too dark: brightness, contrast and saturation sliders with a live preview, then a new file with the sound copied. Free, on your device.",
@@ -55,7 +54,7 @@ export const adjustVideoBrightness: ToolInput = {
       goodToKnow: [
         "Brightness here lifts or deepens the midtones and leaves pure black and pure white where they are, like a gamma control. That is what a dark indoor clip needs: faces and rooms come up without the blacks turning grey or the window going flat white. At +100 the midtones are lifted as far as a gamma of 0.5; −100 is the same curve the other way.",
         "Contrast spreads or flattens the tones around mid grey: raising it deepens shadows and brightens highlights, and at high values the brightest and darkest details clip to pure white and black. Saturation sets how colourful the picture is, from −100 (black and white) to +100 (twice as saturated); skin turns orange quickly at high values, so small steps go a long way.",
-        "A correction cannot bring back what the camera did not record. Brightening a very dark clip also brightens its noise, which shows as grain and blocky patches in flat areas, and highlights that were already pure white stay white. Small corrections on a well-exposed clip look best.",
+        "A correction cannot bring back what the camera did not record. Brightening a very dark clip also brightens its noise, which shows as grain and blocky patches in flat areas, and highlights that were already pure white stay white. Small corrections on a well-exposed clip look best. If the picture is soft rather than dark, [sharpen video](/sharpen-video) instead.",
         "The preview applies the same numbers to the playing video that the encoder applies to every frame, so what you see is what you get; only different screens show it differently. The picture is re-encoded to H.264 and the sound is copied when the container holds it.",
         "For a ready-made look instead of sliders, try [add a filter to video](/add-filter-to-video); for grey tones, [black and white video](/black-and-white-video). If only part of the clip is too dark, cut that part out with [trim video](/trim-video) first, correct it, and join the pieces with [merge videos](/merge-videos).",
       ],

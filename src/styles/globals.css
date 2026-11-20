@@ -87,6 +87,13 @@ video[data-cue-style="outline"]::cue {
     font-variant-numeric: tabular-nums;
   }
   /*
+   * The header sticks to the top (h-14): focus moves, anchor jumps (#faq) and find-in-page stop
+   * below it, so nothing they bring into view sits under the header.
+   */
+  html {
+    scroll-padding-top: calc(var(--spacing) * 14);
+  }
+  /*
    * Below lg the tool action bar sticks to the bottom of the viewport. Focus moves and find-in-page
    * scroll stop above it, so a focused control or the frame counter never sits under the bar.
    */
@@ -117,5 +124,107 @@ video[data-cue-style="outline"]::cue {
       transition-duration: var(--duration-fast) !important;
       transition-property: opacity, background-color, color, border-color !important;
     }
+  }
+}
+
+/*
+ * Moving between pages (ADR-0153, ADR-0158). Same-document navigations run inside React's
+ * <ViewTransition> (app/[locale]/template.tsx, class "page"); full page loads between our own pages
+ * use the browser's cross-document transition. Either way: the header holds still, the old page
+ * dissolves on top at the fast duration, and the new page underneath plays its own entrance (enter-N).
+ * Opacity only, so reduced motion keeps it. Clicks pass through while it runs.
+ */
+@view-transition {
+  navigation: auto;
+}
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-group(*) {
+  animation-duration: var(--duration-fast);
+  animation-timing-function: var(--ease-out);
+}
+::view-transition-group(site-header) {
+  animation: none;
+  z-index: 1;
+}
+::view-transition-old(site-header) {
+  display: none;
+}
+::view-transition-new(site-header) {
+  animation: none;
+}
+::view-transition-old(root),
+::view-transition-old(.page) {
+  z-index: 1;
+  mix-blend-mode: normal;
+  animation: page-out var(--duration-fast) var(--ease-out) both;
+}
+::view-transition-new(root),
+::view-transition-new(.page) {
+  mix-blend-mode: normal;
+  animation: none;
+}
+/*
+ * A navigation started from the keyboard (Enter on a link, search's Enter, a history key) swaps at
+ * once (reveal.tsx); the new page's entrance is skipped too (enter-N in tokens.css).
+ */
+:root[data-keyed]::view-transition-old(root),
+:root[data-keyed]::view-transition-old(.page) {
+  animation: none;
+  display: none;
+}
+@keyframes page-out {
+  to {
+    opacity: 0;
+  }
+}
+
+/*
+ * Reveal once (ADR-0153, ADR-0157): a section below the fold, marked data-reveal, fades and rises in
+ * the first time it scrolls into view; data-reveal="group" staggers its first six children instead.
+ * reveal.tsx (one IntersectionObserver for the page) sets data-unseen only on what starts below the
+ * viewport, so nothing on screen ever hides, and without script nothing hides at all. Reached by the
+ * keyboard (Tab, Page Down, an anchor followed with Enter), it shows at once: data-reveal-now.
+ * With reduced motion the global rule leaves the fade, at the fast duration.
+ */
+[data-reveal]:not([data-reveal="group"]),
+[data-reveal="group"] > * {
+  transition:
+    opacity var(--duration-base) var(--ease-out),
+    translate var(--duration-base) var(--ease-out);
+}
+[data-reveal="group"] > :nth-child(2) {
+  transition-delay: var(--motion-step-group);
+}
+[data-reveal="group"] > :nth-child(3) {
+  transition-delay: calc(2 * var(--motion-step-group));
+}
+[data-reveal="group"] > :nth-child(4) {
+  transition-delay: calc(3 * var(--motion-step-group));
+}
+[data-reveal="group"] > :nth-child(5) {
+  transition-delay: calc(4 * var(--motion-step-group));
+}
+[data-reveal="group"] > :nth-child(n + 6) {
+  transition-delay: calc(5 * var(--motion-step-group));
+}
+[data-reveal][data-unseen]:not([data-reveal="group"]),
+[data-reveal="group"][data-unseen] > * {
+  opacity: 0;
+  translate: 0 var(--motion-rise);
+}
+[data-reveal-now]:not([data-reveal="group"]),
+[data-reveal-now][data-reveal="group"] > * {
+  transition-duration: 0s;
+  transition-delay: 0s;
+}
+/* Printed, every block shows, revealed or not. */
+@media print {
+  [data-reveal][data-unseen]:not([data-reveal="group"]),
+  [data-reveal="group"][data-unseen] > * {
+    opacity: 1;
+    translate: none;
+    transition: none;
   }
 }

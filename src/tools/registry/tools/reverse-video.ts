@@ -23,8 +23,7 @@ export const reverseVideo: ToolInput = {
   content: {
     en: {
       title: "Reverse a video",
-      subtitle:
-        "Make a video play backwards, with its sound reversed or removed. Runs in your browser.",
+      subtitle: "Make a video play backwards.",
       metaTitle: "Reverse video online, free, no upload",
       metaDescription:
         "Play a video backwards: every frame re-encoded last first, the sound reversed or removed. Memory stays bounded on long clips. Free, on your device.",
@@ -38,7 +37,7 @@ export const reverseVideo: ToolInput = {
       goodToKnow: [
         "A video file stores most frames as changes from the ones before, starting from a key frame. To play a section backwards its frames have to be decoded forwards from the key frame and then written in the opposite order, so a reverse takes about as long as a full re-encode. The picture is written as H.264 at the site's quality for re-encoded video; the size is estimated before you start.",
         "Memory stays bounded. Frames are decoded one key frame gap at a time, and a gap too long to hold in about 384 MB of raw frames is split into windows decoded from the key frame again. Screen recordings and some cameras put key frames many seconds apart; those take longer, and the panel says how much extra decoding a file needs. ffmpeg's own reverse filter keeps every frame of the clip in memory instead, which is why its documentation suggests trimming first.",
-        "Reversed sound is decoded whole, so it has a limit: about 17 minutes of 48 kHz stereo, a little more at 44.1 kHz. A longer clip can still be reversed, silent; the panel switches to Remove it and says why. Speech and music played backwards sound strange, as on tape, which is sometimes the point and sometimes not.",
+        "Reversed sound is decoded whole, so it has a limit: about 17 minutes of 48 kHz stereo, a little more at 44.1 kHz. A longer clip can still be reversed, silent; the panel switches to Remove it and says why. Speech and music played backwards sound strange, as on tape, which is sometimes the point and sometimes not. Reversing changes the order of time; to mirror the picture left to right instead, [flip the video](/flip-video).",
         "For a clip that goes forwards and then backwards in a loop, [boomerang video](/boomerang-video) makes that in one step. To slow a reversed moment down, run the result through [change video speed](/change-video-speed); to reverse only part of a video, cut that part out first with [trim video](/trim-video).",
         "Rotation, size and frame timing are kept: a portrait phone clip stays portrait, and each frame lasts as long as it did going forwards, so a variable frame rate recording keeps its rhythm in reverse.",
       ],

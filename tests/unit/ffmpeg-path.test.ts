@@ -190,7 +190,7 @@ Aborted()`),
     );
     expect(e.code).toBe("unsupported-output");
     expect(e.message).toBe(
-      "The Vorbis encoder does not accept this sound (96 kHz, stereo) with these settings.",
+      "This sound (96 kHz, stereo) cannot be written as Vorbis with these settings.",
     );
   });
 

@@ -2,8 +2,8 @@ import { execFileSync } from "node:child_process";
 import { mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
+import AxeBuilder from "./axe-builder";
 
 /**
  * Phase 2 video edits end to end: frame rate, codec, fast start, loop and boomerang, reverse, border,
@@ -429,8 +429,12 @@ test.describe("video edits: engines", () => {
     expect(luma(pixels(out, 1))).toBeGreaterThan(
       luma(pixels("tests/fixtures/sample.mp4", 1)) + 0.3,
     );
-    // The same picture as the shown command's power curve on the source (34.3 dB measured).
-    const command = (await workspace(page).locator("details pre").first().textContent()) ?? "";
+    // The same picture as the result's ffmpeg command's power curve on the source (34.3 dB measured).
+    const command =
+      (await workspace(page)
+        .locator("[data-ffmpeg-command]")
+        .first()
+        .getAttribute("data-ffmpeg-command")) ?? "";
     const vf = /-vf "([^"]+)"/.exec(command)?.[1]?.replace(/,format=yuv420p$/, "") ?? "null";
     const read = "scale=in_color_matrix=auto:in_range=auto,format=gbrp";
     const log = execFileSync(

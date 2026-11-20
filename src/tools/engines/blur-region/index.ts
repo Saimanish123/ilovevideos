@@ -49,7 +49,7 @@ export const blurRegionEngine: Engine<BlurRegionOptions> = {
     if (!hasWebgl2())
       throw new EngineError(
         "unsupported-output",
-        "This browser cannot draw video frames with WebGL 2 in the background.",
+        "This browser cannot draw this effect on the video.",
         "Try desktop Chrome, Edge or Firefox, or Safari 17 or newer.",
       );
     const regions = o.regions.slice(0, MAX_REGIONS);
@@ -64,7 +64,7 @@ export const blurRegionEngine: Engine<BlurRegionOptions> = {
         if (!renderer)
           throw new EngineError(
             "unsupported-output",
-            "This browser cannot draw video frames with WebGL 2 in the background.",
+            "This browser cannot draw this effect on the video.",
             "Try desktop Chrome, Edge or Firefox, or Safari 17 or newer.",
           );
         return {

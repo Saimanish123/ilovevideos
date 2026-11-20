@@ -81,6 +81,8 @@ export const subtitlesConvertSpec: OptionsSpec<O> = {
   inspect: inspectSubtitles,
   Hero: SubtitleHero,
   previewResult: true,
+  // A text file: nothing to play side by side (ADR-0134).
+  compare: false,
   nextStep: { slug: "add-subtitles-to-video", label: "Add subtitles to a video" },
   defaults: (info, preset) => {
     const job = isJob(preset.job) ? preset.job : "convert";
@@ -141,14 +143,13 @@ export const subtitlesConvertSpec: OptionsSpec<O> = {
     const edit = applyEdits(doc, o);
     const n = count(edit.doc.cues.length);
     const to = formatNames[targetOf(o, doc)];
-    if (o.job === "shift")
-      return `${n} move ${offsetLabel(edit.shift)}. Written as ${to}. Runs on this device.`;
+    if (o.job === "shift") return `${n} move ${offsetLabel(edit.shift)}. Written as ${to}.`;
     if (o.job === "fps")
-      return `Every time is multiplied by ${ratio(o).toFixed(4)}. Written as ${to}. Runs on this device.`;
+      return `Every time is multiplied by ${ratio(o).toFixed(4)}. Written as ${to}.`;
     if (o.job === "fix")
-      return `${count(fixTotal(edit.fixReport ?? emptyReport), "change", "changes")}, ${n} written as ${to}. Runs on this device.`;
+      return `${count(fixTotal(edit.fixReport ?? emptyReport), "change", "changes")}, ${n} written as ${to}.`;
     const lost = conversionNotes(doc, targetOf(o, doc)).lost.length;
-    return `${n} to ${to}, ${lost === 0 ? "nothing lost" : `${count(lost, "kind of detail", "kinds of detail")} dropped (listed above)`}. Runs on this device.`;
+    return `${n} to ${to}, ${lost === 0 ? "nothing lost" : `${count(lost, "kind of detail", "kinds of detail")} dropped (listed above)`}.`;
   },
   result: (o, info) => {
     const doc = docFor(info);

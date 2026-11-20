@@ -111,9 +111,32 @@ async function immutable(event) {
   // Whole responses only: a range request's 206 would be a fragment.
   if (response.status === 200 && response.type === "basic") {
     const copy = response.clone();
-    event.waitUntil(cache.put(event.request, copy).then(() => trim(STATIC, MAX_STATIC)));
+    event.waitUntil(
+      storeWhole(cache, event.request, copy)
+        .then(() => trim(STATIC, MAX_STATIC))
+        .catch(() => undefined),
+    );
   }
   return response;
+}
+
+/**
+ * Stores a response only when its body arrived whole (ADR-0147): a connection that drops can end
+ * a body early without an error, and a cut-off ffmpeg core kept here failed on every later visit.
+ * Bodies sent compressed are compared after decoding, so their length is not checked.
+ */
+async function storeWhole(cache, request, response) {
+  const declared = Number(response.headers.get("content-length"));
+  const body = await response.blob();
+  if (!response.headers.get("content-encoding") && declared > 0 && body.size !== declared) return;
+  await cache.put(
+    request,
+    new Response(body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers: response.headers,
+    }),
+  );
 }
 
 // The chooser's kinds (components/share/share-chooser.tsx `kindOf`), so /share renders the right
@@ -169,7 +192,17 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(page(event));
     return;
   }
-  if (url.pathname.startsWith("/_next/static/") || url.pathname.startsWith("/wasm/")) {
+  if (
+    url.pathname.startsWith("/_next/static/") ||
+    url.pathname.startsWith("/wasm/") ||
+    // The speech models (ADR-0111): versioned file names, so a tool used once works offline.
+    url.pathname.startsWith("/models/rnnoise/") ||
+    url.pathname.startsWith("/models/silero-vad/") ||
+    // The person models (ADR-0118): the version is in the path.
+    url.pathname.startsWith("/models/selfie-segmenter/") ||
+    // The face model (ADR-0113): the version is in the file name.
+    url.pathname.startsWith("/models/yunet/")
+  ) {
     event.respondWith(immutable(event));
   }
 });

@@ -283,7 +283,7 @@ test.describe("audio fixes in WebKit", () => {
     // Either the file or a specific failure, well inside the stall watchdog's 15 s plus the job.
     const done = page
       .getByRole("link", { name: "Download" })
-      .or(page.getByText(/stopped returning frames|cannot encode H\.264/));
+      .or(page.getByText(/with no progress for|cannot encode H\.264/));
     await expect(done.first()).toBeVisible({ timeout: 60_000 });
     expect(Date.now() - t0).toBeLessThan(60_000);
     const out = await download(page, /-cut\.mp4$/);

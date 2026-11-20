@@ -40,6 +40,7 @@ const loaders: Partial<Record<EngineId, () => Promise<AnyEngine>>> = {
   pitch: () => import("./pitch").then((m) => m.pitchEngine),
   "audio-analyze": () => import("./audio-analyze").then((m) => m.audioAnalyzeEngine),
   ringtone: () => import("./ringtone").then((m) => m.ringtoneEngine),
+  "speech-denoise": () => import("./speech-denoise").then((m) => m.speechDenoiseEngine),
   "join-audio": () => import("./join-audio").then((m) => m.joinAudioEngine),
   framerate: () => import("./framerate").then((m) => m.framerateEngine),
   codec: () => import("./codec").then((m) => m.codecEngine),
@@ -67,6 +68,7 @@ const loaders: Partial<Record<EngineId, () => Promise<AnyEngine>>> = {
   "blur-region": () => import("./blur-region").then((m) => m.blurRegionEngine),
   "image-overlay": () => import("./image-overlay").then((m) => m.imageOverlayEngine),
   "chroma-key": () => import("./chroma-key").then((m) => m.chromaKeyEngine),
+  "portrait-matte": () => import("./portrait-matte").then((m) => m.portraitMatteEngine),
   // Time and layout (round 3, builder C).
   // Picture quality (round 3, builder D).
   clarity: () => import("./clarity").then((m) => m.clarityEngine),

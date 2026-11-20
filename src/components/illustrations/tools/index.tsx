@@ -1,11 +1,17 @@
-import type { SVGProps } from "react";
+import type { ComponentType, SVGProps } from "react";
 import type { EngineId } from "@/tools/registry/schema";
 import { audioToolIllustrations } from "./audio-tools";
+import { backgroundIllustrations } from "./background";
 import { captureIllustrations } from "./capture";
+import { sizeFamilyIllustrations } from "./families-size";
 import { framesFilesIllustrations } from "./frames-files";
 import { framesTextIllustrations } from "./frames-text";
+import { mediaPairIllustrations } from "./pairs-media";
+import { soundPairIllustrations } from "./pairs-sound";
 import { pictureQualityIllustrations } from "./picture-quality";
 import { regionsLayersIllustrations } from "./regions-layers";
+import { siblingIllustrations } from "./siblings";
+import { speechIllustrations } from "./speech";
 import { textTimeIllustrations } from "./text-time";
 import { timeLayoutIllustrations } from "./time-layout";
 import { videoEditIllustrations } from "./video-edits";
@@ -546,11 +552,14 @@ export const illustrations = {
   ...framesTextIllustrations,
   ...framesFilesIllustrations,
   ...regionsLayersIllustrations,
+  ...backgroundIllustrations,
   ...textTimeIllustrations,
   ...timeLayoutIllustrations,
   ...pictureQualityIllustrations,
   ...captureIllustrations,
   ...audioToolIllustrations,
+  ...speechIllustrations,
+  ...siblingIllustrations,
   "trim-audio": TrimAudioIllustration,
   "audio-speed": AudioSpeedIllustration,
 } as const;
@@ -610,6 +619,7 @@ export const engineIllustrations: Partial<Record<EngineId, IllustrationId>> = {
   "blur-region": "blur",
   "image-overlay": "image-overlay",
   "chroma-key": "green-screen",
+  "portrait-matte": "background-replace",
   clarity: "sharpen",
   stabilize: "stabilize",
   bitrate: "bitrate",
@@ -624,19 +634,58 @@ export const engineIllustrations: Partial<Record<EngineId, IllustrationId>> = {
   "audio-analyze": "key-bpm",
   "join-audio": "merge-audio",
   ringtone: "ringtone",
+  "speech-denoise": "speech-denoise",
 };
+
+/**
+ * Family illustrations: one drawing per generated page, keyed `<family>:<arg>[:<arg>…]` in the
+ * registry's `illustration` field (for example `video-pair:mov:mp4`, `compress-cap:8`). The family
+ * component draws the args (format names, sizes, ratios) with the stroke alphabet in ./glyphs, so
+ * every page in a family gets its own picture without a hand-drawn file per page.
+ */
+export type FamilyIllustration = ComponentType<Props & { args: string[] }>;
+
+export const familyIllustrations: Record<string, FamilyIllustration> = {
+  ...mediaPairIllustrations,
+  ...soundPairIllustrations,
+  ...sizeFamilyIllustrations,
+};
+
+type StaticIllustrationId = keyof typeof illustrations;
+export type IllustrationId = StaticIllustrationId | `${string}:${string}`;
+
+function familyOf(id: string): { family: FamilyIllustration; args: string[] } | undefined {
+  const [name, ...args] = id.split(":");
+  const family = name ? familyIllustrations[name] : undefined;
+  return family && args.length > 0 ? { family, args } : undefined;
+}
 
 export function resolveIllustration(
   engine: EngineId,
   override?: string,
 ): IllustrationId | undefined {
-  if (override && override in illustrations) return override as IllustrationId;
+  if (override && (override in illustrations || familyOf(override))) {
+    return override as IllustrationId;
+  }
   return engineIllustrations[engine];
 }
 
-export type IllustrationId = keyof typeof illustrations;
+/** The component that draws `id`, with a family's args bound, for cards, OG images and tests. */
+export function illustrationComponent(id: IllustrationId): ComponentType<Props> {
+  if (id in illustrations) return illustrations[id as StaticIllustrationId];
+  const f = familyOf(id);
+  if (!f) throw new Error(`Unknown illustration ${id}`);
+  const { family: Family, args } = f;
+  return function BoundFamilyIllustration(props: Props) {
+    return <Family {...props} args={args} />;
+  };
+}
 
 export function ToolIllustration({ id, ...props }: { id: IllustrationId } & Props) {
-  const C = illustrations[id];
-  return <C {...props} />;
+  if (id in illustrations) {
+    const C = illustrations[id as StaticIllustrationId];
+    return <C {...props} />;
+  }
+  const f = familyOf(id);
+  return f ? <f.family {...props} args={f.args} /> : null;
 }

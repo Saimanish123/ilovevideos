@@ -44,7 +44,7 @@ export async function addSubtitlesWithFfmpeg(
 
   if (plan.mode === "soft") {
     if (plan.backend !== "ffmpeg")
-      throw new EngineError("internal", "This file is handled in the worker.", "Try again.");
+      throw new EngineError("internal", "This file could not be processed.", "Try again.");
     const as = plan.codec === "ass" ? "ass" : plan.codec === "webvtt" ? "vtt" : "srt";
     const subPath = `subs.${as}`;
     const lang =
@@ -99,7 +99,7 @@ export async function addSubtitlesWithFfmpeg(
   }
 
   if (plan.renderer !== "libass")
-    throw new EngineError("internal", "This file is handled in the worker.", "Try again.");
+    throw new EngineError("internal", "This file could not be processed.", "Try again.");
   if (missing !== undefined)
     throw new EngineError(
       "unsupported-input",

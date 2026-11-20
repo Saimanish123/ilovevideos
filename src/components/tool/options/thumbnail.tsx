@@ -23,6 +23,7 @@ import type { FramePickOptions } from "@/tools/engines/frame-pick/options";
 import type { MediaInfo } from "@/tools/engines/types";
 import { PLAY_SHORTCUT } from "../shortcuts";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 /**
  * The thumbnail maker (frame-pick engine under the `thumbnail` id, ADR-0098). The picture carries a
@@ -102,7 +103,8 @@ export const thumbnailSpec: OptionsSpec<O> = {
     });
   },
   blocked: (_o, info) => {
-    if (!info.video) return "This file has no picture to make a thumbnail from.";
+    if (!info.video)
+      return unfixable("This file has no picture to make a thumbnail from. Choose a video file.");
     if (info.video.decodable === false)
       return {
         reason: "This browser cannot decode this video's picture. Convert it to MP4 first.",
@@ -121,7 +123,7 @@ export const thumbnailSpec: OptionsSpec<O> = {
       k > 1.05
         ? `enlarged ${k.toFixed(1)}× from ${formatDimensions(cw, ch)}, so soft`
         : `from ${formatDimensions(cw, ch)}`;
-    return `${imageLabel[o.format]} ${formatDimensions(out.width, out.height)} · ${scale} · on this device`;
+    return `${imageLabel[o.format]} ${formatDimensions(out.width, out.height)} · ${scale}`;
   },
   result: () => {
     return {

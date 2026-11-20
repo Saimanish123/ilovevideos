@@ -2,8 +2,8 @@ import { execFileSync, spawnSync } from "node:child_process";
 import { mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
+import AxeBuilder from "./axe-builder";
 import { soundCheck } from "./sound";
 
 /**
@@ -264,7 +264,7 @@ test.describe("audio tools", () => {
     });
     await pick(page, "OGG");
     await expect(
-      page.getByText(/re-encoded to Vorbis at 192\skbps with the ffmpeg engine/),
+      page.getByText(/re-encoded to Vorbis at 192\skbps, after a one-time download of/),
     ).toBeVisible();
     await page.getByRole("button", { name: "Convert", exact: true }).click();
     const ogg = await download(page, { ext: /\.ogg$/, mime: /^audio\/ogg/ });
@@ -310,7 +310,7 @@ test.describe("audio tools", () => {
     expect(Number(a?.bit_rate)).toBe(320_000);
     expect(Number(out.format.duration)).toBeCloseTo(4, 0);
     await expect(page.getByText(/^Converted to MP3: 0:04 at 320\skbps/)).toBeVisible();
-    await expect(page.getByText("The same operation with ffmpeg")).toBeVisible();
+    await expect(page.getByText("The same operation with ffmpeg")).toHaveCount(0);
     expect(uploads).toEqual([]);
   });
 

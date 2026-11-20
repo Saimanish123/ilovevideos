@@ -7,6 +7,7 @@ import {
   audioSources,
 } from "@/content/formats/audio";
 import { type AudioProfileId, audioProfiles } from "@/content/formats/audio-profiles";
+import { ffmpegDownloadSize } from "@/tools/engines/ffmpeg/size";
 import type { FaqItem, ToolInput } from "./schema";
 
 /**
@@ -43,8 +44,8 @@ const sourceCodec: Record<AudioProfileId, { codec: string; lossless: boolean }> 
 };
 
 const encoderName: Record<AudioFormatId, string> = {
-  mp3: "the LAME MP3 encoder",
-  m4a: "ffmpeg's AAC encoder",
+  mp3: "a standard MP3 encoder",
+  m4a: "an AAC encoder",
   wav: "16-bit PCM (24-bit when the source has it)",
   flac: "the FLAC encoder",
   ogg: "the Vorbis encoder",
@@ -84,8 +85,8 @@ export function audioPairTool(spec: AudioPairSpec): ToolInput {
   const engine = native
     ? "It runs on the browser's own media engine, streaming through the file, so nothing extra is downloaded."
     : read === "ffmpeg"
-      ? `Browsers cannot read ${from.name} themselves, so the conversion runs in ffmpeg compiled to WebAssembly, loaded once from this site and kept on your device.`
-      : `The encode runs in ffmpeg compiled to WebAssembly, loaded once from this site; the file never leaves your device.`;
+      ? `Browsers cannot read ${from.name} themselves, so the conversion needs a one-time download of about ${ffmpegDownloadSize()}, which your browser keeps.`
+      : `The encode needs a one-time download of about ${ffmpegDownloadSize()}, which your browser keeps.`;
   const what = to.lossless
     ? src.lossless
       ? `This page converts ${from.name} to ${to.name} without losing anything: the ${src.codec} audio is decoded to its exact samples and written as ${encoderName[spec.to]}, keeping the sample rate and channels. ${engine}`
@@ -111,11 +112,13 @@ export function audioPairTool(spec: AudioPairSpec): ToolInput {
     related: [...new Set([...(spec.related ?? []), "audio-converter", "extract-audio-from-video"])],
     updatedAt: spec.updatedAt,
     icon: "audio-lines",
-    illustration: "convert-audio",
+    illustration: `audio-pair:${spec.from}:${spec.to}`,
     content: {
       en: {
         title: `Convert ${from.name} to ${to.name}`,
-        subtitle: `Turn ${from.name} files into ${to.name} in your browser. Nothing is uploaded.`,
+        subtitle: to.lossless
+          ? `Your ${from.name} kept sample for sample, with nothing more lost.`
+          : `Your ${from.name} at the quality you choose, with its tags kept.`,
         metaTitle: `${from.name} to ${to.name} converter online, free, no upload`,
         metaDescription: to.lossless
           ? `Convert ${from.name} to ${to.name} in your browser without uploading. Sample rate and bit depth are kept. Free, no account, no watermark.`
@@ -196,10 +199,11 @@ export function videoAudioPairTool(spec: VideoAudioPairSpec): ToolInput {
     related: [...new Set([...(spec.related ?? []), "extract-audio-from-video", "audio-converter"])],
     updatedAt: spec.updatedAt,
     icon: "music",
+    illustration: `video-audio-pair:${from.id}:${spec.to}`,
     content: {
       en: {
         title: `Convert ${from.name} to ${to.name}`,
-        subtitle: `Save the sound of ${withArticle(from.name)} video as ${to.name}, in your browser. Nothing is uploaded.`,
+        subtitle: `Save the sound of ${withArticle(from.name)} video as ${to.name}.`,
         metaTitle: `${from.name} to ${to.name} converter online, free, no upload`,
         metaDescription: usualCopies
           ? `Convert ${from.name} video to ${to.name} audio in your browser. The sound is usually copied with no quality loss. Free, no account, no upload.`

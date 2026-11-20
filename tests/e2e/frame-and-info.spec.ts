@@ -62,8 +62,10 @@ test.describe("extract-frame-from-video", () => {
     await expect
       .poll(() => preview.evaluate((el) => (el as HTMLImageElement).naturalHeight))
       .toBe(360);
-    await page.getByText("The same operation with ffmpeg").click();
-    await expect(page.locator("pre")).toContainText("-ss 1.500 -i sample.mp4 -frames:v 1");
+    await expect(page.locator("[data-ffmpeg-command]")).toHaveAttribute(
+      "data-ffmpeg-command",
+      /-ss 1\.500 -i sample\.mp4 -frames:v 1/,
+    );
     expect(uploads, "no request carried a body over 1 KB").toEqual([]);
   });
 
@@ -91,7 +93,10 @@ test.describe("extract-frame-from-video", () => {
     expect(probe.type).toBe("image/jpeg");
     expect(probe.magic).toEqual([0xff, 0xd8, 0xff]);
     expect(probe.size).toBeGreaterThan(1000);
-    await expect(page.locator("pre")).toContainText("-q:v 8");
+    await expect(page.locator("[data-ffmpeg-command]")).toHaveAttribute(
+      "data-ffmpeg-command",
+      /-q:v 8/,
+    );
   });
 
   test("keyboard moves the playhead one frame, Shift one second, and seeks the preview", async ({

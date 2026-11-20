@@ -2,6 +2,7 @@ import { createElement } from "react";
 import { describe, expect, it } from "vitest";
 import {
   type IllustrationId,
+  illustrationComponent,
   illustrations,
   resolveIllustration,
 } from "@/components/illustrations/tools";
@@ -17,10 +18,26 @@ describe("illustrations (design system §7.1)", () => {
     expect(missing.map((t) => t.slug)).toEqual([]);
   });
 
+  it("no two tool pages share an illustration, so every card and OG image shows its own job", () => {
+    const colours = { subject: "#111111", muted: "#777777", raised: "#ffffff" };
+    const owners = new Map<string, string[]>();
+    for (const t of tools) {
+      const id = resolveIllustration(t.engine, t.illustration);
+      if (!id) continue;
+      const svg = illustrationToSvg(createElement(illustrationComponent(id)), colours);
+      owners.set(svg, [...(owners.get(svg) ?? []), t.slug]);
+    }
+    const shared = [...owners.values()].filter((slugs) => slugs.length > 1);
+    expect(shared).toEqual([]);
+  });
+
   it("serialise to standalone SVG under 3 KB with only the two tokens, made concrete", () => {
     const colours = { subject: "#111111", muted: "#777777", raised: "#ffffff" };
-    for (const id of Object.keys(illustrations) as IllustrationId[]) {
-      const svg = illustrationToSvg(createElement(illustrations[id]), colours);
+    const resolved = tools.map((t) => resolveIllustration(t.engine, t.illustration));
+    const ids = new Set([...(Object.keys(illustrations) as IllustrationId[]), ...resolved]);
+    for (const id of ids) {
+      if (!id) continue;
+      const svg = illustrationToSvg(createElement(illustrationComponent(id)), colours);
       expect(svg, id).toMatch(
         /^<svg xmlns="http:\/\/www.w3.org\/2000\/svg"[^>]* viewBox="0 0 240 160"/,
       );

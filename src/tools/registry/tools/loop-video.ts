@@ -31,8 +31,7 @@ export const loopVideo: ToolInput = {
   content: {
     en: {
       title: "Loop a video",
-      subtitle:
-        "Repeat a clip a number of times, or until it reaches a length, without re-encoding. In your browser.",
+      subtitle: "Repeat a clip several times in one video.",
       metaTitle: "Loop video online, free, no upload",
       metaDescription:
         "Repeat a video 2, 5 or 100 times, or until it lasts 30 seconds or 10 minutes. Streams are copied, so nothing is re-encoded. Free, on your device.",
@@ -44,11 +43,11 @@ export const loopVideo: ToolInput = {
         "Press Loop and download the file; the preview plays it.",
       ],
       goodToKnow: [
-        "Because the frames are copied rather than re-encoded, looping is fast and lossless: a 20-second clip played ten times takes about as long to write as copying the file ten times, and looks exactly like the original. The ffmpeg equivalent is -stream_loop with -c copy, which is what the result card shows.",
+        "Because the frames are copied rather than re-encoded, looping is fast and lossless: a 20-second clip played ten times takes about as long to write as copying the file ten times, and looks exactly like the original. In FFmpeg the equivalent is -stream_loop with -c copy.",
         "A copy can only stop at the end of a play, so To a length rounds up to whole plays: a 7-second clip asked to reach 30 seconds plays five times and lasts 35 seconds. For an exact end time, loop first and then cut the result with [trim video](/trim-video).",
         "The sound is joined play to play the same way [merge videos](/merge-videos) joins clips: each join is off by at most half an audio packet, about 12 ms at 44.1 kHz, and the error never builds up over many plays. A clip whose last and first moments do not match will click or jump at each join; picking a loop point with trim first gives a smoother repeat.",
         "The size grows with every play, since each one is a full copy. The result is held in memory until you download it, so this page stops at 1 GB and says how many plays fit. Background loops for a screen or a website are usually better short: loop to the length needed, then [compress video](/compress-video) if the file is still large.",
-        "Forwards and backwards in one play is a boomerang: it has its own page, [boomerang video](/boomerang-video), and the option here does the same. For a loop that plays by itself on a web page or in a chat without a player, a [GIF](/video-to-gif) of the original clip is often simpler than a long video.",
+        "Forwards and backwards in one play is a boomerang: it has its own page, [boomerang video](/boomerang-video), and the option here does the same; to play the clip backwards once, without the forward half, use [reverse video](/reverse-video). For a loop that plays by itself on a web page or in a chat without a player, a [GIF](/video-to-gif) of the original clip is often simpler than a long video.",
       ],
       faq: [
         {

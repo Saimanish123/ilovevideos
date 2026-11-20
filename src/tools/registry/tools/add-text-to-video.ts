@@ -31,7 +31,7 @@ export const addTextToVideo: ToolInput = {
   content: {
     en: {
       title: "Add text to video",
-      subtitle: "Put a title or caption on a video where you place it, for as long as you choose.",
+      subtitle: "Put a title or caption on a video.",
       metaTitle: "Add text to video online, free, no upload",
       metaDescription:
         "Put a title, caption or label on a video: drag it into place, choose when it shows on the timeline, fade it in and out. Runs in your browser, no upload.",
@@ -46,10 +46,10 @@ export const addTextToVideo: ToolInput = {
       ],
       goodToKnow: [
         "Text drawn into the picture is permanent: it cannot be turned off later, and the whole picture is encoded again to H.264 at a high bitrate to carry it. The sound is copied as it is whenever the container can hold it. If you want words viewers can switch on and off, such as dialogue in several languages, [add subtitles](/add-subtitles-to-video) as a separate track instead.",
-        "Titles, captions and watermarks are different jobs. A watermark is a small, often faint mark that stays on for the whole video to say who made it; the [watermark tool](/add-watermark-to-video) is built for that, with a logo image and an opacity setting. Text here is meant to be read: it is solid, larger by default, can span several lines and shows only when you want it to.",
+        "Titles, captions and watermarks are different jobs. A watermark is a small, often faint mark that stays on for the whole video to say who made it; the [watermark tool](/add-watermark-to-video) is built for that, with a logo image and an opacity setting. Text here is meant to be read: it is solid, larger by default, can span several lines and shows only when you want it to. A title card before or after the video is an [intro or outro](/add-intro-to-video), and numbers that count with the video are a [timer](/add-timer-to-video).",
         "The size is the height of a line as a share of the picture, so Medium is the same proportion on a 720p clip and a 4K file: 8% of the height, which on a 1080p video is a 69-pixel font. Shadow keeps text clean on calm footage; Outline and Box keep it readable over snow, sky or busy scenes, where a shadow alone is lost.",
         "The text is drawn with Geist, the typeface of this site, at 600 weight. Letters outside the Latin alphabet fall back to the device's own font. The page draws the text once as an image at the video's own resolution, and that same image is placed over every frame, so what the preview shows is what the file will hold.",
-        "A fade of half a second at each end is the default; set it to At once for a hard cut, or up to 3 seconds under More options. Files that only the ffmpeg engine reads, such as AVI, WMV or MPEG-TS, are handled the same way and come out as MP4.",
+        "A fade of half a second at each end is the default; set it to At once for a hard cut, or up to 3 seconds under More options. Older formats such as AVI, WMV or MPEG-TS are handled the same way, after a one-time download, and come out as MP4.",
       ],
       faq: [
         {

@@ -14,7 +14,9 @@ import { PLAY_SHORTCUT } from "../shortcuts";
 import { FadeLayer } from "../sound/fade-layer";
 import { SoundHero } from "../sound/sound-hero";
 import { useSoundPreview } from "../sound/use-sound-preview";
+import { z } from "./remember-schema";
 import type { HeroProps, OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 const secs = (s: number) => withUnit((Math.round(s * 10) / 10).toFixed(1), "s");
 /** The longest fade the controls offer for a sound this long: half of it, at most a minute. */
@@ -160,8 +162,13 @@ export const audioFadeSpec: OptionsSpec<AudioFadeOptions> = {
   Panel: FadePanel,
   Hero: FadeHero,
   previewResult: true,
+  // Level over time is the job: Before/After keeps it as it is (ADR-0136).
+  compare: () => ({ what: "sound", keepLoudness: true }),
   shortcuts: [PLAY_SHORTCUT],
   route: () => "page",
+  remember: {
+    schema: z.object({ curve: z.enum(["smooth", "linear"]), output: z.enum(["auto", "wav"]) }),
+  },
   defaults: (info, preset) => ({
     fadeIn: fit(typeof preset.fadeIn === "number" ? preset.fadeIn : 2, info.durationSec),
     fadeOut: fit(typeof preset.fadeOut === "number" ? preset.fadeOut : 3, info.durationSec),
@@ -169,7 +176,10 @@ export const audioFadeSpec: OptionsSpec<AudioFadeOptions> = {
     output: "auto",
   }),
   blocked: (o, info) => {
-    if (!info.audio?.length) return "This file has no sound track, so there is nothing to fade.";
+    if (!info.audio?.length)
+      return unfixable(
+        "This file has no sound track, so there is nothing to fade. Choose a file with sound.",
+      );
     const t = soundTarget(info, nameFor(info));
     if (t.kind === "none") return t.reason;
     if (o.fadeIn <= 0 && o.fadeOut <= 0)

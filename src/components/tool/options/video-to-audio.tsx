@@ -12,11 +12,13 @@ import {
   type AudioFormatId,
   audioBitratePresets,
   audioFormatById,
+  audioFormatIds,
   audioFormats,
 } from "@/content/formats/audio";
 import { formatBytes, formatDuration, formatTimecode, withUnit } from "@/lib/format";
 import { Link } from "@/lib/i18n/navigation";
 import { codecName } from "@/tools/engines/convert-video/plan";
+import { ffmpegDownloadSize } from "@/tools/engines/ffmpeg/size";
 import type { MediaInfo } from "@/tools/engines/types";
 import type { VideoToAudioOptions } from "@/tools/engines/video-to-audio";
 import {
@@ -28,6 +30,7 @@ import { planExtraction } from "@/tools/engines/video-to-audio/plan";
 import { PLAY_SHORTCUT, useWorkspaceKeys } from "../shortcuts";
 import { RangeLayer } from "../sound/range-layer";
 import { type Choice, Choices } from "./choices";
+import { z } from "./remember-schema";
 import { TimeInput } from "./trim";
 import type { HeroProps, OptionsPanelProps, OptionsSpec } from "./types";
 
@@ -93,6 +96,8 @@ export const videoToAudioSpec: OptionsSpec<VideoToAudioOptions> = {
   verb: "Extract audio",
   Hero: ExtractAudioHero,
   previewResult: true,
+  // A copy is identical, and a part has its own timeline; a re-encode gets Before/After (ADR-0136).
+  compare: (o, info) => (o.range || plan(o, info).copy ? false : { what: "sound" }),
   shortcuts: [
     PLAY_SHORTCUT,
     { keys: "I", label: "Start the part at the playhead" },
@@ -123,6 +128,12 @@ export const videoToAudioSpec: OptionsSpec<VideoToAudioOptions> = {
       detail: `${info.tags?.title ? "The title and artist tags were carried over. " : ""}The waveform plays the result.`,
       change: false,
     };
+  },
+  remember: {
+    schema: z.object({
+      to: z.enum(audioFormatIds),
+      bitrate: z.union([z.literal(128), z.literal(192), z.literal(320)]),
+    }),
   },
   defaults: (info, preset) => ({
     to: isFormat(preset.to) ? preset.to : preset.trimOnly === true ? sourceFormatId(info) : "mp3",
@@ -159,7 +170,8 @@ export const videoToAudioSpec: OptionsSpec<VideoToAudioOptions> = {
       return `${when}${src} is copied into ${p.target.name} as it is, not re-encoded. Lossless.${size}`;
     if (p.target.lossless)
       return `${when}${src} is decoded once to ${p.target.name}; nothing is lost from here on.${size}`;
-    const engine = p.backend === "ffmpeg-wasm" ? " with the ffmpeg engine" : "";
+    const engine =
+      p.backend === "ffmpeg-wasm" ? `, after a one-time download of ${ffmpegDownloadSize()}` : "";
     return `${when}${src} is re-encoded to ${audioCodecName(p.codec)} at ${withUnit(p.bitrateKbps ?? 0, "kbps")}${engine}.${size}`;
   },
   Below: RangeBelow,

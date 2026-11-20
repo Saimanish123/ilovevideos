@@ -30,8 +30,7 @@ export const addIntroToVideo: ToolInput = {
   content: {
     en: {
       title: "Add an intro and outro to a video",
-      subtitle:
-        "Open with a title card, a logo or a clip, and close with an end card, fitted to your video.",
+      subtitle: "A title card, logo or clip, fitted to your video.",
       metaTitle: "Add an intro and outro to a video online, free",
       metaDescription:
         "Put a title card, picture or clip before and after a video, fitted to its size and frame rate, with crossfades. Runs in your browser; nothing is uploaded.",
@@ -49,7 +48,7 @@ export const addIntroToVideo: ToolInput = {
         "A crossfade overlaps the parts by its length, half a second by default, so the result is shorter than the parts added up by one fade at each join. The sound fades with the picture using equal-power curves, which keep the loudness steady through the join. Title cards and pictures are silent; a clip's own sound is kept and resampled to the main video's rate.",
         "The title card is drawn in the Geist typeface bundled with this site, bold and centred, sized down until it fits. Dark colours get white text and light colours near-black text. For a title over the video itself rather than on a card of its own, [add text to the video](/add-text-to-video) instead.",
         "Everything is encoded once to H.264 at a bitrate close to the main video's, with the sound in AAC, because a title card or a clip cannot be slotted into an existing file without making one consistent stream. To join several finished clips end to end, as they are and losslessly where they match, [merge videos](/merge-videos) is the tool. An intro or outro clip can be up to 5 minutes long.",
-        "The same intro and outro can go on several videos in one go: drop them all, set the cards once, and each video gets its own copy fitted to it. A file that only the fallback engine can read, such as an AVI, needs converting to MP4 first.",
+        "The same intro and outro can go on several videos in one go: drop them all, set the cards once, and each video gets its own copy fitted to it. An older format such as AVI needs converting to MP4 first.",
       ],
       faq: [
         {

@@ -234,3 +234,35 @@ ffmpeg -hide_banner -loglevel error -y -f lavfi -i "color=c=black:s=320x180:r=30
 # sample-shaky.mp4 (stabilize) and sample-letterbox.mp4 (remove black bars), drawn over a
 # dead-leaves texture by scripts/make-quality-fixtures.mjs (deterministic).
 node scripts/make-quality-fixtures.mjs
+# Speech tools (round 4, builder A): a synthetic formant voice with known pauses (no recording, no
+# text-to-speech; scripts/make-speech-fixtures.mjs) over noise beds, with the speech segments as JSON.
+# speech-fan.wav: 6 s, 48 kHz mono, a fan 5 dB under the voice (remove background noise).
+# speech-fan.mp4: the same over a test picture, sound as 44.1 kHz AAC (the resampling path, picture copy).
+# speech-music.m4a: 10 s with a music bed 10 dB under the voice (pauses by speech vs by loudness).
+sp=$(mktemp -d)
+node scripts/make-speech-fixtures.mjs "$sp/a" 6 11 48000
+node scripts/make-speech-fixtures.mjs "$sp/b" 10 12 48000
+mkdir -p tests/fixtures/speech
+ffmpeg -hide_banner -loglevel error -y -i "$sp/a/clean.wav" -i "$sp/a/noise-fan.wav" \
+  -filter_complex "[1]volume=-5dB[n];[0][n]amix=inputs=2:normalize=0" -c:a pcm_s16le tests/fixtures/speech/speech-fan.wav
+cp "$sp/a/speech.json" tests/fixtures/speech/speech-fan.json
+ffmpeg -hide_banner -loglevel error -y -f lavfi -i "testsrc2=size=320x180:rate=25:duration=6" -i tests/fixtures/speech/speech-fan.wav \
+  -shortest -pix_fmt yuv420p -c:v libx264 -g 25 -b:v 200k -c:a aac -ar 44100 -b:a 96k -movflags +faststart tests/fixtures/speech/speech-fan.mp4
+ffmpeg -hide_banner -loglevel error -y -i "$sp/b/clean.wav" -i "$sp/b/noise-music.wav" \
+  -filter_complex "[1]volume=-10dB[n];[0][n]amix=inputs=2:normalize=0" -c:a aac -b:a 96k -movflags +faststart tests/fixtures/speech/speech-music.m4a
+cp "$sp/b/speech.json" tests/fixtures/speech/speech-music.json
+rm -rf "$sp"
+# Face fixtures (tests/fixtures/faces) and the vision kit's parity references (tests/fixtures/vision) need
+# Python with onnx, onnxruntime, opencv and scikit-image and the NASA portraits, so they are not remade here:
+# see scripts/vision/make_face_fixtures.py and scripts/vision/make_references.py (dev only, ADR-0117).
+# Person fixtures for the background tools (tests/fixtures/person): a hand-cut public-domain portrait over
+# CC0 and public-domain backgrounds, with the person mask frame for frame. The cut-out PNG is committed; the
+# videos are made from it with ffmpeg alone.
+bash scripts/make-person-fixtures.sh
+# Compare sync (ADR-0134): 30 s at 30 fps, bitrate high enough that Compress re-encodes it, so the
+# done state's wipe can be played for 30 s and its drift measured frame by frame.
+ffmpeg -hide_banner -loglevel error -y -f lavfi -i "testsrc2=size=480x270:rate=30:duration=30" -f lavfi -i "sine=frequency=330:duration=30" \
+  -shortest -pix_fmt yuv420p -c:v libx264 -profile:v main -g 60 -b:v 1200k -maxrate 1200k -bufsize 2400k -c:a aac -b:a 96k -movflags +faststart tests/fixtures/sample-30s.mp4
+# Every page end to end (tests/e2e/every-page.spec.ts, ADR-0148): HEVC in MP4 tagged hvc1 as phones write it,
+# for hevc-to-h264 (Chromium cannot decode it without platform support; Safari can).
+ffmpeg "${common[@]}" -c:v libx265 -tag:v hvc1 -x265-params log-level=error -b:v 400k -c:a aac -b:a 96k -movflags +faststart tests/fixtures/sample-hevc.mp4

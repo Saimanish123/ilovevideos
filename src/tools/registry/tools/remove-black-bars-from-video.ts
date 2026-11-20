@@ -17,20 +17,14 @@ export const removeBlackBarsFromVideo: ToolInput = {
     "auto crop video black borders",
   ],
   aliases: ["letterbox", "pillarbox", "black borders", "auto crop", "cropdetect"],
-  related: [
-    "crop-video",
-    "change-video-aspect-ratio",
-    "resize-video-for-tiktok",
-    "compress-video",
-    "add-border-to-video",
-  ],
+  related: ["crop-video", "change-video-aspect-ratio", "compress-video", "add-border-to-video"],
   updatedAt: "2026-11-18",
   icon: "rectangle-horizontal",
   illustration: "black-bars",
   content: {
     en: {
       title: "Remove black bars from video",
-      subtitle: "Find the black bars around a video and crop them off. Runs in your browser.",
+      subtitle: "Find the black bars around a video and crop them off.",
       metaTitle: "Remove black bars from video online, free",
       metaDescription:
         "Detect letterbox and pillarbox bars across a whole video and crop them off. Adjust the frame if needed. Runs in your browser, no upload. Free.",
@@ -47,7 +41,7 @@ export const removeBlackBarsFromVideo: ToolInput = {
         "Bars come from fitting one shape of picture into another: a widescreen film in a 16:9 frame gets bars above and below, an old 4:3 programme in a 16:9 frame gets bars at the sides, and a phone video posted in a landscape frame gets wide ones. Removing them gives a file whose frame is the picture itself, which players and editors then fit to any screen without double bars.",
         "A row or column counts as bar when almost all of its pixels are near black. Each of the 24 frames gives its own answer, and the bar is the size most frames agree on: a night scene makes the bars look bigger in a few frames and a subtitle smaller in others, but a real bar is the same in all of them. A video that is mostly very dark may not show enough to tell; then the frame starts on the whole picture and you set it by hand.",
         "Burned-in subtitles and channel logos often sit inside the bars. When some frames show content there, the tool names the edge and the moments, and a tick box keeps that strip; left unticked, the crop removes the bars fully and the subtitles with them. If you need the subtitles and a clean frame at once, keep the strip and crop by hand afterwards.",
-        "Cropping changes every frame, so the picture is encoded once to H.264 near the source's bitrate for the area kept, with even edges as H.264 requires; the sound is copied as it is where the container allows. If no bars are found, the page says so and nothing needs to be done. To reshape a picture to a different frame on purpose, with bars or a fill, use [change aspect ratio](/change-video-aspect-ratio) instead, and use [crop video](/crop-video) to choose any other region.",
+        "Cropping changes every frame, so the picture is encoded once to H.264 near the source's bitrate for the area kept, with even edges as H.264 requires; the sound is copied as it is where the container allows. If no bars are found, the page says so and nothing needs to be done. To reshape a picture to a different frame on purpose, with bars or a fill, use [change aspect ratio](/change-video-aspect-ratio) instead, or [resize for TikTok](/resize-video-for-tiktok) once the bars are gone, and use [crop video](/crop-video) to choose any other region.",
       ],
       faq: [
         {

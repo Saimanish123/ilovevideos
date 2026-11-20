@@ -13,7 +13,9 @@ import {
   trackTitle,
 } from "@/tools/engines/subtitles-extract/model";
 import type { MediaInfo } from "@/tools/engines/types";
+import { z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 type O = SubtitlesExtractOptions;
 type Target = O["format"];
@@ -66,6 +68,7 @@ function outcome(t: SubtitleTrack, target: Target): string {
 
 export const subtitlesExtractSpec: OptionsSpec<O> = {
   verb: "Extract subtitles",
+  remember: { schema: z.object({ format: z.enum(["srt", "vtt", "original"]) }) },
   defaults: () => ({ format: "srt" }),
   /**
    * The media inspector does not list subtitle tracks, so this page reads them itself from the
@@ -114,7 +117,9 @@ export const subtitlesExtractSpec: OptionsSpec<O> = {
       const c = info.container.toLowerCase();
       if (c.includes("transport") || c.includes("mpeg-ts"))
         return "Broadcast recordings (MPEG-TS) carry subtitles as pictures or teletext, which this tool cannot turn into text.";
-      return "This video has no subtitle track. Subtitles drawn into the picture are part of the video and cannot be taken out as text.";
+      return unfixable(
+        "This video has no subtitle track. Subtitles drawn into the picture are part of the video and cannot be taken out as text. Choose a video with a subtitle track.",
+      );
     }
     if (textTracks(info).length === 0)
       return "The subtitle tracks in this file are pictures of text (PGS or VobSub), not text. Turning them into text needs character recognition, which this tool does not do.";
@@ -124,7 +129,7 @@ export const subtitlesExtractSpec: OptionsSpec<O> = {
   summary: (o, info) => {
     const list = chosen(o, info);
     const n = list.length;
-    return `${n === 1 ? "Writes one file" : `Writes ${n} files`}: ${list.map((t) => outcome(t, o.format)).join(", ")}. The text is copied out of the file; the video is not touched. Runs on this device.`;
+    return `${n === 1 ? "Writes one file" : `Writes ${n} files`}: ${list.map((t) => outcome(t, o.format)).join(", ")}. The text is copied out of the file; the video is not touched.`;
   },
   result: (_o, _info, out) => ({
     title: out.files === 1 ? "Subtitles extracted" : `${out.files} subtitle tracks extracted`,

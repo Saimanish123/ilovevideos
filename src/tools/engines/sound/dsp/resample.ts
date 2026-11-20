@@ -33,20 +33,21 @@ function besselI0(x: number): number {
   return sum;
 }
 
-let table: Float64Array | undefined;
-/** sinc(u)·kaiser(u/ZEROS) for u = i/RES, i = 0..ZEROS·RES (+1 guard point). */
-function kernel(): Float64Array {
-  if (table) return table;
-  const n = ZEROS * RES;
+const tables = new Map<number, Float64Array>();
+/** sinc(u)·kaiser(u/zeros) for u = i/RES, i = 0..zeros·RES (+1 guard point). */
+function kernel(zeros = ZEROS): Float64Array {
+  const cached = tables.get(zeros);
+  if (cached) return cached;
+  const n = zeros * RES;
   const t = new Float64Array(n + 2);
   const i0b = besselI0(BETA);
   for (let i = 0; i <= n; i++) {
     const u = i / RES;
     const s = u === 0 ? 1 : Math.sin(Math.PI * u) / (Math.PI * u);
-    const r = u / ZEROS;
+    const r = u / zeros;
     t[i] = s * (besselI0(BETA * Math.sqrt(Math.max(0, 1 - r * r))) / i0b);
   }
-  table = t;
+  tables.set(zeros, t);
   return t;
 }
 
@@ -56,7 +57,9 @@ export class SincResampler {
   private readonly cutoff: number;
   /** Half width of the filter in input frames. */
   private readonly reach: number;
-  readonly k = kernel();
+  readonly k: Float64Array;
+  /** Zero crossings of this resampler's sinc on each side. */
+  private readonly zeros: number;
   /** Per channel: buffered input, starting at input frame `base`. */
   private buf: Float32Array[];
   private len = 0;
@@ -70,11 +73,19 @@ export class SincResampler {
   constructor(
     step: number,
     readonly channels: number,
+    /**
+     * Optional: fewer zero crossings for a cheaper, shorter filter (a wider transition band and a
+     * shallower stopband), for a path whose output is not the file's own sound at full quality (the
+     * noise model's input). Default 64, as every other tool uses.
+     */
+    opts: { zeros?: number } = {},
   ) {
     if (!(step > 0) || !Number.isFinite(step)) throw new Error("Resampling step must be positive");
     this.step = step;
+    this.zeros = opts.zeros ?? ZEROS;
+    this.k = kernel(this.zeros);
     this.cutoff = Math.min(1, 1 / step) * ROLLOFF;
-    this.reach = Math.ceil(ZEROS / this.cutoff) + 1;
+    this.reach = Math.ceil(this.zeros / this.cutoff) + 1;
     // History before the first frame is silence: the reach to the left is zeros.
     this.buf = Array.from({ length: channels }, () => new Float32Array(4096 + 2 * this.reach));
     this.len = this.reach;
@@ -117,7 +128,7 @@ export class SincResampler {
     const taps = 2 * reach;
     if (this.w.length < taps) this.w = new Float64Array(taps);
     const w = this.w;
-    const span = ZEROS * RES;
+    const span = this.zeros * RES;
     for (let o = 0; o < count; o++) {
       const pos = (this.j + o) * step;
       const lo = Math.floor(pos) - reach + 1;

@@ -31,7 +31,7 @@ export const addTimerToVideo: ToolInput = {
   content: {
     en: {
       title: "Add a timer to a video",
-      subtitle: "Burn in a timer that counts up or down, in m:ss, h:mm:ss or seconds and tenths.",
+      subtitle: "Counting up or down, placed where you choose.",
       metaTitle: "Add a timer or countdown to video online, free",
       metaDescription:
         "Put a running timer or a countdown on a video: count up or down from any time, three formats, nine positions or drag. Runs in your browser, no upload.",

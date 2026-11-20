@@ -29,7 +29,7 @@ export const addProgressBarToVideo: ToolInput = {
   content: {
     en: {
       title: "Add a progress bar to a video",
-      subtitle: "Draw a bar that fills as the video plays, along the top or bottom edge.",
+      subtitle: "Fills as it plays, along the top or bottom edge.",
       metaTitle: "Add a progress bar to a video online, free",
       metaDescription:
         "Burn a progress bar into a video: top or bottom, any colour and thickness, for the whole video or a part. Runs in your browser; nothing is uploaded.",
@@ -46,7 +46,7 @@ export const addProgressBarToVideo: ToolInput = {
         "Thickness is measured against the picture's shorter side, so Medium is about 11 pixels on a 1080p video and the same share on a vertical 1080×1920 one. Thin suits a quiet indicator on a talk or a tutorial; Thick reads on a phone held at arm's length. The number field beside the presets takes an exact height in pixels.",
         "The see-through track under the bar shows where it ends. It is dark under a light bar and light under a dark one, so it reads on bright and dark footage alike; turn it off for a bar that seems to grow out of the edge. Feed apps and players draw their own controls and captions over the lower part of the picture, so the top edge, or a bar lifted off the edge under More options, can stay clearer.",
         "The range on the timeline sets what the bar measures. Leave out an intro or the credits and the bar fills over the part that counts, and it is not drawn outside the range. For a count in numbers instead, [add a timer](/add-timer-to-video), which counts up or down in the same way.",
-        "Only the rows the bar covers change, but H.264 cannot patch part of a frame, so every frame is encoded once more at a bitrate close to the source's; the sound is copied unchanged where the container allows. A file that only the fallback engine can read, such as an AVI or WMV, needs converting to MP4 first; the page offers the converter.",
+        "Only the rows the bar covers change, but H.264 cannot patch part of a frame, so every frame is encoded once more at a bitrate close to the source's; the sound is copied unchanged where the container allows. An older format such as AVI or WMV needs converting to MP4 first; the page offers the converter.",
       ],
       faq: [
         {

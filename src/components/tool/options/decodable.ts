@@ -14,5 +14,6 @@ export function undecodablePicture(...infos: (MediaInfo | undefined)[]): Blocked
   return {
     reason: `This browser cannot decode the ${name} video in this file, so this page cannot work on it.`,
     action: { slug: "video-converter", label: "Convert it to H.264 MP4 first" },
+    fixable: false,
   };
 }

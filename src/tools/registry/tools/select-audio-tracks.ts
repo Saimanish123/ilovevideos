@@ -16,14 +16,13 @@ export const selectAudioTracks: ToolInput = {
     "change default audio track",
   ],
   aliases: ["audio tracks", "language track", "remove commentary", "default audio", "dual audio"],
-  related: ["remove-audio-from-video", "video-info", "mkv-to-mp4", "fix-audio-sync"],
+  related: ["remove-audio-from-video", "video-info", "fix-audio-sync"],
   updatedAt: "2026-10-01",
   icon: "languages",
   content: {
     en: {
       title: "Select audio tracks",
-      subtitle:
-        "Keep the languages you want in a multi-track video and drop the rest, without re-encoding.",
+      subtitle: "Keep only the audio languages you want in a video.",
       metaTitle: "Remove or keep audio tracks in MKV and MP4",
       metaDescription:
         "See every audio track of an MKV or MP4 with its language and codec, keep the ones you want and choose which plays first. Copied, not re-encoded. Free.",

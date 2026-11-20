@@ -20,8 +20,10 @@ import {
   videoBitrateForPreset,
 } from "@/tools/engines/compress/math";
 import type { MediaInfo } from "@/tools/engines/types";
+import { TierChoice } from "./compress-tier";
 import { undecodablePicture } from "./decodable";
-import { mb, TierChoice } from "./idle/compress";
+import { mb } from "./idle/compress";
+import { between, z } from "./remember-schema";
 import type { OptionsSpec } from "./types";
 
 /**
@@ -146,6 +148,24 @@ function TargetInput({ value, onCommit }: { value: number; onCommit: (mb: number
 
 export const compressSpec: OptionsSpec<CompressValue> = {
   verb: "Compress",
+  // The result plays in the preview, so it can be compared with the source down to the pixel (ADR-0134).
+  previewResult: true,
+  remember: {
+    schema: z.object({
+      preset: z.enum(["smaller", "balanced", "best", "target"]),
+      targetMb: between(1, 4000),
+      maxHeight: z.union([
+        z.literal("original"),
+        z.literal("auto"),
+        z.literal(2160),
+        z.literal(1440),
+        z.literal(1080),
+        z.literal(720),
+        z.literal(480),
+        z.literal(360),
+      ]),
+    }),
+  },
   defaults: (info, preset) => {
     const p = (preset.preset as CompressValue["preset"]) ?? "balanced";
     return {
@@ -200,12 +220,12 @@ export const compressSpec: OptionsSpec<CompressValue> = {
   summary: (o, info) => {
     const v = info.video;
     if (!v) return undefined;
-    if (o.preset === "target") return "Writes an H.264 MP4 with AAC sound. Runs on this device.";
+    if (o.preset === "target") return "Writes an H.264 MP4 with AAC sound.";
     const height = o.maxHeight === "auto" ? "original" : o.maxHeight;
     const dims = outputDimensions(v.width, v.height, height);
     const bitrate = videoBitrateForPreset(o.preset, dims.width, dims.height, v.fps);
     const est = estimateBytes(bitrate, info.durationSec, AUDIO_BITRATE);
-    return `Estimated ≈ ${formatBytes(est)} at ${formatDimensions(dims.width, dims.height)} from ${formatBytes(info.sizeBytes)}. Runs on this device.`;
+    return `Estimated ≈ ${formatBytes(est)} at ${formatDimensions(dims.width, dims.height)} from ${formatBytes(info.sizeBytes)}.`;
   },
   result: (o, info, { bytes }) => {
     if (o.preset === "target") {
@@ -218,7 +238,7 @@ export const compressSpec: OptionsSpec<CompressValue> = {
       return {
         title: `Over ${mb(o.targetMb)} by ${formatBytes(bytes - limit)}`,
         detail:
-          "The encoder overshot even after a second pass, which happens with very short or very detailed clips. Change settings to pick a lower resolution, or trim a few seconds and try again.",
+          "The file came out over the target even after a second try, which happens with very short or very detailed clips. Change settings to pick a lower resolution, or trim a few seconds and try again.",
         missed: true,
         // Only a miss suggests trimming; a success needs no next step here.
         next: { slug: "trim-video", label: "Trim video" },

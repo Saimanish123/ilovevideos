@@ -102,6 +102,30 @@ const nextConfig: NextConfig = {
           { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
         ],
       },
+      {
+        // The face model (ADR-0113): its file name carries its version, so it never changes in place.
+        source: "/models/yunet/(.*)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+          { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
+        ],
+      },
+      {
+        // The speech models (ADR-0108, ADR-0109): versioned file names, checked by hash on load.
+        source: "/models/:dir(rnnoise|silero-vad)/:file*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+          { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
+        ],
+      },
+      {
+        // The person models (ADR-0118): the version is in the path (`/1/`), so files never change in place.
+        source: "/models/selfie-segmenter/:kind(general|landscape)/:version/:file*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+          { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
+        ],
+      },
     ];
   },
 };

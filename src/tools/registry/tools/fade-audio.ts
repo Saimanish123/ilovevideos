@@ -23,7 +23,7 @@ export const fadeAudio: ToolInput = {
   content: {
     en: {
       title: "Fade audio in and out",
-      subtitle: "Add a fade-in and a fade-out to an MP3, WAV or other audio file, in your browser.",
+      subtitle: "Smooth starts and endings for songs and recordings.",
       metaTitle: "Fade audio in and out online, free, no upload",
       metaDescription:
         "Fade an MP3, M4A, WAV, FLAC or Opus file in from silence and out to silence. Drag the fades on the waveform. Same format out, on your device. Free.",
@@ -37,9 +37,9 @@ export const fadeAudio: ToolInput = {
       ],
       goodToKnow: [
         "A song cut in the middle ends with a jolt; two or three seconds of fade-out turn the same cut into an ending. A fade-in of half a second to a second removes the click of a recording that starts mid-sound, without being heard as a fade.",
-        "Smooth follows a quarter sine: the level stays up longer and then eases away, the way a hand pulls a fader, and it is −3 dB halfway through. Linear lowers the level in a straight line, −6 dB halfway, so it sounds as if it drops quickly and then lingers. Both are the same curves as ffmpeg's afade filter, so the command shown with the result reproduces the file.",
+        "Smooth follows a quarter sine: the level stays up longer and then eases away, the way a hand pulls a fader, and it is −3 dB halfway through. Linear lowers the level in a straight line, −6 dB halfway, so it sounds as if it drops quickly and then lingers. Both are the same curves as FFmpeg's afade filter.",
         "Fades that would overlap on a short file are shortened in proportion so they meet instead of cancelling each other; the summary line shows the lengths actually used.",
-        "WAV and FLAC are saved sample for sample outside the fades. MP3, M4A, OGG and Opus are decoded and encoded once more at a bitrate at least as high as the source's; MP3 and OGG are written by the ffmpeg engine on this device, which downloads once.",
+        "WAV and FLAC are saved sample for sample outside the fades. MP3, M4A, OGG and Opus are decoded and encoded once more at a bitrate at least as high as the source's; MP3 and OGG need a one-time download.",
         "For a ringtone, the [ringtone maker](/ringtone-maker) cuts, fades and saves the part in one step; for any other clip, [trim the audio](/trim-audio) first and fade the part you kept. To fade the sound of a video without touching its picture, use [fade audio in a video](/fade-audio-in-video).",
       ],
       faq: [

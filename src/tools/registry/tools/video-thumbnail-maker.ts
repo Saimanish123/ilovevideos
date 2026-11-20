@@ -31,7 +31,7 @@ export const videoThumbnailMaker: ToolInput = {
   content: {
     en: {
       title: "Make a thumbnail from a video",
-      subtitle: "Pick a suggested frame, frame it in 16:9, 9:16 or 1:1 and save it at a set size.",
+      subtitle: "Start from suggested frames and save at the size you need.",
       metaTitle: "Video thumbnail maker online, free, no upload",
       metaDescription:
         "Get suggested frames from your video, frame one in 16:9, 9:16 or 1:1 and save it as a JPG, PNG or WebP at a set size. Runs in your browser.",

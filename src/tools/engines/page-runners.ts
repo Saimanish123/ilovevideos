@@ -25,6 +25,15 @@ export const pageRunnersMany: Partial<Record<EngineId, () => Promise<PageManyRun
 
 /** Engines (or engine paths) that run on the page thread instead of the engine worker. */
 export const pageRunners: Partial<Record<EngineId, () => Promise<PageRunner>>> = {
+  // Compress: only where this browser cannot encode H.264 or AAC itself (../fallbacks, ADR-0147).
+  compress: async () => {
+    const [{ compressWithFfmpeg }, { CompressOptions }] = await Promise.all([
+      import("./compress/ffmpeg"),
+      import("./compress"),
+    ]);
+    return (file, info, options, ctx) =>
+      compressWithFfmpeg(file, info, CompressOptions.parse(options), ctx);
+  },
   "video-to-gif": async () => {
     const [{ gifWithFfmpeg }, { VideoToGifOptions }] = await Promise.all([
       import("./video-to-gif/ffmpeg"),
@@ -227,6 +236,12 @@ export const pageRunners: Partial<Record<EngineId, () => Promise<PageRunner>>> =
     return (file, info, options, ctx) => runRingtone(file, info, options, ctx);
   },
   // Change pitch: the same page runner as volume (worker alone, or with the ffmpeg.wasm stages).
+  // Remove background noise: the same page runner (worker alone, or with the ffmpeg.wasm stages).
+  "speech-denoise": async () => {
+    const { runSoundPage } = await import("./sound/page");
+    return (file, info, options, ctx) =>
+      runSoundPage("speech-denoise", file, info, options as Record<string, unknown>, ctx);
+  },
   pitch: async () => {
     const { runSoundPage } = await import("./sound/page");
     return (file, info, options, ctx) =>

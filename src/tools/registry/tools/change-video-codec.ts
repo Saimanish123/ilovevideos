@@ -17,22 +17,14 @@ export const changeVideoCodec: ToolInput = {
     "re-encode video",
   ],
   aliases: ["codec", "h264", "h265", "hevc", "av1", "vp9", "encode", "transcode"],
-  related: [
-    "hevc-to-h264",
-    "h264-to-hevc",
-    "video-converter",
-    "video-info",
-    "compress-video",
-    "change-video-bitrate",
-  ],
+  related: ["video-converter", "video-info", "compress-video", "change-video-bitrate"],
   updatedAt: "2026-10-01",
   icon: "binary",
   illustration: "codec",
   content: {
     en: {
       title: "Change video codec",
-      subtitle:
-        "Re-encode a video as H.264, HEVC, VP9 or AV1, with what this browser can encode shown first.",
+      subtitle: "Save a video in another codec, such as H.264 or AV1.",
       metaTitle: "Change video codec online, free, no upload",
       metaDescription:
         "Re-encode video to H.264, HEVC, VP9 or AV1 in your browser. The page asks your browser which encoders it has before you choose. Free, no account.",
@@ -45,8 +37,8 @@ export const changeVideoCodec: ToolInput = {
       ],
       goodToKnow: [
         "A codec is how the pictures are compressed; the container (MP4, WebM, MOV, MKV) is the box they are stored in. Changing the box alone is lossless and is the [video converter](/video-converter)'s job. Changing the codec always decodes and re-encodes every frame, which costs a little quality each time, so keep the original and convert from it rather than from an earlier conversion.",
-        "Which codecs you can write depends on the browser and the device, not on this site. Encoders come from the browser's WebCodecs support and, where there is one, the device's hardware encoder; HEVC and AV1 in particular are present on some systems and missing on others, and the same browser can differ between a laptop and a phone. That is why the list is checked for your file every time rather than printed on the page.",
-        "H.264 is the safe choice for playing anywhere: almost every browser, phone, television and editor reads it. HEVC and AV1 reach a similar picture at a lower bitrate, so they suit archiving and phones that play them in hardware; VP9 is the web's WebM codec. The bitrate here is chosen for a similar picture to the source and never above what the source spends, adjusted for how efficient the new codec is, so a converted file is not padded with bits that add no detail.",
+        "Which codecs you can write depends on the browser and the device, not on this site. Encoders come from the browser and, where there is one, the device's hardware encoder; HEVC and AV1 in particular are present on some systems and missing on others, and the same browser can differ between a laptop and a phone. That is why the list is checked for your file every time rather than printed on the page.",
+        "H.264 is the safe choice for playing anywhere: almost every browser, phone, television and editor reads it, which is why an iPhone clip that will not open is usually best sent through [HEVC to H.264](/hevc-to-h264). HEVC and AV1 reach a similar picture at a lower bitrate, so they suit archiving and phones that play them in hardware ([H.264 to HEVC](/h264-to-hevc) does the first); VP9 is the web's WebM codec. The bitrate here is chosen for a similar picture to the source and never above what the source spends, adjusted for how efficient the new codec is, so a converted file is not padded with bits that add no detail.",
         "The container follows the codec: H.264 and HEVC go into MP4 (a MOV or MKV stays what it was), VP9 into WebM, AV1 into MP4. HEVC in MP4 is tagged hvc1, the form Apple's players expect. The sound is copied when the container takes it; AAC into WebM is encoded to Opus, because WebM does not hold AAC.",
         "Software encoders are slower than hardware ones, and AV1 in software is the slowest of the four. The progress line counts frames and, after a few seconds, shows the time left from the real rate, so a long clip tells you early how long it will take. To only make a file smaller without choosing a codec, [compress video](/compress-video) is the simpler page.",
       ],

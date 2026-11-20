@@ -30,8 +30,7 @@ export const extractFrameFromVideo: ToolInput = {
   content: {
     en: {
       title: "Extract a frame from video",
-      subtitle:
-        "Save any single frame of a video as a full-resolution PNG, JPG or WebP, in your browser.",
+      subtitle: "Save any frame of a video as a full-size image.",
       metaTitle: "Extract a frame from video, free, no upload",
       metaDescription:
         "Save one frame of a video as a PNG, JPG or WebP at the source resolution. Scrub to the exact frame in your browser. Files never leave your device. Free.",
@@ -47,10 +46,10 @@ export const extractFrameFromVideo: ToolInput = {
       goodToKnow: [
         "A video frame and a screenshot are not the same thing. A screenshot captures whatever the player drew on your screen: scaled to the window, sometimes with the controls, sometimes with a compressed copy of the picture. This tool decodes the frame itself, so the image has the video's own pixel dimensions and colours. If the file is 4K, the image is 4K, even on a small laptop screen.",
         "The playhead snaps to frame boundaries, using the frame rate read from the file, so the time you pick is always a real frame rather than a point between two. Arrow keys move by one frame, Shift with an arrow moves by one second, and the readout shows the time to hundredths of a second. The saved file is named with that time, for example clip-0m12s34.png, so a set of stills from one video sorts in order. If the frame you want is blurred by motion, [the sharpest frame](/sharpest-frame-from-video) finds the clearest one nearby.",
-        "PNG is lossless and is the right choice when the image will be edited, zoomed or used as a thumbnail source. JPG and WebP throw away detail to save space; WebP is smaller than JPG at the same quality and is supported by every current browser. A frame from a compressed video already contains compression artefacts, so saving it as a high-quality JPG usually looks identical to the PNG at a fraction of the size.",
+        "PNG is lossless and is the right choice when the image will be edited, zoomed or used as a thumbnail source. JPG and WebP throw away detail to save space; WebP is smaller than JPG at the same quality and is supported by every current browser. A frame from a compressed video already contains compression artefacts, so saving it as a high-quality JPG usually looks identical to the PNG at a fraction of the size. To make a frame the picture the file shows as its icon, [change the video's thumbnail](/change-video-thumbnail).",
         "Phone footage is often stored sideways with a rotation flag that players honour. The frame is rotated the same way, so a portrait clip gives a portrait image. Variable frame rate footage works too, because the decoder is asked for the frame at a time, not by counting frames.",
-        "If you want a short moving clip rather than a still, the [GIF maker](/video-to-gif) works from the same kind of filmstrip, and [trim video](/trim-video) cuts a range without re-encoding. To pull many frames at once, for example one per second, that is a separate job and this page stays focused on one exact frame.",
-        "Decoding happens in your browser with the same decoder that plays the video, and nothing is uploaded. Copy image puts the still on the clipboard as a PNG, ready to paste into a message or a document; it appears where the browser allows pages to write images to the clipboard.",
+        "If you want a short moving clip rather than a still, the [GIF maker](/video-to-gif) works from the same kind of filmstrip, and [trim video](/trim-video) cuts a range without re-encoding. To pull many frames at once, for example one per second, that is a separate job and this page stays focused on one exact frame. For a cover image at a set shape and size, the [thumbnail maker](/video-thumbnail-maker) suggests well-lit frames from different scenes.",
+        "Decoding uses the same decoder that plays the video. Copy image puts the still on the clipboard as a PNG, ready to paste into a message or a document; it appears where the browser allows pages to write images to the clipboard.",
       ],
       faq: [
         {

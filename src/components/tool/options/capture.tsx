@@ -26,6 +26,8 @@ const base = {
   // One recording at a time; files are never dropped here.
   batch: false as const,
   previewResult: true as const,
+  // The recording is the only file: nothing to compare it with (ADR-0134).
+  compare: false as const,
 };
 
 export const screenRecordSpec: OptionsSpec<NoOptions> = {

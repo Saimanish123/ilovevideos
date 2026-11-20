@@ -21,7 +21,7 @@ export { ChromaKeyOptions };
 const noGl = () =>
   new EngineError(
     "unsupported-output",
-    "This browser cannot draw video frames with WebGL 2 in the background.",
+    "This browser cannot draw this effect on the video.",
     "Try desktop Chrome, Edge or Firefox, or Safari 17 or newer.",
   );
 

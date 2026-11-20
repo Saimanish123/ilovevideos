@@ -9,7 +9,10 @@ import { EngineError } from "../errors";
 import { openInput } from "../mediabunny/shared";
 import { LoudnessMeter, type LoudnessResult } from "./dsp/loudness";
 import { LevelWindows } from "./dsp/silence";
+import type { SileroVad } from "./dsp/silero-vad";
+import { VadFeed } from "./dsp/speech";
 import { pacedRatio } from "./pace";
+import type { ChainFacts, SoundProcessor } from "./processor";
 import { openSound, readSound } from "./reader";
 
 export interface SoundAnalysis {
@@ -20,6 +23,10 @@ export interface SoundAnalysis {
   duration: number;
   sampleRate: number;
   channels: number;
+  /** Loudness of the sound after `through` (when asked): what a job will write before any gain. */
+  processed?: LoudnessResult;
+  /** Speech probability every 32 ms from the sound's zero (Silero VAD), when `speech` was given. */
+  speech?: Float32Array;
 }
 
 export interface AnalyzeOptions {
@@ -28,6 +35,13 @@ export interface AnalyzeOptions {
   truePeak?: boolean;
   signal?: AbortSignal;
   onProgress?: (ratio: number) => void;
+  /**
+   * Also measure the sound as a job's processor (noise removal) will make it, so a gain that keeps
+   * the original's loudness can be chosen before the one render. Optional; nothing extra without it.
+   */
+  through?: (facts: ChainFacts) => SoundProcessor;
+  /** Also read where there is speech, with this model (a fresh state per file). */
+  speech?: SileroVad;
 }
 
 export const noSoundError = () =>
@@ -60,14 +74,32 @@ export async function analyzeSound(
     const total = Math.max(1e-6, src.end - src.origin);
     let channels = src.channels;
     const progress = pacedRatio(o.onProgress);
+    const proc = o.through?.({
+      sampleRate: src.sampleRate,
+      channels: src.channels,
+      duration: total,
+    });
+    const after = proc ? new LoudnessMeter(src.sampleRate, src.channels, false) : undefined;
+    const feed = o.speech ? new VadFeed(o.speech, src.sampleRate) : undefined;
     for await (const block of readSound(src, src.origin, src.end, o.signal)) {
       if (block.planes.length !== channels) channels = block.planes.length;
       meter.push(block.planes, block.frames);
       windows?.push(block.planes, block.frames);
+      feed?.push(block.planes, block.frames);
+      if (proc && after) {
+        const out = proc.process(block.planes, block.frames, block.time - src.origin);
+        after.push(out, out[0]?.length ?? 0);
+      }
       progress?.(Math.min(1, (block.time + block.frames / src.sampleRate - src.origin) / total));
     }
     if (o.signal?.aborted) throw new EngineError("cancelled", "Cancelled.");
+    if (proc && after) {
+      const rest = proc.flush();
+      after.push(rest, rest[0]?.length ?? 0);
+    }
     return {
+      processed: after?.result(),
+      speech: feed?.finish(),
       loudness: meter.result(),
       levels: windows?.finish() ?? new Float32Array(0),
       duration: total,

@@ -19,6 +19,7 @@ import type { MediaInfo } from "@/tools/engines/types";
 import { PLAY_SHORTCUT, useWorkspaceKeys } from "../shortcuts";
 import { isFlip } from "./idle/rotate";
 import type { OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 const isRotation = (v: unknown): v is Rotation =>
   typeof v === "number" && (rotations as readonly number[]).includes(v);
@@ -56,7 +57,7 @@ function ActionButton({
       aria-pressed={pressed}
       aria-keyshortcuts={shortcut}
       className={cn(
-        "flex min-h-16 flex-col items-center justify-center gap-1.5 rounded-md border px-3 py-3 text-sm transition-[background-color,color,border-color,scale] duration-(--duration-fast) ease-out focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 not-focus-visible:active:scale-97 disabled:active:scale-100 motion-reduce:active:scale-100",
+        "flex min-h-16 flex-col items-center justify-center gap-1.5 rounded-md border px-3 py-3 text-sm transition-[background-color,color,border-color,scale] duration-(--duration-fast) ease-(--ease-out) focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 not-focus-visible:active:scale-97 disabled:active:scale-100 motion-reduce:active:scale-100",
         pressed
           ? "border-fg bg-bg-subtle font-medium text-fg"
           : "border-border bg-bg text-fg hover:bg-bg-subtle",
@@ -91,6 +92,8 @@ function describe(o: RotateOptions): string {
 export const rotateSpec: OptionsSpec<RotateOptions> = {
   verb: "Rotate",
   previewResult: true,
+  // Turned or mirrored: side by side, never a wipe across two orientations (ADR-0135).
+  compare: () => ({ what: "picture", layout: "side-by-side" }),
   nextStep: { slug: "compress-video", label: "Compress it to share" },
   shortcuts: [
     { keys: "R", label: "Rotate right" },
@@ -120,7 +123,8 @@ export const rotateSpec: OptionsSpec<RotateOptions> = {
     flip: isFlip(preset.flip) ? preset.flip : "none",
   }),
   blocked: (o, info) => {
-    if (!info.video) return "This file has no video track to rotate.";
+    if (!info.video)
+      return unfixable("This file has no video track to rotate. Choose a video file.");
     if (isIdentity(o.rotate, o.flip)) return "Choose a rotation or a flip first.";
     return undefined;
   },
@@ -133,7 +137,7 @@ export const rotateSpec: OptionsSpec<RotateOptions> = {
       o.flip !== "none"
         ? "A flip rewrites every pixel"
         : "This container has no rotation flag, so every frame is redrawn";
-    return `${why} and the video is re-encoded. Runs on this device.`;
+    return `${why} and the video is re-encoded.`;
   },
   previewStyle: (o, info) => {
     const v = info.video;

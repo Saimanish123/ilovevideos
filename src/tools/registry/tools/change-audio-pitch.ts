@@ -23,8 +23,7 @@ export const changeAudioPitch: ToolInput = {
   content: {
     en: {
       title: "Change audio pitch",
-      subtitle:
-        "Move a song, voice or video's sound up or down in semitones, same length, in your browser.",
+      subtitle: "Move a song or voice up or down in pitch.",
       metaTitle: "Change audio pitch online, free, no upload",
       metaDescription:
         "Shift the pitch of an MP3, WAV or video's sound by semitones and cents without changing its speed. Listen first. Runs on your device. Free.",
@@ -41,7 +40,7 @@ export const changeAudioPitch: ToolInput = {
         "The shift is exact: a tone at 440 Hz moved up 3 semitones comes out at 523.25 Hz, and the output has the same number of samples as the input, so it stays in sync with a video or with other tracks in a project. The sound is read faster or slower through a band-limited resampler, then stretched back to its length by a phase vocoder that keeps drum hits and plucked notes sharp instead of smearing them.",
         "Large shifts sound less natural on voices. Pitch and the resonances of a voice (its formants) move together here, so a voice raised by more than 3 or 4 semitones starts to sound smaller and one lowered that far sounds larger. Instruments tolerate bigger shifts than voices do.",
         "Cents fine-tune by hundredths of a semitone. They fix a recording made slightly sharp or flat, for example a tape that ran a little fast, or match a song tuned to A = 432 Hz to instruments at 440 Hz, which is a shift of about +32 cents.",
-        "WAV and FLAC files are written sample for sample at their own depth. MP3, M4A, OGG and Opus are decoded and encoded once at a bitrate at least as high as the source's; MP3 and OGG are written by the ffmpeg engine on this device, which downloads once. In a video, the picture is copied as it is and only the sound is encoded again. To change speed and pitch together, as a record played at the wrong speed does, use [change audio speed](/change-audio-speed) instead.",
+        "WAV and FLAC files are written sample for sample at their own depth. MP3, M4A, OGG and Opus are decoded and encoded once at a bitrate at least as high as the source's; MP3 and OGG need a one-time download. In a video, the picture is copied as it is and only the sound is encoded again. To change speed and pitch together, as a record played at the wrong speed does, use [change audio speed](/change-audio-speed) instead.",
       ],
       faq: [
         {

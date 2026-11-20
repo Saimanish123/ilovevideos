@@ -9,12 +9,12 @@ import { canZip, makeZip, uniqueNames } from "@/lib/zip";
 import type { RunResultFile } from "@/tools/workers/client";
 import { FileName } from "./file-card";
 import type { NextStepLink, ResultVerdict } from "./options/types";
-import { NextStep } from "./result-card";
+import { ThenRow } from "./result-card";
 
 /**
  * Result of a multi-output run (split): every file with its time range and size, a Play button
  * that puts it in the preview slot, its own Download, and one ZIP of all of them as the primary
- * action. The ZIP is assembled on this device from the parts already in memory (store only).
+ * action. The ZIP is assembled from the parts already in memory (store only).
  * A batch passes `list={false}`: its queue rows already carry each file and its Download.
  */
 export function ResultFiles({
@@ -32,13 +32,13 @@ export function ResultFiles({
   onAdjust,
   list = true,
   zipName: zipNameProp,
-  ffmpegLabel = "The same operation with ffmpeg",
 }: {
   files: RunResultFile[];
   /** The input's name, for the ZIP's name. */
   sourceName: string;
   beforeBytes: number;
   meta?: string;
+  /** The equivalent ffmpeg command, kept as an attribute for tests and support; never shown. */
   ffmpegCommand?: string;
   /** Index of the file in the preview slot, when the page previews results. */
   shown?: number;
@@ -55,8 +55,6 @@ export function ResultFiles({
   list?: boolean;
   /** The ZIP's name; `<source>-parts.zip` by default. */
   zipName?: string;
-  /** The ffmpeg disclosure's label, e.g. naming which file of a batch the command is for. */
-  ffmpegLabel?: string;
 }) {
   // Object URLs in an effect (not useMemo) so StrictMode's double invoke cannot revoke a live URL.
   const [urls, setUrls] = useState<string[]>([]);
@@ -98,8 +96,9 @@ export function ResultFiles({
   const zipName = zipNameProp ?? `${baseName(sourceName)}-parts.zip`;
 
   return (
-    <div className="flex flex-col gap-5">
-      <div className="flex items-start gap-3">
+    // Arrives in parts, as the single result does (ADR-0157); the shared "Then" row comes last.
+    <div className="flex flex-col gap-5" data-ffmpeg-command={ffmpegCommand}>
+      <div className="arrive flex items-start gap-3">
         <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-fg text-bg-raised">
           {verdict?.missed ? (
             <Minus size={16} strokeWidth={1.5} aria-hidden />
@@ -119,7 +118,10 @@ export function ResultFiles({
       </div>
 
       {list && (
-        <ol className="flex max-h-96 flex-col gap-2 overflow-y-auto" aria-label="Parts">
+        <ol
+          className="arrive arrive-1 flex max-h-96 flex-col gap-2 overflow-y-auto"
+          aria-label="Parts"
+        >
           {files.map((f, i) => (
             <li
               key={f.filename}
@@ -163,7 +165,7 @@ export function ResultFiles({
 
       {/* One column at every width: the primary keeps the full-width slot the run button had, and the
           two quiet ways back sit under it instead of wrapping into a ragged row. */}
-      <div className="flex flex-col gap-3">
+      <div className="arrive arrive-2 flex flex-col gap-3">
         {zippable && zipUrl ? (
           <a
             href={zipUrl}
@@ -199,26 +201,13 @@ export function ResultFiles({
             : "Together the files are too large for one ZIP file (4 GB). Download them one by one."}
         </p>
       )}
-      {nextStep && (
-        // Hands on the part in the preview (or the first), so the next tool opens with it loaded.
-        <NextStep
-          slug={nextStep.slug}
-          label={nextStep.label}
-          file={
-            nextStep.with === "source" ? sourceFile : handoffFile(files[shown ?? 0] ?? files[0])
-          }
-        />
-      )}
-      {ffmpegCommand && (
-        <details className="text-sm">
-          <summary className="flex min-h-11 cursor-pointer items-center text-fg-muted hover:text-fg">
-            {ffmpegLabel}
-          </summary>
-          <pre className="mt-2 overflow-x-auto rounded-md bg-bg-subtle p-3 font-mono text-xs">
-            {ffmpegCommand}
-          </pre>
-        </details>
-      )}
+      {/* Hands on the part in the preview (or the first), so the next tool opens with it loaded. */}
+      <ThenRow
+        nextStep={nextStep}
+        missed={verdict?.missed === true}
+        result={() => handoffFile(files[shown ?? 0] ?? files[0])}
+        source={sourceFile}
+      />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { copyFileSync, readFileSync } from "node:fs";
-import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
 import { ALL_FORMATS, BufferSource, EncodedPacketSink, Input } from "mediabunny";
+import AxeBuilder from "./axe-builder";
 import { soundCheck } from "./sound";
 
 /**

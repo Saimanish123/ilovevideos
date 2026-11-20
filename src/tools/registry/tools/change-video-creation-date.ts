@@ -32,7 +32,7 @@ export const changeVideoCreationDate: ToolInput = {
   content: {
     en: {
       title: "Change a video's creation date",
-      subtitle: "Set or shift the recording date inside MP4 and MOV files, without re-encoding.",
+      subtitle: "Set or shift it, with its time zone, across many files.",
       metaTitle: "Change video creation date online, free",
       metaDescription:
         "Set or shift the recording date of MP4 and MOV videos in your browser, with time zone. Fix a wrong camera clock across many files. No upload.",

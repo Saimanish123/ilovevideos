@@ -22,6 +22,7 @@ import {
   BlobSource,
   canEncodeAudio,
   canEncodeVideo,
+  type EncodedPacket,
   Input,
   MediaStreamAudioTrackSource,
   MediaStreamVideoTrackSource,
@@ -40,6 +41,12 @@ import { opusEncoderDelay, readOpusHead } from "../mediabunny/opus-delay";
 import { editOutputSound } from "../mediabunny/output-store";
 import { aacEncoderStart } from "../mediabunny/priming";
 import type { MediaInfo } from "../types";
+import {
+  type RecordingMeta,
+  type StoredAudioConfig,
+  type StoredVideoConfig,
+  toBase64,
+} from "./journal";
 import {
   type AudioCodecId,
   bubbleRect,
@@ -354,14 +361,87 @@ export async function startRecorder(setup: RecorderSetup): Promise<Recorder> {
 
   // A new recording replaces the last one: its file is no longer on the page.
   await releaseRecordings();
-  const sink: CaptureSink = await openCaptureSink();
+  // MP4 and M4A keep their index in memory until Stop: a packet index beside the file lets a
+  // recording cut off by a crash be finished later (./journal, ADR-0130).
+  const indexed = extension === "mp4" || extension === "m4a";
+  const sink: CaptureSink = await openCaptureSink({ journal: indexed });
   const output = new Output({ format, target: sink.target });
-  // Encoded bytes as the encoders produce them: the sink writes in 2 MiB chunks, so its own count
+  // Encoded bytes as the encoders produce them: the sink writes in whole chunks, so its own count
   // lags; the live size is whichever is larger.
   let encodedBytes = 0;
-  const count = (packet: { byteLength: number }) => {
-    encodedBytes += packet.byteLength;
+  // What the recording is, rewritten beside it about once a second (seconds, bytes, decoder setup).
+  const record: RecordingMeta = {
+    v: 1,
+    kind: setup.kind,
+    started: started.getTime(),
+    mime,
+    extension,
+    seconds: 0,
+    bytes: 0,
+    ...(size && videoCodec
+      ? { fps, video: { codec: videoCodec, width: size.width, height: size.height } }
+      : {}),
+    ...(soundTrack && audioCodec
+      ? {
+          audio: {
+            codec: audioCodec,
+            channels,
+            sampleRate: audioCodec === "opus" ? 48_000 : sampleRate,
+            bitrate: audioBitrate,
+          },
+        }
+      : {}),
   };
+  const bytesOf = (d?: AllowSharedBufferSource) =>
+    d
+      ? toBase64(
+          d instanceof ArrayBuffer ||
+            (typeof SharedArrayBuffer !== "undefined" && d instanceof SharedArrayBuffer)
+            ? new Uint8Array(d)
+            : new Uint8Array(
+                (d as ArrayBufferView).buffer,
+                (d as ArrayBufferView).byteOffset,
+                (d as ArrayBufferView).byteLength,
+              ),
+        )
+      : undefined;
+  const countAs =
+    (track: "video" | "audio") =>
+    (packet: EncodedPacket, m?: { decoderConfig?: VideoDecoderConfig | AudioDecoderConfig }) => {
+      encodedBytes += packet.byteLength;
+      if (m?.decoderConfig) {
+        try {
+          if (track === "video" && record.video) {
+            const c = m.decoderConfig as VideoDecoderConfig;
+            record.video.config = {
+              codec: c.codec,
+              codedWidth: c.codedWidth,
+              codedHeight: c.codedHeight,
+              description: bytesOf(c.description),
+            } satisfies StoredVideoConfig;
+          } else if (track === "audio" && record.audio) {
+            const c = m.decoderConfig as AudioDecoderConfig;
+            record.audio.config = {
+              codec: c.codec,
+              sampleRate: c.sampleRate,
+              numberOfChannels: c.numberOfChannels,
+              description: bytesOf(c.description),
+            } satisfies StoredAudioConfig;
+          }
+          sink.describe(record);
+        } catch {
+          // The setup is not stored: this recording cannot be recovered, it still records.
+        }
+      }
+      if (indexed)
+        sink.journal({
+          track,
+          key: packet.type === "key",
+          size: packet.byteLength,
+          timestamp: packet.timestamp,
+          duration: packet.duration,
+        });
+    };
   const errors: Promise<void>[] = [];
   let videoSource: MediaStreamVideoTrackSource | undefined;
   let audioSource: MediaStreamAudioTrackSource | undefined;
@@ -421,7 +501,7 @@ export async function startRecorder(setup: RecorderSetup): Promise<Recorder> {
         codec: videoCodec,
         quality: new Quality({ bitrate: vBitrate ?? 4_000_000, bitrateMode: "variable" }),
         latencyMode: "realtime",
-        onEncodedPacket: count,
+        onEncodedPacket: countAs("video"),
         keyFrameInterval: 2,
         contentHint: setup.kind === "screen" ? "detail" : "motion",
         // Every frame is fitted into the first frame's box: a window resized or a phone turned
@@ -444,7 +524,7 @@ export async function startRecorder(setup: RecorderSetup): Promise<Recorder> {
   if (soundTrack && audioCodec) {
     audioSource = new MediaStreamAudioTrackSource(soundTrack as MediaStreamAudioTrack, {
       codec: audioCodec,
-      onEncodedPacket: count,
+      onEncodedPacket: countAs("audio"),
       ...(audioCodec === "pcm-s16"
         ? {}
         : { quality: new Quality({ bitrate: audioBitrate ?? 128_000 }) }),
@@ -487,6 +567,15 @@ export async function startRecorder(setup: RecorderSetup): Promise<Recorder> {
   ]
     .filter(Boolean)
     .join(" · ");
+
+  // The description beside the file follows the recording (for the recovery offer's numbers).
+  sink.describe(record);
+  const describeTimer = setInterval(() => {
+    record.seconds = finalSeconds();
+    record.bytes = Math.max(sink.bytes(), encodedBytes);
+    sink.describe(record);
+  }, 1000);
+  closers.push(() => clearInterval(describeTimer));
 
   const close = () => {
     for (const c of closers) c();
@@ -541,6 +630,11 @@ export async function startRecorder(setup: RecorderSetup): Promise<Recorder> {
         );
       }
       close();
+      // Finished normally: never offered as an interrupted recording.
+      record.seconds = finalSeconds();
+      record.bytes = sink.bytes();
+      record.finished = true;
+      sink.describe(record);
       let blob = await sink.finish(mime);
       blob = await signalEncoderDelay(blob, extension, audioCodec);
       const filename = recordingName(setup.kind, started, extension);
@@ -585,7 +679,7 @@ export async function startRecorder(setup: RecorderSetup): Promise<Recorder> {
  * AAC: an edit list skips the encoder's priming so sound
  * and picture line up as recorded. Ogg Opus: the measured pre-skip goes into the header.
  */
-async function signalEncoderDelay(
+export async function signalEncoderDelay(
   blob: Blob,
   extension: string,
   audio: AudioCodecId | undefined,
@@ -631,7 +725,7 @@ async function signalEncoderDelay(
 }
 
 /** The finished file's facts, read back from it (length from its packets, not from the clock). */
-async function readBack(
+export async function readBack(
   file: File,
   k: {
     video?: VideoCodecId;

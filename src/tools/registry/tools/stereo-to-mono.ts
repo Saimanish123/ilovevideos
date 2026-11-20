@@ -25,15 +25,16 @@ export const stereoToMono: ToolInput = {
   ],
   updatedAt: "2026-10-08",
   icon: "ear",
+  illustration: "stereo-to-mono",
   content: {
     en: {
       title: "Convert stereo to mono",
-      subtitle: "Mix the left and right channels of an audio file into one, in your browser.",
+      subtitle: "Both channels mixed into one, nothing lost on one side.",
       metaTitle: "Convert stereo to mono online, free, no upload",
       metaDescription:
         "Mix an MP3, WAV, M4A, FLAC or other stereo file down to one mono channel. Same format out, tags kept. Runs on your device. Free, no account.",
       action: "Make mono",
-      what: "This tool mixes the channels of an audio file into a single mono channel and saves it in the format it came in, or another you choose. Left and right are averaged sample by sample, so a sound in only one ear ends up in both, at half its level. It runs on your device; the file is not uploaded.",
+      what: "This tool mixes the channels of an audio file into a single mono channel and saves it in the format it came in, or another you choose. Left and right are averaged sample by sample, so a sound in only one ear ends up in both, at half its level.",
       steps: [
         "Drop a stereo audio file onto the page or choose one from your device.",
         "Keep the format it is saved in, or pick another under Save as.",
@@ -43,7 +44,7 @@ export const stereoToMono: ToolInput = {
         "A recording with the voice in only one channel, a lavalier into the left input of a two-channel recorder for example, sounds lopsided in headphones and vanishes on a speaker set to one side. Mono puts it in both ears: it is the fix for one-sided interviews and screen recordings.",
         "Averaging halves the level of anything that is only in one channel (−6 dB) and keeps anything that is in both at its level. Two channels that are out of phase, which happens with badly wired microphones, partly cancel: if the mono file sounds thin or hollow, the original channels were fighting each other.",
         "A mono file needs about half the data of a stereo one for the same quality. WAV and FLAC shrink by half; for MP3, M4A and OGG the size follows the bitrate you choose, so a mono file at a lower bitrate sounds as good as stereo at a higher one. Speech is fine at 96 kbps in mono.",
-        "WAV and FLAC stay lossless apart from the mix. MP3, M4A, OGG and Opus are decoded and encoded once more. WAV and Opus are written by the browser itself; MP3, M4A, FLAC and OGG by the ffmpeg engine, which runs on this device and downloads once. To also change the sample rate, use [change audio sample rate](/change-audio-sample-rate); to convert between formats without mixing, use the [audio converter](/audio-converter).",
+        "WAV and FLAC stay lossless apart from the mix. MP3, M4A, OGG and Opus are decoded and encoded once more. WAV and Opus are written by the browser itself; MP3, M4A, FLAC and OGG need a one-time download. To also change the sample rate, use [change audio sample rate](/change-audio-sample-rate); to convert between formats without mixing, use the [audio converter](/audio-converter).",
       ],
       faq: [
         {

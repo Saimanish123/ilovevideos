@@ -47,6 +47,7 @@ export const optionsLoaders: Partial<Record<EngineId, () => Promise<AnySpec>>> =
   "audio-tracks": () => import("./audio-tracks").then((m) => m.audioTracksSpec),
   "remove-silence": () => import("./remove-silence").then((m) => m.removeSilenceSpec),
   pitch: () => import("./pitch").then((m) => m.pitchSpec),
+  "speech-denoise": () => import("./speech-denoise").then((m) => m.speechDenoiseSpec),
   "audio-analyze": () => import("./audio-analyze").then((m) => m.audioAnalyzeSpec),
   ringtone: () => import("./ringtone").then((m) => m.ringtoneSpec),
   "join-audio": () => import("./join-audio").then((m) => m.joinAudioSpec),
@@ -67,6 +68,7 @@ export const optionsLoaders: Partial<Record<EngineId, () => Promise<AnySpec>>> =
   "blur-region": () => import("./blur-region").then((m) => m.blurRegionSpec),
   "image-overlay": () => import("./image-overlay").then((m) => m.imageOverlaySpec),
   "chroma-key": () => import("./chroma-key").then((m) => m.chromaKeySpec),
+  "portrait-matte": () => import("./portrait-matte").then((m) => m.portraitMatteSpec),
   // Time and layout (round 3, builder C).
   // Picture quality (round 3, builder D).
   clarity: () => import("./clarity").then((m) => m.claritySpec),

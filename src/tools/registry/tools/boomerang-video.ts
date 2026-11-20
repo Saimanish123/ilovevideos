@@ -20,12 +20,11 @@ export const boomerangVideo: ToolInput = {
   related: ["loop-video", "reverse-video", "video-to-gif", "trim-video", "change-video-speed"],
   updatedAt: "2026-10-01",
   icon: "iteration-ccw",
-  illustration: "loop",
+  illustration: "boomerang",
   content: {
     en: {
       title: "Make a boomerang video",
-      subtitle:
-        "Turn a short clip into a loop that plays forwards, then backwards, on repeat. Runs in your browser.",
+      subtitle: "Make a clip play forwards, then backwards, on repeat.",
       metaTitle: "Boomerang video maker, free, no upload",
       metaDescription:
         "Make a boomerang from any short video: it plays forwards, then backwards, on repeat. Choose the bounces or a length. Free, no account, no upload.",

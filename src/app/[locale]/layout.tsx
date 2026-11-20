@@ -5,6 +5,7 @@ import { setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
 import type { ReactNode } from "react";
 import { JsonLd } from "@/components/layout/json-ld";
+import { Reveal } from "@/components/layout/reveal";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { GeistMono, GeistSans } from "@/lib/fonts";
@@ -16,7 +17,7 @@ import "@/styles/globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `Video tools, free, on your device · ${site.name}`,
+    default: `Free online video tools · ${site.name}`,
     template: `%s · ${site.name}`,
   },
   description: site.description,
@@ -68,6 +69,7 @@ export default async function LocaleLayout({
               {children}
             </main>
             <SiteFooter locale={locale} />
+            <Reveal />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

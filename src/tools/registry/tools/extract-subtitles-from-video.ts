@@ -17,20 +17,13 @@ export const extractSubtitlesFromVideo: ToolInput = {
     "save embedded subtitles",
   ],
   aliases: ["subtitles", "srt", "captions", "rip subtitles", "demux subtitles"],
-  related: [
-    "subtitle-converter",
-    "shift-subtitle-timing",
-    "add-subtitles-to-video",
-    "srt-to-vtt",
-    "video-info",
-  ],
+  related: ["subtitle-converter", "shift-subtitle-timing", "add-subtitles-to-video", "video-info"],
   updatedAt: "2026-10-01",
   icon: "captions",
   content: {
     en: {
       title: "Extract subtitles from video",
-      subtitle:
-        "Save the subtitle tracks inside an MKV, MP4, MOV or WebM as SRT, WebVTT or ASS files.",
+      subtitle: "Save the subtitles inside a video as separate files.",
       metaTitle: "Extract subtitles from video, free, no upload",
       metaDescription:
         "Save the subtitle tracks inside MKV, MP4, MOV and WebM files as SRT, WebVTT or ASS. Lists each track with its language. Runs in your browser.",

@@ -29,7 +29,7 @@ export const splitVideo: ToolInput = {
   content: {
     en: {
       title: "Split video",
-      subtitle: "Cut one video into several parts, each its own file. Runs in your browser.",
+      subtitle: "Cut one video into several separate files.",
       metaTitle: "Split video into parts online, free, no upload",
       metaDescription:
         "Cut a video into equal parts, fixed-length clips or at your own markers. Lossless by default. Runs in your browser; files never leave your device.",
@@ -69,7 +69,7 @@ export const splitVideo: ToolInput = {
         },
         {
           q: "Can I download all the parts at once?",
-          a: "Yes. Download all puts every part into one ZIP file, built on your device. Each part also has its own Download button.",
+          a: "Yes. Download all puts every part into one ZIP file. Each part also has its own Download button.",
         },
         {
           q: "Is my video uploaded?",

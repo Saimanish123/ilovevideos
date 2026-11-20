@@ -30,8 +30,7 @@ export const sharpenVideo: ToolInput = {
   content: {
     en: {
       title: "Sharpen video",
-      subtitle:
-        "Make soft footage look crisper, with a before and after split. Runs in your browser.",
+      subtitle: "Make soft footage look sharper.",
       metaTitle: "Sharpen video online, free, no upload",
       metaDescription:
         "Sharpen a soft or slightly blurry video with a live before and after split. Light, Medium or Strong, plus a fine slider. Runs in your browser. Free.",
@@ -48,7 +47,7 @@ export const sharpenVideo: ToolInput = {
         "Every sharpen filter also lifts noise, because grain is fine detail too. This one scales down changes smaller than a couple of brightness levels, which spares faint grain, but grainy low-light footage will still look grainier. For those clips, [denoise the video](/denoise-video) first and sharpen the cleaned result afterwards, at Light or Medium.",
         "Detail size, under More options, sets how wide an edge the tool looks at. Fine lifts texture such as hair, fabric and text; Medium, the default, suits most footage; Coarse gives larger shapes more punch but shows halos sooner. The strength slider scales the effect, with Medium as 100%, from barely there to strong.",
         "The before and after view uses the same shader and numbers as the file, at up to 1920 pixels on its long side, so what you see right of the divider is what you will get. The picture is encoded once to H.264 near the source's bitrate, and the sound is copied as it is where the container allows. Sharpening adds detail for the encoder to keep, so the file can come out a little larger than the source at the same quality.",
-        "FFmpeg's nearest filter is `unsharp` on brightness, which the result's command uses; it has no overshoot limit or grain threshold, so at the same amount it draws stronger halos. If the video is also shaky, run [stabilize](/stabilize-video) first: steadying redraws and slightly softens every frame, which a sharpen afterwards puts right.",
+        "FFmpeg's nearest filter is `unsharp` on brightness; it has no overshoot limit or grain threshold, so at the same amount it draws stronger halos. If the video is also shaky, run [stabilize](/stabilize-video) first: steadying redraws and slightly softens every frame, which a sharpen afterwards puts right.",
       ],
       faq: [
         {

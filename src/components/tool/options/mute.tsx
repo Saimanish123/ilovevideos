@@ -29,6 +29,8 @@ export const muteSpec: OptionsSpec<MuteOptions> = {
   verb: "Remove audio",
   defaults: () => ({}),
   previewResult: true,
+  // The picture is copied and the sound is gone: nothing to compare (ADR-0134).
+  compare: false,
   shortcuts: [PLAY_SHORTCUT],
   // A video without sound is already what this page makes: say so where the button would be.
   blocked: (_o, info) =>

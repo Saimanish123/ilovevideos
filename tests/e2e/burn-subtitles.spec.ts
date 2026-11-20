@@ -1,6 +1,6 @@
 import { execFileSync } from "node:child_process";
-import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
+import AxeBuilder from "./axe-builder";
 import { type Box, probe, saveDownload, shootWidths, trackUploads } from "./overlay-helpers";
 
 /**

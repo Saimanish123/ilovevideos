@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 import { BreadcrumbTrail } from "@/components/layout/breadcrumb-trail";
 import { JsonLd } from "@/components/layout/json-ld";
 import { pageBreadcrumbs } from "@/lib/seo/jsonld";
@@ -13,6 +13,7 @@ export function LegalPage({
   localePath,
   lead,
   sections = [],
+  after,
   children,
 }: {
   title: string;
@@ -20,6 +21,8 @@ export function LegalPage({
   localePath: string;
   lead: string;
   sections?: readonly { heading: string; paragraphs: readonly string[] }[];
+  /** Content placed right after the section with this heading (privacy's clear control). */
+  after?: { heading: string; node: ReactNode };
   children?: ReactNode;
 }) {
   return (
@@ -30,14 +33,17 @@ export function LegalPage({
         <h1 className="mt-4 text-balance text-h1">{title}</h1>
         <p className="mt-3 text-body-lg text-fg-muted">{lead}</p>
         {sections.map((s) => (
-          <section key={s.heading} className="mt-12">
-            <h2 className="text-h2">{s.heading}</h2>
-            <div className="mt-4 space-y-4 text-body text-fg-muted">
-              {s.paragraphs.map((p) => (
-                <p key={p.slice(0, 40)}>{p}</p>
-              ))}
-            </div>
-          </section>
+          <Fragment key={s.heading}>
+            <section className="mt-12">
+              <h2 className="text-h2">{s.heading}</h2>
+              <div className="mt-4 space-y-4 text-body text-fg-muted">
+                {s.paragraphs.map((p) => (
+                  <p key={p.slice(0, 40)}>{p}</p>
+                ))}
+              </div>
+            </section>
+            {after?.heading === s.heading && after.node}
+          </Fragment>
         ))}
         {children}
       </div>

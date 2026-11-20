@@ -29,8 +29,7 @@ export const zoomVideo: ToolInput = {
   content: {
     en: {
       title: "Zoom in on a video",
-      subtitle:
-        "Zoom and pan over time with key frames, eased or steady, at the video's own size. In your browser.",
+      subtitle: "Move and scale the view over time, smoothly.",
       metaTitle: "Zoom in on a video online, free, no upload",
       metaDescription:
         "Zoom in on a video and pan across it with key frames on a timeline. Smooth or steady motion, output at the original size. Free, no upload.",
@@ -45,9 +44,9 @@ export const zoomVideo: ToolInput = {
       goodToKnow: [
         "A zoom cannot add detail. At 2× the output shows half the picture's width and height, so a 1080p video zoomed 2× is built from 540 of its lines and enlarged to fill the frame. The status line gives that number for the closest view you set, so you can judge how soft the result will be before running it; with 4K footage there is plenty of room, with a 720p phone clip anything past 1.5× shows.",
         "Between two key frames the zoom changes by the same factor each second, which the eye reads as a steady move toward the subject. A zoom that grew by the same number of pixels each second would appear to slow down as it closes in. Smooth motion eases into and out of every key frame so moves start and stop like a camera operator would; linear keeps the speed constant, which suits a long, slow drift.",
-        "The view's position is not rounded to whole pixels, and each frame is drawn with high-quality filtering, so a slow pan glides instead of jumping a pixel at a time. FFmpeg's own zoompan filter rounds the position, which is why its slow moves often shimmer; the command shown with the result uses scale and crop per frame to match what this page writes.",
+        "The view's position is not rounded to whole pixels, and each frame is drawn with high-quality filtering, so a slow pan glides instead of jumping a pixel at a time. FFmpeg's own zoompan filter rounds the position, which is why its slow moves often shimmer; this page does not.",
         "This is not the same as [crop video](/crop-video), which keeps one rectangle for the whole clip and writes a smaller file of that size. Here the view changes over time and is always scaled back to the full frame. To change the frame's shape for a platform, follow up with [change video aspect ratio](/change-video-aspect-ratio).",
-        "The picture is re-encoded to H.264 at a bitrate close to the source's, and the sound is copied when the file allows, as AAC in MP4 and MOV usually does. A file whose picture this browser cannot decode, or a format only FFmpeg reads, is turned away with a link to convert it to MP4 first.",
+        "The picture is re-encoded to H.264 at a bitrate close to the source's, and the sound is copied when the file allows, as AAC in MP4 and MOV usually does. A file whose picture this browser cannot decode, or an older format such as AVI or WMV, is turned away with a link to convert it to MP4 first.",
       ],
       faq: [
         {

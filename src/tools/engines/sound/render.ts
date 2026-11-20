@@ -167,7 +167,7 @@ export async function renderSound(job: RenderJob): Promise<RenderResult> {
               : "wav";
       enc = await pickEncoding([target.native], src.sampleRate, src.channels, target.bitrateKbps);
     } else {
-      throw new EngineError("internal", "This format is written by the ffmpeg engine.");
+      throw new EngineError("internal", "This format could not be written.", "Try again.");
     }
     if (!enc)
       throw new EngineError(

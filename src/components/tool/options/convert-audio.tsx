@@ -8,17 +8,21 @@ import {
   type AudioFormatId,
   audioBitratePresets,
   audioFormatById,
+  audioFormatIds,
   audioFormats,
   normalizeAudioCodec,
 } from "@/content/formats/audio";
 import { formatBytes, formatDuration, withUnit } from "@/lib/format";
 import type { ConvertAudioOptions } from "@/tools/engines/convert-audio";
 import { codecName } from "@/tools/engines/convert-video/plan";
+import { ffmpegDownloadSize } from "@/tools/engines/ffmpeg/size";
 import { downmixWords } from "@/tools/engines/sound/dsp/downmix";
 import type { MediaInfo } from "@/tools/engines/types";
 import { estimateAudioBytes, sourceFormatId } from "@/tools/engines/video-to-audio/math";
 import { type ExtractionPlan, pcmName, planExtraction } from "@/tools/engines/video-to-audio/plan";
+import { z } from "./remember-schema";
 import type { OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 const targetOptions = audioFormats.map((f) => ({
   value: f.id,
@@ -106,6 +110,12 @@ function defaultTarget(info: MediaInfo, preset: Record<string, unknown>): AudioF
 
 export const convertAudioSpec: OptionsSpec<ConvertAudioOptions> = {
   verb: "Convert",
+  remember: {
+    schema: z.object({
+      to: z.enum(audioFormatIds),
+      bitrate: z.union([z.literal(128), z.literal(192), z.literal(320)]),
+    }),
+  },
   defaults: (info, preset) => ({
     to: preset.keepFormat === true ? sourceFormatId(info) : defaultTarget(info, preset),
     bitrate: isBitrate(preset.bitrate) ? preset.bitrate : 192,
@@ -115,12 +125,17 @@ export const convertAudioSpec: OptionsSpec<ConvertAudioOptions> = {
   }),
   Hero: AudioHero,
   previewResult: true,
+  // A copy is identical; a re-encode gets Before/After (ADR-0136).
+  compare: (o, info) => (plan(o, info).copy ? false : { what: "sound" }),
   nextStep: { slug: "add-audio-to-video", label: "Add audio to a video" },
   route: (o, info, fileName) =>
     plan(o, info, fileName).backend === "ffmpeg-wasm" ? "page" : "worker",
   blocked: (o, info) => {
     const p = plan(o, info);
-    if (!p.hasAudio) return "This file has no audio track, so there is nothing to convert.";
+    if (!p.hasAudio)
+      return unfixable(
+        "This file has no audio track, so there is nothing to convert. Choose a file with sound.",
+      );
     const t = info.audio?.[0];
     // The mono and sample-rate pages keep the format: a file that already has the layout or rate
     // is done, not an error.
@@ -161,7 +176,8 @@ export const convertAudioSpec: OptionsSpec<ConvertAudioOptions> = {
       const lossySource = kbps !== undefined;
       return `${src} is decoded once to ${p.target.name}; nothing is lost from here on${lossySource ? ", but nothing lost earlier comes back" : ""}.${size}`;
     }
-    const engine = p.backend === "ffmpeg-wasm" ? " with the ffmpeg engine" : "";
+    const engine =
+      p.backend === "ffmpeg-wasm" ? `, after a one-time download of ${ffmpegDownloadSize()}` : "";
     const ceiling =
       kbps !== undefined && p.bitrateKbps !== undefined && p.bitrateKbps > kbps * 1.15
         ? ` The source has ${withUnit(kbps, "kbps")}, so a higher bitrate only makes the file bigger.`

@@ -244,7 +244,7 @@ export function VoiceCapture({ onStart, onCaptured }: CaptureProps) {
                 <CaptureError message={rec.error.message} hint={rec.error.hint} />
               ) : (
                 <p className="text-fg-muted text-sm" role="status" aria-live="polite">
-                  {opening ? "Turning on the microphone" : `${formatLine[format]} · on this device`}
+                  {opening ? "Turning on the microphone" : `${formatLine[format]}`}
                 </p>
               )}
               <Button

@@ -78,7 +78,7 @@ export function ffmpegFailure(
   if (odd)
     return new EngineError(
       "unsupported-input",
-      `This picture is ${odd[2]?.replace("x", "×")}, and the H.264 encoder needs an even width and height.`,
+      `This picture is ${odd[2]?.replace("x", "×")}, and H.264 needs an even width and height.`,
       "Crop or resize it by one pixel first.",
     );
   const encoder =
@@ -90,7 +90,7 @@ export function ffmpegFailure(
     const facts = soundFacts(log);
     return new EngineError(
       "unsupported-output",
-      `The ${name ? `${name} ` : ""}encoder does not accept this ${facts ? `sound (${facts})` : "stream"} with these settings.`,
+      `This ${facts ? `sound (${facts})` : "stream"} cannot be written${name ? ` as ${name}` : ""} with these settings.`,
       facts
         ? "Choose another format, or change the sample rate to 48 kHz first."
         : "Choose another format or a lower setting.",

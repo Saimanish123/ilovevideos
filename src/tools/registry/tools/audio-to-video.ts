@@ -29,7 +29,7 @@ export const audioToVideo: ToolInput = {
   content: {
     en: {
       title: "Turn audio into a video",
-      subtitle: "Put a picture or a title card over an MP3, WAV or M4A and save it as an MP4.",
+      subtitle: "Turn a song or recording into a video with a picture.",
       metaTitle: "Audio to video: MP3 to MP4 with a picture",
       metaDescription:
         "Turn an MP3, M4A, WAV or FLAC into an MP4 with a still image or a title card, for video sites. AAC sound is copied as it is. Runs in your browser.",
@@ -46,7 +46,7 @@ export const audioToVideo: ToolInput = {
         "An M4A or AAC file's sound is copied into the video packet for packet, so it is exactly the sound you dropped. MP3, WAV, FLAC, OGG and Opus sound is encoded once to AAC at 192 kbps, since AAC is the sound format that MP4 players and upload pages expect; the page says which of the two happens before you start. MP3 files keep their exact start and end, because the encoder delay the MP3 notes in its header is taken off first.",
         "The title card is text on a flat dark or light background, drawn with the Geist typeface: the title from the file's own title tag, or its name if it has none, and a second line with the artist. With an image in a frame of another shape, Blurred fills the sides with a soft copy of the picture, Black leaves bars, and Fill crops the picture to the frame. Choosing the image's own shape keeps the whole picture with no bars, scaled so its long side is at most 1920 pixels.",
         "Several audio files dropped together get the same picture settings and one video each, collected in a ZIP; a title card then shows each file's own title. That suits an album or a run of podcast episodes. To show several pictures in turn over one sound, make a slideshow with [images to video](/images-to-video) instead.",
-        "Captions or lyrics can be added afterwards with [add subtitles](/add-subtitles-to-video), as a track players can switch on or as text drawn into the picture. Everything runs in your browser: the sound and the picture are never uploaded.",
+        "Captions or lyrics can be added afterwards with [add subtitles](/add-subtitles-to-video), as a track players can switch on or as text drawn into the picture.",
       ],
       faq: [
         {

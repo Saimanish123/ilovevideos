@@ -98,7 +98,7 @@ export const barsHooks: Pick<OptionsSpec<BarsValue>, "blocked" | "summary" | "re
     const r = cropRect(o, v);
     if (isFullFrame(r, v)) return undefined;
     const est = geometryEstimate(info, r);
-    return `${formatDimensions(v.width, v.height)} → ${formatDimensions(r.width, r.height)} · H.264 · ${soundWords(info)} · about ${formatBytes(est.bytes)} · on this device`;
+    return `${formatDimensions(v.width, v.height)} → ${formatDimensions(r.width, r.height)} · H.264 · ${soundWords(info)} · about ${formatBytes(est.bytes)}`;
   },
   result: () => ({ title: "Black bars removed" }),
   Panel: BarsPanel,

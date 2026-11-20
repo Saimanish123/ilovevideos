@@ -23,6 +23,17 @@ export type ToWorker =
       inputs?: WorkerInput[];
     }
   | { type: "cancel"; id: number }
+  /**
+   * Asks the engine's `supports()` for these inputs and options without running (ADR-0147): the page
+   * says before the user starts when this browser cannot do the job. Answered with `checked`.
+   */
+  | {
+      type: "check";
+      id: number;
+      engineId: EngineId;
+      options: unknown;
+      inputs: WorkerInput[];
+    }
   /** Removes this worker's outputs on disk (Start over); results already handed on stop reading. */
   | { type: "release"; id: number };
 
@@ -53,7 +64,21 @@ export type FromWorker =
       /** Every file of a multi-output run (split), in order; `files[0].blob` is `blob`. */
       files?: WorkerOutputFile[];
     }
-  | { type: "error"; id: number; code: EngineErrorCode; message: string; hint?: string }
+  | {
+      type: "error";
+      id: number;
+      code: EngineErrorCode;
+      message: string;
+      hint?: string;
+      /** The engine's `supports()` said no: this browser cannot do it, nothing ran (ADR-0147). */
+      unsupported?: true;
+    }
+  /** The answer to `check`: `failure` when this browser cannot run the job as set. */
+  | {
+      type: "checked";
+      id: number;
+      failure?: { code: EngineErrorCode; message: string; hint?: string };
+    }
   | { type: "released"; id: number }
   /**
    * Sent once when the worker's module has finished evaluating and its message handler is set.

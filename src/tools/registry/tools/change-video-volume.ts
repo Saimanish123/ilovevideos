@@ -20,15 +20,15 @@ export const changeVideoVolume: ToolInput = {
   related: ["normalize-audio", "fade-audio-in-video", "replace-audio-in-video", "compress-video"],
   updatedAt: "2026-10-01",
   icon: "volume-2",
+  illustration: "video-volume",
   content: {
     en: {
       title: "Change video volume",
-      subtitle:
-        "Make the sound of a video louder or quieter, with the picture untouched. Runs in your browser.",
+      subtitle: "Make a video's sound louder or quieter.",
       metaTitle: "Increase video volume online, free, no upload",
       metaDescription:
         "Boost or lower the sound of a video by a set number of decibels, with a limiter so it does not clip. The picture is copied. Runs on your device. Free.",
-      what: "This tool turns the sound of a video up or down by the number of decibels you choose and writes a new file. The picture is copied into it exactly as it was, frame for frame; only the sound is decoded, changed and encoded again. A limiter keeps a boost from clipping, and the loudness of the source and of the result are measured on your device, so you see what changed.",
+      what: "This tool turns the sound of a video up or down by the number of decibels you choose and writes a new file. The picture is copied into it exactly as it was, frame for frame; only the sound is decoded, changed and encoded again. A limiter keeps a boost from clipping, and the loudness of the source and of the result are measured, so you see what changed.",
       steps: [
         "Drop a video onto the page or choose one from your device.",
         "Pick a preset or drag the volume slider; the preview plays at the new level.",

@@ -311,7 +311,7 @@ export function ScreenCapture({ onStart, onCaptured }: CaptureProps) {
                     : (notice ??
                       (words === null
                         ? "This browser cannot encode video here"
-                        : `${words ?? "MP4 · H.264, AAC"} · on this device`))}
+                        : `${words ?? "MP4 · H.264, AAC"}`))}
                 </p>
               )}
               <Button

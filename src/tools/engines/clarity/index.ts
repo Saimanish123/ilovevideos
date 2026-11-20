@@ -24,7 +24,7 @@ export { ClarityOptions };
 const noGl = () =>
   new EngineError(
     "unsupported-output",
-    "This browser cannot draw video frames with WebGL 2 in the background.",
+    "This browser cannot draw this effect on the video.",
     "Try desktop Chrome or Edge.",
   );
 
@@ -53,7 +53,7 @@ export const clarityEngine: Engine<ClarityOptions> = {
     if (!(await canEncodeAvc(size.width, size.height)))
       throw new EngineError(
         "unsupported-output",
-        `This browser's H.264 encoder cannot write a ${formatDimensions(size.width, size.height)} video.`,
+        `This browser cannot write a ${formatDimensions(size.width, size.height)} H.264 video.`,
         "Make the video smaller with compress video first, or try desktop Chrome or Edge.",
       );
     let o = options;

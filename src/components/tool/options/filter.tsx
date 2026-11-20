@@ -16,6 +16,7 @@ import {
   colorLookIds,
   isLookId,
   type LookId,
+  lookIds,
   looks,
   monoLookIds,
 } from "@/tools/engines/video-filter/looks";
@@ -36,7 +37,9 @@ import {
 import { PLAY_SHORTCUT, useWorkspaceKeys } from "../shortcuts";
 import { type Choice, Choices } from "./choices";
 import { pictureSize, sizeNote } from "./picture-size";
+import { between, z } from "./remember-schema";
 import type { OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 /**
  * The preview compares through the value (`compare: "before"` shows the untouched picture); the
@@ -171,6 +174,15 @@ export const filterSpec: OptionsSpec<FilterValue> = {
   previewResult: true,
   nextStep: { slug: "compress-video", label: "Compress the result" },
   shortcuts: [{ keys: "C", label: "Compare with the original" }, PLAY_SHORTCUT],
+  remember: {
+    schema: z.object({
+      look: z.enum(lookIds),
+      strength: between(0, 1),
+      brightness: between(-1, 1),
+      contrast: between(-1, 1),
+      saturation: between(-1, 1),
+    }),
+  },
   defaults: (_info, preset) => {
     const job = jobOf(preset);
     return {
@@ -191,7 +203,7 @@ export const filterSpec: OptionsSpec<FilterValue> = {
       ? undefined
       : { filter: `url(#${FILTER_ID})` },
   blocked: (o, info) => {
-    if (!info.video) return "This file has no video track.";
+    if (!info.video) return unfixable("This file has no video track. Choose a video file.");
     if (filterIsNoop(o))
       return o.job === "adjust"
         ? "All three sliders are at 0, which leaves the picture as it is. Move one first."
@@ -205,7 +217,7 @@ export const filterSpec: OptionsSpec<FilterValue> = {
     const to = pictureContainer(sourceName(info));
     const sound = soundLine(needsFfmpeg(info, sourceName(info)) ? "encode" : soundPlan(info, to));
     const out = pictureSize(info);
-    return `Output ${formatDimensions(out.width, out.height)}, ${est.label}.${sizeNote(info)} Every frame is re-encoded to H.264 with the colours the preview shows. ${sound}${containerNote(info)} Runs on this device.`;
+    return `Output ${formatDimensions(out.width, out.height)}, ${est.label}.${sizeNote(info)} Every frame is re-encoded to H.264 with the colours the preview shows. ${sound}${containerNote(info)}`;
   },
   result: (o) => ({
     title:

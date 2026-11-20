@@ -21,7 +21,9 @@ import {
   type SplitMode,
 } from "@/tools/engines/split/math";
 import type { MediaInfo } from "@/tools/engines/types";
+import { between, z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 const media = (info: MediaInfo) => ({
   fps: info.video?.fps ?? 30,
@@ -46,6 +48,8 @@ export const splitSpec: OptionsSpec<SplitOptions> = {
   verb: "Split",
   inspectKeyframes: true,
   previewResult: true,
+  // Parts of the source, copied: their timelines start elsewhere (ADR-0134).
+  compare: false,
   nextStep: { slug: "compress-video", label: "Compress this part to share it" },
   result: (o, _info, { files }) => ({
     title: `Split into ${files} parts`,
@@ -53,6 +57,14 @@ export const splitSpec: OptionsSpec<SplitOptions> = {
       ? "Frame-accurate cuts: every part was re-encoded."
       : "Cut on key frames: the streams were copied, not re-encoded.",
   }),
+  remember: {
+    schema: z.object({
+      mode: z.enum(["equal", "every", "points"]),
+      parts: z.int().check(z.minimum(2), z.maximum(100)),
+      every: between(1, 86_400),
+      precise: z.boolean(),
+    }),
+  },
   defaults: (_info, preset) => ({
     mode: (preset.mode as SplitMode | undefined) ?? "equal",
     parts: typeof preset.parts === "number" ? preset.parts : 2,
@@ -62,7 +74,8 @@ export const splitSpec: OptionsSpec<SplitOptions> = {
     names: [],
   }),
   blocked: (o, info) => {
-    if (!info.video) return "This file has no video track to split.";
+    if (!info.video)
+      return unfixable("This file has no video track to split. Choose a video file.");
     const { parts } = plan(o, info);
     if (parts.length >= 2) return undefined;
     if (o.mode === "every" && o.every >= info.durationSec)

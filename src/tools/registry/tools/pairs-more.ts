@@ -17,7 +17,7 @@ export const morePairSpecs: PairSpec[] = [
     story: [
       "Nearly every AVI still in a drawer is DivX or Xvid: MPEG-4 Part 2 video with MP3 sound, from film downloads of the 2000s, old camcorders and TV capture cards. MP4 players on phones and in browsers do not decode MPEG-4 Part 2 any more, so this page re-encodes the picture to H.264. The MP3 sound fits in MP4 and is copied as it is, which keeps the audio exactly as it was.",
       "Some AVI files hold H.264 already, usually from screen recorders and later Windows capture software. In that case nothing needs re-encoding: the tool copies the video out of the AVI and into the MP4; nothing is encoded, so it is limited by how fast your device reads and writes the file. Motion JPEG AVIs from compact cameras are the opposite case, very large for their length, and shrink dramatically as H.264.",
-      "AVI files have their index at the end, and a recording that was cut off, by a full card or a crash, often has none. The ffmpeg engine reads such files from the start and rebuilds the timing as it goes, so a truncated AVI often converts up to the point where the recording stopped.",
+      "AVI files have their index at the end, and a recording that was cut off, by a full card or a crash, often has none. This page reads such files from the start and rebuilds the timing as it goes, so a truncated AVI often converts up to the point where the recording stopped.",
     ],
     faq: [
       {
@@ -34,11 +34,11 @@ export const morePairSpecs: PairSpec[] = [
       },
       {
         q: "Why does the first conversion take longer to start?",
-        a: `AVI needs the ffmpeg engine, a one-time download of about ${ffmpegDownloadSize()}, which your browser then keeps.`,
+        a: `AVI needs a one-time download of about ${ffmpegDownloadSize()}, which your browser then keeps.`,
       },
       {
         q: "Is my AVI uploaded?",
-        a: "No. The ffmpeg engine runs inside this tab; the file is read and written on your device.",
+        a: "No. The conversion runs inside this tab; the file is read and written on your device.",
       },
     ],
   },
@@ -72,8 +72,8 @@ export const morePairSpecs: PairSpec[] = [
         a: "Yes. ASF is the container WMV lives in, and .asf files with Windows Media streams convert the same way.",
       },
       {
-        q: "Does the WMV leave my computer?",
-        a: "No. It is decoded and encoded in your browser by the ffmpeg engine.",
+        q: "Is my WMV uploaded?",
+        a: "No. It is decoded and encoded in your browser.",
       },
     ],
   },
@@ -87,7 +87,7 @@ export const morePairSpecs: PairSpec[] = [
     story: [
       "Most FLV files made after 2008 hold H.264 video and AAC sound, exactly what an MP4 holds, only in Flash's own container. For those the conversion is a copy: both streams move into the MP4 unchanged and the picture is bit for bit the original; nothing is encoded, so it is limited by how fast your device reads and writes the file. The ready state names the codecs it found and says Lossless copy before you press Convert.",
       "Older FLVs, from the early YouTube years and from webcam chat recorders, use Sorenson Spark or On2 VP6 video, which no current player decodes. Those are re-encoded to H.264 and AAC. They are usually small and low resolution, so the conversion is quick either way.",
-      "FLV is also what an RTMP live stream is packaged as, so a stream archive or a recording saved by a streaming server can be an FLV. Those carry H.264 and AAC and copy losslessly; a long archive is limited only by the memory the ffmpeg engine can use, roughly 2 GB.",
+      "FLV is also what an RTMP live stream is packaged as, so a stream archive or a recording saved by a streaming server can be an FLV. Those carry H.264 and AAC and copy losslessly; a long archive is limited only by memory, roughly 2 GB.",
     ],
     faq: [
       {
@@ -122,7 +122,7 @@ export const morePairSpecs: PairSpec[] = [
     story: [
       "An .mpg from a DVD recorder, a TV tuner card or an old camcorder holds MPEG-2 video, and one from a Video CD or an early digital camera holds MPEG-1. MP4 can technically carry MPEG-2, but phones, browsers and editors do not play it there, so this page re-encodes the picture to H.264 and the MPEG audio layer 2 sound to AAC. At the same quality the MP4 is usually around half the size.",
       "Recordings from TV and DVD recorders use a 720×576 or 720×480 frame with a flag that tells players to show it as 4:3 or 16:9. The MP4 keeps both the frame and the flag, so it displays at the shape the recorder intended rather than squeezed.",
-      "Long recordings are the norm here, an hour or two of television, and the ffmpeg engine holds the whole file in memory. Files up to about 2 GB convert. For a longer recording, cut it into parts on the recorder or in a desktop editor first; once it is an MP4, [split video](/split-video) reads it in a streaming way and has no such limit.",
+      "Long recordings are the norm here, an hour or two of television, and the whole file is held in memory. Files up to about 2 GB convert. For a longer recording, cut it into parts on the recorder or in a desktop editor first; once it is an MP4, [split video](/split-video) reads it in a streaming way and has no such limit.",
     ],
     faq: [
       {
@@ -139,7 +139,7 @@ export const morePairSpecs: PairSpec[] = [
       },
       {
         q: "Is there a size limit?",
-        a: "About 2 GB, because the ffmpeg engine keeps the file in memory. Most recordings under two hours fit.",
+        a: "About 2 GB, because the whole file is kept in memory. Most recordings under two hours fit.",
       },
       {
         q: "Is my recording uploaded?",
@@ -155,8 +155,8 @@ export const morePairSpecs: PairSpec[] = [
     related: ["mts-to-mp4", "mpeg-to-mp4", "trim-video"],
     updatedAt: "2026-09-30",
     story: [
-      "A .ts from a TV recorder, a set-top box or a saved HLS stream usually holds H.264 video with AAC sound, which MP4 holds too. For those the page copies both streams into an MP4 without re-encoding, reading the transport stream natively in your browser; the picture is untouched, and nothing is encoded, so it is limited by how fast your device reads and writes the file.",
-      "Broadcast recordings often carry Dolby Digital (AC-3) sound instead, which a standard MP4 cannot hold. The video is still copied; only the sound is re-encoded to AAC, by the ffmpeg engine. Older standard-definition recordings with MPEG-2 video are re-encoded to H.264 as well. The ready state names each stream and says which of these cases applies.",
+      "A .ts from a TV recorder, a set-top box or a saved HLS stream usually holds H.264 video with AAC sound, which MP4 holds too. For those the page copies both streams into an MP4 without re-encoding, reading the transport stream directly; the picture is untouched, and nothing is encoded, so it is limited by how fast your device reads and writes the file.",
+      "Broadcast recordings often carry Dolby Digital (AC-3) sound instead, which a standard MP4 cannot hold. The video is still copied; only the sound is re-encoded to AAC, after a one-time download. Older standard-definition recordings with MPEG-2 video are re-encoded to H.264 as well. The ready state names each stream and says which of these cases applies.",
       "A recording from a TV box usually starts a little before the programme and runs on after it, because recorders pad the schedule. Once it is an MP4, [trim video](/trim-video) cuts off the extra minutes at either end with a timeline, which the .ts could not be opened in.",
     ],
     faq: [
@@ -177,7 +177,7 @@ export const morePairSpecs: PairSpec[] = [
         a: "No. MP4 has no place for broadcast subtitle streams in a form players read, so they are dropped.",
       },
       {
-        q: "Does the recording leave my device?",
+        q: "Is my recording uploaded?",
         a: "No. Reading, copying and writing all happen in your browser.",
       },
     ],
@@ -190,7 +190,7 @@ export const morePairSpecs: PairSpec[] = [
     related: ["ts-to-mp4", "merge-videos", "compress-video"],
     updatedAt: "2026-09-30",
     story: [
-      "An .mts from a Sony, Panasonic or Canon camcorder holds H.264 video with Dolby Digital sound. The H.264 picture fits in MP4 and is copied unchanged, so the camcorder's full detail survives; the AC-3 sound does not fit a standard MP4 and is re-encoded to AAC by the ffmpeg engine. The ready state shows this as Picture copied, sound re-encoded.",
+      "An .mts from a Sony, Panasonic or Canon camcorder holds H.264 video with Dolby Digital sound. The H.264 picture fits in MP4 and is copied unchanged, so the camcorder's full detail survives; the AC-3 sound does not fit a standard MP4 and is re-encoded to AAC. The ready state shows this as Picture copied, sound re-encoded.",
       "AVCHD camcorders split long recordings into files of about 2 GB, 00000.MTS, 00001.MTS and so on, in the card's PRIVATE/AVCHD/BDMV/STREAM folder. Convert each file here, then join the MP4s with [merge videos](/merge-videos); because the pieces share codecs, the join is a copy and the seam is invisible.",
       "The copied picture is exactly what the camcorder recorded, frame for frame, and a 5.1 surround track stays 5.1, as AAC. Blu-ray M2TS files convert the same way when they are not encrypted, which home-made discs are not and commercial discs are.",
     ],
@@ -225,7 +225,7 @@ export const morePairSpecs: PairSpec[] = [
     related: ["avi-to-mp4", "m4v-to-mp4", "compress-video", "change-video-speed"],
     updatedAt: "2026-09-30",
     story: [
-      "3GP videos from a Nokia, Sony Ericsson or Samsung phone of the 2000s usually hold H.263 video and AMR sound. Neither decodes in a browser's media pipeline or plays in an MP4 player, so this page hands them to the ffmpeg engine, which re-encodes the picture to H.264 and the sound to AAC. The result is small and plays on any current phone or computer.",
+      "3GP videos from a Nokia, Sony Ericsson or Samsung phone of the 2000s usually hold H.263 video and AMR sound. Neither decodes in a browser's media pipeline or plays in an MP4 player, so this page re-encodes the picture to H.264 and the sound to AAC, after a one-time download. The result is small and plays on any current phone or computer.",
       "Later phones wrote H.264 and AAC into the same 3GP container. Those are read natively and copied into the MP4 without re-encoding; nothing is encoded, so it is limited by how fast your device reads and writes the file. The ready state names the codecs it found and says which of the two cases you are in before you press Convert.",
       "Expect the picture to stay small: 176×144 and 320×240 were the usual sizes, often at 15 frames per second. Converting cannot add detail the phone never recorded, and the MP4 keeps the original size and frame rate so nothing is invented.",
     ],
@@ -260,7 +260,7 @@ export const morePairSpecs: PairSpec[] = [
     related: ["mpeg-to-mp4", "mts-to-mp4", "merge-videos", "compress-video"],
     updatedAt: "2026-09-30",
     story: [
-      "A VOB is one piece of a DVD's VIDEO_TS folder, holding MPEG-2 video and usually Dolby Digital sound. MP4 players do not take either, so the page re-encodes the picture to H.264 and the sound to AAC with the ffmpeg engine. The DVD's 720×576 or 720×480 frame and its 4:3 or 16:9 shape flag are kept, so the MP4 displays at the shape the disc did.",
+      "A VOB is one piece of a DVD's VIDEO_TS folder, holding MPEG-2 video and usually Dolby Digital sound. MP4 players do not take either, so the page re-encodes the picture to H.264 and the sound to AAC. The DVD's 720×576 or 720×480 frame and its 4:3 or 16:9 shape flag are kept, so the MP4 displays at the shape the disc did.",
       "A film is split across several VOBs of up to 1 GB, VTS_01_1.VOB, VTS_01_2.VOB and so on, while VTS_01_0.VOB is usually just the menu. Convert the numbered pieces, then join the MP4s in order with [merge videos](/merge-videos). DVD subtitles are pictures rather than text and are not carried over.",
       "Commercial DVDs are encrypted with CSS and their VOBs cannot be decoded here. Discs you recorded yourself, on a DVD recorder or a camcorder, are not encrypted and convert normally, which is the usual reason to reach for this page.",
     ],
@@ -295,7 +295,7 @@ export const morePairSpecs: PairSpec[] = [
     related: ["webm-to-mp4", "mkv-to-webm", "compress-video", "trim-video"],
     updatedAt: "2026-09-30",
     story: [
-      "OGV files come from Wikimedia Commons, Linux desktop recorders and open-source project sites, almost always with Theora video and Vorbis sound. MP4 players take neither, so the ffmpeg engine re-encodes the picture to H.264 and the sound to AAC. Theora compresses less efficiently than H.264, so the MP4 is usually smaller at the same look.",
+      "OGV files come from Wikimedia Commons, Linux desktop recorders and open-source project sites, almost always with Theora video and Vorbis sound. MP4 players take neither, so the page re-encodes the picture to H.264 and the sound to AAC. Theora compresses less efficiently than H.264, so the MP4 is usually smaller at the same look.",
       "Wikimedia Commons offers most videos as WebM too, and some as transcoded files; if you are fetching a video from there, a WebM version converts faster and from a better source, through [WebM to MP4](/webm-to-mp4). For an OGV you already have, this page is the direct route.",
       "Screen recordings from older Linux tools such as recordMyDesktop are OGV with a variable frame rate. The conversion keeps each frame's timing, so the MP4 runs at the length of the original recording.",
     ],
@@ -388,7 +388,7 @@ export const morePairSpecs: PairSpec[] = [
       },
       {
         q: "Is the MP4 uploaded?",
-        a: "No. The ffmpeg engine writes the AVI inside your browser.",
+        a: "No. The AVI is written inside your browser.",
       },
     ],
   },
@@ -397,7 +397,7 @@ export const morePairSpecs: PairSpec[] = [
     to: "mov",
     keywords: ["mp4 to mov converter", "mp4 to quicktime", "convert mp4 for final cut"],
     aliases: ["quicktime"],
-    related: ["mov-to-mp4", "compress-video", "trim-video"],
+    related: ["mov-to-mp4", "h264-to-hevc", "compress-video", "trim-video"],
     updatedAt: "2026-09-30",
     story: [
       "MOV and MP4 share the same internal structure, and H.264, HEVC and AAC fit in both, so converting an MP4 to MOV is a copy: the streams move into a QuickTime file unchanged and the picture is bit for bit the original; nothing is encoded, so it is limited by how fast your device reads and writes the file.",
@@ -435,9 +435,9 @@ export const morePairSpecs: PairSpec[] = [
     related: ["mp4-to-webm", "mov-to-mp4", "compress-video"],
     updatedAt: "2026-09-30",
     story: [
-      "WebM does not accept the H.264 or HEVC that a MOV holds, so this conversion always re-encodes: the picture becomes VP9 and the sound Opus, in your browser, with the hardware encoder where one exists. The result is a royalty-free file for a website's video tag, usually smaller than the MOV at the same look.",
+      "WebM does not accept the H.264 or HEVC that a MOV holds, so this conversion always re-encodes: the picture becomes VP9 and the sound Opus, with the hardware encoder where one exists. The result is a royalty-free file for a website's video tag, usually smaller than the MOV at the same look.",
       "Fewer devices have a hardware VP9 encoder than an H.264 one, so this direction is slower than MOV to MP4, and a 4K iPhone clip stays 4K in the WebM. A web page rarely shows video that large; a lower resolution would encode faster and load faster for visitors.",
-      "A MOV from Final Cut, Motion or a camera may hold ProRes, which browsers cannot decode, so such a file goes to the ffmpeg engine, which writes VP8 video instead of VP9 and holds the whole file in memory. For ProRes 4444 with transparency, check the result before relying on it, or export WebM with alpha straight from the editing application.",
+      "A MOV from Final Cut, Motion or a camera may hold ProRes, which browsers cannot decode, so such a file takes a slower path, after a one-time download, that writes VP8 video instead of VP9 and holds the whole file in memory. For ProRes 4444 with transparency, check the result before relying on it, or export WebM with alpha straight from the editing application.",
     ],
     faq: [
       {
@@ -450,7 +450,7 @@ export const morePairSpecs: PairSpec[] = [
       },
       {
         q: "Does it keep a transparent background?",
-        a: "Do not count on it. ProRes 4444 goes through the ffmpeg engine, and transparency is not checked here; your editor's own WebM export with alpha is the reliable route.",
+        a: "Do not count on it. Transparency from ProRes 4444 may not survive; your editor's own WebM export with alpha is the reliable route.",
       },
       {
         q: "Will the WebM play on iPhone?",
@@ -471,7 +471,7 @@ export const morePairSpecs: PairSpec[] = [
     updatedAt: "2026-09-30",
     story: [
       "WebM is a strict subset of Matroska, the same container limited to VP8, VP9 or AV1 video with Opus or Vorbis sound. An MKV that already holds those codecs converts by copy: the file is rewritten as WebM with nothing re-encoded, so it is limited by how fast your device reads and writes the file.",
-      "Most MKVs hold H.264 instead, including every OBS recording on default settings, and many carry AAC, AC-3 or DTS sound. Those need a re-encode to VP9 and Opus, which runs on your device and depends on the recording's length and on whether the device has a hardware VP9 encoder. The ready state names the codecs and says which case applies.",
+      "Most MKVs hold H.264 instead, including every OBS recording on default settings, and many carry AAC, AC-3 or DTS sound. Those need a re-encode to VP9 and Opus, whose speed depends on the recording's length and on whether the device has a hardware VP9 encoder. The ready state names the codecs and says which case applies.",
       "Subtitles, chapters and attachments that MKV allows are not WebM material here: text subtitle tracks and attachments are dropped. If the goal is a file that plays everywhere rather than one for a web page, [MKV to MP4](/mkv-to-mp4) is usually a lossless copy.",
     ],
     faq: [
@@ -540,7 +540,7 @@ export const morePairSpecs: PairSpec[] = [
     related: ["webm-to-mp4", "mov-to-mp4", "mkv-to-webm", "trim-video"],
     updatedAt: "2026-09-30",
     story: [
-      "Browser screen recorders and meeting tools save WebM, and iMovie, Final Cut Pro and Keynote will not import it. MOV cannot hold VP8 or VP9, so this conversion re-encodes the picture to H.264 and the Opus sound to AAC, on your device, giving a file that drops straight into Apple's apps.",
+      "Browser screen recorders and meeting tools save WebM, and iMovie, Final Cut Pro and Keynote will not import it. MOV cannot hold VP8 or VP9, so this conversion re-encodes the picture to H.264 and the Opus sound to AAC, giving a file that drops straight into Apple's apps.",
       "Screen recordings are mostly still frames with sudden changes, and they often carry a variable frame rate and a missing duration in the header, because the recorder stopped without finishing the file. The conversion reads the real frames, keeps each one's timing and writes the true length into the MOV, so the timeline in the editor matches the recording.",
       "If the destination is not an Apple app, [WebM to MP4](/webm-to-mp4) makes the same H.264 file with the .mp4 extension, which more upload forms and players accept. Choose MOV when a Keynote slide or an iMovie project is where the recording is going.",
     ],

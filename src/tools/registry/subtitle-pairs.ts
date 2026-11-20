@@ -53,12 +53,13 @@ export function subtitlePairTool(spec: SubtitlePairSpec): ToolInput {
     ],
     updatedAt: spec.updatedAt,
     icon: transcript ? "file-text" : "captions",
+    illustration: `subtitle-pair:${spec.from}:${spec.to}`,
     content: {
       en: {
         title: `Convert ${from.name} to ${to.name}`,
         subtitle: transcript
-          ? `Turn ${from.name} subtitles into a plain text transcript in your browser. Nothing is uploaded.`
-          : `Turn ${from.name} subtitles into ${to.name} in your browser. Nothing is uploaded.`,
+          ? "One line per cue, with start times if you want them."
+          : `Every ${from.name} cue kept; what ${to.name} drops is listed first.`,
         metaTitle: `${from.metaName ?? from.name} to ${to.metaName ?? to.name} converter online, free, no upload`,
         metaDescription: `Convert ${from.name} subtitles to ${to.name} in your browser. See every cue and what ${to.name} cannot keep before you convert. Free, no account, no upload.`,
         action: "Convert",

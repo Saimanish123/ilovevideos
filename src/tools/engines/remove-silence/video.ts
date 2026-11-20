@@ -266,7 +266,7 @@ export async function cutVideo(
         const at = Math.min(pictureDone, soundDone);
         stopped = new EngineError(
           "unsupported-output",
-          `The browser's ${pictureDone <= soundDone ? "H.264" : "sound"} encoder stopped returning frames at ${formatDuration(at)} of ${formatDuration(after)}, so the run was stopped after ${STALL_MS / 1000} seconds without progress.`,
+          `Writing the ${pictureDone <= soundDone ? "picture" : "sound"} stopped at ${formatDuration(at)} of ${formatDuration(after)}, with no progress for ${STALL_MS / 1000} seconds.`,
           "Try again, or try desktop Chrome or Edge.",
         );
         reject(stopped);

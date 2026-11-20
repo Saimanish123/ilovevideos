@@ -19,7 +19,9 @@ import {
   widthPresets,
 } from "@/tools/engines/thumbnail-grid/layout";
 import type { MediaInfo } from "@/tools/engines/types";
+import { between, z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 type O = ThumbnailGridOptions;
 
@@ -35,6 +37,18 @@ const layoutOf = (o: O, info: MediaInfo) => sheetLayout(o, info.video ?? { width
 
 export const thumbnailGridSpec: OptionsSpec<O> = {
   verb: "Make contact sheet",
+  remember: {
+    schema: z.object({
+      columns: z.int().check(z.minimum(1), z.maximum(12)),
+      rows: z.int().check(z.minimum(1), z.maximum(20)),
+      width: z.int().check(z.minimum(320), z.maximum(7680)),
+      timestamps: z.boolean(),
+      header: z.boolean(),
+      background: z.enum(["light", "dark"]),
+      format: z.enum(["jpg", "png", "webp"]),
+      quality: between(1, 100),
+    }),
+  },
   defaults: (_info, preset) => ({
     columns: typeof preset.columns === "number" ? preset.columns : 4,
     rows: typeof preset.rows === "number" ? preset.rows : 4,
@@ -48,13 +62,16 @@ export const thumbnailGridSpec: OptionsSpec<O> = {
   // The sheet is what this page is about, so it takes the preview's place, live.
   Hero: SheetHero,
   previewResult: true,
+  // A sheet of frames, not a version of the video (ADR-0134).
+  compare: false,
   nextStep: {
     slug: "extract-frame-from-video",
     label: "Save one of the frames at full size",
     with: "source",
   },
   blocked: (o, info) => {
-    if (!info.video) return "This file has no video track to take frames from.";
+    if (!info.video)
+      return unfixable("This file has no video track to take frames from. Choose a video file.");
     const l = layoutOf(o, info);
     if (tooLarge(l))
       return `A ${formatDimensions(l.width, l.height)} sheet is larger than a browser can draw. Choose fewer rows or a narrower sheet.`;
@@ -63,7 +80,7 @@ export const thumbnailGridSpec: OptionsSpec<O> = {
   summary: (o, info) => {
     const l = layoutOf(o, info);
     const n = o.columns * o.rows;
-    return `${n} frames, one every ${every(interval(n, info.durationSec))}, on a ${formatDimensions(l.width, l.height)} ${formatLabel[o.format]}. Each frame is decoded from the video; nothing is uploaded.`;
+    return `${n} frames, one every ${every(interval(n, info.durationSec))}, on a ${formatDimensions(l.width, l.height)} ${formatLabel[o.format]}. Each frame is decoded from the video.`;
   },
   result: (o, info) => {
     const l = layoutOf(o, info);

@@ -118,9 +118,13 @@ function psnr(
 const rgbPsnr = (out: string, src: string, srcMatrix: string) =>
   psnr(out, src, "null", { srcMatrix });
 
-/** The `-vf` chain of the ffmpeg command the result shows: ffmpeg's equivalent of the run. */
+/** The `-vf` chain of the result's ffmpeg command (kept on the result, not shown). */
 async function shownVf(page: Page): Promise<string> {
-  const command = (await workspace(page).locator("details pre").first().textContent()) ?? "";
+  const command =
+    (await workspace(page)
+      .locator("[data-ffmpeg-command]")
+      .first()
+      .getAttribute("data-ffmpeg-command")) ?? "";
   const m = /-vf (?:"([^"]+)"|(\S+))/.exec(command);
   return (m?.[1] ?? m?.[2] ?? "null").replace(/,format=yuv420p$/, "");
 }

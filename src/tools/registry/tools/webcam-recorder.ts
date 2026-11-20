@@ -29,7 +29,7 @@ export const webcamRecorder: ToolInput = {
   content: {
     en: {
       title: "Record webcam video",
-      subtitle: "Record yourself with your camera and microphone, saved as MP4, in your browser.",
+      subtitle: "Record yourself with your camera and microphone.",
       metaTitle: "Webcam recorder online, free, no upload",
       metaDescription:
         "Record video from your webcam and microphone in the browser. Pick the camera and size, count down, pause and resume. MP4 on your device. Free, no account.",

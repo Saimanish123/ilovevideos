@@ -1,27 +1,22 @@
 "use client";
 
-import { AspectIdle } from "@/components/tool/crop/idle";
-import { PlatformIdle } from "@/components/tool/crop/platform-idle";
-import { getFramePlatform } from "@/content/platforms/frames";
+import dynamic from "next/dynamic";
+import { framePlatformName } from "@/content/platforms/frame-names";
 import { type AspectRatioId, aspectRatioIds } from "@/tools/engines/aspect-ratio/ratios";
-import type { IdleProps, IdleSpec } from "../types";
+import type { IdleSpec } from "../types";
 
 export const isRatio = (v: unknown): v is AspectRatioId =>
   typeof v === "string" && (aspectRatioIds as readonly string[]).includes(v);
 
-function PageIdle(props: IdleProps) {
-  const p = getFramePlatform(props.preset.platform);
-  return p ? <PlatformIdle platform={p} {...props} /> : <AspectIdle {...props} />;
-}
-
 /** Idle state of change aspect ratio and resize for a platform (types.ts `IdleSpec`). */
 export const idle: IdleSpec = {
   dropPrompt: (preset) => {
-    const p = getFramePlatform(preset.platform);
-    if (p) return `Drop a video to resize it for ${p.name}`;
+    const name = framePlatformName(preset.platform);
+    if (name) return `Drop a video to resize it for ${name}`;
     return isRatio(preset.ratio)
       ? `Drop a video to make it ${preset.ratio}`
       : "Drop a video to reshape it";
   },
-  Idle: PageIdle,
+  // The shape picker and platform frames load on these pages only, rendered in place (ADR-0140).
+  Idle: dynamic(() => import("@/components/tool/crop/page-idle").then((m) => m.AspectPageIdle)),
 };

@@ -1,18 +1,33 @@
 /**
  * Where a recording is written while it runs. A recording has no expected size, so it always
- * streams: to an Origin Private File System file through `createWritable()` on the page (the media
- * sources need the page's MediaStream tracks, so the muxer runs here, not in the engine worker),
- * and only where the browser has no OPFS to a growing buffer in memory, capped below what one
+ * streams: to an Origin Private File System file written in place by the storage worker's sync
+ * access handle (ADR-0130), so what was written survives a closed, crashed or reloaded tab; where a
+ * worker cannot hold one, through the page's `createWritable()` (kept only once the stream closes);
+ * and where there is no OPFS at all, to a growing buffer in memory, capped below what one
  * `ArrayBuffer` can hold. Either way the recorder sees the bytes written so far, which the page
  * shows as the live size.
  *
- * Files sit in `outputs/<session>/`, held by a Web Lock while the page lives, the convention of
- * the engine worker's output store (../mediabunny/output-store): whichever starts next removes the
- * directories nobody holds, so a closed or reloaded page leaves nothing behind.
+ * Files sit in `recordings/<session>/`, held by a Web Lock while the page lives. Each recording is
+ * `<n>` (the media), `<n>.json` (what it is, ./journal `RecordingMeta`) and, for MP4 and M4A,
+ * `<n>.index` (one entry per packet). Whichever recorder page opens next removes the directories
+ * nobody holds, except an unfinished recording, which it offers to recover (./recover).
  *
  * No network access (README.md#privacy-and-processing §2).
  */
 import { StreamTarget, type StreamTargetChunk, type Target } from "mediabunny";
+import { opfsWritable, StorageWorker } from "@/lib/storage/opfs";
+import { encodeEntries, type JournalEntry, type RecordingMeta } from "./journal";
+import { RECORDINGS_DIR, recordingsDir, sessionId } from "./recordings";
+
+export {
+  adoptRecording,
+  currentSession,
+  lockName,
+  RECORDINGS_DIR,
+  recordingsRoot,
+  releaseRecordings,
+  sweepRecordings,
+} from "./recordings";
 
 /** The most an in-memory recording may reach before the recorder stops it (an ArrayBuffer ends at 2 GiB). */
 export const MEMORY_LIMIT_BYTES = 1.8e9;
@@ -21,91 +36,105 @@ export interface CaptureSink {
   target: Target;
   /** True when the recording goes to disk storage rather than memory. */
   onDisk: boolean;
+  /** True when what is written survives the tab closing (in place, through the storage worker). */
+  durable: boolean;
   /** Bytes in the file so far (the furthest byte written). */
   bytes(): number;
+  /** Records one encoded packet in the index (MP4 and M4A; batched, written about once a second). */
+  journal(entry: JournalEntry): void;
+  /** Rewrites the recording's description. */
+  describe(meta: RecordingMeta): void;
   /** After `output.finalize()`: the finished file. */
   finish(type: string): Promise<Blob>;
   /** On cancel or failure: removes the partial file or frees the memory. */
   discard(): Promise<void>;
 }
 
-const sessionId =
-  typeof crypto !== "undefined" && "randomUUID" in crypto
-    ? crypto.randomUUID()
-    : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-let sessionDir: Promise<FileSystemDirectoryHandle | null> | undefined;
-
 type WritableHandle = FileSystemFileHandle & {
   createWritable(options?: { keepExistingData?: boolean }): Promise<FileSystemWritableFileStream>;
 };
 
-const opfsOnPage = () =>
-  typeof navigator !== "undefined" &&
-  typeof navigator.storage?.getDirectory === "function" &&
-  typeof FileSystemFileHandle !== "undefined" &&
-  "createWritable" in FileSystemFileHandle.prototype &&
-  typeof navigator.locks?.request === "function";
-
-/** This page's recordings directory, created on first use; stale ones are swept then. */
-function recordingsDir(): Promise<FileSystemDirectoryHandle | null> {
-  sessionDir ??= (async () => {
-    if (!opfsOnPage()) return null;
-    try {
-      const root = await navigator.storage.getDirectory();
-      const outputs = await root.getDirectoryHandle("outputs", { create: true });
-      let held: () => void = () => undefined;
-      const holding = new Promise<void>((resolve) => {
-        held = resolve;
-      });
-      void navigator.locks.request(`ilv-outputs-${sessionId}`, () => {
-        held();
-        return new Promise<void>(() => undefined);
-      });
-      await holding;
-      const names: string[] = [];
-      for await (const name of (outputs as unknown as { keys(): AsyncIterable<string> }).keys())
-        names.push(name);
-      for (const name of names) {
-        if (name === sessionId) continue;
-        await navigator.locks.request(
-          `ilv-outputs-${name}`,
-          { ifAvailable: true },
-          async (lock) => {
-            if (lock) await outputs.removeEntry(name, { recursive: true }).catch(() => undefined);
-          },
-        );
-      }
-      return await outputs.getDirectoryHandle(sessionId, { create: true });
-    } catch {
-      return null;
-    }
-  })();
-  return sessionDir;
-}
-
-/** Removes this page's earlier recordings (a new one starts; the old result is gone from the page). */
-export async function releaseRecordings(): Promise<void> {
-  const dir = await recordingsDir();
-  if (!dir) return;
-  const names: string[] = [];
-  for await (const name of (dir as unknown as { keys(): AsyncIterable<string> }).keys())
-    names.push(name);
-  for (const name of names) await dir.removeEntry(name).catch(() => undefined);
-}
-
 let counter = 0;
 
-/** A sink for one recording: on disk where the browser allows, else in memory. */
-export async function openCaptureSink(): Promise<CaptureSink> {
+/** A sink for one recording: in place on disk where the browser allows, else in memory. */
+export async function openCaptureSink(opts: { journal?: boolean } = {}): Promise<CaptureSink> {
   const dir = await recordingsDir();
   let size = 0;
   const grow = (chunk: StreamTargetChunk) => {
     size = Math.max(size, chunk.position + chunk.data.byteLength);
   };
+  const name = `recording-${++counter}`;
+  if (dir && opfsWritable()) {
+    const worker = new StorageWorker();
+    try {
+      await worker.request({
+        op: "open",
+        dir: [RECORDINGS_DIR, sessionId],
+        name,
+        journal: !!opts.journal,
+      });
+      let pending: JournalEntry[] = [];
+      let last = 0;
+      const flushJournal = () => {
+        if (pending.length === 0) return;
+        const data = encodeEntries(pending);
+        pending = [];
+        last = performance.now();
+        void worker.request({ op: "journal", data }, [data]).catch(() => undefined);
+      };
+      let closed = false;
+      const close = async (keepJournal = false) => {
+        if (closed) return;
+        closed = true;
+        flushJournal();
+        await worker.request({ op: "close", keepJournal }).catch(() => undefined);
+        worker.terminate();
+      };
+      const writable = new WritableStream<StreamTargetChunk>({
+        async write(chunk) {
+          grow(chunk);
+          // A copy goes to the worker (transferred): the muxer reuses its chunk buffers.
+          const data = chunk.data.slice().buffer;
+          await worker.request({ op: "write", at: chunk.position, data }, [data]);
+        },
+      });
+      return {
+        // Not chunked: the muxer's writes go to disk as it makes them (a chunk of media about every
+        // half second), so a crash loses about that much rather than a whole buffer.
+        target: new StreamTarget(writable),
+        onDisk: true,
+        durable: true,
+        bytes: () => size,
+        journal(entry) {
+          if (!opts.journal || closed) return;
+          pending.push(entry);
+          if (pending.length >= 256 || performance.now() - last > 1000) flushJournal();
+        },
+        describe(meta) {
+          if (closed) return;
+          void worker.request({ op: "meta", text: JSON.stringify(meta) }).catch(() => undefined);
+        },
+        finish: async (type) => {
+          await close();
+          const f = await (await dir.getFileHandle(name)).getFile();
+          return f.type === type ? f : new File([f], f.name, { type });
+        },
+        discard: async () => {
+          await close();
+          for (const n of [name, `${name}.json`, `${name}.index`])
+            await dir.removeEntry(n).catch(() => undefined);
+        },
+      };
+    } catch {
+      worker.terminate();
+      await dir.removeEntry(name).catch(() => undefined);
+      // The worker could not open the file: the page's own stream below.
+    }
+  }
   if (dir) {
-    const name = `recording-${++counter}`;
     try {
       const handle = (await dir.getFileHandle(name, { create: true })) as WritableHandle;
+      if (!("createWritable" in handle)) throw new Error("No writable streams.");
       const file = await handle.createWritable({ keepExistingData: false });
       const writer = file.getWriter();
       const writable = new WritableStream<StreamTargetChunk>({
@@ -121,10 +150,13 @@ export async function openCaptureSink(): Promise<CaptureSink> {
         },
       });
       return {
-        // Chunks of 2 MiB: a crash loses at most that much buffered, and writes stay few.
+        // Chunks of 2 MiB: this stream is kept only once closed, so writes stay few.
         target: new StreamTarget(writable, { chunked: true, chunkSize: 2 * 1024 * 1024 }),
         onDisk: true,
+        durable: false,
         bytes: () => size,
+        journal: () => undefined,
+        describe: () => undefined,
         finish: async (type) => {
           const f = await handle.getFile();
           return f.type === type ? f : new File([f], f.name, { type });
@@ -157,7 +189,10 @@ export async function openCaptureSink(): Promise<CaptureSink> {
   return {
     target: new StreamTarget(writable),
     onDisk: false,
+    durable: false,
     bytes: () => size,
+    journal: () => undefined,
+    describe: () => undefined,
     finish: async (type) => new Blob([buffer.subarray(0, size)], { type }),
     discard: async () => {
       buffer = new Uint8Array(0);

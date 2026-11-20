@@ -16,6 +16,7 @@ import {
   repeatChoices,
 } from "@/tools/engines/gif-to-video/options";
 import type { MediaInfo } from "@/tools/engines/types";
+import { z } from "./remember-schema";
 import type { HeroProps, OptionsSpec } from "./types";
 
 /** 8 MB, the smallest size target the compress pages offer: below it, compressing is not the next step. */
@@ -58,6 +59,12 @@ export const gifToVideoSpec: OptionsSpec<GifToVideoOptions> = {
     }
   },
   Hero: GifHero,
+  remember: {
+    schema: z.object({
+      to: z.enum(["mp4", "webm"]),
+      repeat: z.int().check(z.minimum(1), z.maximum(10)),
+    }),
+  },
   defaults: (_info, preset) => ({ to: preset.to === "webm" ? "webm" : "mp4", repeat: 1 }),
   route: () => (nativeDecoder() ? "worker" : "page"),
   summary: (o, info) => {
@@ -65,12 +72,12 @@ export const gifToVideoSpec: OptionsSpec<GifToVideoOptions> = {
     if (!v) return undefined;
     const e = evenSize(v.width, v.height);
     const frames = frameCountOf(info) * o.repeat;
-    const engine = nativeDecoder()
-      ? "Runs on this device."
-      : `Runs on this device with the ffmpeg engine, a one-time download of ${ffmpegDownloadSize()}.`;
-    return `Output ${formatDimensions(e.width, e.height)} ${targetName(o)}, ${seconds(info.durationSec * o.repeat)}, ${formatCount(frames, "frame")} of ${o.to === "webm" ? "VP9" : "H.264"} with the GIF's own timing and no sound track.${oddNote(info)} Transparent areas become white. ${engine}`;
+    const engine = nativeDecoder() ? "" : ` Needs a one-time download of ${ffmpegDownloadSize()}.`;
+    return `Output ${formatDimensions(e.width, e.height)} ${targetName(o)}, ${seconds(info.durationSec * o.repeat)}, ${formatCount(frames, "frame")} of ${o.to === "webm" ? "VP9" : "H.264"} with the GIF's own timing and no sound track.${oddNote(info)} Transparent areas become white.${engine}`;
   },
   previewResult: true,
+  // The source is a GIF, which a video player cannot play in step (ADR-0134).
+  compare: false,
   nextStep: { slug: "compress-video", label: "Compress video" },
   result: (o, info, output) => {
     const before = info.sizeBytes;

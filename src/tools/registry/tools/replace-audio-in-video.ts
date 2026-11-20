@@ -20,12 +20,11 @@ export const replaceAudioInVideo: ToolInput = {
   related: ["add-audio-to-video", "remove-audio-from-video", "extract-audio-from-video"],
   updatedAt: "2026-09-30",
   icon: "replace",
-  illustration: "add-audio",
+  illustration: "replace-audio",
   content: {
     en: {
       title: "Replace audio in video",
-      subtitle:
-        "Swap a video's sound for another recording and line it up on a timeline. Picture untouched.",
+      subtitle: "Swap a video's sound for another recording.",
       metaTitle: "Replace audio in video online, free, no upload",
       metaDescription:
         "Swap a video's soundtrack for another file in your browser. Line it up to the hundredth of a second; the picture is copied, not re-encoded. Free.",

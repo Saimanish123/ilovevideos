@@ -1,5 +1,5 @@
-import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
+import AxeBuilder from "./axe-builder";
 import {
   letterDetail,
   pictureToPage,
@@ -85,17 +85,13 @@ test.describe("blur part of a video: the page", () => {
     // The effect and strength controls are plain radios.
     await pick(page, "Pixelate");
     await expect(
-      page.getByText(
-        /^1 region, medium pixelation · H\.264 640×360 · sound copied · on this device$/,
-      ),
+      page.getByText(/^1 region, medium pixelation · H\.264 640×360 · sound copied$/),
     ).toBeVisible();
     await pick(page, "Box");
     await expect(page.getByRole("radio", { name: "Strong" })).toHaveCount(0);
   });
 
-  test("a format only the fallback engine reads is sent to the converter first", async ({
-    page,
-  }) => {
+  test("a format the page cannot open is sent to the converter first", async ({ page }) => {
     await page.goto("/blur-video");
     await page.locator('input[type="file"]').first().setInputFiles("tests/fixtures/sample.avi");
     await expect(page.getByText(/Convert it to MP4 first/)).toBeVisible({ timeout: 30_000 });

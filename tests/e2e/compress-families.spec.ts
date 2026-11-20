@@ -1,5 +1,5 @@
-import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
+import AxeBuilder from "./axe-builder";
 
 /**
  * Generated compress families: compress for a platform and compress to under N MB. Zero interaction

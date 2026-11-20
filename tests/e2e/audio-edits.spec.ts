@@ -2,8 +2,8 @@ import { execFileSync, spawnSync } from "node:child_process";
 import { mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
+import AxeBuilder from "./axe-builder";
 
 /**
  * Phase 2 audio tools end to end: volume, normalise and fades (on video and audio files), audio
@@ -377,7 +377,7 @@ test.describe("audio edits", () => {
     await choose(page, "sample-pauses.wav");
     const run = page.getByRole("button", { name: "Remove silence", exact: true });
     await expect(run).toBeEnabled({ timeout: 30_000 });
-    await expect(page.getByText(/2 pauses marked · 0:01 removed · 0:08 → 0:07/)).toBeVisible({
+    await expect(page.getByText(/2 pauses marked · 1\.4\ss removed · 0:08 → 0:07/)).toBeVisible({
       timeout: 30_000,
     });
     const line = page.getByRole("slider", { name: "Silence threshold" });

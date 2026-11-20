@@ -20,7 +20,9 @@ import { LoudnessReadout } from "../sound/loudness-readout";
 import { SoundHero } from "../sound/sound-hero";
 import { useSoundAnalysis } from "../sound/use-sound-analysis";
 import { useSoundPreview } from "../sound/use-sound-preview";
+import { between, z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 const GAIN_MIN = -20;
 const GAIN_MAX = 20;
@@ -211,8 +213,20 @@ export const volumeSpec: OptionsSpec<VolumeOptions> = {
   Panel: VolumePanel,
   Hero: (props) => <SoundHero {...props} stripLabel="The video's sound, as a waveform" />,
   previewResult: true,
+  // Loudness is the job: Before/After keeps the difference audible (ADR-0136).
+  compare: () => ({ what: "sound", keepLoudness: true }),
   shortcuts: [PLAY_SHORTCUT],
   route: () => "page",
+  remember: {
+    schema: z.object({
+      mode: z.enum(["gain", "normalize"]),
+      gainDb: between(-30, 30),
+      target: between(-36, -6),
+      limit: z.boolean(),
+      ceiling: between(-9, 0),
+      output: z.enum(["auto", "wav"]),
+    }),
+  },
   defaults: (_info, preset) => ({
     mode: isMode(preset.mode) ? preset.mode : "gain",
     gainDb: typeof preset.gainDb === "number" ? preset.gainDb : 6,
@@ -224,7 +238,9 @@ export const volumeSpec: OptionsSpec<VolumeOptions> = {
   blocked: (o, info) => {
     const t = soundTarget(info, nameFor(info));
     if (!info.audio?.length)
-      return "This file has no sound track, so there is no volume to change.";
+      return unfixable(
+        "This file has no sound track, so there is no volume to change. Choose a file with sound.",
+      );
     if (t.kind === "none") return t.reason;
     if (o.mode === "gain" && Math.abs(o.gainDb) < 0.05)
       return "0 dB leaves the sound as it is. Choose a gain.";

@@ -29,8 +29,7 @@ export const changeVideoAspectRatio: ToolInput = {
   content: {
     en: {
       title: "Change video aspect ratio",
-      subtitle:
-        "Make a video 9:16, 1:1, 4:5, 16:9 or 4:3 with bars or a crop. Processed in your browser.",
+      subtitle: "Make a video vertical, square or widescreen.",
       metaTitle: "Change video aspect ratio, free, no upload",
       metaDescription:
         "Turn a video into 9:16, 1:1, 4:5, 16:9 or 4:3. Keep the whole picture with bars, or fill the frame and choose what to crop. Runs in your browser.",
@@ -43,8 +42,8 @@ export const changeVideoAspectRatio: ToolInput = {
         "Download the result, or press Start over for the next clip.",
       ],
       goodToKnow: [
-        "Aspect ratio is width divided by height. 16:9 is the widescreen shape of YouTube, televisions and laptop screens; 9:16 is the same shape stood upright, the one that fills a phone screen in TikTok, Reels, Shorts and Stories; 1:1 is square; 4:5 is a tall portrait; 4:3 is the older television and iPad shape. When a video does not match the place it is shown, the app adds bars or crops it for you, and you do not get to choose which part is cut.",
-        "Adding bars never loses picture. The output's long side stays the same as the source's, so the picture is never scaled up: a 1920×1080 clip made 1:1 becomes 1920×1920 with the picture untouched and bars above and below, while made 9:16 it becomes 1080×1920 with the picture scaled to 1080×608 across the middle. Black bars blend into dark app backgrounds; white bars suit light pages and documents.",
+        "Aspect ratio is width divided by height. 16:9 is the widescreen shape of YouTube, televisions and laptop screens; 9:16 is the same shape stood upright, the one that fills a phone screen in TikTok, Reels, Shorts and Stories ([resize for TikTok](/resize-video-for-tiktok) sets it with TikTok's size); 1:1 is square; 4:5 is a tall portrait; 4:3 is the older television and iPad shape. When a video does not match the place it is shown, the app adds bars or crops it for you, and you do not get to choose which part is cut.",
+        "Adding bars never loses picture. The output's long side stays the same as the source's, so the picture is never scaled up: a 1920×1080 clip made 1:1 becomes 1920×1920 with the picture untouched and bars above and below, while made 9:16 it becomes 1080×1920 with the picture scaled to 1080×608 across the middle. Black bars blend into dark app backgrounds; white bars suit light pages and documents. For an even frame around all four sides instead, [add a border](/add-border-to-video).",
         "Crop to fill keeps the frame full at the cost of the edges. Going from 16:9 to 9:16 keeps a window 606 pixels wide out of 1920, under a third of the picture, which works for one person talking to the camera and badly for a wide scene. Drag the window across the preview and scrub the filmstrip to check that the subject stays inside it for the whole clip. For a free-form rectangle, or to zoom in further, use [crop video](/crop-video) instead. For a view that moves over time, use [zoom video](/zoom-video).",
         "Both paths re-encode the picture to H.264 at a high bitrate; a frame's shape cannot be changed by copying the stream. MP4, MOV and MKV keep their container, WebM and older formats are written as MP4, and AAC sound is copied unchanged. If the result is larger than a platform accepts, [compress it](/compress-video) afterwards; if the video is only sideways, [rotating it](/rotate-video) swaps width and height without re-encoding at all.",
       ],
@@ -63,7 +62,7 @@ export const changeVideoAspectRatio: ToolInput = {
         },
         {
           q: "Can I use a blurred copy of the video instead of bars?",
-          a: "Not yet. Bars are black or white for now; a blurred background is planned as its own option.",
+          a: "Yes. Choose Blurred under Bars: the picture itself is enlarged, blurred and dimmed to fill the frame behind the sharp one, instead of black or white bars.",
         },
         {
           q: "Does changing the aspect ratio make the file bigger?",

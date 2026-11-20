@@ -130,7 +130,7 @@ export async function runComposite(job: CompositeJob): Promise<EngineResult> {
   if (!(await canEncodeAvc(width, height))) {
     throw new EngineError(
       "unsupported-output",
-      `This browser's H.264 encoder cannot make a ${formatDimensions(width, height)} video.`,
+      `This browser cannot write a ${formatDimensions(width, height)} H.264 video.`,
       "Make the video smaller with compress video first, or try desktop Chrome, Edge or Safari.",
     );
   }
@@ -236,7 +236,7 @@ async function withSourceSound(
   const encoded = new Input({ source: new BlobSource(picture), formats: ALL_FORMATS });
   try {
     const v = await encoded.getPrimaryVideoTrack();
-    if (!v) throw new EngineError("internal", "The encoder produced no picture.", "Try again.");
+    if (!v) throw new EngineError("internal", "The video could not be written.", "Try again.");
     const row = containerById.get(to);
     const sounds = (await source.getAudioTracks()).filter(
       (a) => !!a.codec && (row?.audioCodecs ?? []).includes(a.codec),

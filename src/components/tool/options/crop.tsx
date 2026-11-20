@@ -30,6 +30,7 @@ import { type CropOptions, cropRect } from "@/tools/engines/crop/options";
 import { needsFfmpeg } from "@/tools/engines/crop/plan";
 import type { MediaInfo } from "@/tools/engines/types";
 import type { OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 const isRatio = (v: unknown): v is RatioId =>
   typeof v === "string" && (ratioIds as readonly string[]).includes(v);
@@ -83,7 +84,7 @@ const plainCropSpec: OptionsSpec<CropOptions> = {
   },
   route: (_o, info, fileName) => (needsFfmpeg(info, fileName) ? "page" : "worker"),
   blocked: (o, info) => {
-    if (!info.video) return "This file has no video track to crop.";
+    if (!info.video) return unfixable("This file has no video track to crop. Choose a video file.");
     if (isFullFrame(cropRect(o, info.video), info.video))
       return "Drag the frame's edges or corners, or pick a shape, to choose what to keep.";
     return undefined;
@@ -94,9 +95,11 @@ const plainCropSpec: OptionsSpec<CropOptions> = {
     const r = cropRect(o, v);
     if (isFullFrame(r, v)) return undefined;
     const est = geometryEstimate(info, r);
-    return `Output ${formatDimensions(r.width, r.height)}, about ${formatBytes(est.bytes)}. A crop re-encodes the picture to H.264 at high quality. ${est.audio}${est.container} Runs on this device.`;
+    return `Output ${formatDimensions(r.width, r.height)}, about ${formatBytes(est.bytes)}. A crop re-encodes the picture to H.264 at high quality. ${est.audio}${est.container}`;
   },
   previewResult: true,
+  // The frame changes shape: side by side, never a wipe across two framings (ADR-0135).
+  compare: () => ({ what: "picture", layout: "side-by-side" }),
   nextStep: { slug: "compress-video", label: "Compress the cropped video" },
   result: (o, info) => {
     const v = info.video;

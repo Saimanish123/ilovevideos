@@ -23,21 +23,14 @@ export const verticalVideoToHorizontal: ToolInput = {
     "vertical to 16:9",
     "phone video",
   ],
-  related: [
-    "change-video-aspect-ratio",
-    "add-border-to-video",
-    "resize-video-for-youtube",
-    "crop-video",
-    "rotate-video",
-  ],
+  related: ["change-video-aspect-ratio", "add-border-to-video", "crop-video", "rotate-video"],
   updatedAt: "2026-10-01",
   icon: "rectangle-horizontal",
   illustration: "blur-pad",
   content: {
     en: {
       title: "Turn vertical video horizontal",
-      subtitle:
-        "Put a portrait phone video in a 16:9 frame with blurred sides, not black bars. In your browser.",
+      subtitle: "Fit a vertical video into a wide frame with blurred sides.",
       metaTitle: "Vertical video to horizontal, free, no upload",
       metaDescription:
         "Fit a vertical phone video into a 16:9 landscape frame, the empty sides filled with a blurred copy of the picture. Nothing cropped. Free, on your device.",

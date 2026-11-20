@@ -6,6 +6,7 @@ import { formatBytes } from "@/lib/format";
 import { readLayout } from "@/tools/engines/faststart/boxes";
 import { fileReader, takesFaststart } from "@/tools/engines/faststart/index";
 import type { OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 /**
  * What the file's layout is, read on the page from box headers when the file arrives. Kept in the
@@ -85,6 +86,8 @@ const headline = (f: Found | undefined) =>
 export const faststartSpec: OptionsSpec<FaststartValue> = {
   verb: "Optimise",
   previewResult: true,
+  // A stream copy: identical picture and sound (ADR-0134).
+  compare: false,
   nextStep: { slug: "video-info", label: "Check the result" },
   defaults: () => ({}),
   route: () => "page",
@@ -104,7 +107,9 @@ export const faststartSpec: OptionsSpec<FaststartValue> = {
         settled: true,
       };
     if (f.kind === "no-index")
-      return "This file has no index (no moov box): it may be an unfinished recording. Try the original file from the camera or app.";
+      return unfixable(
+        "This file has no index (no moov box): it may be an unfinished recording. Try the original file from the camera or app.",
+      );
     if (f.kind === "other")
       return {
         reason: `Fast start applies to MP4 and MOV. Convert this ${info.container} file to MP4: the converter writes the index at the front.`,
@@ -115,7 +120,7 @@ export const faststartSpec: OptionsSpec<FaststartValue> = {
   summary: (o) => {
     const f = o.found;
     if (f?.kind !== "end") return undefined;
-    return `Moves the ${formatBytes(f.index ?? 0)} index in front of ${formatBytes(f.media ?? 0)} of media. Nothing is decoded or re-encoded: every packet, track, chapter and tag stays byte for byte, and the file size does not change. Runs on this device.`;
+    return `Moves the ${formatBytes(f.index ?? 0)} index in front of ${formatBytes(f.media ?? 0)} of media. Nothing is decoded or re-encoded: every packet, track, chapter and tag stays byte for byte, and the file size does not change.`;
   },
   result: (o) => ({
     title: "Ready to stream: index at the front",

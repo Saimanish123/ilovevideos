@@ -58,7 +58,7 @@ function resizeTool(spec: ResizePageSpec): ToolInput {
     })),
     updatedAt: spec.updatedAt,
     icon: "ratio",
-    illustration: "aspect-ratio",
+    illustration: `resize-for:${p.id}`,
     content: {
       en: {
         title: `Resize video for ${p.name}`,
@@ -97,14 +97,13 @@ const specs: ResizePageSpec[] = [
       "compress-video",
     ],
     updatedAt: "2026-09-30",
-    subtitle:
-      "Make a video 9:16 at up to 1080×1920 for TikTok, with bars or a crop. Runs in your browser.",
+    subtitle: "Vertical and full screen, with bars or a crop.",
     metaTitle: "Resize video for TikTok 9:16, free, no upload",
     metaDescription:
       "Fit any video to TikTok's 9:16 frame at up to 1080×1920. Crop to fill or add bars and see it on the picture first. Runs in your browser. Free.",
-    what: "This page makes a video the shape TikTok shows full screen: 9:16, at most 1080×1920. Choose whether the picture fills the frame with its sides cropped, or stays whole with bars, and see it on the preview before anything is encoded. The video is re-encoded once to H.264 on your device.",
+    what: "This page makes a video the shape TikTok shows full screen: 9:16, at most 1080×1920. Choose whether the picture fills the frame with its sides cropped, or stays whole with bars, and see it on the preview before anything is encoded. The video is re-encoded once to H.264.",
     story: [
-      "What TikTok asks for, checked 2026-09 on its ads help centre: vertical 9:16 is the recommended shape, at least 540×960; horizontal 16:9 needs at least 960×540 and square 1:1 at least 640×640; in-feed ads run up to 10 minutes and 500 MB, as MP4, MOV, MPEG, 3GP or AVI. Those two figures are for ads; limits for ordinary posts are not quoted here. TikTok names no largest size, so this page stops at 1080×1920, the full-HD phone frame: a 4K clip is scaled down to it, and a smaller clip keeps its own pixels rather than being enlarged.",
+      "What TikTok asks for on its ads help centre: vertical 9:16 is the recommended shape, at least 540×960; horizontal 16:9 needs at least 960×540 and square 1:1 at least 640×640; in-feed ads run up to 10 minutes and 500 MB, as MP4, MOV, MPEG, 3GP or AVI. Those two figures are for ads; limits for ordinary posts are not quoted here. TikTok names no largest size, so this page stops at 1080×1920, the full-HD phone frame: a 4K clip is scaled down to it, and a smaller clip keeps its own pixels rather than being enlarged.",
       "A landscape clip has two honest options. Add bars keeps the whole picture as a band across the middle of the phone, about a third of the screen's height. Crop to fill uses the whole screen but keeps a window only 606 pixels wide out of a 1920×1080 source, under a third of the width, which works for one person talking to the camera and badly for a group or a wide shot. The page suggests bars for landscape sources and a fill for phone footage that is already close to vertical; one tap switches.",
       "TikTok draws its own interface over the video: the caption and sound name along the bottom, and the like, comment and share buttons down the right-hand edge. When you crop to fill, drag the window so faces and on-screen text sit in the upper middle of the frame, clear of both. With bars the picture already sits in the middle band, away from most of the buttons.",
       "If the 9:16 file is large for a slow connection, [compress video](/compress-video) brings it down at a size you choose; for an ad, TikTok's in-feed limit is 500 MB. For a clip that only needs different framing rather than a fixed shape, [crop video](/crop-video) draws a free rectangle instead.",
@@ -144,14 +143,13 @@ const specs: ResizePageSpec[] = [
     aliases: ["instagram", "reels", "ig"],
     related: ["resize-video-for-tiktok", "resize-video-for-facebook", "compress-video"],
     updatedAt: "2026-09-30",
-    subtitle:
-      "Make a video 9:16 for Reels at up to 1440×2560, cropped or with bars. Runs in your browser.",
+    subtitle: "Tall and full screen, cropped or with bars.",
     metaTitle: "Resize video for Instagram Reels (9:16), free",
     metaDescription:
       "Fit a video to Instagram's 9:16 Reels frame, up to the 1440×2560 Meta recommends. Crop to fill or add bars in your browser. Nothing is uploaded.",
     what: "This page reshapes a video for Instagram Reels: 9:16, up to 1440×2560, the size Meta's ads guide recommends. It draws the frame on your picture before encoding, lets you fill it or keep everything with bars, and points out what Instagram asks for that the clip lacks, such as a frame rate under 30 fps.",
     story: [
-      "What Instagram asks for, checked 2026-09: its help centre says a reel can be any shape from 1.91:1 to 9:16, with at least 30 frames per second and at least 720 pixels. Meta's ads guide for Reels recommends 9:16 at 1440×2560 and advises keeping 14% at the top, 35% at the bottom and 6% at each side free of text and logos. This page writes 9:16 with 1440×2560 as its ceiling; a source with fewer pixels keeps them rather than being enlarged, so a 1080p phone clip comes out 1080×1920.",
+      "What Instagram asks for: its help centre says a reel can be any shape from 1.91:1 to 9:16, with at least 30 frames per second and at least 720 pixels. Meta's ads guide for Reels recommends 9:16 at 1440×2560 and advises keeping 14% at the top, 35% at the bottom and 6% at each side free of text and logos. This page writes 9:16 with 1440×2560 as its ceiling; a source with fewer pixels keeps them rather than being enlarged, so a 1080p phone clip comes out 1080×1920.",
       "The bottom third of a reel is where Instagram puts the caption, the audio line and the account name, and the right edge carries the like, comment and share buttons. That is what the 35% bottom margin in Meta's guide is for. When you crop to fill, keep faces and text in the upper half of the kept window; the panel repeats the margins while you frame the shot.",
       "Reels accept wider shapes than 9:16, but in the full-screen viewer anything else plays smaller with bars or gets cropped, and the profile grid shows a crop around the middle of every reel. Making the video 9:16 before posting means you choose what is cut, and keeping the subject near the centre lets it survive both the viewer and the grid.",
       "Instagram asks for at least 30 fps, and a 24 or 25 fps film-style clip is not converted here: the frame rate is kept and the panel says so, because invented in-between frames look worse than a slightly lower rate. AAC sound is copied untouched. If the finished reel is slow to upload, [compress video](/compress-video) makes it smaller at a size you choose.",
@@ -198,14 +196,13 @@ const specs: ResizePageSpec[] = [
       "cut-video-into-shorts",
     ],
     updatedAt: "2026-09-30",
-    subtitle:
-      "Make a video 9:16 or square for Shorts, up to 1080p and 3 minutes. Runs in your browser.",
+    subtitle: "Vertical or square, up to 3 minutes.",
     metaTitle: "Resize video for YouTube Shorts, no upload",
     metaDescription:
       "Turn a video into a YouTube Short: 9:16 or square, up to 1080×1920, first 3:00 kept when it is longer. Runs in your browser. Free, no account.",
     what: "This page turns a video into something YouTube counts as a Short: a vertical or square frame, at most 1080p, no longer than three minutes. It crops or adds bars to reach the shape, scales down anything above 1080p, and when the clip runs past 3:00 it offers to keep only the first three minutes.",
     story: [
-      "What YouTube asks for, checked 2026-09 on its help centre: a video uploaded with a square or vertical aspect ratio and up to 3 minutes long is a Short, and Shorts upload at a maximum resolution of 1080p. That gives two shapes, 9:16 and 1:1, and a ceiling of 1080×1920 for vertical or 1080×1080 for square. A source smaller than that keeps its own pixels rather than being enlarged.",
+      "What YouTube asks for on its help centre: a video uploaded with a square or vertical aspect ratio and up to 3 minutes long is a Short, and Shorts upload at a maximum resolution of 1080p. That gives two shapes, 9:16 and 1:1, and a ceiling of 1080×1920 for vertical or 1080×1080 for square. A source smaller than that keeps its own pixels rather than being enlarged.",
       "Length decides as much as shape: a vertical upload longer than three minutes is not a Short. When your clip is longer, the Length control keeps the first 3:00 by default; choose All to keep everything and publish a regular video instead, or [trim the video](/trim-video) first to pick which three minutes to keep.",
       "Square is worth choosing for a landscape clip you do not want to crop hard. Cropping 16:9 to 1:1 keeps 56% of the width, against 32% for 9:16, and the Shorts player shows a square video with bars above and below. Vertical fills the screen and is the shape the Shorts feed is built around.",
       "Shorts are often [cut from a longer landscape video](/cut-video-into-shorts): choose Crop to fill, drag the window over the subject and scrub the filmstrip under the preview to check it stays inside for the whole clip. The picture is re-encoded once to H.264, and the sound is copied when it is AAC.",
@@ -251,14 +248,13 @@ const specs: ResizePageSpec[] = [
       "compress-video",
     ],
     updatedAt: "2026-09-30",
-    subtitle:
-      "Make a vertical or square video 16:9 for YouTube, with bars or a crop. Runs in your browser.",
+    subtitle: "Turn a vertical or square video into 16:9.",
     metaTitle: "Resize video for YouTube 16:9, free, no upload",
     metaDescription:
       "Turn a vertical or square clip into a 16:9 YouTube video with bars or a crop, at its own resolution. Runs in your browser. Free, no account.",
     what: "This page makes a video the 16:9 shape YouTube's player is built around, for a phone clip or a square post that should be a regular YouTube video. It keeps the source's resolution, adds bars or crops to fill the frame, and shows the result on the preview before anything is encoded.",
     story: [
-      "What YouTube asks for, checked 2026-09 on its help centre: the standard aspect ratio on a computer is 16:9, at sizes from 426×240 through 1920×1080 and 3840×2160 up to 7680×4320, and YouTube may add padding of its own to vertical videos in desktop browsers. Every 16:9 size is accepted, so this page keeps your video's own resolution: a 1080×1920 phone clip becomes a 1920×1080 frame with the picture at 608×1080 in the middle, and nothing is enlarged.",
+      "What YouTube asks for on its help centre: the standard aspect ratio on a computer is 16:9, at sizes from 426×240 through 1920×1080 and 3840×2160 up to 7680×4320, and YouTube may add padding of its own to vertical videos in desktop browsers. Every 16:9 size is accepted, so this page keeps your video's own resolution: a 1080×1920 phone clip becomes a 1920×1080 frame with the picture at 608×1080 in the middle, and nothing is enlarged.",
       "Shape also decides what YouTube does with a short clip. A vertical or square upload of three minutes or less becomes a Short and appears in the Shorts feed rather than as a regular video with a thumbnail. Making it 16:9 first keeps it a regular video. For the opposite job, turning footage into a Short, use [resize video for YouTube Shorts](/resize-video-for-youtube-shorts).",
       "Bars are the usual choice for phone footage: the whole picture stays, and black bars disappear into YouTube's dark player. Crop to fill turns a 1080×1920 clip into a 1080×606 strip from the middle, a large loss of detail, so use it only when the action sits in a horizontal band, such as a stage filmed with the phone upright.",
       "A clip that is only sideways because the phone was held the wrong way needs no bars at all: rotating it swaps width and height, and [rotate video](/rotate-video) does that without re-encoding. Everything else here is re-encoded once to H.264 in an MP4, with AAC sound copied as it is.",
@@ -298,14 +294,13 @@ const specs: ResizePageSpec[] = [
     aliases: ["facebook", "4:5"],
     related: ["resize-video-for-instagram-reels", "compress-video", "trim-video"],
     updatedAt: "2026-09-30",
-    subtitle:
-      "Make a video 4:5 for the Facebook feed at up to 1440×1800, cropped or with bars. In your browser.",
+    subtitle: "A tall 4:5 frame for the feed, cropped or with bars.",
     metaTitle: "Resize video for Facebook 4:5, free, no upload",
     metaDescription:
       "Fit a video to the 4:5 frame Meta recommends for Facebook Feed, up to 1440×1800. Crop to fill or add bars. Runs in your browser. Free.",
     what: "This page reshapes a video for the Facebook feed: 4:5, the tall portrait frame Meta's ads guide recommends there, at most 1440×1800. A landscape clip gets bars or a crop, a vertical phone clip is trimmed at the top and bottom or given side bars, and the preview shows the frame before anything is encoded.",
     story: [
-      "What Meta asks for, checked 2026-09 in its ads guide for Facebook Feed video: aspect ratio 4:5 at 1440×1800, at least 120 pixels wide and high, 1 second to 241 minutes, up to 4 GB, H.264 in MP4 or MOV with stereo AAC sound at 128 kbps or more. The guide is written for ads; ordinary video posts appear in the same feed. This page writes 4:5, scales anything larger down to 1440×1800 and leaves a smaller picture at its own size.",
+      "What Meta asks for in its ads guide for Facebook Feed video: aspect ratio 4:5 at 1440×1800, at least 120 pixels wide and high, 1 second to 241 minutes, up to 4 GB, H.264 in MP4 or MOV with stereo AAC sound at 128 kbps or more. The guide is written for ads; ordinary video posts appear in the same feed. This page writes 4:5, scales anything larger down to 1440×1800 and leaves a smaller picture at its own size.",
       "4:5 is taller than a square and shorter than a phone screen: in a feed on a phone it takes more height than a square post, without the full-screen 9:16 frame that Reels and Stories use. A 9:16 phone clip cropped to 4:5 keeps its full width and loses about 30% of its height, split between top and bottom; drag the window if the subject sits high in the frame.",
       "A 16:9 clip in a 4:5 frame fills 45% of the frame's height when it keeps bars, or keeps 45% of its width when cropped, a window 864 pixels wide out of 1920. That is a lot to lose, which is why the page suggests bars for landscape sources. If the video should keep a different shape, [change video aspect ratio](/change-video-aspect-ratio) offers 16:9, 1:1, 4:3 and 9:16 as well.",
       "The output is H.264 in an MP4 with the sound copied when it is AAC, which matches the codecs in Meta's guide. If the file is large for a slow connection, [compress video](/compress-video) makes it smaller at a size you choose before you post.",
@@ -313,7 +308,7 @@ const specs: ResizePageSpec[] = [
     faq: [
       {
         q: "What is the best video size for the Facebook feed?",
-        a: "Meta's ads guide recommends 4:5 at 1440×1800 for Facebook Feed video, read on 2026-09-30. A phone clip 1080 pixels wide comes out 1080×1350.",
+        a: "Meta's ads guide recommends 4:5 at 1440×1800 for Facebook Feed video. A phone clip 1080 pixels wide comes out 1080×1350.",
       },
       {
         q: "Should Facebook videos be 4:5 or 9:16?",

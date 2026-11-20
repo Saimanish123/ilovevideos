@@ -20,7 +20,9 @@ import {
 import { PLAY_SHORTCUT, useWorkspaceKeys } from "../shortcuts";
 import { SoundHero } from "../sound/sound-hero";
 import { type Choice, Choices } from "./choices";
+import { between, z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 type PresetChoice = `${(typeof speedPresets)[number]}` | "custom";
 type AudioChoice = "keep" | "shift" | "mute";
@@ -102,6 +104,9 @@ const stepPreset = (speed: number, dir: 1 | -1) => {
 export const speedSpec: OptionsSpec<SpeedOptions> = {
   verb: "Change speed",
   previewResult: true,
+  // A video: the wipe follows the source at the new speed; a sound on its own has no moment to match (ADR-0134).
+  // The change is in time, not in the picture: a wipe would only show re-encode quality (ADR-0134).
+  compare: false,
   nextStep: { slug: "compress-video", label: "Compress the result" },
   shortcuts: [
     { keys: "]", label: "Next faster preset" },
@@ -117,6 +122,7 @@ export const speedSpec: OptionsSpec<SpeedOptions> = {
       change: false,
     };
   },
+  remember: { schema: z.object({ speed: between(0.1, 8), keepPitch: z.boolean() }) },
   defaults: (info, preset) => ({
     speed: typeof preset.speed === "number" ? clampSpeed(preset.speed) : info.video ? 2 : 1.25,
     keepPitch: typeof preset.keepPitch === "boolean" ? preset.keepPitch : true,
@@ -128,16 +134,18 @@ export const speedSpec: OptionsSpec<SpeedOptions> = {
   route: () => "page",
   blocked: (o, info) => {
     if (!info.video && !info.audio?.length)
-      return "This file has no picture or sound to change the speed of.";
+      return unfixable(
+        "This file has no picture or sound to change the speed of. Choose a video or audio file.",
+      );
     if (o.speed === 1) return "1× leaves the video as it is. Choose a different speed.";
     return undefined;
   },
-  // The new length is the panel's headline; this line says what happens to the sound and how it runs.
+  // The new length is the panel's headline; this line says what happens to the sound.
   summary: (o, info) => {
     if (o.speed === 1) return undefined;
     if (!info.video) {
       const t = audioSpeedTarget(info);
-      return `${o.keepPitch ? "Pitch is kept." : "Pitch shifts with the speed."} Saved as ${t.format.name}${t.bitrateKbps ? ` at ${withUnit(t.bitrateKbps, "kbps")}` : ""} with the ffmpeg engine on this device.`;
+      return `${o.keepPitch ? "Pitch is kept." : "Pitch shifts with the speed."} Saved as ${t.format.name}${t.bitrateKbps ? ` at ${withUnit(t.bitrateKbps, "kbps")}` : ""}.`;
     }
     const hasAudio = !!info.audio?.length;
     const audio = !hasAudio
@@ -147,7 +155,7 @@ export const speedSpec: OptionsSpec<SpeedOptions> = {
         : o.keepPitch
           ? "Audio pitch is kept."
           : "Audio pitch shifts with the speed.";
-    return `${audio} Re-encodes to MP4 with the ffmpeg engine on this device.`;
+    return `${audio} Re-encodes to MP4.`;
   },
   Panel({ value, onChange, info, media, disabled }) {
     const root = useRef<HTMLDivElement>(null);

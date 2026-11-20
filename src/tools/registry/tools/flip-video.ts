@@ -31,8 +31,7 @@ export const flipVideo: ToolInput = {
   content: {
     en: {
       title: "Flip video",
-      subtitle:
-        "Mirror a video left to right or top to bottom so text reads correctly. Processed in your browser.",
+      subtitle: "Mirror a video left to right or upside down.",
       metaTitle: "Flip and mirror video online, free, no upload",
       metaDescription:
         "Flip a video horizontally or vertically to undo a mirrored selfie recording. Live preview, then re-encoded on your device. Free, no account, no upload.",
@@ -45,7 +44,7 @@ export const flipVideo: ToolInput = {
         "Press Flip and download the corrected file.",
       ],
       goodToKnow: [
-        "A flip cannot be expressed by the rotation flag that MP4 and MOV carry, so unlike a plain quarter turn it always rewrites the pixels. Every frame is decoded, mirrored on a canvas and encoded again as H.264 on your device. Expect a file size in the same range as the original and a small, usually invisible, quality cost; if the file is large, run [compress video](/compress-video) afterwards rather than before, so the picture is encoded once with the right orientation.",
+        "A flip cannot be expressed by the rotation flag that MP4 and MOV carry, so unlike a plain quarter turn it always rewrites the pixels. Every frame is decoded, mirrored and encoded again as H.264. Expect a file size in the same range as the original and a small, usually invisible, quality cost; if the file is large, run [compress video](/compress-video) afterwards rather than before, so the picture is encoded once with the right orientation.",
         "Mirrored selfie footage is a preview convention leaking into the file. Cameras mirror the viewfinder so that moving left feels like left, and most save the unmirrored image, but some webcam apps and a few phones save the mirrored view. The tell is text: if a poster behind you reads backwards, flip horizontally and it reads correctly with no other change.",
         "A horizontal flip followed by a 180-degree turn is the same as a vertical flip. When a clip is both sideways and mirrored, set the rotation first and toggle the flip while watching the preview; the two controls combine, and the summary line names the final orientation.",
         "Vertical flips are the tool for footage from an upside-down mount that also mirrored the image, and for the rare vertically mirrored capture from a badly configured capture card. For footage that is simply upside down without a mirror, use [rotate video](/rotate-video) with 180 degrees, which keeps the stream untouched on MP4 and MOV.",

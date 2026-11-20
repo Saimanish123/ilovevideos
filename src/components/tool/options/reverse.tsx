@@ -12,6 +12,7 @@ import { containerNote, pictureEstimate } from "@/tools/engines/video-filter/pla
 import { undecodablePicture } from "./decodable";
 import { pictureSize, sizeNote } from "./picture-size";
 import type { OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 /** Longest sound this tool reverses for this file, or undefined without sound. */
 const soundLimit = (info: MediaInfo) => {
@@ -38,6 +39,8 @@ function cost(info: MediaInfo): { factor: number; gap?: number } {
 export const reverseSpec: OptionsSpec<ReverseOptions> = {
   verb: "Reverse",
   previewResult: true,
+  // The source backwards: no moment of the result matches the same moment of the source (ADR-0134).
+  compare: false,
   inspectKeyframes: true,
   nextStep: { slug: "loop-video", label: "Loop the result" },
   defaults: (info, preset) => ({
@@ -45,7 +48,8 @@ export const reverseSpec: OptionsSpec<ReverseOptions> = {
       preset.sound === "drop" || soundTooLong(info) || !info.audio?.length ? "drop" : "reverse",
   }),
   blocked: (o, info) => {
-    if (!info.video) return "This file has no video track to reverse.";
+    if (!info.video)
+      return unfixable("This file has no video track to reverse. Choose a video file.");
     const undecodable = undecodablePicture(info);
     if (undecodable) return undecodable;
     if (needsFfmpeg(info, sourceName(info)))
@@ -67,7 +71,7 @@ export const reverseSpec: OptionsSpec<ReverseOptions> = {
         ? "The sound is reversed too and encoded to AAC."
         : "The result has no sound.";
     const out = pictureSize(info);
-    return `Output ${formatDimensions(out.width, out.height)} H.264, ${est.label}.${sizeNote(info)} Every frame is re-encoded, last first. ${sound}${containerNote(info)} Runs on this device.`;
+    return `Output ${formatDimensions(out.width, out.height)} H.264, ${est.label}.${sizeNote(info)} Every frame is re-encoded, last first. ${sound}${containerNote(info)}`;
   },
   result: (o, info) => ({
     title: `Reversed: ${formatDuration(info.durationSec)} backwards`,

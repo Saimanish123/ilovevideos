@@ -106,7 +106,7 @@ async function encodeWith(job: PictureJob, video: ConversionVideoOptions): Promi
   const encoded = new Input({ source: new BlobSource(picture.blob), formats: ALL_FORMATS });
   try {
     const v = await encoded.getPrimaryVideoTrack();
-    if (!v) throw new EngineError("internal", "The encoder produced no picture.", "Try again.");
+    if (!v) throw new EngineError("internal", "The video could not be written.", "Try again.");
     const row = containerById.get(to);
     const sounds = (await source.getAudioTracks()).filter(
       (a: InputAudioTrack) => !!a.codec && (row?.audioCodecs ?? []).includes(a.codec),

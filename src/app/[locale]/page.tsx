@@ -1,13 +1,22 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
-import { groupTools, ToolCardGrid, ToolGroupRow } from "@/components/layout/tool-directory";
-import { buttonVariants } from "@/components/ui/button";
+import { ClearRecent } from "@/components/layout/clear-recent";
+import { HeroSearch } from "@/components/layout/hero-search";
+import { HomeRowsFill } from "@/components/layout/home-rows-fill";
+import { RowHeading, RowList, ToolRow } from "@/components/layout/tool-row";
 import { home } from "@/content/site";
-import { Link } from "@/lib/i18n/navigation";
+import { discovery, homeLead } from "@/content/site/discovery";
 import { routing } from "@/lib/i18n/routing";
 import { ogImages } from "@/lib/og/images";
+import { homeRowsHoldScript, homeRowsScript } from "@/lib/recent-tools";
 import { site } from "@/lib/site";
-import { getActiveCategories, getToolsByCategory } from "@/tools/registry";
+import {
+  tools as allTools,
+  getActiveCategories,
+  getRelatedTools,
+  getToolsByCategory,
+  isGenerated,
+} from "@/tools/registry";
 
 export async function generateMetadata({
   params,
@@ -23,16 +32,23 @@ export async function generateMetadata({
       type: "website",
       title: home.title,
       description: site.description,
-      images: ogImages("home", `${home.title}: ${home.lead}`).images,
+      images: ogImages("home", `${home.title.replace(/\.$/, "")}: ${home.lead}`).images,
     },
-    twitter: ogImages("home", `${home.title}: ${home.lead}`).twitter,
+    twitter: ogImages("home", `${home.title.replace(/\.$/, "")}: ${home.lead}`).twitter,
   };
 }
 
 /**
- * Home (README.md#seo-strategy §1, top of home → hub → tool): hero, the three promises, the hubs, then
- * every tool by category. Standalone tools are illustrated cards; generated families and format pairs
- * are compact rows of links (tool-directory.tsx). Accent: the hero's primary action only.
+ * Home (README.md#seo-strategy §1, top of home → hub → tool), ADR-0154:
+ * - Hero: the H1, the lead, and the site search as a large field with "Or choose a file" beside it (a
+ *   file dropped anywhere on the hero works too). No single tool is the hero's action.
+ * - The three promises, each a title and one short line.
+ * - Netflix-style rows: one per category, every standalone tool on one scrolling line, lead tools
+ *   first, no loop, "See all" to the hub. For a returning visitor, "Continue" (recent tools) and
+ *   "Because you used <tool>" come first, filled before paint from localStorage by the inline script
+ *   after the rows. The category rows keep the editorial order.
+ * Format pairs and presets are not listed (they are for search). No popularity rows: there is no
+ * usage data.
  */
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -41,93 +57,111 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     cat,
     list: getToolsByCategory(cat.id),
   }));
+  // Each row's cards: standalone tools, lead first. Their order on the page is the index the inline
+  // script uses for the "Because you used" row.
+  const rows = categories.flatMap(({ cat, list }) => {
+    const cards = list.filter((t) => !isGenerated(t));
+    if (cards.length === 0) return [];
+    const lead = (homeLead[cat.id] ?? []).flatMap((s) => cards.filter((t) => t.slug === s));
+    return [{ cat, tools: [...lead, ...cards.filter((t) => !lead.includes(t))] }];
+  });
+  const order = rows.flatMap((r) => r.tools.map((t) => t.slug));
+  const at = new Map(order.map((s, i) => [s, i]));
+  const related = rows.flatMap((r) =>
+    r.tools.map((t) => getRelatedTools(t).flatMap((x) => at.get(x.slug) ?? [])),
+  );
+  const count = Math.floor(allTools.length / 10) * 10;
 
   return (
-    <div className="mx-auto w-full max-w-(--container-content) px-4 md:px-8">
-      <section className="pt-16 md:pt-24">
-        <h1 className="max-w-(--container-headline) text-balance text-display">{home.title}</h1>
-        <p className="mt-6 max-w-(--container-prose) text-body-lg text-fg-muted">{home.lead}</p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link
-            prefetch={false}
-            href="/compress-video"
-            className={buttonVariants({ variant: "primary", size: "lg" })}
-          >
-            {home.primary}
-          </Link>
-          <a href="#tools" className={buttonVariants({ variant: "secondary", size: "lg" })}>
-            {home.secondary}
-          </a>
-        </div>
-      </section>
+    <>
+      <div className="mx-auto w-full max-w-(--container-content) px-4 md:px-8">
+        <section aria-labelledby="home-title" className="pt-16 md:pt-24">
+          {/* The page's one entrance (ADR-0157): the search, then the promises 40 ms later. The title
+              and lead (the LCP) stay still. */}
+          <h1 id="home-title" className="max-w-(--container-headline) text-balance text-display">
+            {home.title}
+          </h1>
+          <p className="mt-6 max-w-(--container-prose) text-body-lg text-fg-muted">{home.lead}</p>
+          {/* Before first paint: the hero's field is on screen, so the header search starts hidden. */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: 'document.documentElement.setAttribute("data-hero-search","")',
+            }}
+          />
+          <div className="enter-0 mt-8">
+            <HeroSearch
+              placeholder={home.search(count)}
+              short={home.searchShort(count)}
+              chooseLabel={home.chooseFile}
+            />
+          </div>
+        </section>
 
-      <ul className="mt-16 grid gap-8 md:mt-24 md:grid-cols-3">
-        {home.promises.map((p) => (
-          <li key={p.title} className="border-border border-t pt-6">
-            <h2 className="text-h3">{p.title}</h2>
-            <p className="mt-2 text-fg-muted text-sm">{p.text}</p>
-          </li>
-        ))}
-      </ul>
-
-      <section aria-labelledby="browse" className="mt-24 md:mt-32">
-        <h2 id="browse" className="text-h2">
-          {home.browse}
-        </h2>
-        <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map(({ cat, list }) => (
-            <li key={cat.id}>
-              <Link
-                prefetch={false}
-                href={`/tools/${cat.id}`}
-                className="flex h-full flex-col rounded-md border border-border bg-bg-raised px-4 py-3 transition-colors duration-(--duration-instant) hover:border-border-strong focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2"
-              >
-                <span className="flex items-baseline justify-between gap-3">
-                  <span className="font-medium text-sm">{cat.hubTitle ?? cat.title}</span>
-                  <span className="tabular text-fg-muted text-xs">
-                    {list.length === 1 ? "1 page" : `${list.length} pages`}
-                  </span>
-                </span>
-                <span className="mt-1 text-fg-muted text-xs">{cat.description}</span>
-              </Link>
+        <ul className="enter-1 mt-16 grid gap-8 md:mt-24 md:grid-cols-3">
+          {home.promises.map((p) => (
+            <li key={p.title} className="border-border border-t pt-6">
+              <h2 className="text-h3">{p.title}</h2>
+              <p className="mt-2 text-fg-muted text-sm">{p.text}</p>
             </li>
           ))}
         </ul>
-      </section>
-
-      <div id="tools" className="scroll-mt-20">
-        {categories.map(({ cat, list }) => {
-          const { cards, groups } = groupTools(list, locale);
-          return (
-            <section key={cat.id} aria-labelledby={`cat-${cat.id}`} className="mt-24 md:mt-32">
-              <h2 id={`cat-${cat.id}`} className="text-h2">
-                <Link
-                  prefetch={false}
-                  href={`/tools/${cat.id}`}
-                  className="inline-flex min-h-11 min-w-11 items-center rounded-sm underline decoration-transparent decoration-1 underline-offset-4 transition-colors duration-(--duration-instant) hover:decoration-fg-muted"
-                >
-                  {cat.title}
-                </Link>
-              </h2>
-              <p className="mt-2 max-w-(--container-prose) text-body text-fg-muted">
-                {cat.description}
-              </p>
-              {cards.length > 0 && (
-                <div className="mt-8">
-                  <ToolCardGrid tools={cards} locale={locale} />
-                </div>
-              )}
-              {groups.length > 0 && (
-                <div className="mt-8 space-y-6">
-                  {groups.map((g) => (
-                    <ToolGroupRow key={g.key} group={g} locale={locale} />
-                  ))}
-                </div>
-              )}
-            </section>
-          );
-        })}
       </div>
-    </div>
+
+      {/* Netflix-style rows (ADR-0154), full bleed: the first card lines up with the content column and
+          the row runs to the viewport edges, fading where more cards wait. */}
+      <div
+        id="tools"
+        data-related={JSON.stringify(related)}
+        className="mt-24 flex scroll-mt-20 flex-col gap-16 md:mt-32 md:gap-24"
+        suppressHydrationWarning
+      >
+        {/* Before the rows are drawn: if this browser has recent tools, keep the rows invisible until
+            the script after them has filled Continue and Because, so nothing that
+            was already drawn moves (CLS 0). Invisible, not removed: the page keeps its height. */}
+        <script dangerouslySetInnerHTML={{ __html: homeRowsHoldScript }} />
+        <section
+          id="row-continue"
+          aria-labelledby="row-continue-heading"
+          data-reveal
+          hidden
+          suppressHydrationWarning
+        >
+          <RowHeading id="row-continue-heading" action={<ClearRecent />}>
+            {discovery.continueRow}
+          </RowHeading>
+          <RowList id="row-continue" label="recent tools" copies />
+        </section>
+        <section
+          id="row-because"
+          aria-labelledby="row-because-heading"
+          data-reveal
+          hidden
+          suppressHydrationWarning
+        >
+          <RowHeading id="row-because-heading">
+            {discovery.becauseRow}{" "}
+            <span
+              id="row-because-title"
+              dangerouslySetInnerHTML={{ __html: "" }}
+              suppressHydrationWarning
+            />
+          </RowHeading>
+          <RowList id="row-because" label="suggested tools" copies />
+        </section>
+        {rows.map(({ cat, tools }) => (
+          <ToolRow
+            key={cat.id}
+            id={cat.id}
+            title={cat.title}
+            hubHref={`/tools/${cat.id}`}
+            tools={tools}
+            locale={locale}
+          />
+        ))}
+        {/* Before React runs: Continue and Because, from this browser only. */}
+        <script dangerouslySetInnerHTML={{ __html: homeRowsScript }} />
+        <HomeRowsFill />
+      </div>
+    </>
   );
 }

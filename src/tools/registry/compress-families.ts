@@ -1,5 +1,5 @@
 import type { z } from "zod";
-import { CHECKED, type PlatformId, platforms } from "@/content/platforms";
+import { type PlatformId, platforms } from "@/content/platforms";
 import { NBSP } from "@/lib/format";
 import { MB, planTarget } from "@/tools/engines/compress/math";
 import type { FaqItem, ToolInput } from "./schema";
@@ -13,7 +13,6 @@ import type { FaqItem, ToolInput } from "./schema";
  */
 
 const mb = (n: number) => `${n}${NBSP}MB`;
-const checkedMonth = CHECKED.slice(0, 7);
 
 /**
  * Every string the generators write (steps, the dated limits paragraph, the computed "what it buys"
@@ -83,9 +82,10 @@ export interface PlatformPageSpec {
 
 export function platformTool(spec: PlatformPageSpec): ToolInput {
   const p = platforms[spec.platform];
-  // "Discord limits by tier, checked 2026-09. Free, 10 MB: free accounts, per …; fits every account. …"
+  // "Discord limits by tier. Free, 10 MB: free accounts, per …; fits every account. …" The check date
+  // stays in src/content/platforms (CHECKED) and is not shown (ADR-0149).
   const limits = gen(
-    `${p.name} limits by tier, checked ${checkedMonth}. ${p.tiers.map((t) => `${t.plan}, ${mb(t.mb)}: ${t.note}`).join(" ")}`,
+    `${p.name} limits by tier. ${p.tiers.map((t) => `${t.plan}, ${mb(t.mb)}: ${t.note}`).join(" ")}`,
   );
   return {
     slug: spec.slug,
@@ -112,7 +112,7 @@ export function platformTool(spec: PlatformPageSpec): ToolInput {
     })),
     updatedAt: spec.updatedAt,
     icon: spec.icon,
-    illustration: "compress",
+    illustration: `compress-for:${p.id}`,
     content: {
       en: {
         title: spec.title,
@@ -178,7 +178,7 @@ export function sizeTool(spec: SizePageSpec): ToolInput {
     sources: spec.sources ?? [],
     updatedAt: spec.updatedAt,
     icon: "minimize-2",
-    illustration: "compress",
+    illustration: `compress-cap:${n}`,
     content: {
       en: {
         title: `Compress video to under ${mb(n)}`,

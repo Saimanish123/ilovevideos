@@ -39,10 +39,90 @@ export function avcEncoderTrouble(): Promise<EngineError | null> {
   return probe;
 }
 
+let fallback: Promise<EngineError | null> | undefined;
+
+/**
+ * Null when this browser can write H.264 for mediabunny: High profile works, or it stalls and
+ * Constrained Baseline at the same settings works, in which case every later H.264 encode in this
+ * scope is written as Baseline (./baseline-avc, ADR-0146). Otherwise the error `avcEncoderTrouble`
+ * found. Measured once per worker; `avcEncoderTrouble` itself is unchanged for the engines that pick
+ * Baseline on their own (compose, remove silence).
+ */
+export function avcEncodes(): Promise<EngineError | null> {
+  fallback ??= (async () => {
+    const trouble = await avcEncoderTrouble();
+    if (!trouble) return null;
+    const baseline = await encodesFrames("avc1.42e01e").catch(() => false);
+    if (!baseline) return trouble;
+    const { enableBaselineAvc } = await import("./baseline-avc");
+    enableBaselineAvc();
+    return null;
+  })().catch(() => null);
+  return fallback;
+}
+
+/** Whether a few small frames come back from this codec string within the probe's time. */
+async function encodesFrames(codec: string): Promise<boolean> {
+  if (typeof VideoEncoder === "undefined" || typeof VideoFrame === "undefined") return false;
+  const config: VideoEncoderConfig = {
+    codec,
+    width: 320,
+    height: 240,
+    bitrate: 500_000,
+    framerate: 30,
+    avc: { format: "avc" },
+  };
+  if (!(await VideoEncoder.isConfigSupported(config)).supported) return false;
+  let outputs = 0;
+  let first: () => void = () => undefined;
+  const got = new Promise<void>((resolve) => {
+    first = resolve;
+  });
+  const encoder = new VideoEncoder({
+    output: () => {
+      outputs++;
+      first();
+    },
+    error: () => first(),
+  });
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  try {
+    encoder.configure(config);
+    const luma = config.width * config.height;
+    for (let i = 0; i < PROBE_FRAMES; i++) {
+      const data = new Uint8Array(luma * 1.5).fill(128);
+      data.fill(16 + i * 30, 0, luma);
+      const frame = new VideoFrame(data, {
+        format: "I420",
+        codedWidth: config.width,
+        codedHeight: config.height,
+        timestamp: Math.round((i * 1e6) / 30),
+      });
+      encoder.encode(frame, { keyFrame: i === 0 });
+      frame.close();
+    }
+    encoder.flush().catch(() => undefined);
+    await Promise.race([
+      got,
+      new Promise<void>((resolve) => {
+        timer = setTimeout(resolve, PROBE_TIMEOUT_MS);
+      }),
+    ]);
+  } finally {
+    clearTimeout(timer);
+    try {
+      encoder.close();
+    } catch {
+      // already closed by an error
+    }
+  }
+  return outputs > 0;
+}
+
 const stalled = () =>
   new EngineError(
     "unsupported-output",
-    "This browser's H.264 encoder accepted a test video but returned no frames, so this tool cannot encode here.",
+    "This browser could not write a short test video, so this tool cannot work here.",
     "Try desktop Chrome or Edge. A converter that keeps the video as it is can still work.",
   );
 
@@ -114,7 +194,7 @@ async function run(): Promise<EngineError | null> {
   if (failed)
     return new EngineError(
       "unsupported-output",
-      "This browser's H.264 encoder failed on a test video, so this tool cannot encode here.",
+      "This browser could not write a short test video, so this tool cannot work here.",
       "Try desktop Chrome or Edge.",
     );
   return stalled();

@@ -16,8 +16,11 @@
 import { z } from "zod";
 import { shellQuote } from "@/lib/format";
 
-/** Most regions in one video (the inverted mode reads them all in one shader pass). */
-export const MAX_REGIONS = 16;
+/**
+ * Most regions in one video (the inverted mode reads them all in one shader pass). 48 since Find
+ * faces (ADR-0113): a crowd shot of 37 small faces made 39 tracks on the fixture.
+ */
+export const MAX_REGIONS = 48;
 /** Most key frames per region. */
 export const MAX_KEYS = 240;
 /** The smallest region edge, in picture pixels: smaller ones are grown to this around their centre. */
@@ -49,6 +52,11 @@ export const Region = z.object({
   start: z.number().min(0).default(0),
   /** Absent: to the end of the video. */
   end: z.number().min(0).optional(),
+  /**
+   * Placed by Find faces (./faces): the face's number in order of first appearance, so it is
+   * "Face n" on the page and keeps its name when another face is deleted. The engine ignores it.
+   */
+  face: z.number().int().min(1).optional(),
 });
 export type Region = z.infer<typeof Region>;
 

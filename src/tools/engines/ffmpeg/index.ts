@@ -17,7 +17,7 @@ import { convertArgs, soundTracks, soundTracksMeta } from "./convert-args";
 import { ffmpegFailure } from "./failures";
 import { mountInput } from "./mount";
 import { parseProbeLog } from "./probe-log";
-import { ffmpegDownloadSize } from "./size";
+import { FFMPEG_WASM_BYTES, ffmpegDownloadSize } from "./size";
 
 /** Matroska or WebM, by what the reader said or the file's name. */
 const looksMatroska = (file: File, info?: Pick<MediaInfo, "container">) =>
@@ -73,7 +73,7 @@ export function assertOutputFits(expectedBytes: number, instead: string): void {
   if (!(expectedBytes > FFMPEG_OUTPUT_LIMIT_BYTES)) return;
   throw new EngineError(
     "resource",
-    `The result would be about ${formatBytes(expectedBytes)}, too large for this browser: the converter for this format holds the whole result in memory, which stops near 2 GB.`,
+    `The result would be about ${formatBytes(expectedBytes)}, too large for this browser to hold for this format, which stops near 2 GB.`,
     instead,
   );
 }
@@ -135,7 +135,7 @@ export async function loadFFmpeg(ctx?: EngineContext): Promise<FFmpeg> {
         throw typeof WebAssembly === "undefined"
           ? new EngineError(
               "unsupported-output",
-              "This browser cannot run WebAssembly, which the converter for this format needs.",
+              "This browser cannot convert this format.",
               "Try desktop Chrome, Edge, Firefox or Safari.",
             )
           : new EngineError(
@@ -151,11 +151,36 @@ export async function loadFFmpeg(ctx?: EngineContext): Promise<FFmpeg> {
         ratio: 0,
         detail: `Loading the converter (${ffmpegDownloadSize()}, once)`,
       });
-      await ff.load({
-        coreURL: `${CORE_BASE}/ffmpeg-core.js`,
-        wasmURL: `${CORE_BASE}/ffmpeg-core.wasm`,
-        workerURL: `${CORE_BASE}/ffmpeg-core.worker.js`,
-      });
+      // The WebAssembly file is fetched here and proven whole before it is compiled: a cut-off
+      // download used to fail with a compile error (ADR-0147). From the cache after the first time.
+      const { downloadWhole } = await import("@/tools/workers/converter-download");
+      let shown = Number.NEGATIVE_INFINITY;
+      const wasm = await downloadWhole(
+        `${CORE_BASE}/ffmpeg-core.wasm`,
+        FFMPEG_WASM_BYTES,
+        "application/wasm",
+        ({ received, total }) => {
+          // About four lines a second: the status line is a live region, and chunks come fast.
+          const now = performance.now();
+          if (received < total && now - shown < 250) return;
+          shown = now;
+          ctx?.onProgress({
+            phase: "loading",
+            ratio: Math.min(1, received / total),
+            detail: `Loading the converter: ${formatBytes(received)} of ${formatBytes(total)}`,
+          });
+        },
+      );
+      const wasmURL = URL.createObjectURL(wasm);
+      try {
+        await ff.load({
+          coreURL: `${CORE_BASE}/ffmpeg-core.js`,
+          wasmURL,
+          workerURL: `${CORE_BASE}/ffmpeg-core.worker.js`,
+        });
+      } finally {
+        URL.revokeObjectURL(wasmURL);
+      }
       instance = ff;
       return ff;
     })().finally(() => {
@@ -297,7 +322,7 @@ export async function extractAudioWithFfmpeg(
   return track ? { ...result, meta: outputMeta(plan, track) } : result;
 }
 
-interface FfmpegJob {
+export interface FfmpegJob {
   file: File;
   ctx: EngineContext;
   /** Output file extension (also used for the scratch file name). */
@@ -317,8 +342,11 @@ interface FfmpegJob {
   failureHint: string;
 }
 
-/** Runs one ffmpeg command with pinned threads, real progress, cancellation and cleanup. */
-async function execFfmpeg(job: FfmpegJob): Promise<EngineResult> {
+/**
+ * Runs one ffmpeg command with pinned threads, real progress, cancellation and cleanup. Exported for
+ * the runners that take over when the browser's own encoder cannot do a job (compress, ADR-0147).
+ */
+export async function execFfmpeg(job: FfmpegJob): Promise<EngineResult> {
   const { file, ctx } = job;
   const ff = await loadFFmpeg(ctx);
   if (ctx.signal.aborted) throw new EngineError("cancelled", "Cancelled.");

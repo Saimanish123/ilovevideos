@@ -26,7 +26,9 @@ import {
 } from "@/tools/engines/video-filter/plan";
 import { PLAY_SHORTCUT } from "../shortcuts";
 import { pictureSize, sizeNote } from "./picture-size";
+import { z } from "./remember-schema";
 import type { OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 const presets = [
   { value: "0", label: "None" },
@@ -93,6 +95,7 @@ export const videoFadeSpec: OptionsSpec<FadeOptions> = {
     { keys: "Shift ← →", label: "Move it one second" },
     PLAY_SHORTCUT,
   ],
+  remember: { schema: z.object({ color: z.enum(["black", "white"]), audio: z.boolean() }) },
   defaults: (info, preset) => {
     const cap = longest(info);
     const num = (v: unknown, d: number) => Math.min(cap, typeof v === "number" ? v : d);
@@ -105,7 +108,14 @@ export const videoFadeSpec: OptionsSpec<FadeOptions> = {
   },
   route: (_o, info, fileName) => (needsFfmpeg(info, fileName) ? "page" : "worker"),
   blocked: (o, info) => {
-    if (!info.video) return "This file has no video track to fade.";
+    if (!info.video)
+      // Sound only: the audio fade page does this job.
+      return info.audio?.length
+        ? unfixable("This file has only sound. Fade it on the audio page.", {
+            slug: "fade-audio",
+            label: "Fade audio",
+          })
+        : unfixable("This file has no video track to fade. Choose a video file.");
     if (fadeIsNoop(o)) return "Both fades are at 0. Drag a handle or pick a length first.";
     return undefined;
   },
@@ -120,7 +130,7 @@ export const videoFadeSpec: OptionsSpec<FadeOptions> = {
         ? soundLine("encode", true)
         : soundLine(needsFfmpeg(info, sourceName(info)) ? "encode" : soundPlan(info, to));
     const out = pictureSize(info);
-    return `Output ${formatDimensions(out.width, out.height)}, ${est.label}.${sizeNote(info)} Every frame is re-encoded to H.264, the fades included. ${sound}${containerNote(info)} Runs on this device.`;
+    return `Output ${formatDimensions(out.width, out.height)}, ${est.label}.${sizeNote(info)} Every frame is re-encoded to H.264, the fades included. ${sound}${containerNote(info)}`;
   },
   result: (o, info) => {
     const { fadeIn, fadeOut } = fitFades(o, info.durationSec);

@@ -13,11 +13,14 @@ export class EngineError extends Error {
   readonly code: EngineErrorCode;
   /** What the user can do next, one sentence. */
   readonly hint?: string;
-  constructor(code: EngineErrorCode, message: string, hint?: string) {
+  /** The raw cause, for the console and bug reports; never shown on the page (ADR-0149). */
+  readonly detail?: string;
+  constructor(code: EngineErrorCode, message: string, hint?: string, detail?: string) {
     super(message);
     this.name = "EngineError";
     this.code = code;
     this.hint = hint;
+    this.detail = detail;
   }
 }
 
@@ -69,7 +72,13 @@ export function classifyError(e: unknown): EngineError {
       "Convert it to MP4 on another device first, or try desktop Chrome.",
     );
   }
-  return new EngineError("internal", `Something went wrong: ${msg}`, "Try again or start over.");
+  // The raw message names internals (a shader, a context, a worker); it stays in `detail`.
+  return new EngineError(
+    "internal",
+    "Something went wrong while processing the file.",
+    "Try again or start over.",
+    msg,
+  );
 }
 
 /** What an engine was asked to write, for `cannotEncodeError`. */

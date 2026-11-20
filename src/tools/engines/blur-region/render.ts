@@ -157,8 +157,9 @@ uniform vec2 origin;
 uniform float block;
 uniform int count;
 uniform vec4 shapes[${MAX_REGIONS}];
-uniform int ellipses[${MAX_REGIONS}];
-uniform float feathers[${MAX_REGIONS}];
+// x: 1 for an ellipse, y: feather. One vec4 per region keeps the uniforms to 2 × MAX_REGIONS
+// vectors (WebGL 2 guarantees 224 per fragment shader).
+uniform vec4 extras[${MAX_REGIONS}];
 in vec2 px;
 out vec4 color;
 ${SHAPE}
@@ -166,7 +167,7 @@ void main() {
   float keep = 0.0;
   for (int i = 0; i < ${MAX_REGIONS}; i++) {
     if (i >= count) break;
-    keep = max(keep, coverage(shapeDistance(px, shapes[i].xy, shapes[i].zw, ellipses[i] == 1), feathers[i]));
+    keep = max(keep, coverage(shapeDistance(px, shapes[i].xy, shapes[i].zw, extras[i].x > 0.5), extras[i].y));
   }
   float a = 1.0 - keep;
   if (a <= 0.0) discard;
@@ -354,8 +355,7 @@ export function createBlurRenderer(
           const list = regions.slice(0, MAX_REGIONS);
           gl.uniform1i(inverted.u("count"), list.length);
           const shapes = new Float32Array(MAX_REGIONS * 4);
-          const ellipses = new Int32Array(MAX_REGIONS);
-          const feathers = new Float32Array(MAX_REGIONS);
+          const extras = new Float32Array(MAX_REGIONS * 4);
           list.forEach((r, i) => {
             shapes.set(
               [
@@ -366,12 +366,11 @@ export function createBlurRenderer(
               ],
               i * 4,
             );
-            ellipses[i] = r.shape === "ellipse" ? 1 : 0;
-            feathers[i] = effectSize(o, r, drawSize).feather * scale;
+            extras[i * 4] = r.shape === "ellipse" ? 1 : 0;
+            extras[i * 4 + 1] = effectSize(o, r, drawSize).feather * scale;
           });
           gl.uniform4fv(inverted.u("shapes"), shapes);
-          gl.uniform1iv(inverted.u("ellipses"), ellipses);
-          gl.uniform1fv(inverted.u("feathers"), feathers);
+          gl.uniform4fv(inverted.u("extras"), extras);
         });
         gl.disable(gl.BLEND);
         return;

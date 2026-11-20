@@ -16,8 +16,10 @@ import {
 import { type FramePickOptions, MAX_SCORED } from "@/tools/engines/frame-pick/options";
 import type { MediaInfo } from "@/tools/engines/types";
 import { PLAY_SHORTCUT, useWorkspaceKeys } from "../shortcuts";
+import { between, z } from "./remember-schema";
 import { TimeInput } from "./trim";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 /** The range a new file opens with: the whole clip up to this long. */
 const DEFAULT_RANGE = 10;
@@ -38,6 +40,13 @@ export const framePickSpec: OptionsSpec<FramePickOptions> = {
     PLAY_SHORTCUT,
     { keys: "← →", label: "Move a focused handle one frame" },
   ],
+  remember: {
+    schema: z.object({
+      mode: z.enum(["sharpest", "thumbnail"]),
+      format: z.enum(["png", "jpg", "webp"]),
+      quality: between(1, 100),
+    }),
+  },
   defaults: (info, preset) => ({
     mode: "sharpest",
     start: 0,
@@ -46,11 +55,13 @@ export const framePickSpec: OptionsSpec<FramePickOptions> = {
     quality: typeof preset.quality === "number" ? preset.quality : DEFAULT_QUALITY,
   }),
   blocked: (o, info) => {
-    if (!info.video) return "This file has no video track to take a frame from.";
+    if (!info.video)
+      return unfixable("This file has no video track to take a frame from. Choose a video file.");
     if (info.video.decodable === false)
       return {
         reason: "This browser cannot decode this video's picture. Convert it to MP4 first.",
         action: { slug: "video-converter", label: "Convert to MP4" },
+        fixable: false,
       };
     if (o.end - o.start < 1 / (info.video.fps || 30))
       return "The range is shorter than one frame. Widen it.";
@@ -61,7 +72,7 @@ export const framePickSpec: OptionsSpec<FramePickOptions> = {
     if (!v) return undefined;
     const n = framesScored(o, info);
     const all = n < Math.round((o.end - o.start) * (v.fps || 30)) ? " (an even sample)" : "";
-    return `${formatCount(n, "frame")} scored${all} · best saved as ${imageLabel[o.format]} ${formatDimensions(v.width, v.height)} · on this device`;
+    return `${formatCount(n, "frame")} scored${all} · best saved as ${imageLabel[o.format]} ${formatDimensions(v.width, v.height)}`;
   },
   result: () => ({ title: "Sharpest frame found", before: false }),
   nextStep: {

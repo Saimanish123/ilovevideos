@@ -21,7 +21,9 @@ import { rasterizeText, textKey } from "@/tools/engines/text-overlay/raster";
 import type { MediaInfo } from "@/tools/engines/types";
 import { placeName, type Size, type WatermarkOptions } from "@/tools/engines/watermark/options";
 import { pictureSize } from "./picture-size";
+import { between, z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 type O = TextOverlayOptions;
 
@@ -84,6 +86,18 @@ function asMark(o: O, video: Size): WatermarkOptions {
 
 export const textOverlaySpec: OptionsSpec<O> = {
   verb: "Add text",
+  remember: {
+    schema: z.object({
+      size: between(0.02, 0.3),
+      style: z.enum(["shadow", "outline", "box"]),
+      color: z.enum(["white", "black"]),
+      anchor: z.enum(["tl", "tc", "tr", "ml", "mc", "mr", "bl", "bc", "br", "custom"]),
+      fx: between(0, 1),
+      fy: between(0, 1),
+      margin: between(0, 0.25),
+      fade: between(0, 3),
+    }),
+  },
   defaults: (_info, preset) => ({
     text: typeof preset.text === "string" ? preset.text : "",
     size: textSizes.medium,
@@ -105,7 +119,8 @@ export const textOverlaySpec: OptionsSpec<O> = {
     { keys: "+ −", label: "Make the text larger or smaller" },
   ],
   blocked: (o, info) => {
-    if (!info.video) return "This file has no video track to put text on.";
+    if (!info.video)
+      return unfixable("This file has no video track to put text on. Choose a video file.");
     if (!o.text.trim()) return "Type the text first.";
     return undefined;
   },
@@ -113,9 +128,9 @@ export const textOverlaySpec: OptionsSpec<O> = {
     if (!info.video) return undefined;
     const name = sourceName(info);
     const engine = needsFfmpeg(info, name)
-      ? ` Uses the ffmpeg engine, a one-time download of ${ffmpegDownloadSize()}.`
+      ? ` Needs a one-time download of ${ffmpegDownloadSize()}.`
       : "";
-    return `Text ${placeName(o)}, ${when(o, info)}. The picture is re-encoded to H.264 at high quality; ${soundWords(info, name)}.${engine} Runs on this device.`;
+    return `Text ${placeName(o)}, ${when(o, info)}. The picture is re-encoded to H.264 at high quality; ${soundWords(info, name)}.${engine}`;
   },
   result: (o, info) => {
     const v = info.video;

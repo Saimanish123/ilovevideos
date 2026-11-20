@@ -11,12 +11,12 @@ const specs: PairSpec[] = [
     to: "mp4",
     keywords: ["quicktime to mp4", "iphone video to mp4"],
     aliases: ["quicktime", "iphone video"],
-    related: ["mp4-to-mov", "compress-video", "remove-audio-from-video"],
+    related: ["mp4-to-mov", "hevc-to-h264", "compress-video", "remove-audio-from-video"],
     updatedAt: "2026-09-30",
     story: [
       "An iPhone records MOV with HEVC video by default (Settings › Camera › Formats › High Efficiency). HEVC fits in MP4, so the conversion here is a straight copy, but the resulting MP4 still will not play in Chrome on many Windows PCs or in some chat apps. When the tool detects HEVC it offers a second option, convert to H.264, which re-encodes once and plays everywhere. If your iPhone is set to Most Compatible it already records H.264 and the copy is all you need.",
       "Screen recordings from macOS are also MOV, usually H.264 at a very high bitrate with no audio or with PCM audio. The picture copies losslessly; PCM audio cannot live in a standard MP4, so the tool re-encodes just the audio to AAC while leaving the video untouched. Expect the file to come out slightly smaller for that reason alone.",
-      "If the MOV came from Final Cut Pro or a professional camera and contains ProRes, browsers cannot decode it with their built-in media pipeline, so the page hands it to the ffmpeg engine instead, which decodes ProRes and writes H.264. That path holds the whole file in memory and runs slower than the hardware encoder, so it suits clips up to about 2 GB; for longer masters, export an H.264 or HEVC version from the editing application.",
+      "If the MOV came from Final Cut Pro or a professional camera and contains ProRes, browsers cannot decode it with their built-in media pipeline, so the page decodes it another way, after a one-time download, and writes H.264. That path holds the whole file in memory and runs slower than the hardware encoder, so it suits clips up to about 2 GB; for longer masters, export an H.264 or HEVC version from the editing application.",
     ],
     faq: [
       {
@@ -68,7 +68,7 @@ const specs: PairSpec[] = [
       },
       {
         q: "Can it handle a 20 GB Blu-ray rip?",
-        a: "When its sound is AAC, MP3, Opus or FLAC, the file is streamed rather than loaded into memory, so size is limited by free storage. Disc rips usually carry AC-3, E-AC-3 or DTS sound, which this browser cannot decode; those go through the ffmpeg engine, which holds the whole file in memory and suits files up to roughly 2 GB.",
+        a: "When its sound is AAC, MP3, Opus or FLAC, the file is streamed rather than loaded into memory, so size is limited by free storage. Disc rips usually carry AC-3, E-AC-3 or DTS sound, which this browser cannot decode; those take a one-time download and are held in memory as a whole, which suits files up to roughly 2 GB.",
       },
       { q: "Is anything uploaded?", a: "No. Reading, remuxing and writing happen on your device." },
     ],
@@ -114,7 +114,7 @@ const specs: PairSpec[] = [
     related: ["mov-to-webm", "mkv-to-webm", "compress-video"],
     updatedAt: "2026-09-30",
     story: [
-      "WebM is the format to reach for when a website wants small, royalty-free video that plays in every modern browser. Converting MP4 to WebM almost always re-encodes: H.264 cannot live inside WebM, so the video becomes VP9 and the audio becomes Opus. Only the rare MP4 that already holds VP9 or AV1 has its picture copied. This runs on your device and uses the hardware VP9 encoder where the browser has one; the progress line shows how far along it is.",
+      "WebM is the format to reach for when a website wants small, royalty-free video that plays in every modern browser. Converting MP4 to WebM almost always re-encodes: H.264 cannot live inside WebM, so the video becomes VP9 and the audio becomes Opus. Only the rare MP4 that already holds VP9 or AV1 has its picture copied. This uses the hardware VP9 encoder where the browser has one; the progress line shows how far along it is.",
       "VP9 at the same visual quality is usually smaller than H.264, so the WebM will often be smaller than the MP4 you started with. Opus audio is also more efficient than AAC. If size is the only goal and you do not need WebM specifically, [compress video](/compress-video) produces an H.264 MP4 that plays in more places.",
       "Transparency is possible in WebM (VP9 with alpha) but not in MP4, so this direction cannot add it; a source with an alpha channel would need to come from an image sequence or a MOV with ProRes 4444.",
     ],
@@ -136,7 +136,7 @@ const specs: PairSpec[] = [
         a: "Because nothing can be copied; every frame is decoded and re-encoded. Hardware VP9 encoders are also less common than H.264 encoders.",
       },
       {
-        q: "Does anything leave my device?",
+        q: "Is my video uploaded?",
         a: "No. The conversion runs entirely in your browser.",
       },
     ],

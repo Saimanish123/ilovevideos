@@ -7,7 +7,7 @@ import { routing } from "@/lib/i18n/routing";
 import { ogImages } from "@/lib/og/images";
 import { breadcrumbs } from "@/lib/seo/jsonld";
 import { site } from "@/lib/site";
-import { getCategory, getHubPages, getRelatedTools, getTool, tools } from "@/tools/registry";
+import { getCategory, getRelatedTools, getThenSteps, getTool, tools } from "@/tools/registry";
 
 type Params = { locale: string; slug: string };
 
@@ -56,7 +56,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
         tool={tool}
         category={getCategory(tool.category)}
         related={related}
-        hubPages={getHubPages(tool)}
+        then={getThenSteps(tool)}
         locale={locale}
       />
     </>

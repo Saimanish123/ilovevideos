@@ -21,7 +21,9 @@ describe("remove silence plan", () => {
     expect(plan.cuts[1]?.start).toBeCloseTo(5.15, 1);
     expect(plan.cuts[1]?.end).toBeCloseTo(6.05, 1);
     expect(plan.after).toBeCloseTo(6.6, 1);
-    expect(cutFacts(plan, a.duration)).toMatch(/^2 pauses cut · 0:01 removed · 0:08 → 0:07$/);
+    expect(cutFacts(plan, a.duration)).toMatch(
+      /^2 pauses cut · found by loudness · 1\.4\ss removed · 0:08 → 0:07$/,
+    );
     // A 0.25 s minimum with tight padding also cuts the short pause (0.15 s each side would eat it).
     const more = planCuts(
       RemoveSilenceOptions.parse({ minSilence: 0.25, padding: 0.05 }),

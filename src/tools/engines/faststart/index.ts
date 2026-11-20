@@ -95,10 +95,6 @@ export const faststartEngine: Engine<FaststartOptions> = {
     return false;
   },
   async run() {
-    throw new EngineError(
-      "internal",
-      "Fast start runs on the page, not in the worker.",
-      "Try again.",
-    );
+    throw new EngineError("internal", "This file could not be processed.", "Try again.");
   },
 };

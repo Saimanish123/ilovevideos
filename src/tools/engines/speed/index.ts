@@ -26,10 +26,6 @@ export const speedEngine: Engine<SpeedOptions> = {
     return false;
   },
   async run() {
-    throw new EngineError(
-      "internal",
-      "Speed changes run on the page, not in the engine worker.",
-      "Try again.",
-    );
+    throw new EngineError("internal", "This file could not be processed.", "Try again.");
   },
 };

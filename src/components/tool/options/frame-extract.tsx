@@ -18,8 +18,10 @@ import {
 } from "@/tools/engines/frame-extract/math";
 import type { FrameExtractOptions } from "@/tools/engines/frame-extract/options";
 import { PLAY_SHORTCUT, useWorkspaceKeys } from "../shortcuts";
+import { between, z } from "./remember-schema";
 import { TimeInput } from "./trim";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 type QualityChoice = `${(typeof qualityPresets)[number]["value"]}`;
 const asQuality = (q: number): QualityChoice =>
@@ -44,13 +46,18 @@ export const frameExtractSpec: OptionsSpec<FrameExtractOptions> = {
         : "Every pixel exactly as decoded, at the video's full size.",
     };
   },
+  remember: {
+    schema: z.object({ format: z.enum(["png", "jpg", "webp"]), quality: between(1, 100) }),
+  },
   defaults: (_info, preset) => ({
     time: typeof preset.time === "number" ? preset.time : 0,
     format: (preset.format as ImageFormat | undefined) ?? "png",
     quality: typeof preset.quality === "number" ? preset.quality : DEFAULT_QUALITY,
   }),
   blocked: (_o, info) =>
-    info.video ? undefined : "This file has no video track to take a frame from.",
+    info.video
+      ? undefined
+      : unfixable("This file has no video track to take a frame from. Choose a video file."),
   summary: (o, info) => {
     const v = info.video;
     if (!v) return undefined;
@@ -58,7 +65,7 @@ export const frameExtractSpec: OptionsSpec<FrameExtractOptions> = {
     const how = isLossy(o.format)
       ? `${imageLabel[o.format]} at quality ${o.quality}.`
       : "PNG is lossless: every pixel exactly as decoded.";
-    return `${size} ${imageLabel[o.format]} of the frame at ${formatTimecode(o.time)}. ${how} Runs on this device.`;
+    return `${size} ${imageLabel[o.format]} of the frame at ${formatTimecode(o.time)}. ${how}`;
   },
   Below: FrameBelow,
   Panel({ value, onChange, info, media }) {

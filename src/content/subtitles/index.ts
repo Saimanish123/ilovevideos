@@ -51,7 +51,7 @@ export const subtitleProfiles: Record<SubtitleFormat, SubtitleProfile> = {
     summary:
       "ASS (Advanced SubStation Alpha, the successor of SSA) is a styled subtitle script. Sections in square brackets hold script information, named styles with a font, size, colours, outline and position, and an events list where each Dialogue line has a layer, times in hundredths of a second, a style and its text. Override tags in braces change any of that for part of a line: {\\i1} for italics, {\\pos(x,y)} for an exact position, {\\k} for karaoke timing, and {\\p1} for vector drawings.",
     support:
-      "ASS is the format of fansubbing and of editors such as Aegisub. It is rendered faithfully by libass, which mpv, VLC and ffmpeg's subtitles filter use; TVs, phones and browsers mostly cannot render it, and media servers often have to burn it into the picture for them.",
+      "ASS is the format of fansubbing and of editors such as Aegisub. It is rendered faithfully by the usual ASS renderer, the one mpv, VLC and FFmpeg's subtitles filter use; TVs, phones and browsers mostly cannot render it, and media servers often have to burn it into the picture for them.",
   },
   sbv: {
     id: "sbv",

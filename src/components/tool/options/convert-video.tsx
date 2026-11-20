@@ -4,7 +4,9 @@ import { VideoPreview } from "@/components/tool/video-preview";
 import { Field } from "@/components/ui/field";
 import { Segmented } from "@/components/ui/segmented";
 import { Select } from "@/components/ui/select";
+import { formats } from "@/content/formats";
 import { containerFromFormatName, writableContainers } from "@/content/formats/containers";
+import { cn } from "@/lib/cn";
 import { formatDimensions, formatDuration } from "@/lib/format";
 import type { ConvertVideoOptions } from "@/tools/engines/convert-video";
 import {
@@ -17,8 +19,15 @@ import { ffmpegDownloadSize } from "@/tools/engines/ffmpeg/size";
 import type { MediaInfo } from "@/tools/engines/types";
 import { PLAY_SHORTCUT } from "../shortcuts";
 import { type Choice, Choices } from "./choices";
-import { article, sourceProfile } from "./idle/convert-video";
+import { article } from "./idle/convert-video";
+import { z } from "./remember-schema";
 import type { HeroProps, OptionsSpec } from "./types";
+
+/** The source profile a pair page names (`mov` for MOV to MP4); the idle module only names it. */
+const sourceProfile = (preset: Record<string, unknown>) =>
+  typeof preset.from === "string" && preset.from in formats
+    ? formats[preset.from as keyof typeof formats]
+    : undefined;
 
 /**
  * Engine options plus whether the page locks the target (a pair page), for `blocked`. The worker
@@ -72,25 +81,36 @@ function ConvertHero({ file, info, showing }: HeroProps<ConvertValue>) {
       className="flex w-full flex-col items-center justify-center gap-2 rounded-lg bg-bg-stage p-6 text-center"
       style={{ aspectRatio: ratio, maxHeight: "60vh" }}
     >
-      <p className="tabular text-gray-50 text-sm">
-        {info
-          ? [
-              c?.name ?? info.container,
-              codecName(v?.codec),
-              v && formatDimensions(v.width, v.height),
-              formatDuration(info.durationSec),
-            ]
-              .filter(Boolean)
-              .join(" · ")
-          : "Reading the file"}
+      {/* Full width, so a longer line does not move its box in the centred column, and two lines held
+          on narrow screens, where the facts can wrap: they replace "Reading the file" without moving
+          anything (CLS 0). */}
+      <p className="tabular min-h-2-lines w-full text-gray-50 text-sm sm:min-h-0">
+        {/* Keyed: the facts are new text, not "Reading the file" moving to a new centred start. */}
+        <span key={info ? "facts" : "reading"}>
+          {info
+            ? [
+                c?.name ?? info.container,
+                codecName(v?.codec),
+                v && formatDimensions(v.width, v.height),
+                formatDuration(info.durationSec),
+              ]
+                .filter(Boolean)
+                .join(" · ")
+            : "Reading the file"}
+        </span>
       </p>
-      {info && (
-        <p className="max-w-xs text-gray-400 text-xs">
-          {!v
+      {/* Held from the start, unseen while the file is read (a read through the converter can take
+          seconds), so the centred line above does not move when it appears. */}
+      <p
+        className={cn("w-full max-w-xs text-gray-400 text-xs", !info && "invisible")}
+        aria-hidden={!info}
+      >
+        <span key={info ? "read" : "reading"}>
+          {info && !v
             ? "This file has no picture, only sound, so there is nothing to show here."
             : `Browsers cannot play ${c?.name ?? "this format"} themselves, so there is no preview until it is converted.`}
-        </p>
-      )}
+        </span>
+      </p>
     </div>
   );
 }
@@ -118,9 +138,7 @@ function planHeadline(plan: ConversionPlan): { title: string; detail: string } {
   const v = codecName(plan.videoCodec) ?? plan.videoCodec;
   const a = codecName(plan.audioCodec) ?? plan.audioCodec;
   const engine =
-    plan.backend === "ffmpeg-wasm"
-      ? ` Uses the ffmpeg engine, a one-time download of ${ffmpegDownloadSize()}.`
-      : "";
+    plan.backend === "ffmpeg-wasm" ? ` Needs a one-time download of ${ffmpegDownloadSize()}.` : "";
   if (plan.copyVideo && plan.copyAudio)
     return {
       title: "Lossless copy",
@@ -139,6 +157,12 @@ function planHeadline(plan: ConversionPlan): { title: string; detail: string } {
 
 export const convertVideoSpec: OptionsSpec<ConvertValue> = {
   verb: "Convert",
+  remember: {
+    schema: z.object({
+      to: z.enum(writableContainers.map((c) => c.id) as [string, ...string[]]),
+      videoCodec: z.enum(["keep", "avc"]),
+    }),
+  },
   defaults: (_info, preset) => ({
     locked: preset.lockTarget === true,
     to: (preset.to as string) ?? "mp4",
@@ -148,11 +172,8 @@ export const convertVideoSpec: OptionsSpec<ConvertValue> = {
     planConversion(info, fileName, o.to, o.videoCodec === "avc").backend === "ffmpeg-wasm"
       ? "page"
       : "worker",
-  // The plan itself is the panel's headline; the line under it only says where it runs.
-  summary: (o, info) =>
-    planFor(o, info).backend === "ffmpeg-wasm"
-      ? "Runs on this device with the ffmpeg engine. The original file is not changed."
-      : "Runs on this device. The original file is not changed.",
+  // The plan itself is the panel's headline (its detail names a one-time download when one is needed).
+  summary: () => "The original file is not changed.",
   Hero: ConvertHero,
   shortcuts: [PLAY_SHORTCUT],
   // A file already in the target format with codecs that fit gains nothing from a copy.
@@ -173,6 +194,11 @@ export const convertVideoSpec: OptionsSpec<ConvertValue> = {
   },
   // A converted AVI, WMV or MPEG does not play in a browser, so those keep the source in the preview.
   previewResult: (o) => PLAYABLE.has(o.to),
+  // Only what re-encodes is compared: the picture by a wipe, or the sound when the picture is copied (ADR-0134).
+  compare: (o, info) => {
+    const p = planFor(o, info);
+    return p.copyVideo ? (p.copyAudio ? false : { what: "sound" }) : { what: "picture" };
+  },
   nextStep: { slug: "compress-video", label: "Compress video" },
   result: (o, info) => {
     const plan = planFor(o, info);

@@ -32,6 +32,7 @@ import { needsFfmpeg, outputSize } from "@/tools/engines/crop/plan";
 import type { MediaInfo } from "@/tools/engines/types";
 import { isRatio } from "./idle/aspect-ratio";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 /** Longer use notes under the picker, for the selected shape. Common practice, not platform limits. */
 const shapeUse: Record<AspectRatioId, string> = {
@@ -277,7 +278,8 @@ export const aspectRatioSpec: OptionsSpec<AspectValue> = {
   },
   route: (_o, info, fileName) => (needsFfmpeg(info, fileName) ? "page" : "worker"),
   blocked: (o, info) => {
-    if (!info.video) return "This file has no video track to reshape.";
+    if (!info.video)
+      return unfixable("This file has no video track to reshape. Choose a video file.");
     if (o.locked) {
       const v = info.video;
       const target = aspectNumber(o.ratio);
@@ -318,9 +320,11 @@ export const aspectRatioSpec: OptionsSpec<AspectValue> = {
       : plan.kind === "crop"
         ? `The picture fills the frame and ${Math.round((1 - keptShare(plan.rect, v)) * 100)}% of it is cut off`
         : `The whole picture is kept, with ${o.background === "blur" ? "blurred" : o.background} bars ${barsWhere(v, aspectNumber(o.ratio))}`;
-    return `Output ${formatDimensions(size.width, size.height)}, about ${formatBytes(est.bytes)}. ${how}; the video is re-encoded to H.264.${trim} ${est.audio}${est.container} Runs on this device.`;
+    return `Output ${formatDimensions(size.width, size.height)}, about ${formatBytes(est.bytes)}. ${how}; the video is re-encoded to H.264.${trim} ${est.audio}${est.container}`;
   },
   previewResult: true,
+  // The frame changes shape: side by side, never a wipe across two framings (ADR-0135).
+  compare: () => ({ what: "picture", layout: "side-by-side" }),
   nextStep: { slug: "compress-video", label: "Compress video" },
   result: (o, info, output) => {
     const v = info.video;

@@ -31,7 +31,7 @@ export function soundSummary(info: MediaInfo, fileName: string): string | undefi
           ? "as AIFF"
           : `as ${f.name} at ${withUnit(t.bitrateKbps ?? 192, "kbps")}, a second lossy encode`;
   const engine = needsFfmpeg(t)
-    ? ` The ffmpeg engine ${t.ffmpegDecode ? "reads and writes" : "writes"} this format on this device (${ffmpegDownloadSize()}, once).`
+    ? ` This format needs a one-time download of ${ffmpegDownloadSize()}.`
     : "";
   const renamed =
     t.ffmpegDecode && f.id === "mp3" ? " WMA is written as MP3, which plays everywhere." : "";
@@ -40,7 +40,7 @@ export function soundSummary(info: MediaInfo, fileName: string): string | undefi
 
 /**
  * What the file is written as, as dot-separated facts for a one-line status ("picture copied · AAC
- * 192 kbps", "MP3 128 kbps · ffmpeg engine", "WAV 16-bit"). The same target as the job.
+ * 192 kbps", "MP3 128 kbps, re-encoded · ffmpeg engine", "WAV 16-bit"). The same target as the job.
  */
 export function soundOutputFacts(info: MediaInfo, fileName: string): string[] {
   const t = soundTarget(info, fileName);
@@ -56,6 +56,7 @@ export function soundOutputFacts(info: MediaInfo, fileName: string): string[] {
       ? `WAV ${pcmWords(t.native)}`
       : f.lossless
         ? f.name
-        : `${f.name} ${withUnit(t.bitrateKbps ?? 192, "kbps")}`;
-  return needsFfmpeg(t) ? [what, "ffmpeg engine"] : [what];
+        : // A lossy file is encoded again; say so beside the bitrate.
+          `${f.name} ${withUnit(t.bitrateKbps ?? 192, "kbps")}, re-encoded`;
+  return needsFfmpeg(t) ? [what, `${ffmpegDownloadSize()} download, once`] : [what];
 }

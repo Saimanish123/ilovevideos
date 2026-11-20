@@ -15,6 +15,7 @@ import { audioPairTools } from "./audio-pairs";
 import { audioToVideo } from "./audio-to-video";
 import { blackAndWhiteVideo } from "./black-and-white-video";
 import { blurVideo } from "./blur-video";
+import { blurVideoBackground } from "./blur-video-background";
 import { boomerangVideo } from "./boomerang-video";
 import { changeSubtitleFrameRate } from "./change-subtitle-frame-rate";
 import { changeVideoAspectRatio } from "./change-video-aspect-ratio";
@@ -49,6 +50,8 @@ import { optimizeVideoForWeb } from "./optimize-video-for-web";
 import { pairTools } from "./pairs";
 import { pictureInPictureVideo } from "./picture-in-picture-video";
 import { removeAudioFromVideo } from "./remove-audio-from-video";
+import { removeBackgroundFromVideo } from "./remove-background-from-video";
+import { removeBackgroundNoise } from "./remove-background-noise";
 import { removeBlackBarsFromVideo } from "./remove-black-bars-from-video";
 import { removeGreenScreenFromVideo } from "./remove-green-screen-from-video";
 import { removeMetadataFromVideo } from "./remove-metadata-from-video";
@@ -162,6 +165,8 @@ export const toolInputs = [
   blurVideo,
   addImageToVideo,
   removeGreenScreenFromVideo,
+  blurVideoBackground,
+  removeBackgroundFromVideo,
   // Time and layout (round 3, builder C).
   freezeFrameVideo,
   zoomVideo,
@@ -178,4 +183,6 @@ export const toolInputs = [
   screenRecorder,
   webcamRecorder,
   voiceRecorder,
+  // Speech (round 4, builder A).
+  removeBackgroundNoise,
 ];

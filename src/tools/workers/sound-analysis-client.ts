@@ -19,6 +19,8 @@ export function analyzeInWorker(
   opts: {
     levels?: boolean;
     truePeak?: boolean;
+    /** Also read where there is speech (Silero VAD, loaded in the worker). */
+    speech?: boolean;
     signal?: AbortSignal;
     onProgress?: (ratio: number) => void;
   } = {},
@@ -56,6 +58,7 @@ export function analyzeInWorker(
         name,
         levels: opts.levels === true,
         truePeak: opts.truePeak !== false,
+        speech: opts.speech === true,
       } satisfies ToAnalysis,
       onMessage,
       (e) => {

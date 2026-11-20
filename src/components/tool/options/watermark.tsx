@@ -26,7 +26,9 @@ import {
   type WatermarkOptions,
 } from "@/tools/engines/watermark/options";
 import { rasterize, rasterKey, readImage, textAspect } from "@/tools/engines/watermark/raster";
+import { between, z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 type O = WatermarkOptions;
 
@@ -56,6 +58,17 @@ const rangeWords = (o: O, info: MediaInfo) => {
 
 export const watermarkSpec: OptionsSpec<O> = {
   verb: "Add watermark",
+  remember: {
+    schema: z.object({
+      textColor: z.enum(["white", "black"]),
+      anchor: z.enum(["tl", "tc", "tr", "ml", "mc", "mr", "bl", "bc", "br", "custom"]),
+      fx: between(0, 1),
+      fy: between(0, 1),
+      size: between(0.02, 1),
+      opacity: between(0.05, 1),
+      margin: between(0, 0.25),
+    }),
+  },
   defaults: (_info, preset) => ({
     kind: preset.kind === "text" ? "text" : "image",
     text: "",
@@ -74,7 +87,8 @@ export const watermarkSpec: OptionsSpec<O> = {
   previewResult: true,
   nextStep: { slug: "compress-video", label: "Compress video" },
   blocked: (o, info) => {
-    if (!info.video) return "This file has no video track to put a watermark on.";
+    if (!info.video)
+      return unfixable("This file has no video track to put a watermark on. Choose a video file.");
     if (o.kind === "image" && !o.image) return "Add a logo image first.";
     if (o.kind === "text" && !o.text.trim()) return "Type the watermark text first.";
     return undefined;
@@ -84,9 +98,9 @@ export const watermarkSpec: OptionsSpec<O> = {
     const r = markRect(o, sourceOf(info));
     const name = sourceName(info);
     const engine = needsFfmpeg(info, name)
-      ? ` Uses the ffmpeg engine, a one-time download of ${ffmpegDownloadSize()}.`
+      ? ` Needs a one-time download of ${ffmpegDownloadSize()}.`
       : "";
-    return `${o.kind === "text" ? "Text" : "Logo"} ${placeName(o)}, ${formatDimensions(r.width, r.height)} at ${pct(o.opacity)} opacity, ${rangeWords(o, info)}. The picture is re-encoded to H.264 at high quality; ${soundWords(info, name)}.${engine} Runs on this device.`;
+    return `${o.kind === "text" ? "Text" : "Logo"} ${placeName(o)}, ${formatDimensions(r.width, r.height)} at ${pct(o.opacity)} opacity, ${rangeWords(o, info)}. The picture is re-encoded to H.264 at high quality; ${soundWords(info, name)}.${engine}`;
   },
   result: (o, info) => {
     const v = info.video;

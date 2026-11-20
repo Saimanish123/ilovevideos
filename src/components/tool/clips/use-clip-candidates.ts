@@ -3,7 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { type Candidate, pauseCandidates, sceneCandidates } from "@/tools/engines/clips/plan";
 import type { SceneAnalysis } from "@/tools/engines/clips/scenes";
+import { speechUsable } from "@/tools/engines/remove-silence/options";
 import { findPauses, suggestThreshold } from "@/tools/engines/sound/dsp/silence";
+import { speechPauses } from "@/tools/engines/sound/dsp/speech";
 import type { MediaInfo } from "@/tools/engines/types";
 
 export interface CandidateState {
@@ -70,6 +72,20 @@ async function measure(
         if (performance.now() - last > STALL_MS) attemptSignal.abort();
       }, 1000);
       try {
+        // The speech model is read in the worker; on the page fallback it is loaded here, and
+        // without it (offline on a first visit) pauses come from the level.
+        const vad =
+          attempt === 0
+            ? undefined
+            : await import("@/tools/workers/speech-models")
+                .then(({ loadSpeechModel }) => loadSpeechModel("vad"))
+                .then(async (b) => {
+                  const { readSafetensors, SileroVad } = await import(
+                    "@/tools/engines/sound/dsp/silero-vad"
+                  );
+                  return new SileroVad(readSafetensors(new Uint8Array(b)));
+                })
+                .catch(() => undefined);
         const opts = {
           levels: true,
           truePeak: false,
@@ -81,15 +97,19 @@ async function measure(
         };
         const sound =
           attempt === 0
-            ? await analyzeInWorker(file, file.name, opts)
-            : await (await import("@/tools/engines/sound/analyze")).analyzeSound(
-                file,
-                file.name,
-                opts,
-              );
+            ? await analyzeInWorker(file, file.name, { ...opts, speech: true })
+            : await (await import("@/tools/engines/sound/analyze")).analyzeSound(file, file.name, {
+                ...opts,
+                speech: vad,
+              });
         const levels = sound.levels;
+        const speech = sound.speech;
         soundFailed = false;
-        if (levels.length > 0)
+        // Speech when the file has enough of it (the gaps between words, through noise and music);
+        // otherwise the quiet moments.
+        if (speech && speechUsable(speech)) {
+          pauses = speechPauses(speech, { minSilence: MIN_PAUSE }, sound.duration);
+        } else if (levels.length > 0)
           pauses = findPauses(levels, {
             thresholdDb: suggestThreshold(levels),
             minSilence: MIN_PAUSE,

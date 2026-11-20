@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
-import { ffmpegOnlyAudioExtensions } from "@/content/formats/audio";
-import { ffmpegOnlyExtensions } from "@/content/formats/containers";
+import { canFallBack } from "@/tools/engines/fallbacks";
 import type { MediaInfo, Progress } from "@/tools/engines/types";
 import type { EngineId, ToolDefinition } from "@/tools/registry/schema";
 import type { EngineClient, EngineFailure, RunResult } from "@/tools/workers/client";
@@ -103,6 +102,8 @@ export async function inspectFile(
   client: EngineClient,
   file: File,
   accepts?: ToolDefinition["accepts"],
+  /** The converter's download while it loads to read the file (ADR-0147): "x of y". */
+  onProgress?: (p: Progress) => void,
 ): Promise<MediaInfo> {
   try {
     return spec.inspect
@@ -110,13 +111,19 @@ export async function inspectFile(
       : await client.inspect(file, { keyframes: spec.inspectKeyframes === true });
   } catch (e) {
     const ext = file.name.toLowerCase().split(".").pop() ?? "";
-    if (
-      (e as EngineFailure).code !== "unsupported-input" ||
-      !(ffmpegOnlyExtensions.includes(ext) || ffmpegOnlyAudioExtensions.includes(ext))
-    )
+    if ((e as EngineFailure).code !== "unsupported-input") throw await withPageFormats(e, accepts);
+    // The format tables load only on this path, not with every tool page's idle chunk (ADR-0140).
+    const [{ ffmpegOnlyAudioExtensions }, { ffmpegOnlyExtensions }] = await Promise.all([
+      import("@/content/formats/audio"),
+      import("@/content/formats/containers"),
+    ]);
+    if (!(ffmpegOnlyExtensions.includes(ext) || ffmpegOnlyAudioExtensions.includes(ext)))
       throw await withPageFormats(e, accepts);
     const { inspectWithFfmpeg } = await import("@/tools/engines/ffmpeg");
-    return inspectWithFfmpeg(file);
+    return inspectWithFfmpeg(
+      file,
+      onProgress ? { signal: new AbortController().signal, onProgress } : undefined,
+    );
   }
 }
 
@@ -146,7 +153,7 @@ export async function runJob(
   ctx: { signal: AbortSignal; onProgress: (p: Progress) => void },
 ): Promise<RunResult> {
   const { file, info, options } = job;
-  if (spec.route?.(options, info, file.name) === "page") {
+  const onPage = async () => {
     const { pageRunners } = await import("@/tools/engines/page-runners");
     const load = pageRunners[engine];
     if (!load) throw { code: "internal", message: "No page runner for this tool." };
@@ -158,9 +165,17 @@ export async function runJob(
       const err = e as { code?: string; message?: string; hint?: string };
       throw { code: err.code ?? "internal", message: err.message ?? String(e), hint: err.hint };
     }
-  }
+  };
+  if (spec.route?.(options, info, file.name) === "page") return onPage();
   const client = await getClient();
-  return client.run(engine, file, options, { info, ...ctx });
+  try {
+    return await client.run(engine, file, options, { info, ...ctx });
+  } catch (e) {
+    // This browser cannot do it natively (no encoder for the codec): the engine's ffmpeg.wasm
+    // runner makes the same file, slower (engines/fallbacks, ADR-0147). Nothing ran in the worker.
+    if ((e as EngineFailure).unsupported && canFallBack(engine)) return onPage();
+    throw e;
+  }
 }
 
 /**

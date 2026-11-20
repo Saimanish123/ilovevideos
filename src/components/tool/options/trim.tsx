@@ -12,6 +12,7 @@ import type { TrimOptions } from "@/tools/engines/trim";
 import { losslessStart, startMoved, startNote } from "@/tools/engines/trim/math";
 import type { MediaInfo } from "@/tools/engines/types";
 import { PLAY_SHORTCUT, useWorkspaceKeys } from "../shortcuts";
+import { z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
 
 /** Where the output really starts: the key frame at or before Start, unless the cut is frame-accurate. */
@@ -27,10 +28,13 @@ const GIF_LENGTH = 15;
 export const trimSpec: OptionsSpec<TrimOptions> = {
   verb: "Trim",
   ownPlayback: true,
+  remember: { schema: z.object({ precise: z.boolean() }) },
   defaults: (info) => ({ start: 0, end: info.durationSec, precise: false }),
   // Key frame times let the timeline mark them and the summary say where a lossless cut really starts.
   inspectKeyframes: true,
   previewResult: true,
+  // A part of the source on its own timeline, copied where it can be (ADR-0134).
+  compare: false,
   shortcuts: [
     { keys: "I", label: "Set the start at the playhead" },
     { keys: "O", label: "Set the end at the playhead" },

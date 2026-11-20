@@ -318,6 +318,9 @@ test.describe("ffmpeg.wasm path and GIF timing (QA 2026-10-08)", () => {
     ) as { streams: { codec_name: string; width: number; height: number }[] };
     expect(v.streams[0]).toMatchObject({ codec_name: "h264", width: 640, height: 360 });
     const zone = page.getByRole("region", { name: "Workspace" });
-    await expect(zone.locator("details pre").first()).toContainText("-vf crop=640:360:0:0");
+    await expect(zone.locator("[data-ffmpeg-command]").first()).toHaveAttribute(
+      "data-ffmpeg-command",
+      /-vf crop=640:360:0:0/,
+    );
   });
 });

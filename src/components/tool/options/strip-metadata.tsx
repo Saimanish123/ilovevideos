@@ -33,6 +33,8 @@ export const stripMetadataSpec: OptionsSpec<StripMetadataOptions> = {
   // The findings are the job, so they take the preview's place; when done, the hero re-reads the copy.
   Hero: MetadataHero,
   previewResult: true,
+  // A stream copy: identical picture and sound (ADR-0134).
+  compare: false,
   nextStep: { slug: "video-info", label: "Check every field of the clean copy" },
   summary: (_o, info) => {
     const { lines } = describeTags(info.tags);

@@ -19,6 +19,7 @@ import type { MediaInfo } from "@/tools/engines/types";
 import { soundLine } from "@/tools/engines/video-filter/plan";
 import { type Choice, Choices } from "./choices";
 import type { OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 /**
  * What the encoder said, per codec, for this video's size (the stage re-renders when the panel
@@ -109,12 +110,18 @@ export const codecSpec: OptionsSpec<CodecValue> = {
   }),
   blocked: (o, info) => {
     const v = info.video;
-    if (!v) return "This file has no video track.";
+    if (!v) return unfixable("This file has no video track. Choose a video file.");
     if (needsFfmpeg(info, sourceName(info)))
-      return {
-        reason: `This tool reads MP4, MOV, WebM and MKV. Convert this ${info.container} file to MP4 first; the converter re-encodes it to H.264.`,
-        action: { slug: "video-converter", label: "Convert to MP4" },
-      };
+      // No codec choice here can clear either case; the converter is the way out (ADR-0141). A
+      // picture this browser cannot decode (HEVC in Chrome without platform support) is in a
+      // container this page reads, so only the reason differs (QA 2026-11-19: "Convert this MP4
+      // file to MP4 first").
+      return unfixable(
+        v.decodable === false
+          ? `This browser cannot read the ${name(v.codec)} picture in this file. Convert it to H.264 with the video converter.`
+          : `This tool reads MP4, MOV, WebM and MKV. Convert this ${info.container} file to MP4 first; the converter re-encodes it to H.264.`,
+        { slug: "video-converter", label: "Convert to MP4" },
+      );
     if (sameCodec(info, o.codec))
       return {
         reason: `This video is already ${name(o.codec)}. ${o.codec === "avc" ? "It plays on practically every device." : "Choose another codec to change it."}`,
@@ -126,10 +133,10 @@ export const codecSpec: OptionsSpec<CodecValue> = {
     if (o.avail[o.codec] === false)
       return o.locked
         ? {
-            reason: `This browser has no ${name(o.codec)} encoder for ${outSize(info, o.codec)}. Try another browser or device, or see which codecs this one can write.`,
+            reason: `This browser cannot write ${name(o.codec)} at ${outSize(info, o.codec)}. Try another browser or device, or see which codecs this one can write.`,
             action: { slug: "change-video-codec", label: "See the codecs available here" },
           }
-        : `This browser has no ${name(o.codec)} encoder for ${outSize(info, o.codec)}. Choose a codec marked available, or try another browser or device.`;
+        : `This browser cannot write ${name(o.codec)} at ${outSize(info, o.codec)}. Choose a codec marked available, or try another browser or device.`;
     return undefined;
   },
   summary: (o, info) => {
@@ -149,9 +156,9 @@ export const codecSpec: OptionsSpec<CodecValue> = {
         : soundLine(plan.sound);
     const slow =
       o.codec === "av1" || o.codec === "vp9"
-        ? ` ${name(o.codec)} is often encoded in software, which is slower than a hardware encoder; the progress line shows the time left.`
+        ? ` ${name(o.codec)} is often slow to write on this kind of device; the progress line shows the time left.`
         : "";
-    return `Output ${name(o.codec)} in ${containerLabel[plan.to]}, about ${formatBytes(bytes)} (the source is ${formatBytes(info.sizeBytes)}). The picture is re-encoded; ${sound.charAt(0).toLowerCase()}${sound.slice(1)}${slow} Runs on this device.`;
+    return `Output ${name(o.codec)} in ${containerLabel[plan.to]}, about ${formatBytes(bytes)} (the source is ${formatBytes(info.sizeBytes)}). The picture is re-encoded; ${sound.charAt(0).toLowerCase()}${sound.slice(1)}${slow}`;
   },
   result: (o, info, output) => {
     const v = info.video;
@@ -248,9 +255,9 @@ export const codecSpec: OptionsSpec<CodecValue> = {
               />
             </div>
             <p className="mt-2 text-fg-muted text-xs">
-              Availability is what this browser's encoder reports for{" "}
-              {v ? formatDimensions(v.width, v.height) : "this video"}; it differs between browsers
-              and devices, and hardware encoders are much faster.
+              Availability is what this browser reports it can write at{" "}
+              {v ? formatDimensions(v.width, v.height) : "this video's size"}; it differs between
+              browsers and devices.
             </p>
           </div>
         )}

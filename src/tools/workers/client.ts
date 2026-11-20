@@ -8,6 +8,8 @@ export interface EngineFailure {
   code: EngineErrorCode;
   message: string;
   hint?: string;
+  /** This browser cannot do the job (the engine's `supports()` said no); nothing ran (ADR-0147). */
+  unsupported?: true;
 }
 
 export interface RunResultFile {
@@ -83,6 +85,7 @@ export class EngineClient {
     }
     this.pending.delete(msg.id);
     if (msg.type === "info") p.resolve(msg.info);
+    else if (msg.type === "checked") p.resolve(msg.failure);
     else if (msg.type === "released") p.resolve(undefined);
     else if (msg.type === "done") {
       // Blobs as the worker made them: a large output stays on disk (OPFS) until downloaded.
@@ -100,7 +103,13 @@ export class EngineClient {
         meta: msg.meta,
         files,
       } satisfies RunResult);
-    } else p.reject({ code: msg.code, message: msg.message, hint: msg.hint });
+    } else
+      p.reject({
+        code: msg.code,
+        message: msg.message,
+        hint: msg.hint,
+        ...(msg.unsupported ? { unsupported: msg.unsupported } : {}),
+      });
   }
 
   private crashed(e: ErrorEvent) {
@@ -108,7 +117,7 @@ export class EngineClient {
       this.pending.delete(id);
       p.reject({
         code: "internal",
-        message: e.message || "The worker crashed.",
+        message: e.message || "The processing stopped unexpectedly.",
         hint: "Try again.",
       });
     }
@@ -125,6 +134,22 @@ export class EngineClient {
     return new Promise<MediaInfo>((resolve, reject) => {
       this.pending.set(id, { resolve: (v) => resolve(v as MediaInfo), reject });
       this.send({ type: "inspect", id, file, keyframes: opts.keyframes });
+    });
+  }
+
+  /**
+   * Whether this browser can run the job as set, without running it (ADR-0147): undefined when it
+   * can, else the failure the run would give.
+   */
+  check(
+    engineId: EngineId,
+    inputs: WorkerInput[],
+    options: unknown,
+  ): Promise<EngineFailure | undefined> {
+    const id = this.nextId++;
+    return new Promise((resolve, reject) => {
+      this.pending.set(id, { resolve: (v) => resolve(v as EngineFailure | undefined), reject });
+      this.send({ type: "check", id, engineId, options, inputs });
     });
   }
 

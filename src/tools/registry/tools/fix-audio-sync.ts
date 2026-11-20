@@ -28,8 +28,7 @@ export const fixAudioSync: ToolInput = {
   content: {
     en: {
       title: "Fix audio sync",
-      subtitle:
-        "Move a video's sound earlier or later so it matches the picture, without re-encoding.",
+      subtitle: "Line a video's sound up with the picture.",
       metaTitle: "Fix audio out of sync in a video, free",
       metaDescription:
         "Shift a video's sound earlier or later by milliseconds to fix lip sync. Nothing is re-encoded; MP4 and MOV stay sample-exact. In your browser. Free.",

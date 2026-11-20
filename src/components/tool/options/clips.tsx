@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Field } from "@/components/ui/field";
 import { Segmented } from "@/components/ui/segmented";
-import { FRAMES_CHECKED, framePlatforms } from "@/content/platforms/frames";
+import { framePlatforms } from "@/content/platforms/frames";
 import {
   baseName,
   formatBytes,
@@ -38,6 +38,7 @@ import type { MediaInfo } from "@/tools/engines/types";
 import { PLAY_SHORTCUT } from "../shortcuts";
 import { nativeOnly } from "./native-only";
 import type { OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 /**
  * Page-side state on top of the engine's options: the clips are still the automatic proposal, and
@@ -55,7 +56,6 @@ const sizeOf = (info: MediaInfo) => ({
   height: info.video?.height ?? 2,
 });
 const shorts = framePlatforms["youtube-shorts"];
-const checked = FRAMES_CHECKED.slice(0, 7);
 
 const plural = (n: number, noun: string) => `${n} ${noun}${n === 1 ? "" : "s"}`;
 
@@ -119,6 +119,8 @@ function useProposal(
 export const clipsSpec: OptionsSpec<ClipsValue> = {
   verb: "Cut clips",
   previewResult: true,
+  // Parts of the source on their own timeline (ADR-0134).
+  compare: false,
   batch: false,
   zipName: (_o, fileName) => `${baseName(fileName)}-clips.zip`,
   nextStep: { slug: "compress-video", label: "Compress a clip" },
@@ -138,7 +140,8 @@ export const clipsSpec: OptionsSpec<ClipsValue> = {
     };
   },
   blocked: (o, info) => {
-    if (!info.video) return "This file has no picture to cut into clips.";
+    if (!info.video)
+      return unfixable("This file has no picture to cut into clips. Choose a video file.");
     const native = nativeOnly(info);
     if (native) return native;
     if (chosen(o).length === 0) return "Every clip is skipped. Tick at least one.";
@@ -172,7 +175,7 @@ export const clipsSpec: OptionsSpec<ClipsValue> = {
       `${plural(n, "clip")}${long ? ` (${long} over ${lengthLabel(o.maxSec)})` : ""}`,
       where,
       `${formatDimensions(frame.width, frame.height)}${vertical ? ", 9:16" : ""}`,
-      `≈ ${formatBytes(estimateBytes(o, info))} ZIP`,
+      `≈\u00a0${formatBytes(estimateBytes(o, info))} ZIP`,
       `H.264${info.audio?.length ? ", AAC" : ""}`,
     ]
       .filter(Boolean)
@@ -292,7 +295,7 @@ export const clipsSpec: OptionsSpec<ClipsValue> = {
         <Field
           label="Longest clip"
           labelId={lengthId}
-          hint={`${shorts.name} takes up to ${lengthLabel(SHORTS_MAX_SEC)} (checked ${checked}).`}
+          hint={`${shorts.name} takes up to ${lengthLabel(SHORTS_MAX_SEC)}.`}
         >
           <Segmented
             name="clips-length"

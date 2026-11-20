@@ -10,6 +10,7 @@ import { findLanguage } from "@/tools/engines/subtitles/languages";
 import type { MediaInfo } from "@/tools/engines/types";
 import { PLAY_SHORTCUT } from "../shortcuts";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 type Track = NonNullable<MediaInfo["audio"]>[number];
 
@@ -117,6 +118,8 @@ export const audioTracksSpec: OptionsSpec<AudioTracksOptions> = {
   verb: "Keep tracks",
   Panel: TracksPanel,
   previewResult: true,
+  // Tracks kept or dropped as they are: identical where they exist (ADR-0134).
+  compare: false,
   shortcuts: [PLAY_SHORTCUT],
   // The tracks are this file's own: several files cannot share one choice.
   batch: false,
@@ -126,7 +129,8 @@ export const audioTracksSpec: OptionsSpec<AudioTracksOptions> = {
   },
   blocked: (o, info) => {
     const n = info.audio?.length ?? 0;
-    if (n === 0) return "This file has no sound track to choose from.";
+    if (n === 0)
+      return unfixable("This file has no sound track to choose from. Choose a file with sound.");
     if (n === 1)
       return {
         reason: "This video has one sound track, so there is nothing to choose.",

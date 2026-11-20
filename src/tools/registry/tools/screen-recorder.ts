@@ -29,8 +29,7 @@ export const screenRecorder: ToolInput = {
   content: {
     en: {
       title: "Record your screen",
-      subtitle:
-        "Record a tab, a window or your whole screen to MP4, with your voice, in your browser.",
+      subtitle: "A tab, a window or the whole screen, with your voice.",
       metaTitle: "Screen recorder online, free, no upload",
       metaDescription:
         "Record a browser tab, a window or the whole screen with your microphone and a camera bubble. Saved as MP4 on your device. Free, no account, no watermark.",

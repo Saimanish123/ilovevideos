@@ -39,7 +39,7 @@ import { unreadableFileError } from "../inspect/unreadable";
 import { readTagValues } from "../strip-metadata/tags";
 import type { EngineContext, EngineResult, MediaInfo } from "../types";
 import { annexBSps, parseAvcSps } from "./avc-sps";
-import { avcEncoderTrouble, noteSupportFailure } from "./encoder-probe";
+import { avcEncodes, noteSupportFailure } from "./encoder-probe";
 import { flacSource, looksFlac } from "./flac-tail";
 import { rememberFile } from "./input-files";
 import { looksMatroska, matroskaSource } from "./matroska-repair";
@@ -313,7 +313,7 @@ export function pictureDecodes(...infos: (MediaInfo | undefined)[]): boolean {
     new EngineError(
       "unsupported-input",
       `This browser cannot decode the ${name} video in this file, so it cannot be processed here.`,
-      "Convert it to MP4 with the video converter first (it can use the ffmpeg engine), or try desktop Safari.",
+      "Convert it to MP4 with the video converter first, or try desktop Safari.",
     ),
   );
   return false;
@@ -326,7 +326,8 @@ export function pictureDecodes(...infos: (MediaInfo | undefined)[]): boolean {
  */
 export async function canEncodeAvc(width = 1920, height = 1080): Promise<boolean> {
   if (!(await canEncodeVideo("avc", { width, height }))) return false;
-  const trouble = await avcEncoderTrouble();
+  // High profile, or Baseline where High stalls (./baseline-avc, ADR-0146).
+  const trouble = await avcEncodes();
   noteSupportFailure(trouble);
   return trouble === null;
 }
@@ -596,7 +597,7 @@ export async function convert(job: ConvertJob): Promise<EngineResult> {
       reject(
         new EngineError(
           "unsupported-output",
-          `The browser's encoder stopped returning frames at ${formatDuration(at)}${total > 0 ? ` of ${formatDuration(total)}` : ""}, so the run was stopped after ${STALL_MS / 1000} seconds without progress.`,
+          `Writing the video stopped at ${formatDuration(at)}${total > 0 ? ` of ${formatDuration(total)}` : ""}, with no progress for ${STALL_MS / 1000} seconds.`,
           "Try again, or try desktop Chrome or Edge.",
         ),
       );
@@ -703,7 +704,7 @@ async function pictureThenSound(job: ConvertJob): Promise<EngineResult> {
   const encoded = new Input({ source: new BlobSource(picture.blob), formats: ALL_FORMATS });
   try {
     const v = await encoded.getPrimaryVideoTrack();
-    if (!v) throw new EngineError("internal", "The encoder produced no picture.", "Try again.");
+    if (!v) throw new EngineError("internal", "The video could not be written.", "Try again.");
     const supported = containers[job.to].format().getSupportedAudioCodecs() as string[];
     const sounds = (await source.getAudioTracks()).filter(
       (a) => !!a.codec && supported.includes(a.codec),
@@ -785,7 +786,7 @@ async function assertOutputComplete(
       throw new EngineError(
         "internal",
         "The result came out without its picture, so it was not kept.",
-        "Try the video converter, which can use the ffmpeg engine.",
+        "Convert it with the video converter first, then come back.",
       );
   } finally {
     back.dispose();
@@ -824,7 +825,7 @@ function fromDiscarded(discarded: DiscardedTrack[]): EngineError {
       name
         ? `This browser cannot decode the ${name} ${kind} in this file.`
         : "This file uses a codec your browser cannot decode.",
-      "Convert it with the video converter, which can use the ffmpeg engine, or try desktop Safari or Edge.",
+      "Convert it with the video converter first, or try desktop Safari or Edge.",
     );
   }
   if (reasons.has("no_encodable_target_codec")) {

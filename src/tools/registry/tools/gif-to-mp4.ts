@@ -33,12 +33,11 @@ export const gifToMp4: ToolInput = {
   content: {
     en: {
       title: "Convert GIF to MP4",
-      subtitle:
-        "Turn an animated GIF into a small MP4 that plays everywhere. Runs in your browser.",
+      subtitle: "Turn a GIF into a small video that plays everywhere.",
       metaTitle: "GIF to MP4 converter online, free, no upload",
       metaDescription:
         "Convert an animated GIF to MP4 in your browser. Every frame keeps its timing, and the file is usually far smaller. Nothing is uploaded. Free.",
-      what: "This tool turns an animated GIF into an MP4 video. Your browser decodes every frame with its own delay, draws it onto a frame with even edges and encodes it as H.264, so the MP4 plays at the speed the GIF did and works anywhere a video works: chat apps, social posts, slides and editors. It runs on your device and the GIF is never uploaded.",
+      what: "This tool turns an animated GIF into an MP4 video. Your browser decodes every frame with its own delay, draws it onto a frame with even edges and encodes it as H.264, so the MP4 plays at the speed the GIF did and works anywhere a video works: chat apps, social posts, slides and editors.",
       steps: [
         "Drop an animated .gif onto the page or choose one from your device.",
         "Check the frame count and length, and choose how many times the animation should play.",
@@ -71,7 +70,7 @@ export const gifToMp4: ToolInput = {
         },
         {
           q: "Which browsers can do this?",
-          a: `Browsers with the WebCodecs image decoder, such as Chrome and Edge, do it natively. Others use the ffmpeg engine instead, a one-time download of about ${ffmpegDownloadSize()}; the line under the controls says which one will run.`,
+          a: `Chrome and Edge decode GIFs themselves. Other browsers need a one-time download of about ${ffmpegDownloadSize()} first; the line under the controls says when.`,
         },
         {
           q: "Is my GIF uploaded anywhere?",

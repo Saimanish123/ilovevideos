@@ -15,6 +15,7 @@ export function nativeOnly(info: MediaInfo, what = "this file"): Blocked | undef
     return {
       reason: `This browser cannot read the ${info.container} format of ${what} frame by frame.`,
       action: { slug: "video-converter", label: "Convert it to MP4 first" },
+      fixable: false,
     };
   return undefined;
 }

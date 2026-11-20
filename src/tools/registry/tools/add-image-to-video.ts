@@ -23,15 +23,14 @@ export const addImageToVideo: ToolInput = {
     "add-watermark-to-video",
     "blur-video",
     "crop-video",
-    "compress-video",
+    "remove-background-from-video",
   ],
   updatedAt: "2026-11-18",
   icon: "image-plus",
   content: {
     en: {
       title: "Add an image to a video",
-      subtitle:
-        "Put pictures or stickers on a video: drag, size and turn each one, and choose when it shows.",
+      subtitle: "Put pictures or stickers on a video.",
       metaTitle: "Add image or sticker to video online, free",
       metaDescription:
         "Overlay PNG, GIF, WebP or SVG images on a video. Drag, resize and rotate each one, set when it appears, stack them. Animated stickers play. No upload.",

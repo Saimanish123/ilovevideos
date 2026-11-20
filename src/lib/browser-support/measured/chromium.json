@@ -1,0 +1,99 @@
+{
+  "project": "chromium",
+  "browser": "chromium 151.0.7922.34",
+  "measured": "2026-11-19",
+  "window": {
+    "scope": "window",
+    "webcodecs": true,
+    "decode": {
+      "avc": true,
+      "hevc": false,
+      "vp8": true,
+      "vp9": true,
+      "av1": true
+    },
+    "encode": {
+      "avc": "yes",
+      "hevc": "no",
+      "vp8": "yes",
+      "vp9": "yes",
+      "av1": "yes"
+    },
+    "encodeAvcBaseline": "yes",
+    "audioDecode": {
+      "aac": true,
+      "opus": true,
+      "mp3": true,
+      "flac": true,
+      "vorbis": false
+    },
+    "audioEncode": {
+      "aac": "yes",
+      "opus": "yes",
+      "mp3": "no",
+      "flac": "no",
+      "vorbis": "no"
+    },
+    "webgl2": true,
+    "offscreenCanvas2d": true,
+    "offscreenWebgl2": true,
+    "opfs": true,
+    "opfsSyncHandle": false,
+    "sharedArrayBuffer": true,
+    "crossOriginIsolated": true,
+    "wasm": true,
+    "imageDecoderGif": true,
+    "offlineAudio": true,
+    "getDisplayMedia": true,
+    "getUserMedia": true,
+    "mediaRecorder": {
+      "mp4": true,
+      "webmVp9": true,
+      "webmVp8": true,
+      "webmOpus": true
+    }
+  },
+  "worker": {
+    "scope": "worker",
+    "webcodecs": true,
+    "decode": {
+      "avc": true,
+      "hevc": false,
+      "vp8": true,
+      "vp9": true,
+      "av1": true
+    },
+    "encode": {
+      "avc": "yes",
+      "hevc": "no",
+      "vp8": "yes",
+      "vp9": "yes",
+      "av1": "yes"
+    },
+    "encodeAvcBaseline": "yes",
+    "audioDecode": {
+      "aac": true,
+      "opus": true,
+      "mp3": true,
+      "flac": true,
+      "vorbis": false
+    },
+    "audioEncode": {
+      "aac": "yes",
+      "opus": "yes",
+      "mp3": "no",
+      "flac": "no",
+      "vorbis": "no"
+    },
+    "webgl2": true,
+    "offscreenCanvas2d": true,
+    "offscreenWebgl2": true,
+    "opfs": true,
+    "opfsSyncHandle": true,
+    "sharedArrayBuffer": true,
+    "crossOriginIsolated": true,
+    "wasm": true,
+    "imageDecoderGif": true,
+    "offlineAudio": false
+  }
+}

@@ -2,8 +2,8 @@ import { execFileSync, spawnSync } from "node:child_process";
 import { mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page } from "@playwright/test";
+import AxeBuilder from "./axe-builder";
 
 /**
  * Helpers for the time and layout specs (freeze frame, zoom, picture in picture, side by side,

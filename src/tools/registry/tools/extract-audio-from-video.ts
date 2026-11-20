@@ -19,7 +19,6 @@ export const extractAudioFromVideo: ToolInput = {
   ],
   aliases: ["audio", "sound", "rip audio", "video to wav", "video to m4a"],
   related: [
-    "mp4-to-mp3",
     "remove-audio-from-video",
     "replace-audio-in-video",
     "add-audio-to-video",
@@ -31,8 +30,7 @@ export const extractAudioFromVideo: ToolInput = {
   content: {
     en: {
       title: "Extract audio from video",
-      subtitle:
-        "Save the sound of a video as MP3, M4A, WAV, FLAC, OGG, Opus or AIFF, in your browser. Not uploaded.",
+      subtitle: "Save just the sound as MP3, WAV, M4A or another format.",
       metaTitle: "Extract audio from video, free, no upload",
       metaDescription:
         "Pull the audio out of any video as MP3, M4A, WAV, FLAC, OGG, Opus or AIFF. Lossless copy when the codec allows, bitrate presets otherwise. In your browser.",
@@ -47,7 +45,7 @@ export const extractAudioFromVideo: ToolInput = {
         "Most phone, camera and screen recordings store their sound as AAC inside MP4 or MOV. Choosing M4A moves that AAC track into an audio-only file without decoding it, so the result is byte-identical to what the camera recorded, and with nothing to encode it is limited only by how fast your device reads and writes the file. Choosing MP3 forces a decode and a second lossy encode, which costs a little quality and a lot more time. If your player accepts M4A, and everything from iPhones to Windows Media Player does, it is the better default.",
         "A bitrate preset only applies when the audio is re-encoded to a lossy format. 128 kbps is plenty for speech and podcasts, 192 kbps is transparent for most music at normal listening levels, and 320 kbps is the ceiling MP3 allows. The size line under the options is computed from bitrate and duration, so a 10 minute clip at 192 kbps lands near 14 MB regardless of how large the video was.",
         "WAV and FLAC are lossless from this point on, not retroactively. They store what the decoder produced from the video's AAC, Opus or MP3 track; they cannot restore detail that the original encoder discarded. Choose them when the audio goes into an editor or a transcription pipeline that wants PCM, not to improve quality. WAV is 16-bit PCM at the source sample rate (24-bit when the video carries 24-bit PCM, as some cameras record), about 11 MB per stereo minute at 48 kHz; FLAC is typically 50 to 60 percent of that.",
-        `MP3, AAC, FLAC, OGG (Vorbis) and AIFF encodes run through the ffmpeg engine, which loads once (about ${ffmpegDownloadSize()}) and holds the whole video in memory, so it suits files up to roughly 2 GB. Copies, and WAV and Opus encodes, run on the streaming engine and handle any size the browser can read. OGG means Vorbis here, the kind game engines expect; choose Opus for the smaller, newer codec in an .opus file. The ffmpeg command shown after each run is the exact equivalent, with libmp3lame for MP3.`,
+        `MP3, AAC, FLAC, OGG (Vorbis) and AIFF need a one-time download of about ${ffmpegDownloadSize()} and hold the whole video in memory, so they suit files up to roughly 2 GB. Copies, and WAV and Opus encodes, run on the streaming engine and handle any size the browser can read. OGG means Vorbis here, the kind game engines expect; choose Opus for the smaller, newer codec in an .opus file.`,
         "Only the first audio track is extracted. Videos with several language tracks or a commentary track keep only the default one; choosing another track is not possible yet. When the video carries title, artist or album tags, the page shows them and copies them into the audio file.",
         "To cut a clip instead of extracting its sound, use [trim video](/trim-video); to keep the picture and drop the sound, use [remove audio from video](/remove-audio-from-video). If you only ever need MP3 from an MP4, the [MP4 to MP3](/mp4-to-mp3) page locks that choice. This page does the opposite of muting: the picture is discarded and only the sound is written.",
       ],

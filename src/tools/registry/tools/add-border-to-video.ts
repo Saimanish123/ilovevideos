@@ -30,8 +30,7 @@ export const addBorderToVideo: ToolInput = {
   content: {
     en: {
       title: "Add a border to a video",
-      subtitle:
-        "Put a white, black or custom-colour border around a video, thin or thick. Runs in your browser.",
+      subtitle: "Thin or thick, in white, black or any colour.",
       metaTitle: "Add border to video online, free, no upload",
       metaDescription:
         "Frame a video with a white, black or any-colour border, thin to thick, around the picture or inside its frame. Previewed live. Free, on your device.",

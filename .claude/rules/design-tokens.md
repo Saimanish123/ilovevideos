@@ -15,6 +15,6 @@ paths:
 - Exactly one `primary` button per screen state. Buttons are verbs.
 - Numbers that change use the `tabular` class.
 - Icons: lucide at `strokeWidth={1.5}`, 20px UI / 16px inline / 24px tool glyphs, always labelled.
-- Motion: durations `--duration-*`, easings `--ease-out|in-out|drawer` only; exits shorter than enters; `transform`/`opacity`/`clip-path` only; reduced-motion respected; nothing animates on scroll or page load except the stage fade. Run the `review-animations` skill on any motion change.
+- Motion: durations `--duration-*`, easings `--ease-out|in-out|drawer` only; exits shorter than enters; `transform`/`opacity`/`clip-path` only; reduced-motion respected; entrance, reveal-once and page-transition motion only within ADR-0153's budgets (once per element, never scroll-linked, CLS 0, LCP unchanged). Run the `review-animations` skill on any motion change.
 - Before building a component, check `README.md#design-system` §8 for its spec and the anti-pattern table in `README.md#design-principles` §2.
 - Mobile is built alongside desktop, never after. Before declaring a change in these paths done: screenshot at 390 and 1280 (Playwright), check 44px targets and one-handed reach, run the `design-reviewer` agent on the diff, and the `review-animations` skill if motion changed. Build new motion with the `animate` skill.

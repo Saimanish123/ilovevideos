@@ -39,12 +39,14 @@ import { idle as merge } from "./merge";
 import { idle as mute } from "./mute";
 import { idle as pad } from "./pad";
 import { idle as pitch } from "./pitch";
+import { idle as portraitMatte } from "./portrait-matte";
 import { idle as removeSilence } from "./remove-silence";
 import { idle as repair } from "./repair";
 import { idle as reverse } from "./reverse";
 import { idle as ringtone } from "./ringtone";
 import { idle as rotate } from "./rotate";
 import { idle as screenRecord } from "./screen-record";
+import { idle as speechDenoise } from "./speech-denoise";
 import { idle as speed } from "./speed";
 import { idle as split } from "./split";
 import { idle as stabilize } from "./stabilize";
@@ -98,6 +100,7 @@ export const idleSpecs: Partial<Record<EngineId, IdleSpec>> = {
   "remove-silence": removeSilence,
   repair: repair,
   pitch: pitch,
+  "speech-denoise": speechDenoise,
   ringtone: ringtone,
   mute: mute,
   rotate: rotate,
@@ -120,6 +123,7 @@ export const idleSpecs: Partial<Record<EngineId, IdleSpec>> = {
   volume: volume,
   watermark: watermark,
   "chroma-key": chromaKey,
+  "portrait-matte": portraitMatte,
   codec: codec,
   faststart: faststart,
   filter: filter,

@@ -2,8 +2,8 @@ import { execFileSync } from "node:child_process";
 import { mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
+import AxeBuilder from "./axe-builder";
 
 /**
  * Builder F pages (frames, stills and files): animated WebP, APNG and AVIF from video. Each test runs
@@ -384,7 +384,7 @@ test.describe("video-thumbnail-maker", () => {
     expect(times.every((t) => t >= 1.5)).toBe(true);
     expect(times.some((t) => t < 4)).toBe(true);
     expect(times.some((t) => t >= 4)).toBe(true);
-    await expect(page.getByText(/JPG 320×180 · from 320×180 · on this device/)).toBeVisible();
+    await expect(page.getByText(/JPG 320×180 · from 320×180$/)).toBeVisible();
     await axeClean(page);
     await tabTo(page, /^Make thumbnail$/);
     await page.keyboard.press("Enter");

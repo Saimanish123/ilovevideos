@@ -2,6 +2,7 @@
 
 import { Search } from "lucide-react";
 import { lazy, Suspense, useCallback, useEffect, useRef, useState } from "react";
+import { OPEN_SEARCH_EVENT, type OpenSearchDetail } from "@/lib/open-search";
 import { OPEN_SHORTCUTS_EVENT } from "@/lib/page-shortcuts";
 
 const loadPalette = () => import("./command-palette");
@@ -37,11 +38,21 @@ export function CommandPaletteTrigger() {
   const [open, setOpen] = useState(false);
   // The palette is mounted from the first opening on, so it keeps its index and restores focus.
   const [wanted, setWanted] = useState(false);
+  // What another part of the page opened search with (the home hero): text or files.
+  const [seed, setSeed] = useState<OpenSearchDetail & { at: number }>();
   const [mac, setMac] = useState<boolean>();
   const [loaded, setLoaded] = useState(false);
   const [help, setHelp] = useState(false);
   const [helpWanted, setHelpWanted] = useState(false);
   const typed = useRef("");
+  // Where the pointer last went down: an opening within a second of it came from a click or a tap, and
+  // only those animate, out of that point (ADR-0157). ⌘K, "/" and typing open at once (design system §6.3).
+  const press = useRef({ at: -1e4, x: 0, y: 0 });
+  const [from, setFrom] = useState<{ x: number; y: number }>();
+  const opened = useCallback(() => {
+    const p = press.current;
+    setFrom(performance.now() - p.at < 1000 ? { x: p.x, y: p.y } : undefined);
+  }, []);
 
   useEffect(() => {
     if (wanted && !loaded) void loadPalette().then(() => setLoaded(true));
@@ -84,6 +95,7 @@ export function CommandPaletteTrigger() {
     const onKey = (e: KeyboardEvent) => {
       if (e.key.toLowerCase() === "k" && !e.altKey && !e.shiftKey && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
+        setFrom(undefined);
         setWanted(true);
         setOpen((o) => !o);
         return;
@@ -92,6 +104,7 @@ export function CommandPaletteTrigger() {
       if (typing(e.target) || document.querySelector('[role="dialog"]')) return;
       if (e.key === "/") {
         e.preventDefault();
+        setFrom(undefined);
         setWanted(true);
         setOpen(true);
       } else if (e.key === "?") {
@@ -106,41 +119,73 @@ export function CommandPaletteTrigger() {
     };
     document.addEventListener("keydown", onKey);
     window.addEventListener(OPEN_SHORTCUTS_EVENT, onHelp);
+    const onOpen = (e: Event) => {
+      const detail = (e as CustomEvent<OpenSearchDetail>).detail ?? {};
+      // Letters typed while the palette's code loads are added to what the hero sent.
+      typed.current = detail.query ?? "";
+      setSeed({ ...detail, at: Date.now() });
+      // Text typed on the hero opens it from the keyboard: at once.
+      if (detail.query) setFrom(undefined);
+      else opened();
+      setWanted(true);
+      setOpen(true);
+    };
+    window.addEventListener(OPEN_SEARCH_EVENT, onOpen);
+    const onPress = (e: PointerEvent) => {
+      press.current = { at: performance.now(), x: e.clientX, y: e.clientY };
+    };
+    window.addEventListener("pointerdown", onPress, { capture: true, passive: true });
     return () => {
+      window.removeEventListener("pointerdown", onPress, { capture: true });
       document.removeEventListener("keydown", onKey);
       window.removeEventListener(OPEN_SHORTCUTS_EVENT, onHelp);
+      window.removeEventListener(OPEN_SEARCH_EVENT, onOpen);
     };
-  }, []);
+  }, [opened]);
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => {
-          setWanted(true);
-          setOpen(true);
-        }}
-        onPointerEnter={prefetch}
-        onFocus={prefetch}
-        aria-label="Search tools"
-        aria-haspopup="dialog"
-        aria-keyshortcuts="Meta+K Control+K"
-        className="flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-md px-3 text-fg-muted text-sm transition-colors duration-(--duration-instant) hover:bg-bg-subtle hover:text-fg focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2"
-      >
-        <Search size={20} strokeWidth={1.5} aria-hidden />
-        <span className="hidden sm:inline">Search</span>
-        {mac !== undefined && (
-          <kbd
-            aria-hidden
-            className="hidden rounded-sm border border-border px-1 font-sans text-xs pointer-fine:sm:inline"
-          >
-            {mac ? "⌘K" : "Ctrl K"}
-          </kbd>
-        )}
-      </button>
+      {/* On home, the hero's own search field stands in for this one while it is on screen
+          (hero-search.tsx sets data-hero-search on <html>): hidden, not removed, so nothing moves;
+          it fades back once the hero scrolls away. */}
+      <span className="inline-flex transition-[opacity,visibility] duration-(--duration-fast) ease-(--ease-out) motion-reduce:transition-none [html[data-hero-search]_&]:invisible [html[data-hero-search]_&]:opacity-0">
+        <button
+          type="button"
+          onClick={() => {
+            opened();
+            setWanted(true);
+            setOpen(true);
+          }}
+          onPointerEnter={prefetch}
+          onFocus={prefetch}
+          aria-label="Search tools"
+          aria-haspopup="dialog"
+          aria-keyshortcuts="Meta+K Control+K"
+          // Phones: a 44px icon button. From sm up it reads as a search field, so search is visible
+          // without knowing the shortcut (ADR-0123); the width is fixed, so the ⌘K hint shifts nothing.
+          className="flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-full px-3 text-fg-muted text-sm transition-colors duration-(--duration-instant) hover:bg-bg-subtle hover:text-fg focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 sm:w-56 sm:justify-start sm:border sm:border-border sm:bg-bg-raised sm:hover:border-border-strong sm:hover:bg-bg-raised sm:hover:text-fg-muted"
+        >
+          <Search size={20} strokeWidth={1.5} aria-hidden className="shrink-0" />
+          <span className="hidden sm:inline">Search tools</span>
+          {mac !== undefined && (
+            <kbd
+              aria-hidden
+              className="ml-auto hidden rounded-full border border-border px-2 font-sans text-xs pointer-fine:sm:inline"
+            >
+              {mac ? "⌘K" : "Ctrl K"}
+            </kbd>
+          )}
+        </button>
+      </span>
       {wanted && (
         <Suspense fallback={null}>
-          <CommandPalette open={open} onOpenChange={setOpen} initialQuery={typed.current} />
+          <CommandPalette
+            open={open}
+            onOpenChange={setOpen}
+            initialQuery={typed.current}
+            seed={seed}
+            from={from}
+          />
         </Suspense>
       )}
       {helpWanted && (

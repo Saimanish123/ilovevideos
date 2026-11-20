@@ -10,19 +10,13 @@ export const trimVideo: ToolInput = {
   produces: "video",
   keywords: ["trim video", "cut video", "video cutter", "cut video online", "shorten video"],
   aliases: ["cut", "cutter", "clip", "shorten"],
-  related: [
-    "remove-audio-from-video",
-    "compress-video",
-    "mov-to-mp4",
-    "screen-recorder",
-    "webcam-recorder",
-  ],
+  related: ["remove-audio-from-video", "compress-video", "screen-recorder", "webcam-recorder"],
   updatedAt: "2026-09-30",
   icon: "scissors",
   content: {
     en: {
       title: "Trim video",
-      subtitle: "Cut the start and end of a video, in your browser, without re-encoding it.",
+      subtitle: "Cut the start and end of a video.",
       metaTitle: "Trim video online, free, no upload",
       metaDescription:
         "Cut the beginning and end of a video in your browser. Lossless by default, frame-accurate on request. Files never leave your device. Free, no account.",
@@ -39,7 +33,7 @@ export const trimVideo: ToolInput = {
         "Frame-accurate mode decodes and re-encodes the video so the first frame is exactly your start time. It is slower and re-encoding costs a small amount of quality, similar to saving a JPEG twice. For most purposes the lossless cut is the better default.",
         "In the lossless mode the sound is copied too and starts with the picture on that key frame, so the two stay in step; the summary under the controls and the result both say where the cut really starts. Frame-accurate mode re-encodes the sound as well and cuts it at sample precision, exactly where you asked.",
         "The output keeps the same container and codecs as the input. A trimmed MOV stays MOV, a trimmed MP4 stays MP4. Use the [video converter](/video-converter) afterwards if you also need a different format, or [compress video](/compress-video) if the clip needs to be smaller.",
-        "To cut one video into several parts rather than keep one stretch, [split video](/split-video) writes every part in one go; [merge videos](/merge-videos) joins clips back together.",
+        "To cut one video into several parts rather than keep one stretch, [split video](/split-video) writes every part in one go; [merge videos](/merge-videos) joins clips back together. To take the pauses out of a talking-head recording, [remove silence from video](/remove-silence-from-video) shows every cut on a timeline first, and for many short vertical clips from one long recording, [cut it into clips for Shorts](/cut-video-into-shorts).",
       ],
       faq: [
         {

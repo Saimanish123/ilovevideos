@@ -30,8 +30,7 @@ export const videoToImageSequence: ToolInput = {
   content: {
     en: {
       title: "Convert video to an image sequence",
-      subtitle:
-        "Save frames every second, every few seconds or every frame as numbered JPG, PNG or WebP files.",
+      subtitle: "Save a video's frames as numbered images.",
       metaTitle: "Video to image sequence, JPG or PNG, no upload",
       metaDescription:
         "Turn a video into numbered JPG, PNG or WebP images: one per second, every N seconds or every frame. Pick a range on the timeline. Runs in your browser.",
@@ -49,7 +48,7 @@ export const videoToImageSequence: ToolInput = {
         "The size estimate is measured, not guessed: the page encodes the frame under the playhead in the format and quality you chose and multiplies by the number of images. PNG is lossless and several times larger than JPG for camera footage; JPG at High quality looks the same at normal viewing size. The images are held in memory until the ZIP is made, and a run stops with a message if they pass 1.5 GB.",
         "With a time step, each image is the frame on screen at that moment, so a 1-second step from a 29.97 fps video gives frames at 0:00, 0:01, 0:02 even though frames do not fall exactly on the second. With a frame step, every N-th decoded frame is kept, counted from the start of the range, which is the right choice for animation or for motion analysis where the exact frame spacing matters.",
         "Files are named after the video with a four-digit number, clip-0001.jpg, clip-0002.jpg and on, and each row in the result lists the time the frame comes from. Editors such as After Effects and Blender can import a numbered sequence as one clip. For a single picture at full size, [extract a frame](/extract-frame-from-video) is quicker, and for an overview of a whole video on one image, make a [contact sheet](/video-contact-sheet).",
-        "Frames are decoded by the browser at the video's own resolution, or scaled down once to the width you choose, and phone footage stored sideways comes out upright. Nothing is sent anywhere: decoding, encoding and the ZIP all happen on this device.",
+        "Frames are decoded by the browser at the video's own resolution, or scaled down once to the width you choose, and phone footage stored sideways comes out upright.",
       ],
       faq: [
         {

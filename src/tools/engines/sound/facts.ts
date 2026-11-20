@@ -25,6 +25,8 @@ export interface SoundFacts {
   suffix?: string;
   /** What the job did, stated in place of the loudness ("+3 semitones"); see `resultMeta`. */
   describe?: string;
+  /** The job brought the result back to the source's loudness (`resultMeta` `kept`). */
+  kept?: KeptLoudness;
 }
 
 export const channelsName = (n: number) =>
@@ -50,6 +52,26 @@ export function soundCommand(
   return `ffmpeg -i ${shellQuote(inputName)}${video}${af} ${ffmpegSoundArgs(target).join(" ")} ${shellQuote(outputName)}`;
 }
 
+/** What a job that keeps the source's loudness applied: its gain and the most it may add (dB). */
+export interface KeptLoudness {
+  gainDb: number;
+  maxGainDb: number;
+}
+
+function keptWords(
+  k: KeptLoudness,
+  before: number,
+  after: number,
+  level: string,
+): string | undefined {
+  if (Number.isFinite(after) && Math.abs(after - before) <= 0.5)
+    return `loudness kept at ${formatLevel(after, "LUFS")}`;
+  if (!Number.isFinite(after)) return `nothing loud enough left to raise · ${level}`;
+  if (k.gainDb >= k.maxGainDb - 0.05)
+    return `loudness raised ${withUnit(k.maxGainDb, "dB")}, the most it adds · ${level}`;
+  return undefined;
+}
+
 /** The result line: measured loudness and peak of the output, then how it was written. */
 export function resultMeta(r: {
   before?: LoudnessResult | { integrated: number; truePeak: number };
@@ -64,12 +86,22 @@ export function resultMeta(r: {
    * level (a pitch shift: "+3 semitones").
    */
   describe?: string;
+  /**
+   * The job meant to keep the source's loudness (noise removal): when the output measures within
+   * 0.5 dB of the source, the line says "loudness kept at −21.8 LUFS"; when the gain it may add ran
+   * out, it says so with both numbers; when nothing was left to raise, that too.
+   */
+  kept?: KeptLoudness;
 }): string {
   const level = r.before
     ? `${formatLevel(r.before.integrated, "LUFS")} → ${formatLevel(r.after.integrated, "LUFS")}`
     : formatLevel(r.after.integrated, "LUFS");
+  const kept =
+    r.kept && r.before
+      ? keptWords(r.kept, r.before.integrated, r.after.integrated, level)
+      : undefined;
   return [
-    r.describe ?? `Measured: ${level}`,
+    r.describe ?? (kept || `Measured: ${level}`),
     r.describe ? "" : `true peak ${formatLevel(r.after.truePeak, "dBTP")}`,
     r.limitedDb >= 0.1
       ? `peaks limited by up to ${formatLevel(r.limitedDb, "dB").replace("+", "")}`

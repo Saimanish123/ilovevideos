@@ -94,7 +94,7 @@ test.describe("extract audio from video", () => {
     });
     await expect(page.getByText(/Output MP3 from AAC/)).toBeVisible();
     await expect(
-      page.getByText(/AAC is re-encoded to MP3 at 192\skbps with the ffmpeg engine/),
+      page.getByText(/AAC is re-encoded to MP3 at 192\skbps, after a one-time download of/),
     ).toBeVisible();
     // 3 s at 192 kbps ≈ 72 KB
     await extractAndCheck(page, {
@@ -103,7 +103,7 @@ test.describe("extract audio from video", () => {
       minBytes: 40_000,
       verb: "Convert",
     });
-    await expect(page.getByText("The same operation with ffmpeg")).toBeVisible();
+    await expect(page.getByText("The same operation with ffmpeg")).toHaveCount(0);
     expect(uploads, "no request carried a body over 1 KB").toEqual([]);
   });
 

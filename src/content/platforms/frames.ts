@@ -9,6 +9,7 @@
  * platform names a minimum but no size, `cap` is our choice and the profile says so in `capNote`.
  */
 import type { AspectRatioId } from "@/tools/engines/aspect-ratio/options";
+import { framePlatformNames } from "./frame-names";
 import type { PlatformSource } from "./index";
 
 export type FramePlatformId =
@@ -51,7 +52,7 @@ export const FRAMES_CHECKED = "2026-09-30";
 export const framePlatforms: Record<FramePlatformId, FrameProfile> = {
   tiktok: {
     id: "tiktok",
-    name: "TikTok",
+    name: framePlatformNames.tiktok,
     ratio: "9:16",
     cap: { width: 1080, height: 1920 },
     capNote:
@@ -68,7 +69,7 @@ export const framePlatforms: Record<FramePlatformId, FrameProfile> = {
   },
   "instagram-reels": {
     id: "instagram-reels",
-    name: "Instagram Reels",
+    name: framePlatformNames["instagram-reels"],
     ratio: "9:16",
     cap: { width: 1440, height: 2560 },
     capNote: "1440×2560 is the resolution Meta's ads guide recommends for Reels.",
@@ -92,7 +93,7 @@ export const framePlatforms: Record<FramePlatformId, FrameProfile> = {
   },
   "youtube-shorts": {
     id: "youtube-shorts",
-    name: "YouTube Shorts",
+    name: framePlatformNames["youtube-shorts"],
     ratio: "9:16",
     alsoRatios: ["1:1"],
     cap: { width: 1080, height: 1920 },
@@ -115,7 +116,7 @@ export const framePlatforms: Record<FramePlatformId, FrameProfile> = {
   },
   youtube: {
     id: "youtube",
-    name: "YouTube",
+    name: framePlatformNames.youtube,
     ratio: "16:9",
     cap: { width: 7680, height: 4320 },
     capNote:
@@ -131,7 +132,7 @@ export const framePlatforms: Record<FramePlatformId, FrameProfile> = {
   },
   facebook: {
     id: "facebook",
-    name: "Facebook",
+    name: framePlatformNames.facebook,
     ratio: "4:5",
     cap: { width: 1440, height: 1800 },
     capNote: "1440×1800 is the resolution Meta's ads guide recommends for Facebook Feed video.",

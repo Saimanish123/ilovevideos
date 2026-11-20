@@ -30,8 +30,7 @@ export const addWatermarkToVideo: ToolInput = {
   content: {
     en: {
       title: "Add a watermark to a video",
-      subtitle:
-        "Put a logo or text on a video, placed and sized on the picture. Runs in your browser.",
+      subtitle: "Put your logo or text on a video.",
       metaTitle: "Add watermark to video online, free, no upload",
       metaDescription:
         "Put a PNG or SVG logo, or a line of text, on a video. Drag it into place, set size and opacity, show it for part of the video. Nothing is uploaded.",
@@ -49,7 +48,7 @@ export const addWatermarkToVideo: ToolInput = {
         "Size is a share of the picture's width, so the same setting looks the same on a phone clip and a 4K export: 15% is a typical corner logo, 25% is bold. Opacity between about 40% and 80% keeps a mark visible without hiding what is under it. The nine positions keep a margin of 3% of the picture's shorter side from the edges; a mark you drag stays exactly where you drop it.",
         "A watermark cannot be added without re-encoding: every frame gets new pixels. The picture is encoded once to H.264 at a high bitrate, the same quality the [crop tool](/crop-video) uses, so the loss is small, but start from the original file rather than a copy that has already been compressed. MP4, MOV and MKV keep their container and AAC sound is copied bit for bit; WebM is written as MP4, with its Opus sound encoded to AAC.",
         "A corner mark can be cut off by anyone who crops the video, and platforms often crop for their own formats. If the point is to make reuse harder, place the mark nearer the subject, where cropping it out would ruin the shot, and keep it faint. If the video is going to a vertical feed, [change its aspect ratio](/change-video-aspect-ratio) first and place the mark on the final framing.",
-        "Showing the mark only for part of the video, such as the last seconds as an end card, uses the timeline under the preview: drag its handles to where the mark should appear and disappear. Older formats such as AVI, WMV and FLV are handled by a fallback engine that downloads once and writes MP4.",
+        "Showing the mark only for part of the video, such as the last seconds as an end card, uses the timeline under the preview: drag its handles to where the mark should appear and disappear. For a bar that fills as the video plays, use [add a progress bar](/add-progress-bar-to-video); for a separate card before or after the video, [add an intro and outro](/add-intro-to-video). Older formats such as AVI, WMV and FLV need a one-time download and come out as MP4.",
       ],
       faq: [
         {

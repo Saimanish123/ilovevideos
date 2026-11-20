@@ -32,6 +32,7 @@ import { readLayerImage } from "@/tools/engines/image-overlay/read";
 import { compositeContainer } from "@/tools/engines/overlay/composite";
 import type { MediaInfo } from "@/tools/engines/types";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 type O = ImageOverlayOptions;
 
@@ -70,20 +71,22 @@ export const imageOverlaySpec: OptionsSpec<O> = {
     { keys: "Delete", label: "Remove it" },
   ],
   blocked: (o, info, _inputs, file) => {
-    if (!info.video) return "This file has no video track to put an image on.";
+    if (!info.video)
+      return unfixable("This file has no video track to put an image on. Choose a video file.");
     if (needsFfmpeg(info, file?.name ?? sourceName(info)))
       return {
         reason:
           info.video.decodable === false
             ? "This browser cannot decode this video's picture, so images cannot be drawn over it."
-            : "This format is read only by the fallback engine, which cannot add image layers. Convert it to MP4 first.",
+            : "This tool cannot open this format. Convert it to MP4 first, then come back.",
         action: { slug: "video-converter", label: "Convert to MP4" },
+        fixable: false,
       };
     if (o.layers.length === 0) return "Add an image first.";
     return undefined;
   },
   summary: (o, info) =>
-    `${imageCount(o.layers.length)} on the picture · H.264 ${outSize(info)} · ${soundWords(info, sourceName(info))} · on this device`,
+    `${imageCount(o.layers.length)} on the picture · H.264 ${outSize(info)} · ${soundWords(info, sourceName(info))}`,
   result: (o, info) => {
     if (!info.video) return undefined;
     const n = imageCount(o.layers.length);

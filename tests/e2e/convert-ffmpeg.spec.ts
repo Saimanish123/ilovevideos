@@ -43,7 +43,7 @@ test.describe("converter via ffmpeg.wasm", () => {
     await page.locator("#to").click();
     await page.getByRole("option", { name: "AVI" }).click();
     await expect(page.getByText("Re-encode to AVI")).toBeVisible();
-    await expect(page.getByText(/Uses the ffmpeg engine/)).toBeVisible();
+    await expect(page.getByText(/Needs a one-time download/)).toBeVisible();
     await page.getByRole("button", { name: "Convert", exact: true }).click();
     const download = page.getByRole("link", { name: "Download" });
     await expect(download).toBeVisible({ timeout: 120_000 });

@@ -19,6 +19,15 @@ for (const width of widths) {
       await page.setViewportSize({ width, height: 900 });
       await page.goto(path);
       await page.waitForLoadState("networkidle");
+      // Sections below the fold reveal once as they scroll into view (ADR-0157); a full-page capture
+      // does not scroll, so walk down the page first and come back, as a reader would.
+      await page.evaluate(async () => {
+        for (let y = 0; y < document.body.scrollHeight; y += window.innerHeight / 2) {
+          window.scrollTo(0, y);
+          await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+        }
+        window.scrollTo(0, 0);
+      });
       await expect(page).toHaveScreenshot(`${path === "/" ? "home" : "dev-ui"}-${width}.png`, {
         fullPage: true,
         animations: "disabled",

@@ -1,6 +1,6 @@
 "use client";
 
-import { CropIdle } from "@/components/tool/crop/idle";
+import { CropIdle } from "@/components/tool/crop/crop-idle";
 import type { IdleProps, IdleSpec } from "../types";
 
 /** Idle state of crop (types.ts `IdleSpec`); the remove-black-bars page (`bars`) has its own prompt. */

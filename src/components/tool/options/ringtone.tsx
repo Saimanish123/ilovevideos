@@ -5,6 +5,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Field } from "@/components/ui/field";
 import { Segmented } from "@/components/ui/segmented";
 import { withUnit } from "@/lib/format";
+import { ffmpegDownloadSize } from "@/tools/engines/ffmpeg/size";
 import {
   DEFAULT_RINGTONE_SEC,
   fitPart,
@@ -19,7 +20,9 @@ import { PLAY_SHORTCUT } from "../shortcuts";
 import { RangeLayer } from "../sound/range-layer";
 import { SoundHero } from "../sound/sound-hero";
 import { useSoundAnalysis } from "../sound/use-sound-analysis";
+import { between, z } from "./remember-schema";
 import type { HeroProps, OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 const secs = (s: number) => withUnit((Math.round(s * 10) / 10).toFixed(1), "s");
 
@@ -221,9 +224,21 @@ export const ringtoneSpec: OptionsSpec<RingtoneOptions> = {
   Panel: RingtonePanel,
   Hero: RingtoneHero,
   previewResult: true,
+  // A part of the source on its own timeline (ADR-0134).
+  compare: false,
   batch: false,
   shortcuts: [PLAY_SHORTCUT],
   route: () => "page",
+  remember: {
+    schema: z.object({
+      fadeIn: between(0, 10),
+      fadeOut: between(0, 10),
+      normalize: z.boolean(),
+      phone: z.enum(["iphone", "android"]),
+      androidFormat: z.enum(["mp3", "ogg"]),
+      output: z.enum(["auto", "wav"]),
+    }),
+  },
   defaults: (info, preset) => ({
     start: 0,
     end: Math.min(info.durationSec, DEFAULT_RINGTONE_SEC),
@@ -236,7 +251,10 @@ export const ringtoneSpec: OptionsSpec<RingtoneOptions> = {
     suggested: true,
   }),
   blocked: (o, info) => {
-    if (!info.audio?.length) return "This file has no sound track, so there is nothing to ring.";
+    if (!info.audio?.length)
+      return unfixable(
+        "This file has no sound track, so there is nothing to ring. Choose a file with sound.",
+      );
     if (info.durationSec < 1) return "The sound is shorter than a second.";
     const p = fitPart(o, info.durationSec);
     if (p.end - p.start < 1) return "Choose a part of at least one second.";
@@ -246,7 +264,9 @@ export const ringtoneSpec: OptionsSpec<RingtoneOptions> = {
   summary: (o) =>
     [
       `${ringtoneFormat(o).label} ${withUnit(RINGTONE_KBPS, "kbps")}`,
-      o.phone === "android" ? "ffmpeg engine" : "on this device",
-    ].join(" · "),
+      o.phone === "android" ? `${ffmpegDownloadSize()} download, once` : "",
+    ]
+      .filter(Boolean)
+      .join(" · "),
   result: () => ({ title: "Ringtone ready", change: false, before: false }),
 };

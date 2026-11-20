@@ -20,17 +20,15 @@ export const voiceRecorder: ToolInput = {
     "trim-audio",
     "normalize-audio",
     "remove-silence-from-audio",
-    "m4a-to-mp3",
     "screen-recorder",
-    "webcam-recorder",
+    "remove-background-noise",
   ],
   updatedAt: "2026-11-18",
   icon: "mic",
   content: {
     en: {
       title: "Record your voice",
-      subtitle:
-        "Record from your microphone to M4A, WAV or Opus, with a live level, in your browser.",
+      subtitle: "Watch the level as you speak, then save the file.",
       metaTitle: "Voice recorder online, free, no upload",
       metaDescription:
         "Record your voice or any sound from a microphone. Live level and waveform, pause and resume. Save as M4A, WAV or Opus on your device. Free, no account.",
@@ -45,7 +43,7 @@ export const voiceRecorder: ToolInput = {
       goodToKnow: [
         "M4A is AAC at 128 kb/s for a mono microphone, about 1 MB a minute, and plays on phones and computers without extra software. WAV is uncompressed 16-bit sound at the microphone's own rate, usually 48 kHz: about 5.8 MB a minute in mono, exact for editing, and capped by the format at 4 GiB (about 4.3 GB), which this page stops at, 12 h 25 min in mono. Opus at 64 kb/s is half the size of M4A and very clear for speech, but older players and some editors do not open it.",
         "Browsers clean up microphone sound for calls, and all three cleanups are on by default because they suit a voice: noise suppression lowers steady sounds such as a fan, automatic level evens out a voice that moves closer and further away, and echo cancellation removes what your speakers play. For music or an instrument, turn them off under More options, since they flatten dynamics and can chop sustained notes.",
-        "Browsers cannot write MP3 themselves. When the recording is done, the result offers to convert it to MP3, which runs on this device with the ffmpeg engine; for a spoken recording, M4A is smaller than an MP3 of the same clarity.",
+        "Browsers cannot write MP3 themselves. When the recording is done, the result offers to convert it to MP3, after a one-time download; for a spoken recording, M4A is smaller than an MP3 of the same clarity.",
         "The sound is written to this device's storage while you record, so a long interview does not fill memory; where the browser refuses that storage, the recording is held in memory and stops at about 1.8 GB, keeping everything up to then. Closing or reloading the tab ends the recording without saving it; the page asks the browser to warn you first. On a phone, allow the microphone when asked; if the browser cannot record the chosen format, the page says so when you press Start recording.",
         "After recording, [trim the start and end](/trim-audio), [even out the loudness](/normalize-audio) for a podcast or voice-over, or [cut the pauses](/remove-silence-from-audio) out of a long take.",
       ],

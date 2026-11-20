@@ -16,7 +16,9 @@ import {
 import type { MediaInfo } from "@/tools/engines/types";
 import { pictureContainer, pictureEstimate } from "@/tools/engines/video-filter/plan";
 import { nativeOnly } from "./native-only";
+import { z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 type O = StabilizeOptions;
 
@@ -40,11 +42,17 @@ const strengthHint: Record<Strength, string> = {
 
 export const stabilizeSpec: OptionsSpec<O> = {
   verb: "Stabilize",
+  remember: {
+    schema: z.object({
+      strength: z.enum(["light", "medium", "strong"]),
+      edges: z.enum(["zoom", "borders"]),
+    }),
+  },
   defaults: () => ({ strength: "medium", edges: "zoom" }),
   previewResult: true,
   nextStep: { slug: "trim-video", label: "Trim video" },
   blocked: (_o, info) => {
-    if (!info.video) return "This file has no video track.";
+    if (!info.video) return unfixable("This file has no video track. Choose a video file.");
     const native = nativeOnly(info, "this file");
     if (native) return native;
     if (info.durationSec < 0.2) return "This video is too short to steady: it needs a few frames.";
@@ -54,7 +62,7 @@ export const stabilizeSpec: OptionsSpec<O> = {
     if (!info.video) return undefined;
     const e = encodedSize(sizeOf(info));
     const est = pictureEstimate(info, sizeOf(info));
-    return `${capital(stabilizeWords(o))} · H.264 ${formatDimensions(e.width, e.height)} · ${soundWords(info)} · about ${formatBytes(est.bytes)} · on this device`;
+    return `${capital(stabilizeWords(o))} · H.264 ${formatDimensions(e.width, e.height)} · ${soundWords(info)} · about ${formatBytes(est.bytes)}`;
   },
   result: () => ({ title: "Stabilized" }),
   Panel: StabilizePanel,

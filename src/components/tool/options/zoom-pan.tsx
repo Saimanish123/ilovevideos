@@ -29,6 +29,7 @@ import { PLAY_SHORTCUT } from "../shortcuts";
 import { nativeOnly } from "./native-only";
 import { pictureSize } from "./picture-size";
 import type { OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 const zooms = [
   { value: "1", label: "1×" },
@@ -55,6 +56,8 @@ function detailWords(o: ZoomOptions, info: MediaInfo): string {
 export const zoomPanSpec: OptionsSpec<ZoomOptions> = {
   verb: "Zoom",
   previewResult: true,
+  // A moving crop of the source: side by side shows where it looks (ADR-0135).
+  compare: () => ({ what: "picture", layout: "side-by-side" }),
   batch: false,
   nextStep: { slug: "change-video-aspect-ratio", label: "Change the shape" },
   shortcuts: [
@@ -75,7 +78,8 @@ export const zoomPanSpec: OptionsSpec<ZoomOptions> = {
     };
   },
   blocked: (o, info) => {
-    if (!info.video) return "This file has no picture to zoom into.";
+    if (!info.video)
+      return unfixable("This file has no picture to zoom into. Choose a video file.");
     const native = nativeOnly(info);
     if (native) return native;
     if (o.keys.length === 0) return "Add a key frame first.";

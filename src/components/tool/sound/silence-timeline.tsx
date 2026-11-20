@@ -14,6 +14,7 @@ import {
   type CutPlan,
   planCuts,
   type RemoveSilenceOptions,
+  removedWords,
 } from "@/tools/engines/remove-silence/options";
 import { WINDOW_SEC } from "@/tools/engines/sound/dsp/silence";
 import { STAGE_FOCUS } from "../audio/audio-hero";
@@ -90,20 +91,36 @@ export function SilenceTimeline({
   const result = analysis.result;
   const levels = result?.levels;
   const duration = result?.duration ?? 0;
+  const speech = result?.speech;
   const plan = useMemo(
-    () => (levels ? planCuts(value, levels, duration) : undefined),
-    [levels, value, duration],
+    () => (levels ? planCuts(value, levels, duration, speech) : undefined),
+    [levels, value, duration, speech],
   );
+  // By speech, the bars are lit where someone speaks and there is no threshold line to drag.
+  const bySpeech = plan?.detect === "speech";
   const summary = plan
     ? plan.cuts.length === 0
-      ? "No pause is long and quiet enough to cut. Raise the line or shorten the minimum pause."
-      : `${plan.cuts.length} ${plan.cuts.length === 1 ? "pause" : "pauses"} marked · ${formatDuration(plan.removed)} removed · ${formatDuration(duration)} → ${formatDuration(plan.after)}`
+      ? plan.detect === "speech"
+        ? "No gap between words is long enough to cut. Shorten the minimum pause."
+        : "No pause is long and quiet enough to cut. Raise the line or shorten the minimum pause."
+      : `${plan.cuts.length} ${plan.cuts.length === 1 ? "pause" : "pauses"} marked · ${removedWords(plan.removed)} removed · ${formatDuration(duration)} → ${formatDuration(plan.after)}`
     : "";
   const [announced, setAnnounced] = useState(summary);
   useEffect(() => {
     const t = setTimeout(() => setAnnounced(summary), 600);
     return () => clearTimeout(t);
   }, [summary]);
+  // Per bar, whether the speech model heard speech in that slice of time.
+  const spoken = useMemo(() => {
+    if (!speech || speech.length === 0) return [];
+    const per = speech.length / BUCKETS;
+    return Array.from({ length: BUCKETS }, (_, b) => {
+      const from = Math.floor(b * per);
+      const to = Math.max(from + 1, Math.floor((b + 1) * per));
+      for (let i = from; i < to && i < speech.length; i++) if ((speech[i] ?? 0) >= 0.5) return true;
+      return false;
+    });
+  }, [speech]);
   // Bars: the loudest window in each slice of time.
   const bars = useMemo(() => {
     if (!levels || levels.length === 0) return [];
@@ -178,7 +195,7 @@ export function SilenceTimeline({
             role="img"
             aria-label={
               plan
-                ? `Level of the recording over ${formatDuration(duration)}, with ${plan.cuts.length} pauses marked to cut`
+                ? `Level of the recording over ${formatDuration(duration)}, ${bySpeech ? "speech lit, " : ""}with ${plan.cuts.length} pauses marked to cut`
                 : "Level of the recording"
             }
           >
@@ -189,7 +206,9 @@ export function SilenceTimeline({
                 width={0.7}
                 y={y(db)}
                 height={100 - y(db)}
-                className={db < threshold ? "fill-gray-600" : "fill-gray-300"}
+                className={
+                  (bySpeech ? !spoken[i] : db < threshold) ? "fill-gray-600" : "fill-gray-300"
+                }
               />
             ))}
           </svg>
@@ -197,7 +216,7 @@ export function SilenceTimeline({
           <p className="tabular absolute inset-0 flex items-center justify-center text-gray-400 text-sm">
             {analysis.status === "failed"
               ? (analysis.message ?? "The sound could not be read.")
-              : `Measuring the sound on this device, ${Math.round(analysis.ratio * 100)}%`}
+              : `Reading the sound, ${Math.round(analysis.ratio * 100)}%`}
           </p>
         )}
         {plan?.cuts.map((c) => (
@@ -216,7 +235,7 @@ export function SilenceTimeline({
           aria-hidden
           className="pointer-events-none absolute inset-y-0 w-px bg-gray-50/70"
         />
-        {bars.length > 0 && (
+        {bars.length > 0 && !bySpeech && (
           <div
             role="slider"
             tabIndex={disabled ? -1 : 0}

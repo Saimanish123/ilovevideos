@@ -46,5 +46,8 @@ pnpm-debug.log*
 # scratch
 /scratch/
 
+# failed-search counts written by /api/search-miss in development (ADR-0151)
+/.data/
+
 # ffmpeg.wasm core, copied from node_modules by scripts/copy-wasm.mjs
 public/wasm/

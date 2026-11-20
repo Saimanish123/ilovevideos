@@ -103,6 +103,8 @@
   /* Elevation */
   --shadow-1: 0 0 0 1px var(--border);
   --shadow-2: 0 0 0 1px var(--border), 0 8px 24px -8px var(--shadow-color);
+  /* A home-row card lifted under the pointer (ADR-0154): softer and wider than a popover's shadow-2. */
+  --shadow-lift: 0 16px 32px -16px var(--shadow-color), 0 4px 12px -6px var(--shadow-color);
   --shadow-sm: initial;
   --shadow-md: initial;
   --shadow-lg: initial;
@@ -120,6 +122,14 @@
   --duration-base: 220ms;
   --duration-slow: 320ms;
   --duration-slower: 480ms;
+  /*
+   * Entrance, arrival and reveal-once (ADR-0153, ADR-0157): how far a block rises as it fades in (at
+   * most 8 px), the step between the parts of a page's one entrance (30–60 ms) and the step between
+   * items of a revealed or arriving group (30 ms, six items at most).
+   */
+  --motion-rise: 0.5rem;
+  --motion-step: 40ms;
+  --motion-step-group: 30ms;
 
   /* Layout */
   --container-content: 1200px;
@@ -159,7 +169,16 @@
   --container-label: 12rem;
   /* Tallest a dialog or sheet may grow: the dialog keeps a 16px margin, the sheet leaves the page visible above it. */
   --container-dialog-max-h: calc(100dvh - 2rem);
+  /* The search palette sits 96px from the top (top-24); it ends 16px above the bottom edge. */
+  --container-palette-max-h: calc(100dvh - 7rem);
   --container-sheet-max-h: 85dvh;
+  /*
+   * Inline padding of a full-bleed row (home rows, ADR-0154): the first card lines up with the content
+   * column's text at every width, while the row itself runs to the viewport edges. A percentage of the
+   * row's own width, so a desktop scrollbar does not throw it off. Use as px-gutter / scroll-px-gutter.
+   */
+  --spacing-gutter: max(1rem, calc((100% - var(--container-content)) / 2 + 1rem));
+  --spacing-gutter-md: max(2rem, calc((100% - var(--container-content)) / 2 + 2rem));
 }
 
 /*
@@ -171,4 +190,189 @@
   outline: 2px solid var(--color-gray-0);
   outline-offset: 0;
   box-shadow: 0 0 0 4px var(--color-gray-1000);
+}
+
+/*
+ * Edge fades for a horizontal row (home rows, ADR-0154): the row dissolves into the page on a side
+ * where more cards wait, instead of a hard cut. A mask, not an overlay, so it works on any background.
+ * row-controls.tsx sets data-more-start and data-more-end from the scroll position; the stops move at
+ * the fast duration, instantly under reduced motion.
+ */
+@property --row-fade-start {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --row-fade-end {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@utility row-fade {
+  --row-fade-start: 0px;
+  --row-fade-end: 0px;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black var(--row-fade-start),
+    black calc(100% - var(--row-fade-end)),
+    transparent 100%
+  );
+  transition:
+    --row-fade-start var(--duration-fast) var(--ease-out),
+    --row-fade-end var(--duration-fast) var(--ease-out);
+  &[data-more-start] {
+    --row-fade-start: 3.5rem;
+  }
+  &[data-more-end] {
+    --row-fade-end: 3.5rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+/*
+ * A tool card lifting under a resting pointer (ADR-0155), on the card's list item in the home rows and
+ * the hub grids (ADR-0157). Transform only (translate and scale), after a short intent delay so a
+ * sweep across the cards does not flicker, back at the instant duration on leave; the shadow is a
+ * pseudo-element whose opacity changes, so nothing repaints. Keyboard focus gets the same raised
+ * state at once, without motion. Reduced motion keeps only the card's own border change.
+ */
+@utility card-lift {
+  position: relative;
+  transition:
+    translate var(--duration-instant) var(--ease-out),
+    scale var(--duration-instant) var(--ease-out);
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lift);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--duration-instant) var(--ease-out);
+  }
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    &:hover {
+      translate: 0 -0.25rem;
+      scale: 1.02;
+      transition-duration: var(--duration-fast);
+      transition-delay: var(--duration-fast);
+    }
+    &:hover::before {
+      opacity: 1;
+      transition-duration: var(--duration-fast);
+      transition-delay: var(--duration-fast);
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    &:has(:focus-visible) {
+      translate: 0 -0.25rem;
+      scale: 1.02;
+    }
+    &:has(:focus-visible)::before {
+      opacity: 1;
+    }
+  }
+  &:has(:focus-visible),
+  &:has(:focus-visible)::before {
+    transition: none;
+  }
+}
+
+/*
+ * At least two lines of the element's own text: a status line that can wrap keeps that room while it
+ * is one line, so the controls under it never move when it grows.
+ */
+@utility min-h-2-lines {
+  min-height: 2lh;
+}
+
+/*
+ * The site's motion system (ADR-0153, ADR-0157). One vocabulary for every arrival: fade in while
+ * rising --motion-rise, at the base duration on --ease-out. Transform (the `translate` property, so a
+ * hover's `transform` or `scale` on the same element is untouched) and opacity only.
+ *
+ * enter-N: the page's one entrance, played when the page's HTML first paints (and when a page is
+ * navigated to with a pointer). N is the part's place in the stagger: the trail first, the stage one
+ * step later; nothing main waits more than one step. The H1 and its lead never move: they are the
+ * page's Largest Contentful Paint, and fading them held it until the fade ended (+245 ms), while
+ * sliding them alone read as a jolt. `backwards` fill only, so once it ends the element's own
+ * transitions (hover lifts) are free again. None with reduced motion (the global rule would shorten
+ * the animation but keep its delay, a late pop) and none after a keyboard navigation.
+ */
+@keyframes rise {
+  from {
+    opacity: 0;
+    translate: 0 var(--motion-rise);
+  }
+}
+@utility enter-* {
+  animation: rise var(--duration-base) var(--ease-out) backwards;
+  animation-delay: calc(--value(integer) * var(--motion-step));
+  /* A page reached from the keyboard (Enter, Space, a history key; reveal.tsx) arrives at once. The
+     name stays: `none` here would restart the entrance when the next pointer press clears the flag. */
+  :root[data-keyed] & {
+    animation-duration: 0s;
+    animation-delay: 0s;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+/*
+ * arrive: a block that appears after a state change (the ready panel, a result, an error, a row filled
+ * from storage) fades and rises in from @starting-style. A transition, not keyframes, so a quick
+ * change retargets from where it is; with reduced motion the global rule leaves its opacity only.
+ * arrive-N delays it by N group steps (a result's parts, the "Then" row last). Removal is instant:
+ * an exit shorter than any enter.
+ */
+@utility arrive {
+  transition:
+    opacity var(--duration-base) var(--ease-out),
+    translate var(--duration-base) var(--ease-out);
+  @starting-style {
+    opacity: 0;
+    translate: 0 var(--motion-rise);
+  }
+}
+@utility arrive-* {
+  transition-delay: calc(--value(integer) * var(--motion-step-group));
+}
+
+/*
+ * fold: a native <details> whose content opens by animating its height where the browser can
+ * (::details-content and interpolate-size: Chromium 131+); elsewhere it opens at once, as before. The
+ * text stays in the HTML and find-in-page still opens it. Height is the one layout property the
+ * design system tolerates, for accordions only. Opens at base, closes at fast; none with reduced motion.
+ */
+@utility fold {
+  /* Only where the height can animate; elsewhere (Safari 18) the native disclosure is left alone. */
+  @supports (interpolate-size: allow-keywords) {
+    interpolate-size: allow-keywords;
+    &::details-content {
+      block-size: 0;
+      overflow-y: clip;
+      /* Room for a focus ring (2 px plus its 2 px offset) at the content's edges. */
+      overflow-clip-margin: 0.25rem;
+      opacity: 0;
+      transition:
+        block-size var(--duration-fast) var(--ease-out),
+        opacity var(--duration-fast) var(--ease-out),
+        content-visibility var(--duration-fast) allow-discrete;
+    }
+    &[open]::details-content {
+      block-size: auto;
+      opacity: 1;
+      transition-duration: var(--duration-base);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      &::details-content {
+        transition: none;
+      }
+    }
+  }
 }

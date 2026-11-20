@@ -58,7 +58,12 @@ test.describe("video-to-gif", () => {
     await expect
       .poll(() => preview.evaluate((el) => (el as HTMLImageElement).naturalWidth))
       .toBe(360);
-    await expect(page.getByText("The same operation with ffmpeg")).toBeVisible();
+    // The command is kept on the result for records, never shown (owner, 2026-11-19).
+    await expect(page.locator("[data-ffmpeg-command]")).toHaveAttribute(
+      "data-ffmpeg-command",
+      /^ffmpeg /,
+    );
+    await expect(page.getByText("The same operation with ffmpeg")).toHaveCount(0);
     expect(uploads, "no request carried a body over 1 KB").toEqual([]);
   });
 
@@ -74,7 +79,7 @@ test.describe("video-to-gif", () => {
     const button = page.getByRole("button", { name: "Make GIF", exact: true });
     await expect(button).toBeVisible({ timeout: 30_000 });
     await page.getByRole("radio", { name: "Best", exact: true }).check({ force: true });
-    await expect(page.getByText(/with the ffmpeg engine/)).toBeVisible();
+    await expect(page.getByText(/Needs a one-time download/)).toBeVisible();
     await button.click();
     const download = page.getByRole("link", { name: "Download" });
     await expect(download).toBeVisible({ timeout: 150_000 });
@@ -86,9 +91,9 @@ test.describe("video-to-gif", () => {
     expect(probe.type).toBe("image/gif");
     expect(probe.size).toBeGreaterThan(100_000);
     await expect(page.getByTestId("result-preview")).toBeVisible();
-    await page.getByText("The same operation with ffmpeg").click();
-    await expect(page.locator("pre")).toContainText("palettegen");
-    await expect(page.locator("pre")).toContainText("paletteuse=dither=sierra2_4a");
+    const command = page.locator("[data-ffmpeg-command]");
+    await expect(command).toHaveAttribute("data-ffmpeg-command", /palettegen/);
+    await expect(command).toHaveAttribute("data-ffmpeg-command", /paletteuse=dither=sierra2_4a/);
     expect(uploads, "no request carried a body over 1 KB").toEqual([]);
   });
 

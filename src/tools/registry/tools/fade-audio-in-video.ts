@@ -19,11 +19,11 @@ export const fadeAudioInVideo: ToolInput = {
   related: ["change-video-volume", "trim-video", "add-audio-to-video", "fade-audio"],
   updatedAt: "2026-10-01",
   icon: "audio-lines",
+  illustration: "video-audio-fade",
   content: {
     en: {
       title: "Fade audio in a video",
-      subtitle:
-        "Fade a video's sound in at the start and out at the end, with the picture copied as it is.",
+      subtitle: "The sound fades; the picture is left as it is.",
       metaTitle: "Fade out audio in a video online, free",
       metaDescription:
         "Fade the sound of an MP4, MOV, MKV or WebM in and out without re-encoding the picture. Drag the fades on the waveform. Runs in your browser. Free.",

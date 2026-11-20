@@ -101,6 +101,54 @@ Append-only log of decisions that change architecture, licensing, privacy, SEO p
 | ADR-0105 | No on-device ML models: the toolkit stays model-free | Amended by ADR-0106 | 2026-11-19 |
 | ADR-0106 | Small on-device models (under 2 MB each) are allowed for four named jobs | Accepted | 2026-11-19 |
 | ADR-0107 | First-load script budget raised to 300 KB (home and hubs) and 350 KB (tool pages) | Accepted | 2026-11-19 |
+| ADR-0108 | Speech noise removal runs RNNoise 0.2 from a vendored WebAssembly build, on one page for audio and video | Accepted | 2026-11-19 |
+| ADR-0109 | Silero VAD runs on our own forward pass with the official 6.2.3 weights stored as float16 | Accepted | 2026-11-19 |
+| ADR-0110 | Pauses are found by speech by default, with loudness as the fallback and the alternative | Accepted | 2026-11-19 |
+| ADR-0111 | Speech models are served from /models with a fixed path, size and hash, and cached for offline use | Accepted | 2026-11-19 |
+| ADR-0112 | Speech fixtures are a seeded formant voice over seeded noise beds; text-to-speech checks stay local | Accepted | 2026-11-19 |
+| ADR-0113 | Find faces on the blur page places a following oval on each face for the user to review | Accepted | 2026-11-19 |
+| ADR-0114 | Our own WebGL 2 inference kit runs small convolutional models from a half-float file | Accepted | 2026-11-19 |
+| ADR-0115 | Faces are found with one 640 px pass plus full-resolution tiles above 960 px, at score 0.6 | Accepted | 2026-11-19 |
+| ADR-0116 | Face tracks are matched by overlap or distance, end at cuts, bridge short turn-aways and are smoothed without lag | Accepted | 2026-11-19 |
+| ADR-0117 | Face fixtures come from NASA crew portraits; parity references are made offline with onnxruntime and OpenCV | Accepted | 2026-11-19 |
+| ADR-0118 | The person finder is MediaPipe Selfie Segmentation on TensorFlow.js, in a worker of its own, loaded after a video is chosen | Accepted | 2026-11-19 |
+| ADR-0119 | Two background pages on one engine, by what people search; the green screen page stays separate and no transparency is promised | Accepted | 2026-11-19 |
+| ADR-0120 | The mask is steadied with the previous and the next frame, fitted to the picture with a guided filter, and the person is kept out of the blur | Accepted | 2026-11-19 |
+| ADR-0121 | The person finder loads only after a video is chosen and only on its two pages; the run waits for the preview | Accepted | 2026-11-19 |
+| ADR-0122 | Person fixtures are a hand-cut public-domain NASA portrait over CC0 and public-domain backgrounds, with the mask frame for frame | Accepted | 2026-11-19 |
+| ADR-0123 | Search ranks by best coverage with a hand-written intent table, both loaded on use; phones get a full-screen sheet | Accepted | 2026-11-19 |
+| ADR-0124 | Recent tools live in this browser's local storage only; the home row reserves its height before first paint | Accepted | 2026-11-19 |
+| ADR-0125 | "Not sure which tool?" reads a chosen file on the device and suggests tools only from true facts | Accepted | 2026-11-19 |
+| ADR-0126 | Related tools carry a generated reason; results get a "Then" row of up to three next steps that hand the file on | Accepted; reasons removed by ADR-0154 | 2026-11-19 |
+| ADR-0127 | Hubs group standalone tools by task with families and pairs behind a disclosure; the footer lists hubs, not every tool | Accepted | 2026-11-19 |
+| ADR-0128 | Usability and every-device support come first; first-party cookies and browser storage are allowed | Accepted | 2026-11-19 |
+| ADR-0129 | Tool pages remember their file-independent settings and can save them by name; a page opts in with a zod schema of the kept keys | Accepted | 2026-11-19 |
+| ADR-0130 | Recordings are written in place by a storage worker with a packet index beside them, so a recording cut off by a closed or crashed tab is offered back and finished on the next visit | Accepted | 2026-11-19 |
+| ADR-0131 | A page's last result is kept for a day in OPFS and shown under its drop zone; /privacy lists everything kept and clears it | Accepted | 2026-11-19 |
+| ADR-0139 | Backend choice stays in each engine's `supports()`; the unused `src/lib/capabilities/` module is removed | Accepted | 2026-11-19 |
+| ADR-0140 | Idle modules name things from light tables and load their UI on use; the home rows' controls load apart | Accepted | 2026-11-19 |
+| ADR-0141 | A block no option can clear drops the primary button: `Blocked.fixable: false` | Accepted | 2026-11-19 |
+| ADR-0149 | Privacy, evidence and machinery stay out of the interface: stated once in the policy, the about page and the home promises | Accepted | 2026-11-19 |
+| ADR-0153 | Subtle ambient motion on load, scroll and navigation is allowed, inside strict budgets | Accepted | 2026-11-19 |
+| ADR-0154 | Generated pages (format pairs, sizes, platform presets) are specific tools reached from search, their hub and their siblings: off home, standalone related rows and unnamed search results; one closed disclosure per hub; home rows scroll | Accepted | 2026-11-19 |
+| ADR-0155 | Home: the site search is the hero action; rows bleed and fade, cards lift on hover, a returning visitor gets Continue and Because, all from this browser | Accepted | 2026-11-19 |
+| ADR-0156 | Every tool page has its own illustration: per-tool drawings for engine siblings, `family:arg` drawings with stroke-path labels for generated pages, enforced by a test | Accepted | 2026-11-19 |
+| ADR-0150 | Failed searches are counted by the site's first server code, which receives search text only | Accepted | 2026-11-19 |
+| ADR-0151 | Search counts are per-day query counts behind a small store interface: a JSON file now, Cloudflare D1 when hosted; `pnpm search-report` reads them | Accepted | 2026-11-19 |
+| ADR-0152 | The palette sends one beacon per failed query per session: after 1.2 s with no results, or when search closes without a tool opened | Accepted | 2026-11-19 |
+| ADR-0134 | Results can be compared with their source on the preview, loaded only when asked; pages opt out with `compare: false` | Accepted | 2026-11-19 |
+| ADR-0135 | The picture compare is a wipe kept frame-synced by rate nudges, side by side when the frame changes shape, with an actual-pixels zoom on a mouse | Accepted | 2026-11-19 |
+| ADR-0136 | The sound compare is a Before/After switch through Web Audio gains, matched in integrated loudness unless loudness is the job | Accepted | 2026-11-19 |
+| ADR-0137 | Compare motion and controls after design review: fades and a glide into place, visible pressed toggles, touch scroll on the divider | Accepted | 2026-11-19 |
+| ADR-0138 | The sound switch under a video is one element placed by CSS; the side-by-side close glide runs at the fade's speed | Accepted | 2026-11-19 |
+| ADR-0144 | Firefox runs in Playwright only on request; its coverage here comes from documented data and the run-time check | Accepted | 2026-11-19 |
+| ADR-0145 | Browser support is measured by a probe and published as a generated matrix; the engines' `supports()` stays the runtime truth | Accepted | 2026-11-19 |
+| ADR-0146 | Where High-profile H.264 stalls, every H.264 encode is written as Constrained Baseline through a registered mediabunny encoder | Accepted | 2026-11-19 |
+| ADR-0147 | Pages ask the engine before the user starts; the most used tools fall back to ffmpeg.wasm instead of refusing | Accepted | 2026-11-19 |
+| ADR-0148 | Every page is tested end to end from the registry, and the most used pages on two phone sizes | Accepted | 2026-11-19 |
+| ADR-0157 | One motion vocabulary for the whole site: entrance, arrive, reveal once, fold and lift, all on the same rise, duration and curve | Accepted | 2026-11-19 |
+| ADR-0158 | Page changes are view transitions: React's ViewTransition in the locale template plus the cross-document rule; the header holds, the old page dissolves, the new one plays its entrance | Accepted | 2026-11-19 |
+| ADR-0159 | Search animates only when opened by a pointer: out of the point pressed on desktop, a slide-up sheet on phones; ⌘K, "/" and typing open at once | Accepted | 2026-11-19 |
 
 ---
 
@@ -1521,6 +1569,820 @@ The owner raised the budget (2026-11-19): home and hubs 300 KiB gz (307,200 B), 
 
 ### Consequences
 The recorders pass without splitting the idle map; splitting it (ADR-0104) stays a good optimisation, no longer a blocker. A new page or feature that spends the extra room must still pass the unchanged speed assertions, so slow script cannot hide behind the larger number.
+
+---
+
+## ADR-0123: Search ranks by best coverage with a hand-written intent table, both loaded on use; phones get a full-screen sheet
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+Search required every non-stop word to match a tool's title, alias, keyword or category. Measured against the index (navigation research, 2026-11-19), it found "shrink video" but returned nothing for "make video smaller for whatsapp", "video too big for email", "cut the start off" or "iphone video wont play on windows": people describe a problem, a destination or a device, and one unknown word sank every result. The empty palette listed all 137 standalone tools. Alternatives: a search library (Fuse, MiniSearch; adds a dependency and still knows nothing about "too big"), embeddings (a model download for a 150-row catalogue), or a server (breaks the privacy promise).
+
+### Decision
+`lib/tool-search.ts` keeps the field scoring (exact word, prefix, substring, tight subsequence) and adds: plural folding and apostrophe removal; an edit-distance allowance (one slip from five letters, two from nine); intent stop words ("how do I", "make", "turn", "file") and promise phrases removed before reading ("no watermark", "without uploading", "for free"); best coverage, where each word weighs ln(1 + N/df) over the tools it matches, words no tool knows are ignored, and a tool needs half the query's weight; results under 30 % of the best are dropped. A hand-written intent table (`content/site/search-intents.ts`) maps symptoms, destinations and devices to pages, best answer first; platform words weigh twice a symptom; a query about a song or an MP3 leans to pages that take audio; a named format beats the general converter ("mkv won't play" is MKV to MP4). The table is folded into the static `/tool-index.json` with the task groups, so neither ships with a page; the palette chunk and the index load when search opens. Results: at most 8 on desktop, 6 on phones; empty query shows this browser's recents (up to 3, never the page search was opened on) then one task per hub; no match says so with a hint and lists the tasks. From 640 px the header shows a field-like search button; below it an icon opens a full-screen sheet with Cancel and text-only 44 px rows. The quality bar is a unit-test table of 106 queries (top-1 99.1 %, top-3 100 %; five sound-noise and grain queries and seven background queries were added after the audits) plus 30 held-out queries written after the table passed (23/30 and 25/30 on their first run, 30/30 after the general rules above).
+
+### Consequences
+A new page is searchable through its registry aliases and keywords as before; a symptom only needs a row in the intent table when no alias says it. Rows must stay true (no platform without a page). "compress zzqx" now finds Compress video instead of nothing, by design. The index grew from 9.5 kB to 13.6 kB gzipped (155 tools; 3.8 kB of it intents) and still loads only on use.
+
+---
+
+## ADR-0124: Recent tools live in this browser's local storage only; the home row reserves its height before first paint
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+Returning visitors start from scratch, and most visitors land on one tool page from search. Netflix- or Steam-style rows rely on accounts, popularity and tracking, none of which this site has or will add (no popularity claims, no tracking). A row that appears after hydration shifts the page, and Lighthouse asserts CLS 0.
+
+### Decision
+`lib/recent-tools.ts` keeps up to eight opened tools (slug and title) under `recent-tools` in localStorage, newest first, recorded when a tool page mounts. Every access is wrapped; blocked storage means no list. Nothing else is stored, no request carries it, and the privacy page says what is kept and how to clear it (Clear on the home row, or clearing the site's data). Home shows up to three in one "Recent tools" row (one line of three from 1024 px, where a third of the column holds the longest title; one 44 px line each below that); the search shows up to three. Clear moves focus to the next section's heading. The row is server-rendered hidden; a hashed inline script right after it reads the count and sets `data-recent`, which reveals the row at its final height before first paint; React fills it after hydration, and on client-side navigation it renders complete in its first frame. Measured CLS 0 at 390, 768 and 1280.
+
+### Consequences
+One inline script on the home page (hashed by `scripts/csp-hashes.mjs`). Recents are per browser and per device by design; there is no sync. The list records opened pages, not finished jobs, so it is labelled "Recent tools", not "Recently used".
+
+---
+
+## ADR-0125: "Not sure which tool?" reads a chosen file on the device and suggests tools only from true facts
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+Many visitors know what is wrong with a file but not which tool fixes it. No mainstream video site reads the file first (navigation research). The facts that point at a tool are already read by the inspector every tool page uses.
+
+### Decision
+Home carries a drop strip (and search an inline "Choose a file") that, on a file, loads the reader (the existing engine worker's `inspect`) and `lib/file-suggestions.ts`, a pure rule set: HEVC (from an iPhone when the model tag says so) → Convert to H.264, in place of the container row, since a MOV to MP4 copy keeps HEVC; a container with its own page → Convert to MP4 or MP3; 25 MB or more → Make it smaller; a minute or more → Trim, and three minutes or more → Cut it into clips for Shorts; a location tag → Remove it; over 61 fps → Lower the frame rate; several sound tracks or subtitle tracks; GIFs, pictures and subtitle files by type. A file the browser cannot open is offered Repair (MP4, MOV, MKV) or its format page (AVI, WMV and the like). Each row is a fact and its actions, at most six actions, none without a reason. A link hands the file on with `lib/handoff` (all files for merge). The thresholds are offering thresholds, not claims about any platform.
+
+### Consequences
+The strip, the recent row and the tool page's context share one 4.2 kB gzipped chunk in the first load; the reader, rules and copy load on the first file. Nothing about the file leaves the device. New rules need a unit test with the fact they read.
+
+---
+
+## ADR-0126: Related tools carry a generated reason; results get a "Then" row of up to three next steps that hand the file on
+
+**Status:** Accepted; the related-tool reasons are no longer shown, by owner request (2026-11-19: "the tool name itself explains the purpose"): related tools are name-only pill buttons and the reason code is removed (ADR-0154). The "Then" row stands. · **Date:** 2026-11-19
+
+### Context
+Related tools were six cards with the target page's subtitle, so the block never said why they were there. A result offered one next step, from the engine's spec, which does not know which page it is on.
+
+### Decision
+The related selection stays as audited (explicit list, reverse pair, same engine, same category, inbound balancing). `registry.getRelatedWithReasons` adds one line per card from what the two pages take, make and do: "The other way round", "Same video, smaller", "FLV into MP4 too", "MOV files into MP4" (a format page beside a page that is not its pair), "Or record the screen", "The result, as a GIF", "The recording, shorter", "The same for audio files". Effects are written once per engine, with per-page lines where pages on one engine differ, in `content/site/discovery.ts`; generated pages build theirs from the slug and title. The card shows the reason in place of the subtitle. `registry.getThenSteps` lists, per output kind, pages that take the result (minus this page and pages repeating its job); the static page shell passes them through a small context, and the result card shows "Then": the spec's own next step first (its label replaced by the row's words when it only repeats the target's title), up to three in all, each handing the result on. A missed result shows only its own way forward.
+
+### Consequences
+Every page needs an effect line (a unit test fails otherwise; new engines from other builders were added). No stage or spec changed: the context is additive.
+
+---
+
+## ADR-0127: Hubs group standalone tools by task with families and pairs behind a disclosure; the footer lists hubs, not every tool
+
+**Status:** Accepted (SEO audit 2026-11-19: no P1; its P2 items are done) · **Date:** 2026-11-19
+
+### Context
+The edit hub was 38 cards in one grid; the convert hub listed 34 pair pages in the open; every page's footer listed every standalone tool (about 150 links), which made every page's HTML heavier and the footer a wall. README's IA said every standalone tool is linked from the footer.
+
+### Decision
+Hubs with more than eight standalone pages list them under task headings written in `content/site/discovery.ts` (edit: cut and join, frame and shape, fix the picture, look and timing, add to the picture, hide, key or combine; audio and GIF hubs likewise), with a row of in-page links to the headings under the description; a page no heading lists would go under "More", and a unit test fails if any does. On hubs that also have cards, a family or set of pairs shows its first six pages in the open and the rest behind the shared disclosure ("14 more video conversions"); the links stay in the HTML. Hubs that are only families (platforms) keep them open. The footer becomes the hub list (named by each hub's own title, the same as its H1) plus All tools and the legal links: 13 links. The 23 standalone pages left at the three-link minimum got an in-text link from a related page's Good to know prose that did not link to them before, wherever one existed. Every tool stays one click from the home directory and its hub, and in at least three related blocks (validator-enforced).
+
+### Consequences
+Internal links from every page to every standalone tool are gone; the SEO audit (2026-11-19) found crawl depth and discovery intact (home → tool is still one click, hub → tool one click) and the footer a small net gain. README IA and design system §8.10 were updated to match. The standalone pages at the 3-link minimum are watched in Search Console for 6 weeks after deploy.
+
+---
+
+## ADR-0113: Find faces on the blur page places a following oval on each face for the user to review
+
+**Status:** Accepted · **Date:** 2026-11-19 · Implements item 3 of ADR-0106
+
+### Context
+ADR-0106 allowed automatic face finding for blur with the user still able to check and add regions. Options were a separate page, blurring found faces directly at encode time, or filling the existing region model. A separate page would duplicate `blur-video` (same engine, same job); blurring at encode time would hide the detector's misses from the user.
+
+### Decision
+`blur-video` gets a Find faces button (an action, never automatic on drop). It samples 6 frames a second, finds and tracks faces (ADR-0115, ADR-0116) and adds one moving ellipse region per face track (`face: true`, named "Face n"), widened 1.7× and made 1.8× taller than the detector's box around a point 8% higher, so the box's corners sit at 0.87 of the ellipse; key frames are thinned only where every sample stays at or under 0.95. Each region starts one sample before the face was first found and ends one after, moving on at the face's speed. The untouched starting region is replaced; drawn regions are kept. Everything after is the existing region editing (move to add a key frame, delete, draw more). The region cap rises from 16 to 48 (the inverted shader packs flag and feather into one `vec4`, 96 uniform vectors). While the search runs, Blur is held with a reason; Cancel ends the worker. Page-only state lives in the options as `find` and is dropped by the engine's schema.
+
+### Consequences
+Measured on fixtures (ADR-0117): 100% of face-frames hidden on the pan fixture, 98.5% fully and 100% at least 90% on 37 faces of 15 to 24 px, 100% on a rotated phone file. False positives (an elbow) become regions the user deletes. The model is fetched (122 kB) only on the first press. The prose states the limits: faces turned away, strong tilt, small, covered or motion-blurred; always play it through.
+
+---
+
+## ADR-0114: Our own WebGL 2 inference kit runs small convolutional models from a half-float file
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+ADR-0106 asked for a lean runtime. onnxruntime-web is 2.4 MB br, MediaPipe tasks-vision posts usage logs to Google, opencv.js is 10 MB, TF.js is about 190 kB br and would still need a converted graph. YuNet uses only 3×3 stride-2 conv, 1×1 conv, depthwise 3×3, ReLU, 2×2 max pool, nearest 2× upsample plus add, and sigmoid.
+
+### Decision
+`src/tools/engines/vision/` is our kit: `model-file.ts` reads a `.vnn` file (magic, JSON header with the fused layer list, tensor table and provenance, then fp16 or fp32 data); `gl-net.ts` runs it with six fragment-shader kernels on RGBA32F render targets (RGBA16F where 32-bit targets are missing), four channels per texel, tiles of a tensor in a grid, weights packed into RGBA32F textures read with `texelFetch`, targets pooled and reused by liveness; `cpu.ts` is the plain TypeScript reference. Offline, dev-only Python (`scripts/vision/`) converts ONNX and fails on any op the kit does not implement. API for reuse (builder C may move the selfie segmenter onto it): `readModelFile(buffer)`, `createGlNet(gl, model, {precision})`, `net.run(inputSpec, outputNames)`, `visionContext()`, `floatTargets(gl)`.
+
+### Consequences
+Parity (tests/e2e/vision.spec.ts, all three browsers): every layer within 3.3e-3 of its range of onnxruntime at fp32 (the fp16 weights account for it; the CPU path shows the same), the GL kernels within 1.6e-6 (Chromium) and 4.1e-6 (WebKit) of the CPU path with the same weights; 6.7e-3 to 7.1e-3 at fp16. 640×384 in 2.4 ms (Chrome, Apple M5 Pro), 3.0 ms (WebKit), 50 to 90 ms on software GL (SwiftShader). A model with other ops (resize bilinear, hard-swish, transposed conv for the selfie segmenter) needs new kernels and their own parity tests first.
+
+---
+
+## ADR-0115: Faces are found with one 640 px pass plus full-resolution tiles above 960 px, at score 0.6
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+YuNet finds faces of about 10 to 300 px at its input. The brief suggested a downscaled pass for large faces and tiles for small ones, if measured to help.
+
+### Decision
+Measured with onnxruntime on the hand-checked NASA portraits at known sizes (`vision/faces.ts` keeps the numbers): one pass over the whole frame at 640 px on its long side finds faces from about 12 px (at that scale) to the whole frame (900 px faces in a 1080×1080 frame), so no smaller pass is run. Frames over 960 px add 640×640 tiles at full resolution overlapping by 160 px; a box cut by a tile's inner edge is dropped; one NMS merges all passes. At 1080p this takes faces 12 to 30 px tall from 0 to 34 of 41 found to 41 of 41. Frames are read at most 1920 px on their long side. Score threshold 0.6 (OpenCV's demo uses 0.9 for precision; hiding faces needs recall), NMS IoU 0.3, decoding and NMS ported from OpenCV's FaceDetectorYN and checked against it.
+
+### Consequences
+A 1080p frame costs 9 network runs (about 28 ms on an M5 Pro); 720p 7. About one stray box per five frames survives NMS; tracking drops most (ADR-0116). 4K sources are read at 1920, so faces under about 24 px in 4K can be missed.
+
+---
+
+## ADR-0116: Face tracks are matched by overlap or distance, end at cuts, bridge short turn-aways and are smoothed without lag
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+Detections on sampled frames jitter, drop out for a frame or two, and a face in the next shot can sit where a face in the last one was.
+
+### Decision
+`vision/track.ts`, offline over the whole file: greedy matching, best first, by IoU of at least 0.2 against a half-speed constant-velocity prediction, or centre distance under 0.75 of the face size; after 1 s unseen a track only takes a detection in the place it was last seen (IoU at least 0.3) until 3 s. Cuts between shots end every track: a sample's 32×18 grey difference must be at least 28 and twice the median of the three on each side (the clips rule of three times the global median found no cuts at 5 samples a second, where a pan alone differs by 23). A track needs two detections or one at 0.85. Centre and size are smoothed with a Gaussian-weighted local straight-line fit (no lag at the ends).
+
+### Consequences
+On the pan fixture: one region per true face, cuts found at exactly 3, 6 and 7 s; 3 samples a second hid 77% of face-frames, 4 hid 98%, 5 and 8 hid all, so 6 is shipped. A false cut only splits a region in two with no gap.
+
+---
+
+## ADR-0117: Face fixtures come from NASA crew portraits; parity references are made offline with onnxruntime and OpenCV
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+Recall and coverage need real faces with ground truth and a licence we can cite; synthetic face-like patterns would not show how the detector does on people.
+
+### Decision
+Six crew portraits from images.nasa.gov (NASA works, public domain; IDs in `scripts/vision/make_face_fixtures.py`) and scikit-image's `astronaut` (NASA) give 41 faces, boxes drafted with OpenCV's YuNet at three scales and checked by eye (one elbow removed). The generator moves, zooms, tilts and cuts between them with exact per-frame ground truth (`tests/fixtures/faces/*.json`), plus a cat and a coffee cup (CC0) as non-faces and a phone-style rotated file. Parity references (`tests/fixtures/vision/`) come from onnxruntime with no graph optimisation and from OpenCV's FaceDetectorYN, made by `scripts/vision/make_references.py` in a throwaway venv. None of the Python ships or runs in CI; the fixtures and the model file are committed.
+
+### Consequences
+The faces are adults facing the camera in good light; the measured recall says nothing about profile faces, children, dark scenes or motion blur, and the prose says so. Regenerating needs Python with onnx, onnxruntime, numpy, opencv-python-headless and scikit-image, and the NASA images.
+
+---
+
+## ADR-0108: Speech noise removal runs RNNoise 0.2 from a vendored WebAssembly build, on one page for audio and video
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+ADR-0106 allowed speech noise removal with a small model. Candidates (no Emscripten here, so prebuilt WASM only): `@jitsi/rnnoise-wasm` 0.2.1 `rnnoise.wasm` (112,141 B, RNNoise 0.1 model), the RNNoise 0.2 module inlined in the same package's `rnnoise-sync.js` (1,440,118 B, the newer model), `@sapphi-red/web-noise-suppressor` 0.4.1 `rnnoise.wasm`/`rnnoise_simd.wasm` (RNNoise 0.1, same output as Jitsi's) and its `gtcrn.wasm` (196,884 B, GTCRN, a 16 kHz model). Measured on a voice (local text-to-speech for the measurement only, plus our synthetic formant voice) under fan, hiss, traffic, keyboard and music beds at 5 and 10 dB SNR, against FFmpeg 9.0.1 `arnndn` (GregorR models cb, sh, bd) and `afftdn` (default, and with a noise profile sampled from the lead-in): RNNoise 0.2 beat RNNoise 0.1 on every case (mean PESQ gain +0.55 vs +0.41, pauses 29 vs 19 dB quieter); against the three `arnndn` models and `afftdn` (both settings) it scored higher on STOI in all 50 text-to-speech comparisons and on PESQ and segmental SNR in 46 of 50 (on the music bed `arnndn` sh and bd scored PESQ 1.59 and 1.54 against 1.50, while taking 1.0 to 1.7 dB off the voice), and it kept the voice within 0.5 dB and the band above 8 kHz within 0.1 to 3.5 dB. GTCRN scored higher PESQ on bursty noise and music but removes everything above 8 kHz (−14 dB in that band on every case) and took 4 to 8 dB off the synthetic voice itself.
+
+### Decision
+Ship RNNoise 0.2 alone: the module extracted unchanged from `@jitsi/rnnoise-wasm` 0.2.1 (Apache-2.0 build, RNNoise BSD-3-Clause), served as `/models/rnnoise/rnnoise-0.2.wasm` (SHA-256 recorded, checked on load; `scripts/models/extract-rnnoise.mjs` reproduces it). Our wrapper (`sound/dsp/rnnoise.ts`) gives each channel its own state, resamples other rates to 48 kHz and back with the band-limited resampler at 16 zero crossings (output within −47 dB of the 64-zero kernel, same scores, about 2.4 times faster), removes RNNoise's measured 960-sample delay exactly, and mixes the original back in for strength. "Keep the original's loudness" (default on) cleans once to measure, then renders with the gain that restores the source's integrated loudness (at most +12 dB, peaks under −1 dBTP). One page, `remove-background-noise`, takes audio and video (ADR-0043: same job and same output for both); a video's picture is copied packet for packet. GTCRN is not shipped.
+
+### Consequences
+The page states its limits in prose: speech only, music pumps (about 3 dB of level wobble on a music bed), bursts drop only about 14 dB, no echo removal. 1.4 MB is downloaded once, only after a file is chosen. Speed in Chromium on a loaded machine: 10 minutes at 48 kHz mono in 38 s with both passes; 44.1 kHz stereo is the slow case (about 5 times real time before the 16-zero change). A GTCRN "strong" mode would need band splitting to keep the top octave and is left for later.
+
+---
+
+## ADR-0109: Silero VAD runs on our own forward pass with the official 6.2.3 weights stored as float16
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+ADR-0106 allowed pauses found by speech with Silero VAD; `onnxruntime-web` is ruled out (2.4 MB br). The research named the package's `silero_vad_16k.safetensors` (1,239,748 B, MIT). Reading the graph first (the package's `tinygrad_model.py` and the TorchScript code): 576 samples (64 of context) reflect-padded by 64, a learned STFT of 258 filters, 256 wide, stride 128, magnitude of 129 bins, four 3-wide convolutions (strides 1, 2, 2, 1) with ReLU, an LSTM cell of 128, ReLU, a 1×1 convolution and a sigmoid. Our forward pass matched PyTorch on those safetensors to 5×10⁻⁶, but those weights are not the ones in the package's ONNX and TorchScript models (98.8 to 99.8% frame agreement on our fixtures); with the TorchScript weights it matched the official ONNX model to 5×10⁻⁶ (100% agreement).
+
+### Decision
+Ship the TorchScript model's 16 kHz weights from PyPI silero-vad 6.2.3, written as float16 with the safetensors tensor names (`/models/silero-vad/silero-vad-16k-6.2.3-f16.safetensors`, 620,466 B, byte-reproducible by `scripts/models/export-silero-vad.py`, hash checked on load). Float16 keeps decisions identical to the official ONNX model on at least 99.89% of 32 ms frames (max |Δp| 0.014). Input reaches 16 kHz through a short Kaiser low-pass evaluated only at the output points (`VadFeed`), not the full sinc resampler, which cost as much as the model. Silero's hysteresis is kept (speech from 0.5, ends under 0.35). The parity test runs in Vitest against reference probabilities produced offline with onnxruntime (`tests/fixtures/speech/vad-16k.onnx.json`).
+
+### Consequences
+About 0.68 million multiply-adds per 32 ms, 1.4% of real time in Node; 10 minutes read with levels in about 15 s in Chromium. Half the download of the package's file. Updating Silero means re-running the export script and the reference.
+
+---
+
+## ADR-0110: Pauses are found by speech by default, with loudness as the fallback and the alternative
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+Remove silence and the Shorts clip finder found pauses by level only. Measured on a voice with known pauses under five noise beds at 5 and 10 dB SNR (88 pauses of 0.5 s or more per corpus): by level, 52% (text-to-speech voice) and 42% (synthetic formant voice) of pauses found and 1.6 s of speech cut; by speech, 97.7% and 90.9% found, 0.11 s and 0.06 s of speech cut, median edge error 33 ms and 72 ms. Detected speech starts a median 10 to 27 ms late (p90 80 ms) and ends 35 to 126 ms late, so the default 150 ms of room around words covers the late starts.
+
+### Decision
+`remove-silence` gains `detect: "speech" | "level"`, default speech, shown as "Find pauses by: Speech / Loudness"; the threshold line and field appear only by loudness. A file in which under 10% of frames are speech (music, a tone) is cut by loudness and says so ("too little speech, found by loudness"), as is any run where the model could not load. The result line names the method. The clip finder uses speech pauses (0.35 s minimum) when the file has enough speech and level pauses otherwise. Both load the model only after a file is chosen.
+
+### Consequences
+Existing pages keep their URLs; their prose is unchanged where still true (a tone fixture falls back to loudness, so earlier tests hold). The page states that the model holds on to speech a little after it ends, so very short tails are kept.
+
+---
+
+## ADR-0111: Speech models are served from /models with a fixed path, size and hash, and cached for offline use
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+Model files must come from our origin, load only on the page that uses them, and never let a fetch carry user data (`pnpm lint:privacy`). The RNNoise module's exports are minified names that only mean something for one exact build.
+
+### Decision
+One loader, `src/tools/workers/speech-models.ts`, fetches the two files by fixed path, reports real download progress, and rejects a file whose size or SHA-256 differs (`crypto.subtle` where the context is secure). `next.config.ts` serves `/models/rnnoise/` and `/models/silero-vad/` immutable with same-origin CORP; the service worker caches them cache-first like `/wasm/`, so a speech tool used once works offline. Licences and provenance sit next to the files (README.txt, licence texts) and on `/licences`.
+
+### Consequences
+A new model version needs a new file name and hash. If the VAD model cannot load (offline on a first visit), pause finding falls back to loudness instead of failing.
+
+---
+
+## ADR-0112: Speech fixtures are a seeded formant voice over seeded noise beds; text-to-speech checks stay local
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+Noise removal and speech detection must be measured on speech with known pauses, without committing recordings or text-to-speech output whose licence we cannot state.
+
+### Decision
+`scripts/make-speech-fixtures.mjs` writes a deterministic formant voice (band-limited glottal source, moving formants, fricative and plosive noise, phrases with known pauses) and fan, hiss, traffic, keyboard and music beds; `scripts/make-fixtures.sh` mixes the committed fixtures (`tests/fixtures/speech/`). Quality comparisons against FFmpeg also used macOS text-to-speech locally (not committed) as a proxy for recorded speech, because the neural models judge the synthetic voice less reliably (GTCRN and `arnndn` damaged it far more than the text-to-speech voice); both sets of numbers are reported.
+
+### Consequences
+Tests are reproducible on any machine with Node and ffmpeg. Numbers from the synthetic voice are conservative for speech detection; quality scores (PESQ, STOI) were taken from the text-to-speech set and need a recorded-speech check before claims are widened.
+
+---
+
+## ADR-0118: The person finder is MediaPipe Selfie Segmentation on TensorFlow.js, in a worker of its own, loaded after a video is chosen
+
+**Status:** Accepted · **Date:** 2026-11-19 · Under ADR-0106
+
+### Context
+Background blur and replace without a green screen need a person mask per frame. The research (2026-11-19) ruled out `@mediapipe/tasks-vision` (2.8 MB br, and a usage logger that posts to Google every 60 s with no switch), onnxruntime-web on a page (2.4 MB br), RVM (GPL-3.0, 2.7 MB) and MODNet (25 MB). Our own WebGL 2 inference of the `.tflite` is the long-term answer but a week or two of work; builder B's kit (ADR-0114) has no SE blocks, hard-swish or transposed convolution yet.
+
+### Decision
+MediaPipe Selfie Segmentation as published for TensorFlow.js (Kaggle Models `mediapipe/selfie-segmentation`, framework tfJs, versions general/1 and landscape/1, licence Apache 2.0, formerly tfhub.dev), served unchanged from `public/models/selfie-segmenter/<kind>/1/` with SHA-256 and sizes in a README and the Apache text next to them: general 332,432 B (256×256 input) for square and vertical video, landscape 336,175 B (144×256) for video at least 4:3 wide. Preprocessing as MediaPipe's own graph: the frame stretched to the input, RGB 0 to 1, output channel 1.
+Runtime: `@tensorflow/tfjs-core`, `tfjs-backend-webgl` and `tfjs-converter` 4.22.0 (Apache-2.0, last release 2024-10-21), with only the 25 WebGL kernels the two graphs and the pre- and post-processing use registered (unit test checks every op in both graphs against the list). Measured in the production build: one chunk of 611,379 B, 154,669 B gzip, 127,456 B brotli (the default all-kernel bundle is 790 KB, 154 KB br). Model files gzip to 205,909 B (landscape) and 207,084 B (general).
+Privacy and CSP, checked: the three bundles contain no `eval(` or `new Function`; their only remote URLs are in comments; TF.js never fetches here because the model is read by our own same-origin loader (`src/tools/workers/segmenter-assets.ts`, path-checked, `privacy-allow`) and handed to `loadGraphModel` through `tf.io.fromMemory`. The e2e asserts that the only model requests are the two files under `/models/selfie-segmenter/`, made after the file is chosen, and that nothing is posted. `connect-src 'self'` would block any other host anyway.
+The model runs in `src/tools/workers/segment.worker.ts` on an OffscreenCanvas WebGL context. The page's preview talks to one; the engine worker starts one of its own (a nested worker) and keeps it between runs, so the second or more of shader compilation never blocks the engine worker from hearing Cancel (measured: Cancel while loading answered in 38 to 48 ms; before, it waited out the compile). The engine talks to it through a three-method `Segmenter` interface so a later round can swap in our own WebGL kit without touching the matte or the pages.
+
+### Consequences
+About 360 kB compressed download on first use of these two pages, cached afterwards (immutable headers in `next.config.ts`, cache-first in the service worker, so the tool works offline once used). TF.js is frozen upstream; if it breaks in a browser the fallback is our own inference, which ADR-0106 prefers anyway. Headless Chromium runs it on SwiftShader (about 65 ms a frame); on a GPU it is about 11 ms (wide) and 13 ms (square) a frame.
+
+---
+
+## ADR-0119: Two background pages on one engine, by what people search; the green screen page stays separate and no transparency is promised
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+"Blur video background" and "remove/change video background" are different jobs searched with different words; "green screen" is a third, with a better answer when a screen exists. The output cannot be transparent: no format was found that Chrome and Safari both write and play with alpha (ADR-0065).
+
+### Decision
+One engine, `portrait-matte`, and two registry pages: `blur-video-background` (preset blur 40) and `remove-background-from-video` (preset colour, white). Both pages have the same panel: Background Blur, Colour, Image or Video (the green screen's background handling and fit, reused), blur strength, and under More options Edge softness, Edge in or out, Output (Video or Mask only) and Sound. The mask output is a black-and-white H.264 video of the same size and length, white where the person is, without sound: the honest answer to "transparent background", usable as a luma matte in an editor. The vocabulary table sends blur to the first page, remove/change/replace/virtual background to the second, and a real green or blue screen to `remove-green-screen-from-video`, whose FAQ now points to the new page instead of saying the job is not offered.
+
+### Consequences
+Two pages with unique prose share one engine and one preview; the run waits until the preview has drawn once, so what is pressed is what was seen. The default colour on the remove page is white; green for keying later is one tap away and named in the prose.
+
+---
+
+## ADR-0120: The mask is steadied with the previous and the next frame, fitted to the picture with a guided filter, and the person is kept out of the blur
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+The model sees a 256-wide copy, so its outline is blocky at full size and wavers from frame to frame at hair and shoulders. A plain blur of the whole frame smears the person into a halo; a replaced background shows a rim of the old room in soft edges.
+
+### Decision
+1. Steadying (`smooth.ts`, MediaPipe's SegmentationSmoothingCalculator polynomial, ratio 0.9): sure pixels keep their new value, unsure ones move towards their neighbours in time. Files are known ahead, so the engine decodes the track a second time a few frames ahead (`masks.ts`, three frames in flight to the finder while the encoder works) and blends with the previous steadied mask and the next raw one; the preview, which cannot see ahead, looks back only.
+2. Fast guided filter (He et al.) with the frame's luma as guide, at a working size of 512 px on the long edge, radius 4, ε 0.002, half-float targets; read back at full size against the full-size luma. Without float render targets it falls back to the enlarged mask.
+3. Edge ramp: a smoothstep whose width is Edge softness and whose centre Edge in or out moves (−50 tighter to +50 looser). At 0 the centre is 0.56, not ½: the model's mask runs slightly wide of the person, and on the replace test (below) 0.56 gave the best edge without eating into clean edges (0.62 helped the false-positive scenes more but cost 1.5 dB on the clean walk-in).
+4. The old background behind the person is estimated by a normalised blur that leaves the person out; in blur mode it is the result's background (no halo). In replace mode, where the mask is mostly person its old-background share is swapped for the new background (no pale rim); where it is mostly background the blend is plain straight alpha, because the swap carried the old background's own detail (stars, highlights) through at full strength and showed as bright specks.
+Replace with a picture, against the true composite (the person over the backdrop by the true mask), 16:9 fixture, PSNR overall / on the edge band: 28.05 / 19.66 dB with swap everywhere and centre ½ (design review's screenshots); 28.37 / 19.84 with straight alpha at low mask values; 29.50 / 20.34 with the centre at 0.56 as shipped. The remaining bright specks are the model's own false positives (a cup rim, a bright galaxy) and, at the right shoulder, a sliver of the original wall inside the hand cut itself.
+Measured on the hand-cut person fixtures (ADR-0122), mask output after the H.264 encode, IoU at ½ / mean error on a 6 px band around the true edge / mean change between frames in that band beyond the true change:
+- 16:9, four backgrounds and motions: 93.4% / 0.114 / 0.064 as shipped; without the guided filter 92.7% / 0.134 / 0.091; without steadying 93.3% / 0.112 / 0.063; steadying without the next frame 93.1% / 0.121 / 0.070. The lowest frames (80.6%) are the model taking the rim of a coffee cup round the head for the person.
+- 9:16: 97.0% / 0.131 / 0.088 as shipped; without the guided filter 97.0% / 0.131 / 0.095; without steadying 97.0% / 0.131 / 0.092.
+- Low light with per-frame noise and exposure flicker: 96.9% / 0.101 / 0.054 as shipped; without the guided filter 96.4% / 0.116 / 0.064; without steadying 96.9% / 0.100 / 0.059. On the still half, edge flicker 0.0129 shipped against 0.0205 without steadying (−37%).
+- A rotated phone file (sideways frames, rotation flag) gives the same 97.0% as the upright one. A video with no person: 0.00% of pixels marked.
+- Blur result at 0.5 s: deep inside the person 3.9 levels mean difference from the source (the encode); well outside it, 9.9% of the source's fine detail left.
+
+### Consequences
+The guided filter and the lookahead are small, consistent gains on these fixtures, largest at moving edges and in noise; steadying alone changes little on a clean synthetic composite, because the model barely wavers on identical pixels. The second decode costs decode time and a second decoder; where it fails the engine measures the composite's own frames and looks back only. Real footage (motion blur, hair against busy rooms) was not measured and the prose states the model's limits instead of a figure.
+
+---
+
+## ADR-0121: The person finder loads only after a video is chosen and only on its two pages; the run waits for the preview
+
+**Status:** Accepted · **Date:** 2026-11-19 · Under ADR-0030, ADR-0106, ADR-0107
+
+### Context
+ADR-0106 allows a model only on its own page, after the feature is used; ADR-0107 caps a tool page's first load at 350 KiB of script. The runtime and model together are about 360 kB compressed.
+
+### Decision
+Nothing of the model or TF.js is in a page's first load: the options spec loads on the first file (ADR-0016) and starts the preview worker, which fetches the model for the video's shape. Measured on the production build: the blur page's first load is 193,049 B gzip of script, the same as the green screen page, with no TF.js chunk; the e2e asserts no `/models/` request before a file. Until the preview has drawn once, the ready state says "Loading the person finder (336 kB)" (the model for the video's shape, from `MODELS`) in the status line and the button waits; if WebGL 2 or the model fails, the reason replaces it. Model files live under a versioned path (`/1/`), served immutable and cached by the service worker after first use.
+
+### Consequences
+A first visit on a slow connection waits for about 360 kB before the first preview. The engine's own finder loads again in its worker on the first run (from the HTTP cache), about 0.5 s on a GPU, several seconds on software GL.
+
+---
+
+## ADR-0122: Person fixtures are a hand-cut public-domain NASA portrait over CC0 and public-domain backgrounds, with the mask frame for frame
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+Mask quality needs a true answer per frame and a person whose licence can be cited; a synthetic silhouette would not show how a person model behaves.
+
+### Decision
+`tests/fixtures/person/astronaut-bust.png` is scikit-image's `astronaut` (Eileen Collins, NASA, public domain), cut to the head and shoulders with OpenCV GrabCut from hand-placed seeds in a throwaway venv and checked by eye at 3× zoom. Backgrounds are scikit-image samples with stated licences (coffee, chelsea, grass: CC0; rocket: SpaceX, public domain; hubble: NASA, public domain) and an ffmpeg gradient. `scripts/make-person-fixtures.sh` (ffmpeg only, called from `make-fixtures.sh`) lays the cut-out over them with known motion (still, sway, bob, walking in from beyond the edge, shoulders beyond both edges in 9:16, and a low-light clip with fresh noise and exposure flicker every frame) and writes the mask as lossless FFV1. The e2e compares the page's mask output with it.
+
+### Consequences
+One person, a still photo moved rigidly: no motion blur, no hair moving against the room, no hands. The numbers are a floor for regressions, not a claim about real footage; a recorded clip with a hand-drawn mask would be the next step.
+
+## ADR-0128: Usability and every-device support come first; first-party cookies and browser storage are allowed
+
+**Status:** Accepted · **Date:** 2026-11-19 · Amends the "no cookies" rule (README Architecture §7, Security posture, Privacy checks; CLAUDE.md non-negotiable 3)
+
+### Context
+The handbook made privacy a non-negotiable, including no cookies at all. The owner restated the priorities on 2026-11-19: usability and working well on every kind of device are the main priority; privacy remains a focus but is not the leading one.
+
+### Decision
+Order of priorities: (1) usability, (2) working on all devices and browsers, (3) privacy. Concretely:
+- First-party cookies, `localStorage`, IndexedDB and OPFS may be used wherever they make the product more usable: remembered settings, saved presets, recents, recovering interrupted work, keeping results across a reload.
+- Files are still processed on the device. That is the product's speed and cost model, not only a privacy promise; `pnpm lint:privacy` stays (no user file data in a network request from engines or workers).
+- No third-party scripts remains the default; adding one (analytics included) is its own decision with an ADR.
+- What is stored and how to clear it is listed on `/privacy`; every storage access is wrapped so the site works when storage is blocked.
+
+### Consequences
+README's "no cookies" lines and the CI check for `Set-Cookie` are retired; the privacy lint is unchanged. Device coverage (Safari, Firefox, phones) is weighted above privacy refinements when they conflict, e.g. a fallback path that works on more browsers is preferred over a stricter one that does not.
+
+---
+
+## ADR-0149: Privacy, evidence and machinery stay out of the interface: stated once in the policy, the about page and the home promises
+
+**Status:** Accepted · **Date:** 2026-11-19 · Amends README content guidelines (Voice, patterns table), tool page spec §2 and §4, design system §8.2, privacy copy rules §3, feature catalog L7
+
+### Context
+The interface repeated "on this device", "Runs in your browser" and "Nothing is uploaded" in drop zones, every status line, results, recorder notes and every tool subtitle. The owner (2026-11-19): "we already wrote once in the policy about it, u dont need to constantly remind them or reassure them everywhere". The same day the owner widened it: check dates under platform limits ("why would a user need it"), test descriptions and statistics, fixture sources, engine and library names, and the "The same operation with ffmpeg" disclosure are maintenance records, not help: "keeping all those in the backend records is fine, no need to stamp all the proofs and all in the UI".
+
+### Decision
+- **Privacy** is stated in `/privacy`, `/about` and once in the home page's promises block. Nowhere else in the interface: no privacy line in drop zones, status and summary lines, results, errors, hints, notices, recorder lines, the footer or tool subtitles. `metaTitle` and `metaDescription` may still say it (search results only), and FAQ answers to "Is my file uploaded?" stay because they answer real queries.
+- **Evidence** (measurements, test fixtures, check dates) lives in DECISIONS.md, tests and data files, never on the page; pages state what the tool does and its limits. When proof is removed the claim is not widened: the limit is stated instead ("it can miss faces turned away"). Platform check dates stay in `src/content/platforms` (`CHECKED`, `FRAMES_CHECKED`, sources' `checked`) so we know when to re-verify; the sources are still linked.
+- **Machinery** is not named in the interface or page prose: no "fallback engine", WebGL, WebCodecs, ffmpeg.wasm, "ffmpeg engine", workers, canvases, OPFS, TensorFlow, MediaPipe, RNNoise, Silero or YuNet. Pages say "a small speech model", "a one-time download of about 33 MB", "the browser's own video encoder"; errors say the cause and the action in at most two sentences, and the raw cause goes to the console (`EngineError.detail`). FFmpeg may be named as a tool the reader runs themselves. Library credit is on `/licences`. Loading lines such as "Loading the noise model (1.4 MB)", the LUFS/dBTP wording and the file card's codec details stay (owner).
+- **The ffmpeg command** is still produced by every engine (`EngineResult.ffmpegCommand`) and kept on the result as a `data-ffmpeg-command` attribute for tests and support; it is not shown.
+- `pnpm lint:copy` enforces it: privacy phrases in interface strings (components, app routes, UI strings in lib, engine and worker messages, site copy outside the kept entries, tool subtitles, titles, labels and steps), check-date stamps and machinery names in the interface and page prose, and test talk in page prose. The kept places are allowed by name in the script.
+
+### Consequences
+Tool subtitles say only what the user gets, in one plain sentence of about 60 characters (80 at most, enforced by the schema; owner: "descriptions also should be short"), with no jargon such as codec names, "streams" or "re-encoding" unless the page is about that codec. Status lines are facts joined by " · ". The home H1 and lead no longer repeat the promises block. The README's privacy-line pattern and the "Checked 2026-09" platform example are retired. A new string that reassures, stamps a date or names an engine fails CI with the field or file and line.
+
+## ADR-0153: Subtle ambient motion on load, scroll and navigation is allowed, inside strict budgets
+
+**Status:** Accepted · **Date:** 2026-11-19 · Amends README design principles §1.4 and design system §6 ("never animate on scroll into view", "never animate on initial page load except the stage fade")
+
+### Context
+The owner found the pages too static (2026-11-19) and asked for the subtle motion good product sites have, light enough for any device, combined so the page feels alive. The handbook forbade entrance and scroll motion outright.
+
+### Decision
+Allowed now, all CSS-first and budgeted:
+- Cross-page transitions with the View Transitions API (`@view-transition { navigation: auto }`): the header stays put, content crossfades, optional shared elements (a tool's name morphing into the H1). Browsers without it navigate as before.
+- One entrance per page load: header block and stage rise a few pixels and fade in, staggered 30–60 ms, `--duration-base` or shorter, `--ease-out`. It must not delay LCP: measure, and keep the LCP element's opacity animation out of the critical path if it shifts LCP.
+- Reveal once on scroll for sections below the fold (opacity plus up to 8 px), via one shared IntersectionObserver; never scroll-linked or continuous, never re-animating on scroll back, no parallax.
+- Micro-interactions: hover lift on cards and pills (one property, gated to fine pointers), disclosure open with height interpolation where supported, palette and sheet entry from their origin, stage state changes (ready → processing → done) as crossfades, result entrance.
+Unchanged: tokens only (`--duration-*`, `--ease-*`), transform/opacity/clip-path only, exits shorter than enters, nothing on keyboard-initiated or 100+/day actions, no `scale(0)`, reduced motion collapses to opacity-only or none, CLS 0, Lighthouse budgets (ADR-0107) and LCP ≤ 1.8 s unchanged, no new motion library on first load, motion JS ≤ about 2 kB.
+
+### Consequences
+README §1.4 and design system §6 are restated; `.claude/rules/design-tokens.md` follows. Every addition goes through the `animate` skill to build and `review-animations` to review. Built in round 5 after the structural builders land, so it animates the final UI.
+
+---
+
+## ADR-0154: Generated pages (format pairs, sizes, platform presets) are specific tools reached from search, their hub and their siblings: off home, standalone related rows and unnamed search results; one closed disclosure per hub; home rows scroll
+
+**Status:** Accepted · **Date:** 2026-11-19 · Builds on ADR-0127 (its footer decision stands)
+
+### Context
+The owner (2026-11-19): "these type of single single conversion pages and similar things for other tools are only for seo purpose so why would we need them to show up in the UI navigation, anyways u r in the convertor page, the user would just change the to and from formats in the universal convertor". Generated pages (registry families such as compress sizes and platform presets, and locked-target format pairs for video, audio, codecs and subtitles: 63 of 155 pages) were listed on home, in hub sections, on the converter pages ("Pages for common conversions"), in standalone pages' related rows, in search for single-format queries and in file-first suggestions. The same day the owner asked for related tools as name-only pills and for home sections as Netflix-style rows.
+
+### Decision
+- **Rule.** Generated pages are specific tools for a specific source or target, reached from search, their hub and their siblings, not from browsing surfaces: from search, their hub's closed disclosure and their siblings. `registry.isGenerated` (a `family`, or `presetOptions.lockTarget`) is the one test.
+- **Tool pages.** The converters' list of pair pages is gone. A standalone page's related row shows standalone tools only; a generated page may show its siblings (mov-to-mp4 shows mp4-to-mov and HEVC to H.264). Related tools are six name-only pill buttons (`buttonVariants` `chip` + `pill`, at least 44px, wrapping, never truncated) and a ghost "All tools" pill; the generated reasons of ADR-0126 are not shown and their code is removed.
+- **Home.** Standalone tools only, one row per category: every standalone tool on one horizontally scrolling line of illustrated cards (80% of the row on phones, 288px from 640px), hand-picked lead tools first (`homeLead`), native scroll snap, no loop, no auto-play, no clones, a quiet "See all" to the hub, no description under the heading. Mouse users get round previous and next buttons that overlay the row (no layout shift), scroll one view, hide at their end; touch swipes; the keyboard tabs through the cards. A category made only of presets (platforms) has no row; its hub card above links it.
+- **Hubs.** Standalone tools as before (task headings on large hubs). All of a hub's generated pages sit in one closed `MoreOptions` disclosure at the very bottom, "All N format pages" (or "preset pages", or both), as plain links inside native `<details>`, so they are in the HTML. A hub made only of presets (platforms) keeps them open: they are its content.
+- **Search.** A generated page is a result only when the query names it: both formats ("mov to mp4", "mp4 mov"), its size ("under 8 mb"), one of its own registry keywords, or a platform intent row marked `names` ("discord", "reels"). Then it may come first. Otherwise the standalone tool leads: one format named goes to the general converter ("convert mkv", "mkv won't play on tv"), a playback problem on Windows to the codec changer. H.264 and WebVTT spellings are normalised so "hevc to h.264" and "srt to webvtt" name their pages.
+- **File-first suggestions** link the standalone converters, whose defaults are the promised target (MP4, MP3, H.264).
+- **Validator.** Generated pages can no longer collect inbound links from standalone related rows, so for them `validate-registry` counts distinct pages linking to them (siblings' related rows and other tools' prose) plus their hub's disclosure, minimum 3; standalone pages keep the related-row minimum of 3. Two codec pairs needed one sibling link each (mov-to-mp4 → HEVC to H.264, mp4-to-mov → H.264 to HEVC).
+
+### Consequences
+Browsing surfaces show about half as many pages, each a tool people would choose. Generated pages keep a crawl path one click below their hub and among their siblings, and still land search visitors on the exact page. The search table (114 queries) and the held-out set were updated where a pair used to answer a one-format query; both pass (top-1 99.1 %, top-3 100 %). README §1 Anatomy, §8.7, §8.10 and the SEO IA line describe the rule; the main session runs the internal-linking audit on it.
+
+---
+
+## ADR-0139: Backend choice stays in each engine's `supports()`; the unused `src/lib/capabilities/` module is removed
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+`src/lib/capabilities/` (a `detectCapabilities()` flag set and a `canEncode()` probe) was written with the initial scaffold and never imported. The handbook still said it "picks the backend per tool per session and tells the user which path is in use". In practice the engine worker asks each engine's `supports(backend, input, options)` in backend order (`tools/workers/engine.worker.ts`), and engines probe the real configuration they are about to use (`VideoEncoder.isConfigSupported` with the input's size and codec, ADR-0054); telling the user which path runs is ruled out by ADR-0149. Alternatives: wire the module in as a cache in front of `supports()` (it would answer a coarser question than the engines already answer, and a second source of truth for the same fact), or keep it for a future capability matrix.
+
+### Decision
+Delete `src/lib/capabilities/`. Backend selection is `Engine.supports()` and nothing else. The README architecture and browser-support sections say so. A browser capability matrix or a shared probe module (round 5, builder H) lives in `src/lib/` under a new name, imported by something real in the same change, and unit-tested.
+
+### Consequences
+No dead module that reads as the place backends are chosen. Pointers to the old path in agent and rule files (`.claude/agents/media-engineer.md`, `.claude/rules/engines-privacy.md`, `.claude/hooks/route-context.sh`, `CLAUDE.md` layout line) are stale until the main session updates them; a subagent may not edit configuration.
+
+---
+
+## ADR-0155: Home: the site search is the hero action; rows bleed and fade, cards lift on hover, a returning visitor gets Continue and Because, all from this browser
+
+**Status:** Accepted; the section reorder by use was withdrawn after design review (visual order must equal focus order) · **Date:** 2026-11-19 · Extends ADR-0124 and ADR-0154; amends the one-property hover rule (design principles §1.4) for home-row cards, by owner request
+
+### Context
+Owner requests of 2026-11-19 on the home page: "why does the main page have compress a video button in the main header as if thats the main tool"; the rows cut cards with a hard edge ("some sort of fade should be there right, please make sure whatever is done, everything looks polished"); "a card hovering when floating over it and all. All netflix principles basically whichever can be implemented in ours properly".
+
+### Decision
+- **Hero.** The "Compress a video" and "All tools" buttons are gone. The site search is the primary action: a 56px pill field (max 560px) with the search icon and "Search 150+ tools, like “make a video smaller”" (the count is the registry's, rounded down to tens), opening the palette or the phone sheet with what was typed carried over (`lib/open-search.ts`, a window event the header trigger listens to, so the hero ships no search code). "Or choose a file" beside it, and a file dropped anywhere on the hero, open the same search with the file's suggestions (ADR-0125), which replaces the separate "Not sure which tool?" strip: one file entry point. The H1 stays the LCP element. The "Browse by task" grid is gone from home: the footer lists every hub on every page.
+- **Rows.** Full bleed with the first card on the content column (`px-gutter`, `scroll-px-gutter` tokens), 24px gaps, 256px cards from 640px (three quarters of the row on phones) so a part of the next card always shows; a mask fade (`row-fade`) on the side where more cards wait, driven by data attributes set from a passive scroll listener and one animation frame; arrows in the fades, centred on the card pictures, fading out at their ends; Left, Right, Home and End move between cards.
+- **Hover lift.** From a fine pointer, after a 150ms intent delay, the card rises 4px and scales to 1.02 (transform only) while a `shadow-lift` pseudo-element fades in (opacity only); it drops back at once; keyboard focus gets the same state; reduced motion keeps only the border change. The scroller's vertical padding keeps the lift and shadow unclipped.
+- **Personal rows.** For a returning visitor: "Continue" (recent tools, newest first) and "Because you used <last tool>" (that tool's related standalone tools, minus Continue) are the first rows, made of copies of the server-rendered cards. One self-contained function does it, inlined as a script after the rows (it runs while the HTML is parsed, before paint and before React) and called again before paint on a client-side visit. With recents stored, a first inline script keeps the rows invisible (space kept) until the second has run, so no row drawn early moves. The related map is card positions on `#tools` (`data-related`, 1.7 kB, 0.7 kB compressed). Storage blocked or empty: no personal rows. The privacy page says recent tools are kept in this browser for Continue and search. The category rows keep the editorial order: a reorder by use was built and withdrawn after design review, because the visual order would differ from the focus order (WCAG 2.4.3, 1.3.2); no per-section counts are stored, and an older `tool-uses` key is removed on the next write.
+- **Keyboard and motion.** Each row is one tab stop (roving tabindex on the last-focused card); Left, Right, Home and End move within it without animation, and the focus lift does not animate. While the hero's field is on screen the header's search pill is hidden (visibility only) and fades back after.
+- **Not adopted:** autoplaying previews, popularity rows, a billboard hero, looping.
+
+### Consequences
+Home's first paint is unchanged for a first visit (CLS 0 measured with and without personal rows at 360 to 1440). Copies in the personal rows are plain anchors routed in the app on a plain click.
+
+---
+
+## ADR-0150: Failed searches are counted by the site's first server code, which receives search text only
+
+**Status:** Accepted · **Date:** 2026-11-19 · Builds on ADR-0123 and ADR-0128; replaces the privacy page's "no analytics today" line
+
+### Context
+The intent table (`content/site/search-intents.ts`, ADR-0123) was written from guesses and a held-out set. The owner approved on 2026-11-19 counting searches that fail, so the table can grow from what people really type. The site had no server code: every page is static and every tool runs on the device. Alternatives: a third-party analytics script (needs its own ADR, ships a script, sees far more than queries), a self-hosted analytics product (heavier, collects page views and devices we do not need), or nothing (the table keeps missing real wording).
+
+### Decision
+- **One route handler, `POST /api/search-miss`** (`app/api/search-miss/route.ts`), the only server code. It receives search text only. The body is exactly `{ q, results, opened: false, zero }`: `q` is the query as search reads it (`normalize` from `lib/tool-search.ts`: lowercase, accents, apostrophes and punctuation removed), at most 80 characters, cut at a word; `results` is how many tools were listed; `zero` is `results === 0`. A zod strict schema (`lib/search-miss/schema.ts`) refuses anything else with 400, a body over 512 bytes with 413 (read no further), and a request the browser marks `Sec-Fetch-Site: cross-site` with 403. Counted: 204, no body, `Cache-Control: no-store`.
+- **Never received or kept:** files or anything read from them (choosing a file is not a search and sends nothing), file names, IP addresses, user agents, user or session ids, times of day, the page searched from. The handler reads no header except the body's length and the same-site marker, logs nothing, and sets no cookie. Queries that look like an e-mail address, a web or file path, or a run of five digits (a phone number, a camera file name) are dropped in the browser and refused by the server.
+- **What is kept:** per UTC day, query → count for "listed nothing" and query → count for "left without opening a tool" (ADR-0151).
+- `robots.txt` already disallows `/api/`; the proxy's matcher skips `/api`; the service worker only handles GET; CSP `connect-src 'self'` allows the same-origin beacon. `pnpm lint:privacy` is unchanged: the beacon is in `lib/`, not in engines or workers.
+- `/privacy` says it in one line in "No cookies, no accounts": "Words typed into search that don't lead to a tool are counted by this site, per day and without anything that identifies you, so search can learn them. There is no other analytics." Nothing in the interface mentions it (ADR-0149).
+
+### Consequences
+The site now needs a host that runs a route handler (Cloudflare with OpenNext, Vercel, or `next start`); a purely static export would serve every page but the counts would not be stored (the beacon fails silently). The hosting provider still receives each request's address and user agent like any request, as `/privacy` already says; the handler ignores them. The endpoint is public, so counts can be inflated by anyone who posts valid bodies; the per-day cap on new queries bounds storage (ADR-0151), and edge rate limiting can be added when hosting is chosen. A query typed into search is no longer "never part of any request": the comments in `tool-search.ts`, the palette and the index route say so.
+
+---
+
+## ADR-0151: Search counts are per-day query counts behind a small store interface: a JSON file now, Cloudflare D1 when hosted; `pnpm search-report` reads them
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+Hosting is not chosen yet (PROGRESS Next up 6 proposes Cloudflare). The endpoint must work in development and tests today and move to the host's storage without touching its callers. Alternatives: SQLite through `node:sqlite` everywhere (a native file per instance, no help on an edge host), Cloudflare KV (no increment: a read, add and write loses counts when two writes meet, and it is eventually consistent across locations), a logging pipeline (keeps whole requests).
+
+### Decision
+- `lib/search-miss/store.ts` defines `SearchMissStore { record(day, q, zero); read(from, to) }` returning `{ day, missed: {q: n}, zero: {q: n} }[]`. Adapters: `fileStore` (one JSON file, default `.data/search-misses.json` or `SEARCH_MISS_FILE`, git-ignored; each write re-reads, changes and atomically renames, one write at a time per process; days older than 400 are dropped), `memoryStore` (tests), and `d1Store` (`lib/search-miss/d1.ts`). `SEARCH_MISS_STORE=off` turns counting off. A day may add at most 5,000 new queries (file and memory stores); counts of queries already there keep growing.
+- **D1** is the adapter for Cloudflare: table `search_miss(day, q, zero, n)` with primary key `(day, q, zero)`, one `INSERT … ON CONFLICT DO UPDATE SET n = n + 1` per record. It takes any object shaped like a D1 database, so no Cloudflare package is added now; the unit test runs its SQL on Node's built-in SQLite. Wiring it: create the database and binding, run `D1_SCHEMA` once, return `d1Store(getCloudflareContext().env.SEARCH_DB)` from `getSearchMissStore()` (steps in that function's comment). It does not enforce the per-day cap; add one there if abuse appears.
+- **`pnpm search-report`** (`scripts/search-report.ts`) prints, for a range (`--days`, default 30, or `--from`/`--to`), the top zero-result queries and the top queries left without opening a tool (`--top`, default 25), each with the three tools search lists for it today, from the file store or from D1 rows exported with `wrangler d1 execute --json` (`--rows`). Adding an intent row is then a matter of reading the list and editing the table.
+
+### Consequences
+Development and Playwright runs write to `.data/`, so local reports include test queries; the file store is not for hosts with a per-instance or read-only file system. Moving to D1 changes one function. No `/dev/search` page was built: the script covers the need without a route to protect.
+
+---
+
+## ADR-0152: The palette sends one beacon per failed query per session: after 1.2 s with no results, or when search closes without a tool opened
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+Counting must not happen per keystroke (half-typed words are noise), must not count searches that worked, and must never delay or break search.
+
+### Decision
+- **When** (in `command-palette.tsx`, additive): a query that lists no tool and stays unchanged for 1.2 s sends `zero: true`; a query still in the field when search closes (Escape, Cancel, the backdrop, ⌘K, or a task row after no match) or when the page is hidden for good (`pagehide`) without a tool opened sends its result count. Opening a listed tool sends nothing. File suggestions inside search are not searches and send nothing; the empty query sends nothing; one-letter queries are not counted.
+- **How:** `navigator.sendBeacon` to `/api/search-miss` with the JSON as text (no preflight, no content type the beacon could refuse), a `keepalive` POST without credentials where the beacon is missing or refuses, every failure swallowed. The same query is sent once per page session: a set in memory (`lib/search-miss`), kept across in-app navigation and cleared by a reload; nothing is written to browser storage for it.
+- The payload rules (`missQuery`, `missPayload`) are one module shared by the palette and the server's schema, so the browser cannot send what the server would refuse.
+
+### Consequences
+A reload can count the same query again in one sitting; the server's per-day counts absorb it. The beacon code adds about 1.2 kB minified (0.7 kB gzipped) to the palette chunk, which still loads only when search opens; pages that never open search send nothing.
+
+---
+
+## ADR-0140: Idle modules name things from light tables and load their UI on use; the home rows' controls load apart
+
+**Status:** Accepted · **Date:** 2026-11-19 · Follows ADR-0104
+
+### Context
+Every tool page loads one chunk with all engines' idle modules (ADR-0104). Measured on the built site (2026-11-19, per-module gzip of the chunk), most idle modules weigh 100 to 250 B; the weight came from what a few of them import to write a drop prompt or draw an idle choice: the converter's prompt imported every video and audio format profile with their prose (7.5 kB gz) to name one format; the resize and aspect-ratio pages' shape picker, platform frames and crop geometry (about 7 kB); compress's tier picker with the platform tables, `Field` and `Segmented` (about 3 kB); the audio prompts the audio capability table (1.3 kB); and the stage's ffmpeg-fallback check the container table (1.3 kB). Separately, the header's home link prefetches `/` on every page, and that loads the home route's client chunk (row controls, hero search, recents) on every hub and tool page. Illustrations are server components and ship no script. Splitting the idle map per page needs a stage change in files other builders own; the recorder pattern of ADR-0104 does not.
+
+### Decision
+- Names a first load needs have one definition in a light module that the full tables take their `name` from: `content/formats/names.ts` (video formats), `content/formats/audio-names.ts`, `content/platforms/frame-names.ts`. The crop ratio presets moved to `engines/crop/ratio.ts`, re-exported by `math.ts`.
+- An idle UI with weight is a `next/dynamic` part with server rendering and no `loading` (the compress tier picker, the resize and aspect-ratio picker): a chunk fetched only on a page that renders it. Next renders it in place on the server and adds a preload link for its chunk, so the browser fetches it with the page's scripts. It has no Suspense boundary of its own, and each alternative tried had one that failed in a measurable way: (1) React 19.2's server renderer outlines any boundary with more than 500 bytes of content, even a finished one, so the part was streamed after the page prose in a `<template>` and swapped in by an inline script; (2) a boundary still waiting for its chunk that receives new props (the stage re-renders after mount) renders again on the client, fallback first: the tier box was removed at about 79 ms and re-added at about 303 ms, CLS 0.061 at 1280 (design review, 2026-11-19); (3) a boundary mounted by a client-side navigation shows its fallback and React holds it 300 ms, so the part appeared 300 ms after the H1. Without a boundary, hydration waits for the preloaded chunk, nothing is swapped, and a navigation's transition keeps the previous page until the part is ready.
+- `stage-run.inspectFile` loads the format tables only on its ffmpeg-fallback path.
+- The home rows' `RowControls` (an overlay that moves nothing) loads as its own chunk; the hero search, the before-paint row fill and Clear stay in the route chunk because a late arrival would move content.
+- `tests/unit/idle-weight.test.ts` fails if an idle module imports a heavy table or UI module again, and checks every pair and platform page's drop prompt against the full tables.
+
+### Consequences
+Measured with Playwright on production builds of the same tree with and without this change (gzip body of every script response): tool pages 192.7 → 177.0 KiB, screen recorder 199.0 → 184.5 KiB, resize and aspect-ratio pages 192.7 → 182.5 KiB (they load their 5.5 KiB part), compress platform pages 192.7 → 179.5 KiB, hubs 155.8 → 153.9 KiB, home 155.8 → 156.4 KiB (the controls are one more request). Lighthouse CI on the same two builds (mobile, applied throttling, three runs, median script transfer including headers; every assertion passing on both): trim, compress and MOV to MP4 201,947 → 186,780 B, compress for Discord 190,419 B, resize for TikTok 193,526 B, hub 161,028 → 160,980 B, home 168,045 → 169,678 B; LCP 1.60 to 1.63 s before and after, CLS 0, performance 0.99. The shared idle chunk went from 32.3 to about 19 KiB; the stage itself (7.7 KiB) is most of what is left. After the design-review fixes (`next/dynamic`, the unfixable state's way out): tool pages 177.9 KiB, resize and aspect pages 183.5 KiB, compress platform pages 180.6 KiB, hubs 153.8 KiB, home 156.5 KiB; on the production build, CLS 0 and no element removed under the workspace at 390 and 1280 with chunks delayed 0 and 500 ms, and on a client-side navigation the H1 and the idle part appear in the same frame (42 ms, or 584 ms with every chunk delayed 500 ms). A new idle choice with real weight is a `next/dynamic` part with no `loading` and no Suspense boundary around it; a new prompt that needs a name adds it to a names table.
+
+---
+
+## ADR-0141: A block no option can clear drops the primary button: `Blocked.fixable: false`
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+A `blocked` answer disabled the primary button with a reason. For blocks that no option on the page can clear (a picture this browser cannot decode, a format the engine cannot open, a file with no video or sound track for a job that needs one), the disabled button was a dead control: nothing on the page could ever enable it. The `settled` variant (the file already does the job) had already replaced the button with its answer.
+
+### Decision
+`Blocked.fixable?: false`, with an `unfixable(reason, action?)` helper in `options/types.ts`. In that state the stage:
+- does not mount the options panel (so none of its keyboard shortcuts act either), the controls on the picture or under it, or the shortcut hint;
+- puts the reason in the one status line at `text-body`. The reason says what to do next ("This file has no video track to rotate. Choose a video file."). The line is the page's only live region: it is inserted already holding the reason, which screen readers do not read out, so the reason first holds its place invisibly and hidden from assistive tech, then becomes text 100 ms later, which the region announces. One element carries the text at any time, so neither a test nor a screen reader meets it twice;
+- shows one way out where the button was: the block's `action` when another page does the job (the converter for a format or a picture this browser cannot decode; Fade audio for a sound-only file on Fade video), otherwise a secondary "Choose another file" that opens the replace picker.
+
+The run shortcut finds no button and does nothing. `undecodablePicture` and `nativeOnly` set it, as do the specs' own format refusals and their missing-track blocks for single-file jobs where the job is fixed by the page. Blocks an option, a second input or another file in the list can clear stay plain (choose a rotation, the subtitle file has no cue, file 2 has no sound, animated AVIF where WebP is offered). The batch queue already skips blocked files with their reason and is unchanged.
+
+### Consequences
+README tool-page specification §2 states the rule. E2E specs that expected a disabled button for these blocks now expect none. A new spec decides per block whether an option can clear it.
+
+---
+
+## ADR-0134: Results can be compared with their source on the preview, loaded only when asked; pages opt out with `compare: false`
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+Round 5 brief F: the done state of a page whose result is a changed or re-encoded picture or sound should let the user check it against the original (pixel peeping is the point of compress), without slowing the done state, and stream copies should say nothing because they are identical. Only sharpen and denoise had a before/after split, in the ready state. Alternatives: a compare page of its own (I6 in the catalog, two arbitrary videos: a different job), always-on compare in the done state (decodes a second video for everyone, two 4K decoders by default), or an opt-in list of pages (every new page would need remembering).
+
+### Decision
+- **One field.** `OptionsSpec.compare?: false | ((value, info) => CompareSpec | false)` with `CompareSpec { what: "picture" | "sound"; layout?: "side-by-side"; keepLoudness?: true; timeScale?: number }`. Default (no field): a video result of a video gets a picture compare, a sound result gets a sound compare. The stage resolves it (`compare/context.ts` `compareFor`) only in the done state with `previewResult` showing a single result of a single source, and hands it to the preview through a context, so heroes that use `VideoPreview` or `AudioHero` (convert, sound pages on a video) get it without new props.
+- **Not offered** when the source cannot play here (a container only the ffmpeg fallback reads, a picture the browser cannot decode) or when a speed change is outside 0.25×–4× (the source would have to play at more than 4× its rate). If the source still fails to load, the control goes and one line says "The original does not play in this browser."
+- **Lazy.** The Compare button is all the done state carries; the compare code loads on the first press and the source is read only then (its own element, released with `src` removed and `load()` when closed). The sound switch's code loads with the result so the first choice still counts as the gesture that starts audio; the source is read on the first Before.
+- **Opt-outs**, each with a one-line reason in its spec: stream copies (faststart, remove metadata, edit metadata and thumbnail, repair, remove audio, add audio, fix audio sync, select audio tracks, convert when picture and sound are both copied, audio converter and extract audio when copied), results on another timeline (trim, split, merge, loop, reverse, freeze frame, intro and outro, remove silence, ringtone, join audio, clips, extract audio of a part), and results with nothing to set against (audio to video, images to video, side by side and picture in picture, contact sheet, subtitle files, recordings, GIF to MP4 whose source a video element cannot play). Image results (GIF, stills) keep their own preview and have no compare.
+- **Compress** now plays its result in the preview (`previewResult: true`), so the comparison and "preview before download" use the file itself.
+
+### Consequences
+Every re-encoding picture page gets a wipe without page code: compress and its families, convert (when it re-encodes), codec, bitrate, frame rate, filters and colour, fade, watermark, text, timer and progress bar, image overlay, blur and face blur, green screen and background, sharpen, denoise, stabilize, and burned subtitles. Speed opts out (main session, 2026-11-19): its change is in time, so a wipe would only show re-encode quality. Geometry pages ask for side by side (ADR-0135); sound pages get the switch (ADR-0136). A new page is compared by default; a page where that makes no sense must say `compare: false`, which review checks.
+
+---
+
+## ADR-0135: The picture compare is a wipe kept frame-synced by rate nudges, side by side when the frame changes shape, with an actual-pixels zoom on a mouse
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+A wipe needs both pictures on the same frame while playing and scrubbing, in any browser, without decoding frames ourselves (WebCodecs per frame would double the work and memory of playback). A wipe across two framings (a crop, a quarter turn, bars) shows two different places at one point and misleads. Compress users want to see artefacts at real size.
+
+### Decision
+- **Sync** (`compare/sync.ts`). The result's own element stays the one the bar, keys and gestures drive; the source plays in a muted follower that copies play, pause, seek and rate at once (on pause and after a seek it lands on the exact time), and while playing reads the drift every 50 ms and nudges its rate (3 % per 10 ms of drift, at most 15 % for a picture, 3 % for a heard sound, in whole percent and at most every 250 ms; a correction starts past 12 ms and ends inside 4 ms, because each rate change makes Chromium re-time the element and costs it about 20 ms, which made a nudge every tick worse than none; past 250 ms it seeks, aiming ahead by its last seek's latency). It starts from the paused frame without a seek when the two already match.
+- **Wipe** when both pictures have the same shape (within 1 %): the source shows left of a divider with the sharpen page's gesture and keys (44 px grab strip kept inside the picture, pointer capture, primary pointer only, `touch-none` on the strip alone, arrows 5 %, Shift 20 %, Home and End); its presses never reach the preview's tap-to-play. "Before" and "After" labels fade near the edges. Everything moves by `transform` and `clip-path`; the preview box keeps its size.
+- **Side by side** when the shapes differ or the page asks (`layout: "side-by-side"`: crop, aspect ratio, rotate and flip, pad, zoom and pan): each picture whole in its half, row or column, whichever shows the smaller of the two larger; the result is moved into its slot by transform.
+- **Zoom** ("Actual pixels", `(pointer: fine)` and at least 640 px wide, same-size pictures only): one video pixel per CSS pixel about the divider, the view clamped so no stage shows beside a picture larger than the box; a mouse drag or the arrow keys on the focused picture pan it.
+
+### Consequences
+Measured (Playwright, desktop Chromium, 30 s 480×270 30 fps fixture compressed, then played through with the wipe open; frames paired by their time in the file and the display refresh rVFC reports): on a quiet machine every frame both elements reported was shown on the same refresh or one refresh apart (worst 0.77–1.06 frame, the excess being refresh jitter on the 30 Hz headless display; one run of four on a busy machine had a 2-frame moment), and the two clocks were within 15–23 ms at the 99th percentile, worst 15–37 ms, the worst at the start of play. With other test workers encoding on the same machine the source stutters for a moment and catches up within about 0.3 s. The spec asserts the 1-frame bar with `COMPARE_DRIFT_STRICT=1` and a bounded one (2 frames worst, clocks within a frame 90 % of the time) otherwise, so a busy CI machine does not fail it. Memory at 4K (whole browser process tree, headless Chromium on macOS, 10 s 3840×2160 H.264): about 0.5 GB idle in the done state, about 1.0 GB playing the result, 1.3–1.6 GB comparing (a second 4K decoder costs about what the first does), back to 0.7–1.2 GB after closing, with no growth over three open-and-close cycles. Clarity's ready-state split stays as it is.
+
+---
+
+## ADR-0136: The sound compare is a Before/After switch through Web Audio gains, matched in integrated loudness unless loudness is the job
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+Switching between source and result by ear is only fair at the same position and the same loudness: a louder version sounds better. Muting one element would show the page's Mute as on, and an element's `volume` is ignored on iPhone. Some jobs are loudness (volume, normalize, fades), where matching would hide the change.
+
+### Decision
+`compare/ab-switch.tsx`: two radios, Before and After (After chosen), on the audio hero in place of the "Result" tag and under a video's playback bar when the page's job is the sound on a video (`what: "sound"`: volume, pitch, noise removal, fades). The first Before creates a hidden source element that follows the result (ADR-0135's sync, small nudges), routes both through gains in one audio context (each element can be routed once; the result stays routed at unity gain after the switch goes), and moves the gains with a 5 ms time constant, so the switch is click-free at the same position. Unless `keepLoudness`, both files are measured in the existing analysis worker (BS.1770 integrated loudness, no true peak) and the louder side is turned down to the quieter, up to 20 dB apart; silence or larger differences play as they are. The page's mute applies to whichever side is heard; a suspended context resumes on play.
+
+### Consequences
+The convert, extract, pitch and noise pages compare at equal loudness; volume and fade pages keep the difference. The measurement costs one decode of each file in a worker, after the first Before only.
+
+---
+
+## ADR-0156: Every tool page has its own illustration; generated families draw their labels as stroke paths
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+Illustrations defaulted per engine (ADR-0008), so pages sharing an engine shared a picture: add and replace audio looked identical, as did the three volume tools, the three filter tools, the animated-image formats, and all 63 generated pair, size and platform pages. The generated pages show each other in their related cards, and the same picture feeds every OG image. The owner asked for a picture per tool that says what it does. Alternatives: hand-draw 63 more files (unmaintainable and indistinguishable without names); SVG `<text>` labels (needs a font in the OG renderer and breaks the monoline look); keep family pictures (the status quo the owner rejected).
+
+### Decision
+Engine siblings get their own hand-drawn picture (`siblings.tsx`, set with the registry `illustration` field). Generated pages use family ids `<family>:<arg>[:<arg>]` (`video-pair:mov:mp4`, `audio-pair`, `subtitle-pair`, `video-audio-pair`, `codec-pair`, `compress-cap:8`, `compress-for:<id>`, `resize-for:<id>`), resolved by `familyIllustrations` in `src/components/illustrations/tools/index.tsx`. Family drawings print format names, sizes and ratios with a monoline stroke alphabet drawn as path data (`glyphs.ts`: A–Z, 0–9, space, colon, dot, hyphen), so labels share the 1.5 stroke and render identically in cards and OG images. Numbers come from the same content the page uses (platform caps and ratios). No brand marks or names. A unit test fails if two tool pages resolve to the same illustration.
+
+### Consequences
+Adding a tool page means choosing a distinct picture: a new engine draws one, a sibling of an existing engine adds an override, a generated family passes its args. Labels are limited to the glyph set; `label()` throws on any other character. The 3 KB per-illustration budget still applies and is tested for every resolved id.
+
+---
+
+## ADR-0129: Tool pages remember their file-independent settings and can save them by name; a page opts in with a zod schema of the kept keys
+
+**Status:** Accepted · **Date:** 2026-11-19 · Implements feature catalog L3 and ADR-0128
+
+### Context
+Every new file on a page started from the page's defaults, so someone who always compresses with "Smaller" or always exports WAV set it again each time. The catalog listed saved presets (L3). Remembering must never reach values measured from one file (ranges, crop frames, regions, key frames), never override what a page is for (a 10 MB page's size, a pair page's format), and a stale stored value must not break a page.
+
+### Decision
+- `OptionsSpec.remember` (optional, default nothing kept): a zod/mini object of the kept keys, built with `options/remember-schema.ts` (zod's small build, 5 kB gz, loaded with the spec after a file is chosen, JIT off as everywhere in the browser), plus optional `pick`/`apply` for nested options. `tool-stage.tsx` and `batch-stage.tsx` start a file with `spec.defaults(info, preset)` and the stored subset over it (`components/tool/remember.ts`), each key checked by its own schema; invalid keys are dropped. Keys the page preset (or an idle choice) sets are never restored or saved.
+- Changes in the ready state are kept (300 ms debounce) under `settings:<slug>` in local storage; a subset equal to the page's defaults removes the key, so defaults can improve later.
+- "Saved settings": name and save the current kept subset, apply one (marked pressed when it matches), delete one; up to 12 per page, names up to 40 characters, a same name replaces; stored under `presets:<slug>`. It sits at the end of the panel's first "More options" when the panel has one (`saved-settings-slot.ts`: that disclosure claims it before paint), else in a closed "Saved settings" disclosure of the stage's own under the panel; never two disclosures. "Reset to defaults" (quiet) shows only when restored or applied settings differ from the page's defaults. Saving, deleting and resetting are announced in one always-mounted polite live region; focus moves to the next entry (else the name field) after a delete, and to the disclosure that holds the settings after a reset.
+- Pages opted in, by engine (every page on the engine; preset keys excluded per page): compress `preset, targetMb, maxHeight`; convert-video `to, videoCodec`; convert-audio and video-to-audio `to, bitrate`; video-to-gif and animated-image `fps, width, quality, loop`; gif-to-video `to, repeat`; frame-extract `format, quality`; frame-pick `mode, format, quality`; video-to-frames `every, step, format, quality`; thumbnail-grid `columns, rows, width, timestamps, header, background, format, quality`; trim `precise`; split `mode, parts, every, precise`; filter `look, strength, brightness, contrast, saturation`; clarity `strength, radius` (sharpen only; denoise measures its strength from the file); stabilize `strength, edges`; blur-region `effect, strength, feather`; speed `speed, keepPitch`; volume `mode, gainDb, target, limit, ceiling, output`; speech-denoise `strength, keepLoudness, output`; remove-silence `detect, minSilence, padding, output` (not the measured threshold); audio-fade `curve, output`; pitch `semitones, cents, output`; ringtone `fadeIn, fadeOut, normalize, phone, androidFormat, output`; join-audio `join, gapSec, crossfadeSec, matchLoudness, format, output`; merge `reencode, fit`; images-to-video `seconds, transition, motion, shape, fit, fitMusic`; audio-to-video `theme, shape, fit`; video-fade `color, audio` (lengths are capped by the file); add-audio `mode, loop, fadeOut, volume, balance`; add-subtitles `mode, showByDefault, size, keepStyling, look`; text-overlay `size, style, color, anchor, fx, fy, margin, fade`; time-overlay `edge, thickness, track, inset, size, style, anchor, fx, fy, margin`; watermark `textColor, anchor, fx, fy, size, opacity, margin` (not the image or text); layout `fit, radius, border, borderColor, sound, ended`; intro-outro `transition, fadeSec, fit`; pad `size, color, keepSize`; loop `times, boomerang`; bitrate `audio, mode, codec`; subtitles-extract `format`.
+- Not opted in: pages whose settings are the file's own (crop, aspect ratio, rotate, codec, frame rate, freeze frame, zoom, clips, thumbnail, audio sync and tracks, metadata, chroma key and portrait matte keys, reverse), pages with nothing to set, and the recorders (their choices live in the recorder components).
+- Cross-tool memory beyond recents is not built (brief item 5).
+
+### Consequences
+A page opts in with one schema; `tests/unit/remember.test.ts` covers restore, defaults, stale values, blocked storage, preset keys and saved entries. Storage keys are listed in `lib/storage/keys.ts` and on /privacy.
+
+---
+
+## ADR-0130: Recordings are written in place by a storage worker with a packet index beside them, so a recording cut off by a closed or crashed tab is offered back and finished on the next visit
+
+**Status:** Accepted · **Date:** 2026-11-19 · Amends ADR-0100 (where recordings are written)
+
+### Context
+Recordings streamed to OPFS through the page's `createWritable()`. That stream writes a temporary file that is applied only when it is closed, so a reload, a closed tab or a crash lost the whole recording; recordings also sat under `outputs/`, which the next page swept. An MP4 or M4A keeps its index in memory until Stop, so even bytes that survive cannot be played; WebM's Segment and cluster sizes, a WAV's sizes and an Ogg's last page are also written only at the end.
+
+### Decision
+- `src/tools/workers/storage.worker.ts` writes recordings with a sync access handle (in place, flushed per write). `capture/sink.ts` sends it the muxer's writes unchunked (about every half second of media; in the tests below the recovered length is within 0.7 s of the live timer, which itself shows whole seconds). Fallbacks unchanged: the page's `createWritable()` (no recovery), then memory.
+- Layout `recordings/<session>/recording-<n>` with `<n>.json` (kind, start time, format, codecs, decoder configurations, seconds and bytes, rewritten every second; `finished` at Stop) and, for MP4 and M4A, `<n>.index` (24 bytes per encoded packet: track, key flag, size, time, duration; written in batches about once a second). Each session directory is held by a Web Lock (`ilv-recording-<session>`). A recorder page sweeps unheld directories except unfinished recordings less than 7 days old.
+- On a recorder page, `use-interrupted.ts` looks for the newest unheld unfinished recording of that recorder's kind (`capture/find.ts`, no media code) and the offer takes the recorder's place: "A recording from 14:02 was interrupted (3:41, 62 MB)." with Recover it and Discard (asks first). Recover (`capture/recover.ts`, loaded on press) adopts the directory's lock and finishes the file: MP4/M4A packets are found in the media data by walking both tracks' index (an H.264 packet must prove itself by NAL lengths adding up to its indexed size; a track whose index ran out stops the walk rather than taking the other track's bytes) and muxed again with the stored decoder configurations, AAC priming signalled as at Stop; WebM gets an unknown Segment size and its last cluster closed after its last whole block, then is copied packet for packet (duration and cues written); WAV gets its RIFF and data sizes from the bytes on disk; Ogg is cut after its last whole page with the measured pre-skip. The file opens in the done state ("Video recorded", meta "… · recovered").
+
+### Consequences
+A page sweeping other sessions' directories asks for each lock and releases it at once (`ifAvailable`), and one search per kind is in flight per page: holding the lock while reading made a second search (React's double effect in development, or a second recorder tab) take the directory for a live recording and never show the offer. Recover moves focus to the result's Download; a confirmed Discard moves it to the recorder's first action. Discard is a quiet button under Recover; its dialog asks first.
+
+Measured in Chromium with fake devices (`tests/e2e/recover.spec.ts`, 8 runs per case over two sessions): webcam MP4 reloaded after 5 s on the live line came back as 4.70 to 5.08 s, decoding cleanly to the end with FFmpeg, recovered in 100 to 137 ms; voice M4A after the tab closed without unload handlers, 4 s → 3.33 to 4.05 s; voice WAV, 4 s → 4.07 to 4.46 s; voice Opus after a reload, 6 s → 5.46 to 5.54 s. One defect found and fixed on the way: when the sound's index ended before the picture's, the walk took sound bytes as picture packets (8 to 9 broken frames at the tail); the walk now validates every picture packet whenever both tracks exist (unit-tested both ways). A renderer crash through CDP `Page.crash` closes Playwright's whole context, so the crash case is stood in for by closing the tab without unload handlers (same state on disk). Playwright's WebKit has no fake devices and no OPFS, so recovery is untested there; Safari on a device needs a manual check. Memory recordings (no OPFS) cannot be recovered.
+
+---
+
+## ADR-0131: A page's last result is kept for a day in OPFS and shown under its drop zone; /privacy lists everything kept and clears it
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+A reload, a crash or an accidental Back after a run lost the result, which on a long encode means running it again. First-party storage is allowed (ADR-0128), but it must stay bounded, never get in the way of the next file, and /privacy must say what is kept.
+
+### Decision
+- After each run (single or several outputs; not batches), `useKeptResult` copies the output in the background through the storage worker to `results/<slug>/` (`0`, `1`…, then `meta.json` last) and indexes it in local storage (`kept-results`: page → time and bytes). One result per page. Not kept: over 1 GB, or over a quarter of the free quota the browser reports; kept results together stay under 2 GB, the oldest removed first; older than 24 hours removed by the next tool page. A newer result, Start over from a result, or the row's cross removes it; removing a file that never ran does not. Saves are queued one at a time and cancelled by Start over.
+- On load, one synchronous read of the index; only when it lists something do the store and the row load. The row sits under the drop zone's way in: "Your last result", the file name (the stem is cut, the extension, size and time stay whole; stacked below `sm`), a quiet underlined Download link (Download all as a ZIP) and a cross; focus goes to the drop zone's file input when the cross removes it. A new file can always be dropped or chosen (an earlier version that put the result in the drop zone's place broke other pages' flows and was replaced the same day). Recorder pages show the recorder, not the row.
+- Zero layout shift: from md the row sits at the zone's foot in padding reserved by `data-kept` (`md:data-kept:pb-28`). A small inline script after the stage (`keptZoneScript`, server-rendered in tool-page.tsx and hashed into the page's CSP) sets it while the HTML is parsed when the index lists a fresh result for the page; on client navigation a layout effect sets it before paint, and the hook clears it when nothing loads. On phones the row follows the prompt in the zone's tall top-aligned space, so nothing moves either.
+- /privacy gains "What this browser keeps" (settings and saved settings, the last result with its bounds, recordings, the offline copy and shared files) and, right after it, a "Clear what this site stored" control (asks first) that clears local storage, session storage, the site's OPFS (files another open tab holds stay) and Cache Storage, and says what it removed and how much, measured from the storage itself.
+
+### Consequences
+Cost: one extra write of the output's size, in a worker, after the result is already on screen. Measured layout shift with a kept result on reload: 0 at 390 and 1280 on /compress-video, /compress-video-for-discord (whose idle tiers make the zone taller than its minimum) and /remove-audio-from-video. /privacy's control measures what it removes itself (OPFS file sizes, cache entry sizes, local storage), "Removed 1.4 MB: recent tools, settings for 1 page, 1 kept result and the offline copy of the site.", because `storage.estimate()` reported the same figure before and after clearing; it sits right after "What this browser keeps", and heading, button and dialog share one phrase, "Clear what this site stored". Playwright's WebKit has no OPFS, so nothing is kept there and the e2e skips; real Safari needs a device check. Storage keys and directories are named in `lib/storage/keys.ts`, `lib/storage/opfs.ts` and the privacy copy, which must change together.
+
+---
+
+## ADR-0144: Firefox runs in Playwright only on request; its coverage here comes from documented data and the run-time check
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+Round 5 asked for a `firefox` Playwright project and a full suite run in it. On the build machine (macOS 27.2) Playwright's Firefox 153 (build 1538) never finishes starting: the launch times out with `sandbox_extension_issue_file_to_process failed … Operation not permitted` and a software compositor error, inside and outside the command sandbox and with Firefox's own process sandboxes switched off. The owner then said Firefox is blocked on this device and must not be launched here.
+
+### Decision
+- `playwright.config.ts` adds the `firefox` project only when `E2E_FIREFOX=1`, so no default run tries to start it. Run it elsewhere with `pnpm exec playwright install firefox` and `E2E_FIREFOX=1 pnpm exec playwright test --project=firefox`.
+- The Firefox columns of the capability matrix (ADR-0145) are documented, not measured: from the `caniuse-lite` data bundled with the project (1.0.30001810), and "unknown" wherever that data does not reach (which codecs an encoder takes, ImageDecoder, getDisplayMedia, WebGL 2 inside a worker). Every Firefox cell says "documented, not run here".
+- Firefox correctness rests on the run-time check every page makes before the user starts (ADR-0147), which needs no Firefox to be written, and on a checklist the owner runs on another machine.
+
+### Consequences
+No measured Firefox numbers exist in this repo. The documented data says Firefox for Android has no WebCodecs at all, so there every page works only through its copy path or its ffmpeg.wasm path, or says it cannot. The first run on a machine where Firefox starts should replace the documented column with measured facts (`CAPABILITIES_OUT=1` writes `src/lib/browser-support/measured/firefox.json`; the generator then needs a Firefox column).
+
+---
+
+## ADR-0145: Browser support is measured by a probe and published as a generated matrix; the engines' `supports()` stays the runtime truth
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+Nothing recorded what each browser provides for the 66 engines. ADR-0139 removed the unused `src/lib/capabilities/` module and kept backend choice in each engine's `supports()`. A second, page-side capability model would drift from the engines.
+
+### Decision
+- `src/lib/browser-support/probe.ts` measures, in a window and in a worker: WebCodecs decode per codec, encode per codec with a real encode of a few frames (an encoder can accept a configuration and never return a frame), Constrained Baseline H.264, AAC/Opus/MP3/FLAC/Vorbis encode, WebGL 2 and 2D in OffscreenCanvas, OPFS and sync access handles, SharedArrayBuffer and isolation, ImageDecoder for GIF, getDisplayMedia, getUserMedia and MediaRecorder types. `/dev/support` (dev builds only) runs it; `tests/e2e/capabilities.spec.ts` checks it in every project and, with `CAPABILITIES_OUT=1`, writes `src/lib/browser-support/measured/<project>.json`.
+- `src/lib/browser-support/needs.ts` lists what each engine needs with its page's defaults and derives a verdict per browser (works, slower path, says so). It is documentation and is unit-tested; it does not gate anything at run time.
+- `scripts/capability-matrix.ts` writes the matrix into README.md#feature-catalog ("Browser support"). Labels and notes live in `scripts/capability-matrix-data.ts`, outside `src/`, because they name machinery the interface must not (ADR-0149).
+
+### Consequences
+Measured 2026-11-19 (Playwright Chromium 151, WebKit 26.5): Chromium has no HEVC decode or encode; WebKit's H.264 encoder stalls on High and Main profile but writes Constrained Baseline (ADR-0146), it has HEVC decode and encode, no ImageDecoder and no OPFS in Playwright. Refresh the matrix when a browser or an engine changes.
+
+---
+
+## ADR-0146: Where High-profile H.264 stalls, every H.264 encode is written as Constrained Baseline through a registered mediabunny encoder
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+Playwright's WebKit (Safari 26.5 engine) accepts every H.264 configuration but with High or Main profile takes a few frames and never returns one; `encoder-probe.ts` already detected that and refused, so about 40 video tools failed on the iPhone profile with "This browser could not write a short test video". Measured 2026-11-19 on 640×360, 150 frames: High and Main returned 0 frames; Constrained Baseline at the same level returned all 150 in 177 ms, and 1920×1080 at level 4.0 returned 150 in 1.2 s. mediabunny always builds a High-profile codec string and its Conversion cannot change it; compose and remove silence already pass their own Baseline string.
+
+### Decision
+`avcEncodes()` in `encoder-probe.ts` runs the existing High-profile probe; if it fails and a Baseline probe returns frames, it registers `baseline-avc.ts`, a mediabunny `CustomVideoEncoder` that takes over High and Main H.264 encodes and drives the browser's own `VideoEncoder` with the Constrained Baseline string at the same level. `canEncodeAvc` uses it, and the engine worker settles it before any `supports()` (and starts it at inspection, so its up to 5 s in a stalling browser overlaps the user's choices). Browsers whose High profile works are untouched; `avcEncoderTrouble()` is unchanged for the engines that pick Baseline themselves.
+
+### Consequences
+Every H.264 tool works on the iPhone profile. The wrapper declines mediabunny's per-frame quantizer configurations (WebKit's encoder rejects them with a TypeError; WebM to MP4 and flip failed until it did), so mediabunny takes its bitrate configuration. Engines that never write a video (GIF, frames, sound, subtitles, reports) do not wait for the probe; the others wait for it once per worker. Baseline has no B-frames or CABAC; the size is set by the bitrate as before. On the 30 s test clip compressed with the default preset: Chromium (High) 1.46 MB, PSNR 23.5 dB, SSIM 0.928; WebKit (Baseline) 1.33 MB, PSNR 28.3 dB, SSIM 0.891; 0.8 s and 4.8 s. These are two different encoders, so the numbers show the result is in the same range, not what the profile alone costs. Whether a real iPhone's Safari stalls the same way is not known; the probe decides there too.
+
+---
+
+## ADR-0147: Pages ask the engine before the user starts; the most used tools fall back to ffmpeg.wasm instead of refusing
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+A browser that could not do a job found out only after the user pressed the button, mid-run or with a generic failure. The owner's rule (2026-11-19): a "this browser can't" message is the plain cause and the action. Several engines already had ffmpeg.wasm runners for formats the browser cannot read, which can make the same file when the browser has no encoder for it.
+
+### Decision
+- The engine worker answers a `check` message with the same question a run asks (`supports()` after the H.264 probe). `useBrowserCheck` (components/tool/browser-check.ts) asks it in the ready state and again when the options settle (250 ms); the answer joins the page's own `blocked` (the page's reason wins). On pages with a format or codec choice the block leaves the button disabled with the reason; elsewhere the reason stands in for the button (`fixable: false`, ADR-0141). Pages that run on the page itself are checked for what the converter needs.
+- `src/tools/engines/fallbacks.ts` lists engines whose page runner does every job the engine does: compress (new runner, `compress/ffmpeg.ts`, sharing `compress/run.ts` so presets, size targets and the second pass are the same), convert video, convert audio, video to audio, video to GIF, aspect ratio and resize presets, crop, filters, frame rate, borders, fades, GIF to video. When the check fails for one of these and the converter can start, no block is shown, and a run the worker refuses as unsupported goes to that runner (`runJob`). Compress now also asks for AAC when the file has sound, so a browser with H.264 but no AAC encoder takes the fallback instead of failing mid-run.
+- Trim and split copy streams and need no encoder; merge copies matching clips. Engines not in the list say before the user starts that this browser cannot do it.
+
+### Consequences
+Speed of the slower path against the native one in Playwright Chromium 151 on the build machine, with the converter already loaded (32.8 MB, once), 2026-11-19: compress, 30 s 480×270, 0.72 s native, 1.63 s ffmpeg.wasm (1.46 and 1.53 MB); compress to 8 MB from a 12 MB 1080p clip, 1.50 s and 5.88 s (7.42 and 7.73 MB, both under 8 MB); WebM to H.264 MP4, 3 s, 0.21 s and 0.83 s; 9:16 resize, 30 s, 0.68 s and 1.66 s; a 5 s GIF, 0.80 s and 0.46 s; WAV to M4A, refused natively for this 44.1 kHz source, 0.11 s through ffmpeg.wasm. So the slower path takes about 2.3 to 4 times as long for video, which is acceptable for the job; its real cost on a phone is the one-time download.
+- A run that fails in the browser's own decoder after the check said yes (FLAC in WebKit, measured 2026-11-19) is marked the same way by the worker, so a fallback engine retries it on ffmpeg.wasm; flac-to-wav now works on the iPhone profile.
+- The converter's WebAssembly file is fetched by `workers/converter-download.ts`, with real progress ("Loading the converter: 12.3 MB of 32.7 MB"), and compared with the size kept with the files (`FFMPEG_WASM_BYTES`, checked against the copied file by a unit test) and with Content-Length before ffmpeg.wasm compiles it from a blob URL. A short or long file is removed from every Cache Storage cache and fetched once more; a second failure says "The converter did not finish downloading. Check the connection and try again." with the stage's Try again. The service worker stores a response only when its body matches its Content-Length. Measured cause: under load in Playwright's mobile Chrome the file twice arrived at 27.4 of 32.7 MB and failed to compile.
+- Browser blocks follow ADR-0141: `unfixable(reason)` unless the page offers another format or codec (never on a pair page that locks its target), and every reason ends with what to do next (the engine's hint, else "Try a current Chrome or Edge."). Batch runs reuse `runJob` and get the fallback too. The check costs one worker round trip per settled option change.
+
+---
+
+## ADR-0148: Every page is tested end to end from the registry, and the most used pages on two phone sizes
+
+**Status:** Accepted · **Date:** 2026-11-19
+
+### Context
+155 pages, 29 without a test of their own (round 5 brief, item 6). Phones had only 390 px checks on some pages.
+
+### Decision
+- `tests/e2e/every-page.spec.ts` is generated from the registry: for every page it checks the H1 and axe on the idle page, drops the fixture that fits (a pair's `from`, the size family's 12 MB clip, two clips for multi-input pages, the page's own source where its job needs one), fills a second file well by its `accept` (a logo, a subtitle file), makes the one choice a few pages need (a turn, a crop shape, the text, a new date, a shift, a trim range), runs, downloads and checks the output with ffprobe: container and codec for pairs, length for engines that keep it, the size cap for size targets, shape and limits for platform frames, picture or sound present, text formats by content. A page whose file already fits is "settled"; a page that says before the start that this browser cannot do it is "says so". Capture pages are skipped with the reason (capture.spec.ts records Chromium's fake devices). `EVERY_PAGE_REPORT=<file>` writes one JSON line per page and browser.
+- `tests/e2e/phones.spec.ts` runs the 15 most used pages at 360×640 and 412×915 with touch in Chrome's and Safari's engines: a tap on the drop zone opens the picker, no sideways scroll, every workspace control a 44 px target, the primary reachable and 44 px tall, axe clean.
+- `scripts/make-fixtures.sh` adds `sample-hevc.mp4` (HEVC tagged hvc1, as phones write it) for hevc-to-h264.
+
+### Consequences
+A new page is covered without editing the spec unless it needs a special source or a choice. The spec is slow (about 12 minutes for three projects at three workers) and is not part of the default quick set.
+
+---
+
+## ADR-0137: Compare motion and controls after design review: fades and a glide into place, visible pressed toggles, touch scroll on the divider
+
+**Status:** Accepted · **Date:** 2026-11-19 · Amends ADR-0135 and ADR-0136 (controls and motion only)
+
+### Context
+The design and motion review of ADR-0134 to ADR-0136 blocked on two points: a vertical swipe starting on the divider strip did not scroll the page (`touch-none`), and the toggles (Compare, Actual pixels) looked the same on and off. It also asked for a findable Compare, an opening that does not snap, focus and an announcement when the source fails, opaque labels, a quieter chosen side on the dark stage, the shared Segmented control, and calmer spacing for the sound switch.
+
+### Decision
+- **Divider:** `touch-pan-y` on the 44 px strip; the browser cancels the pointer when a finger scrolls, which ends the drag, and a touch moves the split only once it moves sideways (no jump on touch down).
+- **Toggles:** the bar's shared icon-button class gets `aria-pressed:bg-bg-subtle aria-pressed:text-fg` (one step, like hover), so Mute, Compare and Actual pixels show their state; each keeps one icon (ZoomIn for Actual pixels). From 640 px Compare also shows its word.
+- **Motion** (animate skill; occasional, pointer-started, purpose: preventing a jarring change). Opening: the source and its labels fade in at `--duration-base` with `--ease-out` (opacity) once the source has a frame; side by side, the result glides into its slot at the same moment (`transform`, `--duration-base`, `--ease-in-out`, the element's own transition class). Closing: fade out at `--duration-fast`, the result glides back, then the layer unmounts. Zoom, pan and the divider stay 1:1. Reduced motion keeps the fades and snaps the glide.
+- **Failure:** if the Compare button had focus when the source fails, focus moves to Play; "The original does not play in this browser." is written into an always-present `aria-live="polite"` line (empty, it cancels the column gap).
+- **Looks:** labels on `bg-gray-950` (opaque). `Segmented` gains `tone="stage"` and `aria-label`; the sound switch uses it, the chosen side on the stage is `bg-gray-700 text-gray-0` so the play button stays the brightest control. From 640 px the sound switch under a video sits in the bar row; below, in its own row with more space after it than before.
+
+### Consequences
+Measured on the built site: a 120 px vertical swipe on the strip at 390 scrolled the page 217–360 px, and an 80 px sideways drag moved the split 26 points, also after the scroll. Opening side by side, the result stays put until the source is ready, then both arrive together in 220 ms; closing fades in 150 ms and unmounts at about 175 ms. Under reduced motion only the opacity changes. The e2e spec covers the touch scroll, the pressed fill and the failure path (focus and announcement).
+
+---
+
+## ADR-0138: The sound switch under a video is one element placed by CSS; the side-by-side close glide runs at the fade's speed
+
+**Status:** Accepted · **Date:** 2026-11-19 · Amends ADR-0137
+
+### Context
+Re-review of ADR-0137: choosing the switch's row or the bar row with a media query remounted the switch when a phone turned to landscape (640 px crossed), so Before became After mid-play. In the audio hero at 390 the switch's 160 px minimum width ran 8 px past the hero. The chosen side on the stage (`gray-700` on `gray-800`) was about 1.5:1 against its track. Closing side by side, the result glided back for 220 ms while the overlay faded in 150 ms.
+
+### Decision
+- The switch renders once, as the last item of the playback bar's row, which wraps: `basis-full justify-end mb-2` below 640 px (its own row, the bar's gap above, more below), `sm:basis-auto sm:mb-0` from 640 px (in the row). Only CSS moves it, so its state and the audio graph survive a rotation. The 160 px minimum width applies from 640 px only.
+- Stage-tone Segmented: the chosen side keeps `bg-gray-700 text-gray-0` and gains `ring-1 ring-gray-400` (about 4.9:1 against the track); the other side is `text-gray-400`. The stage's play button stays the brightest control.
+- Closing side by side sets `transition-duration: var(--duration-fast)` on the result for the glide back (curve unchanged, `--ease-in-out`), cleared when the layer unmounts.
+
+### Consequences
+Measured on the built site: at 390 the audio hero's switch spans x 208–333 inside a hero ending at 349; Before survives 390×844 to 844×390 while playing (e2e); the close glide ends at about 150–170 ms, with the fade. Reduced motion is unchanged.
+
+---
+
+## ADR-0157: One motion vocabulary for the whole site: entrance, arrive, reveal once, fold and lift, all on the same rise, duration and curve
+
+**Status:** Accepted · **Date:** 2026-11-19 · Builds ADR-0153
+
+### Context
+The owner found the pages static and asked for subtle motion that "combines" so the page feels alive (2026-11-19). ADR-0153 allowed it inside budgets. Scattered effects, each with its own distance and timing, would read as noise, and each would need its own review. The candidates were ranked with the find-animation-opportunities gate (frequency, purpose, speed, function) over home, a hub, a tool page in every state, search and the recorders.
+
+### Decision
+One arrival everywhere: fade in while rising `--motion-rise` (8 px), at `--duration-base` on `--ease-out`, using the `translate` property so a hover's `transform`/`scale` on the same element is untouched. New tokens in `tokens.css`: `--motion-rise`, `--motion-step` (40 ms, entrance stagger) and `--motion-step-group` (30 ms, group stagger, six items at most; the standards' 30–80 ms and design system §6.3's 20–30 ms meet at 30). Utilities:
+- `enter-N`: the page's one entrance (keyframes, `backwards` fill so hover lifts are free afterwards), N steps of 40 ms, nothing main later than one step: tool pages, the trail (0) then the stage (1); home, the search (0) then the promises (1); hubs, the trail (0), task chips (1), the tools (2) and the generated pages (3), each one step earlier on a hub without task chips. None with reduced motion (the global rule would keep the delay and pop late), and none on a page reached from the keyboard (`:root[data-keyed]`, ADR-0158). A full page load keeps it.
+- The H1 and its lead or subtitle do not move. Measured with Lighthouse (the project's applied 4× CPU, slow-4G settings): fading them held LCP until the fade ended, 1640 → 1880–1910 ms on all five pages, past the 1.8 s budget. Sliding them without the fade (a `settle-N` utility, built and then removed after review) kept LCP but read as a jolt; still text is the remedy.
+- `arrive` / `arrive-N`: a block that appears after a state change, from `@starting-style` (a transition, so it retargets), N steps of 30 ms: the ready panel (and its action bar one step later), the error, the result in parts (verdict, file, actions, "Then" last at four steps, 120 ms), the multi-file result in the same parts, the kept-result row, the file suggestions. Never nested, so a block never rises twice its distance. Removal is instant, an exit shorter than any enter. Reduced motion: the global rule leaves the fade at `--duration-fast`.
+- Reveal once: `data-reveal` (a block) or `data-reveal="group"` (first six children staggered) on home rows, hub task groups, the hub's folded text and generated pages, a tool page's prose rows and related pills. One IntersectionObserver for the page (`components/layout/reveal.tsx`, mounted once in the locale layout, rerun per navigation). Only what starts wholly below the viewport is hidden (`data-unseen`), so nothing on screen blinks out and nothing hides without script; once shown it is never hidden again. Brought into view by the keyboard (any key in the last second, or focus inside) it shows at once (`data-reveal-now`). After back or forward (a `popstate` in the last second) nothing hides, because the scroll position is restored after the measure. Printed, every block shows (`@media print`).
+- `fold`: disclosures (prose rows, More options, the hub's generated-pages list) open their height through `::details-content` and `interpolate-size` where supported (Chromium 131+), base to open, fast to close, none with reduced motion; elsewhere they snap as before. Text stays in the HTML; find-in-page still opens them.
+- Lift: the home card's lift (ADR-0155) becomes one utility, `card-lift` in `tokens.css` (hover gated on `(hover: hover) and (pointer: fine)`, none with reduced motion), and also goes on hub grid cards; link pills (`chip` + `pill`) rise 2 px on fine pointers, fast up, instant back. The stage's dimming into processing rides the panel's `arrive` opacity transition.
+
+Rejected: animating the palette's results as you type, number count-ups on result sizes (data being read), header changes on scroll (scroll-linked), easing the progress line (progress stays honest), per-card stagger in rows of 15 (beyond six it moves as a group).
+
+### Consequences
+Every new arrival uses these utilities, not new curves or distances. First-load script grew by about 0.5 kB gzipped (home +516 B, hub +464 B, tool pages +571 B), CSS by about 1 kB. Lighthouse (home, a hub, three tool pages) is unchanged within noise, CLS 0. A full-page screenshot of home must scroll the page first (visual.spec does). axe measures contrast at the instant it runs, so a check straight after a load or a result catches text mid-fade: the e2e specs import `tests/e2e/axe-builder.ts`, which waits for finite animations and transitions to end before analysing, and measurements of size wait the same way. Disclosures use `fold` only where `interpolate-size` exists; in WebKit the transitioned `content-visibility` kept an opened panel hidden, so there it is left native.
+
+---
+
+## ADR-0158: Page changes are view transitions: React's ViewTransition in the locale template plus the cross-document rule; the header holds, the old page dissolves, the new one plays its entrance
+
+**Status:** Accepted · **Date:** 2026-11-19 · Builds ADR-0153
+
+### Context
+Most navigations here are client-side (`Link`), so `@view-transition { navigation: auto }` alone would only cover full page loads. Next.js 16 runs navigations as React transitions, and React's `<ViewTransition>` starts a document view transition when a boundary enters or exits. Options: a wrapper in every page, a boundary in the layout (its `update` would also fire on transitions inside a page), or a template (remounted per navigation).
+
+### Decision
+`app/[locale]/template.tsx` wraps the page in `<ViewTransition enter="page" exit="page" default="none">` (a server component: no script); `app/[locale]/tools/template.tsx` re-exports it so hub-to-hub navigations, which do not remount the locale template, run it too. `default="none"` keeps a tool's own state updates out of it. `globals.css`: `@view-transition { navigation: auto }` for full loads; the header carries `view-transition-name: site-header` and does not animate (old snapshot hidden, z-index above); the old page (root and `.page`) sits on top and fades out at `--duration-fast` on `--ease-out` with normal blending, while the new page underneath is live and plays its own `enter` entrance. `::view-transition` lets clicks through. Every group runs at `--duration-fast` on `--ease-out` (not the browser's 250 ms `ease`). A navigation started from the keyboard (Enter, Space or a history key last: ⌘[ ⌘] ⌘← ⌘→, Alt+← Alt+→, Backspace outside a field; no pointer press since; `data-keyed`, set by reveal.tsx's listeners) swaps at once: the old snapshot is not shown and the new page skips its entrance. Opacity only, so reduced motion keeps it. Browsers without view transitions navigate as before. A shared element (a tool's name growing into the H1) was not built: the names are 14–18 px and the H1 32–48 px, so the snapshot would scale bitmap text two to three times, and on home most cards sit in scrolled rows.
+
+### Consequences
+Navigations show one motion: the header stays put, the old page dissolves in 150 ms and the new one rises in. Any new top-level route under `[locale]` gets it for free. Named elements are skipped by hit testing for the transition's 150 ms.
+
+---
+
+## ADR-0159: Search animates only when opened by a pointer: out of the point pressed on desktop, a slide-up sheet on phones; ⌘K, "/" and typing open at once
+
+**Status:** Accepted · **Date:** 2026-11-19 · Amends the palette note in design system §6.3 (keyboard-initiated actions do not animate)
+
+### Context
+The palette opens hundreds of times a day from ⌘K, where motion is a defect (design system §6.3). The round 5 brief also asked for the palette to open from its trigger and the phone sheet to slide up. Both hold if the opening's input decides.
+
+### Decision
+The trigger records the last pointerdown (time and point, capture phase, passive). An opening within a second of it passes `from` (that point) to the palette; ⌘K, "/", and text typed on the home hero pass nothing. With `from` (`data-from` on the popup and backdrop): from 640 px the palette fades and scales 0.97 → 1 at `--duration-fast` on `--ease-out` with `transform-origin` at the point pressed, set before paint, and leaves at `--duration-instant`; below 640 px the full-screen sheet slides up from `translateY(100%)` at `--duration-slow` on `--ease-drawer` and back down at `--duration-fast`. Without `from` nothing transitions, and a pointer opening closed from the keyboard (Escape, or Enter on a result) drops its motion before the exit starts, so it leaves at once. Reduced motion keeps the desktop fade and drops the movement. The code is in the palette's lazy chunk; the trigger adds a few lines.
+
+### Consequences
+Keyboard users keep an instant palette; pointer users see where it came from. Any other way to open search must say how it was opened, or it opens at once.
 
 ---
 

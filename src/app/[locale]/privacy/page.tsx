@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
+import { ClearSiteStorage } from "@/components/layout/clear-site-storage";
 import { LegalPage, proseLink } from "@/components/layout/legal-page";
 import { privacy } from "@/content/site";
 import { Link } from "@/lib/i18n/navigation";
@@ -42,6 +43,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
       localePath={localePathOf(locale)}
       lead={privacy.lead}
       sections={privacy.sections}
+      after={{ heading: "What this browser keeps", node: <ClearSiteStorage /> }}
     >
       <section className="mt-12">
         <h2 className="text-h2">In numbers</h2>

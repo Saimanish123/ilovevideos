@@ -20,11 +20,11 @@ export const fixSubtitleOverlaps: ToolInput = {
   related: ["shift-subtitle-timing", "change-subtitle-frame-rate", "subtitle-converter"],
   updatedAt: "2026-09-30",
   icon: "list-ordered",
+  illustration: "subtitle-overlaps",
   content: {
     en: {
       title: "Fix overlapping subtitles",
-      subtitle:
-        "Find and repair overlapping, out-of-order and broken subtitle cues. Runs in your browser.",
+      subtitle: "Fix subtitles that overlap or appear out of order.",
       metaTitle: "Fix overlapping subtitles, free, no upload",
       metaDescription:
         "Check SRT, WebVTT, ASS or SBV subtitles for overlapping, out-of-order, reversed, repeated and empty cues, with line numbers, and fix them in one pass.",

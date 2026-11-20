@@ -89,7 +89,7 @@ export async function avcPlan(
   if (!(await canEncodeVideo("avc", size)))
     throw new EngineError(
       "unsupported-output",
-      `This browser's H.264 encoder cannot write a ${formatDimensions(size.width, size.height)} video.`,
+      `This browser cannot write a ${formatDimensions(size.width, size.height)} H.264 video.`,
       "Choose a smaller output frame, or try desktop Chrome, Edge or Safari.",
     );
   const highTrouble = await avcEncoderTrouble();
@@ -240,7 +240,7 @@ export async function encodeComposed(job: ComposeJob): Promise<ComposeResult> {
         const at = Math.min(pictureDone, soundDone);
         stopped = new EngineError(
           "unsupported-output",
-          `The browser's ${pictureDone <= soundDone ? "H.264" : "sound"} encoder stopped returning frames at ${formatDuration(at)} of ${formatDuration(total)}, so the run was stopped after ${STALL_MS / 1000} seconds without progress.`,
+          `Writing the ${pictureDone <= soundDone ? "picture" : "sound"} stopped at ${formatDuration(at)} of ${formatDuration(total)}, with no progress for ${STALL_MS / 1000} seconds.`,
           "Try again, or try desktop Chrome or Edge.",
         );
         inner.abort();

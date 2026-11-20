@@ -18,21 +18,13 @@ export const subtitleConverter: ToolInput = {
     "sbv to vtt",
   ],
   aliases: ["subtitle format", "caption converter", "convert captions"],
-  related: [
-    "srt-to-vtt",
-    "vtt-to-srt",
-    "ass-to-srt",
-    "shift-subtitle-timing",
-    "add-subtitles-to-video",
-    "extract-subtitles-from-video",
-  ],
+  related: ["shift-subtitle-timing", "add-subtitles-to-video", "extract-subtitles-from-video"],
   updatedAt: "2026-09-30",
   icon: "captions",
   content: {
     en: {
       title: "Convert subtitle files",
-      subtitle:
-        "Change subtitles between SRT, WebVTT, ASS, SBV and TXT in your browser. Nothing is uploaded.",
+      subtitle: "Change subtitles to SRT, WebVTT, ASS or plain text.",
       metaTitle: "Subtitle converter online, free, no upload",
       metaDescription:
         "Convert subtitle files between SRT, WebVTT, ASS, SSA, SBV and plain text in your browser. See every cue and what the new format drops. Free, no upload.",
@@ -48,8 +40,8 @@ export const subtitleConverter: ToolInput = {
         "Every format here stores the same core: a start time, an end time and the words. What differs is everything around that. SRT adds cue numbers and a few HTML-like tags, WebVTT adds positions, speakers and CSS classes, ASS adds full styling with fonts, colours and exact placement, and SBV and TXT add nothing at all. Converting towards a simpler format drops the extras and keeps the words; converting towards ASS adds one plain default style you can edit later.",
         "Files are recognised by content. A file called film.srt that starts with WEBVTT is read as WebVTT, and the page says so, because renamed files are common and a converter that trusts the extension writes broken output from them. Files that are not valid UTF-8 are read as Windows-1252, the usual legacy encoding for Western European subtitles; if accented letters look wrong in the cue list, the file was saved in another code page and should be re-saved as UTF-8 first.",
         "Italic, bold and underline survive every conversion between SRT, WebVTT and ASS, and a line placed at the top of the picture stays at the top: {\\an8} in SRT and ASS, line:0 in WebVTT. Plain SBV and TXT have no formatting, so those tags are removed there and the page says how many cues had them.",
-        "A conversion never moves a cue. Times keep their milliseconds, except in ASS, which stores hundredths of a second. If the file has overlapping cues or cues out of order, the page marks them in the list and offers to fix them in the same pass; to move the whole file earlier or later, use [shift subtitle timing](/shift-subtitle-timing) instead.",
-        "For the most common directions there are pages that explain what changes in detail: [SRT to WebVTT](/srt-to-vtt) for web players, [WebVTT to SRT](/vtt-to-srt) for TVs and editors, and [ASS to SRT](/ass-to-srt) for styled anime subtitles. When the subtitles are ready, [add them to the video](/add-subtitles-to-video) as a switchable track.",
+        "A conversion never moves a cue. Times keep their milliseconds, except in ASS, which stores hundredths of a second. If the file has overlapping cues or cues out of order, the page marks them in the list and offers to fix them in the same pass, as [fix overlapping subtitles](/fix-subtitle-overlaps) does on its own; to move the whole file earlier or later, use [shift subtitle timing](/shift-subtitle-timing) instead.",
+        "For the most common directions there are pages that explain what changes in detail: [SRT to WebVTT](/srt-to-vtt) for web players, [WebVTT to SRT](/vtt-to-srt) for TVs and editors, [ASS to SRT](/ass-to-srt) for styled anime subtitles, and [SRT to text](/srt-to-txt) for a transcript. When the subtitles are ready, [add them to the video](/add-subtitles-to-video) as a switchable track. Subtitles that are inside an MKV or MP4 come out as a file with [extract subtitles from video](/extract-subtitles-from-video).",
       ],
       faq: [
         {

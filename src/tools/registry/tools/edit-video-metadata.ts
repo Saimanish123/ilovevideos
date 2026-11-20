@@ -30,8 +30,7 @@ export const editVideoMetadata: ToolInput = {
   content: {
     en: {
       title: "Edit video metadata",
-      subtitle:
-        "Change the title, artist, date and cover art of an MP4, MOV, M4A, MP3 or FLAC file.",
+      subtitle: "Change a file's title, artist, date and cover art.",
       metaTitle: "Edit video metadata online, free, no upload",
       metaDescription:
         "Change the title, artist, album, date and cover art of MP4, MOV, M4A, MP3 and FLAC files. Only the tags are rewritten; nothing is re-encoded or uploaded.",
@@ -45,9 +44,9 @@ export const editVideoMetadata: ToolInput = {
       ],
       goodToKnow: [
         "Every format keeps its tags somewhere different, and each one is written where its own players look. MP4, M4A and M4V use the item list that iTunes introduced (`©nam` for the title, `©ART` for the artist, `covr` for the cover) inside the movie header. MOV files from cameras and QuickTime keep short text atoms in the same header instead. MP3 has an ID3v2 tag at the start of the file and sometimes an older 128-byte ID3v1 tag at the end, and FLAC keeps Vorbis comments and a picture block before the audio.",
-        "Nothing is re-muxed. A tool that copies the streams into a new container writes a new header, and the header carries more than tags: the time the recording was made, a GPS position in a format of its own, chapter marks, and in an MP3 the LAME header that tells players how much silence the encoder added. This tool rebuilds only the tag part and moves the pointers to the media by the number of bytes the tags grew or shrank, so all of that stays exactly as the camera or encoder wrote it.",
+        "Nothing is re-muxed. A tool that copies the streams into a new container writes a new header, and the header carries more than tags: the time the recording was made, a GPS position in a format of its own, chapter marks, and in an MP3 the encoder header that tells players how much silence the encoder added. This tool rebuilds only the tag part and moves the pointers to the media by the number of bytes the tags grew or shrank, so all of that stays exactly as the camera or encoder wrote it.",
         "The date field is the tag players list, the year of a song or the date of a release. It is not the recording time a phone or camera stores for itself, which photo libraries use to sort clips; that stays as it was, and the card lists it under Kept as it is; [change the creation date](/change-video-creation-date) for that. If a video carries its location, the card says so too, and [remove metadata](/remove-metadata-from-video) writes a copy without it.",
-        "Cover art goes into MP4, M4A, MP3 and FLAC files as JPEG or PNG, the two types their players read. A WebP, AVIF or other picture is converted to JPEG on this device first, and anything over 3000 pixels on its long side is scaled down to that size. MOV has no standard place for a cover, so the picker is not offered for it.",
+        "Cover art goes into MP4, M4A, MP3 and FLAC files as JPEG or PNG, the two types their players read. A WebP, AVIF or other picture is converted to JPEG first, and anything over 3000 pixels on its long side is scaled down to that size. MOV has no standard place for a cover, so the picker is not offered for it. To make a frame of the video itself the picture a file shows, [change the video's thumbnail](/change-video-thumbnail).",
         "Several files at once take the same values: type an album and an artist once and every file gets them, while a field you leave empty keeps each file's own value, so their titles stay their own. MKV and WebM files are not supported yet; the page offers to [convert MKV to MP4](/mkv-to-mp4) first. After saving, [video info](/video-info) lists every field the new copy carries.",
       ],
       faq: [

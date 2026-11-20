@@ -22,6 +22,7 @@ import {
   slideSize,
 } from "@/tools/engines/images-to-video/plan";
 import type { MediaInfo } from "@/tools/engines/types";
+import { between, z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec, StageInput } from "./types";
 
 type O = ImagesToVideoOptions;
@@ -71,6 +72,16 @@ export const imagesToVideoSpec: OptionsSpec<O> = {
   verb: "Make slideshow",
   multiple: { min: 1, max: MAX_IMAGES, noun: "image" },
   inspect: readPicture,
+  remember: {
+    schema: z.object({
+      seconds: between(0.5, 60),
+      transition: z.enum(["none", "crossfade"]),
+      motion: z.boolean(),
+      shape: z.enum(["16:9", "1:1", "9:16", "4:5", "first"]),
+      fit: z.enum(["blur", "black", "fill"]),
+      fitMusic: z.boolean(),
+    }),
+  },
   defaults: (_info, preset) => ({
     seconds: typeof preset.seconds === "number" ? preset.seconds : 3,
     transition: "crossfade",
@@ -80,6 +91,8 @@ export const imagesToVideoSpec: OptionsSpec<O> = {
     fitMusic: false,
   }),
   previewResult: true,
+  // A new video from stills: nothing to set it against (ADR-0134).
+  compare: false,
   nextStep: { slug: "compress-video", label: "Make the video smaller for sending" },
   blocked: (_o, _info, inputs) => {
     if (!inputs?.length) return "Add at least one image.";
@@ -93,7 +106,7 @@ export const imagesToVideoSpec: OptionsSpec<O> = {
     const size = slideSize(o.shape, firstOf(inputs, info));
     const total = n * d;
     const how = `${withUnit(Number(d.toFixed(2)), "s")} each${x > 0 ? ` with a ${withUnit(x, "s")} crossfade` : ""}${o.motion ? " and a slow zoom" : ""}`;
-    return `${withUnit(n, n === 1 ? "image" : "images")}, ${how}: ${formatDuration(total)} of ${formatDimensions(size.width, size.height)} video at ${withUnit(SLIDE_FPS, "fps")}. ${soundLine(o, total)} Runs on this device.`;
+    return `${withUnit(n, n === 1 ? "image" : "images")}, ${how}: ${formatDuration(total)} of ${formatDimensions(size.width, size.height)} video at ${withUnit(SLIDE_FPS, "fps")}. ${soundLine(o, total)}`;
   },
   result: (o, info, out) => {
     const n = out.inputs?.length ?? 1;

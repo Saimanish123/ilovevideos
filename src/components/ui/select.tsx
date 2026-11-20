@@ -36,7 +36,7 @@ export function Select<T extends string>({
       <BaseSelect.Trigger
         id={id}
         aria-labelledby={labelledBy}
-        className="flex h-10 pointer-coarse:h-11 w-full items-center justify-between gap-2 rounded-md border border-border bg-bg-raised pr-3 pl-3 text-left text-fg text-sm transition-colors duration-(--duration-instant) hover:border-border-strong focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 data-popup-open:border-border-strong"
+        className="flex h-10 pointer-coarse:h-11 w-full items-center justify-between gap-2 rounded-md border border-border bg-bg-raised pr-4 pl-3 text-left text-fg text-sm transition-colors duration-(--duration-instant) hover:border-border-strong focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 data-popup-open:border-border-strong"
       >
         <BaseSelect.Value className="truncate" />
         <BaseSelect.Icon className="flex shrink-0 text-fg-muted">

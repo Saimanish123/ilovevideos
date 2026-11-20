@@ -4,7 +4,8 @@ import { CommandPaletteTrigger } from "./command-palette-trigger";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 h-14 border-b border-border bg-bg/90 backdrop-blur-sm">
+    // Named for view transitions (globals.css): the header holds still while the page changes under it.
+    <header className="sticky top-0 z-40 h-14 border-b border-border bg-bg [view-transition-name:site-header]">
       <div className="mx-auto flex h-full w-full max-w-(--container-content) items-center justify-between px-4 md:px-8">
         <Link
           href="/"

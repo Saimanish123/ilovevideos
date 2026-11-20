@@ -1,5 +1,5 @@
-import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
+import AxeBuilder from "./axe-builder";
 
 /**
  * The site shell: home, a hub, the plain-language pages and the kitchen sink. Each renders one H1,
@@ -9,7 +9,7 @@ import { expect, type Page, test } from "@playwright/test";
  */
 
 const pages = [
-  { path: "/", h1: "Video tools that run on your device. Free.", breadcrumb: false },
+  { path: "/", h1: "Free online video tools, one job per page.", breadcrumb: false },
   { path: "/tools/edit", h1: "Edit video tools", breadcrumb: true },
   { path: "/tools/convert", h1: "Video and audio converters", breadcrumb: true },
   { path: "/trim-video", h1: "Trim video", breadcrumb: true },
@@ -77,6 +77,15 @@ test("touch targets are at least 44px outside running prose", async ({ page }, i
     "/trim-video",
   ]) {
     await page.goto(path);
+    // Measure the page at rest: a box caught mid-entrance (ADR-0157) reads a fraction of a pixel short.
+    await page.evaluate(() =>
+      Promise.all(
+        document
+          .getAnimations()
+          .filter((a) => a.effect?.getComputedTiming().endTime !== Infinity)
+          .map((a) => a.finished),
+      ),
+    );
     const small = await page.evaluate(() =>
       [...document.querySelectorAll<HTMLElement>("a, button, input, [role=button]")]
         .filter((el) => !el.closest("p, dd, pre"))

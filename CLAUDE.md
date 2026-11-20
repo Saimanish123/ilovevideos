@@ -41,7 +41,7 @@ Subagents cannot spawn subagents: after `tool-builder` returns, the main session
 
 1. **Design**: `README.md#design-principles` (the anti-pattern table is a hard reject list) and `README.md#design-system` (semantic tokens only; no raw hex, no arbitrary spacing; warm neutral palette with one `accent` slot used in at most three places per screen; `destructive` and the focus ring are the only other hue, ADR-0009).
 2. **Copy**: `README.md#content-guidelines`. No exclamation marks, no emoji, no banned marketing words, sentence case. `pnpm lint:copy` enforces it.
-3. **Privacy**: `README.md#privacy-and-processing`. No network call touches user data in engines or workers (`pnpm lint:privacy`). No cookies. No third-party scripts.
+3. **Privacy**: `README.md#privacy-and-processing`. Files are processed on the device: no network call touches user data in engines or workers (`pnpm lint:privacy`). No third-party scripts without an ADR. First-party cookies and browser storage are allowed for usability (ADR-0128): the priority order is usability, then every-device support, then privacy.
 4. **SEO**: `README.md#seo-strategy` and Appendix B. The tool runs on the landing URL. Unique content per page (`pnpm lint:registry`). BreadcrumbList only; never FAQPage, HowTo or SoftwareApplication. Google ignores sitemap priority and changefreq.
 5. **Motion**: easing and duration tokens in `src/styles/tokens.css` are the only curves allowed. Exits shorter than enters. Reduced motion respected.
 6. **Flow before code**: `README.md#tool-page-specification` §0. Every tool page starts from the user's job, uses the vocabulary table, gets the right primary control (timeline for time, visual frame for geometry, presets for size), and belongs to a generated family when it is one of many. No page duplicates an existing engine + options; `pnpm lint:registry` rejects it.
@@ -72,7 +72,7 @@ pnpm lint:fix     # biome --write
 ## Working rules
 
 - Prefer editing the registry or engines over adding routes or components.
-- Every engine: `supports()` probes real browser capability; `run()` reports real progress and honours `AbortSignal`; emits the equivalent ffmpeg command; ships a fixture test.
+- Every engine: `supports()` probes real browser capability; `run()` reports real progress and honours `AbortSignal`; emits the equivalent ffmpeg command (kept in `EngineResult.ffmpegCommand` and as a data attribute on the result for tests and records; not shown in the interface, ADR-0149); ships a fixture test.
 - Every UI change ships for mobile and desktop together: verified at 390 and 1280 with screenshots, works at 768, keyboard operable, zero axe violations, 44px targets, respects reduced motion. Playwright runs Chromium, mobile Chrome and Mobile Safari.
 - Do not spawn subagents for research unless asked; web search budget is finite. Delegation per the routing table is expected.
 - Report outcomes faithfully: if a check fails, say so with the output.

@@ -21,7 +21,9 @@ import type { MediaInfo } from "@/tools/engines/types";
 import { pictureEstimate } from "@/tools/engines/video-filter/plan";
 import { type Choice, Choices } from "./choices";
 import { undecodablePicture } from "./decodable";
+import { z } from "./remember-schema";
 import type { OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 const fps = (info: MediaInfo) => info.video?.fps ?? 30;
 const onePlay = (o: LoopOptions, info: MediaInfo) =>
@@ -49,15 +51,23 @@ const timesOptions: Choice<string>[] = timesPresets.map((t) => ({
 export const loopSpec: OptionsSpec<LoopOptions> = {
   verb: "Loop",
   previewResult: true,
+  // The same picture repeated: its timeline is longer than the source's (ADR-0134).
+  compare: false,
   nextStep: { slug: "video-to-gif", label: "Make it a GIF" },
   // The boomerang is its own page (the preset); the loop page links there instead of a switch.
+  remember: {
+    schema: z.object({
+      times: z.int().check(z.minimum(2), z.maximum(MAX_PLAYS)),
+      boomerang: z.boolean(),
+    }),
+  },
   defaults: (_info, preset) => ({
     times: typeof preset.times === "number" ? preset.times : 3,
     minSeconds: typeof preset.minSeconds === "number" ? preset.minSeconds : undefined,
     boomerang: preset.boomerang === true,
   }),
   blocked: (o, info) => {
-    if (!info.video) return "This file has no video track to loop.";
+    if (!info.video) return unfixable("This file has no video track to loop. Choose a video file.");
     const undecodable = undecodablePicture(info);
     if (undecodable) return undecodable;
     if (needsFfmpeg(info, sourceName(info)))
@@ -79,8 +89,8 @@ export const loopSpec: OptionsSpec<LoopOptions> = {
     if (n < 2) return undefined;
     const size = `about ${formatBytes(outputBytes(o, info))}`;
     return o.boomerang
-      ? `${n} bounces, ${formatDuration(onePlay(o, info) * n)}, ${size}. One bounce is encoded to H.264 on this device, then copied ${n} times; a boomerang has no sound.`
-      : `${n} plays, ${formatDuration(info.durationSec * n)}, ${size}. The streams are copied ${n} times: nothing is re-encoded, every play is identical to the original. Runs on this device.`;
+      ? `${n} bounces, ${formatDuration(onePlay(o, info) * n)}, ${size}. One bounce is encoded to H.264, then copied ${n} times; a boomerang has no sound.`
+      : `${n} plays, ${formatDuration(info.durationSec * n)}, ${size}. The streams are copied ${n} times: nothing is re-encoded, every play is identical to the original.`;
   },
   result: (o, info) => {
     const n = count(o, info);

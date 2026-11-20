@@ -24,7 +24,9 @@ import {
   rangeOf,
   type VideoToFramesOptions,
 } from "@/tools/engines/video-to-frames/plan";
+import { between, z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 type O = VideoToFramesOptions;
 
@@ -61,6 +63,14 @@ const sizeOf = (o: O, info: MediaInfo) =>
 
 export const videoToFramesSpec: OptionsSpec<O> = {
   verb: "Extract images",
+  remember: {
+    schema: z.object({
+      every: z.enum(["seconds", "frames"]),
+      step: z.number().check(z.positive(), z.maximum(3600)),
+      format: z.enum(["png", "jpg", "webp"]),
+      quality: between(1, 100),
+    }),
+  },
   defaults: (_info, preset) => ({
     every: preset.every === "frames" ? "frames" : "seconds",
     step: typeof preset.step === "number" ? preset.step : 1,
@@ -72,7 +82,8 @@ export const videoToFramesSpec: OptionsSpec<O> = {
     { keys: "Shift ← →", label: "Move it one second" },
   ],
   blocked: (o, info) => {
-    if (!info.video) return "This file has no video track to take frames from.";
+    if (!info.video)
+      return unfixable("This file has no video track to take frames from. Choose a video file.");
     const n = count(o, info);
     if (n === 0) return "The chosen range holds no frame. Widen the range on the timeline.";
     if (n > MAX_IMAGES)
@@ -84,7 +95,7 @@ export const videoToFramesSpec: OptionsSpec<O> = {
     const { start, end } = rangeOf(o, info.durationSec);
     const s = sizeOf(o, info);
     const q = isLossy(o.format) ? ` at quality ${o.quality}` : ", lossless";
-    return `${withUnit(n.toLocaleString("en"), n === 1 ? "image" : "images")}, ${cadence(o)} from ${formatTimecode(start)} to ${formatTimecode(end)}: ${formatDimensions(s.width, s.height)} ${imageLabel[o.format]}${q}, numbered in order. Runs on this device.`;
+    return `${withUnit(n.toLocaleString("en"), n === 1 ? "image" : "images")}, ${cadence(o)} from ${formatTimecode(start)} to ${formatTimecode(end)}: ${formatDimensions(s.width, s.height)} ${imageLabel[o.format]}${q}, numbered in order.`;
   },
   result: (o, info, out) => {
     const s = sizeOf(o, info);

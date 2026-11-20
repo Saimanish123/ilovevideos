@@ -3,6 +3,8 @@
 import { Pause, Play } from "lucide-react";
 import { type ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import { formatDuration } from "@/lib/format";
+import { ABSwitch } from "../compare/ab-switch";
+import { useCompareFor } from "../compare/context";
 import type { HeroProps } from "../options/types";
 import { usePlayerKeys, useWorkspaceKeys } from "../shortcuts";
 import { useWaveform } from "./use-waveform";
@@ -41,6 +43,8 @@ export function AudioHero({
   layer?: (duration: number) => ReactNode;
 }) {
   const result = showing === "result";
+  // A result the stage set up to compare: Before/After in place of the "Result" tag (ADR-0136).
+  const compare = useCompareFor(result && phase === "done" ? file : undefined);
   const wave = useWaveform(file);
   const audioRef = useRef<HTMLAudioElement>(null);
   const brightRef = useRef<SVGGElement>(null);
@@ -266,9 +270,15 @@ export function AudioHero({
             ? `${Math.round((progress?.ratio ?? 0) * 100)}% processed`
             : `${formatDuration(time)} / ${formatDuration(duration)}`}
         </p>
-        <p className="ml-auto min-w-0 truncate text-right text-gray-400 text-xs">
-          {note ?? (result ? "Result" : "Source")}
-        </p>
+        {compare && !note && playable ? (
+          <div className="ml-auto">
+            <ABSwitch media={audioRef} compare={compare} tone="stage" />
+          </div>
+        ) : (
+          <p className="ml-auto min-w-0 truncate text-right text-gray-400 text-xs">
+            {note ?? (result ? "Result" : "Source")}
+          </p>
+        )}
         {/* Announced once when reading starts and once when it ends, not on every percentage step. */}
         <span className="sr-only" aria-live="polite">
           {wave.status === "reading"

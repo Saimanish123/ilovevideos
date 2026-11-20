@@ -12,6 +12,7 @@
       "!**/.next-*",
       "!**/node_modules",
       "!**/public/wasm",
+      "!**/public/models",
       "!**/playwright-report",
       "!**/test-results",
       "!src/styles/tokens.css",

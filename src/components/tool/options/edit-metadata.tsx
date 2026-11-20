@@ -27,6 +27,7 @@ import {
 import { snapToFrame } from "@/tools/engines/frame-extract/math";
 import type { MediaInfo } from "@/tools/engines/types";
 import type { Blocked, OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 /** One spec, two pages: tags (edit-video-metadata) and the recording date (`task: "date"`). */
 type O = DateOptions & CoverOptions;
@@ -98,6 +99,8 @@ export const editMetadataSpec: OptionsSpec<O> = {
       <TagCard {...props} />
     ),
   previewResult: true,
+  // A stream copy: identical picture and sound (ADR-0134).
+  compare: false,
   nextStep: { slug: "video-info", label: "Check every field of the new copy" },
   blocked: (o, info) => {
     if (o.task === "cover") {
@@ -107,8 +110,10 @@ export const editMetadataSpec: OptionsSpec<O> = {
           reason:
             "Only MP4 and MOV files have a place for a thumbnail that file browsers read. Convert this file to MP4 first.",
           action: { slug: "video-converter", label: "Convert to MP4" },
+          fixable: false,
         };
-      if (!info.video) return "This file has no picture to take a thumbnail from.";
+      if (!info.video)
+        return unfixable("This file has no picture to take a thumbnail from. Choose a video file.");
       if (!o.cover) return "Reading the frame on the preview";
       return undefined;
     }
@@ -134,10 +139,10 @@ export const editMetadataSpec: OptionsSpec<O> = {
   },
   summary: (o) =>
     o.task === "cover"
-      ? `Thumbnail${o.cover ? ` ${formatDimensions(o.cover.width, o.cover.height)} JPEG` : ""} · picture and sound unchanged · on this device`
+      ? `Thumbnail${o.cover ? ` ${formatDimensions(o.cover.width, o.cover.height)} JPEG` : ""} · picture and sound unchanged`
       : o.task === "date"
-        ? `${describeChange(o.dates)} · picture and sound unchanged · on this device`
-        : `${describeEdit(o)}. Only the tag block is rewritten: the video and sound are the original bytes, nothing is re-encoded. Runs on this device.`,
+        ? `${describeChange(o.dates)} · picture and sound unchanged`
+        : `${describeEdit(o)}. Only the tag block is rewritten: the video and sound are the original bytes, nothing is re-encoded.`,
   result: (o) =>
     o.task === "cover"
       ? {

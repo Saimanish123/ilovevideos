@@ -68,7 +68,7 @@ export async function runFilter(run: FilterRun): Promise<EngineResult> {
   if (!(await canEncodeAvc(size.width, size.height))) {
     throw new EngineError(
       "unsupported-output",
-      `This browser's H.264 encoder cannot write a ${formatDimensions(size.width, size.height)} video.`,
+      `This browser cannot write a ${formatDimensions(size.width, size.height)} H.264 video.`,
       "Make the video smaller with compress video first, or try desktop Chrome, Edge or Safari.",
     );
   }

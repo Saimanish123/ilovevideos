@@ -25,7 +25,9 @@ import {
 } from "@/tools/engines/intro-outro/options";
 import { drawTitle } from "@/tools/engines/intro-outro/title";
 import type { MediaInfo } from "@/tools/engines/types";
+import { between, z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 type O = IntroOutroOptions;
 type Role = "intro" | "outro";
@@ -61,6 +63,13 @@ export const introOutroSpec: OptionsSpec<O> = {
   verbFor: (o) =>
     o.intro && !o.outro ? "Add intro" : !o.intro && o.outro ? "Add outro" : "Add intro and outro",
   // The title is filled from the file's title tag here, or from a readable file name by the panel.
+  remember: {
+    schema: z.object({
+      transition: z.enum(["cut", "crossfade"]),
+      fadeSec: between(0.1, 2),
+      fit: z.enum(["contain", "cover"]),
+    }),
+  },
   defaults: (info) => ({
     intro: {
       kind: "title",
@@ -74,16 +83,22 @@ export const introOutroSpec: OptionsSpec<O> = {
     bars: "#000000",
   }),
   previewResult: true,
+  // Added clips shift the timeline (ADR-0134).
+  compare: false,
   nextStep: { slug: "compress-video", label: "Compress video" },
   blocked: (o, info, _inputs, file) => {
-    if (!info.video) return "This file has no video track to add an intro or outro to.";
+    if (!info.video)
+      return unfixable(
+        "This file has no video track to add an intro or outro to. Choose a video file.",
+      );
     if (needsFfmpeg(info, file?.name ?? sourceName(info)))
       return {
         reason:
           info.video.decodable === false
             ? "This browser cannot decode this video's picture, so nothing can be added to it here."
-            : "This format is read only by the fallback engine, which cannot add an intro or outro. Convert it to MP4 first.",
+            : "This tool cannot open this format. Convert it to MP4 first, then come back.",
         action: { slug: "video-converter", label: "Convert to MP4" },
+        fixable: false,
       };
     if (!o.intro && !o.outro) return "Choose an intro, an outro or both.";
     return cardProblem(o.intro, "intro") ?? cardProblem(o.outro, "outro");
@@ -98,7 +113,7 @@ export const introOutroSpec: OptionsSpec<O> = {
     ].filter(Boolean);
     const join = o.transition === "crossfade" ? `${withUnit(o.fadeSec, "s")} crossfades` : "cuts";
     const first = parts.join(" · ");
-    return `${first.charAt(0).toUpperCase()}${first.slice(1)} · ${join} · ${formatDuration(tl.total)} · H.264 ${formatDimensions(size.width, size.height)}, ${fpsWords(info)} · AAC · on this device`;
+    return `${first.charAt(0).toUpperCase()}${first.slice(1)} · ${join} · ${formatDuration(tl.total)} · H.264 ${formatDimensions(size.width, size.height)}, ${fpsWords(info)} · AAC`;
   },
   result: (o) => ({
     title: o.intro && o.outro ? "Intro and outro added" : o.intro ? "Intro added" : "Outro added",

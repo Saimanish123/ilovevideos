@@ -1,6 +1,6 @@
 import { execFileSync } from "node:child_process";
-import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
+import AxeBuilder from "./axe-builder";
 import { edgeMask, H, truthFrame, W } from "./greenscreen-scene";
 import {
   pictureToPage,
@@ -116,9 +116,7 @@ test.describe("green screen: the page", () => {
     });
     await expect(run).toBeEnabled();
     await expect(
-      page.getByText(
-        /^Green screen keyed out, on #000000 · H\.264 640×360 · sound copied · on this device$/,
-      ),
+      page.getByText(/^Green screen keyed out, on #000000 · H\.264 640×360 · sound copied$/),
     ).toBeVisible();
     await expect(page.getByTestId("key-preview")).toHaveAttribute("data-drawn", "1");
     await shootWidths(page, "greenscreen-ready");
@@ -171,7 +169,7 @@ test.describe("green screen: results", () => {
     await pick(page, "Image");
     await page.locator('input[type="file"][accept*="image/png"]').setInputFiles(BACKDROP);
     await expect(page.getByText("backdrop.png", { exact: true })).toBeVisible();
-    await expect(page.getByText(/^Green screen keyed out, on backdrop\.png · /)).toBeVisible();
+    await expect(page.getByText(/^Green screen keyed out, on a picture · /)).toBeVisible();
     await shootWidths(page, "greenscreen-backdrop");
     await run.click();
     await expect(page.getByText("Background replaced", { exact: true })).toBeVisible({

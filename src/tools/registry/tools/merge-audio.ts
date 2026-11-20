@@ -23,8 +23,7 @@ export const mergeAudio: ToolInput = {
   content: {
     en: {
       title: "Merge audio files",
-      subtitle:
-        "Join MP3, WAV, M4A and other audio files end to end into one file, in your browser.",
+      subtitle: "MP3, WAV, M4A and more, end to end in one file.",
       metaTitle: "Merge audio files and join MP3 online, free",
       metaDescription:
         "Join up to 50 audio files into one, end to end, with gaps or crossfades. Matching MP3s are joined without re-encoding. On your device. Free.",
@@ -38,8 +37,8 @@ export const mergeAudio: ToolInput = {
       ],
       goodToKnow: [
         "MP3 files at the same sample rate and in the same layout, stereo or mono, joined end to end with Match loudness off, are joined frame for frame: the result contains exactly the frames of the originals, so nothing is lost and it is done almost as fast as the files can be read. A new header at the start counts and indexes the joined frames and tells players where the sound of the first file starts and where the last one ends, so seeking and the shown length are right.",
-        "An MP3 encoder adds a few hundredths of a second of padding at the start and end of every file. A frame-for-frame join keeps it at each inner join, 13 to 39 ms for files made with LAME, which nobody notices between chapters or separate songs but can be heard in music that runs continuously across files, such as a live album. For such music choose a crossfade, Match loudness or another format under Save as: the files are then decoded with the padding removed and encoded once.",
-        "Files of different kinds are decoded and joined as sound, then saved once. Files at other sample rates are resampled to the first file's rate with a band-limited filter, so no false tones fold back into the sound, and a mono file plays on both sides next to stereo ones. WAV and FLAC results are lossless from the decoded sound; MP3 and M4A results are encoded at 192 kbps. MP3 and FLAC results are written by FFmpeg on this device, which downloads once.",
+        "An MP3 encoder adds a few hundredths of a second of padding at the start and end of every file. A frame-for-frame join keeps it at each inner join, 13 to 39 ms for files from the usual MP3 encoder, which nobody notices between chapters or separate songs but can be heard in music that runs continuously across files, such as a live album. For such music choose a crossfade, Match loudness or another format under Save as: the files are then decoded with the padding removed and encoded once.",
+        "Files of different kinds are decoded and joined as sound, then saved once. Files at other sample rates are resampled to the first file's rate with a band-limited filter, so no false tones fold back into the sound, and a mono file plays on both sides next to stereo ones. WAV and FLAC results are lossless from the decoded sound; MP3 and M4A results are encoded at 192 kbps. MP3 and FLAC results need a one-time download.",
         "Match loudness measures each file the way broadcasters do (EBU R128) and brings every file to the middle loudness of the set, holding peaks under −1 dBTP, so a quiet phone recording does not vanish between studio tracks. The crossfade overlaps each pair of files with an equal-power curve, which keeps the level steady through the change; it is shortened if a file is too short for it.",
         "To join video clips with their pictures, use [merge videos](/merge-videos). To even out the loudness of the finished file as a whole, [normalise it](/normalize-audio) afterwards; to cut the result down, [trim the audio](/trim-audio).",
       ],

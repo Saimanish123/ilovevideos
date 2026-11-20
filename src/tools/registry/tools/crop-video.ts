@@ -29,8 +29,7 @@ export const cropVideo: ToolInput = {
   content: {
     en: {
       title: "Crop video",
-      subtitle:
-        "Cut away the edges of a video and keep only the part you frame. Runs in your browser.",
+      subtitle: "Cut away the edges of a video.",
       metaTitle: "Crop video online, free, no upload",
       metaDescription:
         "Crop a video by dragging a frame over the preview or typing exact pixels. Shapes for 16:9, 9:16, 1:1 and 4:5. Runs in your browser, nothing uploaded.",
@@ -46,7 +45,7 @@ export const cropVideo: ToolInput = {
         "The frame is measured in pixels of the original picture, not of the preview on your screen. A phone clip filmed upright is measured the way it plays, so Left and Top always mean the left and top you see. Every value snaps to an even number because H.264 stores colour at half resolution in both directions (4:2:0); an odd width or height would leave half a colour sample hanging off the edge, and common encoders reject it.",
         "A crop cannot be made by copying the stream. The pixels outside the frame have to go and the frames that remain have to be compressed again, so the output is a new H.264 encode at a deliberately high bitrate, about 7.5 Mbit/s for a 1920×1080 result at 30 fps and proportionally less for smaller frames. Each re-encode costs a little, so crop from the original file rather than from an already edited copy, and if you also need a smaller file, run the result through [compress video](/compress-video) afterwards.",
         "Some desktop tools offer a lossless crop for H.264 by rewriting the cropping fields in the stream header. That hides the edges rather than removing them: the file stays the same size and the cut-away pixels are still inside it, which matters when the point of the crop is to take out a face, a name or a notification on a screen recording. Re-encoding, as this page does, removes them from the file for good.",
-        "A crop never scales the picture up. A 9:16 window cut from a 1920×1080 frame is 606×1080 pixels, and it stays 606×1080, because enlarging it would add pixels without adding detail. If you want a vertical video that keeps the whole landscape picture, [change the aspect ratio](/change-video-aspect-ratio) with bars instead; if the clip is sideways rather than badly framed, [rotate it](/rotate-video) first, which on MP4 and MOV costs nothing in quality.",
+        "A crop never scales the picture up. A 9:16 window cut from a 1920×1080 frame is 606×1080 pixels, and it stays 606×1080, because enlarging it would add pixels without adding detail. If you want a vertical video that keeps the whole landscape picture, [change the aspect ratio](/change-video-aspect-ratio) with bars instead; if the clip is sideways rather than badly framed, [rotate it](/rotate-video) first, which on MP4 and MOV costs nothing in quality. To turn an upright phone clip into a 16:9 one with blurred sides, use [vertical video to horizontal](/vertical-video-to-horizontal).",
         "MP4, MOV and MKV files keep their container. WebM is written as MP4, because WebM cannot hold H.264, and older formats such as AVI and WMV are read by a slower fallback converter that downloads once and also writes MP4. AAC sound in MP4 or MOV, and any sound in MKV, is copied bit for bit; other sound is encoded to AAC.",
       ],
       faq: [

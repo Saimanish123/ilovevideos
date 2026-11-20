@@ -1,7 +1,7 @@
 "use client";
 
 import { Plus, Trash2 } from "lucide-react";
-import { useId, useMemo } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { BlurPreview } from "@/components/tool/regions/blur-preview";
 import { BoxEditor } from "@/components/tool/regions/box-editor";
 import { LayerTimeline } from "@/components/tool/regions/layer-timeline";
@@ -36,9 +36,19 @@ import { encodedSize } from "@/tools/engines/crop/math";
 import { audioCopied, needsFfmpeg, sourceName } from "@/tools/engines/crop/plan";
 import { compositeContainer } from "@/tools/engines/overlay/composite";
 import type { MediaInfo } from "@/tools/engines/types";
+import {
+  type FacesValue,
+  FindAnnouncer,
+  FindFaces,
+  findHint,
+  finding,
+  useFindFaces,
+} from "./blur-faces";
+import { between, z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
-type O = BlurRegionOptions;
+type O = FacesValue;
 
 const sizeOf = (info: MediaInfo) => ({
   width: info.video?.width ?? 0,
@@ -62,6 +72,16 @@ function soundWords(info: MediaInfo, fileName: string) {
 }
 
 const regionCount = (n: number) => `${n} ${n === 1 ? "region" : "regions"}`;
+const faceCount = (n: number) => `${n} ${n === 1 ? "face" : "faces"}`;
+
+/** "3 faces and 1 region", "2 regions", "1 face". */
+function regionsPhrase(o: Pick<BlurRegionOptions, "regions">) {
+  const f = o.regions.filter((r) => r.face).length;
+  const d = o.regions.length - f;
+  if (f === 0) return regionCount(d);
+  if (d === 0) return faceCount(f);
+  return `${faceCount(f)} and ${regionCount(d)}`;
+}
 
 /** "medium blur", "strong pixelation", "black box". */
 function effectPhrase(o: O) {
@@ -83,6 +103,13 @@ const outSize = (info: MediaInfo) => {
 
 export const blurRegionSpec: OptionsSpec<O> = {
   verb: "Blur",
+  remember: {
+    schema: z.object({
+      effect: z.enum(["blur", "pixelate", "box"]),
+      strength: between(0.1, 1),
+      feather: between(0, 0.5),
+    }),
+  },
   defaults: (info, preset) => ({
     regions: [defaultRegion(1, sizeOf(info))],
     effect: preset.effect === "pixelate" || preset.effect === "box" ? preset.effect : "blur",
@@ -100,23 +127,25 @@ export const blurRegionSpec: OptionsSpec<O> = {
     { keys: "Delete", label: "Remove it" },
   ],
   blocked: (o, info, _inputs, file) => {
-    if (!info.video) return "This file has no video track to blur.";
+    if (!info.video) return unfixable("This file has no video track to blur. Choose a video file.");
     if (needsFfmpeg(info, file?.name ?? sourceName(info)))
       return {
         reason:
           info.video.decodable === false
             ? "This browser cannot decode this video's picture, so regions cannot be drawn over it."
-            : "This format is read only by the fallback engine, which cannot blur regions. Convert it to MP4 first.",
+            : "This tool cannot open this format. Convert it to MP4 first, then come back.",
         action: { slug: "video-converter", label: "Convert to MP4" },
+        fixable: false,
       };
+    if (finding(o)) return "Wait for the face search to finish, or cancel it.";
     if (o.regions.length === 0) return "Draw a region on the picture first.";
     return undefined;
   },
   summary: (o, info) =>
-    `${o.invert ? `Everything but ${regionCount(o.regions.length)}` : regionCount(o.regions.length)}, ${effectPhrase(o)} · H.264 ${outSize(info)} · ${soundWords(info, sourceName(info))} · on this device`,
+    `${o.invert ? `Everything but ${regionsPhrase(o)}` : regionsPhrase(o)}, ${effectPhrase(o)} · H.264 ${outSize(info)} · ${soundWords(info, sourceName(info))}`,
   result: (o, info) => {
     if (!info.video) return undefined;
-    const n = regionCount(o.regions.length);
+    const n = regionsPhrase(o);
     return {
       title: o.invert
         ? `Everything but ${n} ${pastTense[o.effect]}`
@@ -129,10 +158,16 @@ export const blurRegionSpec: OptionsSpec<O> = {
   Panel: BlurPanel,
 };
 
-/** Index-based names, the same on the picture, in the panel and on the timeline. */
-const nameOf = (o: O, id: number | undefined) => {
-  const i = o.regions.findIndex((r) => r.id === id);
-  return i < 0 ? undefined : `Region ${i + 1}`;
+/**
+ * Names, the same on the picture, in the panel and on the timeline: a found face keeps its number
+ * from Find faces ("Face 4" stays Face 4 when Face 3 is deleted); drawn regions are numbered by
+ * position among themselves ("Region n").
+ */
+const nameOf = (o: Pick<BlurRegionOptions, "regions">, id: number | undefined) => {
+  const r = o.regions.find((x) => x.id === id);
+  if (!r) return undefined;
+  if (r.face) return `Face ${r.face}`;
+  return `Region ${o.regions.filter((x) => !x.face).indexOf(r) + 1}`;
 };
 
 const update = (o: O, id: number, f: (r: Region) => Region): O => ({
@@ -164,13 +199,17 @@ function BlurOverlayOn({
   const h = info.video?.height ?? 0;
   const source = useMemo(() => ({ width: w, height: h }), [w, h]);
   const now = usePlayhead(media.video);
-  const boxes = value.regions.map((r, i) => ({
-    id: r.id,
-    rect: keyRect(keyAt(r, now), source),
-    shape: r.shape,
-    label: `Region ${i + 1}`,
-    hidden: !showsAt(r, now),
-  }));
+  // A region outside its time range shows as a faint outline only when it is selected (or drawn
+  // by hand): found faces come and go, and twenty faint ellipses would bury the picture.
+  const boxes = value.regions
+    .filter((r) => !r.face || r.id === value.selected || showsAt(r, now))
+    .map((r) => ({
+      id: r.id,
+      rect: keyRect(keyAt(r, now), source),
+      shape: r.shape,
+      label: nameOf(value, r.id) ?? "Region",
+      hidden: !showsAt(r, now),
+    }));
   const frameSec = frameSecOf(info);
   return (
     <>
@@ -240,6 +279,9 @@ function BlurPanel(props: OptionsPanelProps<O>) {
   return props.info.video ? <BlurPanelOn {...props} /> : null;
 }
 
+/** Region buttons shown before the list collapses behind "All n". */
+const COLLAPSE_AT = 6;
+
 const EDGES = [
   { value: "0", label: "Crisp" },
   { value: "0.1", label: "Soft" },
@@ -260,6 +302,45 @@ function BlurPanelOn({ value, onChange, info, media, disabled }: OptionsPanelPro
   const edge = EDGES.find((p) => Math.abs(Number(p.value) - value.feather) < 0.001)?.value ?? "";
   const verb =
     value.effect === "blur" ? "Blur" : value.effect === "pixelate" ? "Pixelate" : "Cover";
+  const faces = useFindFaces(value, onChange, info, media.file);
+  const searching = finding(value);
+  // Past six, the list shows the first six (and the selected one) until opened.
+  const [showAll, setShowAll] = useState(false);
+  const long = value.regions.length > COLLAPSE_AT;
+  const shown =
+    !long || showAll
+      ? value.regions
+      : value.regions.filter((r, i) => i < COLLAPSE_AT || r.id === value.selected);
+  const hiddenCount = value.regions.length - shown.length;
+
+  // Focus follows the search (each step unmounts what had focus): to Cancel when it starts, back to
+  // Find faces when cancelled, to the first face when it ends, or to the line saying why not.
+  const findRef = useRef<HTMLButtonElement>(null);
+  const cancelRef = useRef<HTMLButtonElement>(null);
+  const hintRef = useRef<HTMLParagraphElement>(null);
+  const listRef = useRef<HTMLFieldSetElement>(null);
+  const phase = value.find?.phase;
+  const prevPhase = useRef(phase);
+  useEffect(() => {
+    const was = prevPhase.current;
+    prevPhase.current = phase;
+    if (was === phase) return;
+    const running = (p: typeof phase) => p === "loading" || p === "finding";
+    if (running(phase) && !running(was)) cancelRef.current?.focus();
+    else if (running(was) && phase === undefined) findRef.current?.focus();
+    else if (phase === "done" && value.find?.kept)
+      listRef.current
+        ?.querySelector<HTMLButtonElement>(`[data-region="${value.selected}"]`)
+        ?.focus();
+    else if (phase === "done" || phase === "error") hintRef.current?.focus();
+  }, [phase, value.find?.kept, value.selected]);
+  const hint =
+    findHint(value) ??
+    (full
+      ? `Up to ${MAX_REGIONS} regions; delete one to add another.`
+      : value.regions.length === 0
+        ? "Drag on the picture to draw one, or find the faces."
+        : "Drag on the picture to draw another. Select one to change it.");
   /** The preview's moment, read when it is needed (the panel does not follow the playhead). */
   const nowSnapped = () => snapTime(media.video.current?.currentTime ?? 0, info);
 
@@ -276,24 +357,19 @@ function BlurPanelOn({ value, onChange, info, media, disabled }: OptionsPanelPro
 
   return (
     <div className="flex flex-col gap-6">
-      <Field
-        label="Regions"
-        labelId={regionsId}
-        hint={
-          full
-            ? `Up to ${MAX_REGIONS} regions; delete one to add another.`
-            : value.regions.length === 0
-              ? "Drag on the picture to draw one."
-              : "Drag on the picture to draw another. Select one to change it."
-        }
-      >
-        <fieldset aria-labelledby={regionsId} className="m-0 flex flex-wrap gap-2 border-0 p-0">
-          {value.regions.map((r, i) => {
+      <Field label="Regions" labelId={regionsId}>
+        <fieldset
+          ref={listRef}
+          aria-labelledby={regionsId}
+          className="m-0 flex flex-wrap gap-2 border-0 p-0"
+        >
+          {shown.map((r) => {
             const on = r.id === value.selected;
             return (
               <button
                 key={r.id}
                 type="button"
+                data-region={r.id}
                 aria-pressed={on}
                 disabled={disabled}
                 onClick={() => onChange({ ...value, selected: r.id })}
@@ -303,7 +379,7 @@ function BlurPanelOn({ value, onChange, info, media, disabled }: OptionsPanelPro
                   on ? "border-fg" : "text-fg-muted",
                 )}
               >
-                Region {i + 1}
+                {nameOf(value, r.id)}
                 {!wholeVideo(r, info.durationSec) && (
                   <span className="sr-only">
                     , from {formatTimecode(regionRange(r, info.durationSec).start)}
@@ -312,16 +388,42 @@ function BlurPanelOn({ value, onChange, info, media, disabled }: OptionsPanelPro
               </button>
             );
           })}
+          {long && (
+            <Button
+              variant="ghost"
+              className="min-h-11 px-3"
+              aria-expanded={showAll}
+              onClick={() => setShowAll(!showAll)}
+            >
+              {showAll ? "Show fewer" : `${hiddenCount} more`}
+            </Button>
+          )}
           <Button
             variant="secondary"
             className="min-h-11"
-            disabled={disabled || full}
+            disabled={disabled || full || searching}
             onClick={add}
           >
             <Plus size={16} strokeWidth={1.5} aria-hidden />
             Add region
           </Button>
+          <FindFaces
+            value={value}
+            onStart={() => void faces.start()}
+            onCancel={faces.cancel}
+            disabled={disabled}
+            full={full}
+            findRef={findRef}
+            cancelRef={cancelRef}
+          />
         </fieldset>
+        {/* The field's hint, here so focus can land on it when a search ends with nothing added. */}
+        {hint && (
+          <p ref={hintRef} tabIndex={-1} className="mt-2 text-fg-muted text-xs">
+            {hint}
+          </p>
+        )}
+        <FindAnnouncer value={value} />
       </Field>
       <Field label="Effect" labelId={effectId}>
         <Segmented

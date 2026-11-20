@@ -1,4 +1,4 @@
-import { ratioValue } from "../crop/math";
+import { ratioValue } from "../crop/ratio";
 
 /**
  * The frame shapes the aspect-ratio engine writes, without the options schema, so the idle UI (the

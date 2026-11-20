@@ -13,6 +13,9 @@ export function NumberInput({ className, ...props }: InputHTMLAttributes<HTMLInp
       {...props}
       className={cn(
         "tabular h-10 pointer-coarse:h-11 rounded-md border border-border bg-bg-raised px-3 text-sm text-fg focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2",
+        // No native spin buttons: Safari draws them inside the field, Chrome on hover, Firefox always.
+        // Arrow keys still step the value (it stays type=number).
+        "[appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none",
         !HAS_WIDTH.test(className ?? "") && "w-full",
         className,
       )}

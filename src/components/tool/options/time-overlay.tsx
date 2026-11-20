@@ -41,7 +41,9 @@ import {
 import type { MediaInfo } from "@/tools/engines/types";
 import { anchorNames, toFractions } from "@/tools/engines/watermark/options";
 import { pictureSize } from "./picture-size";
+import { between, z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 type O = TimeOverlayOptions;
 
@@ -89,6 +91,20 @@ const barPx = (o: O, info: MediaInfo) => barRect(o, sourceOf(info)).height;
 
 export const timeOverlaySpec: OptionsSpec<O> = {
   verb: "Add",
+  remember: {
+    schema: z.object({
+      edge: z.enum(["bottom", "top"]),
+      thickness: between(0.001, 0.1),
+      track: z.boolean(),
+      inset: between(0, 0.2),
+      size: between(0.02, 0.3),
+      style: z.enum(["shadow", "outline", "box"]),
+      anchor: z.enum(["tl", "tc", "tr", "ml", "mc", "mr", "bl", "bc", "br", "custom"]),
+      fx: between(0, 1),
+      fy: between(0, 1),
+      margin: between(0, 0.25),
+    }),
+  },
   defaults: (info, preset) => ({
     kind: preset.kind === "timer" ? "timer" : "progress",
     color: "#ffffff",
@@ -113,16 +129,19 @@ export const timeOverlaySpec: OptionsSpec<O> = {
   ],
   blocked: (o, info, _inputs, file) => {
     const what = o.kind === "progress" ? "a progress bar" : "a timer";
-    if (!info.video) return `This file has no video track to put ${what} on.`;
+    if (!info.video)
+      return unfixable(`This file has no video track to put ${what} on. Choose a video file.`);
     if (needsFfmpeg(info, file?.name ?? sourceName(info)))
       return {
         reason:
           info.video.decodable === false
             ? `This browser cannot decode this video's picture, so ${what} cannot be drawn on it.`
-            : `This format is read only by the fallback engine, which cannot draw ${what}. Convert it to MP4 first.`,
+            : "This tool cannot open this format. Convert it to MP4 first, then come back.",
         action: { slug: "video-converter", label: "Convert to MP4" },
+        fixable: false,
       };
-    if (info.durationSec <= 0) return "This video has no length to measure.";
+    if (info.durationSec <= 0)
+      return unfixable("This video has no length to measure. Choose another video.");
     return undefined;
   },
   summary: (o, info) => {
@@ -132,7 +151,7 @@ export const timeOverlaySpec: OptionsSpec<O> = {
       o.kind === "progress"
         ? `${withUnit(barPx(o, info), "px")} bar along the ${o.edge}`
         : `Counts ${o.direction} ${timerSpan(o, info)} · ${placeShort(o)}`;
-    return `${what} · ${span(o, info)} · H.264 ${formatDimensions(size.width, size.height)} · ${soundWords(info)} · on this device`;
+    return `${what} · ${span(o, info)} · H.264 ${formatDimensions(size.width, size.height)} · ${soundWords(info)}`;
   },
   result: (o) => ({ title: o.kind === "progress" ? "Progress bar added" : "Timer added" }),
   Overlay: TimeOverlayPreview,

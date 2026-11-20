@@ -17,14 +17,13 @@ export const ringtoneMaker: ToolInput = {
     "make ringtone from video",
   ],
   aliases: ["m4r", "ringtone", "custom ringtone", "notification sound", "song to ringtone"],
-  related: ["trim-audio", "fade-audio", "normalize-audio", "mp3-to-m4a"],
+  related: ["trim-audio", "fade-audio", "normalize-audio"],
   updatedAt: "2026-11-18",
   icon: "bell-ring",
   content: {
     en: {
       title: "Make a ringtone",
-      subtitle:
-        "Turn part of a song or a video's sound into an iPhone M4R or Android MP3 ringtone, in your browser.",
+      subtitle: "From any song or video, for iPhone or Android.",
       metaTitle: "Ringtone maker for iPhone and Android, free",
       metaDescription:
         "Pick the best part of a song or video on its waveform, add fades and save an iPhone .m4r or Android MP3 ringtone. Runs on your device. Free.",

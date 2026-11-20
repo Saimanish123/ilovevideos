@@ -1,5 +1,6 @@
 "use client";
 
+import { ChevronDown } from "lucide-react";
 import { type ReactNode, useEffect, useId, useState } from "react";
 import { useActionBarRef } from "../action-bar";
 
@@ -80,22 +81,32 @@ export function DeviceSelect({
       <label htmlFor={id} className="font-medium text-sm">
         {label}
       </label>
-      <select
-        id={id}
-        // "" means the default device: once names are known that is the first listed one, so the
-        // select never falls through to the "off" entry; "off" stays off.
-        value={value || listed[0]?.id || ""}
-        disabled={disabled}
-        onChange={(e) => onChange(e.target.value)}
-        className="mt-2 h-10 pointer-coarse:h-11 w-full truncate rounded-md border border-border bg-bg-raised px-3 text-fg text-sm transition-colors duration-(--duration-instant) hover:border-border-strong focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 disabled:opacity-60"
-      >
-        {none && <option value="off">{none}</option>}
-        {listed.map((d) => (
-          <option key={d.id || "default"} value={d.id}>
-            {d.name}
-          </option>
-        ))}
-      </select>
+      {/* The browser's own arrow ignores padding and sits against the border: hide it and draw
+          the same chevron as the shared Select, 16px in from the edge. */}
+      <div className="relative mt-2">
+        <select
+          id={id}
+          // "" means the default device: once names are known that is the first listed one, so the
+          // select never falls through to the "off" entry; "off" stays off.
+          value={value || listed[0]?.id || ""}
+          disabled={disabled}
+          onChange={(e) => onChange(e.target.value)}
+          className="h-10 pointer-coarse:h-11 w-full appearance-none truncate rounded-md border border-border bg-bg-raised pr-10 pl-3 text-fg text-sm transition-colors duration-(--duration-instant) hover:border-border-strong focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 disabled:opacity-60"
+        >
+          {none && <option value="off">{none}</option>}
+          {listed.map((d) => (
+            <option key={d.id || "default"} value={d.id}>
+              {d.name}
+            </option>
+          ))}
+        </select>
+        <ChevronDown
+          size={16}
+          strokeWidth={1.5}
+          aria-hidden
+          className="-translate-y-1/2 pointer-events-none absolute top-1/2 right-4 text-fg-muted"
+        />
+      </div>
       {hint && <p className="mt-2 text-fg-muted text-xs">{hint}</p>}
     </div>
   );

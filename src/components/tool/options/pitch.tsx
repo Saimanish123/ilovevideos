@@ -14,7 +14,9 @@ import { UnitField } from "../regions/percent-field";
 import { PLAY_SHORTCUT } from "../shortcuts";
 import { SoundHero } from "../sound/sound-hero";
 import { AUDITION_SEC, usePitchAudition } from "../sound/use-pitch-audition";
+import { z } from "./remember-schema";
 import type { HeroProps, OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 const clampInt = (v: number, lo: number, hi: number) => Math.round(Math.min(hi, Math.max(lo, v)));
 const signed = (n: number) => (n > 0 ? `+${n}` : n < 0 ? `−${-n}` : "0");
@@ -134,9 +136,18 @@ export const pitchSpec: OptionsSpec<PitchOptions> = {
   Panel: PitchPanel,
   Hero: PitchHero,
   previewResult: true,
+  // The sound is the job, also on a video: Before/After, matched in loudness (ADR-0136).
+  compare: () => ({ what: "sound" }),
   shortcuts: [PLAY_SHORTCUT],
   route: () => "page",
   nextStep: { slug: "key-bpm-finder", label: "Check the new key" },
+  remember: {
+    schema: z.object({
+      semitones: z.int().check(z.minimum(-12), z.maximum(12)),
+      cents: z.int().check(z.minimum(-50), z.maximum(50)),
+      output: z.enum(["auto", "wav"]),
+    }),
+  },
   defaults: (_info, preset) => ({
     semitones:
       typeof preset.semitones === "number"
@@ -146,7 +157,10 @@ export const pitchSpec: OptionsSpec<PitchOptions> = {
     output: "auto",
   }),
   blocked: (o, info) => {
-    if (!info.audio?.length) return "This file has no sound track, so there is no pitch to change.";
+    if (!info.audio?.length)
+      return unfixable(
+        "This file has no sound track, so there is no pitch to change. Choose a file with sound.",
+      );
     const t = soundTarget(info, nameFor(info));
     if (t.kind === "none") return t.reason;
     if (o.semitones === 0 && o.cents === 0)

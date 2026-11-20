@@ -101,11 +101,7 @@ export const addSubtitlesEngine: Engine<AddSubtitlesOptions> = {
     );
     // mov_text, SRT/ASS in MKV and libass burn-in belong to the page-side ffmpeg runner.
     if (planRoute(plan) === "page")
-      throw new EngineError(
-        "internal",
-        "This file is handled by the ffmpeg engine on the page.",
-        "Try again.",
-      );
+      throw new EngineError("internal", "This file could not be processed.", "Try again.");
     return burnCanvas(input.file, info, options, track, sub.name, ctx);
   },
 };

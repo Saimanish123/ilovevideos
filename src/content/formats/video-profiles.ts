@@ -7,6 +7,7 @@
  * container's row in ./containers.ts.
  */
 import type { FormatProfile } from "./index";
+import { formatNames } from "./names";
 
 export type LegacyFormatId =
   | "avi"
@@ -26,7 +27,7 @@ export const legacyFormats: Record<
 > = {
   avi: {
     id: "avi",
-    name: "AVI",
+    name: formatNames.avi,
     container: "avi",
     extensions: ["avi", "divx"],
     videoCodecs: ["mpeg4", "mjpeg", "avc", "msmpeg4v3"],
@@ -39,7 +40,7 @@ export const legacyFormats: Record<
   },
   wmv: {
     id: "wmv",
-    name: "WMV",
+    name: formatNames.wmv,
     container: "wmv",
     extensions: ["wmv", "asf"],
     videoCodecs: ["wmv3", "vc1", "wmv2"],
@@ -52,7 +53,7 @@ export const legacyFormats: Record<
   },
   flv: {
     id: "flv",
-    name: "FLV",
+    name: formatNames.flv,
     container: "flv",
     extensions: ["flv", "f4v"],
     videoCodecs: ["avc", "flv1", "vp6f"],
@@ -65,7 +66,7 @@ export const legacyFormats: Record<
   },
   mpeg: {
     id: "mpeg",
-    name: "MPEG",
+    name: formatNames.mpeg,
     container: "mpg",
     extensions: ["mpg", "mpeg", "mpe"],
     videoCodecs: ["mpeg2video", "mpeg1video"],
@@ -78,7 +79,7 @@ export const legacyFormats: Record<
   },
   ts: {
     id: "ts",
-    name: "TS",
+    name: formatNames.ts,
     container: "ts",
     extensions: ["ts", "m2t"],
     videoCodecs: ["avc", "hevc", "mpeg2video"],
@@ -91,7 +92,7 @@ export const legacyFormats: Record<
   },
   mts: {
     id: "mts",
-    name: "MTS",
+    name: formatNames.mts,
     container: "ts",
     extensions: ["mts", "m2ts"],
     videoCodecs: ["avc", "hevc"],
@@ -104,7 +105,7 @@ export const legacyFormats: Record<
   },
   "3gp": {
     id: "3gp",
-    name: "3GP",
+    name: formatNames["3gp"],
     container: "3gp",
     extensions: ["3gp", "3g2"],
     videoCodecs: ["h263", "mpeg4", "avc"],
@@ -117,7 +118,7 @@ export const legacyFormats: Record<
   },
   vob: {
     id: "vob",
-    name: "VOB",
+    name: formatNames.vob,
     container: "vob",
     extensions: ["vob"],
     videoCodecs: ["mpeg2video"],
@@ -130,7 +131,7 @@ export const legacyFormats: Record<
   },
   ogv: {
     id: "ogv",
-    name: "OGV",
+    name: formatNames.ogv,
     container: "ogv",
     extensions: ["ogv", "ogg"],
     videoCodecs: ["theora", "vp8"],
@@ -143,7 +144,7 @@ export const legacyFormats: Record<
   },
   m4v: {
     id: "m4v",
-    name: "M4V",
+    name: formatNames.m4v,
     container: "mp4",
     extensions: ["m4v"],
     videoCodecs: ["avc", "hevc"],

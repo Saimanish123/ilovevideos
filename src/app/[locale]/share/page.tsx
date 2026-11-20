@@ -59,21 +59,13 @@ const lists: Record<ShareKind, { one: string[]; several: string[] }> = {
   },
 };
 
-/** A tool's subtitle without "in your browser" or "not uploaded": true of every choice here. */
-const short = (subtitle: string) =>
-  subtitle
-    .replace(/\s*(Runs in your browser|Not uploaded|Nothing is uploaded)\.?$/i, "")
-    .replace(/,? in your browser(?=[,.])/i, "")
-    .replace(/,\s*([.,])/g, "$1")
-    .trim();
-
 const kinds = ["video", "audio", "gif", "image", "subtitle"] as const;
 
 const groupsFor = (): ShareGroups => {
   const pick = (slugs: string[]) =>
     slugs.flatMap((slug) => {
       const t = getTool(slug);
-      return t ? [{ slug, title: t.content.en.title, subtitle: short(t.content.en.subtitle) }] : [];
+      return t ? [{ slug, title: t.content.en.title, subtitle: t.content.en.subtitle }] : [];
     });
   return Object.fromEntries(
     Object.entries(lists).map(([k, v]) => [k, { one: pick(v.one), several: pick(v.several) }]),
@@ -97,7 +89,7 @@ export default async function SharePage({
     <article className="mx-auto w-full max-w-(--container-content) px-4 py-12 md:px-8 md:py-16">
       <h1 className="text-h1 text-balance">Open a shared file</h1>
       <p className="mt-3 max-w-(--container-prose) text-body-lg text-fg-muted">
-        Choose what to do with it. The file stays on this device.
+        Choose what to do with it.
       </p>
       <div className="mt-10">
         <ShareChooser groups={groupsFor()} kind={kind} count={count} />

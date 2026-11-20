@@ -20,7 +20,9 @@ import {
   type PadOptions,
 } from "@/tools/engines/pad/options";
 import type { MediaInfo } from "@/tools/engines/types";
+import { between, z } from "./remember-schema";
 import type { OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 const src = (info: MediaInfo) => ({
   width: info.video?.width ?? 0,
@@ -35,7 +37,16 @@ let lastCustom = "#d9c7a7";
 export const padSpec: OptionsSpec<PadOptions> = {
   verb: "Add border",
   previewResult: true,
+  // Bars change the frame's shape: side by side (ADR-0135).
+  compare: () => ({ what: "picture", layout: "side-by-side" }),
   nextStep: { slug: "compress-video", label: "Compress the result" },
+  remember: {
+    schema: z.object({
+      size: between(0.005, 0.25),
+      color: z.string().check(z.regex(/^(white|black|#[0-9a-fA-F]{6})$/)),
+      keepSize: z.boolean(),
+    }),
+  },
   defaults: (_info, preset) => ({
     size: typeof preset.size === "number" ? preset.size : 0.05,
     px: typeof preset.px === "number" ? preset.px : undefined,
@@ -48,7 +59,8 @@ export const padSpec: OptionsSpec<PadOptions> = {
   route: (_o, info, fileName) => (needsFfmpeg(info, fileName) ? "page" : "worker"),
   blocked: (o, info) => {
     const v = info.video;
-    if (!v) return "This file has no video track to add a border to.";
+    if (!v)
+      return unfixable("This file has no video track to add a border to. Choose a video file.");
     if (borderTooThick(o, v))
       return `A ${withUnit(borderPx(o, v), "px")} border leaves no room for the picture inside ${formatDimensions(v.width, v.height)}. Choose a thinner one.`;
     return undefined;
@@ -59,7 +71,7 @@ export const padSpec: OptionsSpec<PadOptions> = {
     const layout = borderLayout(o, v);
     const est = geometryEstimate(info, layout);
     const how = borderHow(o, v);
-    return `${how}, about ${formatBytes(est.bytes)}. The video is re-encoded to H.264. ${est.audio}${est.container} Runs on this device.`;
+    return `${how}, about ${formatBytes(est.bytes)}. The video is re-encoded to H.264. ${est.audio}${est.container}`;
   },
   result: (o, info) => {
     const v = info.video;

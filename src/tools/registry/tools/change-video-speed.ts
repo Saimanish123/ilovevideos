@@ -30,8 +30,7 @@ export const changeVideoSpeed: ToolInput = {
   content: {
     en: {
       title: "Change video speed",
-      subtitle:
-        "Speed a video up or slow it down from 0.1× to 8×, with the sound kept in tune. Runs in your browser.",
+      subtitle: "From 0.1× to 8×, with the sound kept in tune.",
       metaTitle: "Change video speed online, free, no upload",
       metaDescription:
         "Speed up or slow down a video from 0.1× to 8×. The preview plays at the new speed first; audio keeps its pitch or is muted. Free, runs on your device.",
@@ -45,10 +44,10 @@ export const changeVideoSpeed: ToolInput = {
       ],
       goodToKnow: [
         "Speed and length are the same setting seen from two sides: 2× halves the running time, 0.5× doubles it, and the panel shows the resulting length as you change the value. A one-minute screen recording at 1.5× becomes forty seconds, which is the usual sweet spot for a walkthrough that people would otherwise scrub through.",
-        "Faster than the original drops frames; slower repeats them. A clip recorded at 30 fps and slowed to 0.25× shows each frame four times, so motion looks stepped rather than smooth. Real slow motion needs footage recorded at a high frame rate, such as the 120 or 240 fps modes on phones, which this tool then slows without repetition down to 0.25× or 0.125×.",
+        "Faster than the original drops frames; slower repeats them. A clip recorded at 30 fps and slowed to 0.25× shows each frame four times, so motion looks stepped rather than smooth. Real slow motion needs footage recorded at a high frame rate, such as the 120 or 240 fps modes on phones, which this tool then slows without repetition down to 0.25× or 0.125×. To lower the frame rate itself and keep the speed, use [change video frame rate](/change-video-frame-rate).",
         "Keep pitch uses a time-stretch that preserves the tone of voices and music while changing their tempo, in half or double steps chained together for the extreme factors. It sounds natural between about 0.5× and 4×; beyond that range stretched speech turns watery and the panel points you to Mute. Shift pitch is the old tape recorder behaviour: faster and higher, slower and deeper.",
         "The picture is always re-encoded, because changing the timing of every frame is not something a container flag can express. Output is H.264 in MP4 at a quality setting tuned for screen recordings and phone footage; if you need it smaller afterwards, [compress video](/compress-video) works on the result, and [trim video](/trim-video) beforehand keeps the encode short.",
-        "For a time-lapse effect from a long recording, values above 4× are allowed up to 8×; combine with Mute, since sound at that speed carries no information. For a GIF at a different tempo, change the speed here first and then use [video to GIF](/video-to-gif) on the result.",
+        "For a time-lapse effect from a long recording, values above 4× are allowed up to 8×; combine with Mute, since sound at that speed carries no information. For a GIF at a different tempo, change the speed here first and then use [video to GIF](/video-to-gif) on the result. To play a clip backwards, use [reverse video](/reverse-video).",
       ],
       faq: [
         {
@@ -73,7 +72,7 @@ export const changeVideoSpeed: ToolInput = {
         },
         {
           q: "Is my video uploaded?",
-          a: "No. The re-encode runs in your browser with a bundled ffmpeg engine that is downloaded once and cached. Your file never leaves the device.",
+          a: "No. The re-encode runs in your browser after a one-time download that the browser keeps. Your file never leaves the device.",
         },
       ],
     },

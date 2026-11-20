@@ -23,11 +23,13 @@ import {
   sliderMaxKbps,
   sourceKbps,
 } from "@/tools/engines/bitrate/plan";
-import type { CodecTarget } from "@/tools/engines/codec/plan";
+import { type CodecTarget, codecTargets } from "@/tools/engines/codec/plan";
 import { encodedSize } from "@/tools/engines/crop/math";
 import type { MediaInfo } from "@/tools/engines/types";
 import { nativeOnly } from "./native-only";
+import { z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 /**
  * What this browser's encoder said for this file (written by the panel; the engine's schema drops
@@ -70,6 +72,13 @@ const sourceLine = (info: MediaInfo) => {
 
 export const bitrateSpec: OptionsSpec<O> = {
   verb: "Change bitrate",
+  remember: {
+    schema: z.object({
+      audio: z.enum(audioChoices),
+      mode: z.enum(["variable", "constant"]),
+      codec: z.enum(codecTargets),
+    }),
+  },
   defaults: (info) => ({
     videoKbps: defaultKbps(info),
     audio: "copy",
@@ -79,10 +88,10 @@ export const bitrateSpec: OptionsSpec<O> = {
   previewResult: true,
   nextStep: { slug: "video-info", label: "Check the result" },
   blocked: (o, info) => {
-    if (!info.video) return "This file has no video track.";
+    if (!info.video) return unfixable("This file has no video track. Choose a video file.");
     const native = nativeOnly(info, "this file");
     if (native) return native;
-    if (!o.avail) return "Checking this browser's encoders";
+    if (!o.avail) return "Checking what this browser can write";
     return undefined;
   },
   summary: (o, info) => {
@@ -97,7 +106,7 @@ export const bitrateSpec: OptionsSpec<O> = {
           : plan.sound === "dropped"
             ? "sound removed"
             : "no sound";
-    return `${rateWords(o.videoKbps)} ${o.mode} · ${codecName(o.codec)} ${formatDimensions(plan.size.width, plan.size.height)} · ${sound} · about ${formatBytes(plan.bytes)} · on this device`;
+    return `${rateWords(o.videoKbps)} ${o.mode} · ${codecName(o.codec)} ${formatDimensions(plan.size.width, plan.size.height)} · ${sound} · about ${formatBytes(plan.bytes)}`;
   },
   result: () => ({ title: "Bitrate changed", change: false }),
   Panel: BitratePanel,
@@ -218,7 +227,7 @@ function BitratePanel({ value, onChange, info, disabled }: OptionsPanelProps<O>)
             Variable rate.{" "}
             <span className="text-fg-muted">
               {value.avail
-                ? "This browser's encoder offers no constant rate for this video."
+                ? "This browser cannot hold a constant rate for this video."
                 : "Checking whether this browser can hold a constant rate."}
             </span>
           </p>

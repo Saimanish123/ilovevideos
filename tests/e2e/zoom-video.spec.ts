@@ -20,10 +20,10 @@ const open = async (page: Page, fixture = "tests/fixtures/sample.mp4") => {
   return run;
 };
 
-/** Runs the command shown on the result with the local ffmpeg; returns the output path. */
+/** Runs the result's ffmpeg command (kept on the result, not shown) with the local ffmpeg. */
 async function runShownCommand(page: Page, fixture: string): Promise<string> {
-  await page.getByText("The same operation with ffmpeg").click();
-  const cmd = (await page.locator("details pre").first().textContent()) ?? "";
+  const cmd =
+    (await page.locator("[data-ffmpeg-command]").first().getAttribute("data-ffmpeg-command")) ?? "";
   const out = join(mkdtempSync(join(tmpdir(), "zoom-ref-")), "ref.mp4");
   const name = fixture.split("/").pop() ?? "";
   const quoted = (f: string) => `'${f.replace(/'/g, "'\\''")}'`;

@@ -1,8 +1,8 @@
 import { execFileSync } from "node:child_process";
 import { mkdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
+import AxeBuilder from "./axe-builder";
 
 /**
  * Batch queue on a single-file tool (feature catalog L1). Several files share one set of options,
@@ -156,7 +156,9 @@ test("pages with a per-file primary control take one file", async ({ page }) => 
   for (const slug of ["trim-video", "crop-video", "add-subtitles-to-video", "video-info"]) {
     await page.goto(`/${slug}`);
     await expect(page.locator('input[type="file"]')).not.toHaveAttribute("multiple");
-    await expect(page.getByText("Your file stays on this device.")).toBeVisible();
+    // One file: no batch line, and no privacy line (ADR-0149).
+    await expect(page.getByText("One file or several at once")).toHaveCount(0);
+    await expect(page.getByText(/on this device/)).toHaveCount(0);
   }
   // Merge keeps its own multi-input meaning.
   await page.goto("/merge-videos");

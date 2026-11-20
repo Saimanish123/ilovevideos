@@ -7,6 +7,7 @@ import { Segmented } from "@/components/ui/segmented";
 import { Select } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { formatDuration, withUnit } from "@/lib/format";
+import { ffmpegDownloadSize } from "@/tools/engines/ffmpeg/size";
 import {
   JOIN_KBPS,
   type JoinAudioOptions,
@@ -18,6 +19,7 @@ import {
 } from "@/tools/engines/join-audio/options";
 import { AudioHero } from "../audio/audio-hero";
 import { UnitField } from "../regions/percent-field";
+import { between, z } from "./remember-schema";
 import type { OptionsSpec, StageInput } from "./types";
 
 const joinInputs = (inputs: StageInput[] = []): JoinInput[] =>
@@ -82,12 +84,24 @@ export const joinAudioSpec: OptionsSpec<JoinAudioOptions> = {
   multiple: { min: 2, max: MAX_FILES, noun: "file", collapseAfter: 6 },
   // Done: the joined file's waveform and player, in place of a picture.
   previewResult: true,
+  // Several sources joined: no one source to compare with (ADR-0134).
+  compare: false,
   // The facts the stage holds are file 1's; the joined file's length comes from the player itself.
   Hero: (props) => (
     <AudioHero {...props} info={props.showing === "result" ? undefined : props.info} />
   ),
   route: () => "page",
   nextStep: { slug: "normalize-audio", label: "Normalise the merged audio" },
+  remember: {
+    schema: z.object({
+      join: z.enum(["butt", "gap", "crossfade"]),
+      gapSec: between(0.1, 10),
+      crossfadeSec: between(0.1, 10),
+      matchLoudness: z.boolean(),
+      format: z.enum(["auto", "mp3", "m4a", "wav", "flac"]),
+      output: z.enum(["auto", "wav"]),
+    }),
+  },
   defaults: () => ({
     join: "butt",
     gapSec: 1,
@@ -116,7 +130,9 @@ export const joinAudioSpec: OptionsSpec<JoinAudioOptions> = {
         : `${plan.format.name} ${withUnit(JOIN_KBPS, "kbps")}`,
       `${khz(plan.sampleRate)} ${plan.channels === 1 ? "mono" : "stereo"}`,
       length,
-      plan.format.id === "mp3" || plan.format.id === "flac" ? "ffmpeg engine" : "",
+      plan.format.id === "mp3" || plan.format.id === "flac"
+        ? `${ffmpegDownloadSize()} download, once`
+        : "",
     ]
       .filter(Boolean)
       .join(" · ");

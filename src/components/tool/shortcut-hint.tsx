@@ -1,8 +1,8 @@
 import type { Shortcut } from "./options/types";
 
 /**
- * The page's keyboard shortcuts (spec.shortcuts) behind one quiet disclosure, the same shape as the
- * result's "The same operation with ffmpeg". Hidden on touch-only devices, which have no keys.
+ * The page's keyboard shortcuts (spec.shortcuts) behind one quiet disclosure. Hidden on touch-only
+ * devices, which have no keys.
  * `keys` is printed token by token, each in its own key cap ("Shift ←" is two caps).
  */
 export function ShortcutHint({ items }: { items: Shortcut[] }) {

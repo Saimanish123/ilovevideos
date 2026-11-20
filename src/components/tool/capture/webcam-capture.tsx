@@ -291,8 +291,8 @@ export function WebcamCapture({ onStart, onCaptured }: CaptureProps) {
                       : words === null
                         ? "This browser cannot encode video here"
                         : settings?.width && settings.height
-                          ? `${formatDimensions(settings.width, settings.height)} · ${Math.round(settings.frameRate ?? 30)} fps · ${(words ?? "MP4").split(" · ")[0]} · on this device`
-                          : `${words ?? "MP4 · H.264, AAC"} · on this device`}
+                          ? `${formatDimensions(settings.width, settings.height)} · ${Math.round(settings.frameRate ?? 30)} fps · ${(words ?? "MP4").split(" · ")[0]}`
+                          : `${words ?? "MP4 · H.264, AAC"}`}
                 </p>
               )}
               {count !== undefined ? (

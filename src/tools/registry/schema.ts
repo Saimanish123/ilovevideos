@@ -78,6 +78,8 @@ export const engineIds = [
   "audio-analyze",
   "join-audio",
   "ringtone",
+  // Speech noise removal with RNNoise (round 4, builder A, ADR-0108).
+  "speech-denoise",
   // F. text
   "subtitles-add",
   "subtitles-generate",
@@ -98,6 +100,8 @@ export const engineIds = [
   "image-overlay",
   // Green screen keyer (builder A, ADR-0065).
   "chroma-key",
+  // Background blur or replace without a green screen, on a small person model (round 4, builder C).
+  "portrait-matte",
   // Video fade in/out (picture, optionally sound) on the per-frame filter runner.
   "video-fade",
   // H. frames
@@ -140,8 +144,11 @@ export const FaqItem = z.object({
 export const ToolContent = z.object({
   /** H1. Pattern: "<Verb> <object>". Sentence case. */
   title: z.string().min(3).max(60),
-  /** One sentence under the H1: what it does and where it runs. ≤ 100 chars so it fits two lines on a tool card. */
-  subtitle: z.string().min(20).max(100),
+  /**
+   * One plain sentence under the H1 and on the tool card: what the user gets, about 60 characters,
+   * 80 at most, no jargon and no privacy line (owner, 2026-11-19; ADR-0149).
+   */
+  subtitle: z.string().min(20).max(80),
   /** <title> tag, ≤ 60 chars, no site name (appended automatically). */
   metaTitle: z.string().min(10).max(60),
   /** ≤ 155 chars. */

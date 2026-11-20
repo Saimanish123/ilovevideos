@@ -29,8 +29,7 @@ export const addAudioToVideo: ToolInput = {
   content: {
     en: {
       title: "Add audio to video",
-      subtitle:
-        "Put music or a voiceover on a video and place it on a timeline. The picture is not re-encoded.",
+      subtitle: "Music or a voiceover, placed where you want it.",
       metaTitle: "Add audio to video online, free, no upload",
       metaDescription:
         "Add music or a voiceover to a video in your browser: drag it into place, mix it under the original sound, fade it out. The picture is copied. Free.",
@@ -47,8 +46,8 @@ export const addAudioToVideo: ToolInput = {
         "The video decides the length. Audio that runs past the end of the video is cut there, with a fade-out of 2 s by default so the music does not stop mid-note; audio that is shorter ends early and leaves the rest silent, unless you tick Loop, which repeats it to the end with a 10 ms ramp at each seam so the joins do not click. Dragging the clip left past the start of the video skips into the audio instead, so you can begin a song at its chorus.",
         "Keep and mix plays both sounds. Even sets each to 70% of its level, so two loud tracks rarely collide; Video in front turns the new audio down to 30% for music under speech; New audio in front does the reverse for a voiceover over room sound. A soft limiter catches the peaks where both are loud at once. The preview plays the video with the new audio in place at the chosen balance before anything is written.",
         "The picture and its frame timing are copied without decoding, whatever the codec: H.264, HEVC, VP9 or AV1. The sound is encoded once as AAC at 192 kbps for MP4, MOV and MKV, or Opus for WebM, and the file keeps the video's own container. When nothing about the new audio changes (it replaces the original, starts at 0:00, needs no fade or volume change) and the container holds its codec, it is copied too, and the whole job is lossless.",
-        "Any sound the browser can decode works as the new audio: MP3, M4A, AAC, WAV, FLAC, OGG and Opus, or another video whose sound you want. WMA and AIFF cannot be decoded by browsers; convert them first with the [audio converter](/audio-converter). The video can be MP4, MOV, WebM or MKV.",
-        "To take the original sound out without adding anything, use [remove audio from video](/remove-audio-from-video); to swap the soundtrack entirely, [replace audio in video](/replace-audio-in-video) starts with Replace chosen. Everything runs on your device, and the result plays on the page before you download it.",
+        "Any sound the browser can decode works as the new audio: MP3, M4A, AAC, WAV, FLAC, OGG and Opus, or another video whose sound you want. WMA and AIFF cannot be decoded by browsers; convert them first with the [audio converter](/audio-converter). If there is no video yet, only the sound, [turn audio into a video](/audio-to-video) with a picture or a title card. The video can be MP4, MOV, WebM or MKV.",
+        "To take the original sound out without adding anything, use [remove audio from video](/remove-audio-from-video); to swap the soundtrack entirely, [replace audio in video](/replace-audio-in-video) starts with Replace chosen. The result plays on the page before you download it.",
       ],
       faq: [
         {

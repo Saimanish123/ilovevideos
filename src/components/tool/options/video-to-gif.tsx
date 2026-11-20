@@ -29,8 +29,10 @@ import type { VideoToGifOptions as EngineOptions } from "@/tools/engines/video-t
 type VideoToGifOptions = EngineOptions & { sampled?: Record<number, number> };
 
 import { PLAY_SHORTCUT, useWorkspaceKeys } from "../shortcuts";
+import { z } from "./remember-schema";
 import { TimeInput } from "./trim";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
+import { unfixable } from "./types";
 
 const fpsChoices = ["5", "10", "12", "15", "20", "30"] as const;
 type FpsChoice = (typeof fpsChoices)[number];
@@ -103,6 +105,20 @@ export const videoToGifSpec: OptionsSpec<VideoToGifOptions> = {
         : "It plays once and stops on the last frame.",
     };
   },
+  remember: {
+    schema: z.object({
+      fps: z.int().check(z.minimum(5), z.maximum(30)),
+      width: z.union([
+        z.literal("original"),
+        z.literal(720),
+        z.literal(480),
+        z.literal(360),
+        z.literal(240),
+      ]),
+      quality: z.enum(["fast", "best"]),
+      loop: z.boolean(),
+    }),
+  },
   defaults: (info, preset) => ({
     ...defaultRange(info.durationSec),
     fps: typeof preset.fps === "number" ? preset.fps : DEFAULT_FPS,
@@ -113,22 +129,21 @@ export const videoToGifSpec: OptionsSpec<VideoToGifOptions> = {
   // "best" needs ffmpeg, which runs on the page thread like the converter's ffmpeg path.
   route: (o) => (o.quality === "best" ? "page" : "worker"),
   blocked: (o, info) => {
-    if (!info.video) return "This file has no video track to turn into a GIF.";
+    if (!info.video)
+      return unfixable("This file has no video track to turn into a GIF. Choose a video file.");
     if (Math.round((o.end - o.start) * o.fps) < 1)
       return "The range is shorter than one frame at this frame rate. Widen it or raise the frame rate.";
     return undefined;
   },
-  // The estimate itself is the panel's last line, in large type; this line says where it runs, or
-  // what would make a large GIF lighter.
+  // The estimate itself is the panel's last line, in large type; this line says what would make a
+  // large GIF lighter.
   summary: (o, info) => {
     if (!info.video) return undefined;
     if (estimate(o, info).bytes > LARGE) {
       const tip = lighter(o, info);
       return `Over ${formatBytes(LARGE)} is heavy for a GIF.${tip ? ` ${tip}` : ""}`;
     }
-    return o.quality === "best"
-      ? "Runs on this device with the ffmpeg engine."
-      : "Runs on this device.";
+    return undefined;
   },
   Below: GifBelow,
   Panel({ value, onChange, info }) {
@@ -210,7 +225,7 @@ export const videoToGifSpec: OptionsSpec<VideoToGifOptions> = {
         <Field
           label="Quality"
           labelId="quality-label"
-          hint={`Best runs ffmpeg's two-pass palette for smoother gradients. Loads the ffmpeg engine once (${ffmpegDownloadSize()}).`}
+          hint={`Best builds one palette from the whole clip first, for smoother gradients. Needs a one-time download of ${ffmpegDownloadSize()}.`}
         >
           <Segmented<GifQuality>
             name="quality"

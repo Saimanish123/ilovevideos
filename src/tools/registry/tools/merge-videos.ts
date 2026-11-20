@@ -30,7 +30,7 @@ export const mergeVideos: ToolInput = {
   content: {
     en: {
       title: "Merge videos",
-      subtitle: "Join several clips into one video, in the order you choose. Runs in your browser.",
+      subtitle: "Join several clips into one video.",
       metaTitle: "Merge videos online, free, no upload",
       metaDescription:
         "Join video clips into one file in the order you choose. Matching clips are joined without re-encoding. Runs in your browser; nothing is uploaded.",

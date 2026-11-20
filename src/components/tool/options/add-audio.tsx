@@ -16,6 +16,7 @@ import {
   placement,
 } from "@/tools/engines/add-audio/math";
 import { codecName } from "@/tools/engines/convert-video/plan";
+import { between, z } from "./remember-schema";
 import { TimeInput } from "./trim";
 import type { OptionsSpec, StageInput } from "./types";
 
@@ -79,7 +80,18 @@ export const addAudioSpec: OptionsSpec<AddAudioOptions> = {
     },
   },
   previewResult: true,
+  // The picture is copied and the sound is new, not a version of the old one (ADR-0134).
+  compare: false,
   nextStep: { slug: "compress-video", label: "Compress video" },
+  remember: {
+    schema: z.object({
+      mode: z.enum(["replace", "mix"]),
+      loop: z.boolean(),
+      fadeOut: between(0, 10),
+      volume: between(0, 2),
+      balance: z.enum(["new", "even", "original"]),
+    }),
+  },
   defaults: (_info, preset) => ({
     mode: preset.mode === "replace" ? "replace" : "mix",
     offset: 0,

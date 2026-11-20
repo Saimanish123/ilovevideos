@@ -2,8 +2,8 @@ import { execFileSync } from "node:child_process";
 import { mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
+import AxeBuilder from "./axe-builder";
 
 /**
  * Add a watermark, end to end: drop a fixture (640×360, 3 s, H.264 + AAC), add the logo fixture
@@ -200,7 +200,7 @@ test.describe("add a watermark", () => {
     await page
       .locator('input[type="file"][accept*="image/png"]')
       .setInputFiles("tests/fixtures/logo.png");
-    await expect(page.getByText(/Uses the ffmpeg engine/)).toBeVisible();
+    await expect(page.getByText(/Needs a one-time download/)).toBeVisible();
     await expect(add).toBeEnabled();
     await add.click();
     const { path, name } = await saveDownload(page);

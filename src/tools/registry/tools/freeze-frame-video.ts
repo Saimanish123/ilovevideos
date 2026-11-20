@@ -29,8 +29,7 @@ export const freezeFrameVideo: ToolInput = {
   content: {
     en: {
       title: "Freeze a frame in a video",
-      subtitle:
-        "Stop the picture on any frame for as long as you like, mid-clip or at the end. In your browser.",
+      subtitle: "Hold the picture on one frame for as long as you like.",
       metaTitle: "Freeze frame video online, free, no upload",
       metaDescription:
         "Hold any frame of a video for a few seconds: pick it on the timeline, set the length, keep the sound or pause it. Free, no upload, runs on your device.",

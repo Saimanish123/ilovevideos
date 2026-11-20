@@ -1,12 +1,12 @@
 import { mkdirSync } from "node:fs";
 import { join } from "node:path";
-import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
+import AxeBuilder from "./axe-builder";
 
 /**
  * Command palette (feature catalog L4): ⌘K or Ctrl+K anywhere, or the header's search button. It
  * searches every registry tool on the device; nothing loads for it before it opens, and the query
- * is never part of a request.
+ * is never part of a URL (failed searches are counted separately, ADR-0150).
  */
 const shots = process.env.PLATFORM_SHOTS;
 async function shot(page: Page, name: string) {
@@ -37,8 +37,8 @@ test("keyboard: ⌘K opens, arrows move, Enter opens the tool, Escape closes and
   await page.keyboard.press("ControlOrMeta+k");
   await expect(palette(page)).toBeVisible();
   await expect(input(page)).toBeFocused();
-  // The unfiltered list is every tool outside a generated family.
-  await expect(palette(page).getByRole("option").first()).toHaveText(/Compress video/);
+  // Nothing typed: recent tools, leaving out the page search was opened on, then the tasks.
+  await expect(palette(page).getByRole("option").first()).toHaveText("Make a video smaller");
 
   await page.keyboard.type("mov mp4");
   const options = palette(page).getByRole("option");
@@ -75,13 +75,15 @@ test("keyboard: ⌘K opens, arrows move, Enter opens the tool, Escape closes and
   await expect(page).toHaveURL(/\/compress-video$/);
   await expect(palette(page)).toHaveCount(0);
 
-  // The query never travelled: no request carries it, and only the static index was fetched.
+  // The query is not in any URL and only the static index was fetched; a search left without
+  // opening a tool is counted by a POST body instead (search-miss.spec, ADR-0150).
   expect(requests.filter((u) => /shrink|mov(%20|\+| )mp4/i.test(u))).toEqual([]);
   expect(requests.filter((u) => u.includes("tool-index"))).toHaveLength(1);
 });
 
 test("click: the header button opens it, a tap on a result navigates", async ({ page }) => {
-  await page.goto("/");
+  // A tool page: on home the hero's own field stands in for the header's while it is on screen.
+  await page.goto("/trim-video");
   const trigger = page.getByRole("banner").getByRole("button", { name: "Search tools" });
   const box = await trigger.boundingBox();
   expect(box && Math.min(box.width, box.height)).toBeGreaterThanOrEqual(44);
@@ -93,6 +95,8 @@ test("click: the header button opens it, a tap on a result navigates", async ({ 
   await input(page).fill("mute");
   const first = palette(page).getByRole("option").first();
   await expect(first).toContainText("Remove audio from video");
+  // Opened by a click, the palette grows in from 0.97 (ADR-0159): measure it once it has settled.
+  await palette(page).evaluate((el) => Promise.all(el.getAnimations().map((a) => a.finished)));
   const optionBox = await first.boundingBox();
   expect(optionBox?.height).toBeGreaterThanOrEqual(44);
   await shot(page, "palette-mute");

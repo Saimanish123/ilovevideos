@@ -6,6 +6,7 @@
  */
 import { audioSharedParagraphs } from "./audio-profiles";
 import { containerById } from "./containers";
+import { formatNames } from "./names";
 import { type LegacyFormatId, legacyFormats } from "./video-profiles";
 
 export type FormatId = "mp4" | "mov" | "webm" | "mkv" | LegacyFormatId;
@@ -34,7 +35,7 @@ export interface FormatProfile {
 export const formats: Record<FormatId, FormatProfile> = {
   mp4: {
     id: "mp4",
-    name: "MP4",
+    name: formatNames.mp4,
     container: "mp4",
     extensions: ["mp4", "m4v"],
     videoCodecs: ["avc", "hevc", "av1", "vp9"],
@@ -47,7 +48,7 @@ export const formats: Record<FormatId, FormatProfile> = {
   },
   mov: {
     id: "mov",
-    name: "MOV",
+    name: formatNames.mov,
     container: "mov",
     extensions: ["mov", "qt"],
     videoCodecs: ["avc", "hevc", "av1", "prores"],
@@ -60,7 +61,7 @@ export const formats: Record<FormatId, FormatProfile> = {
   },
   webm: {
     id: "webm",
-    name: "WebM",
+    name: formatNames.webm,
     container: "webm",
     extensions: ["webm"],
     videoCodecs: ["vp8", "vp9", "av1"],
@@ -74,7 +75,7 @@ export const formats: Record<FormatId, FormatProfile> = {
   },
   mkv: {
     id: "mkv",
-    name: "MKV",
+    name: formatNames.mkv,
     container: "mkv",
     extensions: ["mkv"],
     videoCodecs: ["avc", "hevc", "av1", "vp8", "vp9"],

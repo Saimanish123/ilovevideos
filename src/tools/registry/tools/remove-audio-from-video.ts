@@ -15,14 +15,13 @@ export const removeAudioFromVideo: ToolInput = {
     "video without audio",
   ],
   aliases: ["mute", "silence", "strip audio", "no sound"],
-  related: ["trim-video", "compress-video", "mov-to-mp4"],
+  related: ["trim-video", "compress-video"],
   updatedAt: "2026-10-01",
   icon: "volume-x",
   content: {
     en: {
       title: "Remove audio from video",
-      subtitle:
-        "Delete the sound track from a video without touching the picture, in your browser.",
+      subtitle: "Take the sound out of a video.",
       metaTitle: "Remove audio from video, free, no upload",
       metaDescription:
         "Mute a video by removing its audio track. The picture is copied unchanged, no quality loss. Runs in your browser. Free, no account, no watermark.",

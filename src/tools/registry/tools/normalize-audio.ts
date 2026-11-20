@@ -23,15 +23,15 @@ export const normalizeAudio: ToolInput = {
     "voice-recorder",
     "change-video-volume",
     "remove-silence-from-audio",
-    "audio-converter",
+    "remove-background-noise",
   ],
   updatedAt: "2026-10-08",
   icon: "audio-waveform",
+  illustration: "normalize",
   content: {
     en: {
       title: "Normalize audio",
-      subtitle:
-        "Bring an audio file or a video's sound to a loudness target in LUFS, measured on your device.",
+      subtitle: "Make audio play at a standard, even loudness.",
       metaTitle: "Normalize audio to LUFS online, free",
       metaDescription:
         "Measure integrated loudness and true peak (EBU R128) and bring audio or a video's sound to −14, −16 or −23 LUFS. Runs in your browser. No upload. Free.",

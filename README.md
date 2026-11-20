@@ -111,7 +111,6 @@ The machine-level pnpm `minimumReleaseAge` policy rejects day-old releases pulle
 │   │   ├── engines/           types.ts and one folder per engine; each exports an Engine
 │   │   └── workers/           engine runner worker, ffmpeg loader, STT worker (Phase 0/1)
 │   ├── lib/
-│   │   ├── capabilities/      runtime backend selection (WebCodecs, isolation, WebGPU probes)
 │   │   ├── seo/               JSON-LD helpers (BreadcrumbList, Organization, WebSite only)
 │   │   ├── i18n/              next-intl routing and request config
 │   │   ├── site.ts            site name and URL from env
@@ -218,7 +217,7 @@ Backend legend: **W** WebCodecs + mediabunny (fast, hardware-accelerated where a
 | A5 | **Change codec** (H.264 ↔ HEVC ↔ VP9 ↔ AV1; audio AAC/Opus/MP3) | W, F, S | P2 | Shipped 2026-10-01: `change-video-codec`, `hevc-to-h264`, `h264-to-hevc`. Encoders probed per file on the page (ADR-0037); sound copied or encoded to AAC/Opus by container. Audio-only codec changes are E7. |
 | A6 | **Remux** (change container without re-encoding: MOV→MP4, MKV→MP4, WebM→MKV) | W | D, P1 | Instant. Most "convert" queries where codecs are compatible should hit this path; competitors always re-encode. |
 | A7 | **Optimise for web / faststart** (moov atom to front, streaming-friendly) | W | D, P2 | Shipped 2026-10-01: `optimize-video-for-web`. Index rewrite on the page, byte-identical packets (ADR-0038). |
-| A8 | **Compress for platform** (Discord 10 MB/25 MB, WhatsApp 16 MB, email 25 MB, Telegram, Slack, iMessage, Twitter/X 512 MB & 2:20, Instagram, TikTok, LinkedIn) | W, F | D, P1 | Each platform is its own page with real, dated limits. High long-tail value. |
+| A8 | **Compress for platform** (Discord 10 MB/25 MB, WhatsApp 16 MB, email 25 MB, Telegram, Slack, iMessage, Twitter/X 512 MB & 2:20, Instagram, TikTok, LinkedIn) | W, F | D, P1 | Each platform is its own page with real, sourced limits. High long-tail value. |
 
 ### B. Format conversion
 
@@ -247,7 +246,7 @@ Backend legend: **W** WebCodecs + mediabunny (fast, hardware-accelerated where a
 | C4 | **Loop / repeat** (N times or to duration, boomerang) | W | T, P2 | Shipped 2026-10-01: `loop-video` (lossless copy, whole plays), `boomerang-video` (one bounce encoded, then copied). |
 | C5 | **Reverse** | F, W | T, P2 | Shipped 2026-10-01: `reverse-video`. Windowed decode from the end, bounded memory; sound reversed up to about 17 min (ADR-0039). |
 | C6 | **Speed** (0.25×–8×, pitch-preserve audio, ramp) | W, F | T, P1 | |
-| C7 | **Remove silence / jump cut** (threshold, min duration, padding) | J+W | D, P2 | Shipped 2026-10-01: `remove-silence-from-video`, `remove-silence-from-audio`. 10 ms level windows, threshold suggested from the noise floor, cuts shown on a timeline and made by the same code; video cuts snap to frames and re-encode to H.264/AAC MP4 (ADR-0041). |
+| C7 | **Remove silence / jump cut** (threshold, min duration, padding) | J+W | D, P2 | Shipped 2026-10-01: `remove-silence-from-video`, `remove-silence-from-audio`. 10 ms level windows, threshold suggested from the noise floor, cuts shown on a timeline and made by the same code; video cuts snap to frames and re-encode to H.264/AAC MP4 (ADR-0041). Round 4: pauses found by speech (Silero VAD) by default, loudness as the fallback and the alternative; also used by the Shorts clip finder (ADR-0110). |
 | C8 | **Cut into clips for Shorts/Reels/TikTok** (auto 15/30/60s chunks) | W | D, P2 | Shipped 2026-11-18: `cut-video-into-shorts` (`clips` engine). Boundaries proposed at pauses and key-frame scene changes, draggable; per-clip 9:16 crop or blurred bars; each clip re-encoded, ZIP (ADR-0078). |
 | C9 | **Freeze frame / hold** | W | P3 | Shipped 2026-11-18: `freeze-frame-video`. Holds on the timeline; the video pauses in silence or the sound plays on (copied); picture re-encoded (ADR-0075). |
 | C10 | **Picture-in-picture / side-by-side** (two videos) | J+W | P3 | Shipped 2026-11-18: `picture-in-picture-video`, `side-by-side-video` (one `layout` engine; stacked is a choice). Synced live preview, offset, sound from either or both (ADR-0077). |
@@ -277,7 +276,7 @@ Backend legend: **W** WebCodecs + mediabunny (fast, hardware-accelerated where a
 | E5 | **Fade audio in/out** | W, J | P2 | Shipped 2026-10-01: `fade-audio`, `fade-audio-in-video`. Quarter-sine or linear (ffmpeg `afade` curves), handles on the waveform, picture copied. |
 | E6 | **Audio delay / sync fix** (shift ms) | W | D, P2 | Shipped 2026-10-01: `fix-audio-sync`. Packet copy; exact to the sample in MP4/MOV via an edit list, nearest sound frame in MKV/WebM (ADR-0042). |
 | E7 | **Change audio codec / bitrate / channels (stereo→mono)** | W, F | P2 | Shipped 2026-10-01 in `convert-audio`: `stereo-to-mono`, `change-audio-sample-rate` (resampling always through ffmpeg's resampler; mediabunny interpolates linearly). Codec and bitrate stay with the converter and pair pages. |
-| E8 | **Remove background noise** (RNNoise-style on-device) | F/J | D, P3 | Planned with a small on-device model (RNNoise, ADR-0106). Mains hum (50/60 Hz) is DSP and still open. |
+| E8 | **Remove background noise** (RNNoise-style on-device) | F/J | D, P3 | Built 2026-11-19 (round 4): `remove-background-noise` (`speech-denoise`): RNNoise 0.2 on device, strength as a wet/dry mix, loudness kept, 8 s audition, audio and video (picture copied) (ADR-0108). Speech only; music pumps, bursts drop about 14 dB, no echo removal. Mains hum (50/60 Hz) is DSP and still open. |
 | E9 | **Isolate vocals / remove music** (on-device model) | J (WebGPU) | D, P3 | Not planned: needs a model (ADR-0105). |
 | E10 | **Select/keep/remove audio tracks** (multi-track MKV) | W | P2 | Shipped 2026-10-01: `select-audio-tracks`. Packet copy of picture and chosen tracks, main track first and default; subtitles, chapters and attachments are not carried (mediabunny cannot read them). |
 | E11 | **Audio tools standalone**: trim, merge, speed, reverse, volume, fade, normalise, cut silence, pitch, tempo, mono/stereo, sample rate, bitrate, ringtone maker (M4R), voice recorder | W, F, J | T, P2 | Each is its own page family. Shipped 2026-10-01: `trim-audio` (extract-audio range, copied when the format stays), `change-audio-speed` (speed engine, audio branch), volume, fade, normalise, cut silence, mono, sample rate. Built 2026-11-18 (round 3): `merge-audio` (`join-audio`: matching MP3s joined frame for frame, else decoded, band-limited resampling, gap or equal-power crossfade, optional loudness match), `ringtone-maker` (`ringtone`: iPhone M4R or Android MP3/OGG, loudest 30 s suggested), `change-audio-pitch` (`pitch`: resampler plus phase-locked vocoder that keeps attacks, length exact), `key-bpm-finder` (`audio-analyze`: tempo with half and double, key with relative, Camelot and confidence) (ADR-0087 to ADR-0091). |
@@ -301,7 +300,7 @@ Backend legend: **W** WebCodecs + mediabunny (fast, hardware-accelerated where a
 |---|---|---|---|---|
 | G1 | **Add watermark / logo** (image or text, position, opacity, scale, timed) | J+W | T, P1 | |
 | G2 | **Remove watermark** (crop, blur region, delogo) | F | T, P2 | Dropped (ADR-0062): no removal page. Blurring a mark is covered by `blur-video`; cutting it off by `crop-video`. |
-| G3 | **Blur / pixelate region** (static or tracked, faces P3) | J+W | P2 | Shipped 2026-11-18: `blur-video` (`blur-region` engine). Rectangles and ellipses drawn on the picture, key frames for moving subjects, per-region time range, blur, pixelate or black box, soft edge, inverted mode; one WebGL renderer for preview and output (ADR-0063). No separate pixelate page. Automatic face finding and following is planned with a small on-device model (ADR-0106). |
+| G3 | **Blur / pixelate region** (static or tracked, faces found on device) | J+W | P2 | Shipped 2026-11-18: `blur-video` (`blur-region` engine). Rectangles and ellipses drawn on the picture, key frames for moving subjects, per-region time range, blur, pixelate or black box, soft edge, inverted mode; one WebGL renderer for preview and output (ADR-0063). No separate pixelate page. Find faces (2026-11-19): YuNet on our WebGL 2 kit finds faces on 6 frames a second (full frame at 640 px plus full-resolution tiles above 960 px), tracks them across frames and shots, and places a following oval per face for the user to review; up to 48 regions (ADR-0113 to ADR-0117). |
 | G4 | **Brightness / contrast / saturation / exposure / gamma** | J+W | T, P2 | Shipped 2026-10-01: `adjust-video-brightness` (`filter` engine, per-frame runner, ADR-0035). |
 | G5 | **Filters / LUT** (monochrome, sepia, cinematic; upload .cube LUT) | J+W | P2 | Shipped 2026-10-01: `add-filter-to-video` (six matrix looks with strength). No LUT upload yet. |
 | G6 | **Sharpen / denoise** | F | P3 | Built 2026-11-18 (round 3) on W + WebGL: `sharpen-video`, `denoise-video` (`clarity` engine). Denoise: non-local means over this and the previous cleaned frame, strength from measured grain, level with or above FFmpeg `nlmeans` and above `hqdn3d`; sharpen: brightness unsharp mask with grain threshold and halo limit; before/after split preview (ADR-0081, ADR-0082). |
@@ -312,6 +311,7 @@ Backend legend: **W** WebCodecs + mediabunny (fast, hardware-accelerated where a
 | G11 | **Add intro/outro** (image or clip, concat) | W | P3 | Shipped 2026-11-18: `add-intro-to-video` (`intro-outro` engine). Title card, picture or clip at each end, fitted to the main video's frame and rate, crossfades over picture and sound, everything re-encoded once (ADR-0071). |
 | G12 | **Green screen / chroma key** | J (WebGL) | P3 | Shipped 2026-11-18: `remove-green-screen-from-video` (`chroma-key` engine). Key colour found at the frame's edges or tapped, colour-difference keyer against a local screen plate, spill removal, colour, image or video background (loop or hold), live WebGL preview with the same shaders. No transparent output (ADR-0065). |
 | G13 | **Change background colour (padding regions)** | W | P2 | Shipped 2026-10-01 as options, not a page: any colour on borders, black/white/blurred bars on aspect ratio. |
+| G14 | **Blur or replace the background without a green screen** | J (WebGL) + model | P3 | Built 2026-11-19 (round 4): `blur-video-background`, `remove-background-from-video` (`portrait-matte` engine). MediaPipe Selfie Segmentation (landscape 144×256 or general 256×256 by shape) on TensorFlow.js in a worker, mask steadied over time with the previous and next frames, refined to the picture's edges with a guided filter; blur that leaves the person out, colour, image or video behind, or the mask itself as a video; live WebGL preview with the same renderer (ADR-0118 to ADR-0122). |
 
 ### H. Frames, stills, thumbnails
 
@@ -358,11 +358,11 @@ Each resolves to an existing engine with locked/preselected options and dedicate
 |---|---|---|---|
 | L1 | **Batch processing** on every tool (queue, per-file status, zip download) | P1 core | Free, unlimited; competitors gate this. |
 | L2 | **Chain tools** ("send result to another tool" without re-download) | P2 | In-memory handoff; unique. |
-| L3 | **Presets** (save option sets in localStorage) | P2 | |
-| L4 | **Command palette** (⌘K) over all tools | P1 | |
+| L3 | **Presets** (save option sets in localStorage) | P2 | Built 2026-11-19 (round 5): remembered settings per page and "Saved settings" (ADR-0129); last result kept a day (ADR-0131); interrupted recordings recovered (ADR-0130). |
+| L4 | **Command palette** (⌘K) over all tools | P1 | Round 4 (2026-11-19): job-aware search with an intent table and best-coverage ranking, loaded on use; a full-screen search sheet on phones; recents in this browser only; "Not sure which tool?" reads a dropped file and suggests tools with a reason; related tools with a reason each; a "Then" row under results; hubs grouped by task; a footer of hubs (ADR-0123 to ADR-0127). Round 5: searches that list no tool or are left without opening one are counted per day through a first-party `/api/search-miss` (search text only), and `pnpm search-report` lists them for the intent table (ADR-0150 to ADR-0152). |
 | L5 | **Paste a file / drag from another tab / share-target PWA** | P2 | Installable PWA with `share_target` so phones can "Share → ilovevideos". Shipped 2026-11-18: manifest, share target to a tool chooser at `/share`, several files handed on at once (ADR-0102, ADR-0103). iOS has no share target. |
 | L6 | **Offline** (PWA caches engines; works with no network) | P2 | Strong privacy proof. Shipped 2026-11-18: hand-written service worker; visited pages and the engine and wasm files they loaded work offline, nothing cached ahead (ADR-0102). |
-| L7 | **Show the equivalent ffmpeg command** for every operation | P1 | Teaches, builds trust, unique. |
+| L7 | **Equivalent ffmpeg command** for every operation | P1 | Commands kept in results for tests and records; not shown in the interface (owner, 2026-11-19). |
 | L8 | **Keyboard shortcuts and gestures** | P1 | Shipped 2026-10-08 (ADR-0051). Site: ⌘K and / search, ? lists everything (also a footer link). Tool pages: ⌘/Ctrl+O choose a file, ⌘/Ctrl+Enter run, ⌘/Ctrl+S save, Esc cancel, ⌘/Ctrl+V paste. Previews: Space/K, J/L ±10 s, arrows ±5 s, , and . one frame, Home/End, 0–9, M, F; a page's own key wins. Gestures: tap plays or pauses, double-tap a side seeks 5 s, double-click full screen, drag reorders, swipe down closes a sheet. Delete removes a focused clip. |
 
 ---
@@ -406,6 +406,107 @@ Pruning rule: a format-pair page ships only if (a) real search demand exists (ve
 - AI generation (text-to-video, avatars, voice cloning).
 - Downloading videos from YouTube/TikTok/Instagram URLs (legal exposure; we process files the user already has).
 
+### Browser support (generated)
+
+What each browser provides for the engines, and what a page on each engine does there (ADR-0144 to ADR-0148). Generated by `scripts/capability-matrix.ts`; do not edit between the markers. Every page runs in Chromium, Chrome on Android (emulated) and Safari on iPhone (emulated) in `tests/e2e/every-page.spec.ts`; Firefox runs only with `E2E_FIREFOX=1`.
+
+<!-- capability-matrix:start -->
+Measured with `tests/e2e/capabilities.spec.ts` on 2026-11-19 in Playwright's browsers (Chromium (desktop): chromium 151.0.7922.34; Chrome, Pixel 7 emulation: chromium 151.0.7922.34; Safari, iPhone 14 emulation: webkit 26.5). Firefox is documented from the bundled caniuse-lite 1.0.30001810 and not run here (ADR-0144). Every page asks its engine the same question before the user starts and says when this browser cannot do the job (ADR-0147). Regenerate: `pnpm tsx scripts/capability-matrix.ts`.
+
+| Capability | Chromium (desktop) | Chrome, Pixel 7 emulation | Safari, iPhone 14 emulation | Firefox desktop (documented, not run here) | Firefox for Android (documented, not run here) |
+|---|---|---|---|---|---|
+| Video decode (WebCodecs) | yes | yes | yes | yes from 130 (caniuse webcodecs) | no: no WebCodecs (caniuse webcodecs, Firefox for Android 153) |
+| Audio decode (WebCodecs) | yes | yes | yes | yes from 130 (caniuse webcodecs) | no: no WebCodecs (caniuse webcodecs, Firefox for Android 153) |
+| H.264 encode that returns frames | yes | yes | Baseline only (High stalls) | unknown: WebCodecs from 130 (caniuse webcodecs); which codecs encode is not in the data | no: no WebCodecs (caniuse webcodecs, Firefox for Android 153) |
+| VP9 encode | yes | yes | yes | unknown: WebCodecs from 130 (caniuse webcodecs); which codecs encode is not in the data | no: no WebCodecs (caniuse webcodecs, Firefox for Android 153) |
+| HEVC encode | no | no | yes | unknown: WebCodecs from 130 (caniuse webcodecs); which codecs encode is not in the data | no: no WebCodecs (caniuse webcodecs, Firefox for Android 153) |
+| AAC encode | yes | yes | yes | unknown: WebCodecs from 130 (caniuse webcodecs); which codecs encode is not in the data | no: no WebCodecs (caniuse webcodecs, Firefox for Android 153) |
+| Opus encode | yes | yes | yes | unknown: WebCodecs from 130 (caniuse webcodecs); which codecs encode is not in the data | no: no WebCodecs (caniuse webcodecs, Firefox for Android 153) |
+| WebGL 2 in a worker (OffscreenCanvas) | yes | yes | yes | unknown in a worker: WebGL 2 from 51, OffscreenCanvas from 105 (caniuse) | unknown in a worker: WebGL 2 and OffscreenCanvas yes in 153 (caniuse) |
+| OffscreenCanvas 2D in a worker | yes | yes | yes | yes from 105 (caniuse offscreencanvas) | yes in 153 (caniuse offscreencanvas) |
+| GIF decode (ImageDecoder) | yes | yes | no | unknown: not in the data | unknown: not in the data |
+| ffmpeg.wasm (SharedArrayBuffer, cross-origin isolated) | yes | yes | yes | yes: SharedArrayBuffer from 79 when isolated, WebAssembly threads from 79 (caniuse) | yes in 153 (caniuse sharedarraybuffer, wasm-threads) |
+| Screen capture (getDisplayMedia) | yes | yes | yes | unknown: not in the data | unknown: not in the data |
+| Camera and microphone (getUserMedia) | yes | yes | yes | yes (caniuse stream, current versions) | yes in 153 (caniuse stream) |
+| HEVC decode | no | no | yes | unknown | unknown |
+| AV1 encode | yes | yes | yes | unknown | unknown |
+| OPFS (large outputs stream to disk) | yes | yes | no | unknown | unknown |
+| MediaRecorder MP4 | yes | yes | yes | unknown | unknown |
+
+What each engine needs with its page's defaults, and what a page on it does: **works**, takes its **slower path** (the same file through ffmpeg.wasm, ADR-0147), or **says so** before the user starts, naming what is missing.
+
+| Engine | Needs | Chromium (desktop) | Chrome, Pixel 7 emulation | Safari, iPhone 14 emulation | Firefox for Android (documented) |
+|---|---|---|---|---|---|
+| compress ¹ | video-decode, h264-encode, aac-encode | works | works | works | slower path |
+| bitrate | video-decode, h264-encode, aac-encode | works | works | works | says so (video-decode, h264-encode, aac-encode) |
+| framerate ¹ | video-decode, h264-encode, aac-encode | works | works | works | slower path |
+| codec | video-decode, h264-encode; HEVC encode for H.264 to HEVC | works | works | works | says so (video-decode, h264-encode) |
+| faststart | nothing beyond reading the file; rewrites the index only | works | works | works | works |
+| convert-video ¹ | nothing beyond reading the file; copies when the codecs fit; H.264 or VP9 and AAC or Opus when they do not | works | works | works | works |
+| video-to-audio ¹ | nothing beyond reading the file; copies AAC; MP3 and WAV via ffmpeg.wasm | works | works | works | works |
+| convert-audio ¹ | audio-decode; AAC and Opus natively; MP3, FLAC and Vorbis via ffmpeg.wasm | works | works | works | slower path |
+| video-to-gif ¹ | video-decode, offscreen-canvas | works | works | works | slower path |
+| animated-image | video-decode, offscreen-canvas | works | works | works | says so (video-decode) |
+| gif-to-video ¹ | gif-decode, h264-encode; ffmpeg.wasm reads the GIF where ImageDecoder is missing | works | works | slower path (gif-decode) | slower path |
+| video-to-frames | video-decode, offscreen-canvas | works | works | works | says so (video-decode) |
+| frame-extract | video-decode, offscreen-canvas | works | works | works | says so (video-decode) |
+| frame-pick | video-decode, offscreen-canvas | works | works | works | says so (video-decode) |
+| thumbnail-grid | video-decode, offscreen-canvas | works | works | works | says so (video-decode) |
+| images-to-video | offscreen-canvas, h264-encode | works | works | works | says so (h264-encode) |
+| audio-to-video | audio-decode, h264-encode, aac-encode | works | works | works | says so (audio-decode, h264-encode, aac-encode) |
+| trim | nothing beyond reading the file; a frame-accurate cut needs H.264 encode | works | works | works | works |
+| split | nothing beyond reading the file | works | works | works | works |
+| merge | nothing beyond reading the file; clips that differ need H.264 and AAC encode | works | works | works | works |
+| loop | video-decode, h264-encode, aac-encode | works | works | works | says so (video-decode, h264-encode, aac-encode) |
+| reverse | video-decode, h264-encode, aac-encode | works | works | works | says so (video-decode, h264-encode, aac-encode) |
+| speed | converter | works | works | works | works |
+| remove-silence | audio-decode, aac-encode; video needs H.264 encode | works | works | works | says so (audio-decode, aac-encode) |
+| freeze-frame | video-decode, offscreen-canvas, h264-encode, aac-encode | works | works | works | says so (video-decode, h264-encode, aac-encode) |
+| layout | video-decode, offscreen-canvas, h264-encode, aac-encode | works | works | works | says so (video-decode, h264-encode, aac-encode) |
+| clips | video-decode, offscreen-canvas, h264-encode, aac-encode | works | works | works | says so (video-decode, h264-encode, aac-encode) |
+| zoom-pan | video-decode, offscreen-canvas, h264-encode, aac-encode | works | works | works | says so (video-decode, h264-encode, aac-encode) |
+| intro-outro | video-decode, offscreen-canvas, h264-encode, aac-encode | works | works | works | says so (video-decode, h264-encode, aac-encode) |
+| crop ¹ | video-decode, h264-encode, aac-encode | works | works | works | slower path |
+| aspect-ratio ¹ | video-decode, h264-encode, aac-encode | works | works | works | slower path |
+| rotate | nothing beyond reading the file; a turn is written as metadata; a flip needs H.264 encode | works | works | works | works |
+| pad ¹ | video-decode, h264-encode, aac-encode | works | works | works | slower path |
+| stabilize | video-decode, webgl2, h264-encode, aac-encode | works | works | works | says so (video-decode, h264-encode, aac-encode) |
+| clarity | video-decode, webgl2, h264-encode, aac-encode | works | works | works | says so (video-decode, h264-encode, aac-encode) |
+| mute | nothing beyond reading the file | works | works | works | works |
+| add-audio | audio-decode, aac-encode | works | works | works | says so (audio-decode, aac-encode) |
+| volume | audio-decode, aac-encode; MP3 and other outputs via ffmpeg.wasm | works | works | works | says so (audio-decode, aac-encode) |
+| audio-fade | audio-decode, aac-encode | works | works | works | says so (audio-decode, aac-encode) |
+| audio-sync | nothing beyond reading the file | works | works | works | works |
+| audio-tracks | nothing beyond reading the file | works | works | works | works |
+| pitch | audio-decode, aac-encode | works | works | works | says so (audio-decode, aac-encode) |
+| audio-analyze | audio-decode | works | works | works | says so (audio-decode) |
+| join-audio | audio-decode, converter | works | works | works | says so (audio-decode) |
+| ringtone | audio-decode, aac-encode | works | works | works | says so (audio-decode, aac-encode) |
+| speech-denoise | audio-decode, aac-encode | works | works | works | says so (audio-decode, aac-encode) |
+| inspect | nothing beyond reading the file | works | works | works | works |
+| strip-metadata | nothing beyond reading the file | works | works | works | works |
+| edit-metadata | nothing beyond reading the file | works | works | works | works |
+| cover | nothing beyond reading the file | works | works | works | works |
+| repair | nothing beyond reading the file | works | works | works | works |
+| subtitles-convert | nothing beyond reading the file | works | works | works | works |
+| subtitles-extract | nothing beyond reading the file | works | works | works | works |
+| subtitles-add | nothing beyond reading the file; soft subtitles copy; burned-in text needs H.264 encode | works | works | works | works |
+| text-overlay | video-decode, offscreen-canvas, h264-encode, aac-encode | works | works | works | says so (video-decode, h264-encode, aac-encode) |
+| watermark | video-decode, offscreen-canvas, h264-encode, aac-encode | works | works | works | says so (video-decode, h264-encode, aac-encode) |
+| time-overlay | video-decode, offscreen-canvas, h264-encode, aac-encode | works | works | works | says so (video-decode, h264-encode, aac-encode) |
+| image-overlay | video-decode, offscreen-canvas, h264-encode, aac-encode | works | works | works | says so (video-decode, h264-encode, aac-encode) |
+| blur-region | video-decode, webgl2, h264-encode, aac-encode | works | works | works | says so (video-decode, h264-encode, aac-encode) |
+| chroma-key | video-decode, webgl2, h264-encode, aac-encode | works | works | works | says so (video-decode, h264-encode, aac-encode) |
+| portrait-matte | video-decode, webgl2, h264-encode, aac-encode | works | works | works | says so (video-decode, h264-encode, aac-encode) |
+| filter ¹ | video-decode, webgl2, h264-encode, aac-encode | works | works | works | slower path |
+| video-fade ¹ | video-decode, h264-encode, aac-encode | works | works | works | slower path |
+| screen-record | screen-capture, h264-encode; VP9 where H.264 is missing | works | works | works | says so (h264-encode) |
+| webcam-record | camera-mic, h264-encode, aac-encode | works | works | works | says so (h264-encode, aac-encode) |
+| audio-record | camera-mic, aac-encode; Opus where AAC is missing | works | works | works | says so (aac-encode) |
+
+¹ Has an ffmpeg.wasm path that makes the same file where the browser's own encoder is missing (`src/tools/engines/fallbacks.ts`).
+<!-- capability-matrix:end -->
+
 ---
 
 ## Architecture
@@ -433,7 +534,7 @@ Pruning rule: a format-pair page ships only if (a) real search demand exists (ve
                 │ postMessage (transferables / OPFS handles)
         ┌───────▼────────────────────────────────────────────┐
         │ Worker: engine runner                              │
-        │  picks backend per capabilities:                   │
+        │  first backend whose engine.supports() says yes:   │
         │   1. WebCodecs + mediabunny  (fast, HW accel)      │
         │   2. ffmpeg.wasm core-mt     (universal, slower)   │
         │   3. Canvas/WebGPU           (GIF, overlays, STT)  │
@@ -489,7 +590,8 @@ See [Repository layout](#repository-layout).
 
 - COOP `same-origin`, COEP `require-corp`, CORP `same-origin` on WASM assets, strict Permissions-Policy (camera/mic/display-capture self only for recorders).
 - No third-party scripts. Analytics proxied first-party and cookieless.
-- No cookies at all in Phase 1. Preferences (theme, presets) in `localStorage`.
+- First-party cookies and browser storage are allowed where they make the product more usable (ADR-0128): remembered settings, presets, recents, recovery. What is stored and how to clear it is on `/privacy`.
+- The only server code is `POST /api/search-miss` (ADR-0150): it receives a failed search's text (normalised, at most 80 characters) and a result count, keeps a count per query per day, and reads no address, user agent or cookie and sets none. Files never reach it. Storage is behind an interface: a JSON file in development, Cloudflare D1 when hosted (ADR-0151).
 - Server path (Phase 2): separate origin, separate consent, separate docs.
 
 ### 8. Testing strategy
@@ -579,7 +681,7 @@ Rules: never swallow an error into a generic "Something went wrong"; always free
 ### Security posture
 
 - Cross-origin isolation (COOP `same-origin`, COEP `require-corp`) sitewide; strict `Permissions-Policy`; `X-Frame-Options: DENY`; `nosniff`. A Content Security Policy with nonces is a Phase 1 exit criterion (blocked today only by inline JSON-LD, which moves to a nonce).
-- No cookies, no accounts, no secrets in the client. Environment variables are public by construction.
+- No accounts and no secrets in the client; first-party cookies and storage are allowed (ADR-0128). Environment variables are public by construction.
 - Dependencies: pinned via lockfile, Dependabot weekly, `pnpm audit` in CI as a warning, blocking on high severity for runtime dependencies.
 - WASM and model binaries are served from our origin with integrity checked by content hash in the path.
 - The server path, when it exists, runs on a separate origin with its own consent gate, size and rate limits, tmpfs storage and a 60-minute reaper.
@@ -594,7 +696,7 @@ The registry is the single source of truth. A `ToolDefinition` produces the rout
 - Every PR gets a preview deployment and must pass `pnpm check`, the Playwright suite and Lighthouse CI on a sample of pages.
 - `main` deploys to production automatically after CI. Rollback is instant (previous immutable deployment). No long-lived staging environment.
 - Feature gating is done in the registry (`status` and `phase` fields), not with runtime flags; a tool that is not ready is not in the sitemap and not linked.
-- Versioning: the site is continuously deployed; engines carry a version string surfaced in the ffmpeg-command display for support conversations.
+- Versioning: the site is continuously deployed; engines carry a version string, kept with the ffmpeg command in each result for support conversations (neither is shown in the interface).
 
 ### Performance budgets
 
@@ -640,6 +742,10 @@ Decisions here are final for Phase 1. Alternatives considered are recorded in `D
 | Media engine 1 | **mediabunny** | 1.55 | WebCodecs-based read/write/convert for MP4, WebM, MKV, MOV, MP3, WAV, OGG, etc. MPL-2.0. Fastest path; hardware encode via browser. |
 | Media engine 2 | **@ffmpeg/ffmpeg** + **@ffmpeg/core-mt** (copied to `public/wasm/ffmpeg/<version>/` by `scripts/copy-wasm.mjs` on install and build; not committed) | 0.12.15 / 0.12.10 | Universal fallback: legacy formats (WMV, FLV, RMVB…), filters (vidstab, delogo, loudnorm), codecs the browser cannot encode. Needs SharedArrayBuffer → COOP/COEP. Default core is GPL (x264/x265); ship the GPL build and comply, or build an LGPL core without x264 for the default path (ADR-0004). |
 | GIF | **gifenc** | 1.0 | Fast palette quantisation; ffmpeg `palettegen` path for "best quality". |
+| Face finding | **YuNet** 2026may (OpenCV Zoo, MIT) on our own **WebGL 2 inference kit** (`src/tools/engines/vision/`) | model 2026may | Find faces on `blur-video` (ADR-0113 to ADR-0117). 53,104 weights converted offline (`scripts/vision/onnx_to_vision.py`) to one half-float file, `public/models/yunet/yunet-2026may.vnn`, 121,536 B (102,751 B gzip), self-hosted with its licence, fetched only when Find faces is pressed. Six fragment-shader kernels, about 9 kB of script in the face worker; no onnxruntime-web, no MediaPipe. Parity with the official ONNX model is tested per layer. Reusable for other small convolutional models. |
+| Person segmentation | **MediaPipe Selfie Segmentation** TF.js graph models (Apache-2.0) on **TensorFlow.js** `@tensorflow/tfjs-core`, `tfjs-backend-webgl`, `tfjs-converter` (Apache-2.0) | 4.22.0 | Background tools (ADR-0118 to ADR-0122). Models self-hosted under `public/models/selfie-segmenter/` (general 332,432 B, landscape 336,175 B, one fetched per video by its shape), loaded only after a video is chosen on those pages; the runtime is a chunk of the engine and preview workers with only the WebGL kernels the graph uses registered (about 155 kB gzip, 128 kB brotli). No eval, no remote URL: model files are handed to TF.js from memory. Outside the pick-ui-library list (not UI). A later round may move the model onto the YuNet WebGL kit. |
+| Speech noise removal | **RNNoise** 0.2 (Xiph, BSD-3-Clause) as WebAssembly from **@jitsi/rnnoise-wasm** (Apache-2.0) | 0.2 / 0.2.1 | `remove-background-noise` (ADR-0108). The module inlined in the package's `rnnoise-sync.js`, extracted unchanged by `scripts/models/extract-rnnoise.mjs` to `public/models/rnnoise/rnnoise-0.2.wasm` (1,440,118 B, 1,202,973 B gzip, SHA-256 checked on load), fetched only after a file is chosen. Our wrapper (`src/tools/engines/sound/dsp/rnnoise.ts`, a few kB) resamples, aligns and mixes; no Emscripten glue ships. Not an npm dependency. |
+| Speech detection | **Silero VAD** 6.2.3 16 kHz (MIT) on our own forward pass (`src/tools/engines/sound/dsp/silero-vad.ts`) | 6.2.3 | Pauses found by speech in remove silence and the Shorts clip finder (ADR-0109, ADR-0110). Official TorchScript weights written as float16 by `scripts/models/export-silero-vad.py` to `public/models/silero-vad/silero-vad-16k-6.2.3-f16.safetensors` (620,466 B, 576,662 B gzip, SHA-256 checked on load), fetched only after a file is chosen. Matches the official ONNX model on ≥ 99.89% of frames; no onnxruntime-web. Not an npm dependency. |
 | Large files | **OPFS** | native | Sync access handles in workers; avoids holding multi-GB files in memory. |
 | Lint/format | **Biome** | 2.5 | Single tool, fast, a11y rules on. No ESLint/Prettier. |
 | Unit tests | **Vitest** | 4.x | Registry, pure helpers, engine option math. |
@@ -655,7 +761,7 @@ Decisions here are final for Phase 1. Alternatives considered are recorded in `D
 - **Tier 1** (full WebCodecs path): Chrome/Edge 110+, Safari 17.4+ (desktop and iOS), Firefox 130+ desktop.
 - **Tier 2** (ffmpeg.wasm path only, slower): Firefox for Android, older Safari.
 - **Unsupported**: anything without WebAssembly. We show a plain message, never a broken tool.
-- Capability detection at runtime (`src/lib/capabilities`) picks the backend per tool per session and tells the user which path is in use.
+- Backend choice happens per run: the engine worker asks each engine's `supports(backend, input, options)` in backend order and uses the first that says yes; engines probe the exact configuration they will use (ADR-0054, ADR-0139). The interface does not name the path (ADR-0149).
 
 ### Key constraints the stack imposes
 
@@ -721,7 +827,7 @@ Why: colour is the fastest tell of a template. Keeping it to one deliberate slot
 - Respect `prefers-reduced-motion`: motion collapses to opacity-only or instant.
 - Progress is honest. A progress bar reflects real work (frames processed / total). Indeterminate spinners are a last resort and never appear for more than ~2 seconds without an explanation.
 - Hover states change one property (usually background value by one step). Not two, not three.
-- No scroll-jacking, no parallax, no elements that animate on scroll into view "for delight".
+- No scroll-jacking and no parallax. Subtle entrance and reveal-once motion is allowed within ADR-0153's budgets: tokens only, transform/opacity, once per element, never scroll-linked, CLS 0 and LCP unchanged.
 
 #### 1.5 The workspace is a single stage
 
@@ -737,7 +843,7 @@ Each tool page has one primary surface: the **stage**. Before a file is added, t
 - Headlines are plain: "Compress video." not "Shrink your videos in seconds with our AI-powered compressor!"
 - No exclamation marks in UI copy. No emoji in UI copy.
 - No marketing adjectives on tool pages: "powerful", "seamless", "blazing", "AI-powered", "ultimate" are banned.
-- Say what happens: "Your file stays on this device." beats "100% secure and private!!!"
+- Say what happens: "Re-encoded to H.264, sound copied" beats "100% secure and private!!!" Privacy is stated in the policy, the about page and once on home, never repeated in the interface (ADR-0149).
 - Error copy states what went wrong and what to do next, in that order, in one or two sentences.
 - Buttons are verbs: "Compress", "Download", "Start over". Never "Submit", "OK", "Go".
 - Sentence case everywhere. Title Case only for the product name.
@@ -896,7 +1002,7 @@ Three surfaces, in order: ground (`bg`), well (`bg-subtle`, sits on the ground f
 |---|---|---|---|
 | UI + prose | **Geist** (variable) or **Inter** (variable, with `ss01`, `cv11`, tabular nums enabled) | `-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif` | Self-hosted via `next/font`. One family only. Decision recorded in ADR-0003. |
 | Numeric/technical | same family, `font-variant-numeric: tabular-nums` | | Durations, sizes, timestamps, progress |
-| Mono | **Geist Mono** or system mono | `ui-monospace, "SF Mono", Menlo, monospace` | Code snippets in docs/FAQ only; ffmpeg command display |
+| Mono | **Geist Mono** or system mono | `ui-monospace, "SF Mono", Menlo, monospace` | Code snippets in docs/FAQ only |
 
 Default OpenType features: `"cv11", "ss01", "ss03"` for Inter (single-storey a, open digits); tabular numbers on all numeric UI.
 
@@ -928,7 +1034,7 @@ Weights available: 400, 500, 600. Never 700+ (too heavy for the grotesque at dis
 - Base unit: 4px. Scale: `1=4, 2=8, 3=12, 4=16, 5=20, 6=24, 8=32, 10=40, 12=48, 16=64, 20=80, 24=96, 32=128`.
 - Page max width: `1200px` content, `1440px` for the tool stage on very wide screens.
 - Gutters: 16px mobile, 24px tablet, 32px+ desktop.
-- Section vertical rhythm: 64px mobile, 96px desktop, 128px between major home sections.
+- Section vertical rhythm: 64px mobile, 96px desktop, 128px between major home sections. Tool pages use 64px at every width between the stage, the folded prose and the related tools, in that order, so the page stays short.
 - Breakpoints: `sm 640`, `md 768`, `lg 1024`, `xl 1280`, `2xl 1536`.
 
 ---
@@ -998,8 +1104,9 @@ These are the exact values used throughout the imported animation skills (`.clau
 - Exit is always faster than enter. One exception: feedback that confirms an input (the "+5 s" seek label on the preview) appears at once and fades out at `dur-fast`, because an entrance there would delay the answer.
 - Stagger children at 20–30ms, capped at 6 items. Beyond that, animate as a group.
 - `prefers-reduced-motion: reduce`: movement collapses to opacity fades at `dur-fast`; nothing translates or scales. Hover effects are gated behind `@media (hover: hover) and (pointer: fine)`.
-- Never animate on scroll into view.
-- Never animate on initial page load except the tool stage's single fade (opacity 0→1, `dur-base`).
+- Sections below the fold may reveal once as they enter the viewport (opacity plus up to 8px, `dur-base`, one shared observer; ADR-0153). Never scroll-linked, never repeated on scroll back.
+- Initial page load: one staggered entrance of the header block and the stage (30–60ms steps, `dur-base` at most), measured so LCP does not move. Cross-page transitions use the View Transitions API where the browser has it.
+- One arrival vocabulary (ADR-0157): fade in while rising `--motion-rise` (8px) at `dur-base`, `ease-out`. Utilities in `tokens.css`: `enter-N` (the page entrance, `--motion-step` apart; the H1 and its lead stay still, so LCP stays at first paint), `card-lift`, `arrive`/`arrive-N` (blocks that appear after a state change, from `@starting-style`), `fold` (disclosure height where supported), `data-reveal` (reveal once, `components/layout/reveal.tsx`). Page changes: ADR-0158. Search opens animated only from a pointer: ADR-0159.
 
 #### 6.4 Signature moments (the only "delight" we allow, each tied to a real event)
 
@@ -1025,7 +1132,8 @@ Every tool card carries a monochrome vector illustration of the operation (ADR-0
 
 | Rule | Value |
 |---|---|
-| Format | Inline SVG React components in `src/components/illustrations/tools/`, one per engine (~48), optional per-tool variants where the preset changes what the picture shows (for example `compress-video-for-discord` shows a size cap). |
+| Format | Inline SVG React components in `src/components/illustrations/tools/`, one per engine, plus a per-tool drawing for every page that shares an engine with a sibling. Generated families use `<family>:<arg>` ids (`video-pair:mov:mp4`, `compress-cap:8`, `resize-for:<platform>`) whose drawings print the args with the stroke alphabet in `glyphs.ts` (ADR-0156). |
+| Uniqueness | No two tool pages share an illustration; `tests/unit/site-shell.test.ts` enforces it. |
 | Canvas | `viewBox="0 0 240 160"` (3:2). Drawn on a 4px grid. |
 | Stroke | 1.5 at 240px wide, monoline, round joins and caps, matching the glyphs and Lucide. |
 | Colour | Two values only: `currentColor` for the subject (inherits `fg`) and `var(--color-fg-muted)` for context lines; optional flat fills with `var(--color-bg-raised)`. No gradients, no hue, no shadows. Dark mode is automatic because the values are tokens. |
@@ -1071,7 +1179,7 @@ Exactly one `primary` button visible per screen state.
 #### 8.2 Drop zone (idle stage)
 
 - Full-width, min-height 320px (desktop) / `--stage-min-h` (80svh, mobile). On phones the drop zone already has the height the working stage keeps, so choosing or dropping a file changes no height (a real picker or drop is not input to layout-shift scoring; ADR-0034). `radius-lg`, 1px dashed `border-strong`, `bg-subtle`.
-- Content: 24px upload icon, one line naming the job ("Drop a video to trim it") with **choose a file** inline on fine pointers (the real `<label>` for a hidden input), a full-width "Choose a file" button on touch, one `text-sm fg-muted` privacy line ("Your file stays on this device."), then the page's idle choices if it has any. Accepted formats are in the page copy and the input's `accept`, not in the zone. Centred from md up; on phones the content is anchored to the top (64px down), so the way in and any idle choices stay above the fold on a 667px screen.
+- Content: 24px upload icon, one line naming the job ("Drop a video to trim it") with **choose a file** inline on fine pointers (the real `<label>` for a hidden input), a full-width "Choose a file" button on touch, then the page's idle choices if it has any. No privacy line (ADR-0149). Accepted formats are in the page copy and the input's `accept`, not in the zone. Centred from md up; on phones the content is anchored to the top (64px down), so the way in and any idle choices stay above the fold on a 667px screen.
 - Drag-over: border becomes solid `fg`, background `bg-raised`, `dur-instant`.
 - Also accepts paste (Cmd/Ctrl+V of a file) and a "From URL" secondary action where legally sensible.
 
@@ -1080,6 +1188,7 @@ Exactly one `primary` button visible per screen state.
 - Left/top: video preview in a `bg-stage` container, `radius-lg`, aspect ratio of the source, letterboxed. Custom minimal controls (play/pause, scrubber, time in tabular nums, mute). Native controls hidden.
 - Right/bottom: control panel, max width 360px on desktop. Groups separated by 24px, labelled with `text-xs` uppercase-free labels (we do not uppercase; we use weight 500 + `fg-muted`).
 - Sticky footer on mobile with the primary button.
+- Done, compare (ADR-0134 to ADR-0137): a picture result gets a Compare toggle in the bar (its word shown from 640 px; pressed toggles keep a fill). The source appears left of a draggable divider (wipe, "Before" and "After" labels) or, when the frame changed shape, beside the result; it is read only when Compare is pressed and kept on the result's frame while playing and scrubbing. "Actual pixels" zooms to one video pixel per CSS pixel on a mouse. A sound result gets a Before/After switch at the same position, matched in loudness unless loudness is the job. Stream copies and results on another timeline show nothing (`compare: false`).
 
 #### 8.4 Inputs
 
@@ -1094,18 +1203,26 @@ Appears after a file is accepted. Row: 40px thumbnail (first frame), filename (t
 
 #### 8.6 Result card
 
-Same shape as the file card. Adds an inline "before → after" line: "12.4 MB → 3.1 MB (−75%)" with tabular figures. Primary button "Download". Secondary "Start over". Tertiary link "Try another tool" that reveals related tools.
+Same shape as the file card. Adds an inline "before → after" line: "12.4 MB → 3.1 MB (−75%)" with tabular figures. Primary button "Download". Secondary "Start over". Then a "Then" list of up to three next tools (the page's own next step first), each a quiet link that hands the result on (ADR-0126). Missed results show only the page's own way forward.
 
-#### 8.7 Tool card (home grid, category pages)
+#### 8.7 Tool card (home rows, category pages)
 
 Visual first (ADR-0008). The card is an illustration with a caption, not a text block with an icon.
 
 - Container: `radius-lg`, elevation 1, no padding on the illustration area, 16px padding on the caption. The whole card is the link. No arrow icon, no "Learn more".
 - Illustration area: fixed 3:2 aspect ratio, `bg-subtle` fill, clipped by the card radius. Holds the tool's monochrome vector illustration (see §7.1), centred, drawn to fill about 60% of the area. Fixed height per breakpoint so the grid never shifts.
-- Caption: `text-h3` title (`<Verb> <object>`), which may wrap to two lines, and the `text-sm fg-muted` subtitle shown in full. Nothing is truncated or clamped with an ellipsis: a card that hides half its sentence reads as broken. Cards stretch to the row (`h-full`), so every card in a row has identical dimensions. The subtitle is the page's own (≤ 100 characters, schema-enforced) and wraps to at most three lines at the narrowest column.
+- Caption: `text-h3` title (`<Verb> <object>`), which may wrap to two lines, and the `text-sm fg-muted` subtitle shown in full. Nothing is truncated or clamped with an ellipsis: a card that hides half its sentence reads as broken. Cards stretch to the row (`h-full`), so every card in a row has identical dimensions. The subtitle is the page's own (about 60 characters, ≤ 80 schema-enforced) and wraps to at most two lines at the narrowest column.
 - Hover (`hover: hover` only): border → `border-strong`, `dur-instant`. The illustration does not move on hover. Any illustrated motion is a design-review decision, not a default.
-- Grid: 1 column at 375, 2 at 768, 3 from 1024. 24px gap. No fourth column: the content column stops at 1200px, where four cards leave a caption about 240px wide.
-- The same card is used on the home page, category hubs and in the related-tools block, so one component and one illustration per tool serve every surface.
+- Grid (category hubs): 1 column at 375, 2 at 768, 3 from 1024. 24px gap. No fourth column: the content column stops at 1200px, where four cards leave a caption about 240px wide.
+- Home rows (ADR-0154; owner, 2026-11-19): each category is one Netflix-style horizontal row of these cards, every standalone tool of the category, the hand-picked lead tools first (`homeLead` in content).
+  - Size and bleed: cards are 256px from 640px up and three quarters of the row on phones, so about 1.2 cards show on a phone and never an exact number on desktop. The row runs to both viewport edges; its inline padding and scroll padding (`px-gutter`, `scroll-px-gutter`, tokens.css) keep the first card on the content column, so no container edge cuts a card. 24px gap. Every card in a row is the same height.
+  - Edge fades: the row's mask (`row-fade`) dissolves 56px at a side where more cards wait, only while the row can scroll that way, moving at `--duration-fast`, instantly under reduced motion. A mask, not an overlay, so it works on any background.
+  - Scrolling: native, with snap (`x mandatory`, each card `start`), contained overscroll, hidden scrollbar. No loop, no auto-play, no cloned cards: the row ends at its last card.
+  - Heading: the category on the content column, a quiet "See all" link to the hub on its baseline at the right; no description.
+  - Mouse: round previous and next buttons (`chip`, `icon`, 44px, raised surface, hairline border) sit in the fades, centred on the card pictures; each scrolls one view (instantly under reduced motion) and fades out at its end and when the row fits. Touch swipes. Keyboard: each row is one tab stop (roving tabindex, on the card focused last, the first at the start), so Tab moves from row to row; Left and Right move between cards, Home and End go to the first and last, without animation. The personal rows work the same way.
+  - Hover lift (amends the one-property hover rule for these cards, with the owner's approval): from a fine pointer, after a 150ms intent delay, the card rises 4px and scales to 1.02 (transform only) and a `shadow-lift` pseudo-element fades in (opacity only); it drops back at once. Keyboard focus gets the same raised state with the ring. The scroller's vertical padding leaves room, so nothing is clipped and neighbours never move. Reduced motion: only the border change.
+  - Personal rows: a returning visitor sees "Continue" (recent tools in this browser) and "Because you used <last tool>" (its related standalone tools) first. The category rows always keep the editorial order (visual order equals focus order). Filled before paint from localStorage by an inline script, with no layout shift. Every card is server-rendered, so home links every standalone tool.
+- The same card is used on the home rows and category hubs, so one component and one illustration per tool serve both. On a tool page, related tools are name-only pill buttons instead (`buttonVariants` `chip` + `pill`, at least 44px, wrapping, the title may wrap inside a pill but is never truncated), with "All tools" as a quiet link beside the "Related tools" heading (owner, 2026-11-19).
 
 #### 8.8 Dialog / Sheet
 
@@ -1121,7 +1238,9 @@ Visual first (ADR-0008). The card is an illustration with a caption, not a text 
 
 - Header: 56px, `bg` with 1px `border` bottom, wordmark left (text only, `text-h3` 600, tight tracking), "All tools" menu, search (⌘K), theme toggle. No CTA button in the header; the tool is the CTA.
 - Command palette (⌘K): every tool searchable by name and by aliases ("shrink", "reduce size" → Compress). This is a primary navigation method on desktop.
-- Footer: tool categories as plain text link columns, `text-sm`. Legal links. No newsletter form. No social icons unless we actually post.
+- Search: a pill-shaped (`rounded-full`), field-like button in the header from 640px with a pill ⌘K chip (icon only below), ⌘K and /. Desktop gets a palette near the top; phones a full-screen sheet with Cancel. Empty: recent tools (this browser, up to 3, not the current page) then one task per hub; results capped at 8 (6 on phones); no match lists the tasks (ADR-0123). Results lead with the standalone tool; a format pair or preset is a result only when the query names it ("mov to mp4", "under 8 mb", "discord"), and then it may come first (ADR-0154).
+- Home: the H1 and lead, then the site search as the hero's primary action: a 56px field-like pill (up to 560px) that opens the palette, or the sheet on phones, with what was typed carried over, beside an "Or choose a file" pill (a file dropped anywhere on the hero works too), which opens the same search with that file's suggestions. No single tool is the hero's action. While the hero's field is on screen the header's search pill is hidden (visibility only, nothing moves) and fades back once the hero scrolls away; other pages keep it. Then the promises and the rows (§8.7): Continue and Because you used for a returning visitor, then one row per category with "See all" to its hub. Hubs are listed in the footer on every page, so home has no separate category list. Hubs: the H1 and one plain line, task chips, then the standalone tools under task headings; the hub's longer text folded in "About these tools" below the tools; format pairs and presets in one closed "All N format pages" disclosure at the bottom (ADR-0154).
+- Footer: the category hubs as one plain list, `text-sm`, plus "All tools". Legal links. No newsletter form. No social icons unless we actually post. Tools are reached from home, their hub and related tools, not from a footer on every page (ADR-0127).
 
 ---
 
@@ -1184,9 +1303,11 @@ No tool page is built from the engine outward. Write the brief first (in the PR 
 | Picture in picture, facecam, reaction | a second video in a corner of the first | `picture-in-picture-video` |
 | Side by side, split screen, stack two videos | two videos in one frame | `side-by-side-video` (one after another is `merge-videos`) |
 | Shorts or Reels clips from a long video | many short vertical clips from one recording | `cut-video-into-shorts` (proposed at pauses and scene changes, reframed; fixed lengths are `split-video`) |
-| Blur, pixelate, censor, hide a face or plate | hide part of the picture | `blur-video` |
+| Blur, pixelate, censor, hide a face or plate | hide part of the picture | `blur-video` (Find faces places and follows a region on each face; a blurred background behind a person is `blur-video-background`) |
 | Add image, sticker, overlay a picture | put pictures or stickers on the video, placed and timed | `add-image-to-video` |
-| Green screen, chroma key | swap a green or blue screen for another background | `remove-green-screen-from-video` (needs a screen; no general background removal) |
+| Green screen, chroma key | swap a green or blue screen for another background | `remove-green-screen-from-video` (needs a screen; footage without one is `remove-background-from-video`) |
+| Blur background, background blur, portrait mode on video | keep the person sharp and soften the room | `blur-video-background` (person found by a model; hiding one face or plate is `blur-video`) |
+| Remove, change or replace the background, virtual background, no green screen | a colour, picture or video behind the person, or the person mask | `remove-background-from-video` (with a green or blue screen, `remove-green-screen-from-video` is sharper) |
 | Thumbnail | an image to upload as a video's cover on a site, or the icon a file shows | `video-thumbnail-maker` (image to upload); `change-video-thumbnail` (file icon, verified in macOS Quick Look) |
 | Progress bar, time bar, loading bar | a bar on the picture that fills as the video plays | `add-progress-bar-to-video` (a count in numbers is `add-timer-to-video`) |
 | Timer, countdown, stopwatch, running clock | numbers on the picture counting up or down with the video | `add-timer-to-video` |
@@ -1195,6 +1316,7 @@ No tool page is built from the engine outward. Write the brief first (in the PR 
 | Stabilise, steady, fix shaky video, deshake | take hand-held shake out of the picture | `stabilize-video` (rolling shutter not corrected; a deliberate moving view is `zoom-video`) |
 | Sharpen, make clearer, fix blurry | crisper edges on a slightly soft picture | `sharpen-video` (cannot refocus a badly blurred shot) |
 | Denoise, grain, grainy, low light | less grain in the picture | `denoise-video` (picture only; hiss or hum in the sound is not this page) |
+| Background noise, noise reduction, clean up audio, hiss, fan noise | a voice without the steady noise behind it | `remove-background-noise` (speech only; music under the voice is not removed; grain in the picture is `denoise-video`) |
 | Black bars, letterbox, pillarbox | crop off bars already in the picture | `remove-black-bars-from-video` (adding bars is `change-video-aspect-ratio` or `add-border-to-video`) |
 | Bitrate, kb/s, CBR | an exact data rate a spec asks for | `change-video-bitrate` (a smaller file without a number is `compress-video`) |
 
@@ -1204,14 +1326,16 @@ Spelling: "key frame" (two words) in all user-facing copy; `keyframe` stays in c
 
 1. **Breadcrumb** (visible, small): Home › Category › Tool. `BreadcrumbList` JSON-LD mirrors it.
 2. **H1**: `content.title`. `<Verb> <object>`.
-3. **Subtitle**: one sentence; what + where it runs.
-4. **Stage** (the tool). Idle = drop zone with privacy line. Active = preview + controls + progress + result. Fixed min-height so nothing shifts.
-5. **What this does**: 2–3 sentences.
-6. **How to use it**: `<ol>` of 3–6 one-sentence steps.
-7. **Good to know**: 3–6 paragraphs of specific knowledge. For format pairs, the *remux vs transcode* story, what survives, what is dropped, quality cost. For platform pages, dated limits with a "last checked" date.
-8. **Questions**: 4–8 Q/A as visible HTML (`<dl>`). No FAQPage markup dependency.
-9. **Related tools**: 6 cards, varied per page (explicit list + same category), never an identical block.
-10. **Footer** (global).
+3. **Subtitle**: one sentence on what the tool does (no privacy line; privacy is stated in the policy, the about page and once on home, ADR-0149).
+4. **Stage** (the tool). Idle = drop zone. Active = preview + controls + progress + result. Fixed min-height so nothing shifts.
+5. **What this does**: 2–3 sentences, open by default.
+6. **How to use it**: `<ol>` of 3–6 one-sentence steps, folded.
+7. **Good to know**: 3–6 paragraphs of specific knowledge, folded. For format pairs, the *remux vs transcode* story, what survives, what is dropped, quality cost. Evidence (measurements, check dates) stays in DECISIONS.md and data files, not on the page.
+8. **Questions**: 4–8 Q/A as HTML (`<dl>`), folded. No FAQPage markup dependency.
+9. **Related tools**: name-only pill buttons (no captions), 6 standalone tools varied per page (explicit list + same category), with "All tools" as a quiet link beside the heading. Last, after the folded sections, as the closing "where next" (owner, 2026-11-19).
+10. **Footer** (global). Converter pages no longer list their pair pages: those are reached from search, their hub's closed "All format pages" disclosure and their siblings (ADR-0154).
+
+Sections 5–8 are native `<details>` rows with the h2 in the summary (`ProseSection`), so the text stays in the HTML for search engines and find-in-page while the page stays short (owner, 2026-11-19).
 
 The LCP element is the H1/subtitle/stage block: server-rendered text, no hero image.
 
@@ -1219,14 +1343,16 @@ The LCP element is the H1/subtitle/stage block: server-rendered text, no hero im
 
 | State | What the user sees | Primary button |
 |---|---|---|
-| Idle | Drop zone, accepted formats, privacy line | none (the drop zone is the action) |
+| Idle | Drop zone and the page's idle choices | none (the drop zone is the action) |
 | Loading engine | File card appears immediately; thin progress line "Loading encoder (12 MB)…" honest to bytes | disabled `<Verb>` with reason |
 | Ready | Preview (first frame, scrubber) + options with good defaults + estimate line ("≈ 3.1 MB, about 40 s") | `<Verb>` |
 | Processing | Real progress (frames or bytes), phase label, elapsed, Cancel | Cancel (secondary); primary hidden |
-| Done | Result card: before → after, Download, Start over, "Send to another tool" | Download |
+| Done | Result card: before → after, Download, Start over, "Send to another tool". The preview plays the result; a changed picture or sound can be compared with the source (ADR-0134) | Download |
 | Error | Two-sentence message: what happened, what to do | Try again / Start over |
 
 Rules: URL never changes; no navigation; files never leave memory/OPFS; Cancel frees everything within 1 s; Escape = Cancel while processing.
+
+Ready with a block: a reason an option on the page can clear disables `<Verb>` and says what to change. A block no option can clear (the file's format, a missing track, what this browser can decode; `Blocked.fixable: false`) hides the options, puts the reason (with what to do next) in the status line, and puts one way out in place of the button: the page that can do the job, or "Choose another file". No dead control. A file that already does the job (`settled`) shows that answer as a success with no button (ADR-0141).
 
 ### 3. Options panel
 
@@ -1241,7 +1367,7 @@ Rules: URL never changes; no navigation; files never leave memory/OPFS; Cancel f
 - Unique per page; enforced by `validate-registry` (no shared paragraph, ≥ 350 words).
 - No banned words (`lint-copy`).
 - Format pairs use the format-profile library for the two formats and add a pair-specific "what actually happens" paragraph.
-- Platform pages state limits with tier and date: "Discord: 10 MB (free), 50 MB (Nitro Basic), 500 MB (Nitro). Checked 2026-09."
+- Platform pages state limits with tier and link their sources: "Discord: 10 MB (free), 50 MB (Nitro Basic), 500 MB (Nitro)." The check date stays in `src/content/platforms` (`CHECKED`, the sources' `checked` fields) so we know when to re-verify; it is not shown (ADR-0149).
 - Every page links contextually to ≥ 1 sibling tool inside "Good to know".
 
 ### 5. Metadata
@@ -1256,7 +1382,7 @@ Rules: URL never changes; no navigation; files never leave memory/OPFS; Cancel f
 - [ ] Engine has `supports()` probing real capability; `run()` reports real progress; cancellable.
 - [ ] Engine integration test with a fixture file passes in Chromium.
 - [ ] E2E: renders, H1 correct, zero axe violations, keyboard path to Download.
-- [ ] Content reviewed against [Content guidelines](#content-guidelines); specific, true, dated where relevant.
+- [ ] Content reviewed against [Content guidelines](#content-guidelines); specific and true; limits sourced, evidence and check dates kept off the page.
 - [ ] Lighthouse budgets met.
 - [ ] Design review against anti-pattern table; `review-animations` skill run if motion was added.
 
@@ -1274,7 +1400,9 @@ Calm, exact, plain. We sound like a competent engineer explaining what will happ
 
 - **Direct**: "Compress video." not "Compress your videos easily online for free!"
 - **Concrete**: "Reduces a 100 MB phone clip to about 20 MB at 1080p." not "Dramatically reduce file size."
-- **Honest**: "Runs on your device. Nothing is uploaded." Only say it where it is true. There is no server path (ADR-0024).
+- **Honest**: say only what is true of the code. There is no server path (ADR-0024), and that is stated in the privacy policy, the about page and once in the home page's promises block, never in the interface (ADR-0149): no "on this device", "no upload" or "in your browser" in drop zones, status lines, results, errors, notices or tool subtitles. `metaTitle` and `metaDescription` may say it (search results only), and a FAQ answer may answer "Is my file uploaded?".
+- **Evidence stays off the page**: evidence (measurements, test fixtures, check dates) lives in DECISIONS.md, tests and data files, never on the page; pages state what the tool does and its limits. Never overclaim when leaving proof out: state the limit instead ("it can miss faces turned away").
+- **No machinery**: name what the user experiences, not how we built it. No WebCodecs, WebGL, worker, canvas, OPFS, ffmpeg.wasm, "fallback engine", TensorFlow or model names in the interface or in page prose: "a small speech model", "a one-time download of about 33 MB", "the browser's own video encoder". FFmpeg may be named as a tool readers would run themselves ("in FFmpeg it is `-c:v copy`"). Library credit is on `/licences`.
 - **Unhurried**: no urgency, no "now", no "instantly", no "in seconds" unless we measured it.
 
 ### 2. Banned words and patterns
@@ -1294,24 +1422,23 @@ These are lint-checked in `scripts/lint-copy.ts` against `src/content/**` and `s
 | Element | Pattern | Example |
 |---|---|---|
 | Tool H1 | `<Verb> <object>` | Compress video · Convert MOV to MP4 · Remove audio from video |
-| Tool subtitle | What it does + where it runs, one sentence | Make a video smaller without visible quality loss. Runs in your browser. |
+| Tool subtitle | One plain sentence about what the user gets: about 60 characters, 80 at most (schema), no jargon (no codec names unless the page is about that codec, no "streams", "re-encoding" or "lossless copy"), no privacy line | Make a video smaller without losing quality. |
 | Meta title | `<Tool name> online, free, no upload · ilovevideos` (≤ 60 chars; drop "no upload" if server-only) | Compress video online, free, no upload · ilovevideos |
 | Meta description | ≤ 155 chars, what + how + privacy | Reduce video file size in your browser. Choose a target size or quality. Files never leave your device. Free, no account. |
 | Primary button | Verb, matches H1 | Compress · Convert · Trim · Download |
 | Progress copy | Real state | Processing frame 1,204 of 3,600 · Encoding audio · Finishing |
 | Success | Result, then action | 12.4 MB → 3.1 MB. Download below. |
 | Error | What happened, then what to do | This file uses a codec your browser can't decode. Convert it to MP4 first, or try on desktop Chrome. |
-| Privacy line | One sentence, near the action | Your file stays on this device. |
+| Status line | Facts joined by " · ", nothing about where it runs | H.264 640×360 · sound copied |
 
 ### 4. Tool page prose (SEO body)
 
-Every tool page has unique prose, minimum ~350 words, written for a human who searched the query. Structure:
+Every tool page has unique prose, minimum ~350 words, written for a human who searched the query. Structure (after the stage; sections 2–4 fold as `<details>` rows; related-tool pills follow, §1 Anatomy):
 
 1. **What this does** (2–3 sentences, plain).
 2. **How to use it** (3–5 numbered steps, each one sentence).
 3. **Good to know** (3–6 short paragraphs of real, tool-specific knowledge: what settings mean, tradeoffs, format facts, platform limits like Discord 10 MB / WhatsApp 16 MB / email 25 MB). This is where we beat competitors: real information, not filler.
 4. **FAQ** (4–8 questions people actually search; answers 1–3 sentences).
-5. **Related tools** (links, generated from the registry).
 
 Do not reuse paragraphs across pages. Format pairs (MOV→MP4 vs AVI→MP4) must each explain something specific about the source format. If there is nothing specific to say, the page should not exist.
 
@@ -1343,7 +1470,7 @@ Goal: rank for the *task*, not the brand. "compress video online" → our compre
 
 ### 1. Information architecture
 
-- **Depth ≤ 3**: home → category hub (`/tools/compress`) → format hub for converters (`/mp4-converter`, linking every `*-to-mp4` and `mp4-to-*`) → tool. Every standalone tool is linked from the footer; every generated family or pair page from its category hub and the home directory; every tool from ≥ 3 related tools (validator-enforced). Hubs need at least two tools. Format hubs such as `/mp4-converter` are not built; the convert hub's grouped lists stand in for them. No orphan pages. Visible breadcrumbs + `BreadcrumbList` on every page: this is what satisfies Google's "clearly defined, browseable hierarchy" doorway test.
+- **Depth ≤ 3**: home → category hub (`/tools/compress`) → format hub for converters (`/mp4-converter`, linking every `*-to-mp4` and `mp4-to-*`) → tool. Every standalone tool is linked from the home rows and its category hub (both one click from every page: home via the header, the hub via the footer's hub list and the breadcrumb) and from ≥ 3 related rows. Generated pages (format pairs, sizes, platform presets) are specific tools for a specific source or target, reached from search, their hub and their siblings, not from browsing surfaces: from search, their hub's closed "All format pages" disclosure at the bottom of the hub (in the HTML) and their siblings' related rows; browsing surfaces (home, standalone related rows, Then rows, file suggestions) never list them. The validator counts a generated page's links from siblings' related rows, other tools' prose and its hub's disclosure, minimum 3 (ADR-0154). Hubs need at least two tools. Format hubs such as `/mp4-converter` are not built; the convert hub's grouped lists stand in for them. No orphan pages. Visible breadcrumbs + `BreadcrumbList` on every page: this is what satisfies Google's "clearly defined, browseable hierarchy" doorway test.
 - **The tool runs on the landing URL.** `/mov-to-mp4` *is* the converter. Never a marketing page that sends users to `/app`. This is the single most important doorway-policy defence.
 - **Container capability table** (`src/content/formats/containers.ts`): every container we read or write, with which engine and which codecs it holds. The converter's target list, the copy-vs-transcode planner (`engines/convert-video/plan.ts`) and the ffmpeg arguments all derive from it. Native engine writes MP4, MOV, WebM, MKV; the ffmpeg.wasm engine writes AVI, WMV, FLV, MPEG, MPEG-TS, 3GP, OGV and VOB and additionally reads MXF, RealMedia, DV and SWF. ffmpeg runs are pinned to at most 4 threads: the automatic thread count deadlocks the WASM pthread pool. Adding a container is one row.
 - **Format-profile library** (implemented, ADR-0011): each format is described once in `src/content/formats/` (summary + playback paragraphs, codec lists). `src/tools/registry/pairs.ts` composes a pair page from two profiles plus a hand-written pair story (≥ 2 paragraphs, ≥ 4 FAQs); `what` is generated from the codec matrix so it states truthfully whether the pair copies or re-encodes. Profile paragraphs are exempt from the duplicate check; each page must still carry ≥ 150 words of its own. One generic `/video-converter` page handles every combination without a URL. This is how CloudConvert (hub + 43 pairs) and FreeConvert (~7% of N² pairs shipped) structure it; iLovePDF has no pair matrix because PDF has no format pairs.
@@ -1360,7 +1487,7 @@ Goal: rank for the *task*, not the brand. "compress video online" → our compre
 | `<meta description>` | ≤ 155 chars; what + how + privacy + free |
 | `<h1>` | Exactly one; `<Verb> <object>`; matches primary query intent |
 | Above the fold | H1, one-sentence subtitle, the tool. No hero image, no marketing block. |
-| Body | ≥ 350 words unique: What / How (ordered list) / Good to know / FAQ (`<dl>`) / Related |
+| Body | ≥ 350 words unique: What (open) / How (ordered list) / Good to know / FAQ (`<dl>`), the last three folded in `<details>` with the `<h2>` in the summary, then Related (name-only pill buttons) last, after the folded prose |
 | Headings | `<h2>` per section; question-form `<h2>` only inside FAQ if used as headings |
 | JSON-LD | `BreadcrumbList` per page; `Organization` + `WebSite` sitewide. **Not** `FAQPage` (rich result retired 2026-05-07), **not** `HowTo` (retired 2023), **not** `SoftwareApplication` until we have real user ratings (it requires `aggregateRating`/`review`; fabricating one is a manual-action risk), **not** `SearchAction`. FAQ and steps are visible HTML (`<dl>`, `<ol>`), which is what Google and AI systems actually consume. |
 | Images | Only real UI screenshots/OG image; `alt` describes the operation; AVIF/WebP |
@@ -1374,7 +1501,7 @@ Google's guidance penalises pages "created to rank for specific queries that fun
 1. Each page is a *different destination*: different preset options, different accepted inputs, different result.
 2. `validate-registry` fails the build on any paragraph reused across pages and on < 350 body words.
 3. Format-pair pages exist only where the pair has a real story (codec compatibility, platform behaviour, typical source device). Otherwise the generic converter handles it without a dedicated URL.
-4. Platform pages carry dated, sourced limits (e.g. Discord upload caps by tier) and are revisited quarterly.
+4. Platform pages carry sourced limits (e.g. Discord upload caps by tier); the dates they were checked live in `src/content/platforms`, not on the page, and are revisited quarterly.
 5. Editorial guides (`/guides/…`) add depth and earn links; they link into tools, not the reverse only.
 
 ### 4. Technical
@@ -1411,6 +1538,9 @@ Google's guidance penalises pages "created to rank for specific queries that fun
 | add subtitles / srt to video / burn subtitles / auto subtitles | `/add-subtitles-to-video` (soft track or burned in); no auto subtitles (needs a model, ADR-0105) |
 | srt to vtt / vtt to srt / shift subtitles | `/srt-to-vtt`, `/vtt-to-srt`, `/shift-subtitle-timing` |
 | add watermark / hide a logo | `/add-watermark-to-video`; blurring a mark: `/blur-video` (no removal page, ADR-0062) |
+| blur video / blur face in video / pixelate video / censor video | /blur-video (Find faces for faces; no separate face or pixelate page, ADR-0113) |
+| blur video background / background blur / portrait mode video | /blur-video-background |
+| remove / change / replace video background / no green screen | /remove-background-from-video |
 | add progress bar / video progress bar | `/add-progress-bar-to-video` |
 | add timer / countdown on video | `/add-timer-to-video` |
 | add intro / outro / title card | `/add-intro-to-video` |
@@ -1457,13 +1587,14 @@ The privacy promise is the product. This document defines exactly what we promis
 |---|---|
 | On-device | Engines run in Web Workers; no `fetch` of user data anywhere in engine code. Lint rule: `fetch`/`XMLHttpRequest`/`navigator.sendBeacon` are banned in `src/tools/engines/**` and `src/tools/workers/**` except the ffmpeg core loader fetching *our* static assets. |
 | No upload without consent | Server backend is a separate module behind a `ConsentGate` component; it cannot be invoked without a resolved consent promise. E2E test asserts no network request carries a body > 1 KB on any tool page in default flow. |
-| No cookies | CI check: response headers of the built site contain no `Set-Cookie`. Analytics script is proxied and configured cookieless. |
+| Storage | First-party cookies and browser storage allowed for usability (ADR-0128); listed on `/privacy`; every access survives blocked storage. |
+| Search counts | `/api/search-miss` accepts only `{ q, results, opened: false, zero }` (zod, strict, 512-byte cap); queries that look like an address, a path or a long number are dropped in the browser and refused by the server; stored as query → count per day (ADR-0150, ADR-0151). Unit and e2e tests check the body. |
 | Deletion | Server: tmpfs mount, cron reaper at 60 min, download endpoint deletes on completion. Logged and monitored. |
 | Content logging | Server logs are structured; allowlisted fields only (`bytes_in`, `bytes_out`, `duration_ms`, `engine`, `status`). |
 
 ### 3. Copy rules for privacy claims
 
-- Every job runs on the user's device (ADR-0024), so every idle stage says so: "Your file stays on this device." ("Your files" on tools that take several, "Files stay on this device." where a batch is offered). There is no server path to disclose.
+- Every job runs on the user's device (ADR-0024). That is stated on `/privacy`, `/about` and once in the home page's promises block, never in the interface: no drop zone, status line, result, error or subtitle repeats it (owner, 2026-11-19, ADR-0149). `pnpm lint:copy` enforces it.
 - Never say "100% secure", "military-grade", "bank-level". Say what we do.
 - The privacy page is written in plain language, one screen long, and links to the technical description above.
 

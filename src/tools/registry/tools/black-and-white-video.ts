@@ -26,12 +26,11 @@ export const blackAndWhiteVideo: ToolInput = {
   ],
   updatedAt: "2026-10-01",
   icon: "contrast",
-  illustration: "filter",
+  illustration: "black-and-white",
   content: {
     en: {
       title: "Make a video black and white",
-      subtitle:
-        "Turn a colour video black and white, neutral or high contrast, previewed live. Runs in your browser.",
+      subtitle: "Neutral or high contrast, previewed as it plays.",
       metaTitle: "Black and white video maker, free, no upload",
       metaDescription:
         "Make a video black and white: neutral, high contrast, red filter or soft. The preview plays in black and white first; the sound is copied. Free.",
