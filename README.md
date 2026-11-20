@@ -726,7 +726,7 @@ Decisions here are final for Phase 1. Alternatives considered are recorded in `D
 
 | Layer | Choice | Version | Why |
 |---|---|---|---|
-| Framework | **Next.js** (App Router) | 16.3 | Static pre-rendering of hundreds of pages, Metadata API, `sitemap.ts`/`robots.ts`, typed routes, `next/font`, first-class Vercel deploy, custom headers for COOP/COEP. Astro was the runner-up (ADR-0002). |
+| Framework | **Next.js** (App Router) | 16.4 | Static pre-rendering of hundreds of pages, Metadata API, `sitemap.ts`/`robots.ts`, typed routes, `next/font`, first-class Vercel deploy, custom headers for COOP/COEP. Astro was the runner-up (ADR-0002). |
 | UI | **React** | 19.2 | Ecosystem for the primitives we chose. |
 | Language | **TypeScript** strict | 5.9 | `noUncheckedIndexedAccess`, `verbatimModuleSyntax`. |
 | Styling | **Tailwind CSS v4** with `@theme` tokens | 4.3 | Tokens in CSS, no config file, `initial` resets used to *delete* the chromatic palette so hue cannot leak in. |
@@ -736,7 +736,7 @@ Decisions here are final for Phase 1. Alternatives considered are recorded in `D
 | Fonts | **Geist Sans / Geist Mono** via `geist` package | 1.7 | Neutral grotesque with tabular figures and optical sizing; self-hosted; no layout shift. |
 | Theme | **next-themes** (`data-theme`) | 0.4 | No flash; system default. |
 | i18n | **next-intl** | 4.14 | Locale routing `as-needed` (English has no prefix), `hreflang` via `alternates`, static params per locale. |
-| Validation | **zod** | 4.5 | Registry schema, engine options. |
+| Validation | **zod** | 4.6 | Registry schema, engine options. |
 | Structured data | **schema-dts** | 2.0 | Typed JSON-LD. |
 | State | **zustand** | 5.x | Job queue / batch state on the client. |
 | Media engine 1 | **mediabunny** | 1.55 | WebCodecs-based read/write/convert for MP4, WebM, MKV, MOV, MP3, WAV, OGG, etc. MPL-2.0. Fastest path; hardware encode via browser. |
