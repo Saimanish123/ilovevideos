@@ -4,6 +4,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { expect, type Page, test } from "@playwright/test";
 import AxeBuilder from "./axe-builder";
+import { aacEncodes, NO_AAC } from "./codecs";
 import { soundCheck } from "./sound";
 
 /**
@@ -441,6 +442,7 @@ test.describe("audio tools", () => {
     test.setTimeout(180_000);
     const uploads = trackUploads(page);
     await page.goto("/add-audio-to-video");
+    test.skip(!(await aacEncodes(page)), NO_AAC);
     const zone = page.getByRole("region", { name: "Workspace" });
     await expect(zone).toContainText("Drop a video and the audio to add to it");
     await shot(page, "add-idle");
@@ -490,6 +492,7 @@ test.describe("audio tools", () => {
   test("replace audio: an unchanged AAC track is copied; a short clip loops", async ({ page }) => {
     test.setTimeout(180_000);
     await page.goto("/replace-audio-in-video");
+    test.skip(!(await aacEncodes(page)), NO_AAC);
     await page.locator('input[type="file"]').setInputFiles([fx("sample.mp4"), fx("sample.m4a")]);
     const replace = page.getByRole("button", { name: "Replace audio", exact: true });
     await expect(replace).toBeEnabled({ timeout: 30_000 });

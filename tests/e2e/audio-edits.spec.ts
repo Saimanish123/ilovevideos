@@ -4,6 +4,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { expect, type Page, test } from "@playwright/test";
 import AxeBuilder from "./axe-builder";
+import { aacEncodes, NO_AAC } from "./codecs";
 
 /**
  * Phase 2 audio tools end to end: volume, normalise and fades (on video and audio files), audio
@@ -191,6 +192,7 @@ test.describe("audio edits", () => {
     test.setTimeout(120_000);
     const uploads = trackUploads(page);
     await page.goto("/change-video-volume");
+    test.skip(!(await aacEncodes(page)), NO_AAC);
     const zone = page.getByRole("region", { name: "Workspace" });
     await expect(zone).toContainText("Drop a video to make its sound louder or quieter");
     await shot(page, "volume-idle");
