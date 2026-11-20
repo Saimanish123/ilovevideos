@@ -149,6 +149,7 @@ Append-only log of decisions that change architecture, licensing, privacy, SEO p
 | ADR-0157 | One motion vocabulary for the whole site: entrance, arrive, reveal once, fold and lift, all on the same rise, duration and curve | Accepted | 2026-11-19 |
 | ADR-0158 | Page changes are view transitions: React's ViewTransition in the locale template plus the cross-document rule; the header holds, the old page dissolves, the new one plays its entrance | Accepted | 2026-11-19 |
 | ADR-0159 | Search animates only when opened by a pointer: out of the point pressed on desktop, a slide-up sheet on phones; ⌘K, "/" and typing open at once | Accepted | 2026-11-19 |
+| ADR-0160 | CI runs the quick checks on every change and a Playwright smoke test on pull requests; the full Playwright suite runs locally | Accepted | 2026-11-20 |
 
 ---
 
@@ -2383,6 +2384,25 @@ The trigger records the last pointerdown (time and point, capture phase, passive
 
 ### Consequences
 Keyboard users keep an instant palette; pointer users see where it came from. Any other way to open search must say how it was opened, or it opens at once.
+
+---
+
+## ADR-0160: CI runs the quick checks on every change and a Playwright smoke test on pull requests; the full Playwright suite runs locally
+
+**Status:** Accepted · **Date:** 2026-11-20
+
+### Context
+The repository was pushed to GitHub on 2026-11-20 and `.github/workflows/ci.yml` ran for the first time. The full Playwright suite (about 1,500 tests on Chromium, mobile Chrome and mobile Safari) was built and tuned on macOS. On GitHub's two-core Linux runner it did not fit 30 minutes on one runner, and split across six runners five still passed 40 minutes. Its failures there come from the platform, not the code: Chromium on Linux has no AAC encoder (the engines write Opus), face detection needs a GPU the runner lacks, Playwright's WebKit on Linux is not Safari's engine, and heavy encodes retried twice multiply the time. Alternatives: macOS runners for the full suite (free for public repositories; GPU and fit unproven), guarding test after test for Linux (switches off the tests that matter most), or the full suite locally.
+
+### Decision
+- Every push to `main`, every pull request, a weekly run (Monday 03:00 UTC) and a manual run: `pnpm check`, `pnpm audit --prod --audit-level high`, `pnpm build` and Lighthouse budgets. CI installs a static ffmpeg 9.0 build because unit tests compare against it and Ubuntu ships 6.1. Unit tests get 30 s each on CI (5 s locally).
+- Pull requests also run a Playwright smoke test: `tests/e2e/every-page.spec.ts` on desktop Chromium. Its main job is Dependabot, whose pull requests nobody runs locally.
+- Markdown-only and `.claude/` changes skip CI; `.github/workflows/docs.yml` runs `pnpm lint:docs` on them.
+- The full suite (`pnpm test:e2e`) runs locally on macOS before a release and before merging a large dependency upgrade (check out the Dependabot branch).
+- Tests that check AAC output skip where the browser has no AAC encoder (`tests/e2e/codecs.ts`); the 40-minute WAV cancel test skips on CI.
+
+### Consequences
+CI stays green and quick, and catches what a clean checkout catches (missing files, lockfile drift, type and lint errors, advisories, budgets). Safari, phone and AAC behaviour are checked only by local runs, so a dependency upgrade merged without one can break them unseen until the next local run. Revisit with macOS runners if that happens.
 
 ---
 

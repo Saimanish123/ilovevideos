@@ -1,8 +1,10 @@
 name: CI
 
 # Markdown-only and agent-config-only changes skip CI; docs.yml lints them instead.
-# Pull requests run a Playwright smoke test; pushes to main, the weekly run and a
-# manual run (Actions tab, "Run workflow") run the full suite on all three browsers.
+# Pull requests also run a Playwright smoke test (every tool page, desktop Chromium), mainly
+# for Dependabot. The full Playwright suite runs locally (`pnpm test:e2e`) before a release and
+# before merging a large upgrade: it needs macOS for AAC, Safari's WebKit and a GPU, and does
+# not fit a two-core Linux runner. The weekly run re-audits dependencies.
 on:
   push:
     branches: [main]
@@ -66,17 +68,12 @@ jobs:
           retention-days: 3
           include-hidden-files: true
 
-  # The full suite is about 1,500 tests across three browsers: too long for one two-core runner,
-  # so it is split across six. Pull requests run one smoke job instead.
   e2e:
-    name: ${{ github.event_name == 'pull_request' && 'Playwright smoke' || format('Playwright {0}/6', matrix.shard) }}
+    name: Playwright smoke
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 30
     needs: check
-    strategy:
-      fail-fast: false
-      matrix:
-        shard: ${{ fromJSON(github.event_name == 'pull_request' && '[1]' || '[1, 2, 3, 4, 5, 6]') }}
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -92,19 +89,14 @@ jobs:
           curl -fsSL https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n9.0-latest-linux64-gpl-9.0.tar.xz | tar -xJ -C "$RUNNER_TEMP"
           echo "$(echo "$RUNNER_TEMP"/ffmpeg-n9.0-*/bin)" >> "$GITHUB_PATH"
       - run: ffmpeg -version | head -1
-      - name: Install browsers
-        run: pnpm exec playwright install --with-deps ${{ github.event_name == 'pull_request' && 'chromium' || 'chromium webkit' }}
+      - run: pnpm exec playwright install --with-deps chromium
       - name: Smoke test (every tool page end to end, desktop Chromium)
-        if: github.event_name == 'pull_request'
         run: pnpm exec playwright test tests/e2e/every-page.spec.ts --project=chromium
-      - name: Full suite, part ${{ matrix.shard }} of 6 (Chromium, mobile Chrome, mobile Safari)
-        if: github.event_name != 'pull_request'
-        run: pnpm exec playwright test --shard=${{ matrix.shard }}/6
       # Traces of retried tests (trace: on-first-retry); open with `pnpm exec playwright show-trace`.
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: playwright-results-${{ matrix.shard }}
+          name: playwright-results
           path: test-results
           retention-days: 7
 

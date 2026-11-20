@@ -693,7 +693,7 @@ The registry is the single source of truth. A `ToolDefinition` produces the rout
 ### Build and release
 
 - Trunk-based development on `main`; short-lived branches; squash merges.
-- Every PR gets a preview deployment and must pass `pnpm check`, the Playwright suite and Lighthouse CI on a sample of pages.
+- Every PR gets a preview deployment and must pass `pnpm check`, the Playwright smoke test and Lighthouse CI on a sample of pages (the full Playwright suite runs locally, see [Engineering workflow](#engineering-workflow)).
 - `main` deploys to production automatically after CI. Rollback is instant (previous immutable deployment). No long-lived staging environment.
 - Feature gating is done in the registry (`status` and `phase` fields), not with runtime flags; a tool that is not ready is not in the sitemap and not linked.
 - Versioning: the site is continuously deployed; engines carry a version string, kept with the ffmpeg command in each result for support conversations (neither is shown in the interface).
@@ -1643,7 +1643,7 @@ The privacy promise is the product. This document defines exactly what we promis
 
 ### Pull requests
 
-The PR template in `.github/` carries the checklist above. CI runs `pnpm check`, `pnpm build` and the Playwright suite. Merge only when green.
+The PR template in `.github/` carries the checklist above. CI runs `pnpm check`, the production dependency audit, `pnpm build` and Lighthouse on every push and pull request, plus a Playwright smoke test (every tool page, desktop Chromium) on pull requests. The full Playwright suite runs locally (`pnpm test:e2e`) before a release and before merging a large dependency upgrade, since it needs macOS (AAC, Safari's WebKit, a GPU). Merge only when green.
 
 ### Working with agents
 
