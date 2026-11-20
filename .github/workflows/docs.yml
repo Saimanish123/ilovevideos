@@ -1,0 +1,25 @@
+name: Docs
+
+# CI skips markdown-only changes, so this keeps the docs lint (anchors, PROGRESS.md and
+# DECISIONS.md structure, agent frontmatter) on them.
+on:
+  push:
+    branches: [main]
+    paths: ["**/*.md", ".claude/**"]
+  pull_request:
+    paths: ["**/*.md", ".claude/**"]
+
+jobs:
+  docs:
+    name: Docs lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint:docs

@@ -1,9 +1,17 @@
 name: CI
 
+# Markdown-only and agent-config-only changes skip CI; docs.yml lints them instead.
+# Pull requests run a Playwright smoke test; pushes to main, the weekly run and a
+# manual run (Actions tab, "Run workflow") run the full suite on all three browsers.
 on:
   push:
     branches: [main]
+    paths-ignore: ["**/*.md", ".claude/**"]
   pull_request:
+    paths-ignore: ["**/*.md", ".claude/**"]
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
 
 concurrency:
   group: ci-${{ github.ref }}
@@ -78,8 +86,14 @@ jobs:
           curl -fsSL https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n9.0-latest-linux64-gpl-9.0.tar.xz | tar -xJ -C "$RUNNER_TEMP"
           echo "$(echo "$RUNNER_TEMP"/ffmpeg-n9.0-*/bin)" >> "$GITHUB_PATH"
       - run: ffmpeg -version | head -1
-      - run: pnpm exec playwright install --with-deps chromium webkit
-      - run: pnpm test:e2e
+      - name: Install browsers
+        run: pnpm exec playwright install --with-deps ${{ github.event_name == 'pull_request' && 'chromium' || 'chromium webkit' }}
+      - name: Smoke test (every tool page end to end, desktop Chromium)
+        if: github.event_name == 'pull_request'
+        run: pnpm exec playwright test tests/e2e/every-page.spec.ts --project=chromium
+      - name: Full suite (Chromium, mobile Chrome, mobile Safari)
+        if: github.event_name != 'pull_request'
+        run: pnpm test:e2e
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
