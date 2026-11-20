@@ -13,6 +13,7 @@ import { frameProgress, totalFrames } from "../crop/progress";
 import { classifyError, EngineError } from "../errors";
 import { canEncodeAvc, openInput, pictureDecodes } from "../mediabunny/shared";
 import { hasWebgl2 } from "../overlay/gl";
+import { soundCodecName } from "../sound-codec";
 import type { Engine } from "../types";
 import { encodePicture } from "../video-filter/picture";
 import { pictureBitrate, pictureContainer, pictureSize, sizeWords } from "../video-filter/plan";
@@ -155,9 +156,14 @@ export const stabilizeEngine: Engine<StabilizeOptions> = {
         ffmpegCommand: "",
         ctx: { ...ctx, onProgress: frameProgress(ctx, totalFrames(info.durationSec, v.fps)) },
       });
-      const audio = r.sound === "copy" ? "copy" : r.sound === "encode" ? "aac" : "none";
+      const audio =
+        r.sound === "copy" ? "copy" : r.sound === "encode" ? (r.soundCodec ?? "aac") : "none";
       const sound =
-        r.sound === "copy" ? "sound copied" : r.sound === "encode" ? "sound in AAC" : "no sound";
+        r.sound === "copy"
+          ? "sound copied"
+          : r.sound === "encode"
+            ? `sound in ${soundCodecName(r.soundCodec)}`
+            : "no sound";
       return {
         blob: r.blob,
         filename: r.filename,

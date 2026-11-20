@@ -14,9 +14,10 @@ import { NumberInput } from "@/components/ui/number-input";
 import { Segmented } from "@/components/ui/segmented";
 import { cn } from "@/lib/cn";
 import { formatDimensions, formatTimecode } from "@/lib/format";
-import { audioCopied, needsFfmpeg, sourceName } from "@/tools/engines/crop/plan";
+import { audioCopied, encodedSoundWords, needsFfmpeg, sourceName } from "@/tools/engines/crop/plan";
 import { ffmpegDownloadSize } from "@/tools/engines/ffmpeg/size";
 import { compositeContainer } from "@/tools/engines/overlay/composite";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
 import {
   effectiveRange,
@@ -48,7 +49,11 @@ function soundCopied(info: MediaInfo, fileName: string): boolean {
 
 function soundWords(info: MediaInfo, fileName: string) {
   if (!info.audio?.length) return "no sound";
-  return soundCopied(info, fileName) ? "sound copied" : "sound in AAC";
+  if (soundCopied(info, fileName)) return "sound copied";
+  // ffmpeg.wasm writes AAC; the native path follows this browser's encoders.
+  return needsFfmpeg(info, fileName)
+    ? "sound in AAC"
+    : encodedSoundWords(compositeContainer(fileName), soundEncodersNow());
 }
 
 const rangeWords = (o: O, info: MediaInfo) => {

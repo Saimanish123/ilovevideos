@@ -26,6 +26,7 @@ import { findSceneCuts } from "./scenes";
 
 export type { SceneAnalysis } from "./scenes";
 
+import { soundCodecName } from "../sound-codec";
 import {
   blurFit,
   type Clip,
@@ -158,6 +159,8 @@ async function writeClips(file: File, info: MediaInfo, o: ClipsOptions, ctx: Eng
     const tags = await input.getMetadataTags().catch(() => undefined);
     const files: EngineOutputFile[] = [];
     const commands: string[] = [];
+    /** The codec the clips' sound is in (../compose/encode picks AAC, else Opus). */
+    let soundCodec: string | undefined;
     for (const [k, { c, i }] of chosen.entries()) {
       const name = clipName(base, i, o.clips.length);
       const length = c.end - c.start;
@@ -197,6 +200,7 @@ async function writeClips(file: File, info: MediaInfo, o: ClipsOptions, ctx: Eng
           onProgress: (p) => ctx.onProgress({ ...p, item: { index: i, count: o.clips.length } }),
         },
       });
+      soundCodec = r.soundCodec ?? soundCodec;
       files.push({
         blob: r.blob,
         filename: name,
@@ -225,7 +229,7 @@ async function writeClips(file: File, info: MediaInfo, o: ClipsOptions, ctx: Eng
       filename: first.filename,
       files,
       ffmpegCommand: commands.join("\n"),
-      meta: `${files.length} ${files.length === 1 ? "clip" : "clips"} · ${shape} · H.264${soundOk ? " and AAC" : ""}, re-encoded`,
+      meta: `${files.length} ${files.length === 1 ? "clip" : "clips"} · ${shape} · H.264${soundOk ? ` and ${soundCodecName(soundCodec)}` : ""}, re-encoded`,
     };
   } catch (e) {
     if (ctx.signal.aborted) throw new EngineError("cancelled", "Cancelled.");

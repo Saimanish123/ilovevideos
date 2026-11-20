@@ -7,13 +7,13 @@
  * WebCodecs through the shared writer (../audio-to-video/mux), which also copies or encodes the
  * music. Runs in the engine worker; no network.
  */
-import { canEncodeAudio } from "mediabunny";
 import { formatDimensions, formatDuration, withUnit } from "@/lib/format";
 import { blurredBackdrop, drawFitted, makeCanvas } from "../audio-to-video/draw";
 import { writeVideo } from "../audio-to-video/mux";
 import { geometryBitrate } from "../crop/plan";
 import { EngineError } from "../errors";
 import { canEncodeAvc } from "../mediabunny/shared";
+import { soundCodecName, soundEncoders, videoSoundCodec } from "../sound-codec";
 import type { Engine, MediaInput } from "../types";
 import {
   fadeOf,
@@ -46,7 +46,8 @@ export const imagesToVideoEngine: Engine<ImagesToVideoOptions> = {
     if (typeof createImageBitmap === "undefined") return false;
     const size = slideSize(o.shape, firstSize(inputs));
     if (!(await canEncodeAvc(size.width, size.height))) return false;
-    return !o.music || canEncodeAudio("aac", { bitrate: 192_000 });
+    // Music is copied when it is AAC, else encoded to AAC, or Opus where there is no AAC encoder.
+    return !o.music || videoSoundCodec("mp4", await soundEncoders()) !== undefined;
   },
   async run(_backend, inputs, o, ctx) {
     const n = inputs.length;
@@ -152,7 +153,7 @@ export const imagesToVideoEngine: Engine<ImagesToVideoOptions> = {
         ? "music copied"
         : music.durationSec > total + 0.05
           ? "music cut and faded out"
-          : "music in AAC";
+          : `music in ${soundCodecName(r.soundCodec)}`;
     return {
       blob: r.blob,
       filename: out,

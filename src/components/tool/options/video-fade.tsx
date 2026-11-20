@@ -7,6 +7,7 @@ import { Field } from "@/components/ui/field";
 import { NumberInput } from "@/components/ui/number-input";
 import { Segmented } from "@/components/ui/segmented";
 import { formatDimensions, withUnit } from "@/lib/format";
+import { soundCodecName, soundEncodersNow } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
 import { fadeOutStart } from "@/tools/engines/video-fade/math";
 import {
@@ -17,6 +18,7 @@ import {
 } from "@/tools/engines/video-filter/options";
 import {
   containerNote,
+  lineSoundCodec,
   needsFfmpeg,
   pictureContainer,
   pictureEstimate,
@@ -25,6 +27,7 @@ import {
   sourceName,
 } from "@/tools/engines/video-filter/plan";
 import { PLAY_SHORTCUT } from "../shortcuts";
+import { useSoundEncoders } from "../use-sound-encoders";
 import { pictureSize, sizeNote } from "./picture-size";
 import { z } from "./remember-schema";
 import type { OptionsSpec } from "./types";
@@ -122,13 +125,17 @@ export const videoFadeSpec: OptionsSpec<FadeOptions> = {
   summary: (o, info) => {
     const v = info.video;
     if (!v || fadeIsNoop(o)) return undefined;
-    const est = pictureEstimate(info, v);
+    const est = pictureEstimate(info, v, soundEncodersNow());
     const to = pictureContainer(sourceName(info));
     const hasSound = !!info.audio?.length;
     const sound =
       hasSound && o.audio
-        ? soundLine("encode", true)
-        : soundLine(needsFfmpeg(info, sourceName(info)) ? "encode" : soundPlan(info, to));
+        ? soundLine("encode", true, lineSoundCodec(info, to, soundEncodersNow()))
+        : soundLine(
+            needsFfmpeg(info, sourceName(info)) ? "encode" : soundPlan(info, to),
+            false,
+            lineSoundCodec(info, to, soundEncodersNow()),
+          );
     const out = pictureSize(info);
     return `Output ${formatDimensions(out.width, out.height)}, ${est.label}.${sizeNote(info)} Every frame is re-encoded to H.264, the fades included. ${sound}${containerNote(info)}`;
   },
@@ -160,8 +167,10 @@ export const videoFadeSpec: OptionsSpec<FadeOptions> = {
   },
   Panel({ value, onChange, info, disabled }) {
     const colorId = useId();
+    const encoders = useSoundEncoders();
     const cap = longest(info);
     const hasSound = !!info.audio?.length;
+    const codec = lineSoundCodec(info, pictureContainer(sourceName(info)), encoders);
     return (
       <div className="flex flex-col gap-6">
         <SecondsField
@@ -197,7 +206,7 @@ export const videoFadeSpec: OptionsSpec<FadeOptions> = {
         {hasSound ? (
           <Checkbox
             label="Fade the sound too"
-            hint="Over the same seconds. Re-encodes the sound once to AAC; off keeps it as it is."
+            hint={`Over the same seconds. ${codec === "pcm-s16" ? "Writes the sound once as" : "Re-encodes the sound once to"} ${soundCodecName(codec)}; off keeps it as it is.`}
             checked={value.audio}
             onChange={(e) => onChange({ ...value, audio: e.target.checked })}
           />

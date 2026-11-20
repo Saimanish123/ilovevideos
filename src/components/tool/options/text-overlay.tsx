@@ -8,9 +8,10 @@ import { Field } from "@/components/ui/field";
 import { NumberInput } from "@/components/ui/number-input";
 import { Segmented } from "@/components/ui/segmented";
 import { formatDimensions, formatTimecode, withUnit } from "@/lib/format";
-import { audioCopied, needsFfmpeg, sourceName } from "@/tools/engines/crop/plan";
+import { audioCopied, encodedSoundWords, needsFfmpeg, sourceName } from "@/tools/engines/crop/plan";
 import { ffmpegDownloadSize } from "@/tools/engines/ffmpeg/size";
 import { compositeContainer } from "@/tools/engines/overlay/composite";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import {
   fontPx,
   type TextOverlayOptions,
@@ -38,7 +39,11 @@ function soundWords(info: MediaInfo, fileName: string) {
   const copied = needsFfmpeg(info, fileName)
     ? a === "aac" || a === "mp3"
     : audioCopied(info, compositeContainer(fileName));
-  return copied ? "sound copied" : "sound in AAC";
+  if (copied) return "sound copied";
+  // ffmpeg.wasm writes AAC; the native path follows this browser's encoders.
+  return needsFfmpeg(info, fileName)
+    ? "sound in AAC"
+    : encodedSoundWords(compositeContainer(fileName), soundEncodersNow());
 }
 
 const when = (o: O, info: MediaInfo) => {

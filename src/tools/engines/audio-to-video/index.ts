@@ -2,12 +2,12 @@
  * Audio to video (feature B9): one still picture (a picked image, or a plain title card) over a
  * sound file, as an MP4 that video sites and players take. The picture is encoded once per second
  * with WebCodecs H.264 (it does not move); AAC sound is copied as it is, anything else is encoded
- * once to AAC (./mux). The still arrives as a PNG the page drew (./still). Runs in the engine worker.
+ * once to AAC, or Opus where there is no AAC encoder (./mux). The still arrives as a PNG the page drew (./still). Runs in the engine worker.
  */
-import { canEncodeAudio } from "mediabunny";
 import { baseName, formatDimensions, formatDuration, withUnit } from "@/lib/format";
 import { EngineError } from "../errors";
 import { canEncodeAvc } from "../mediabunny/shared";
+import { soundCodecName, soundEncoders, videoSoundCodec } from "../sound-codec";
 import type { Engine } from "../types";
 import { SOUND_KBPS, soundInfo, writeVideo } from "./mux";
 import {
@@ -29,8 +29,9 @@ export const audioToVideoEngine: Engine<AudioToVideoOptions> = {
     if (backend !== "webcodecs" || typeof OffscreenCanvas === "undefined") return false;
     const { width, height } = sizeOf(o);
     if (!(await canEncodeAvc(width, height))) return false;
+    // AAC is copied; anything else is encoded to AAC, or Opus where there is no AAC encoder.
     const aac = input.info?.audio?.[0]?.codec === "aac";
-    return aac || canEncodeAudio("aac", { bitrate: SOUND_KBPS * 1000 });
+    return aac || videoSoundCodec("mp4", await soundEncoders()) !== undefined;
   },
   async run(_backend, inputs, o, ctx) {
     const input = inputs[0];
@@ -81,7 +82,7 @@ export const audioToVideoEngine: Engine<AudioToVideoOptions> = {
         blob: r.blob,
         filename,
         ffmpegCommand: audioToVideoCommand(input.file.name, filename, o, r.soundCopied),
-        meta: `${formatDimensions(width, height)} · ${formatDuration(r.soundSec)} · H.264 still · ${r.soundCopied ? "sound copied" : `sound in AAC ${withUnit(SOUND_KBPS, "kbps")}`}`,
+        meta: `${formatDimensions(width, height)} · ${formatDuration(r.soundSec)} · H.264 still · ${r.soundCopied ? "sound copied" : `sound in ${soundCodecName(r.soundCodec)} ${withUnit(SOUND_KBPS, "kbps")}`}`,
       };
     } finally {
       bitmap.close();

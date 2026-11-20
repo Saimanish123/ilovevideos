@@ -10,6 +10,7 @@ import { Field } from "@/components/ui/field";
 import { Segmented } from "@/components/ui/segmented";
 import { formatBytes, formatDimensions, formatTimecode } from "@/lib/format";
 import { lastFrameTime, snapToFrame } from "@/tools/engines/frame-extract/math";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
 import { pictureEstimate } from "@/tools/engines/video-filter/plan";
 import {
@@ -91,7 +92,7 @@ export const zoomPanSpec: OptionsSpec<ZoomOptions> = {
     const v = info.video;
     if (!v) return undefined;
     const size = pictureSize(info);
-    const est = pictureEstimate(info, size);
+    const est = pictureEstimate(info, size, soundEncodersNow());
     const dims =
       size.width === v.width && size.height === v.height
         ? formatDimensions(size.width, size.height)

@@ -4,7 +4,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { expect, type Page, test } from "@playwright/test";
 import AxeBuilder from "./axe-builder";
-import { aacEncodes, NO_AAC } from "./codecs";
+import { aacEncodes } from "./codecs";
 
 /**
  * Phase 2 audio tools end to end: volume, normalise and fades (on video and audio files), audio
@@ -192,7 +192,8 @@ test.describe("audio edits", () => {
     test.setTimeout(120_000);
     const uploads = trackUploads(page);
     await page.goto("/change-video-volume");
-    test.skip(!(await aacEncodes(page)), NO_AAC);
+    // AAC where WebCodecs encodes it; Opus in the same MP4 where it does not (Chromium on Linux).
+    const codec = (await aacEncodes(page)) ? "aac" : "opus";
     const zone = page.getByRole("region", { name: "Workspace" });
     await expect(zone).toContainText("Drop a video to make its sound louder or quieter");
     await shot(page, "volume-idle");
@@ -201,14 +202,21 @@ test.describe("audio edits", () => {
     await expect(run).toBeEnabled({ timeout: 30_000 });
     // The loudness is measured on the page before anything runs.
     await expect(page.getByText(/true peak/).first()).toBeVisible({ timeout: 30_000 });
-    await expect(page.getByText(/The picture is copied as it is/)).toBeVisible();
+    // The line names the codec the file gets.
+    await expect(
+      page.getByText(
+        new RegExp(
+          `The picture is copied as it is; the sound is encoded once to ${codec === "aac" ? "AAC" : "Opus"} at 192\\skbps`,
+        ),
+      ),
+    ).toBeVisible();
     await axeClean(page);
     await shot(page, "volume-ready");
     await run.click();
     const out = await download(page, { ext: /-louder\.mp4$/, mime: /video\/mp4/ });
     await expect(page.getByText(/Measured: .*LUFS → .*LUFS/)).toBeVisible();
     await shot(page, "volume-done");
-    expect(audioStream(out)?.codec_name).toBe("aac");
+    expect(audioStream(out)?.codec_name).toBe(codec);
     expect(Number(out.format.duration)).toBeCloseTo(3, 1);
     expect(packetHashes(out.path, "v:0")).toEqual(packetHashes(fx("sample.mp4"), "v:0"));
     const before = r128(fx("sample.mp4"));

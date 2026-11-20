@@ -15,6 +15,7 @@ import {
   sameCodec,
 } from "@/tools/engines/codec/plan";
 import { needsFfmpeg, sourceName } from "@/tools/engines/crop/plan";
+import { soundEncodersNow, writtenSoundCodec } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
 import { soundLine } from "@/tools/engines/video-filter/plan";
 import { type Choice, Choices } from "./choices";
@@ -153,7 +154,7 @@ export const codecSpec: OptionsSpec<CodecValue> = {
     const sound =
       plan.sound === "encode" && plan.to === "webm"
         ? "The sound is encoded to Opus."
-        : soundLine(plan.sound);
+        : soundLine(plan.sound, false, writtenSoundCodec(plan.to, soundEncodersNow()));
     const slow =
       o.codec === "av1" || o.codec === "vp9"
         ? ` ${name(o.codec)} is often slow to write on this kind of device; the progress line shows the time left.`

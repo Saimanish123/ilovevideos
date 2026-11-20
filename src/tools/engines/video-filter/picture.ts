@@ -20,9 +20,10 @@ import { containerById } from "@/content/formats/containers";
 import { classifyError, EngineError } from "../errors";
 import { copyTracks } from "../mediabunny/packet-copy";
 import { type ContainerId, containers, convert, openInput } from "../mediabunny/shared";
+import { soundEncoders, type VideoSoundCodec, writtenSoundCodec } from "../sound-codec";
 import type { EngineContext, EngineResult, MediaInfo } from "../types";
 import { framePlan, withPreparedFrames } from "./frame-prep";
-import { type SoundPlan, soundCodec, soundPlan } from "./plan";
+import { type SoundPlan, soundPlan } from "./plan";
 
 export interface PictureJob {
   file: File;
@@ -47,6 +48,8 @@ export interface PictureJob {
 export interface PictureResult extends EngineResult {
   /** What happened to the sound. */
   sound: SoundPlan | "dropped";
+  /** The codec an encoded sound was written in (./plan `soundCodec`); set when `sound` is "encode". */
+  soundCodec?: VideoSoundCodec;
 }
 
 const AUDIO_BITRATE = 128_000;
@@ -69,8 +72,10 @@ export async function encodePicture(job: PictureJob): Promise<PictureResult> {
 async function encodeWith(job: PictureJob, video: ConversionVideoOptions): Promise<PictureResult> {
   const { info, to, ctx } = job;
   const plan = soundPlan(info, to);
+  // AAC, or Opus (16-bit PCM in MOV) where this browser has no AAC encoder (../sound-codec).
+  const codec = writtenSoundCodec(to, await soundEncoders());
   const encodeSound = (process?: ConversionAudioOptions["process"]): ConversionAudioOptions => ({
-    codec: soundCodec(to),
+    codec,
     quality: new Quality({ bitrate: job.audioBitrate ?? AUDIO_BITRATE }),
     forceTranscode: true,
     ...(process ? { process } : {}),
@@ -82,11 +87,11 @@ async function encodeWith(job: PictureJob, video: ConversionVideoOptions): Promi
   }
   if (typeof job.sound === "object") {
     const r = await convert({ ...job, video, audio: encodeSound(job.sound.process) });
-    return { ...r, sound: "encode" };
+    return { ...r, sound: "encode", soundCodec: codec };
   }
   if (plan === "encode" || job.sound === "encode") {
     const r = await convert({ ...job, video, audio: encodeSound() });
-    return { ...r, sound: "encode" };
+    return { ...r, sound: "encode", soundCodec: codec };
   }
 
   // The picture alone, then the source's sound copied next to it.

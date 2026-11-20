@@ -206,7 +206,7 @@ export const portraitMatteEngine: Engine<PortraitMatteOptions> = {
             dispose: () => renderer.dispose(),
           };
         },
-        ffmpegCommand: ({ outputName, kbps, copyAudio }) =>
+        ffmpegCommand: ({ outputName, kbps, copyAudio, soundCodec }) =>
           matteCommand(
             o,
             input.file.name,
@@ -214,7 +214,11 @@ export const portraitMatteEngine: Engine<PortraitMatteOptions> = {
             v,
             info.durationSec,
             kbps,
-            !info.audio?.length || o.sound === "none" || mask ? "none" : copyAudio ? "copy" : "aac",
+            !info.audio?.length || o.sound === "none" || mask
+              ? "none"
+              : copyAudio
+                ? "copy"
+                : soundCodec,
           ),
         ctx,
       });

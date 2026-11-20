@@ -9,6 +9,12 @@ import { formatBytes, formatDimensions } from "@/lib/format";
 import { encodedSize, evenSizeNote, type Size } from "../crop/math";
 import { geometryContainer, needsFfmpeg, reencodeBitrate, sourceName } from "../crop/plan";
 import type { ContainerId } from "../mediabunny/shared";
+import {
+  encodedSoundBps,
+  type SoundEncoders,
+  soundCodecName,
+  writtenSoundCodec,
+} from "../sound-codec";
 import type { MediaInfo } from "../types";
 
 export { geometryContainer as pictureContainer, needsFfmpeg, sourceName };
@@ -16,7 +22,7 @@ export { geometryContainer as pictureContainer, needsFfmpeg, sourceName };
 export type SoundPlan =
   /** The sound packets are copied as they are (no quality change). */
   | "copy"
-  /** Encoded once: AAC in MP4, MOV and MKV, Opus in WebM. */
+  /** Encoded once: AAC in MP4, MOV and MKV, Opus in WebM (without AAC, `writtenSoundCodec`). */
   | "encode"
   /** There is no sound track. */
   | "none";
@@ -38,8 +44,6 @@ export function soundPlan(info: MediaInfo, to: ContainerId): SoundPlan {
   };
   return playable[to].includes(a.codec) ? "copy" : "encode";
 }
-
-export const soundCodec = (to: ContainerId) => (to === "webm" ? "opus" : "aac");
 
 /**
  * The size an H.264 picture re-encode writes: the source's, less an odd edge (641×361 becomes
@@ -67,24 +71,41 @@ export function sizeWords(src: Size, out: Size, codec = "avc"): string {
 export const pictureBitrate = (info: MediaInfo, fps = info.video?.fps) =>
   reencodeBitrate({ size: pictureSize(info), fps, source: info.video });
 
-/** One sentence about the sound, for summaries and verdicts. */
-export function soundLine(plan: SoundPlan, faded = false): string {
+/** The codec a ready line names for an encoded sound: AAC on the ffmpeg.wasm path, else `writtenSoundCodec`. */
+export const lineSoundCodec = (info: MediaInfo, to: ContainerId, can: SoundEncoders): string =>
+  needsFfmpeg(info, sourceName(info)) ? "aac" : writtenSoundCodec(to, can);
+
+/**
+ * One sentence about the sound, for summaries and verdicts. `codec`: what an encode writes
+ * (`writtenSoundCodec`, or AAC on the ffmpeg.wasm path).
+ */
+export function soundLine(plan: SoundPlan, faded = false, codec: string = "aac"): string {
   if (plan === "none") return "There is no sound track.";
-  if (faded) return "The sound fades with the picture and is encoded to AAC.";
-  return plan === "copy" ? "The sound is copied as it is." : "The sound is encoded to AAC.";
+  const to = `${codec === "pcm-s16" ? "written as" : "encoded to"} ${soundCodecName(codec)}`;
+  if (faded) return `The sound fades with the picture and is ${to}.`;
+  return plan === "copy" ? "The sound is copied as it is." : `The sound is ${to}.`;
 }
 
-/** Ready-state estimate of a picture re-encode over the whole clip, in bytes. */
+/**
+ * Ready-state estimate of a picture re-encode over the whole clip, in bytes. `can` is this browser's
+ * sound encoders (../sound-codec): an encoded sound counts at 128 kb/s, or at its PCM rate.
+ */
 export function pictureEstimate(
   info: MediaInfo,
   size: { width: number; height: number },
+  can: SoundEncoders,
   fps = info.video?.fps,
   durationSec = info.durationSec,
 ): { bytes: number; label: string } {
   const to = geometryContainer(sourceName(info));
   const plan = soundPlan(info, to);
+  const track = info.audio?.[0];
   const audio =
-    plan === "none" ? 0 : plan === "copy" ? (info.audio?.[0]?.bitrate ?? 128_000) : 128_000;
+    plan === "none"
+      ? 0
+      : plan === "copy"
+        ? (track?.bitrate ?? 128_000)
+        : encodedSoundBps(lineSoundCodec(info, to, can), 128_000, track);
   const video = reencodeBitrate({ size: encodedSize(size), fps, source: info.video });
   const bytes = Math.round(((video + audio) * durationSec) / 8);
   return { bytes, label: `about ${formatBytes(bytes)}` };

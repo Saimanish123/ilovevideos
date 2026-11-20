@@ -7,8 +7,13 @@ import { formatDimensions, formatDuration, withUnit } from "@/lib/format";
 import { needsFfmpeg, sourceName } from "@/tools/engines/crop/plan";
 import type { ReverseOptions } from "@/tools/engines/reverse";
 import { decodeCost, maxReversedSound, windowFrames } from "@/tools/engines/reverse/math";
+import { soundCodecName, soundEncodersNow, writtenSoundCodec } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
-import { containerNote, pictureEstimate } from "@/tools/engines/video-filter/plan";
+import {
+  containerNote,
+  pictureContainer,
+  pictureEstimate,
+} from "@/tools/engines/video-filter/plan";
 import { undecodablePicture } from "./decodable";
 import { pictureSize, sizeNote } from "./picture-size";
 import type { OptionsSpec } from "./types";
@@ -34,6 +39,12 @@ function cost(info: MediaInfo): { factor: number; gap?: number } {
   const gap =
     keys.length > 1 ? ((keys.at(-1) ?? 0) - (keys[0] ?? 0)) / (keys.length - 1) : info.durationSec;
   return { factor: decodeCost(frames, keys, windowFrames(v.width, v.height)), gap };
+}
+
+/** "encoded to AAC": the codec the engine encodes the reversed sound in (engines/sound-codec). */
+function reversedSoundWords(info: MediaInfo): string {
+  const codec = writtenSoundCodec(pictureContainer(sourceName(info)), soundEncodersNow());
+  return `${codec === "pcm-s16" ? "written as" : "encoded to"} ${soundCodecName(codec)}`;
 }
 
 export const reverseSpec: OptionsSpec<ReverseOptions> = {
@@ -64,11 +75,15 @@ export const reverseSpec: OptionsSpec<ReverseOptions> = {
   summary: (o, info) => {
     const v = info.video;
     if (!v) return undefined;
-    const est = pictureEstimate({ ...info, audio: o.sound === "drop" ? [] : info.audio }, v);
+    const est = pictureEstimate(
+      { ...info, audio: o.sound === "drop" ? [] : info.audio },
+      v,
+      soundEncodersNow(),
+    );
     const sound = !info.audio?.length
       ? "There is no sound track."
       : o.sound === "reverse"
-        ? "The sound is reversed too and encoded to AAC."
+        ? `The sound is reversed too and ${reversedSoundWords(info)}.`
         : "The result has no sound.";
     const out = pictureSize(info);
     return `Output ${formatDimensions(out.width, out.height)} H.264, ${est.label}.${sizeNote(info)} Every frame is re-encoded, last first. ${sound}${containerNote(info)}`;

@@ -15,6 +15,7 @@
  */
 import { z } from "zod";
 import { shellQuote } from "@/lib/format";
+import { ffmpegSoundEncoder, type VideoSoundCodec } from "../sound-codec";
 
 export const clarityJobs = ["sharpen", "denoise"] as const;
 export type ClarityJob = (typeof clarityJobs)[number];
@@ -182,8 +183,13 @@ export function clarityCommand(
   output: string,
   vf: string,
   kbps: number,
-  audio: "copy" | "aac" | "none",
+  audio: "copy" | "none" | VideoSoundCodec,
 ): string {
-  const a = audio === "none" ? "-an" : audio === "copy" ? "-c:a copy" : "-c:a aac -b:a 128k";
+  const a =
+    audio === "none"
+      ? "-an"
+      : audio === "copy"
+        ? "-c:a copy"
+        : `-c:a ${ffmpegSoundEncoder(audio)}${audio === "pcm-s16" ? "" : " -b:a 128k"}`;
   return `ffmpeg -i ${shellQuote(input)} -vf "${vf}" -c:v libx264 -b:v ${kbps}k -pix_fmt yuv420p ${a} -movflags +faststart ${shellQuote(output)}`;
 }

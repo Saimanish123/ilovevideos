@@ -12,6 +12,7 @@ import { frameProgress, totalFrames } from "../crop/progress";
 import { EngineError } from "../errors";
 import { canEncodeAvc, pictureDecodes } from "../mediabunny/shared";
 import { hasWebgl2 } from "../overlay/gl";
+import { soundCodecName } from "../sound-codec";
 import type { Engine } from "../types";
 import { encodePicture } from "../video-filter/picture";
 import { pictureBitrate, pictureContainer, pictureSize, sizeWords } from "../video-filter/plan";
@@ -101,12 +102,13 @@ export const clarityEngine: Engine<ClarityOptions> = {
         ffmpegCommand: "",
         ctx: { ...ctx, onProgress: frameProgress(ctx, totalFrames(info.durationSec, v.fps)) },
       });
-      const audio = r.sound === "copy" ? "copy" : r.sound === "encode" ? "aac" : "none";
+      const audio =
+        r.sound === "copy" ? "copy" : r.sound === "encode" ? (r.soundCodec ?? "aac") : "none";
       const sound =
         r.sound === "copy"
           ? "sound copied"
           : r.sound === "encode"
-            ? "sound in AAC"
+            ? `sound in ${soundCodecName(r.soundCodec)}`
             : r.sound === "dropped"
               ? "sound removed"
               : "no sound";

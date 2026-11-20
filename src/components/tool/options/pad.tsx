@@ -19,6 +19,7 @@ import {
   colorName,
   type PadOptions,
 } from "@/tools/engines/pad/options";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
 import { between, z } from "./remember-schema";
 import type { OptionsSpec } from "./types";
@@ -69,7 +70,7 @@ export const padSpec: OptionsSpec<PadOptions> = {
     const v = info.video;
     if (!v || borderTooThick(o, v)) return undefined;
     const layout = borderLayout(o, v);
-    const est = geometryEstimate(info, layout);
+    const est = geometryEstimate(info, layout, soundEncodersNow());
     const how = borderHow(o, v);
     return `${how}, about ${formatBytes(est.bytes)}. The video is re-encoded to H.264. ${est.audio}${est.container}`;
   },

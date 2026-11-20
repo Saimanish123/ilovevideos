@@ -18,6 +18,7 @@ import { frameProgress, totalFrames } from "../crop/progress";
 import { classifyError, EngineError } from "../errors";
 import { canEncodeAvc, openInput, pictureDecodes } from "../mediabunny/shared";
 import { openSound } from "../sound/reader";
+import { soundCodecName } from "../sound-codec";
 import type { Engine, EngineResult, MediaInfo } from "../types";
 import { encodePicture } from "../video-filter/picture";
 import { pictureContainer, pictureSize } from "../video-filter/plan";
@@ -177,7 +178,7 @@ async function freezePause(
     });
     const soundWords = !sound
       ? "no sound"
-      : `sound with silence in the ${planned.length === 1 ? "hold" : "holds"}, encoded to ${r.soundCodec === "opus" ? "Opus" : "AAC"}`;
+      : `sound with silence in the ${planned.length === 1 ? "hold" : "holds"}, encoded to ${soundCodecName(r.soundCodec)}`;
     return {
       blob: r.blob,
       filename: outputName,
@@ -291,7 +292,7 @@ async function freezeOver(
     r.sound === "copy"
       ? "sound copied"
       : r.sound === "encode"
-        ? "sound encoded to AAC"
+        ? `sound encoded to ${soundCodecName(r.soundCodec)}`
         : "no sound";
   return {
     blob: r.blob,

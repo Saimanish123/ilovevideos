@@ -31,6 +31,7 @@ import {
   scaleBars,
 } from "@/tools/engines/crop/bars";
 import { CropOptions } from "@/tools/engines/crop/options";
+import { ASSUMED_ENCODERS } from "@/tools/engines/sound-codec";
 import { nearestFrame, toGray } from "@/tools/engines/stabilize/analyze";
 import {
   apply,
@@ -475,23 +476,44 @@ describe("change bitrate", () => {
 
   it("plans sound copy, re-encode and removal, and the size", () => {
     const o = BitrateOptions.parse({ videoKbps: 4000 });
-    const copy = planBitrate(info(), "a.mp4", o);
+    const copy = planBitrate(info(), "a.mp4", o, ASSUMED_ENCODERS);
     expect(copy.sound).toBe("copy");
     expect(copy.to).toBe("mp4");
     // (4,000 + 128) kb/s × 60 s ÷ 8 = 30.96 MB, plus 1%.
     expect(copy.bytes).toBe(Math.round(30_960_000 * 1.01));
-    expect(planBitrate(info(), "a.mp4", { ...o, audio: "192" })).toMatchObject({
+    expect(planBitrate(info(), "a.mp4", { ...o, audio: "192" }, ASSUMED_ENCODERS)).toMatchObject({
       sound: "encode",
       audioBps: 192_000,
     });
-    expect(planBitrate(info(), "a.mp4", { ...o, audio: "none" }).sound).toBe("dropped");
+    expect(planBitrate(info(), "a.mp4", { ...o, audio: "none" }, ASSUMED_ENCODERS).sound).toBe(
+      "dropped",
+    );
     const opus = info({ audio: [{ codec: "opus", channels: 2, sampleRate: 48000 }] });
-    expect(planBitrate(opus, "a.mp4", o)).toMatchObject({ sound: "encode", audioBps: 128_000 });
-    expect(planBitrate(info({ audio: [] }), "a.mp4", o).sound).toBe("none");
-    expect(planBitrate(info(), "a.webm", { ...o, codec: "vp9", audio: "96" })).toMatchObject({
+    expect(planBitrate(opus, "a.mp4", o, ASSUMED_ENCODERS)).toMatchObject({
+      sound: "encode",
+      audioBps: 128_000,
+    });
+    expect(planBitrate(info({ audio: [] }), "a.mp4", o, ASSUMED_ENCODERS).sound).toBe("none");
+    expect(
+      planBitrate(info(), "a.webm", { ...o, codec: "vp9", audio: "96" }, ASSUMED_ENCODERS),
+    ).toMatchObject({
       to: "webm",
       audioCodec: "opus",
     });
+    // Without an AAC encoder (Chromium on Linux) an encoded sound in MP4 is Opus, in MOV 16-bit PCM.
+    const noAac = { aac: false, opus: true };
+    const enc = planBitrate(opus, "a.mp4", o, noAac);
+    expect(enc).toMatchObject({ sound: "encode", audioCodec: "opus" });
+    expect(bitrateCommand("a.mp4", "b.mp4", enc, "variable", "")).toContain(
+      "-c:a libopus -b:a 128k",
+    );
+    const pcm = planBitrate(opus, "a.mov", { ...o, audio: "192" }, noAac);
+    // PCM has no bitrate: the chosen 192 kb/s does not apply; 48 kHz stereo × 16 bits does.
+    expect(pcm).toMatchObject({ audioCodec: "pcm-s16", audioBps: 1_536_000 });
+    expect(bitrateCommand("a.mov", "b.mov", pcm, "variable", "")).toContain(
+      "-c:a pcm_s16le -movflags",
+    );
+    expect(planBitrate(opus, "a.mp4", o, ASSUMED_ENCODERS).audioCodec).toBe("aac");
   });
 
   it("keeps the source's codec where it can be written", () => {
@@ -510,7 +532,7 @@ describe("change bitrate", () => {
     expect(audioLabel("copy")).toBe("Copy");
     expect(audioLabel("128")).toBe("128 kb/s");
     const o = BitrateOptions.parse({ videoKbps: 3000, mode: "constant" });
-    const plan = planBitrate(info(), "a.mp4", o);
+    const plan = planBitrate(info(), "a.mp4", o, ASSUMED_ENCODERS);
     expect(bitrateCommand("a.mp4", "a-3000k.mp4", plan, "constant", "")).toBe(
       "ffmpeg -i a.mp4 -c:v libx264 -b:v 3000k -minrate 3000k -maxrate 3000k -bufsize 3000k -c:a copy -movflags +faststart a-3000k.mp4",
     );

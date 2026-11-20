@@ -10,6 +10,7 @@
 import { z } from "zod";
 import { shellQuote } from "@/lib/format";
 import { EngineError } from "../errors";
+import { ffmpegSoundEncoder, type VideoSoundCodec } from "../sound-codec";
 
 export const anchors = ["tl", "tc", "tr", "ml", "mc", "mr", "bl", "bc", "br"] as const;
 export type Anchor = (typeof anchors)[number];
@@ -155,8 +156,10 @@ export function watermarkCommand(
   filter: string,
   kbps: number,
   copyAudio: boolean,
+  /** The codec an encoded sound is written in (../sound-codec `writtenSoundCodec`). */
+  codec: VideoSoundCodec = "aac",
 ) {
-  return `ffmpeg -i ${shellQuote(videoName)} -i ${shellQuote(markName)} -filter_complex "${filter}" -map "[v]" -map '0:a?' -c:v libx264 -b:v ${kbps}k -pix_fmt yuv420p -c:a ${copyAudio ? "copy" : "aac"} ${shellQuote(outName)}`;
+  return `ffmpeg -i ${shellQuote(videoName)} -i ${shellQuote(markName)} -filter_complex "${filter}" -map "[v]" -map '0:a?' -c:v libx264 -b:v ${kbps}k -pix_fmt yuv420p -c:a ${copyAudio ? "copy" : ffmpegSoundEncoder(codec)} ${shellQuote(outName)}`;
 }
 
 /** Where the mark is, in words, for the summary and the result. */

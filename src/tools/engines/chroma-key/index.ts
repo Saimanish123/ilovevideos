@@ -128,7 +128,7 @@ export const chromaKeyEngine: Engine<ChromaKeyOptions> = {
             dispose: () => keyer.dispose(),
           };
         },
-        ffmpegCommand: ({ outputName, kbps, copyAudio }) =>
+        ffmpegCommand: ({ outputName, kbps, copyAudio, soundCodec }) =>
           keyCommand(
             o,
             input.file.name,
@@ -136,7 +136,7 @@ export const chromaKeyEngine: Engine<ChromaKeyOptions> = {
             v,
             info.durationSec,
             kbps,
-            !info.audio?.length || o.sound === "none" ? "none" : copyAudio ? "copy" : "aac",
+            !info.audio?.length || o.sound === "none" ? "none" : copyAudio ? "copy" : soundCodec,
           ),
         ctx,
       });

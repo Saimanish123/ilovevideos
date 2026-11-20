@@ -11,6 +11,7 @@ import { shellQuote } from "@/lib/format";
 import { withEvenCropOut } from "../crop/math";
 import { EngineError } from "../errors";
 import { fadeOverlayFilter, type TimedRange } from "../overlay/fade";
+import { ffmpegSoundEncoder, type VideoSoundCodec } from "../sound-codec";
 import { anchors, markRect, type Rect, type Size } from "../watermark/options";
 
 export const textSizes = { small: 0.05, medium: 0.08, large: 0.12 } as const;
@@ -91,10 +92,12 @@ export function textCommand(
   copyAudio: boolean,
   /** The source size; an odd edge is cut for H.264 after the overlay (../crop/math). */
   src?: Size,
+  /** The codec an encoded sound is written in (../sound-codec `writtenSoundCodec`). */
+  codec: VideoSoundCodec = "aac",
 ): string {
   const graph = fadeOverlayFilter(textRange(o, durationSec), o.fade, rect.x, rect.y, durationSec);
   const filter = src ? withEvenCropOut(src, graph) : graph;
-  return `ffmpeg -i ${shellQuote(videoName)} -loop 1 -i text.png -filter_complex "${filter}" -map "[v]" -map '0:a?' -c:v libx264 -b:v ${kbps}k -pix_fmt yuv420p -c:a ${copyAudio ? "copy" : "aac"} ${shellQuote(outName)}`;
+  return `ffmpeg -i ${shellQuote(videoName)} -loop 1 -i text.png -filter_complex "${filter}" -map "[v]" -map '0:a?' -c:v libx264 -b:v ${kbps}k -pix_fmt yuv420p -c:a ${copyAudio ? "copy" : ffmpegSoundEncoder(codec)} ${shellQuote(outName)}`;
 }
 
 /** The text PNG the page drew, or the reason there is none. */

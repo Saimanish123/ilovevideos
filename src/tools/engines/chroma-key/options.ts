@@ -21,6 +21,7 @@
 import { z } from "zod";
 import { shellQuote } from "@/lib/format";
 import { withEvenCropOut } from "../crop/math";
+import { ffmpegSoundEncoder, type VideoSoundCodec } from "../sound-codec";
 
 export const Rgb = z.tuple([
   z.number().int().min(0).max(255),
@@ -260,7 +261,7 @@ export function keyCommand(
   frame: Size,
   durationSec: number,
   kbps: number,
-  audio: "copy" | "aac" | "none",
+  audio: "copy" | "none" | VideoSoundCodec,
 ): string {
   const color = `0x${hex(o.key).slice(1)}`;
   const despill =
@@ -278,7 +279,11 @@ export function keyCommand(
       ? `scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H}`
       : `scale=${W}:${H}:force_original_aspect_ratio=decrease,pad=${W}:${H}:(ow-iw)/2:(oh-ih)/2:color=${bgColor}`;
   const a =
-    audio === "none" ? "-an" : audio === "copy" ? "-map '0:a?' -c:a copy" : "-map '0:a?' -c:a aac";
+    audio === "none"
+      ? "-an"
+      : audio === "copy"
+        ? "-map '0:a?' -c:a copy"
+        : `-map '0:a?' -c:a ${ffmpegSoundEncoder(audio)}`;
   let bgInput: string;
   let bgChain: string;
   if (o.background.kind === "color") {

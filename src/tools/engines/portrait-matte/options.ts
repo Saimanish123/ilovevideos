@@ -16,6 +16,7 @@ import { z } from "zod";
 import { shellQuote } from "@/lib/format";
 import { Background, Rgb } from "../chroma-key/options";
 import { withEvenCropOut } from "../crop/math";
+import { ffmpegSoundEncoder, type VideoSoundCodec } from "../sound-codec";
 
 export { Background, Rgb };
 
@@ -143,12 +144,16 @@ export function matteCommand(
   frame: Size,
   durationSec: number,
   kbps: number,
-  audio: "copy" | "aac" | "none",
+  audio: "copy" | "none" | VideoSoundCodec,
 ): string {
   const W = frame.width;
   const H = frame.height;
   const a =
-    audio === "none" ? "-an" : audio === "copy" ? "-map '0:a?' -c:a copy" : "-map '0:a?' -c:a aac";
+    audio === "none"
+      ? "-an"
+      : audio === "copy"
+        ? "-map '0:a?' -c:a copy"
+        : `-map '0:a?' -c:a ${ffmpegSoundEncoder(audio)}`;
   const mask = `[1:v]format=gray,scale=${W}:${H}[m]`;
   if (o.output === "mask")
     return `# The person mask has no FFmpeg equivalent; this page writes it as ${shellQuote(output)}.`;

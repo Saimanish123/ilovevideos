@@ -32,6 +32,7 @@ import { downmix } from "../sound/dsp/downmix";
 import { paced } from "../sound/pace";
 import { blobReleasing, pickEncoding } from "../sound/render";
 import { VIDEO_SOUND_KBPS } from "../sound/target";
+import { videoSoundCodecs } from "../sound-codec";
 import type { EngineContext } from "../types";
 
 /** Planar float sound at the producer's own rate and layout; the writer converts it. */
@@ -117,7 +118,7 @@ export async function encodeComposed(job: ComposeJob): Promise<ComposeResult> {
     const { fullCodecString } = await avcPlan(job.size, job.fps);
     const enc = job.sound
       ? await pickEncoding(
-          ["aac", "opus"],
+          videoSoundCodecs("mp4"),
           job.sound.sampleRate,
           Math.min(2, job.sound.channels),
           VIDEO_SOUND_KBPS,

@@ -14,7 +14,7 @@ import { Segmented } from "@/components/ui/segmented";
 import { cn } from "@/lib/cn";
 import { formatDimensions } from "@/lib/format";
 import { encodedSize } from "@/tools/engines/crop/math";
-import { audioCopied, needsFfmpeg, sourceName } from "@/tools/engines/crop/plan";
+import { audioCopied, encodedSoundWords, needsFfmpeg, sourceName } from "@/tools/engines/crop/plan";
 import {
   IMAGE_ACCEPT,
   type ImageLayer,
@@ -30,6 +30,7 @@ import {
 } from "@/tools/engines/image-overlay/options";
 import { readLayerImage } from "@/tools/engines/image-overlay/read";
 import { compositeContainer } from "@/tools/engines/overlay/composite";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
 import { unfixable } from "./types";
@@ -54,7 +55,9 @@ const outSize = (info: MediaInfo) => {
 
 function soundWords(info: MediaInfo, fileName: string) {
   if (!info.audio?.length) return "no sound";
-  return audioCopied(info, compositeContainer(fileName)) ? "sound copied" : "sound in AAC";
+  return audioCopied(info, compositeContainer(fileName))
+    ? "sound copied"
+    : encodedSoundWords(compositeContainer(fileName), soundEncodersNow());
 }
 
 const imageCount = (n: number) => `${n} ${n === 1 ? "image" : "images"}`;

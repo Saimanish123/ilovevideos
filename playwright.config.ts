@@ -30,6 +30,20 @@ export default defineConfig({
     ...(process.env.E2E_FIREFOX === "1"
       ? [{ name: "firefox", use: { ...devices["Desktop Firefox"] } }]
       : []),
+    // Chromium as it is on Linux, where WebCodecs has no AAC encoder (GitHub's runner): the platform
+    // encoder switched off, in the page and in its workers alike. Off by default; turn it on with
+    // E2E_NO_AAC=1, e.g. `E2E_NO_AAC=1 pnpm exec playwright test --project=chromium-no-aac <specs>`.
+    ...(process.env.E2E_NO_AAC === "1"
+      ? [
+          {
+            name: "chromium-no-aac",
+            use: {
+              ...devices["Desktop Chrome"],
+              launchOptions: { args: ["--disable-features=PlatformAudioEncoder"] },
+            },
+          },
+        ]
+      : []),
     { name: "mobile-chrome", use: { ...devices["Pixel 7"] } },
     { name: "mobile-safari", use: { ...devices["iPhone 14"] } },
   ],

@@ -4,7 +4,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { expect, type Page, test } from "@playwright/test";
 import AxeBuilder from "./axe-builder";
-import { aacEncodes, NO_AAC } from "./codecs";
+import { aacEncodes } from "./codecs";
 import { soundCheck } from "./sound";
 
 /**
@@ -442,7 +442,8 @@ test.describe("audio tools", () => {
     test.setTimeout(180_000);
     const uploads = trackUploads(page);
     await page.goto("/add-audio-to-video");
-    test.skip(!(await aacEncodes(page)), NO_AAC);
+    // AAC where WebCodecs encodes it; Opus in the same MP4 where it does not (Chromium on Linux).
+    const codec = (await aacEncodes(page)) ? "aac" : "opus";
     const zone = page.getByRole("region", { name: "Workspace" });
     await expect(zone).toContainText("Drop a video and the audio to add to it");
     await shot(page, "add-idle");
@@ -459,13 +460,20 @@ test.describe("audio tools", () => {
     await clip.focus();
     await page.keyboard.press("ArrowRight");
     await page.keyboard.press("ArrowRight");
-    await expect(page.getByText(/The new audio plays 0:00\.20 to 0:03\.00, mixed/)).toBeVisible();
+    // The line names the codec the file gets.
+    await expect(
+      page.getByText(
+        new RegExp(
+          `The new audio plays 0:00\\.20 to 0:03\\.00, mixed .*, encoded to ${codec === "aac" ? "AAC" : "Opus"} at 192\\skbps`,
+        ),
+      ),
+    ).toBeVisible();
     await axeClean(page);
     await shot(page, "add-ready");
     await add.click();
     const out = await download(page, { ext: /\.mp4$/, mime: /^video\/mp4/ });
     expect(videoStream(out)?.codec_name).toBe("h264");
-    expect(audioStream(out)?.codec_name).toBe("aac");
+    expect(audioStream(out)?.codec_name).toBe(codec);
     expect(Number(out.format.duration)).toBeCloseTo(3, 0);
     // The picture is a packet copy of the source.
     const vHash = (p: string) =>
@@ -492,7 +500,8 @@ test.describe("audio tools", () => {
   test("replace audio: an unchanged AAC track is copied; a short clip loops", async ({ page }) => {
     test.setTimeout(180_000);
     await page.goto("/replace-audio-in-video");
-    test.skip(!(await aacEncodes(page)), NO_AAC);
+    // The copy needs no encoder. An encode is AAC where WebCodecs has it, else Opus in the MP4.
+    const codec = (await aacEncodes(page)) ? "aac" : "opus";
     await page.locator('input[type="file"]').setInputFiles([fx("sample.mp4"), fx("sample.m4a")]);
     const replace = page.getByRole("button", { name: "Replace audio", exact: true });
     await expect(replace).toBeEnabled({ timeout: 30_000 });
@@ -514,10 +523,12 @@ test.describe("audio tools", () => {
     // With the default 2 s fade the sound is encoded; the encoder's priming is signalled too.
     await page.locator('input[type="file"]').setInputFiles([fx("sample.mp4"), fx("sample.m4a")]);
     await expect(replace).toBeEnabled({ timeout: 30_000 });
-    await expect(page.getByText(/encoded to AAC at 192\skbps/)).toBeVisible();
+    await expect(
+      page.getByText(new RegExp(`encoded to ${codec === "aac" ? "AAC" : "Opus"} at 192\\skbps`)),
+    ).toBeVisible();
     await replace.click();
     const encoded = await download(page, { ext: /\.mp4$/, mime: /^video\/mp4/ });
-    expect(audioStream(encoded)?.codec_name).toBe("aac");
+    expect(audioStream(encoded)?.codec_name).toBe(codec);
     expect(Number(audioStream(encoded)?.duration)).toBeCloseTo(3, 1);
     // The encoder's priming is signalled exactly, and the AAC source decodes with pre-roll (before:
     // its first frame came out attenuated and the sound read 10.5 ms late).
@@ -533,7 +544,7 @@ test.describe("audio tools", () => {
     await replace.click();
     const looped = await download(page, { ext: /\.mp4$/, mime: /^video\/mp4/ });
     const a = audioStream(looped);
-    expect(a?.codec_name).toBe("aac");
+    expect(a?.codec_name).toBe(codec);
     // A 1 s clip fills the 3 s video instead of leaving 2 s of silence.
     expect(Number(a?.duration)).toBeGreaterThan(2.8);
     // And it is sound, not silence, near the end (the third pass).

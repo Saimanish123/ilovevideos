@@ -90,13 +90,13 @@ export const timeOverlayEngine: Engine<TimeOverlayOptions> = {
           },
         };
       },
-      ffmpegCommand: ({ outputName, kbps, copyAudio }) =>
+      ffmpegCommand: ({ outputName, kbps, copyAudio, soundCodec }) =>
         timeCommand(
           o,
           { name: input.file.name, durationSec: info.durationSec, fps: v.fps, video: v },
           outputName,
           kbps,
-          audio ?? (copyAudio ? "copy" : "aac"),
+          audio ?? (copyAudio ? "copy" : soundCodec),
         ),
       ctx,
     });

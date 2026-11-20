@@ -15,6 +15,7 @@
 import { z } from "zod";
 import { shellQuote } from "@/lib/format";
 import { withEvenCropOut } from "../crop/math";
+import { ffmpegSoundEncoder, type VideoSoundCodec } from "../sound-codec";
 import { anchors, markRect, type Rect, type Size } from "../watermark/options";
 
 export const timerFormats = ["m:ss", "h:mm:ss", "s.t"] as const;
@@ -259,7 +260,7 @@ export function timeCommand(
   input: { name: string; durationSec: number; fps: number; video: Size },
   outName: string,
   kbps: number,
-  sound: "copy" | "aac" | "none",
+  sound: "copy" | "none" | VideoSoundCodec,
 ): string {
   const r = timeRange(o, input.durationSec);
   const frame = frameSec(input.fps);
@@ -298,6 +299,9 @@ export function timeCommand(
     graph = `[0:v]drawtext=fontfile=Geist-Bold.ttf:text='${text}':fontsize=${px}:fontcolor=${ffColor(o.color)}${look}:x=${rect.x}+(${rect.width}-tw)/2:y=${rect.y}+(${rect.height}-th)/2${enable}[v]`;
   }
   const full = withEvenCropOut(input.video, graph);
-  const audio = sound === "none" ? " -an" : ` -map '0:a?' -c:a ${sound}`;
+  const audio =
+    sound === "none"
+      ? " -an"
+      : ` -map '0:a?' -c:a ${sound === "copy" ? "copy" : ffmpegSoundEncoder(sound)}`;
   return `ffmpeg -i ${shellQuote(input.name)} -filter_complex "${full}" -map "[v]" -c:v libx264 -b:v ${kbps}k -pix_fmt yuv420p${audio} ${shellQuote(outName)}`;
 }

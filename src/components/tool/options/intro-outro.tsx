@@ -24,6 +24,7 @@ import {
   timeline,
 } from "@/tools/engines/intro-outro/options";
 import { drawTitle } from "@/tools/engines/intro-outro/title";
+import { soundCodecName, soundEncodersNow, writtenSoundCodec } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
 import { between, z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
@@ -113,7 +114,7 @@ export const introOutroSpec: OptionsSpec<O> = {
     ].filter(Boolean);
     const join = o.transition === "crossfade" ? `${withUnit(o.fadeSec, "s")} crossfades` : "cuts";
     const first = parts.join(" · ");
-    return `${first.charAt(0).toUpperCase()}${first.slice(1)} · ${join} · ${formatDuration(tl.total)} · H.264 ${formatDimensions(size.width, size.height)}, ${fpsWords(info)} · AAC`;
+    return `${first.charAt(0).toUpperCase()}${first.slice(1)} · ${join} · ${formatDuration(tl.total)} · H.264 ${formatDimensions(size.width, size.height)}, ${fpsWords(info)} · ${soundCodecName(writtenSoundCodec("mp4", soundEncodersNow()))}`;
   },
   result: (o) => ({
     title: o.intro && o.outro ? "Intro and outro added" : o.intro ? "Intro added" : "Outro added",

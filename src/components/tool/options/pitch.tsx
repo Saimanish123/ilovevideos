@@ -9,6 +9,7 @@ import { type PitchOptions, shiftWords } from "@/tools/engines/pitch/options";
 import { MAX_SEMITONES, MIN_SEMITONES, pitchRatio } from "@/tools/engines/sound/dsp/pitch";
 import { soundOutputFacts } from "@/tools/engines/sound/summary";
 import { nameFor, soundTarget } from "@/tools/engines/sound/target";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import { MoreOptions } from "../regions/more-options";
 import { UnitField } from "../regions/percent-field";
 import { PLAY_SHORTCUT } from "../shortcuts";
@@ -171,7 +172,7 @@ export const pitchSpec: OptionsSpec<PitchOptions> = {
     [
       shiftWords(o),
       `frequencies × ${pitchRatio(o.semitones, o.cents).toFixed(3)}`,
-      ...soundOutputFacts(info, nameFor(info)),
+      ...soundOutputFacts(info, nameFor(info), soundEncodersNow()),
     ].join(" · "),
   result: () => ({ title: "Pitch changed", change: false }),
 };

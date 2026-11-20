@@ -14,8 +14,9 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Field } from "@/components/ui/field";
 import { Segmented } from "@/components/ui/segmented";
 import { formatDimensions, formatTimecode, withUnit } from "@/lib/format";
-import { audioCopied, needsFfmpeg, sourceName } from "@/tools/engines/crop/plan";
+import { audioCopied, encodedSoundWords, needsFfmpeg, sourceName } from "@/tools/engines/crop/plan";
 import { compositeContainer } from "@/tools/engines/overlay/composite";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import { drawBar, drawTimer } from "@/tools/engines/time-overlay/draw";
 import {
   barProgress,
@@ -54,7 +55,9 @@ const sourceOf = (info: MediaInfo) => ({
 
 function soundWords(info: MediaInfo) {
   if (!info.audio?.length) return "no sound";
-  return audioCopied(info, compositeContainer(sourceName(info))) ? "sound copied" : "sound in AAC";
+  return audioCopied(info, compositeContainer(sourceName(info)))
+    ? "sound copied"
+    : encodedSoundWords(compositeContainer(sourceName(info)), soundEncodersNow());
 }
 
 /** The page's sans, for the preview's digits (the worker uses the same Geist from /wasm/fonts). */

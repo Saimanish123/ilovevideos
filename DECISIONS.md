@@ -150,6 +150,7 @@ Append-only log of decisions that change architecture, licensing, privacy, SEO p
 | ADR-0158 | Page changes are view transitions: React's ViewTransition in the locale template plus the cross-document rule; the header holds, the old page dissolves, the new one plays its entrance | Accepted | 2026-11-19 |
 | ADR-0159 | Search animates only when opened by a pointer: out of the point pressed on desktop, a slide-up sheet on phones; ⌘K, "/" and typing open at once | Accepted | 2026-11-19 |
 | ADR-0160 | CI runs the quick checks on every change and a Playwright smoke test on pull requests; the full Playwright suite runs locally | Accepted | 2026-11-20 |
+| ADR-0161 | Without a WebCodecs AAC encoder, video engines write Opus in MP4 and MKV and 16-bit PCM in MOV, from one rule the line and the engine share | Accepted | 2026-11-20 |
 
 ---
 
@@ -2403,6 +2404,24 @@ The repository was pushed to GitHub on 2026-11-20 and `.github/workflows/ci.yml`
 
 ### Consequences
 CI stays green and quick, and catches what a clean checkout catches (missing files, lockfile drift, type and lint errors, advisories, budgets). Safari, phone and AAC behaviour are checked only by local runs, so a dependency upgrade merged without one can break them unseen until the next local run. Revisit with macOS runners if that happens.
+
+---
+
+## ADR-0161: Without a WebCodecs AAC encoder, video engines write Opus in MP4 and MKV and 16-bit PCM in MOV, from one rule the line and the engine share
+
+**Status:** Accepted · **Date:** 2026-11-20
+
+### Context
+GitHub's Linux runner showed that Chromium on Linux has no WebCodecs AAC encoder (`isConfigSupported` false for `mp4a.40.2`). Thirteen pages (crop, aspect ratio and the four resize presets, black bars, vertical to horizontal, watermark, border, reverse, fade, audio to video) failed after the user pressed the button, and the sound tools, add audio and replace audio promised "AAC at 192 kbps" while writing Opus. Alternatives: refuse before the start on such browsers (loses working pages), route every such job to ffmpeg.wasm (a 32 MB download for a sound track), or encode a codec the container holds.
+
+### Decision
+- One rule in `src/tools/engines/sound-codec.ts`: AAC wherever the browser encodes it; otherwise Opus in MP4 and MKV, 16-bit PCM in MOV (QuickTime does not play Opus; the sound tools' rule since ADR-0020), Opus in WebM. `writtenSoundCodec` is the only fallback.
+- Each thread (page or worker) probes once (stereo 48 kHz, 192 kbps). Pure helpers take the answer as a parameter; the page assumes AAC until it answers and `use-sound-encoders.ts` re-renders the line, before any file is read.
+- Sound the container can hold is joined by packet copy. Size estimates count 16-bit PCM at rate × channels × 16. Recorded ffmpeg commands name the encoder written.
+- Reproduced on macOS with `--disable-features=PlatformAudioEncoder`: the opt-in `chromium-no-aac` Playwright project (`E2E_NO_AAC=1`) and `tests/e2e/no-aac.spec.ts`.
+
+### Consequences
+Every page that makes an MP4, MKV or MOV makes one without AAC, and its line names the codec written. Text is unchanged where AAC exists, except lines that were already false (freeze-frame over an Opus-in-MP4 source). Add audio in MOV moves from Opus to PCM. Firefox has no measured data here (ADR-0144); the probe covers it either way.
 
 ---
 

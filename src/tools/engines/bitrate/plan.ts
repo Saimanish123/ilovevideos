@@ -13,6 +13,13 @@ import { videoBitrateForPreset } from "../compress/math";
 import { encodedSize } from "../crop/math";
 import { sourceName } from "../crop/plan";
 import type { ContainerId } from "../mediabunny/shared";
+import {
+  encodedSoundBps,
+  ffmpegSoundEncoder,
+  type SoundEncoders,
+  type VideoSoundCodec,
+  writtenSoundCodec,
+} from "../sound-codec";
 import type { MediaInfo } from "../types";
 import { soundPlan } from "../video-filter/plan";
 
@@ -94,17 +101,23 @@ export interface BitratePlan {
   sound: "copy" | "encode" | "none" | "dropped";
   /** Sound bitrate written (copied: the source's, when known). */
   audioBps: number;
-  /** "aac" or "opus" when encoded. */
-  audioCodec: "aac" | "opus";
+  /** The codec an encoded sound is written in (../video-filter/plan `soundCodec`). */
+  audioCodec: VideoSoundCodec;
   bytes: number;
 }
 
 const AUDIO_DEFAULT = 128_000;
 
-export function planBitrate(info: MediaInfo, fileName: string, o: BitrateOptions): BitratePlan {
+/** `can`: this browser's sound encoders (../sound-codec), which pick the codec of an encoded sound. */
+export function planBitrate(
+  info: MediaInfo,
+  fileName: string,
+  o: BitrateOptions,
+  can: SoundEncoders,
+): BitratePlan {
   const to = codecContainer(fileName, o.codec);
   const size = encodedSize(info.video ?? { width: 0, height: 0 }, o.codec);
-  const audioCodec = to === "webm" ? "opus" : "aac";
+  const audioCodec = writtenSoundCodec(to, can);
   const src = info.audio?.[0];
   let sound: BitratePlan["sound"];
   let audioBps = 0;
@@ -115,7 +128,12 @@ export function planBitrate(info: MediaInfo, fileName: string, o: BitrateOptions
     audioBps = src.bitrate ?? AUDIO_DEFAULT;
   } else {
     sound = "encode";
-    audioBps = o.audio === "copy" ? AUDIO_DEFAULT : Number(o.audio) * 1000;
+    // 16-bit PCM has no bitrate to choose: its size is the rate × channels × 16.
+    audioBps = encodedSoundBps(
+      audioCodec,
+      o.audio === "copy" ? AUDIO_DEFAULT : Number(o.audio) * 1000,
+      src,
+    );
   }
   const videoBps = o.videoKbps * 1000;
   // About 1% of container overhead (sample tables, headers).
@@ -123,8 +141,8 @@ export function planBitrate(info: MediaInfo, fileName: string, o: BitrateOptions
   return { codec: o.codec, to, size, videoBps, sound, audioBps, audioCodec, bytes };
 }
 
-export const planForPanel = (info: MediaInfo, o: BitrateOptions) =>
-  planBitrate(info, sourceName(info), o);
+export const planForPanel = (info: MediaInfo, o: BitrateOptions, can: SoundEncoders) =>
+  planBitrate(info, sourceName(info), o, can);
 
 /** "4,500 kb/s", "12.5 Mb/s". */
 export function rateWords(kbps: number): string {
@@ -160,7 +178,7 @@ export function bitrateCommand(
     plan.sound === "copy"
       ? "-c:a copy"
       : plan.sound === "encode"
-        ? `-c:a ${plan.audioCodec === "opus" ? "libopus" : "aac"} -b:a ${Math.round(plan.audioBps / 1000)}k`
+        ? `-c:a ${ffmpegSoundEncoder(plan.audioCodec)}${plan.audioCodec === "pcm-s16" ? "" : ` -b:a ${Math.round(plan.audioBps / 1000)}k`}`
         : "-an";
   const filter = vf ? ` -vf "${vf}"` : "";
   const faststart = plan.to === "mp4" || plan.to === "mov" ? " -movflags +faststart" : "";

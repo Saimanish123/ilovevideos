@@ -12,7 +12,7 @@ import { Segmented } from "@/components/ui/segmented";
 import { cn } from "@/lib/cn";
 import { formatBytes, formatDimensions, formatTimecode } from "@/lib/format";
 import { encodedSize } from "@/tools/engines/crop/math";
-import { audioCopied, needsFfmpeg, sourceName } from "@/tools/engines/crop/plan";
+import { audioCopied, encodedSoundWords, needsFfmpeg, sourceName } from "@/tools/engines/crop/plan";
 import { compositeContainer } from "@/tools/engines/overlay/composite";
 import {
   backgroundReady,
@@ -22,6 +22,7 @@ import {
   type PortraitMatteOptions,
   resultTitle,
 } from "@/tools/engines/portrait-matte/options";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
 import {
   BG_ACCEPT_IMAGE,
@@ -41,7 +42,9 @@ type O = PortraitMatteOptions & { matte?: MatteState };
 
 function soundWords(o: O, info: MediaInfo, fileName: string) {
   if (!info.audio?.length || o.sound === "none" || o.output === "mask") return "no sound";
-  return audioCopied(info, compositeContainer(fileName)) ? "sound copied" : "sound in AAC";
+  return audioCopied(info, compositeContainer(fileName))
+    ? "sound copied"
+    : encodedSoundWords(compositeContainer(fileName), soundEncodersNow());
 }
 
 const outSize = (info: MediaInfo) => {

@@ -3,8 +3,8 @@
  * moved onto a frame time (../sound/dsp/silence `snapToFrames`), so the picture and the sound lose
  * exactly the same stretches and never drift apart however many cuts there are. The picture is
  * decoded and re-encoded to H.264 (a cut inside a group of pictures cannot be copied); the sound is
- * read span by span with a 5 ms ramp at each join (../sound/reader) and encoded once to AAC. The
- * output is MP4. Runs in the engine worker. No network access.
+ * read span by span with a 5 ms ramp at each join (../sound/reader) and encoded once to AAC, or
+ * Opus where this browser has no AAC encoder (../sound-codec). The output is MP4. Runs in the engine worker. No network access.
  */
 import {
   AudioSample,
@@ -32,6 +32,7 @@ import { paced } from "../sound/pace";
 import { openSound, readSpans } from "../sound/reader";
 import { blobReleasing, pickEncoding } from "../sound/render";
 import { VIDEO_SOUND_KBPS } from "../sound/target";
+import { videoSoundCodecs } from "../sound-codec";
 import type { EngineContext } from "../types";
 
 export interface VideoCutResult {
@@ -42,6 +43,8 @@ export interface VideoCutResult {
   frames: number;
   /** H.264 profile written: High as mediabunny asks, or Baseline where High returns no frames. */
   profile: "high" | "baseline";
+  /** The sound's codec (../sound-codec order: AAC, else Opus). */
+  soundCodec: string;
 }
 
 /** H.264 levels by frame size and macroblock rate (ITU-T H.264 Table A-1): [MaxFS, MaxMBPS, level]. */
@@ -166,7 +169,7 @@ export async function cutVideo(
     });
     output.addVideoTrack(videoSource, { rotation: video.rotation });
     const enc = await pickEncoding(
-      ["aac", "opus"],
+      videoSoundCodecs("mp4"),
       src.sampleRate,
       Math.min(2, src.channels),
       VIDEO_SOUND_KBPS,
@@ -301,6 +304,7 @@ export async function cutVideo(
       seconds: after,
       frames,
       profile: fullCodecString ? "baseline" : "high",
+      soundCodec: enc.codec,
     };
   } catch (e) {
     if (!delivered) await store?.discard();

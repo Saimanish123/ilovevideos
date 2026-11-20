@@ -16,6 +16,7 @@ import {
   MAX_OFFSET,
   outputLength,
 } from "@/tools/engines/layout/options";
+import { soundCodecName, soundEncodersNow, writtenSoundCodec } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
 import { nativeOnly } from "./native-only";
 import { between, z } from "./remember-schema";
@@ -141,8 +142,8 @@ export const layoutSpec: OptionsSpec<LayoutOptions> = {
       !hasA && !hasB
         ? "no sound"
         : o.sound === "both" && hasA && hasB
-          ? "both sounds mixed under −1 dB, AAC"
-          : "AAC";
+          ? `both sounds mixed under −1 dB, ${soundCodecName(writtenSoundCodec("mp4", soundEncodersNow()))}`
+          : soundCodecName(writtenSoundCodec("mp4", soundEncodersNow()));
     return `${formatDimensions(e.frame.width, e.frame.height)} · ${formatDuration(e.sec)} · ≈ ${formatBytes(e.bytes)} · H.264, ${sound}`;
   },
   result: (o) => ({

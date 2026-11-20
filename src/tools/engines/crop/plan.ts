@@ -5,6 +5,7 @@
 import { containerFromFormatName } from "@/content/formats/containers";
 import { videoBitrateForPreset } from "../compress/math";
 import type { ContainerId } from "../mediabunny/shared";
+import { type SoundEncoders, soundCodecName, writtenSoundCodec } from "../sound-codec";
 import type { MediaInfo } from "../types";
 import { cropFilter, type PadColor, type PadLayout, type Rect, type Size } from "./math";
 
@@ -39,7 +40,14 @@ export function geometryContainer(fileName: string): ContainerId {
   return "mp4";
 }
 
-/** Whether the sound is copied bit for bit (true) or encoded to AAC (false) on the native path. */
+/**
+ * "sound in AAC": what the native path encodes a sound it does not copy to, by this browser's
+ * encoders (`can`, ../sound-codec): Opus, or 16-bit PCM in MOV, where there is no AAC encoder.
+ */
+export const encodedSoundWords = (to: ContainerId, can: SoundEncoders): string =>
+  `sound in ${soundCodecName(writtenSoundCodec(to, can))}`;
+
+/** Whether the sound is copied bit for bit (true) or encoded (false, `encodedSoundWords`) natively. */
 export function audioCopied(info: MediaInfo, to: ContainerId): boolean {
   const a = info.audio?.[0];
   if (!a) return true;

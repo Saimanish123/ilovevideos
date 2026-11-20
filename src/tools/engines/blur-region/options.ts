@@ -15,6 +15,7 @@
  */
 import { z } from "zod";
 import { shellQuote } from "@/lib/format";
+import { ffmpegSoundEncoder, type VideoSoundCodec } from "../sound-codec";
 
 /**
  * Most regions in one video (the inverted mode reads them all in one shader pass). 48 since Find
@@ -348,9 +349,13 @@ export function blurCommand(
   output: string,
   graph: string,
   kbps: number,
-  audio: "copy" | "aac" | "none",
+  audio: "copy" | "none" | VideoSoundCodec,
 ): string {
   const a =
-    audio === "none" ? "-an" : audio === "copy" ? "-map '0:a?' -c:a copy" : "-map '0:a?' -c:a aac";
+    audio === "none"
+      ? "-an"
+      : audio === "copy"
+        ? "-map '0:a?' -c:a copy"
+        : `-map '0:a?' -c:a ${ffmpegSoundEncoder(audio)}`;
   return `ffmpeg -i ${shellQuote(input)} -filter_complex "${graph}" -map "[v]" ${a} -c:v libx264 -b:v ${kbps}k -pix_fmt yuv420p ${shellQuote(output)}`;
 }

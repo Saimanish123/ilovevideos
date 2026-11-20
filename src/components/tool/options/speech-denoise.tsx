@@ -10,6 +10,7 @@ import { Spinner } from "@/components/ui/spinner";
 import { withUnit } from "@/lib/format";
 import { soundOutputFacts } from "@/tools/engines/sound/summary";
 import { nameFor, soundTarget } from "@/tools/engines/sound/target";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import {
   MAX_MAKEUP_DB,
   type SpeechDenoiseOptions,
@@ -145,7 +146,7 @@ export const speechDenoiseSpec: OptionsSpec<SpeechDenoiseOptions> = {
     [
       strengthWords(o.strength),
       o.keepLoudness ? "loudness kept" : "",
-      ...soundOutputFacts(info, nameFor(info)),
+      ...soundOutputFacts(info, nameFor(info), soundEncodersNow()),
     ]
       .filter(Boolean)
       .join(" · "),

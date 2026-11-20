@@ -17,6 +17,7 @@ import { canRunSound } from "../sound/job";
 import { buildChain } from "../sound/processor";
 import { renderSound } from "../sound/render";
 import { soundOutputName, soundTarget } from "../sound/target";
+import { soundCodecName } from "../sound-codec";
 import type { Engine } from "../types";
 import { cutFacts, detectWords, planCuts, RemoveSilenceOptions, silenceCommand } from "./options";
 import { cutVideo } from "./video";
@@ -79,7 +80,7 @@ export const removeSilenceEngine: Engine<RemoveSilenceOptions> = {
         blob: r.blob,
         filename: outputName,
         ffmpegCommand: silenceCommand(file.name, outputName, { ...plan, cuts: r.cuts }, true),
-        meta: `${n} ${n === 1 ? "pause" : "pauses"} cut · ${detectWords(plan)} · ${formatDuration(analysis.duration)} → ${formatDuration(r.seconds)} · re-encoded to H.264${r.profile === "baseline" ? " (Baseline profile)" : ""} and AAC, ${r.frames} frames`,
+        meta: `${n} ${n === 1 ? "pause" : "pauses"} cut · ${detectWords(plan)} · ${formatDuration(analysis.duration)} → ${formatDuration(r.seconds)} · re-encoded to H.264${r.profile === "baseline" ? " (Baseline profile)" : ""} and ${soundCodecName(r.soundCodec)}, ${r.frames} frames`,
       };
     }
 

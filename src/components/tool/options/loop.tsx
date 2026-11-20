@@ -17,6 +17,7 @@ import {
   plays,
   timesPresets,
 } from "@/tools/engines/loop/math";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
 import { pictureEstimate } from "@/tools/engines/video-filter/plan";
 import { type Choice, Choices } from "./choices";
@@ -37,7 +38,7 @@ function outputBytes(o: LoopOptions, info: MediaInfo): number {
   if (!o.boomerang) return loopBytes(info.sizeBytes, n);
   const v = info.video;
   const bounce = v
-    ? pictureEstimate({ ...info, audio: [] }, v, v.fps, onePlay(o, info)).bytes
+    ? pictureEstimate({ ...info, audio: [] }, v, soundEncodersNow(), v.fps, onePlay(o, info)).bytes
     : info.sizeBytes * 2;
   return bounce * n;
 }

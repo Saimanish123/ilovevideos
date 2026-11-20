@@ -10,6 +10,7 @@
  */
 import { z } from "zod";
 import { shellQuote } from "@/lib/format";
+import { ffmpegSoundEncoder, type VideoSoundCodec } from "../sound-codec";
 
 export const MAX_LAYERS = 8;
 /** The image types the page takes. SVG is drawn to a PNG on the page before it is used. */
@@ -218,7 +219,7 @@ export function overlayCommand(
   graph: string,
   output: string,
   kbps: number,
-  audio: "copy" | "aac" | "none",
+  audio: "copy" | "none" | VideoSoundCodec,
 ): string {
   const inputs = o.layers
     .map((l) =>
@@ -228,6 +229,10 @@ export function overlayCommand(
     )
     .join(" ");
   const a =
-    audio === "none" ? "-an" : audio === "copy" ? "-map '0:a?' -c:a copy" : "-map '0:a?' -c:a aac";
+    audio === "none"
+      ? "-an"
+      : audio === "copy"
+        ? "-map '0:a?' -c:a copy"
+        : `-map '0:a?' -c:a ${ffmpegSoundEncoder(audio)}`;
   return `ffmpeg -i ${shellQuote(input)} ${inputs} -filter_complex "${graph}" -map "[v]" ${a} -c:v libx264 -b:v ${kbps}k -pix_fmt yuv420p -shortest ${shellQuote(output)}`;
 }

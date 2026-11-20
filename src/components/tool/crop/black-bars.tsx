@@ -15,7 +15,13 @@ import {
 import { readBars } from "@/tools/engines/crop/bars-read";
 import { isFullFrame, type Rect, type Size } from "@/tools/engines/crop/math";
 import { type CropOptions, cropRect } from "@/tools/engines/crop/options";
-import { audioCopied, geometryContainer, sourceName } from "@/tools/engines/crop/plan";
+import {
+  audioCopied,
+  encodedSoundWords,
+  geometryContainer,
+  sourceName,
+} from "@/tools/engines/crop/plan";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
 import { nativeOnly } from "../options/native-only";
 import type { OptionsPanelProps, OptionsSpec } from "../options/types";
@@ -71,7 +77,9 @@ function barSizes(b: BarsResult["bars"]): string {
 
 function soundWords(info: MediaInfo) {
   if (!info.audio?.length) return "no sound";
-  return audioCopied(info, geometryContainer(sourceName(info))) ? "sound copied" : "sound in AAC";
+  return audioCopied(info, geometryContainer(sourceName(info)))
+    ? "sound copied"
+    : encodedSoundWords(geometryContainer(sourceName(info)), soundEncodersNow());
 }
 
 /** Hooks of the crop spec that differ on the black-bars page; the crop frame and scrubber stay. */
@@ -97,7 +105,7 @@ export const barsHooks: Pick<OptionsSpec<BarsValue>, "blocked" | "summary" | "re
     if (!v) return undefined;
     const r = cropRect(o, v);
     if (isFullFrame(r, v)) return undefined;
-    const est = geometryEstimate(info, r);
+    const est = geometryEstimate(info, r, soundEncodersNow());
     return `${formatDimensions(v.width, v.height)} → ${formatDimensions(r.width, r.height)} · H.264 · ${soundWords(info)} · about ${formatBytes(est.bytes)}`;
   },
   result: () => ({ title: "Black bars removed" }),

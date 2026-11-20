@@ -16,6 +16,7 @@ import {
   placement,
 } from "@/tools/engines/add-audio/math";
 import { codecName } from "@/tools/engines/convert-video/plan";
+import { soundCodecName, soundEncodersNow, writtenSoundCodec } from "@/tools/engines/sound-codec";
 import { between, z } from "./remember-schema";
 import { TimeInput } from "./trim";
 import type { OptionsSpec, StageInput } from "./types";
@@ -121,7 +122,13 @@ export const addAudioSpec: OptionsSpec<AddAudioOptions> = {
     if (f.copy)
       return `Lossless: the picture and the ${codecName(f.codec) ?? "audio"} track are both copied, not re-encoded. The new audio plays ${span}.`;
     const what = f.mixing ? "mixed with the video's own sound" : "as the only sound";
-    return `The picture is copied, not re-encoded. The new audio plays ${span}, ${what}, encoded to ${f.container === "webm" ? "Opus" : "AAC"} at ${withUnit(192, "kbps")}.`;
+    // The codec the engine picks with the same rule and this browser's encoders (engines/sound-codec).
+    const codec = writtenSoundCodec(f.container, soundEncodersNow());
+    const how =
+      codec === "pcm-s16"
+        ? `written as ${soundCodecName(codec)}`
+        : `encoded to ${soundCodecName(codec)} at ${withUnit(192, "kbps")}`;
+    return `The picture is copied, not re-encoded. The new audio plays ${span}, ${what}, ${how}.`;
   },
   // The row already names its role ("Video", "New audio"); the note adds only what changes the job.
   inputNotes: (_o, inputs) => {

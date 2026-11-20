@@ -21,7 +21,8 @@
  * `MediaInfo.startSec` taken off, ADR-0055), the time the page's timeline shows.
  *
  * The sound is copied when the container allows (the same rule as the geometry tools) and encoded
- * to AAC otherwise; `sound: "none"` writes the picture alone.
+ * to AAC otherwise, or to Opus (16-bit PCM in MOV) where this browser has no AAC encoder
+ * (../sound-codec); `sound: "none"` writes the picture alone.
  */
 import { ALL_FORMATS, BlobSource, Input, Quality, VideoSample } from "mediabunny";
 import { containerById } from "@/content/formats/containers";
@@ -38,6 +39,12 @@ import {
   convert,
   openInput,
 } from "../mediabunny/shared";
+import {
+  soundCodecName,
+  soundEncoders,
+  type VideoSoundCodec,
+  writtenSoundCodec,
+} from "../sound-codec";
 import type { EngineContext, EngineResult, MediaInfo } from "../types";
 import { framePlan, withPreparedFrames } from "../video-filter/frame-prep";
 import { sizeWords } from "../video-filter/plan";
@@ -94,7 +101,13 @@ export interface CompositeJob {
    * result title already says it ("2 images added"), so the meta does not repeat the title.
    */
   what?: string;
-  ffmpegCommand: (p: { outputName: string; kbps: number; copyAudio: boolean }) => string;
+  /** `soundCodec`: what a sound that is not copied is encoded to (../sound-codec). */
+  ffmpegCommand: (p: {
+    outputName: string;
+    kbps: number;
+    copyAudio: boolean;
+    soundCodec: VideoSoundCodec;
+  }) => string;
   ctx: EngineContext;
   /**
    * Keep the sound by packet copy (ADR-0036): the picture is encoded alone and the source's sound
@@ -146,8 +159,13 @@ export async function runComposite(job: CompositeJob): Promise<EngineResult> {
     throw new EngineError("internal", "Nothing to draw on the picture.", "Try again.");
   const layer = job.stage ? undefined : await job.layer?.(source);
   const stage = job.stage ? await job.stage({ source, output: { width, height } }) : undefined;
+  // Where this browser has no AAC encoder (../sound-codec), sound the container holds is always
+  // joined by packet copy: Conversion re-encodes AAC whose priming sits before zero, and could not
+  // here. Sound it does not hold is encoded to the fallback (Opus; 16-bit PCM in MOV).
+  const can = await soundEncoders();
+  const soundCodecOut = writtenSoundCodec(to, can);
   const joinSound =
-    !noSound && job.copySound === true && copyAudio && (info.audio?.length ?? 0) > 0;
+    !noSound && (job.copySound === true || !can.aac) && copyAudio && (info.audio?.length ?? 0) > 0;
   let canvas: OffscreenCanvas | undefined;
   let c2d: OffscreenCanvasRenderingContext2D | null = null;
   // Frames arrive tagged with the source's colour space (an untagged SD picture is read as BT.601,
@@ -196,11 +214,17 @@ export async function runComposite(job: CompositeJob): Promise<EngineResult> {
       outputName,
       video: prepared.video,
       decodeColorSpace: prepared.decodeColorSpace,
-      audio: joinSound || noSound ? { discard: true } : to === "mkv" ? undefined : { codec: "aac" },
+      audio:
+        joinSound || noSound
+          ? { discard: true }
+          : to === "mkv"
+            ? undefined
+            : { codec: soundCodecOut },
       ffmpegCommand: job.ffmpegCommand({
         outputName,
         kbps: Math.round(bitrate / 1000),
         copyAudio,
+        soundCodec: soundCodecOut,
       }),
       ctx: { ...ctx, onProgress: frameProgress(ctx, totalFrames(info.durationSec, v.fps)) },
     });
@@ -210,7 +234,11 @@ export async function runComposite(job: CompositeJob): Promise<EngineResult> {
     layer?.dispose?.();
   }
   const sound =
-    !info.audio?.length || noSound ? "no sound" : copyAudio ? "sound copied" : "sound in AAC";
+    !info.audio?.length || noSound
+      ? "no sound"
+      : copyAudio
+        ? "sound copied"
+        : `sound in ${soundCodecName(soundCodecOut)}`;
   const meta = [sizeWords(v, { width, height }), job.what, "H.264, re-encoded", sound]
     .filter(Boolean)
     .join(" · ");
@@ -224,7 +252,7 @@ export async function runComposite(job: CompositeJob): Promise<EngineResult> {
 }
 
 /** The encoded picture joined with the source's sound tracks, copied packet for packet. */
-async function withSourceSound(
+export async function withSourceSound(
   file: File,
   picture: Blob,
   to: ContainerId,

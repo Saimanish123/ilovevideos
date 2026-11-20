@@ -13,6 +13,7 @@ import {
 import { suggestThreshold } from "@/tools/engines/sound/dsp/silence";
 import { soundOutputFacts } from "@/tools/engines/sound/summary";
 import { nameFor, soundTarget } from "@/tools/engines/sound/target";
+import { soundCodecName, soundEncodersNow, writtenSoundCodec } from "@/tools/engines/sound-codec";
 import { UnitField } from "../regions/percent-field";
 import { PLAY_SHORTCUT } from "../shortcuts";
 import { SilenceTimeline } from "../sound/silence-timeline";
@@ -225,8 +226,11 @@ export const removeSilenceSpec: OptionsSpec<RemoveSilenceOptions> = {
             ? "by loudness, no speech model"
             : "by speech",
       ...(info.video
-        ? ["picture and sound re-encoded", "H.264, AAC in MP4"]
-        : soundOutputFacts(info, nameFor(info))),
+        ? [
+            "picture and sound re-encoded",
+            `H.264, ${soundCodecName(writtenSoundCodec("mp4", soundEncodersNow()))} in MP4`,
+          ]
+        : soundOutputFacts(info, nameFor(info), soundEncodersNow())),
     ].join(" · "),
   result: () => ({ title: "Pauses removed", change: false }),
 };

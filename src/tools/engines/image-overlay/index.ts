@@ -182,14 +182,14 @@ export const imageOverlayEngine: Engine<ImageOverlayOptions> = {
             dispose: free,
           };
         },
-        ffmpegCommand: ({ outputName, kbps, copyAudio }) =>
+        ffmpegCommand: ({ outputName, kbps, copyAudio, soundCodec }) =>
           overlayCommand(
             input.file.name,
             { layers },
             withEvenCropOut(v, overlayGraph({ layers }, src, info.durationSec)),
             outputName,
             kbps,
-            !info.audio?.length ? "none" : copyAudio ? "copy" : "aac",
+            !info.audio?.length ? "none" : copyAudio ? "copy" : soundCodec,
           ),
         ctx,
       });

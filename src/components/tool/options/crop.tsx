@@ -28,6 +28,7 @@ import {
 } from "@/tools/engines/crop/math";
 import { type CropOptions, cropRect } from "@/tools/engines/crop/options";
 import { needsFfmpeg } from "@/tools/engines/crop/plan";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
 import type { OptionsSpec } from "./types";
 import { unfixable } from "./types";
@@ -94,7 +95,7 @@ const plainCropSpec: OptionsSpec<CropOptions> = {
     if (!v) return undefined;
     const r = cropRect(o, v);
     if (isFullFrame(r, v)) return undefined;
-    const est = geometryEstimate(info, r);
+    const est = geometryEstimate(info, r, soundEncodersNow());
     return `Output ${formatDimensions(r.width, r.height)}, about ${formatBytes(est.bytes)}. A crop re-encodes the picture to H.264 at high quality. ${est.audio}${est.container}`;
   },
   previewResult: true,

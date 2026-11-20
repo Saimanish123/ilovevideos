@@ -26,12 +26,13 @@ import { type OutputStore, openOutputStore } from "../mediabunny/output-store";
 import { soundTrackEnd } from "../mediabunny/pre-roll";
 import { addAacLead, withEncoderDelaySignalled } from "../mediabunny/priming";
 import { type ContainerId, containers, openInput } from "../mediabunny/shared";
+import { soundEncoders, writtenSoundCodec } from "../sound-codec";
 import type { EngineContext } from "../types";
 import { framePlanForTrack, prepareFrame } from "../video-filter/frame-prep";
 import { encodedBytes, maxReversedSound, reverseWindows, windowFrames } from "./math";
 
 const EPS = 1e-6;
-/** Bitrate of the reversed sound (AAC, or Opus in WebM). */
+/** Bitrate of the reversed sound (AAC, or Opus in WebM; ../video-filter/plan `soundCodec`). */
 export const REVERSED_SOUND_BITRATE = 128_000;
 
 interface Timeline {
@@ -261,6 +262,8 @@ export async function encodeSequence(job: SequenceJob): Promise<SequenceResult> 
 
     const audioTrack =
       job.sound && job.order === "reverse" ? await input.getPrimaryAudioTrack() : null;
+    // AAC (Opus in WebM), or Opus (16-bit PCM in MOV) where there is no AAC encoder (../sound-codec).
+    const soundCodecOut = writtenSoundCodec(job.to, await soundEncoders());
     let soundSec = 0;
     let audio: AudioSampleSource | null = null;
     let sound: Awaited<ReturnType<typeof decodeSound>> | null = null;
@@ -277,7 +280,7 @@ export async function encodeSequence(job: SequenceJob): Promise<SequenceResult> 
       ctx.onProgress({ phase: "analyzing", ratio: 0, detail: "Decoding the sound" });
       sound = await decodeSound(audioTrack, await soundTrackEnd(audioTrack, job.file), ctx.signal);
       audio = new AudioSampleSource({
-        codec: job.to === "webm" ? "opus" : "aac",
+        codec: soundCodecOut,
         quality: new Quality({ bitrate: REVERSED_SOUND_BITRATE }),
       });
       output.addAudioTrack(audio);
@@ -349,7 +352,7 @@ export async function encodeSequence(job: SequenceJob): Promise<SequenceResult> 
     const pumpAudio = async () => {
       if (!audio || !sound) return;
       const { planes, rate, channels, length } = sound;
-      const codec = job.to === "webm" ? "opus" : "aac";
+      const codec = soundCodecOut;
       // Silence first for an AAC encoder that swallows its first frame (WebKit's); the sound follows.
       const lead = await addAacLead(audio, codec, rate, channels);
       const chunk = 4096;

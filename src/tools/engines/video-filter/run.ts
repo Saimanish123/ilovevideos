@@ -10,6 +10,7 @@ import { withEvenCrop } from "../crop/math";
 import { frameProgress, totalFrames } from "../crop/progress";
 import { EngineError } from "../errors";
 import { canEncodeAvc } from "../mediabunny/shared";
+import { soundCodecName } from "../sound-codec";
 import type { EngineContext, EngineResult, MediaInfo } from "../types";
 import type { ColorTransform } from "./color";
 import { encodePicture, type PictureJob } from "./picture";
@@ -103,7 +104,7 @@ export async function runFilter(run: FilterRun): Promise<EngineResult> {
       r.sound === "copy"
         ? "sound copied"
         : r.sound === "encode"
-          ? "sound encoded to AAC"
+          ? `sound encoded to ${soundCodecName(r.soundCodec)}`
           : r.sound === "dropped"
             ? "sound removed"
             : "no sound";

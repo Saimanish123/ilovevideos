@@ -17,6 +17,7 @@ import {
   stillKey,
 } from "@/tools/engines/audio-to-video/options";
 import { renderStill } from "@/tools/engines/audio-to-video/still";
+import { soundCodecName, soundEncodersNow, writtenSoundCodec } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
 import { z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
@@ -34,7 +35,7 @@ const facts = (file: File, info: MediaInfo) => ({
 const soundWords = (info: MediaInfo) =>
   copies(info)
     ? "The AAC sound is copied as it is, not re-encoded."
-    : `The sound is encoded once to AAC at ${withUnit(SOUND_KBPS, "kbps")}.`;
+    : `The sound is encoded once to ${soundCodecName(writtenSoundCodec("mp4", soundEncodersNow()))} at ${withUnit(SOUND_KBPS, "kbps")}.`;
 
 export const audioToVideoSpec: OptionsSpec<O> = {
   verb: "Make video",

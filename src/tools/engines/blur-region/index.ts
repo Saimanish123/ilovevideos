@@ -76,13 +76,13 @@ export const blurRegionEngine: Engine<BlurRegionOptions> = {
           dispose: () => renderer.dispose(),
         };
       },
-      ffmpegCommand: ({ outputName, kbps, copyAudio }) =>
+      ffmpegCommand: ({ outputName, kbps, copyAudio, soundCodec }) =>
         blurCommand(
           input.file.name,
           outputName,
           withEvenCropOut(v, blurGraph({ ...o, regions }, v, info.durationSec)),
           kbps,
-          !info.audio?.length ? "none" : copyAudio ? "copy" : "aac",
+          !info.audio?.length ? "none" : copyAudio ? "copy" : soundCodec,
         ),
       ctx,
     });

@@ -10,6 +10,7 @@ import { reencodeBitrate } from "../crop/plan";
 import { frameProgress, totalFrames } from "../crop/progress";
 import { EngineError } from "../errors";
 import { canEncodeAvc, pictureDecodes } from "../mediabunny/shared";
+import { soundCodecName } from "../sound-codec";
 import type { Engine } from "../types";
 import { encodePicture } from "../video-filter/picture";
 import { pictureContainer, pictureSize } from "../video-filter/plan";
@@ -94,7 +95,7 @@ export const zoomPanEngine: Engine<ZoomOptions> = {
       r.sound === "copy"
         ? "sound copied"
         : r.sound === "encode"
-          ? "sound encoded to AAC"
+          ? `sound encoded to ${soundCodecName(r.soundCodec)}`
           : "no sound";
     return {
       blob: r.blob,

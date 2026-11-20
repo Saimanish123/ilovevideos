@@ -17,10 +17,11 @@ import { Segmented } from "@/components/ui/segmented";
 import { Select } from "@/components/ui/select";
 import { cn } from "@/lib/cn";
 import { baseName, formatDuration } from "@/lib/format";
-import { audioCopied, sourceName } from "@/tools/engines/crop/plan";
+import { audioCopied, encodedSoundWords, sourceName } from "@/tools/engines/crop/plan";
 import { ffmpegDownloadSize } from "@/tools/engines/ffmpeg/size";
 import { compositeContainer } from "@/tools/engines/overlay/composite";
 import { CueRenderer, FONT_STACK } from "@/tools/engines/overlay/text";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import { formatNames } from "@/tools/engines/subtitles";
 import { decodeSubtitleBytes } from "@/tools/engines/subtitles/decode";
 import {
@@ -162,7 +163,11 @@ function burnSound(info: MediaInfo, p: Extract<SubtitlePlan, { mode: "burn" }>):
     planRoute(p) === "page"
       ? p.ext === "mkv" || a === "aac" || a === "mp3"
       : audioCopied(info, compositeContainer(nameFor(info)));
-  return copied ? "sound copied" : "sound in AAC";
+  if (copied) return "sound copied";
+  // ffmpeg.wasm writes AAC; the native path follows this browser's encoders.
+  return planRoute(p) === "page"
+    ? "sound in AAC"
+    : encodedSoundWords(compositeContainer(nameFor(info)), soundEncodersNow());
 }
 
 /** Reads a subtitle file into the stored shape, with the language its name or header states. */

@@ -17,6 +17,7 @@ import {
 import { containerFromFormatName } from "@/content/formats/containers";
 import { baseName } from "@/lib/format";
 import type { ContainerId } from "../mediabunny/shared";
+import { videoSoundCodecs } from "../sound-codec";
 import type { MediaInfo } from "../types";
 
 /** Codecs the worker can write itself (WebCodecs, or mediabunny's own PCM). */
@@ -75,8 +76,8 @@ export function soundTarget(info: MediaInfo, fileName: string): SoundTarget {
         : info.video.codec === "vp8" || info.video.codec === "vp9"
           ? "mkv"
           : "mp4";
-    const codecs: NativeSoundCodec[] =
-      container === "webm" ? ["opus"] : container === "mov" ? ["aac", "pcm-s16"] : ["aac", "opus"];
+    // The order every video engine uses: AAC, else Opus (16-bit PCM in MOV); Opus in WebM.
+    const codecs: NativeSoundCodec[] = videoSoundCodecs(container);
     return {
       kind: "video",
       container,

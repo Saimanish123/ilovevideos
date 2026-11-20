@@ -59,7 +59,7 @@ export const textOverlayEngine: Engine<TextOverlayOptions> = {
         suffix: "text",
         copySound: true,
         what: `text ${placeName(o)}`,
-        ffmpegCommand: ({ outputName, kbps, copyAudio }) =>
+        ffmpegCommand: ({ outputName, kbps, copyAudio, soundCodec }) =>
           textCommand(
             input.file.name,
             outputName,
@@ -69,6 +69,7 @@ export const textOverlayEngine: Engine<TextOverlayOptions> = {
             kbps,
             copyAudio,
             v,
+            soundCodec,
           ),
         ctx,
       });

@@ -28,8 +28,14 @@ import {
   outputLength,
   planHolds,
 } from "@/tools/engines/freeze-frame/options";
+import { soundCodecName, soundEncodersNow, writtenSoundCodec } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
-import { pictureEstimate } from "@/tools/engines/video-filter/plan";
+import {
+  pictureContainer,
+  pictureEstimate,
+  soundPlan,
+  sourceName,
+} from "@/tools/engines/video-filter/plan";
 import { PLAY_SHORTCUT } from "../shortcuts";
 import { nativeOnly } from "./native-only";
 import { pictureSize } from "./picture-size";
@@ -142,7 +148,7 @@ export const freezeFrameSpec: OptionsSpec<FreezeOptions> = {
     const planned = plan(o, info);
     const out = outputLength(planned, info.durationSec, o.mode);
     const size = pictureSize(info);
-    const est = pictureEstimate(info, size, v.fps, out);
+    const est = pictureEstimate(info, size, soundEncodersNow(), v.fps, out);
     const length =
       o.mode === "pause"
         ? `${formatDuration(info.durationSec)} → ${formatDuration(out)}`
@@ -154,8 +160,12 @@ export const freezeFrameSpec: OptionsSpec<FreezeOptions> = {
     const sound = !info.audio?.length
       ? "no sound"
       : o.mode === "pause"
-        ? `silence in the ${o.holds.length === 1 ? "hold" : "holds"}, AAC`
-        : "sound copied";
+        ? `silence in the ${o.holds.length === 1 ? "hold" : "holds"}, ${soundCodecName(writtenSoundCodec("mp4", soundEncodersNow()))}`
+        : // Over the picture the sound plays on: copied where the container holds it, else encoded
+          // (../video-filter/picture), in the codec the engine writes.
+          soundPlan(info, pictureContainer(sourceName(info))) === "copy"
+          ? "sound copied"
+          : `sound in ${soundCodecName(writtenSoundCodec(pictureContainer(sourceName(info)), soundEncodersNow()))}`;
     return `${length} · ${dims} · ≈ ${formatBytes(est.bytes)} · H.264, ${sound}`;
   },
   result: (o, info) => {

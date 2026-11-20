@@ -68,7 +68,7 @@ export const watermarkEngine: Engine<WatermarkOptions> = {
         },
         suffix: "watermarked",
         what: `${options.kind === "text" ? "text" : "logo"} ${placeName(options)}`,
-        ffmpegCommand: ({ outputName, kbps, copyAudio }) =>
+        ffmpegCommand: ({ outputName, kbps, copyAudio, soundCodec }) =>
           watermarkCommand(
             input.file.name,
             options.kind === "text" ? "watermark.png" : (options.image?.name ?? "logo.png"),
@@ -76,6 +76,7 @@ export const watermarkEngine: Engine<WatermarkOptions> = {
             withEvenCropOut(v, overlayFilter(markRect(options, v), options.opacity, range)),
             kbps,
             copyAudio,
+            soundCodec,
           ),
         ctx,
       });

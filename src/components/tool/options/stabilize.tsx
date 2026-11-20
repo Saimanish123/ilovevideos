@@ -5,7 +5,8 @@ import { Field } from "@/components/ui/field";
 import { Segmented } from "@/components/ui/segmented";
 import { formatBytes, formatDimensions } from "@/lib/format";
 import { encodedSize } from "@/tools/engines/crop/math";
-import { audioCopied, sourceName } from "@/tools/engines/crop/plan";
+import { audioCopied, encodedSoundWords, sourceName } from "@/tools/engines/crop/plan";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import {
   type StabilizeOptions,
   type Strength,
@@ -29,7 +30,9 @@ const sizeOf = (info: MediaInfo) => ({
 
 function soundWords(info: MediaInfo) {
   if (!info.audio?.length) return "no sound";
-  return audioCopied(info, pictureContainer(sourceName(info))) ? "sound copied" : "sound in AAC";
+  return audioCopied(info, pictureContainer(sourceName(info)))
+    ? "sound copied"
+    : encodedSoundWords(pictureContainer(sourceName(info)), soundEncodersNow());
 }
 
 const capital = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
@@ -61,7 +64,7 @@ export const stabilizeSpec: OptionsSpec<O> = {
   summary: (o, info) => {
     if (!info.video) return undefined;
     const e = encodedSize(sizeOf(info));
-    const est = pictureEstimate(info, sizeOf(info));
+    const est = pictureEstimate(info, sizeOf(info), soundEncodersNow());
     return `${capital(stabilizeWords(o))} · H.264 ${formatDimensions(e.width, e.height)} · ${soundWords(info)} · about ${formatBytes(est.bytes)}`;
   },
   result: () => ({ title: "Stabilized" }),

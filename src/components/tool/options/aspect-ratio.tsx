@@ -29,6 +29,7 @@ import {
 } from "@/tools/engines/aspect-ratio/options";
 import { anchorOf, hasRatio, keptShare, largestRect } from "@/tools/engines/crop/math";
 import { needsFfmpeg, outputSize } from "@/tools/engines/crop/plan";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
 import { isRatio } from "./idle/aspect-ratio";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
@@ -310,7 +311,12 @@ export const aspectRatioSpec: OptionsSpec<AspectValue> = {
     const plan = aspectPlan(o, v);
     const size = outputSize(plan);
     const kept = plan.end !== undefined ? Math.min(plan.end, info.durationSec) : info.durationSec;
-    const est = geometryEstimate({ ...info, durationSec: kept }, size);
+    const est = geometryEstimate(
+      { ...info, durationSec: kept },
+      size,
+      soundEncodersNow(),
+      kept < info.durationSec,
+    );
     const trim =
       plan.end !== undefined && info.durationSec > plan.end
         ? ` Only the first ${formatDuration(plan.end)} of ${formatDuration(info.durationSec)} is kept.`

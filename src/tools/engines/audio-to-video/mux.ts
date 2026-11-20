@@ -4,7 +4,7 @@
  * OffscreenCanvas and encoded with WebCodecs H.264 through a mediabunny CanvasSource. The sound is
  * copied packet for packet when it is AAC and needs no cut or fade (the AAC priming is kept and an
  * edit list tells players to skip it, as the packet copy does), and otherwise decoded and encoded
- * once to AAC, from the window the audio tools use (MP3 gapless, pre-roll; ../mediabunny/audio-window)
+ * once to AAC (Opus where this browser has no AAC encoder, ../sound-codec), from the window the audio tools use (MP3 gapless, pre-roll; ../mediabunny/audio-window)
  * with the encoder's priming signalled the same way. Both tracks are fed together so the muxer can
  * interleave them. Runs in the engine worker; no network.
  */
@@ -26,6 +26,7 @@ import { addOpusTail } from "../mediabunny/opus-delay";
 import { editOutputSound, openOutputStore } from "../mediabunny/output-store";
 import { addAacLead, withEncoderDelaySignalled } from "../mediabunny/priming";
 import { openInput } from "../mediabunny/shared";
+import { soundEncoders, writtenSoundCodec } from "../sound-codec";
 import type { EngineContext } from "../types";
 import { SOUND_KBPS } from "./options";
 
@@ -66,6 +67,8 @@ export interface MuxResult {
   soundCopied: boolean;
   /** Seconds of sound written. */
   soundSec: number;
+  /** The sound's codec in the file (copied AAC, or the encoded one). */
+  soundCodec: string;
 }
 
 /** Whether a sound file's primary track is AAC, so it can be copied into the MP4 as it is. */
@@ -125,6 +128,8 @@ export async function writeVideo(
     });
 
   let soundCopied = false;
+  // AAC, or Opus where this browser has no AAC encoder (../sound-codec); MP4 holds both.
+  const encodedCodec = writtenSoundCodec("mp4", await soundEncoders());
   let soundSec = picture.durationSec;
   let audioPump: (() => Promise<void>) | undefined;
   let copyLead = 0;
@@ -178,7 +183,7 @@ export async function writeVideo(
       const win = await reencodeWindow(sound.file, cut ? { range: { start: 0, end: endSec } } : {});
       soundSec = win.soundSec ?? endSec;
       const source = new AudioSampleSource({
-        codec: "aac",
+        codec: encodedCodec,
         quality: new Quality({ bitrate: SOUND_KBPS * 1000 }),
       });
       output.addAudioTrack(source);
@@ -203,7 +208,7 @@ export async function writeVideo(
           s = asF32Planar(s);
           rate = s.sampleRate;
           channels = s.numberOfChannels;
-          lead ??= await addAacLead(source, "aac", rate, channels);
+          lead ??= await addAacLead(source, encodedCodec, rate, channels);
           end = s.timestamp + s.duration;
           s.setTimestamp(s.timestamp + lead);
           await source.add(s);
@@ -211,7 +216,7 @@ export async function writeVideo(
           s.close();
           report();
         }
-        if (lead !== undefined) await addOpusTail(source, "aac", rate, channels, lead + end);
+        if (lead !== undefined) await addOpusTail(source, encodedCodec, rate, channels, lead + end);
       };
     }
   }
@@ -253,7 +258,12 @@ export async function writeVideo(
   } else if (sound) {
     parts = (await withEncoderDelaySignalled(output, data, "mp4", soundSec, 0, true)) ?? parts;
   }
-  return { blob: new Blob(parts, { type: "video/mp4" }), soundCopied, soundSec };
+  return {
+    blob: new Blob(parts, { type: "video/mp4" }),
+    soundCopied,
+    soundSec,
+    soundCodec: soundCopied ? "aac" : encodedCodec,
+  };
 }
 
 /** The sample as f32-planar (itself when it already is). */

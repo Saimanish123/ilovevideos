@@ -16,9 +16,11 @@ import {
   outputFrames,
   presetsBelow,
 } from "@/tools/engines/framerate/math";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
 import {
   containerNote,
+  lineSoundCodec,
   needsFfmpeg,
   pictureContainer,
   pictureEstimate,
@@ -68,10 +70,10 @@ export const framerateSpec: OptionsSpec<FramerateOptions> = {
   summary: (o, info) => {
     const v = info.video;
     if (!v || !lowersRate(v.fps, o.fps)) return undefined;
-    const est = pictureEstimate(info, v, o.fps);
+    const est = pictureEstimate(info, v, soundEncodersNow(), o.fps);
     const to = pictureContainer(sourceName(info));
     const out = pictureSize(info);
-    return `Output ${formatDimensions(out.width, out.height)} at ${formatFps(o.fps)}, ${est.label}.${sizeNote(info)} The picture is re-encoded to H.264; frames are dropped, never blended. ${soundLine(needsFfmpeg(info, sourceName(info)) ? "encode" : soundPlan(info, to))}${containerNote(info)}`;
+    return `Output ${formatDimensions(out.width, out.height)} at ${formatFps(o.fps)}, ${est.label}.${sizeNote(info)} The picture is re-encoded to H.264; frames are dropped, never blended. ${soundLine(needsFfmpeg(info, sourceName(info)) ? "encode" : soundPlan(info, to), false, lineSoundCodec(info, to, soundEncodersNow()))}${containerNote(info)}`;
   },
   result: (o, info) => {
     const v = info.video;

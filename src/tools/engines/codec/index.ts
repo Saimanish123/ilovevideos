@@ -14,6 +14,7 @@ import { evenCropFilter } from "../crop/math";
 import { frameProgress, totalFrames } from "../crop/progress";
 import { EngineError } from "../errors";
 import { pictureDecodes } from "../mediabunny/shared";
+import { ffmpegSoundEncoder, soundCodecName } from "../sound-codec";
 import type { Engine } from "../types";
 import { encodePicture } from "../video-filter/picture";
 import { sizeWords } from "../video-filter/plan";
@@ -78,9 +79,7 @@ export const codecEngine: Engine<CodecOptions> = {
       r.sound === "copy"
         ? "-c:a copy"
         : r.sound === "encode"
-          ? plan.to === "webm"
-            ? "-c:a libopus -b:a 128k"
-            : "-c:a aac -b:a 128k"
+          ? `-c:a ${ffmpegSoundEncoder(r.soundCodec)}${r.soundCodec === "pcm-s16" ? "" : " -b:a 128k"}`
           : "-an";
     const kbps = Math.round(plan.bitrate / 1000);
     const cut = evenCropFilter(v, options.codec);
@@ -89,7 +88,7 @@ export const codecEngine: Engine<CodecOptions> = {
       r.sound === "copy"
         ? "sound copied"
         : r.sound === "encode"
-          ? `sound encoded to ${plan.to === "webm" ? "Opus" : "AAC"}`
+          ? `sound encoded to ${soundCodecName(r.soundCodec)}`
           : "no sound";
     return {
       ...r,

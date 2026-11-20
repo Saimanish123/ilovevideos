@@ -33,8 +33,9 @@ import {
   withRect,
 } from "@/tools/engines/blur-region/options";
 import { encodedSize } from "@/tools/engines/crop/math";
-import { audioCopied, needsFfmpeg, sourceName } from "@/tools/engines/crop/plan";
+import { audioCopied, encodedSoundWords, needsFfmpeg, sourceName } from "@/tools/engines/crop/plan";
 import { compositeContainer } from "@/tools/engines/overlay/composite";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
 import {
   type FacesValue,
@@ -68,7 +69,9 @@ const strengthWord = (s: number) =>
 
 function soundWords(info: MediaInfo, fileName: string) {
   if (!info.audio?.length) return "no sound";
-  return audioCopied(info, compositeContainer(fileName)) ? "sound copied" : "sound in AAC";
+  return audioCopied(info, compositeContainer(fileName))
+    ? "sound copied"
+    : encodedSoundWords(compositeContainer(fileName), soundEncodersNow());
 }
 
 const regionCount = (n: number) => `${n} ${n === 1 ? "region" : "regions"}`;

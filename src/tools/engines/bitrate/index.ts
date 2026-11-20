@@ -10,6 +10,7 @@ import { withEvenCrop } from "../crop/math";
 import { frameProgress, totalFrames } from "../crop/progress";
 import { EngineError } from "../errors";
 import { canEncodeAvc, pictureDecodes } from "../mediabunny/shared";
+import { soundCodecName, soundEncoders } from "../sound-codec";
 import type { Engine } from "../types";
 import { encodePicture } from "../video-filter/picture";
 import { sizeWords } from "../video-filter/plan";
@@ -48,7 +49,7 @@ export const bitrateEngine: Engine<BitrateOptions> = {
   async supports(backend, input, o) {
     if (backend !== "webcodecs" || !input.info?.video) return false;
     if (!pictureDecodes(input.info)) return false;
-    const plan = planBitrate(input.info, input.file.name, o);
+    const plan = planBitrate(input.info, input.file.name, o, await soundEncoders());
     return canWrite(o, plan.size);
   },
   async run(_backend, inputs, o, ctx) {
@@ -61,7 +62,7 @@ export const bitrateEngine: Engine<BitrateOptions> = {
         "This file has no video track to re-encode.",
         "Choose a video file.",
       );
-    const plan = planBitrate(info, input.file.name, o);
+    const plan = planBitrate(info, input.file.name, o, await soundEncoders());
     if (!(await canWrite(o, plan.size)))
       throw new EngineError(
         "unsupported-output",
@@ -88,7 +89,7 @@ export const bitrateEngine: Engine<BitrateOptions> = {
       r.sound === "copy"
         ? "sound copied"
         : r.sound === "encode"
-          ? `sound ${plan.audioCodec === "opus" ? "Opus" : "AAC"} ${Math.round(plan.audioBps / 1000)} kb/s`
+          ? `sound ${soundCodecName(r.soundCodec)}${r.soundCodec === "pcm-s16" ? "" : ` ${Math.round(plan.audioBps / 1000)} kb/s`}`
           : r.sound === "dropped"
             ? "sound removed"
             : "no sound";

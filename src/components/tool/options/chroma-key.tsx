@@ -22,8 +22,9 @@ import {
   screenName,
 } from "@/tools/engines/chroma-key/options";
 import { encodedSize } from "@/tools/engines/crop/math";
-import { audioCopied, needsFfmpeg, sourceName } from "@/tools/engines/crop/plan";
+import { audioCopied, encodedSoundWords, needsFfmpeg, sourceName } from "@/tools/engines/crop/plan";
 import { compositeContainer } from "@/tools/engines/overlay/composite";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
 import { unfixable } from "./types";
@@ -32,7 +33,9 @@ type O = ChromaKeyOptions;
 
 function soundWords(o: O, info: MediaInfo, fileName: string) {
   if (!info.audio?.length || o.sound === "none") return "no sound";
-  return audioCopied(info, compositeContainer(fileName)) ? "sound copied" : "sound in AAC";
+  return audioCopied(info, compositeContainer(fileName))
+    ? "sound copied"
+    : encodedSoundWords(compositeContainer(fileName), soundEncodersNow());
 }
 
 function backgroundWords(o: O) {

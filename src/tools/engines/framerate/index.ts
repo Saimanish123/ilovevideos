@@ -11,6 +11,7 @@ import { type Size, withEvenCrop } from "../crop/math";
 import { frameProgress } from "../crop/progress";
 import { EngineError } from "../errors";
 import { canEncodeAvc, pictureDecodes } from "../mediabunny/shared";
+import { ffmpegSoundEncoder, soundCodecName } from "../sound-codec";
 import type { Engine } from "../types";
 import { encodePicture } from "../video-filter/picture";
 import { pictureBitrate, pictureContainer, pictureSize, sizeWords } from "../video-filter/plan";
@@ -82,7 +83,11 @@ export const framerateEngine: Engine<FramerateOptions> = {
       ctx: { ...ctx, onProgress: frameProgress(ctx, frames) },
     });
     const audio =
-      r.sound === "copy" ? "-c:a copy" : r.sound === "encode" ? "-c:a aac -b:a 128k" : "-an";
+      r.sound === "copy"
+        ? "-c:a copy"
+        : r.sound === "encode"
+          ? `-c:a ${ffmpegSoundEncoder(r.soundCodec)}${r.soundCodec === "pcm-s16" ? "" : " -b:a 128k"}`
+          : "-an";
     return {
       ...r,
       ffmpegCommand: framerateCommand(
@@ -93,7 +98,7 @@ export const framerateEngine: Engine<FramerateOptions> = {
         audio,
         v,
       ),
-      meta: `${formatFps(v.fps)} → ${formatFps(options.fps)} · ${sizeWords(v, size)} · re-encoded · ${r.sound === "copy" ? "sound copied" : r.sound === "encode" ? "sound encoded to AAC" : "no sound"}`,
+      meta: `${formatFps(v.fps)} → ${formatFps(options.fps)} · ${sizeWords(v, size)} · re-encoded · ${r.sound === "copy" ? "sound copied" : r.sound === "encode" ? `sound encoded to ${soundCodecName(r.soundCodec)}` : "no sound"}`,
     };
   },
 };

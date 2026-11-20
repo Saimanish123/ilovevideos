@@ -30,6 +30,7 @@ import {
   toFailure,
 } from "./stage-run";
 import { useKeptResult } from "./use-kept-result";
+import { useSoundEncoders } from "./use-sound-encoders";
 
 // The non-idle UI is one chunk, loaded with the engine's spec when the first file is chosen and
 // rendered from the loaded module (no lazy wrappers), so nothing suspends once a file is read.
@@ -270,6 +271,10 @@ export function ToolStage({ tool, idle }: { tool: StageTool; idle?: IdleSpec }) 
     );
     return () => clearTimeout(t);
   }, [readyOptions, spec, parts, memory, tool.slug, preset]);
+
+  // Lines that name the sound codec read the probed encoders (engines/sound-codec); this re-renders
+  // the stage, and the spec's `summary` with it, when the probe answers.
+  useSoundEncoders();
 
   // Ready: whether this browser can do the job as set, asked before the user starts (ADR-0147).
   const browserBlock = useBrowserCheck(

@@ -2,12 +2,15 @@
  * The WebCodecs path shared by the crop and aspect-ratio engines. Both are one re-encode of the
  * picture: a crop keeps a rectangle of the source (mediabunny's own `crop`, applied after any
  * rotation flag), a pad draws the scaled source onto a larger coloured frame (a canvas per frame).
- * The sound is copied when the output container can hold it, otherwise encoded to AAC.
+ * The sound is copied when the output container can hold it, otherwise encoded to AAC (Opus, or
+ * 16-bit PCM in MOV, where this browser has no AAC encoder; ../sound-codec).
  */
 import { Quality, VideoSample } from "mediabunny";
 import { baseName, formatDimensions } from "@/lib/format";
 import { EngineError } from "../errors";
 import { canEncodeAvc, convert } from "../mediabunny/shared";
+import { withSourceSound } from "../overlay/composite";
+import { soundEncoders, writtenSoundCodec } from "../sound-codec";
 import type { EngineContext, EngineResult, MediaInfo } from "../types";
 import { framePlan, oddSource, prepareFrame, withPreparedFrames } from "../video-filter/frame-prep";
 import {
@@ -122,16 +125,32 @@ export async function runGeometry(
   const filter =
     plan.kind === "crop" ? cropPlanFilter(plan) : padFilter(plan.layout, src, plan.color);
   const end = plan.end !== undefined && plan.end < info.durationSec ? plan.end : undefined;
+  const trim = end !== undefined ? { start: 0, end } : undefined;
+  // Where this browser has no AAC encoder (../sound-codec), sound the container holds is joined by
+  // packet copy when the whole clip is kept (Conversion re-encodes AAC whose priming sits before
+  // zero, and could not here); other sound, or a cut clip's, is encoded to Opus (16-bit PCM in MOV).
+  const can = await soundEncoders();
+  const joinSound = !can.aac && copyAudio && (info.audio?.length ?? 0) > 0 && !trim;
+  // Without AAC a cut clip's sound is always encoded, in MKV too, so the ready line (`geometryEstimate`)
+  // can say what is written; Conversion would otherwise copy or encode by the source's timestamps.
+  const audio = joinSound
+    ? { discard: true as const }
+    : !can.aac
+      ? { codec: writtenSoundCodec(to, can), forceTranscode: true }
+      : to === "mkv"
+        ? undefined
+        : { codec: writtenSoundCodec(to, can) };
   const ffmpegCommand = geometryCommand(
     file.name,
     outputName,
     filter,
     Math.round(bitrate / 1000),
-    copyAudio,
+    copyAudio && (can.aac || !trim),
     end,
+    writtenSoundCodec(to, can),
   );
-  const trim = end !== undefined ? { start: 0, end } : undefined;
-  const audio = to === "mkv" ? undefined : { codec: "aac" as const };
+  const withSound = async (r: EngineResult): Promise<EngineResult> =>
+    joinSound ? { ...r, ...(await withSourceSound(file, r.blob, to, ctx)) } : r;
   const quality = new Quality({ bitrate, bitrateMode: "variable" });
   const what =
     labels?.what ??
@@ -184,7 +203,7 @@ export async function runGeometry(
       ffmpegCommand,
       ctx: job,
     });
-    return { ...result, meta };
+    return { ...(await withSound(result)), meta };
   }
 
   const { layout, color } = plan;
@@ -243,5 +262,5 @@ export async function runGeometry(
   } finally {
     prepared.dispose();
   }
-  return { ...result, meta };
+  return { ...(await withSound(result)), meta };
 }

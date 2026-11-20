@@ -25,7 +25,9 @@ import {
 } from "@/tools/engines/bitrate/plan";
 import { type CodecTarget, codecTargets } from "@/tools/engines/codec/plan";
 import { encodedSize } from "@/tools/engines/crop/math";
+import { soundCodecName, soundEncodersNow, writtenSoundCodec } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
+import { useSoundEncoders } from "../use-sound-encoders";
 import { nativeOnly } from "./native-only";
 import { z } from "./remember-schema";
 import type { OptionsPanelProps, OptionsSpec } from "./types";
@@ -97,12 +99,12 @@ export const bitrateSpec: OptionsSpec<O> = {
   summary: (o, info) => {
     const v = info.video;
     if (!v || !o.avail) return undefined;
-    const plan = planForPanel(info, o);
+    const plan = planForPanel(info, o, soundEncodersNow());
     const sound =
       plan.sound === "copy"
         ? "sound copied"
         : plan.sound === "encode"
-          ? `sound ${plan.audioCodec === "opus" ? "Opus" : "AAC"} ${Math.round(plan.audioBps / 1000)} kb/s`
+          ? `sound ${soundCodecName(plan.audioCodec)}${plan.audioCodec === "pcm-s16" ? "" : ` ${Math.round(plan.audioBps / 1000)} kb/s`}`
           : plan.sound === "dropped"
             ? "sound removed"
             : "no sound";
@@ -118,6 +120,7 @@ function BitratePanel({ value, onChange, info, disabled }: OptionsPanelProps<O>)
   const soundId = useId();
   const modeId = useId();
   const codecId = useId();
+  const encoders = useSoundEncoders();
   const max = sliderMaxKbps(info);
   const src = sourceKbps(info);
   const own = preferredCodec(info);
@@ -141,19 +144,29 @@ function BitratePanel({ value, onChange, info, disabled }: OptionsPanelProps<O>)
     };
   }, [info]);
   if (!info.video) return null;
-  const plan = planForPanel(info, value);
+  const plan = planForPanel(info, value, encoders);
   const above =
     src !== undefined && value.videoKbps > src * 1.05 && value.codec === info.video.codec;
   const audioSrc = info.audio?.[0];
-  const audioOptions = audioChoices.filter((a) => audioSrc || a === "none");
+  // 16-bit PCM (MOV where this browser has no AAC encoder) has no bitrate to choose: the rates fold
+  // into one "16-bit PCM" choice, in the same list, so nothing moves.
+  const pcm = writtenSoundCodec(plan.to, encoders) === "pcm-s16";
+  const pcmChoice: AudioChoice =
+    value.audio === "copy" || value.audio === "none" ? "128" : value.audio;
+  const audioOptions = audioChoices.filter(
+    (a) => (audioSrc || a === "none") && (!pcm || a === "copy" || a === "none" || a === pcmChoice),
+  );
+  const pcmRate = `about ${rateWords(plan.audioBps / 1000)}`;
   const copyNote =
-    value.audio === "copy" && plan.sound === "encode"
-      ? `The source's ${audioSrc?.codec.toUpperCase()} sound cannot go in this container as it is: it is encoded to ${plan.audioCodec === "opus" ? "Opus" : "AAC"} at 128 kb/s.`
-      : value.audio === "copy"
-        ? "The sound packets are copied; nothing about the sound changes."
-        : value.audio === "none"
-          ? "The file has no sound."
-          : "Encoded once; 128 kb/s suits speech and most music.";
+    pcm && plan.sound === "encode"
+      ? `${value.audio === "copy" ? `The source's ${audioSrc?.codec.toUpperCase()} sound cannot go in this container as it is: it is` : "The sound is"} written as ${soundCodecName("pcm-s16")}, which has no bitrate to set. It uses ${pcmRate}.`
+      : value.audio === "copy" && plan.sound === "encode"
+        ? `The source's ${audioSrc?.codec.toUpperCase()} sound cannot go in this container as it is: it is ${plan.audioCodec === "pcm-s16" ? `written as ${soundCodecName(plan.audioCodec)}` : `encoded to ${soundCodecName(plan.audioCodec)} at 128 kb/s`}.`
+        : value.audio === "copy"
+          ? "The sound packets are copied; nothing about the sound changes."
+          : value.audio === "none"
+            ? "The file has no sound."
+            : "Encoded once; 128 kb/s suits speech and most music.";
   return (
     <div className="flex flex-col gap-6">
       <Field
@@ -194,7 +207,10 @@ function BitratePanel({ value, onChange, info, disabled }: OptionsPanelProps<O>)
             aria-labelledby={soundId}
             value={value.audio}
             onValueChange={(audio) => onChange({ ...value, audio })}
-            options={audioOptions.map((a) => ({ value: a, label: audioLabel(a) }))}
+            options={audioOptions.map((a) => ({
+              value: a,
+              label: pcm && a === pcmChoice ? soundCodecName("pcm-s16") : audioLabel(a),
+            }))}
           />
         </Field>
       ) : (

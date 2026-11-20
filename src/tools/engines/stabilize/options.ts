@@ -9,6 +9,7 @@
  */
 import { z } from "zod";
 import { shellQuote } from "@/lib/format";
+import { ffmpegSoundEncoder, type VideoSoundCodec } from "../sound-codec";
 
 export const strengths = ["light", "medium", "strong"] as const;
 export type Strength = (typeof strengths)[number];
@@ -61,12 +62,17 @@ export function stabilizeCommand(
   o: StabilizeOptions,
   fps: number,
   kbps: number,
-  audio: "copy" | "aac" | "none",
+  audio: "copy" | "none" | VideoSoundCodec,
   evenCut: string,
 ): string {
   const smoothing = Math.round(sigmaFrames(o, fps) * 2);
   const zoom = o.edges === "zoom" ? "optzoom=1" : "optzoom=0:crop=black";
-  const a = audio === "none" ? "-an" : audio === "copy" ? "-c:a copy" : "-c:a aac -b:a 128k";
+  const a =
+    audio === "none"
+      ? "-an"
+      : audio === "copy"
+        ? "-c:a copy"
+        : `-c:a ${ffmpegSoundEncoder(audio)}${audio === "pcm-s16" ? "" : " -b:a 128k"}`;
   const cut = evenCut ? `,${evenCut}` : "";
   return `ffmpeg -i ${shellQuote(input)} -vf vidstabdetect=shakiness=8:result=transforms.trf -f null - && ffmpeg -i ${shellQuote(input)} -vf "vidstabtransform=input=transforms.trf:smoothing=${smoothing}:${zoom}:interpol=bicubic${cut}" -c:v libx264 -b:v ${kbps}k -pix_fmt yuv420p ${a} -movflags +faststart ${shellQuote(output)}`;
 }

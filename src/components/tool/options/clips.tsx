@@ -34,6 +34,7 @@ import {
   SHORTS_MAX_SEC,
 } from "@/tools/engines/clips/plan";
 import { snapToFrame } from "@/tools/engines/frame-extract/math";
+import { soundCodecName, soundEncodersNow, writtenSoundCodec } from "@/tools/engines/sound-codec";
 import type { MediaInfo } from "@/tools/engines/types";
 import { PLAY_SHORTCUT } from "../shortcuts";
 import { nativeOnly } from "./native-only";
@@ -176,7 +177,7 @@ export const clipsSpec: OptionsSpec<ClipsValue> = {
       where,
       `${formatDimensions(frame.width, frame.height)}${vertical ? ", 9:16" : ""}`,
       `≈\u00a0${formatBytes(estimateBytes(o, info))} ZIP`,
-      `H.264${info.audio?.length ? ", AAC" : ""}`,
+      `H.264${info.audio?.length ? `, ${soundCodecName(writtenSoundCodec("mp4", soundEncodersNow()))}` : ""}`,
     ]
       .filter(Boolean)
       .join(" · ");

@@ -10,6 +10,7 @@ import { type AudioFadeOptions, MAX_FADE_SEC } from "@/tools/engines/audio-fade/
 import { fadeGain, fitFades } from "@/tools/engines/sound/dsp/fade";
 import { soundSummary } from "@/tools/engines/sound/summary";
 import { nameFor, soundTarget } from "@/tools/engines/sound/target";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import { PLAY_SHORTCUT } from "../shortcuts";
 import { FadeLayer } from "../sound/fade-layer";
 import { SoundHero } from "../sound/sound-hero";
@@ -193,7 +194,7 @@ export const audioFadeSpec: OptionsSpec<AudioFadeOptions> = {
       f.fadeOut > 0 ? `out over ${secs(f.fadeOut)}` : "",
     ].filter(Boolean);
     const lead = parts.length ? `Fades ${parts.join(" and ")}. ` : "";
-    return `${lead}${soundSummary(info, nameFor(info)) ?? ""}`.trim();
+    return `${lead}${soundSummary(info, nameFor(info), soundEncodersNow()) ?? ""}`.trim();
   },
   result: (o, info) => {
     const f = fitFades(o, info.durationSec);

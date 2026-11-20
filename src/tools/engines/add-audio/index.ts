@@ -32,6 +32,7 @@ import {
 import { addAacLead, withEncoderDelaySignalled } from "../mediabunny/priming";
 import { type ContainerId, containers, openInput } from "../mediabunny/shared";
 import { soundSpan } from "../mediabunny/sound-span";
+import { ffmpegSoundEncoder, soundCodecName, videoSoundCodecs } from "../sound-codec";
 import type { Engine, MediaInput } from "../types";
 import {
   audioUnchanged,
@@ -64,8 +65,6 @@ export type AddAudioOptions = z.infer<typeof AddAudioOptions>;
 const AUDIO_KBPS = 192;
 const BLOCK = 4096;
 
-type OutCodec = "aac" | "opus";
-
 export interface AddAudioPlan {
   container: ContainerId;
   /** True when the new audio's packets are copied as they are. */
@@ -74,13 +73,16 @@ export interface AddAudioPlan {
   codec: string;
 }
 
+/** The codec the new sound is encoded in: the video engines' order (../sound-codec), probed here. */
 async function pickCodec(container: ContainerId, channels: number, rate: number) {
-  const order: OutCodec[] = container === "webm" ? ["opus"] : ["aac", "opus"];
   const supported = containers[container].format().getSupportedCodecs() as string[];
-  for (const codec of order) {
+  for (const codec of videoSoundCodecs(container)) {
     if (!supported.includes(codec)) continue;
     const sampleRate = codec === "opus" ? 48_000 : rate;
-    if (await canEncodeAudio(codec, { numberOfChannels: channels, sampleRate }))
+    if (
+      codec === "pcm-s16" ||
+      (await canEncodeAudio(codec, { numberOfChannels: channels, sampleRate }))
+    )
       return { codec, sampleRate };
   }
   return undefined;
@@ -121,8 +123,9 @@ export function addAudioCommand(
     ? `;[0:a]volume=${round2(gains.original)}[o];[o][n]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.9[a]`
     : "";
   const outLabel = mix ? "[a]" : "[n]";
-  const enc = plan.codec === "opus" ? "libopus" : "aac";
-  return `ffmpeg -i ${vid}${o.loop ? " -stream_loop -1" : ""} -i ${aud} -filter_complex "${newChain}${mix}" -map 0:v:0 -map "${outLabel}" -c:v copy -c:a ${enc} -b:a ${AUDIO_KBPS}k -t ${round2(p.end > 0 ? Math.max(p.end, 0) : 0)} ${out}`;
+  const enc = ffmpegSoundEncoder(plan.codec);
+  const rate = plan.codec === "pcm-s16" ? "" : ` -b:a ${AUDIO_KBPS}k`;
+  return `ffmpeg -i ${vid}${o.loop ? " -stream_loop -1" : ""} -i ${aud} -filter_complex "${newChain}${mix}" -map 0:v:0 -map "${outLabel}" -c:v copy -c:a ${enc}${rate} -t ${round2(p.end > 0 ? Math.max(p.end, 0) : 0)} ${out}`;
 }
 
 /** First and last presentation time of a track's packets (the video's real span). */
@@ -437,7 +440,7 @@ export const addAudioEngine: Engine<AddAudioOptions> = {
     const filename = `${baseName(videoIn.file.name)}-${o.mode === "mix" ? "with-audio" : "new-audio"}.${ext}`;
     const audioFact = copyAudio
       ? `${codecName(plan.codec) ?? plan.codec} copied`
-      : `${codecName(plan.codec) ?? plan.codec} ${withUnit(AUDIO_KBPS, "kbps")} ${mixing ? "mixed" : "placed"}`;
+      : `${plan.codec === "pcm-s16" ? soundCodecName(plan.codec) : `${codecName(plan.codec) ?? plan.codec} ${withUnit(AUDIO_KBPS, "kbps")}`} ${mixing ? "mixed" : "placed"}`;
     return {
       blob: new Blob(parts ?? [buffer], { type: mime }),
       filename,

@@ -5,6 +5,7 @@
  * 4:2:0 chroma needs even width and height, and even offsets keep the chroma planes aligned.
  */
 import { shellQuote } from "@/lib/format";
+import { ffmpegSoundEncoder } from "../sound-codec";
 
 export interface Rect {
   x: number;
@@ -388,8 +389,12 @@ export function geometryCommand(
   copyAudio: boolean,
   /** Keep only the first `end` seconds. */
   end?: number,
+  /** The codec an encoded sound is written in (../sound-codec `writtenSoundCodec`). */
+  codec = "aac",
 ): string {
-  const audio = copyAudio ? "-c:a copy" : "-c:a aac -b:a 128k";
+  const audio = copyAudio
+    ? "-c:a copy"
+    : `-c:a ${ffmpegSoundEncoder(codec)}${codec === "pcm-s16" ? "" : " -b:a 128k"}`;
   const t = end !== undefined ? ` -t ${end}` : "";
   // Filter graphs with labels or quotes need quoting in a shell.
   const vf = /[[\];'\s]/.test(filter) ? `"${filter}"` : filter;

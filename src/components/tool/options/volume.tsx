@@ -9,6 +9,7 @@ import { Slider } from "@/components/ui/slider";
 import { formatLevel, fromDb } from "@/tools/engines/sound/dsp/loudness";
 import { soundSummary } from "@/tools/engines/sound/summary";
 import { nameFor, soundTarget } from "@/tools/engines/sound/target";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import {
   gainPresets,
   loudnessTargets,
@@ -246,7 +247,7 @@ export const volumeSpec: OptionsSpec<VolumeOptions> = {
       return "0 dB leaves the sound as it is. Choose a gain.";
     return undefined;
   },
-  summary: (_o, info) => soundSummary(info, nameFor(info)),
+  summary: (_o, info) => soundSummary(info, nameFor(info), soundEncodersNow()),
   result: (o) => ({
     title:
       o.mode === "normalize"

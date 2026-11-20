@@ -7,6 +7,7 @@ import { NumberInput } from "@/components/ui/number-input";
 import { Segmented } from "@/components/ui/segmented";
 import { Slider } from "@/components/ui/slider";
 import { formatDimensions } from "@/lib/format";
+import { soundEncodersNow } from "@/tools/engines/sound-codec";
 import {
   type ColorTransform,
   isIdentity,
@@ -27,6 +28,7 @@ import {
 } from "@/tools/engines/video-filter/options";
 import {
   containerNote,
+  lineSoundCodec,
   needsFfmpeg,
   pictureContainer,
   pictureEstimate,
@@ -213,9 +215,13 @@ export const filterSpec: OptionsSpec<FilterValue> = {
   summary: (o, info) => {
     const v = info.video;
     if (!v || filterIsNoop(o)) return undefined;
-    const est = pictureEstimate(info, v);
+    const est = pictureEstimate(info, v, soundEncodersNow());
     const to = pictureContainer(sourceName(info));
-    const sound = soundLine(needsFfmpeg(info, sourceName(info)) ? "encode" : soundPlan(info, to));
+    const sound = soundLine(
+      needsFfmpeg(info, sourceName(info)) ? "encode" : soundPlan(info, to),
+      false,
+      lineSoundCodec(info, to, soundEncodersNow()),
+    );
     const out = pictureSize(info);
     return `Output ${formatDimensions(out.width, out.height)}, ${est.label}.${sizeNote(info)} Every frame is re-encoded to H.264 with the colours the preview shows. ${sound}${containerNote(info)}`;
   },
